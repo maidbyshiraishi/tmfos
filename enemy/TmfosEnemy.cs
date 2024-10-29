@@ -14,7 +14,6 @@ public partial class TmfosEnemy : PathFollowEnemy
     [Signal]
     public delegate void NodeSpawnedEventHandler(Node node, Node spawner, Vector2 position, Vector2 direction, double lifeTime);
 
-    // todo: ボス、宇宙から来たメイド
     [Export]
     public Marker2D MerkerPosition { get; set; }
 
