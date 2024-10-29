@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://drc08xeh4qw6l"]
+
+[ext_resource type="Script" path="res://others/CollidableArea.cs" id="1_432qh"]
+
+[node name="BurialArea" type="Area2D"]
+collision_layer = 2048
+script = ExtResource("1_432qh")

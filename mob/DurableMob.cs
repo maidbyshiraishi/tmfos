@@ -1,0 +1,275 @@
+using Godot;
+using tmfos.system;
+
+namespace tmfos.mob;
+
+/// <summary>
+/// 耐久力のあるキャラクター
+/// </summary>
+public partial class DurableMob : ActionMob, IDurable
+{
+    [Export]
+    public double LifeTime { get; set; } = 0f;
+
+    [Export]
+    public int Life { get; set; } = 20;
+
+    [Export]
+    public int MaxLife { get; set; } = 20;
+
+    [Export]
+    public int Attack { get; set; } = 20;
+
+    [Export]
+    public bool SkipAttack { get; set; } = false;
+
+    [Export]
+    public double SkipAttackTime { get; set; } = 0.5f;
+
+    [Export]
+    public bool SkipDamage { get; set; } = false;
+
+    [Export]
+    public double SkipDamageTime { get; set; } = 0.2f;
+
+    [Export]
+    public int DamageBlinkFrame { get; set; } = 3;
+
+    [Export]
+    public MobStateType MobState { get; set; } = MobStateType.Normal;
+
+    private Timer _lifeTimer;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        _lifeTimer = GetNode<Timer>("LifeTimer");
+        _ = _lifeTimer.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.Timeup));
+    }
+
+    public override void InitializeNode()
+    {
+        base.InitializeNode();
+        Life = MaxLife;
+        ResetLifeTime();
+    }
+
+    public override void Burialed(Node2D body, Area2D area)
+    {
+        Dead();
+    }
+
+    public virtual void ChangeSprite(string name, DirectionType direction)
+    {
+        switch (direction)
+        {
+            case DirectionType.Center:
+
+                PlaySprite(name);
+                break;
+
+            case DirectionType.Left:
+
+                PlaySprite($"{name}_left");
+                break;
+
+            case DirectionType.Right:
+
+                PlaySprite($"{name}_right");
+                break;
+
+            case DirectionType.None:
+
+                PlaySprite(name);
+                break;
+        }
+    }
+
+    public double GetLifeTimeLeft()
+    {
+        return _lifeTimer.TimeLeft;
+    }
+
+    public virtual void Timeup()
+    {
+        if (MobState is MobStateType.Timeup)
+        {
+            return;
+        }
+
+        // 地形への接触を消す
+        CollisionTilemap(false);
+        MobState = MobStateType.Timeup;
+        Velocity = Vector2.Zero;
+        ChangeSprite("dead", DirectionType.None);
+    }
+
+    public virtual void ResetLifeTime()
+    {
+        Lib.ResetTimer(_lifeTimer, LifeTime);
+    }
+
+    public virtual void AddDurability(int value)
+    {
+        // 連続で追加のダメージは受けない、
+        // タイムアップ時は回復も負傷もしない
+        if ((value <= 0 && (SkipDamage || MobState is MobStateType.Dead)) || (MobState is MobStateType.Timeup) || (MobState is MobStateType.Sleep))
+        {
+            return;
+        }
+
+        int oldLife = Life;
+        Life = Mathf.Clamp(oldLife + value, 0, MaxLife);
+        ManageState(oldLife, Life);
+
+        if (value < 0)
+        {
+            Lib.ShowFloatingMessage(this, value.ToString(), Colors.Red);
+        }
+    }
+
+    public void ManageState(int oldLife, int newLife)
+    {
+        switch (oldLife)
+        {
+            case 0 when newLife > 0:
+
+                Resurrected();
+                break;
+
+            case > 0 when newLife == 0:
+
+                Dead();
+                break;
+
+            case < 100 when newLife == 100:
+
+                FullRecovered();
+                break;
+
+            default:
+
+                if (oldLife < newLife)
+                {
+                    Recovered();
+                }
+                else if (newLife < oldLife)
+                {
+                    Damaged();
+                }
+
+                break;
+        }
+    }
+
+    public virtual void Damaged()
+    {
+        SetSkipDamage();
+        DamageBlink();
+    }
+
+    public virtual void Dead()
+    {
+        if (MobState is MobStateType.Dead)
+        {
+            return;
+        }
+
+        // 地形への接触を消す
+        CollisionTilemap(false);
+        MobState = MobStateType.Dead;
+        Velocity = Vector2.Zero;
+        ChangeSprite("dead", DirectionType.None);
+    }
+
+    public virtual void FullRecovered()
+    {
+    }
+
+    public virtual void Recovered()
+    {
+    }
+
+    public virtual void Resurrected()
+    {
+        CollisionTilemap(true);
+        MobState = MobStateType.Normal;
+    }
+
+    public virtual void SetDurability(int value)
+    {
+        // タイムアップ、スリープ時は回復も負傷もしない
+        if (MobState is MobStateType.Timeup or MobStateType.Sleep)
+        {
+            return;
+        }
+
+        int oldLife = Life;
+        Life = Mathf.Clamp(value, 0, MaxLife);
+        ManageState(oldLife, Life);
+    }
+
+    protected async void DamageBlink()
+    {
+        for (int i = 0; i < DamageBlinkFrame; i++)
+        {
+            _ = await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        }
+
+        while (SkipDamage)
+        {
+            m_animatedSprite.Hide();
+
+            for (int i = 0; i < DamageBlinkFrame; i++)
+            {
+                _ = await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+            }
+
+            m_animatedSprite.Show();
+
+            for (int i = 0; i < DamageBlinkFrame; i++)
+            {
+                _ = await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+            }
+        }
+
+        m_animatedSprite.Show();
+    }
+
+    protected async void SetSkipDamage()
+    {
+        if (SkipDamage)
+        {
+            return;
+        }
+
+        if (SkipDamageTime >= 0.05f)
+        {
+            SkipDamage = true;
+            _ = await ToSignal(GetTree().CreateTimer(SkipDamageTime), Timer.SignalName.Timeout);
+        }
+
+        SkipDamage = false;
+    }
+
+    protected async void SetSkipAttack()
+    {
+        if (SkipAttack)
+        {
+            return;
+        }
+
+        if (SkipAttackTime >= 0.05f)
+        {
+            SkipAttack = true;
+            _ = await ToSignal(GetTree().CreateTimer(SkipAttackTime), Timer.SignalName.Timeout);
+        }
+
+        SkipAttack = false;
+    }
+
+    public virtual void DieExternalCauses()
+    {
+        Dead();
+    }
+}

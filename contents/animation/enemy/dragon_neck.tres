@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://du2surv2spbsb"]
+
+[ext_resource type="Texture2D" uid="uid://duieciof1kdc" path="res://contents/image/enemy/dragon_neck.png" id="1_0howw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw5if"]
+atlas = ExtResource("1_0howw")
+region = Rect2(0, 0, 28, 28)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw5if")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

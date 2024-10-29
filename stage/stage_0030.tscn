@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=4 uid="uid://b378gcnfrfdeg"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_oev74"]
+[ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_a3ugq"]
+[ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="3_4272y"]
+[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="3_jnww1"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="4_jhg73"]
+[ext_resource type="Script" path="res://player/Camera.cs" id="5_1uiaw"]
+[ext_resource type="PackedScene" uid="uid://c3q04xrtn7kjp" path="res://enemy/ero_maid_enemy.tscn" id="6_wj2e1"]
+[ext_resource type="PackedScene" uid="uid://bkpmusncycni5" path="res://hud/boss_life.tscn" id="8_ifxmj"]
+[ext_resource type="PackedScene" uid="uid://c7uf428mr1fso" path="res://trigger/sweep_observer.tscn" id="9_5kmyy"]
+[ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/set_player_initial_durability_command.tscn" id="10_ve72n"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="11_kfljp"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="12_t2u0o"]
+[ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="13_ohyl7"]
+
+[node name="Stage" instance=ExtResource("1_oev74")]
+BgmStream = ExtResource("2_a3ugq")
+
+[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+color = Color(0.3, 0, 0.095, 1)
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("3_4272y")
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAAKAPv/AAAEAAAAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAIAP//AAAAAAMAAAAJAP//AAAAAAMAAAAKAP//AAAAAAMAAAALAP//AAAAAAMAAAAMAP//AAAAAAMAAAANAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP//AAAAAAMAAAARAP//AAAAAAMAAAASAP//AAAAAAMAAAATAP//AAAAAAMAAAAAAPH/AAAAAAMAAAATAPH/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPL/AAAAAAMAAAABAPH/AAAAAAMAAAACAPH/AAAAAAMAAAADAPH/AAAAAAMAAAAEAPH/AAAAAAMAAAAFAPH/AAAAAAMAAAAGAPH/AAAAAAMAAAAHAPH/AAAAAAMAAAAIAPH/AAAAAAMAAAAJAPH/AAAAAAMAAAAKAPH/AAAAAAMAAAALAPH/AAAAAAMAAAAMAPH/AAAAAAMAAAANAPH/AAAAAAMAAAAOAPH/AAAAAAMAAAAPAPH/AAAAAAMAAAAQAPH/AAAAAAMAAAARAPH/AAAAAAMAAAASAPH/AAAAAAMAAAATAP7/AAAAAAMAAAATAP3/AAAAAAMAAAATAPz/AAAAAAMAAAATAPv/AAAAAAMAAAATAPr/AAAAAAMAAAATAPn/AAAAAAMAAAATAPj/AAAAAAMAAAATAPf/AAAAAAMAAAATAPb/AAAAAAMAAAATAPX/AAAAAAMAAAATAPT/AAAAAAMAAAATAPP/AAAAAAMAAAATAPL/AAAAAAMAAAACAPr/AAAAAAMAAAADAPr/AAAAAAMAAAADAPX/AAAAAAMAAAAQAPr/AAAAAAMAAAAQAPX/AAAAAAMAAAARAPX/AAAAAAMAAAAFAPX/AAAAAAMAAAAOAPr/AAAAAAMAAAAJAPb/AAAAAAMAAAAKAPb/AAAAAAMAAAAJAPv/AAAAAAMAAAAKAPv/AAAAAAMAAAAEAPr/AAAAAAMAAAAEAPX/AAAAAAMAAAAPAPX/AAAAAAMAAAAPAPr/AAAAAAMAAAAIAPv/AAAAAAMAAAALAPb/AAAAAAMAAAA=")
+
+[node name="StageEntryPoint1" parent="Door" index="0" instance=ExtResource("3_jnww1")]
+position = Vector2(320, -64)
+DoorNo = 1
+Direction = 1
+
+[node name="ItemPanelArmor" parent="Item" index="0" instance=ExtResource("13_ohyl7")]
+position = Vector2(160, -416)
+
+[node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("13_ohyl7")]
+position = Vector2(544, -416)
+
+[node name="Player" parent="." index="8" instance=ExtResource("4_jhg73")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("5_1uiaw")
+
+[node name="EroMaidEnemy" parent="Enemy" index="0" node_paths=PackedStringArray("EntryPoints") groups=["SweepEnemyObserver"] instance=ExtResource("6_wj2e1")]
+position = Vector2(320, -352)
+EntryPoints = NodePath("../../EntryPoint")
+
+[node name="HUD" parent="." index="13"]
+Text1 = "エロメイド"
+Text2 = "を"
+Text3 = "撃破せよ！！"
+BossMode = true
+
+[node name="BossLife" parent="HUD" index="6" instance=ExtResource("8_ifxmj")]
+offset_top = 98.0
+offset_bottom = 130.0
+
+[node name="SweepObserver" parent="." index="14" instance=ExtResource("9_5kmyy")]
+GroupName = "SweepEnemyObserver"
+
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("10_ve72n")]
+
+[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("11_kfljp")]
+DialogPath = "res://theater/talk_0014.tscn"
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("12_t2u0o")]
+position = Vector2(480, 16)
+scale = Vector2(60, 1)
+
+[node name="EntryPoint" type="Node2D" parent="." index="18"]
+
+[node name="Marker2D1" type="Marker2D" parent="EntryPoint" index="0"]
+position = Vector2(128, -64)
+
+[node name="Marker2D2" type="Marker2D" parent="EntryPoint" index="1"]
+position = Vector2(512, -64)
+
+[node name="Marker2D3" type="Marker2D" parent="EntryPoint" index="2"]
+position = Vector2(128, -224)
+
+[node name="Marker2D4" type="Marker2D" parent="EntryPoint" index="3"]
+position = Vector2(512, -224)
+
+[node name="Marker2D5" type="Marker2D" parent="EntryPoint" index="4"]
+position = Vector2(128, -384)
+
+[node name="Marker2D6" type="Marker2D" parent="EntryPoint" index="5"]
+position = Vector2(512, -384)
+
+[node name="Marker2D7" type="Marker2D" parent="EntryPoint" index="6"]
+position = Vector2(320, -64)
+
+[node name="Marker2D8" type="Marker2D" parent="EntryPoint" index="7"]
+position = Vector2(320, -192)
+
+[node name="Marker2D9" type="Marker2D" parent="EntryPoint" index="8"]
+position = Vector2(320, -352)

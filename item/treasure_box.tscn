@@ -1,0 +1,47 @@
+[gd_scene load_steps=11 format=3 uid="uid://c48l268v1hmlo"]
+
+[ext_resource type="Script" path="res://item/TreasureBox.cs" id="1_xstsu"]
+[ext_resource type="SpriteFrames" uid="uid://b3320best2cvx" path="res://contents/animation/treasure_box.tres" id="2_wwcnn"]
+[ext_resource type="PackedScene" uid="uid://d1m64yhaigvik" path="res://command/add_score_command.tscn" id="4_8a41d"]
+[ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/switch_open_or_close_animation_command.tscn" id="4_upd1v"]
+[ext_resource type="Script" path="res://others/CollidableArea.cs" id="5_lsr5k"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="6_3m55v"]
+[ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="6_jrgcp"]
+[ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="7_bkif7"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="7_g18tg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ws0"]
+size = Vector2(32, 24)
+
+[node name="TreasureBox" type="Node2D"]
+script = ExtResource("1_xstsu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -13)
+sprite_frames = ExtResource("2_wwcnn")
+animation = &"closed"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 8
+script = ExtResource("5_lsr5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_o5ws0")
+
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("4_upd1v")]
+AnimatedSprite2D = NodePath("../AnimatedSprite2D")
+
+[node name="AddScoreCommand" parent="." instance=ExtResource("4_8a41d")]
+
+[node name="StateSaveCommand" parent="." instance=ExtResource("6_jrgcp")]
+
+[node name="StateBackupCommand" parent="." instance=ExtResource("7_bkif7")]
+
+[node name="PlaySeCommand" parent="." instance=ExtResource("7_g18tg")]
+SeName = "player_get_treasure_box"
+
+[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("6_3m55v")]
+
+[connection signal="Collided" from="Area2D" to="." method="Exec"]

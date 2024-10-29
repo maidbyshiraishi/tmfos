@@ -1,0 +1,17 @@
+﻿*.cs text eol=crlf diff=csharp
+
+*.import text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+
+*.jpg   binary
+*.png   binary
+*.gif   binary
+
+*.ogg   binary
+*.wav   binary
+
+*.ttf   binary
+
+*.res   binary
+

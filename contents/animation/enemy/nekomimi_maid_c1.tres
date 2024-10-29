@@ -1,0 +1,77 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dadgj1k5o4ayw"]
+
+[ext_resource type="Texture2D" uid="uid://dw7xgx6tvd8l" path="res://contents/image/enemy/nekomimi_maid_c1.png" id="1_bk5qf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfa88"]
+atlas = ExtResource("1_bk5qf")
+region = Rect2(136, 0, 34, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l5d0"]
+atlas = ExtResource("1_bk5qf")
+region = Rect2(170, 0, 34, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l08td"]
+atlas = ExtResource("1_bk5qf")
+region = Rect2(204, 0, 34, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snu14"]
+atlas = ExtResource("1_bk5qf")
+region = Rect2(238, 0, 34, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj7mb"]
+atlas = ExtResource("1_bk5qf")
+region = Rect2(0, 0, 34, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxefu"]
+atlas = ExtResource("1_bk5qf")
+region = Rect2(34, 0, 34, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2ja4"]
+atlas = ExtResource("1_bk5qf")
+region = Rect2(68, 0, 34, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqbt7"]
+atlas = ExtResource("1_bk5qf")
+region = Rect2(102, 0, 34, 66)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfa88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l5d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l08td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snu14")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj7mb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxefu")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2ja4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqbt7")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 8.0
+}]

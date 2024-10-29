@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdrvd77nuu0w"]
+
+[ext_resource type="Script" path="res://command/OpenDialogCommand.cs" id="1_f7v86"]
+
+[node name="OpenSaveAndLoadDialogCommand" type="Node"]
+script = ExtResource("1_f7v86")
+DialogPath = "res://screen/save_and_load_dialog.tscn"

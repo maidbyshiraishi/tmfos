@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://ti16n2g7rimm"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_owith"]
+[ext_resource type="Script" path="res://screen/KeyCommandTestDialog.cs" id="2_ehwlm"]
+
+[node name="KeyCommandDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_owith")
+script = ExtResource("2_ehwlm")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 63.0
+offset_right = 576.0
+offset_bottom = 233.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 63.0
+offset_right = 576.0
+offset_bottom = 233.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Message" type="Label" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 67.0
+offset_top = 66.0
+offset_right = 574.0
+offset_bottom = 174.0
+text = "メッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c2wtd3ggo53g2"]
+
+[ext_resource type="Texture2D" uid="uid://c6vy4wxe7f7ev" path="res://contents/image/decoration/exit.png" id="1_lcjla"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqmp3"]
+atlas = ExtResource("1_lcjla")
+region = Rect2(0, 0, 64, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqmp3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

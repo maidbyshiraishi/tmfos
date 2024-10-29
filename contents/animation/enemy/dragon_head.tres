@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://x4yxfnrq827f"]
+
+[ext_resource type="Texture2D" uid="uid://beoxnnini6dwh" path="res://contents/image/enemy/dragon_head.png" id="1_tqrob"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qu7r"]
+atlas = ExtResource("1_tqrob")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxkjl"]
+atlas = ExtResource("1_tqrob")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqqo0"]
+atlas = ExtResource("1_tqrob")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yv1i"]
+atlas = ExtResource("1_tqrob")
+region = Rect2(102, 0, 34, 34)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qu7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxkjl")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqqo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yv1i")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]

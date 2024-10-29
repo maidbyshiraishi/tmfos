@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b3320best2cvx"]
+
+[ext_resource type="Texture2D" uid="uid://d3jko3it4x43s" path="res://contents/image/item/treasure_box.png" id="1_unq1s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frojh"]
+atlas = ExtResource("1_unq1s")
+region = Rect2(0, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnkc6"]
+atlas = ExtResource("1_unq1s")
+region = Rect2(48, 0, 48, 43)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frojh")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnkc6")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]

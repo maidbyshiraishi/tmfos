@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxh4bg4eirq7n"]
+
+[ext_resource type="Script" path="res://item/ImmediateItemPanel.cs" id="1_61ssi"]
+[ext_resource type="SpriteFrames" uid="uid://o4xjdiea2ok5" path="res://contents/animation/item/item_one_up.tres" id="2_ssvjw"]
+[ext_resource type="Script" path="res://others/CollidableArea.cs" id="3_6ugl0"]
+[ext_resource type="PackedScene" uid="uid://bwp4y1nte25hm" path="res://command/add_remain_command.tscn" id="4_a0436"]
+[ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="5_830mj"]
+[ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/switch_open_or_close_animation_command.tscn" id="6_6r7fh"]
+[ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="6_tlnw7"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="7_a3rb4"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="8_dtgy2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
+size = Vector2(32, 32)
+
+[node name="ItemPanelOneup" type="Node2D"]
+script = ExtResource("1_61ssi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_ssvjw")
+animation = &"closed"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 8
+script = ExtResource("3_6ugl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_orwde")
+
+[node name="AddRemainCommand" parent="." instance=ExtResource("4_a0436")]
+
+[node name="StateSaveCommand" parent="." instance=ExtResource("5_830mj")]
+
+[node name="StateBackupCommand" parent="." instance=ExtResource("6_tlnw7")]
+
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("6_6r7fh")]
+AnimatedSprite2D = NodePath("../AnimatedSprite2D")
+
+[node name="PlaySeCommand" parent="." instance=ExtResource("7_a3rb4")]
+SeName = "player_one_up"
+
+[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("8_dtgy2")]
+Message = "1up"
+
+[connection signal="Collided" from="Area2D" to="." method="Exec"]

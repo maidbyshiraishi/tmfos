@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4kkkr734ep2c"]
+
+[ext_resource type="Script" path="res://item/ImmediateItemPanel.cs" id="1_xf8wj"]
+[ext_resource type="SpriteFrames" uid="uid://chqgwyu7tws1m" path="res://contents/animation/item/item_life.tres" id="2_g8gcu"]
+[ext_resource type="Script" path="res://others/CollidableArea.cs" id="2_sirlq"]
+[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/add_durability_command.tscn" id="4_55nbc"]
+[ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/switch_open_or_close_animation_command.tscn" id="5_pk7cf"]
+[ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="5_xojxn"]
+[ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="6_jfyk1"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="7_2q47t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
+size = Vector2(32, 32)
+
+[node name="ItemPanelLife" type="Node2D"]
+script = ExtResource("1_xf8wj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_g8gcu")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 8
+script = ExtResource("2_sirlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_orwde")
+
+[node name="AddDurabilityCommand" parent="." instance=ExtResource("4_55nbc")]
+
+[node name="StateSaveCommand" parent="." instance=ExtResource("5_xojxn")]
+
+[node name="StateBackupCommand" parent="." instance=ExtResource("6_jfyk1")]
+
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("5_pk7cf")]
+AnimatedSprite2D = NodePath("../AnimatedSprite2D")
+
+[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("7_2q47t")]
+Message = "回復"
+
+[connection signal="Collided" from="Area2D" to="." method="Exec"]

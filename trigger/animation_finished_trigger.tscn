@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://t1hjabn8aisl"]
+
+[ext_resource type="Script" path="res://trigger/AnimationFinishedTrigger.cs" id="1_txonx"]
+
+[node name="AnimationFinishedTrigger" type="Node" node_paths=PackedStringArray("AnimatedSprite")]
+script = ExtResource("1_txonx")
+AnimatedSprite = NodePath("")

@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://cobv8osufkdu8"]
+
+[ext_resource type="Theme" uid="uid://hw4u24o28muj" path="res://contents/theme/theme_license_screen.tres" id="1_5mfh1"]
+[ext_resource type="Script" path="res://screen/LicenseSelectScreen.cs" id="1_68j83"]
+[ext_resource type="Script" path="res://gui/CommandItemList.cs" id="2_rwg38"]
+[ext_resource type="Script" path="res://gui/CommandButton.cs" id="2_vxqgw"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="3_eqtxm"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_u1swl"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_xti50"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="7_g3axc"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="8_vmg10"]
+
+[node name="LicenseSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_5mfh1")
+script = ExtResource("1_68j83")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 640.0
+offset_bottom = 479.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 16.0
+offset_right = 408.0
+offset_bottom = 42.0
+text = "License Informations"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ComponentNameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 72.0
+text = "Component Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LicenseList" type="ItemList" parent="Control"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 80.0
+offset_right = 608.0
+offset_bottom = 424.0
+focus_neighbor_left = NodePath("../Back")
+focus_neighbor_right = NodePath("../Back")
+script = ExtResource("2_rwg38")
+
+[node name="Focus" parent="Control/LicenseList" instance=ExtResource("5_xti50")]
+
+[node name="PlaySeCommand" parent="Control/LicenseList/Focus" instance=ExtResource("4_u1swl")]
+SeName = "menu_move"
+
+[node name="Back" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 432.0
+offset_right = 352.0
+offset_bottom = 464.0
+text = "Back"
+script = ExtResource("2_vxqgw")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("5_xti50")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("4_u1swl")]
+SeName = "menu_select"
+
+[node name="GoScreenCommand" parent="Control/Back/Exec" instance=ExtResource("3_eqtxm")]
+Screen = "res://screen/title_screen.tscn"
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("5_xti50")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("4_u1swl")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("7_g3axc")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("8_vmg10")]
+Target = NodePath("../../Control/Back")
+
+[connection signal="item_activated" from="Control/LicenseList" to="." method="SelectLicense"]

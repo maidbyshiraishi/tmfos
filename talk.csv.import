@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://lhot4o2tvhvl"
+
+[deps]
+
+files=["res://talk.ja.translation"]
+
+source_file="res://talk.csv"
+dest_files=["res://talk.ja.translation"]
+
+[params]
+
+compress=true
+delimiter=0

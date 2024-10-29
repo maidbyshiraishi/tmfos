@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://b55sbtm36s2qt"]
+
+[ext_resource type="Script" path="res://enemy/CatEnemy.cs" id="2_xob4s"]
+[ext_resource type="PackedScene" uid="uid://chluqke5uik6n" path="res://enemy/eyesight32.tscn" id="5_j48dm"]
+[ext_resource type="SpriteFrames" uid="uid://vrob0ghygk7g" path="res://contents/animation/enemy/cat.tres" id="5_m46cn"]
+[ext_resource type="Script" path="res://mob/ActionChange.cs" id="6_j0ptg"]
+[ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="8_aerct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u530y"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy2hk"]
+size = Vector2(25, 25)
+
+[node name="CatEnemy" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 1551
+script = ExtResource("2_xob4s")
+Attack = 10
+SkipAttackTime = 0.8
+Direction = -1
+Approach = 16.0
+MaxSpeed = 250.0
+ReductionApproach = 24.0
+AirApproach = 16.0
+AirMaxSpeed = 300.0
+AirReductionApproach = 24.0
+ShortJumpHeight = 100.0
+JumpHeight = 200.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("5_m46cn")
+animation = &"walk_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u530y")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-20, -16, 40, 32)
+
+[node name="EyeSight" parent="." instance=ExtResource("5_j48dm")]
+
+[node name="ActionChange" type="Node2D" parent="." node_paths=PackedStringArray("ChangeTarget")]
+script = ExtResource("6_j0ptg")
+ChangeTarget = NodePath("..")
+
+[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+
+[node name="BurialArea" parent="." instance=ExtResource("8_aerct")]
+position = Vector2(300.654, -103.96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+position = Vector2(-300.654, 103.96)
+shape = SubResource("RectangleShape2D_uy2hk")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
+[connection signal="Collided" from="BurialArea" to="." method="Burialed"]

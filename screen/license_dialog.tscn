@@ -1,0 +1,244 @@
+[gd_scene load_steps=11 format=3 uid="uid://dljghosduiafb"]
+
+[ext_resource type="Theme" uid="uid://hw4u24o28muj" path="res://contents/theme/theme_license_screen.tres" id="1_6e7sn"]
+[ext_resource type="Script" path="res://screen/LicenseDialog.cs" id="1_t0hyo"]
+[ext_resource type="Script" path="res://gui/CommandTextEdit.cs" id="3_6nktv"]
+[ext_resource type="Script" path="res://gui/CommandButton.cs" id="3_jckh2"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_pep1c"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_qq2oq"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_5schq"]
+[ext_resource type="Script" path="res://gui/CommandOptionButton.cs" id="6_ueuul"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="9_1r2ly"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="10_xgtig"]
+
+[node name="LicenseDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_6e7sn")
+script = ExtResource("1_t0hyo")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_top = -1.0
+offset_right = 640.0
+offset_bottom = 479.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="ComponentNameLabel" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 68.0
+text = "Component
+Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PartLabel" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 168.0
+offset_bottom = 120.0
+text = "Part"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FilesLabel" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 168.0
+offset_bottom = 176.0
+text = "Files"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LicenseLabel" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 32.0
+offset_top = 184.0
+offset_right = 168.0
+offset_bottom = 232.0
+text = "License"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CopyrightLabel" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 32.0
+offset_top = 376.0
+offset_right = 168.0
+offset_bottom = 424.0
+text = "Copyright"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ComponentName" type="TextEdit" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 16.0
+offset_right = 608.0
+offset_bottom = 64.0
+focus_previous = NodePath(".")
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+editable = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+script = ExtResource("3_6nktv")
+
+[node name="Focus" parent="Control/ComponentName" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/ComponentName/Focus" instance=ExtResource("5_qq2oq")]
+SeName = "menu_move"
+
+[node name="Parts" type="OptionButton" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 72.0
+offset_right = 608.0
+offset_bottom = 120.0
+script = ExtResource("6_ueuul")
+
+[node name="Focus" parent="Control/Parts" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/Parts/Focus" instance=ExtResource("5_qq2oq")]
+SeName = "menu_move"
+
+[node name="Files" type="TextEdit" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 128.0
+offset_right = 608.0
+offset_bottom = 176.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+editable = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+script = ExtResource("3_6nktv")
+
+[node name="Focus" parent="Control/Files" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/Files/Focus" instance=ExtResource("5_qq2oq")]
+SeName = "menu_move"
+
+[node name="License" type="TextEdit" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 184.0
+offset_right = 608.0
+offset_bottom = 232.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+editable = false
+virtual_keyboard_enabled = false
+script = ExtResource("3_6nktv")
+
+[node name="Focus" parent="Control/License" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/License/Focus" instance=ExtResource("5_qq2oq")]
+SeName = "menu_move"
+
+[node name="LicenseList" type="OptionButton" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 240.0
+offset_right = 608.0
+offset_bottom = 288.0
+text_overrun_behavior = 2
+fit_to_longest_item = false
+script = ExtResource("6_ueuul")
+
+[node name="Focus" parent="Control/LicenseList" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/LicenseList/Focus" instance=ExtResource("5_qq2oq")]
+SeName = "menu_move"
+
+[node name="LicenseText" type="TextEdit" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 296.0
+offset_right = 608.0
+offset_bottom = 368.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+editable = false
+virtual_keyboard_enabled = false
+script = ExtResource("3_6nktv")
+
+[node name="Focus" parent="Control/LicenseText" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/LicenseText/Focus" instance=ExtResource("5_qq2oq")]
+SeName = "menu_move"
+
+[node name="Copyright" type="TextEdit" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 376.0
+offset_right = 608.0
+offset_bottom = 424.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+editable = false
+virtual_keyboard_enabled = false
+script = ExtResource("3_6nktv")
+
+[node name="Focus" parent="Control/Copyright" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/Copyright/Focus" instance=ExtResource("5_qq2oq")]
+SeName = "menu_move"
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 288.0
+offset_top = 432.0
+offset_right = 352.0
+offset_bottom = 464.0
+text = "Close"
+script = ExtResource("3_jckh2")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_qq2oq")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_pep1c")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("6_5schq")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_qq2oq")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("9_1r2ly")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("10_xgtig")]
+Target = NodePath("../../Control/Back")
+
+[connection signal="text_changed" from="Control/ComponentName" to="." method="RepairText"]
+[connection signal="item_selected" from="Control/Parts" to="." method="ShowPart"]
+[connection signal="text_changed" from="Control/Files" to="." method="RepairText"]
+[connection signal="text_changed" from="Control/License" to="." method="RepairText"]
+[connection signal="item_selected" from="Control/LicenseList" to="." method="SelectLicense"]
+[connection signal="text_changed" from="Control/LicenseText" to="." method="RepairText"]
+[connection signal="text_changed" from="Control/Copyright" to="." method="RepairText"]

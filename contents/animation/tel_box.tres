@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dolpq7qslxqtg"]
+
+[ext_resource type="Texture2D" uid="uid://s73i83m88t2y" path="res://contents/image/door/tel_box.png" id="1_ptweu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcoe7"]
+atlas = ExtResource("1_ptweu")
+region = Rect2(0, 0, 42, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcoe7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

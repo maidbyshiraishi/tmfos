@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpnf82ngscqro"]
+
+[ext_resource type="Script" path="res://trigger/ManageDurabilityZone.cs" id="1_vhgu6"]
+[ext_resource type="Script" path="res://others/CollidableArea.cs" id="3_oh2u2"]
+[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/add_durability_command.tscn" id="5_bj607"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vacp2"]
+
+[node name="ManageDurabilityZone" type="Node2D"]
+script = ExtResource("1_vhgu6")
+Value = -5
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 40
+script = ExtResource("3_oh2u2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vacp2")
+
+[node name="AddDurabilityCommand" parent="." instance=ExtResource("5_bj607")]
+Value = -2
+
+[connection signal="Collided" from="Area2D" to="." method="Exec"]
