@@ -137,6 +137,7 @@ frame_progress = 0.514903
 shape = SubResource("RectangleShape2D_l1ch7")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1, 0.96)
 rect = Rect2(-40, -25, 80, 50)
 
 [node name="LifeTimer" type="Timer" parent="."]

@@ -37,8 +37,7 @@ position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_t8w6d")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-1, -1.19209e-07)
-scale = Vector2(6.14286, 0.428571)
+scale = Vector2(6.85714, 1.14286)
 rect = Rect2(-7, -7, 14, 14)
 
 [node name="LifeTimer" type="Timer" parent="."]

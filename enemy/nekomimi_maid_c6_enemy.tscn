@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="9_ws4cq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi5u"]
-size = Vector2(20, 62)
+size = Vector2(20, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3sy"]
 size = Vector2(15, 56)
@@ -41,6 +41,7 @@ animation = &"walk_left"
 shape = SubResource("RectangleShape2D_1wi5u")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1, 1.25)
 rect = Rect2(-16, -32, 32, 64)
 
 [node name="EyeSight" parent="." instance=ExtResource("8_irxg2")]
@@ -59,12 +60,12 @@ shape = SubResource("RectangleShape2D_hp3sy")
 [node name="BlockBreaker" type="Node2D" parent="."]
 
 [node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
-position = Vector2(0, -33)
+position = Vector2(0, -34)
 script = ExtResource("9_86ao8")
 VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 
 [node name="Step" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
-position = Vector2(0, 33)
+position = Vector2(0, 34)
 script = ExtResource("9_86ao8")
 VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 

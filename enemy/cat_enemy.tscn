@@ -41,6 +41,7 @@ animation = &"walk_right"
 shape = SubResource("RectangleShape2D_u530y")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1.2, 1.5)
 rect = Rect2(-20, -16, 40, 32)
 
 [node name="EyeSight" parent="." instance=ExtResource("5_j48dm")]

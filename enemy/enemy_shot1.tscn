@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c8d1aoty8a4pi" path="res://contents/animation/enemy/enemy_shot1.tres" id="3_erx7s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mvx6"]
-radius = 7.0
+radius = 8.0
 
 [node name="EnemyShot1" type="Area2D"]
 collision_layer = 64
@@ -20,6 +20,8 @@ autoplay = "default"
 shape = SubResource("CircleShape2D_7mvx6")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(2.28571, 2.28571)
 rect = Rect2(-7, -7, 14, 14)
 
 [node name="LifeTimer" type="Timer" parent="."]

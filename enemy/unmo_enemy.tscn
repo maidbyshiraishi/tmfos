@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://mob/BlockBreaker.cs" id="8_x8f6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyq3q"]
-size = Vector2(22, 62)
+size = Vector2(32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjnmj"]
 size = Vector2(18, 58)
@@ -44,7 +44,7 @@ animation = &"walk_right"
 shape = SubResource("RectangleShape2D_wyq3q")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, -0.75)
+scale = Vector2(1.2, 1.25)
 rect = Rect2(-20, -32, 40, 64)
 
 [node name="EyeSight" parent="." instance=ExtResource("8_7pjb8")]
@@ -57,12 +57,12 @@ shape = SubResource("RectangleShape2D_rjnmj")
 [node name="BlockBreaker" type="Node2D" parent="."]
 
 [node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
-position = Vector2(0, -33)
+position = Vector2(0, -34)
 script = ExtResource("8_x8f6o")
 VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 
 [node name="Step" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
-position = Vector2(0, 33)
+position = Vector2(0, 34)
 script = ExtResource("8_x8f6o")
 VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 

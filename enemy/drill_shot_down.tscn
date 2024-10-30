@@ -23,8 +23,7 @@ autoplay = "down"
 shape = SubResource("RectangleShape2D_eeib8")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(9.53674e-07, -2.14577e-06)
-scale = Vector2(1.14286, 3.42857)
+scale = Vector2(2.28571, 3.42857)
 rect = Rect2(-7, -7, 14, 14)
 
 [connection signal="area_entered" from="." to="." method="HitArea2D"]

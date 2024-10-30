@@ -12,15 +12,15 @@ Direction = Vector2(0, -1)
 Penetration = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 24)
 sprite_frames = ExtResource("2_5jgwm")
 animation = &"up"
 autoplay = "up"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-72, 232, 72, 232, 72, 152, 128, 152, 32, -184, -32, -184, -128, 152, -72, 152)
+polygon = PackedVector2Array(-72, 208, 72, 208, 72, 152, 128, 152, 32, -184, -32, -184, -128, 152, -72, 152)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(20.571, 32)
 rect = Rect2(-7, -7, 14, 14)
 
 [connection signal="area_entered" from="." to="." method="HitArea2D"]

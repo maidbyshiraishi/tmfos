@@ -47,7 +47,8 @@ position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_r55jc")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(2.38419e-07, 20)
+position = Vector2(-1.19209e-06, 22)
+scale = Vector2(1.5, 1.5)
 rect = Rect2(-16, -20, 32, 32)
 
 [node name="LongDown" type="RayCast2D" parent="."]

@@ -31,7 +31,6 @@ frame_progress = 0.349191
 shape = SubResource("RectangleShape2D_kjcr7")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, 9.53674e-07)
 scale = Vector2(1.5, 1.25)
 rect = Rect2(-16, -32, 32, 64)
 

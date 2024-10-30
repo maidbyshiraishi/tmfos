@@ -26,7 +26,8 @@ animation = &"left"
 shape = SubResource("RectangleShape2D_eb7yn")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-20, 10)
+position = Vector2(-21.3333, 12)
+scale = Vector2(1.06667, 1.2)
 rect = Rect2(-10, -30, 60, 40)
 
 [node name="EnemySpawner" type="Node2D" parent="."]

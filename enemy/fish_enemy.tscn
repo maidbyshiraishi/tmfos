@@ -22,7 +22,7 @@ animation = &"left"
 shape = SubResource("RectangleShape2D_cs4gn")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(2.38419e-07, -4.76837e-07)
+scale = Vector2(1.2, 1.2)
 rect = Rect2(-20, -20, 40, 40)
 
 [node name="LifeTimer" type="Timer" parent="."]

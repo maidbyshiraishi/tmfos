@@ -27,6 +27,7 @@ animation = &"left"
 shape = SubResource("RectangleShape2D_ifn7i")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1, 0.8)
 rect = Rect2(-40, -40, 80, 80)
 
 [node name="ReferenceRect" type="Node2D" parent="."]

@@ -33,8 +33,8 @@ animation = &"dead"
 polygon = PackedVector2Array(-64, 240, -512, 240, -512, 104, -312, -104, -312, -240, 312, -240, 312, -104, 512, 104, 512, 240, 64, 240, 64, -216, -64, -216)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-1.52588e-05, -1.33514e-05)
-scale = Vector2(32, 7.5)
+position = Vector2(-4.00002, -4.29153e-05)
+scale = Vector2(32.75, 8)
 rect = Rect2(-16, -32, 32, 64)
 
 [node name="ActionChange" type="Node2D" parent="." node_paths=PackedStringArray("ChangeTarget")]

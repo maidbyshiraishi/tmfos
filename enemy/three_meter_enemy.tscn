@@ -48,7 +48,8 @@ position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_4hutj")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, -13)
+position = Vector2(2.14577e-06, -12)
+scale = Vector2(1.28, 1.15556)
 rect = Rect2(-25, -45, 50, 90)
 
 [node name="EyeSight" parent="." instance=ExtResource("8_drow6")]
