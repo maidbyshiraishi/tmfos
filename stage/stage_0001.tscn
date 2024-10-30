@@ -305,7 +305,7 @@ position = Vector2(2320, -920)
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="19"]
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("6_voo0k")
@@ -385,116 +385,113 @@ position = Vector2(2816, -4320)
 [node name="EnemySpawner30" parent="Enemy" index="24" instance=ExtResource("10_deykk")]
 position = Vector2(2336, -4768)
 
-[node name="EnemySpawner21" parent="Enemy" index="25" instance=ExtResource("10_deykk")]
-position = Vector2(2752, -1824)
-
-[node name="EnemySpawner22" parent="Enemy" index="26" instance=ExtResource("10_deykk")]
+[node name="EnemySpawner22" parent="Enemy" index="25" instance=ExtResource("10_deykk")]
 position = Vector2(2496, -1440)
 
-[node name="EnemySpawner23" parent="Enemy" index="27" instance=ExtResource("10_deykk")]
+[node name="EnemySpawner23" parent="Enemy" index="26" instance=ExtResource("10_deykk")]
 position = Vector2(2656, -1120)
 
-[node name="EnemySpawner24" parent="Enemy" index="28" instance=ExtResource("10_deykk")]
+[node name="EnemySpawner24" parent="Enemy" index="27" instance=ExtResource("10_deykk")]
 position = Vector2(2320, -352)
 
-[node name="EnemySpawner25" parent="Enemy" index="29" instance=ExtResource("10_deykk")]
-position = Vector2(2712, -544)
+[node name="EnemySpawner25" parent="Enemy" index="28" instance=ExtResource("10_deykk")]
+position = Vector2(2512, -384)
 
-[node name="EnemySpawner26" parent="Enemy" index="30" instance=ExtResource("10_deykk")]
+[node name="EnemySpawner26" parent="Enemy" index="29" instance=ExtResource("10_deykk")]
 position = Vector2(2240, -1504)
 EnemyName = 4
 EnemyLifeTime = 20.0
 
-[node name="EnemySpawner27" parent="Enemy" index="31" instance=ExtResource("10_deykk")]
+[node name="EnemySpawner27" parent="Enemy" index="30" instance=ExtResource("10_deykk")]
 position = Vector2(2560, -4992)
 EnemyName = 4
 EnemyLifeTime = 20.0
 
-[node name="FallingBlock3Enemy" parent="Enemy" index="32" instance=ExtResource("20_qpy0t")]
+[node name="FallingBlock3Enemy" parent="Enemy" index="31" instance=ExtResource("20_qpy0t")]
 position = Vector2(2864, -2208)
 
-[node name="FallingBlock3Enemy2" parent="Enemy" index="33" instance=ExtResource("20_qpy0t")]
+[node name="FallingBlock3Enemy2" parent="Enemy" index="32" instance=ExtResource("20_qpy0t")]
 position = Vector2(2416, -2272)
 
-[node name="FallingBlock5Enemy" parent="Enemy" index="34" instance=ExtResource("21_ct6i7")]
+[node name="FallingBlock5Enemy" parent="Enemy" index="33" instance=ExtResource("21_ct6i7")]
 position = Vector2(2736, -1024)
 
-[node name="FallingBlock5Enemy2" parent="Enemy" index="35" instance=ExtResource("21_ct6i7")]
+[node name="FallingBlock5Enemy2" parent="Enemy" index="34" instance=ExtResource("21_ct6i7")]
 position = Vector2(2800, -736)
 
-[node name="FallingBlock5Enemy3" parent="Enemy" index="36" instance=ExtResource("21_ct6i7")]
+[node name="FallingBlock5Enemy3" parent="Enemy" index="35" instance=ExtResource("21_ct6i7")]
 position = Vector2(2832, -736)
 
-[node name="FallingBlock5Enemy4" parent="Enemy" index="37" instance=ExtResource("21_ct6i7")]
+[node name="FallingBlock5Enemy4" parent="Enemy" index="36" instance=ExtResource("21_ct6i7")]
 position = Vector2(2448, -768)
 
-[node name="FallingBlock5Enemy5" parent="Enemy" index="38" instance=ExtResource("21_ct6i7")]
+[node name="FallingBlock5Enemy5" parent="Enemy" index="37" instance=ExtResource("21_ct6i7")]
 position = Vector2(2480, -768)
 
-[node name="FallingBlock5Enemy6" parent="Enemy" index="39" instance=ExtResource("21_ct6i7")]
+[node name="FallingBlock5Enemy6" parent="Enemy" index="38" instance=ExtResource("21_ct6i7")]
 position = Vector2(2352, -736)
 
-[node name="FallingBlock5Enemy7" parent="Enemy" index="40" instance=ExtResource("21_ct6i7")]
+[node name="FallingBlock5Enemy7" parent="Enemy" index="39" instance=ExtResource("21_ct6i7")]
 position = Vector2(2160, -1024)
 
-[node name="FallingBlock2Enemy" parent="Enemy" index="41" instance=ExtResource("22_twf3c")]
+[node name="FallingBlock2Enemy" parent="Enemy" index="40" instance=ExtResource("22_twf3c")]
 position = Vector2(4560, -2912)
 
-[node name="FallingBlock2Enemy2" parent="Enemy" index="42" instance=ExtResource("22_twf3c")]
+[node name="FallingBlock2Enemy2" parent="Enemy" index="41" instance=ExtResource("22_twf3c")]
 position = Vector2(4496, -2752)
 
-[node name="FallingBlock2Enemy3" parent="Enemy" index="43" instance=ExtResource("22_twf3c")]
+[node name="FallingBlock2Enemy3" parent="Enemy" index="42" instance=ExtResource("22_twf3c")]
 position = Vector2(4336, -2752)
 
-[node name="FallingBlock2Enemy4" parent="Enemy" index="44" instance=ExtResource("22_twf3c")]
+[node name="FallingBlock2Enemy4" parent="Enemy" index="43" instance=ExtResource("22_twf3c")]
 position = Vector2(4080, -2880)
 
-[node name="FallingBlock2Enemy5" parent="Enemy" index="45" instance=ExtResource("22_twf3c")]
+[node name="FallingBlock2Enemy5" parent="Enemy" index="44" instance=ExtResource("22_twf3c")]
 position = Vector2(3920, -3040)
 
-[node name="FallingBlock2Enemy6" parent="Enemy" index="46" instance=ExtResource("22_twf3c")]
+[node name="FallingBlock2Enemy6" parent="Enemy" index="45" instance=ExtResource("22_twf3c")]
 position = Vector2(3600, -2792)
 
-[node name="FallingBlock2Enemy7" parent="Enemy" index="47" instance=ExtResource("22_twf3c")]
+[node name="FallingBlock2Enemy7" parent="Enemy" index="46" instance=ExtResource("22_twf3c")]
 position = Vector2(3504, -2528)
 
-[node name="FallingBlock2Enemy8" parent="Enemy" index="48" instance=ExtResource("22_twf3c")]
+[node name="FallingBlock2Enemy8" parent="Enemy" index="47" instance=ExtResource("22_twf3c")]
 position = Vector2(3280, -2592)
 
-[node name="FallingBlock4Enemy" parent="Enemy" index="49" instance=ExtResource("23_ph5p3")]
+[node name="FallingBlock4Enemy" parent="Enemy" index="48" instance=ExtResource("23_ph5p3")]
 position = Vector2(1808, -2720)
 
-[node name="FallingBlock4Enemy2" parent="Enemy" index="50" instance=ExtResource("23_ph5p3")]
+[node name="FallingBlock4Enemy2" parent="Enemy" index="49" instance=ExtResource("23_ph5p3")]
 position = Vector2(1648, -2720)
 
-[node name="FallingBlock4Enemy3" parent="Enemy" index="51" instance=ExtResource("23_ph5p3")]
+[node name="FallingBlock4Enemy3" parent="Enemy" index="50" instance=ExtResource("23_ph5p3")]
 position = Vector2(1584, -2400)
 
-[node name="FallingBlock4Enemy4" parent="Enemy" index="52" instance=ExtResource("23_ph5p3")]
+[node name="FallingBlock4Enemy4" parent="Enemy" index="51" instance=ExtResource("23_ph5p3")]
 position = Vector2(1200, -2272)
 
-[node name="FallingBlock4Enemy5" parent="Enemy" index="53" instance=ExtResource("23_ph5p3")]
+[node name="FallingBlock4Enemy5" parent="Enemy" index="52" instance=ExtResource("23_ph5p3")]
 position = Vector2(1168, -2592)
 
-[node name="FallingBlock4Enemy6" parent="Enemy" index="54" instance=ExtResource("23_ph5p3")]
+[node name="FallingBlock4Enemy6" parent="Enemy" index="53" instance=ExtResource("23_ph5p3")]
 position = Vector2(912, -2976)
 
-[node name="FallingBlock4Enemy7" parent="Enemy" index="55" instance=ExtResource("23_ph5p3")]
+[node name="FallingBlock4Enemy7" parent="Enemy" index="54" instance=ExtResource("23_ph5p3")]
 position = Vector2(272, -2624)
 
-[node name="FallingBlock1Enemy" parent="Enemy" index="56" instance=ExtResource("24_tew4e")]
+[node name="FallingBlock1Enemy" parent="Enemy" index="55" instance=ExtResource("24_tew4e")]
 position = Vector2(2256, -3616)
 
-[node name="FallingBlock1Enemy2" parent="Enemy" index="57" instance=ExtResource("24_tew4e")]
+[node name="FallingBlock1Enemy2" parent="Enemy" index="56" instance=ExtResource("24_tew4e")]
 position = Vector2(2928, -3520)
 
-[node name="FallingBlock1Enemy3" parent="Enemy" index="58" instance=ExtResource("24_tew4e")]
+[node name="FallingBlock1Enemy3" parent="Enemy" index="57" instance=ExtResource("24_tew4e")]
 position = Vector2(2256, -3360)
 
-[node name="FallingBlock1Enemy4" parent="Enemy" index="59" instance=ExtResource("24_tew4e")]
+[node name="FallingBlock1Enemy4" parent="Enemy" index="58" instance=ExtResource("24_tew4e")]
 position = Vector2(2768, -3296)
 
-[node name="FallingBlock1Enemy5" parent="Enemy" index="60" instance=ExtResource("24_tew4e")]
+[node name="FallingBlock1Enemy5" parent="Enemy" index="59" instance=ExtResource("24_tew4e")]
 position = Vector2(2640, -3456)
 
 [node name="Path2D1" type="Path2D" parent="Others" index="0"]
