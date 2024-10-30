@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="9_ws4cq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi5u"]
-size = Vector2(20, 64)
+size = Vector2(20, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3sy"]
-size = Vector2(15, 56)
+size = Vector2(14, 42)
 
 [node name="NekomimiMaidEnemy" type="CharacterBody2D"]
 collision_layer = 32
@@ -33,11 +33,11 @@ JumpSe = "enemy_jump"
 TouchdownSe = "enemy_touchdown"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
 sprite_frames = ExtResource("6_dol53")
 animation = &"walk_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_1wi5u")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
@@ -55,6 +55,7 @@ ChangeTarget = NodePath("..")
 [node name="BurialArea" parent="." instance=ExtResource("9_ws4cq")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_hp3sy")
 
 [node name="BlockBreaker" type="Node2D" parent="."]

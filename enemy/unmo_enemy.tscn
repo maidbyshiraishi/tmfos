@@ -10,7 +10,7 @@
 size = Vector2(32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjnmj"]
-size = Vector2(18, 58)
+size = Vector2(22, 44)
 
 [node name="UnmoEnemy" type="CharacterBody2D"]
 collision_layer = 32
