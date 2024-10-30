@@ -57,7 +57,7 @@ public partial class MaidRobot2Enemy : Enemy
             if (onFloor && _jump)
             {
                 velocity.Y = m_jumpVelocity;
-                PlaySe("enemy_jump");
+                PlaySe(JumpSe);
                 _jump = false;
             }
         }
@@ -67,7 +67,7 @@ public partial class MaidRobot2Enemy : Enemy
 
         if (onFloor && !_lastOnFloor)
         {
-            PlaySe("enemy_touchdown");
+            PlaySe(TouchdownSe);
         }
 
         _lastOnFloor = onFloor;

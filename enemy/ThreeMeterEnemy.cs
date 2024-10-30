@@ -69,7 +69,7 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
             if (m_eyesight.IsAvoidPlayerShot(Direction))
             {
                 velocity.Y = m_shortJumpVelocity;
-                PlaySe("enemy_jump");
+                PlaySe(JumpSe);
             }
             // 主人公が視界に入ったら方向転換する
             else if (!SkipAttack && m_eyesight.InSightOfPlayer())
@@ -81,7 +81,7 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
             else if (m_eyesight.IsEncloseWall())
             {
                 velocity.Y = m_jumpVelocity;
-                PlaySe("enemy_jump");
+                PlaySe(JumpSe);
             }
             // 壁に接近した
             else if (m_eyesight.IsFaceToWall(Direction))
@@ -90,7 +90,7 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
                 {
                     // ジャンプできる場合はジャンプする
                     velocity.Y = m_jumpVelocity;
-                    PlaySe("enemy_jump");
+                    PlaySe(JumpSe);
                 }
                 else
                 {
@@ -116,14 +116,14 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
 
                             // 小ジャンプ
                             velocity.Y = m_shortJumpVelocity;
-                            PlaySe("enemy_jump");
+                            PlaySe(JumpSe);
                             break;
 
                         case Eyesight.JumpDistance.LongJump:
 
                             // 大ジャンプ
                             velocity.Y = m_jumpVelocity;
-                            PlaySe("enemy_jump");
+                            PlaySe(JumpSe);
                             break;
 
                         case Eyesight.JumpDistance.Retrun:
@@ -149,7 +149,7 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
 
         if (onFloor && !_lastOnFloor)
         {
-            PlaySe("enemy_touchdown");
+            PlaySe(TouchdownSe);
         }
 
         _lastOnFloor = onFloor;

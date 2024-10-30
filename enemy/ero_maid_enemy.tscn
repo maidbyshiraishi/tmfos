@@ -14,7 +14,12 @@ collision_mask = 1551
 script = ExtResource("1_bm4am")
 Life = 1200
 MaxLife = 1200
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
 Attack = 50
+JumpSe = "enemy_jump"
+TouchdownSe = "enemy_touchdown"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)

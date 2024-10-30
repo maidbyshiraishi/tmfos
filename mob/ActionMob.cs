@@ -69,6 +69,21 @@ public partial class ActionMob : Mob
     [Export]
     public MobActionType Action { get; set; } = MobActionType.Walk;
 
+    [Export]
+    public int Attack { get; set; } = 20;
+
+    [Export]
+    public bool SkipAttack { get; set; } = false;
+
+    [Export]
+    public double SkipAttackTime { get; set; } = 0.5f;
+
+    [Export]
+    public string JumpSe { get; set; }
+
+    [Export]
+    public string TouchdownSe { get; set; }
+
     protected float m_acceleration;
     protected float m_reductionAcceleration;
     protected float m_airAcceleration;
@@ -231,5 +246,21 @@ public partial class ActionMob : Mob
         velocity.Y += m_gravity * (float)delta;
         Velocity = velocity;
         _ = MoveAndSlide();
+    }
+
+    protected async void SetSkipAttack()
+    {
+        if (SkipAttack)
+        {
+            return;
+        }
+
+        if (SkipAttackTime >= 0.05f)
+        {
+            SkipAttack = true;
+            _ = await ToSignal(GetTree().CreateTimer(SkipAttackTime), Timer.SignalName.Timeout);
+        }
+
+        SkipAttack = false;
     }
 }

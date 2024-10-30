@@ -12,6 +12,9 @@ collision_mask = 16
 script = ExtResource("1_3gci2")
 Life = 2000
 MaxLife = 2000
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_hxh40")

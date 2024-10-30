@@ -32,6 +32,12 @@ public partial class DurableShot : Shot, IDurable
     [Export]
     public string DeadSe { get; set; }
 
+    [Export]
+    public string DamageSe { get; set; }
+
+    [Export]
+    public string TimeupSe { get; set; }
+
     private Timer _lifeTimer;
 
     public override void _Ready()
@@ -62,7 +68,7 @@ public partial class DurableShot : Shot, IDurable
 
         MobState = MobStateType.Timeup;
         PlaySprite("dead");
-        PlaySeIsOnScreen(DeadSe);
+        PlaySe(TimeupSe);
     }
 
     public override void SetLifeTime(double lifeTime)
@@ -132,6 +138,7 @@ public partial class DurableShot : Shot, IDurable
     {
         SetSkipDamage();
         DamageBlink();
+        PlaySe(DamageSe);
     }
 
     public virtual void Dead()
@@ -143,7 +150,7 @@ public partial class DurableShot : Shot, IDurable
 
         MobState = MobStateType.Dead;
         PlaySprite("dead");
-        PlaySeIsOnScreen(DeadSe);
+        PlaySe(DeadSe);
     }
 
     public virtual void FullRecovered()

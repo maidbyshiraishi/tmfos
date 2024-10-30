@@ -80,7 +80,7 @@ public partial class MaidRobot1Enemy : Enemy
 
         if (onFloor && !_lastOnFloor)
         {
-            PlaySe("enemy_touchdown");
+            PlaySe(TouchdownSe);
         }
 
         _lastOnFloor = onFloor;

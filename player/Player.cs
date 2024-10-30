@@ -239,7 +239,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         if (Input.IsActionJustPressed("ui_accept"))
         {
             UnsetClimb();
-            PlaySe("player_jump");
+            PlaySe(JumpSe);
         }
 
         _lastOnFloor = false;
@@ -367,7 +367,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
                 // すり抜けはしゃがんだ状態で判定する
                 _coyote = false;
                 velocity.Y = m_jumpVelocity;
-                PlaySe("player_jump");
+                PlaySe(JumpSe);
             }
             else if (signY == 1)
             {
@@ -379,7 +379,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
 
         if (!_lastOnFloor)
         {
-            PlaySe("player_touchdown");
+            PlaySe(TouchdownSe);
             CollisionOnewayBlock(true, _itemData.Shoes);
         }
 
@@ -432,7 +432,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
             // 空中でもRayCastが接触している場合とコヨーテタイム中はジャンプする
             _coyote = false;
             velocity.Y = m_jumpVelocity;
-            PlaySe("player_jump");
+            PlaySe(JumpSe);
         }
         else if (Input.IsActionJustPressed("ui_accept") && _itemData.WallJump && IsOnWall() && _lastJumpDirection != signX)
         {
@@ -443,7 +443,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
             // ジャンプする
             // ここではジャンプのみ、すり抜けはしゃがんだ状態で判定する
             velocity.Y = m_jumpVelocity;
-            PlaySe("player_jump");
+            PlaySe(JumpSe);
         }
         else if (Input.IsActionJustReleased("ui_accept") && velocity.Y < m_shortJumpVelocity)
         {
@@ -550,7 +550,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     public override void Damaged()
     {
         base.Damaged();
-        PlaySe("player_damage");
+        PlaySe(DamageSe);
 
         // ハシゴでダメージを受けた場合、ハシゴは解除される
         if (Action is MobActionType.Climb)
@@ -558,17 +558,6 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
             UnsetClimb();
             Action = MobActionType.Walk;
         }
-    }
-
-    public override void Dead()
-    {
-        if (MobState is MobStateType.Dead)
-        {
-            return;
-        }
-
-        base.Dead();
-        PlaySe("player_dead");
     }
 
     public override void FullRecovered()
@@ -587,17 +576,6 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     {
         base.Resurrected();
         PlaySe("player_resurrected");
-    }
-
-    public override void Timeup()
-    {
-        if (MobState is MobStateType.Timeup)
-        {
-            return;
-        }
-
-        base.Timeup();
-        PlaySe("player_timeup");
     }
 
     public override void ChangeSprite(string animation, DirectionType direction)

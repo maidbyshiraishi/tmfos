@@ -18,8 +18,9 @@ collision_mask = 1551
 script = ExtResource("2_s6pr3")
 Life = 150
 MaxLife = 150
-Attack = 15
-SkipAttackTime = 1.0
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
 Direction = -1
 Approach = 120.0
 MaxSpeed = 150.0
@@ -29,6 +30,10 @@ AirMaxSpeed = 150.0
 JumpTime = 3.0
 ShortJumpHeight = 40.0
 JumpHeight = 100.0
+Attack = 15
+SkipAttackTime = 1.0
+JumpSe = "enemy_jump"
+TouchdownSe = "enemy_touchdown"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)

@@ -18,15 +18,6 @@ public partial class DurableMob : ActionMob, IDurable
     public int MaxLife { get; set; } = 20;
 
     [Export]
-    public int Attack { get; set; } = 20;
-
-    [Export]
-    public bool SkipAttack { get; set; } = false;
-
-    [Export]
-    public double SkipAttackTime { get; set; } = 0.5f;
-
-    [Export]
     public bool SkipDamage { get; set; } = false;
 
     [Export]
@@ -37,6 +28,15 @@ public partial class DurableMob : ActionMob, IDurable
 
     [Export]
     public MobStateType MobState { get; set; } = MobStateType.Normal;
+
+    [Export]
+    public string DeadSe { get; set; }
+
+    [Export]
+    public string DamageSe { get; set; }
+
+    [Export]
+    public string TimeupSe { get; set; }
 
     private Timer _lifeTimer;
 
@@ -102,6 +102,7 @@ public partial class DurableMob : ActionMob, IDurable
         MobState = MobStateType.Timeup;
         Velocity = Vector2.Zero;
         ChangeSprite("dead", DirectionType.None);
+        PlaySe(TimeupSe);
     }
 
     public virtual void ResetLifeTime()
@@ -166,6 +167,7 @@ public partial class DurableMob : ActionMob, IDurable
     {
         SetSkipDamage();
         DamageBlink();
+        PlaySe(DamageSe);
     }
 
     public virtual void Dead()
@@ -180,6 +182,7 @@ public partial class DurableMob : ActionMob, IDurable
         MobState = MobStateType.Dead;
         Velocity = Vector2.Zero;
         ChangeSprite("dead", DirectionType.None);
+        PlaySe(DeadSe);
     }
 
     public virtual void FullRecovered()
@@ -250,22 +253,6 @@ public partial class DurableMob : ActionMob, IDurable
         }
 
         SkipDamage = false;
-    }
-
-    protected async void SetSkipAttack()
-    {
-        if (SkipAttack)
-        {
-            return;
-        }
-
-        if (SkipAttackTime >= 0.05f)
-        {
-            SkipAttack = true;
-            _ = await ToSignal(GetTree().CreateTimer(SkipAttackTime), Timer.SignalName.Timeout);
-        }
-
-        SkipAttack = false;
     }
 
     public virtual void DieExternalCauses()

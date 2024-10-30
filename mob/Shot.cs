@@ -92,7 +92,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
     {
     }
 
-    protected virtual void PlaySeIsOnScreen(string name)
+    protected virtual void PlaySe(string name)
     {
         if (m_visibleOnScreenNotifier2D is null || m_visibleOnScreenNotifier2D.IsOnScreen())
         {

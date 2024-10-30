@@ -70,7 +70,9 @@ FlyingSe = "rocket_maid"
 DamagedExecCommand = true
 Life = 10000000000
 MaxLife = 10000000000
-DeadSe = "explosion"
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
 Attack = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

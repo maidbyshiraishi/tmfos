@@ -16,8 +16,9 @@ size = Vector2(25, 25)
 collision_layer = 32
 collision_mask = 1551
 script = ExtResource("2_xob4s")
-Attack = 10
-SkipAttackTime = 0.8
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
 Direction = -1
 Approach = 16.0
 MaxSpeed = 250.0
@@ -27,6 +28,10 @@ AirMaxSpeed = 300.0
 AirReductionApproach = 24.0
 ShortJumpHeight = 100.0
 JumpHeight = 200.0
+Attack = 10
+SkipAttackTime = 0.8
+JumpSe = "enemy_jump"
+TouchdownSe = "enemy_touchdown"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("5_m46cn")

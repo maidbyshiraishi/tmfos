@@ -65,7 +65,7 @@ public partial class PathFollowEnemy : DurableShot
 
         if (_oldDirection != m_direction)
         {
-            PlaySeIsOnScreen(FlyingSe);
+            PlaySe(FlyingSe);
             _oldDirection = m_direction;
         }
     }

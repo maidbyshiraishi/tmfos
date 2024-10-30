@@ -25,7 +25,12 @@ floor_max_angle = 0.872665
 floor_snap_length = 8.0
 script = ExtResource("1_mswun")
 MaxLife = 100
+DeadSe = "player_dead"
+DamageSe = "player_damage"
+TimeupSe = "player_timeup"
 SkipAttackTime = 0.2
+JumpSe = "player_jump"
+TouchdownSe = "player_touchdown"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)

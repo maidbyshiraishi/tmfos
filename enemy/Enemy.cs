@@ -11,10 +11,6 @@ namespace tmfos.enemy;
 /// </summary>
 public partial class Enemy : DurableMob, ISpawnedNode
 {
-    /// <summary>
-    /// 敵攻撃力
-    /// </summary>
-
     protected Player m_player;
 
     public override void InitializeNode()
@@ -22,12 +18,6 @@ public partial class Enemy : DurableMob, ISpawnedNode
         base.InitializeNode();
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
         m_player = stageRoot.GetNode<Player>("%Player");
-    }
-
-    public override void Damaged()
-    {
-        base.Damaged();
-        PlaySe("enemy_damage");
     }
 
     public override void Dead()
@@ -38,7 +28,6 @@ public partial class Enemy : DurableMob, ISpawnedNode
         }
 
         base.Dead();
-        PlaySe("enemy_dead");
         SetCollisionMaskValue(4, false);
     }
 
@@ -50,7 +39,6 @@ public partial class Enemy : DurableMob, ISpawnedNode
         }
 
         base.Timeup();
-        PlaySe("enemy_dead");
         SetCollisionMaskValue(4, false);
     }
 

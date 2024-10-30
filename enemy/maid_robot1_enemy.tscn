@@ -18,6 +18,11 @@ script = ExtResource("1_rr7fa")
 ShotWait = 0.8
 Life = 800
 MaxLife = 800
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+JumpSe = "enemy_jump"
+TouchdownSe = "enemy_touchdown"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)

@@ -14,6 +14,8 @@ FlyingSe = "rocket_maid"
 Life = 50
 MaxLife = 50
 DeadSe = "explosion"
+DamageSe = "enemy_damage"
+TimeupSe = "explosion"
 Speed = 250.0
 Attack = 30
 

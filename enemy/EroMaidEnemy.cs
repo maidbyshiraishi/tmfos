@@ -67,7 +67,7 @@ public partial class EroMaidEnemy : Enemy
 
         if (onFloor && !_lastOnFloor)
         {
-            PlaySe("enemy_touchdown");
+            PlaySe(TouchdownSe);
         }
 
         _lastOnFloor = onFloor;
