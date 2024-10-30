@@ -204,37 +204,29 @@ script = ExtResource("9_3pq8c")
 position = Vector2(712, -2816)
 EnemyName = 5
 
-[node name="EnemySpawner2" parent="Enemy" index="1" instance=ExtResource("14_4j3gq")]
-position = Vector2(2040, -2680)
-EnemyName = 5
-
-[node name="EnemySpawner3" parent="Enemy" index="2" instance=ExtResource("14_4j3gq")]
-position = Vector2(1472, -2488)
-EnemyName = 5
-
-[node name="EnemySpawner4" parent="Enemy" index="3" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner4" parent="Enemy" index="1" instance=ExtResource("14_4j3gq")]
 position = Vector2(1280, -2688)
 EnemyName = 5
 
-[node name="EnemySpawner5" parent="Enemy" index="4" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner5" parent="Enemy" index="2" instance=ExtResource("14_4j3gq")]
 position = Vector2(1728, -2752)
 EnemyName = 5
 
-[node name="EnemySpawner6" parent="Enemy" index="5" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner6" parent="Enemy" index="3" instance=ExtResource("14_4j3gq")]
 position = Vector2(2208, -2424)
 EnemyName = 5
 
-[node name="EnemySpawner7" parent="Enemy" index="6" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner7" parent="Enemy" index="4" instance=ExtResource("14_4j3gq")]
 position = Vector2(2632, -2680)
 EnemyName = 5
 
-[node name="EnemySpawner8" parent="Enemy" index="7" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner8" parent="Enemy" index="5" instance=ExtResource("14_4j3gq")]
 position = Vector2(2960, -2496)
 
-[node name="EnemySpawner9" parent="Enemy" index="8" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner9" parent="Enemy" index="6" instance=ExtResource("14_4j3gq")]
 position = Vector2(3184, -2400)
 
-[node name="Path2D" type="Path2D" parent="Enemy" index="9"]
+[node name="Path2D" type="Path2D" parent="Enemy" index="7"]
 curve = SubResource("Curve2D_t8i0q")
 script = ExtResource("15_7tk1p")
 
@@ -262,57 +254,57 @@ position = Vector2(1.52588e-05, 55.9998)
 [node name="RocketMaid2Enemy3" parent="Enemy/Path2D/PathFollower2" index="2" instance=ExtResource("17_i02fe")]
 position = Vector2(1.52588e-05, -56.0002)
 
-[node name="EnemySpawner10" parent="Enemy" index="10" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner10" parent="Enemy" index="8" instance=ExtResource("14_4j3gq")]
 position = Vector2(4520, -1312)
 
-[node name="EnemySpawner11" parent="Enemy" index="11" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner11" parent="Enemy" index="9" instance=ExtResource("14_4j3gq")]
 position = Vector2(3904, -1600)
 
-[node name="EnemySpawner12" parent="Enemy" index="12" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner12" parent="Enemy" index="10" instance=ExtResource("14_4j3gq")]
 position = Vector2(4096, -1152)
 
-[node name="EnemySpawner13" parent="Enemy" index="13" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner13" parent="Enemy" index="11" instance=ExtResource("14_4j3gq")]
 position = Vector2(3824, -1152)
 
-[node name="EnemySpawner14" parent="Enemy" index="14" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner14" parent="Enemy" index="12" instance=ExtResource("14_4j3gq")]
 position = Vector2(3408, -1056)
 
-[node name="EnemySpawner15" parent="Enemy" index="15" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner15" parent="Enemy" index="13" instance=ExtResource("14_4j3gq")]
 position = Vector2(3632, -1024)
 
-[node name="EnemySpawner16" parent="Enemy" index="16" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner16" parent="Enemy" index="14" instance=ExtResource("14_4j3gq")]
 position = Vector2(2816, -832)
 
-[node name="EnemySpawner17" parent="Enemy" index="17" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner17" parent="Enemy" index="15" instance=ExtResource("14_4j3gq")]
 position = Vector2(2944, -832)
 
-[node name="EnemySpawner18" parent="Enemy" index="18" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner18" parent="Enemy" index="16" instance=ExtResource("14_4j3gq")]
 position = Vector2(3328, -960)
 
-[node name="EnemySpawner19" parent="Enemy" index="19" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner19" parent="Enemy" index="17" instance=ExtResource("14_4j3gq")]
 position = Vector2(2944, -384)
 
-[node name="EnemySpawner20" parent="Enemy" index="20" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner20" parent="Enemy" index="18" instance=ExtResource("14_4j3gq")]
 position = Vector2(3072, -384)
 
-[node name="EnemySpawner21" parent="Enemy" index="21" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner21" parent="Enemy" index="19" instance=ExtResource("14_4j3gq")]
 position = Vector2(3200, -384)
 
-[node name="EnemySpawner22" parent="Enemy" index="22" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner22" parent="Enemy" index="20" instance=ExtResource("14_4j3gq")]
 position = Vector2(3680, -736)
 
-[node name="EnemySpawner23" parent="Enemy" index="23" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner23" parent="Enemy" index="21" instance=ExtResource("14_4j3gq")]
 position = Vector2(3456, -288)
 
-[node name="EnemySpawner24" parent="Enemy" index="24" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner24" parent="Enemy" index="22" instance=ExtResource("14_4j3gq")]
 position = Vector2(2624, -320)
 EnemyName = 5
 
-[node name="EnemySpawner25" parent="Enemy" index="25" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner25" parent="Enemy" index="23" instance=ExtResource("14_4j3gq")]
 position = Vector2(2240, -384)
 EnemyName = 5
 
-[node name="EnemySpawner26" parent="Enemy" index="26" instance=ExtResource("14_4j3gq")]
+[node name="EnemySpawner26" parent="Enemy" index="24" instance=ExtResource("14_4j3gq")]
 position = Vector2(1856, -384)
 EnemyName = 5
 
