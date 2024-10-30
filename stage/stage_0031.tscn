@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cvvhkenirrk6w"]
+[gd_scene load_steps=25 format=4 uid="uid://cvvhkenirrk6w"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_cdwsu"]
 [ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="2_2mq1n"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="12_asd0i"]
 [ext_resource type="PackedScene" uid="uid://8jidpood58yw" path="res://command/start_timer_trigger_command.tscn" id="13_oboyg"]
 [ext_resource type="PackedScene" uid="uid://bye7ngyrlnbx2" path="res://command/change_tentacle_head_target_command.tscn" id="14_8nh81"]
+[ext_resource type="Texture2D" uid="uid://bgs46uwca6xsq" path="res://contents/image/decoration/dragon_leg.png" id="14_i3x6e"]
 [ext_resource type="Texture2D" uid="uid://bxvr2jhhma4w3" path="res://contents/image/decoration/dragon_body.png" id="17_qsunl"]
 [ext_resource type="Shader" path="res://contents/shader/raster_scroll.gdshader" id="19_tt0bg"]
 [ext_resource type="Texture2D" uid="uid://1byvvsya18nl" path="res://contents/image/decoration/dragon_tail.png" id="19_w2j1r"]
@@ -40,7 +41,7 @@ color = Color(0, 0, 0, 1)
 visible = false
 
 [node name="Background" parent="TileMap" index="0"]
-tile_map_data = PackedByteArray("AAARAP//AAAHAAMAAAASAP7/AAAHAAMAAAARAP7/AAAHAAMAAAARAP3/AAAHAAMAAAASAP3/AAAHAAMAAAASAPz/AAAHAAMAAAASAPv/AAAHAAMAAAATAPv/AAADAAMAAAATAPr/AAADAAMAAAASAPr/AAAHAAMAAAATAP7/AAADAAMAAAATAP//AAADAAMAAAASAP//AAAHAAMAAAATAP3/AAADAAMAAAATAPz/AAADAAMAAAARAPz/AAAHAAMAAAAQAP3/AAADAAMAAAAQAPz/AAADAAMAAAAPAPz/AAAHAAMAAAAPAPv/AAAHAAMAAAAPAPr/AAAHAAMAAAAPAP3/AAAHAAMAAAAOAP3/AAAHAAMAAAAOAP7/AAAHAAMAAAAOAP//AAAHAAMAAAANAP//AAAIAAMAAAAPAP7/AAAHAAMAAAAPAP//AAAHAAMAAAAQAP7/AAADAAMAAAAQAP//AAADAAMAAAARAPv/AAAHAAMAAAARAPr/AAAHAAMAAAARAPn/AAAHAAMAAAARAPj/AAAHAAMAAAARAPf/AAAHAAMAAAASAPn/AAAHAAMAAAASAPj/AAAHAAMAAAASAPf/AAAHAAMAAAASAPb/AAAHAAMAAAASAPX/AAAHAAMAAAATAPn/AAADAAMAAAATAPj/AAAFAAMAAAALAP//AAAIAAMAAAALAP7/AAAIAAMAAAALAP3/AAAIAAMAAAALAPz/AAAIAAMAAAALAPv/AAAIAAMAAAALAPr/AAAIAAMAAAALAPn/AAAIAAMAAAALAPj/AAAIAAMAAAALAPf/AAAIAAMAAAALAPb/AAAIAAMAAAALAPX/AAAIAAMAAAALAPT/AAAIAAMAAAALAPP/AAAIAAMAAAALAPL/AAAIAAMAAAALAPH/AAAIAAMAAAANAP7/AAAIAAMAAAANAP3/AAAIAAMAAAANAPz/AAAIAAMAAAANAPv/AAAIAAMAAAANAPr/AAAIAAMAAAANAPn/AAAIAAMAAAANAPj/AAAIAAMAAAANAPf/AAAIAAMAAAANAPb/AAAIAAMAAAANAPX/AAAIAAMAAAANAPT/AAAIAAMAAAANAPP/AAAIAAMAAAANAPL/AAAIAAMAAAANAPH/AAAIAAMAAAAPAPn/AAAIAAMAAAAPAPj/AAAIAAMAAAAPAPf/AAAIAAMAAAAPAPb/AAAIAAMAAAAPAPX/AAAIAAMAAAAPAPT/AAAIAAMAAAAPAPP/AAAIAAMAAAAPAPL/AAAIAAMAAAAPAPH/AAAIAAMAAAAQAPv/AAAFAAMAAAA=")
+tile_map_data = PackedByteArray("AAARAP//AAAHAAMAAAASAP7/AAAHAAMAAAARAP7/AAAHAAMAAAARAP3/AAAHAAMAAAASAP3/AAAHAAMAAAASAPz/AAAHAAMAAAASAPv/AAAHAAMAAAATAPv/AAAFAAMAAAATAPr/AAAHAAMAAAASAPr/AAAHAAMAAAATAP7/AAADAAMAAAATAP//AAADAAMAAAASAP//AAAHAAMAAAATAP3/AAADAAMAAAATAPz/AAADAAMAAAARAPz/AAAHAAMAAAAQAP3/AAADAAMAAAAQAPz/AAADAAMAAAAPAPz/AAAHAAMAAAAPAPv/AAAHAAMAAAAPAP3/AAAHAAMAAAAOAP3/AAAHAAMAAAAOAP7/AAAHAAMAAAAOAP//AAAHAAMAAAANAP//AAAIAAMAAAAPAP7/AAAHAAMAAAAPAP//AAAHAAMAAAAQAP7/AAADAAMAAAAQAP//AAADAAMAAAARAPv/AAAHAAMAAAARAPr/AAAHAAMAAAARAPn/AAAHAAMAAAARAPj/AAAHAAMAAAARAPf/AAAHAAMAAAASAPn/AAAHAAMAAAASAPj/AAAHAAMAAAASAPf/AAAHAAMAAAASAPb/AAAHAAMAAAASAPX/AAAHAAMAAAALAP//AAAIAAMAAAALAP7/AAAIAAMAAAALAP3/AAAIAAMAAAALAPz/AAAIAAMAAAALAPv/AAAIAAMAAAALAPr/AAAIAAMAAAALAPn/AAAIAAMAAAALAPj/AAAIAAMAAAALAPf/AAAIAAMAAAALAPb/AAAIAAMAAAALAPX/AAAIAAMAAAALAPT/AAAIAAMAAAALAPP/AAAIAAMAAAALAPL/AAAIAAMAAAALAPH/AAAIAAMAAAANAP7/AAAIAAMAAAANAP3/AAAIAAMAAAANAPz/AAAIAAMAAAANAPv/AAAIAAMAAAANAPr/AAAIAAMAAAANAPn/AAAIAAMAAAANAPj/AAAIAAMAAAANAPf/AAAIAAMAAAANAPb/AAAIAAMAAAANAPX/AAAIAAMAAAANAPT/AAAIAAMAAAANAPP/AAAIAAMAAAANAPL/AAAIAAMAAAANAPH/AAAIAAMAAAAPAPn/AAAIAAMAAAAPAPj/AAAIAAMAAAAPAPf/AAAIAAMAAAAPAPb/AAAIAAMAAAAPAPX/AAAIAAMAAAAPAPT/AAAIAAMAAAAPAPP/AAAIAAMAAAAPAPL/AAAIAAMAAAAPAPH/AAAIAAMAAAAQAPv/AAAFAAMAAAAQAPr/AAAHAAMAAAAQAPn/AAAHAAMAAAAPAPr/AAAIAAMAAAA=")
 
 [node name="Ground" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAATAP//AAAFAAcAAAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAAAP7/AAAEAAIAAAAAAP3/AAADAAIAAAAAAPz/AAADAAIAAAAAAPv/AAADAAIAAAAAAPr/AAADAAIAAAAAAPn/AAADAAIAAAAAAPj/AAADAAIAAAAAAPf/AAADAAIAAAAAAPb/AAADAAIAAAAAAPX/AAADAAIAAAAAAPT/AAADAAIAAAAAAPP/AAADAAIAAAAAAPL/AAADAAIAAAAAAPH/AAADAAIAAAA=")
@@ -357,16 +358,38 @@ one_shot = true
 Head = NodePath("../../TentacleHead")
 Target = NodePath("../../../../Player")
 
-[node name="DragonBody" type="Sprite2D" parent="Decoration2" index="0"]
+[node name="DragonLeg" type="Sprite2D" parent="Decoration2" index="0"]
+position = Vector2(612, -206)
+rotation = -1.76228
+texture = ExtResource("14_i3x6e")
+
+[node name="DragonLeg3" type="Sprite2D" parent="Decoration2" index="1"]
+position = Vector2(544, -304)
+rotation = -1.76228
+texture = ExtResource("14_i3x6e")
+
+[node name="DragonLeg2" type="Sprite2D" parent="Decoration2" index="2"]
+position = Vector2(536, -225)
+rotation = 2.01891
+texture = ExtResource("14_i3x6e")
+flip_h = true
+
+[node name="DragonLeg4" type="Sprite2D" parent="Decoration2" index="3"]
+position = Vector2(512, -392)
+rotation = 3.40322
+texture = ExtResource("14_i3x6e")
+flip_h = true
+
+[node name="DragonBody" type="Sprite2D" parent="Decoration2" index="4"]
 position = Vector2(576, -288)
 texture = ExtResource("17_qsunl")
 
-[node name="DragonTail" type="Sprite2D" parent="Decoration2" index="1"]
+[node name="DragonTail" type="Sprite2D" parent="Decoration2" index="5"]
 material = SubResource("ShaderMaterial_1cie7")
 position = Vector2(576, -104)
 texture = ExtResource("19_w2j1r")
 
-[node name="DragonTail2" type="Sprite2D" parent="Decoration2" index="2"]
+[node name="DragonTail2" type="Sprite2D" parent="Decoration2" index="6"]
 material = SubResource("ShaderMaterial_1cie7")
 position = Vector2(576, -104)
 texture = ExtResource("19_w2j1r")
@@ -390,20 +413,20 @@ GroupName = "SweepEnemyObserver"
 DialogPath = "res://theater/talk_0036.tscn"
 
 [node name="TmfosEnemy" parent="." index="17" groups=["SweepEnemyObserver"] instance=ExtResource("11_o3bmi")]
-position = Vector2(560, -304)
+position = Vector2(528, -240)
 
 [node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("12_67s0e")]
 position = Vector2(480, 16)
 scale = Vector2(60, 1)
 
 [node name="Marker2D" type="Marker2D" parent="." index="19" groups=["TeleportPosition"]]
-position = Vector2(568, -392)
+position = Vector2(504, -424)
 
 [node name="Marker2D2" type="Marker2D" parent="." index="20" groups=["TeleportPosition"]]
-position = Vector2(560, -304)
+position = Vector2(528, -240)
 
 [node name="Marker2D3" type="Marker2D" parent="." index="21" groups=["TeleportPosition"]]
-position = Vector2(496, -208)
+position = Vector2(496, -176)
 
 [node name="Marker2D4" type="Marker2D" parent="." index="22" groups=["TeleportPosition"]]
-position = Vector2(464, -120)
+position = Vector2(464, -112)
