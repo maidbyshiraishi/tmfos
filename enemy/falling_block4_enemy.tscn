@@ -25,7 +25,7 @@ size = Vector2(32, 32)
 collision_layer = 32
 collision_mask = 24
 script = ExtResource("1_el67s")
-Speed = 250.0
+Speed = 180.0
 Attack = 10
 Direction = Vector2(0, 1)
 
