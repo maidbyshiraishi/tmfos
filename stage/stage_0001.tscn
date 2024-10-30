@@ -597,9 +597,3 @@ scale = Vector2(100, 1)
 [node name="OutOfBorder3" parent="OutOfBorder" index="2" instance=ExtResource("5_2odgt")]
 position = Vector2(4656, -2032)
 scale = Vector2(100, 1)
-
-[node name="WoodDoor" parent="." index="17" instance=ExtResource("10_bdb5g")]
-position = Vector2(2576, -2656)
-DestStageNo = 21
-DestDoorNo = 2
-DoorNo = 999
