@@ -58,10 +58,13 @@ position = Vector2(976, -176)
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="19"]
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("8_27j5l")
+
+[node name="Torch4" parent="Decoration2" index="0" instance=ExtResource("9_v3kt5")]
+position = Vector2(1008, -176)
 
 [node name="Fire1" parent="Others" index="0" instance=ExtResource("11_tpdqo")]
 position = Vector2(752, -80)
@@ -71,9 +74,6 @@ position = Vector2(784, -80)
 
 [node name="Fire3" parent="Others" index="2" instance=ExtResource("11_tpdqo")]
 position = Vector2(816, -80)
-
-[node name="Torch4" parent="Decoration2" index="0" instance=ExtResource("9_v3kt5")]
-position = Vector2(1008, -176)
 
 [node name="HUD" parent="." index="13"]
 Text1 = "チュートリアル"

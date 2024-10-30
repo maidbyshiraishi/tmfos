@@ -237,7 +237,7 @@ position = Vector2(3680, -2896)
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="19"]
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("6_6adyt")
@@ -361,17 +361,17 @@ script = ExtResource("11_22fyp")
 
 [node name="MovingPlatform1" parent="Others/Path2D" index="0" instance=ExtResource("12_jpaer")]
 position = Vector2(932.077, -384)
-scale = Vector2(2, 1)
+scale = Vector2(3, 1)
 progress = 831.454
 
 [node name="MovingPlatform2" parent="Others/Path2D" index="1" instance=ExtResource("12_jpaer")]
 position = Vector2(1533.49, -650.694)
-scale = Vector2(2, 1)
+scale = Vector2(3, 1)
 progress = 92.3838
 
 [node name="MovingPlatform3" parent="Others/Path2D" index="2" instance=ExtResource("12_jpaer")]
 position = Vector2(1301.63, -384)
-scale = Vector2(2, 1)
+scale = Vector2(3, 1)
 progress = 461.919
 
 [node name="HUD" parent="." index="13"]

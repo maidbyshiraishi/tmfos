@@ -169,7 +169,7 @@ position = Vector2(3856, -144)
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="19"]
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("9_ks1r2")
