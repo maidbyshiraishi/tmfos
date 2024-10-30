@@ -47,12 +47,14 @@ rect = Rect2(-16, -32, 32, 64)
 
 [node name="PointLight2D" type="PointLight2D" parent="Light"]
 visible = false
-energy = 0.7
+energy = 0.3
+blend_mode = 2
 texture = ExtResource("3_xhs2b")
 
 [node name="PointLight2DLampItem" type="PointLight2D" parent="Light"]
 visible = false
-energy = 0.7
+energy = 0.3
+blend_mode = 2
 texture = ExtResource("3_xhs2b")
 texture_scale = 5.0
 

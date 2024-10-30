@@ -6,7 +6,7 @@
 [node name="Lamp" type="Node2D"]
 
 [node name="Light" parent="." instance=ExtResource("1_y65he")]
-RangeRatio = 1.5
+RangeRatio = 3.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_m4jx2")

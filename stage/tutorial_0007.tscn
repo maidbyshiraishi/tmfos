@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cpeug00amy0gx"]
+[gd_scene load_steps=13 format=4 uid="uid://cpeug00amy0gx"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
 [ext_resource type="Texture2D" uid="uid://bwdd24muur4u6" path="res://contents/image/background/dark_gradation.png" id="2_d8ed4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="7_ba3jm"]
 [ext_resource type="Script" path="res://player/Camera.cs" id="8_27j5l"]
 [ext_resource type="PackedScene" uid="uid://yyq021ra4g7a" path="res://decoration/torch.tscn" id="9_v3kt5"]
+[ext_resource type="PackedScene" uid="uid://gbo2sbr8uow2" path="res://decoration/lamp.tscn" id="10_cgwxt"]
 [ext_resource type="PackedScene" uid="uid://clybmlb5rps41" path="res://others/fire.tscn" id="11_tpdqo"]
 
 [node name="Stage" instance=ExtResource("1_axhrv")]
@@ -66,14 +67,17 @@ script = ExtResource("8_27j5l")
 [node name="Torch4" parent="Decoration2" index="0" instance=ExtResource("9_v3kt5")]
 position = Vector2(1008, -176)
 
-[node name="Fire1" parent="Others" index="0" instance=ExtResource("11_tpdqo")]
-position = Vector2(752, -80)
+[node name="Lamp" parent="Decoration2" index="1" instance=ExtResource("10_cgwxt")]
+position = Vector2(656, -84)
 
-[node name="Fire2" parent="Others" index="1" instance=ExtResource("11_tpdqo")]
+[node name="Fire1" parent="Others" index="0" instance=ExtResource("11_tpdqo")]
 position = Vector2(784, -80)
 
-[node name="Fire3" parent="Others" index="2" instance=ExtResource("11_tpdqo")]
+[node name="Fire2" parent="Others" index="1" instance=ExtResource("11_tpdqo")]
 position = Vector2(816, -80)
+
+[node name="Fire3" parent="Others" index="2" instance=ExtResource("11_tpdqo")]
+position = Vector2(752, -80)
 
 [node name="HUD" parent="." index="13"]
 Text1 = "チュートリアル"

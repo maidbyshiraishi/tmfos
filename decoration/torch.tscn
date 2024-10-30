@@ -6,7 +6,7 @@
 [node name="Torch" type="Node2D"]
 
 [node name="Light" parent="." instance=ExtResource("1_tj1y7")]
-RangeRatio = 1.3
+RangeRatio = 1.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_ue0c3")

@@ -22,4 +22,4 @@ position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_eqqxc")
 
 [node name="Light" parent="." index="2" instance=ExtResource("3_y4siv")]
-RangeRatio = 1.5
+RangeRatio = 2.5

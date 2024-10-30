@@ -14,6 +14,8 @@ script = ExtResource("1_6dydd")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
+energy = 0.3
+blend_mode = 2
 texture = ExtResource("2_1vioq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
