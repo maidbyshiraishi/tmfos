@@ -17,7 +17,7 @@ DeadSe = "explosion"
 DamageSe = "enemy_damage"
 TimeupSe = "explosion"
 Speed = 250.0
-Attack = 30
+Attack = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_eyhpk")

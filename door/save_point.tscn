@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3x0uq0uifrnp"]
+[gd_scene load_steps=19 format=3 uid="uid://d3x0uq0uifrnp"]
 
 [ext_resource type="Script" path="res://door/SavePoint.cs" id="1_gpnbb"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="2_htpx1"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="6_ntwn3"]
 [ext_resource type="PackedScene" uid="uid://eywnthgffkk6" path="res://command/reset_player_life_time_command.tscn" id="7_6s2y6"]
 [ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="8_0kbx6"]
+[ext_resource type="PackedScene" uid="uid://yg1jndcg1o16" path="res://command/update_save_point_door_no_command.tscn" id="8_b2nrd"]
 [ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="9_5xqv6"]
 [ext_resource type="PackedScene" uid="uid://cdrvd77nuu0w" path="res://command/open_save_and_load_dialog_command.tscn" id="9_pcgmf"]
 [ext_resource type="Script" path="res://command/OpenSaveAndLoadDialogCommand.cs" id="10_rdr0j"]
@@ -39,6 +40,9 @@ SeName = "save_point"
 [node name="SetPlayerInitialDurabilityCommand" parent="." instance=ExtResource("6_mur3q")]
 
 [node name="ResetPlayerLifeTimeCommand" parent="." instance=ExtResource("7_6s2y6")]
+
+[node name="UpdateSavePointDoorNoCommand" parent="." node_paths=PackedStringArray("ParentSavePoint") instance=ExtResource("8_b2nrd")]
+ParentSavePoint = NodePath("..")
 
 [node name="StateSaveCommand" parent="." instance=ExtResource("8_0kbx6")]
 

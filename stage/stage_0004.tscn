@@ -308,7 +308,7 @@ position = Vector2(4480, -2944)
 position = Vector2(4384, -3264)
 
 [node name="EnemySpawner5" parent="Enemy" index="5" instance=ExtResource("12_5dnk1")]
-position = Vector2(5024, -2656)
+position = Vector2(4720, -2816)
 
 [node name="EnemySpawner6" parent="Enemy" index="6" instance=ExtResource("12_5dnk1")]
 position = Vector2(4576, -1984)
@@ -341,7 +341,7 @@ position = Vector2(5024, -608)
 position = Vector2(4672, -256)
 
 [node name="UnmoEnemy" parent="Enemy" index="16" instance=ExtResource("15_t41ek")]
-position = Vector2(4832, -2496)
+position = Vector2(5036, -2656)
 
 [node name="Path2D1" type="Path2D" parent="Others" index="0"]
 curve = SubResource("Curve2D_l6xi1")

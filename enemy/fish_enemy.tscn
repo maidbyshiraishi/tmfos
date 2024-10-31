@@ -13,6 +13,7 @@ script = ExtResource("1_8e6ox")
 DeadSe = "enemy_dead"
 DamageSe = "enemy_damage"
 TimeupSe = "enemy_dead"
+Attack = 40
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_0dj64")
