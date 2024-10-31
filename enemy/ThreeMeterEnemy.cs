@@ -70,6 +70,8 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
             {
                 velocity.Y = m_shortJumpVelocity;
                 PlaySe(JumpSe);
+                // とりあえずジャンプ時に攻撃する
+                Shot();
             }
             // 主人公が視界に入ったら方向転換する
             else if (!SkipAttack && m_eyesight.InSightOfPlayer())
@@ -82,6 +84,8 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
             {
                 velocity.Y = m_jumpVelocity;
                 PlaySe(JumpSe);
+                // とりあえずジャンプ時に攻撃する
+                Shot();
             }
             // 壁に接近した
             else if (m_eyesight.IsFaceToWall(Direction))
@@ -91,6 +95,8 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
                     // ジャンプできる場合はジャンプする
                     velocity.Y = m_jumpVelocity;
                     PlaySe(JumpSe);
+                    // とりあえずジャンプ時に攻撃する
+                    Shot();
                 }
                 else
                 {
@@ -117,6 +123,8 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
                             // 小ジャンプ
                             velocity.Y = m_shortJumpVelocity;
                             PlaySe(JumpSe);
+                            // とりあえずジャンプ時に攻撃する
+                            Shot();
                             break;
 
                         case Eyesight.JumpDistance.LongJump:
@@ -124,6 +132,8 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
                             // 大ジャンプ
                             velocity.Y = m_jumpVelocity;
                             PlaySe(JumpSe);
+                            // とりあえずジャンプ時に攻撃する
+                            Shot();
                             break;
 
                         case Eyesight.JumpDistance.Retrun:
@@ -150,6 +160,8 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
         if (onFloor && !_lastOnFloor)
         {
             PlaySe(TouchdownSe);
+            // とりあえず着地後に攻撃する
+            Shot();
         }
 
         _lastOnFloor = onFloor;

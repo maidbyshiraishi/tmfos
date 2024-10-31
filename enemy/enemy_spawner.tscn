@@ -6,8 +6,8 @@
 script = ExtResource("1_sthf0")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(4.17233e-07, 0)
-scale = Vector2(0.8, 0.8)
+position = Vector2(8, 8)
+rect = Rect2(-16, -16, 16, 16)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 

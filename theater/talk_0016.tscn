@@ -75,12 +75,12 @@ offset_bottom = 32.0
 text = "次へ"
 script = ExtResource("4_fgq5e")
 
-[node name="PlaySeCommand" parent="Socket/Contents/Page1/Control/NextButton" index="0" instance=ExtResource("5_ubpou")]
+[node name="Exec" parent="Socket/Contents/Page1/Control/NextButton" index="0" instance=ExtResource("9_8bkvd")]
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page1/Control/NextButton/Exec" index="0" instance=ExtResource("5_ubpou")]
 SeName = "menu_select"
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page1/Control/NextButton" index="1" instance=ExtResource("6_5vyck")]
-
-[node name="Exec" parent="Socket/Contents/Page1/Control/NextButton" index="2" instance=ExtResource("9_8bkvd")]
+[node name="GoNextPageCommand" parent="Socket/Contents/Page1/Control/NextButton/Exec" index="1" instance=ExtResource("6_5vyck")]
 
 [node name="Page2" type="Control" parent="Socket/Contents" index="1"]
 visible = false
@@ -125,12 +125,12 @@ offset_bottom = 32.0
 text = "次へ"
 script = ExtResource("4_fgq5e")
 
-[node name="PlaySeCommand" parent="Socket/Contents/Page2/Control/NextButton" index="0" instance=ExtResource("5_ubpou")]
+[node name="Exec" parent="Socket/Contents/Page2/Control/NextButton" index="0" instance=ExtResource("9_8bkvd")]
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page2/Control/NextButton/Exec" index="0" instance=ExtResource("5_ubpou")]
 SeName = "menu_select"
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page2/Control/NextButton" index="1" instance=ExtResource("6_5vyck")]
-
-[node name="Exec" parent="Socket/Contents/Page2/Control/NextButton" index="2" instance=ExtResource("9_8bkvd")]
+[node name="GoNextPageCommand" parent="Socket/Contents/Page2/Control/NextButton/Exec" index="1" instance=ExtResource("6_5vyck")]
 
 [node name="Page3" type="Control" parent="Socket/Contents" index="2"]
 anchors_preset = 0
