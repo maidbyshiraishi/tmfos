@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
 [ext_resource type="Texture2D" uid="uid://ctw5x33l0rti4" path="res://contents/image/background/maid_robot.png" id="3_5ubww"]
 [ext_resource type="PackedScene" uid="uid://bvfryyxcw20bs" path="res://decoration/exit.tscn" id="3_fu68i"]
+[ext_resource type="PackedScene" uid="uid://byeqvar802p5v" path="res://door/boss_door.tscn" id="4_7g06k"]
 [ext_resource type="PackedScene" uid="uid://lib3piincxil" path="res://trigger/talk_maid_robot.tscn" id="4_ap5tp"]
 [ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="5_3gcvh"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="5_sy0qw"]
 [ext_resource type="Script" path="res://player/Camera.cs" id="6_voo0k"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="6_vq3gk"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="7_ncr0r"]
-[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="8_frdr5"]
 [ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="10_k10v4"]
 [ext_resource type="PackedScene" uid="uid://ci7ah8lulrk1q" path="res://item/item_panel_weapon.tscn" id="12_qxau1"]
 
@@ -31,7 +31,7 @@ tile_map_data = PackedByteArray("AAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAM
 [node name="Exit" parent="Decoration1" index="0" instance=ExtResource("3_fu68i")]
 position = Vector2(128, -176)
 
-[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("8_frdr5")]
+[node name="BossDoor1" parent="Door" index="0" instance=ExtResource("4_7g06k")]
 position = Vector2(216, -64)
 DestStageNo = 13
 DestDoorNo = 2

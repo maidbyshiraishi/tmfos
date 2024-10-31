@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://eg2k2cp5tfgr"]
+[gd_scene load_steps=30 format=4 uid="uid://eg2k2cp5tfgr"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
 [ext_resource type="Texture2D" uid="uid://c20sg2513jne5" path="res://contents/image/background/ice_mountain.png" id="3_7nsux"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://player/Camera.cs" id="9_ylb82"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="10_w028q"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="11_5el88"]
+[ext_resource type="PackedScene" uid="uid://byeqvar802p5v" path="res://door/boss_door.tscn" id="13_jqkjl"]
 [ext_resource type="PackedScene" uid="uid://bxh4bg4eirq7n" path="res://item/item_panel_oneup.tscn" id="14_o2h3l"]
 [ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="15_0stlk"]
 [ext_resource type="PackedScene" uid="uid://ci7ah8lulrk1q" path="res://item/item_panel_weapon.tscn" id="16_ak0qp"]
@@ -99,7 +100,7 @@ position = Vector2(2000, -4432)
 
 [node name="SearchContainer" parent="Search/SearchTrigger" index="5" instance=ExtResource("7_25eeh")]
 
-[node name="WoodDoor2" parent="Search/SearchTrigger/SearchContainer" index="0" instance=ExtResource("10_w028q")]
+[node name="BossDoor2" parent="Search/SearchTrigger/SearchContainer" index="0" instance=ExtResource("13_jqkjl")]
 position = Vector2(-224, -16)
 DestStageNo = 18
 DestDoorNo = 1

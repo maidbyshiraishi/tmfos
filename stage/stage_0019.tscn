@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
 [ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="3_jam47"]
 [ext_resource type="PackedScene" uid="uid://bvfryyxcw20bs" path="res://decoration/exit.tscn" id="4_r2mk2"]
+[ext_resource type="PackedScene" uid="uid://byeqvar802p5v" path="res://door/boss_door.tscn" id="4_s0ocw"]
 [ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="5_8m84d"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="5_sy0qw"]
 [ext_resource type="Script" path="res://player/Camera.cs" id="6_ilbn4"]
-[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="8_uftwn"]
 [ext_resource type="PackedScene" uid="uid://taoksyhkk4ul" path="res://trigger/talk_maid_faucet.tscn" id="9_4krs7"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="9_6e652"]
 [ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="9_if7vl"]
@@ -31,7 +31,7 @@ tile_map_data = PackedByteArray("AAAAAOD/AAAAAAMAAAAAAOH/AAAAAAMAAAAAAOL/AAAAAAM
 [node name="Exit" parent="Decoration1" index="0" instance=ExtResource("4_r2mk2")]
 position = Vector2(128, -176)
 
-[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("8_uftwn")]
+[node name="BossDoor1" parent="Door" index="0" instance=ExtResource("4_s0ocw")]
 position = Vector2(256, -64)
 DestStageNo = 14
 DestDoorNo = 4
