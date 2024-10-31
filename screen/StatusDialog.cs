@@ -18,15 +18,15 @@ public partial class StatusDialog : DialogRoot
         GetNode<AnimatedSprite2D>("ItemShoes").Play(_itemData.Shoes ? "closed" : "opened");
         GetNode<AnimatedSprite2D>("ItemSwim").Play(_itemData.Swim ? "closed" : "opened");
         GetNode<AnimatedSprite2D>("ItemWallJump").Play(_itemData.WallJump ? "closed" : "opened");
-        GetNode<AnimatedSprite2D>("ItemPenetration").Play(_itemData.Penetration ? "opened" : "opened");
+        GetNode<AnimatedSprite2D>("ItemPenetration").Play(_itemData.Penetration ? "closed" : "opened");
         GetNode<AnimatedSprite2D>("ItemLamp").Play(_itemData.Lamp ? "closed" : "opened");
         GetNode<AnimatedSprite2D>("ItemSearch").Play(_itemData.Search ? "closed" : "opened");
         int boss1 = gdata.GetFlagData("boss_0001");
-        GetNode<AnimatedSprite2D>("ItemBoss1").Play(boss1 != 0 ? "closed" : "opened");
+        GetNode<AnimatedSprite2D>("ItemBoss1").Play(boss1 == 0 ? "opened" : "closed");
         int boss2 = gdata.GetFlagData("boss_0002");
-        GetNode<AnimatedSprite2D>("ItemBoss2").Play(boss2 != 0 ? "closed" : "opened");
+        GetNode<AnimatedSprite2D>("ItemBoss2").Play(boss2 == 0 ? "opened" : "closed");
         int boss3 = gdata.GetFlagData("boss_0003");
-        GetNode<AnimatedSprite2D>("ItemBoss3").Play(boss3 != 0 ? "closed" : "opened");
+        GetNode<AnimatedSprite2D>("ItemBoss3").Play(boss3 == 0 ? "opened" : "closed");
         GetNode<AnimatedSprite2D>("ItemArmor").Play(_itemData.Armor > 0 ? "closed" : "opened");
         GetNode<AnimatedSprite2D>("ItemWeapon").Play(_itemData.Weapon > 0 ? "closed" : "opened");
 

@@ -30,7 +30,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_785y2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 166, -411, 0, 0, 0, 0, 166, 101)
+"points": PackedVector2Array(0, 0, 0, 0, 166, -411, 0, 0, 0, 0, 166, 389)
 }
 point_count = 2
 
@@ -42,19 +42,19 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_7sov6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 134, -430, 0, 0, 0, 0, 262, -302, 0, 0, 0, 0, 518, -302)
+"points": PackedVector2Array(0, 0, 0, 0, 134, -430, 0, 0, 0, 0, 262, -302, 0, 0, 0, 0, 390, -302)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_qgg62"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 104, -342, 0, 0, 0, 0, 232, -342, 0, 0, 0, 0, 296, -470, 0, 0, 0, 0, 424, -470)
+"points": PackedVector2Array(0, 0, 0, 0, 40, -342, 0, 0, 0, 0, 232, -342, 0, 0, 0, 0, 296, -470, 0, 0, 0, 0, 424, -470)
 }
 point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_snoeo"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 43, -388, 0, 0, 0, 0, 235, -388, 0, 0, 0, 0, 427, -580, 0, 0, 0, 0, 555, -580)
+"points": PackedVector2Array(0, 0, 0, 0, 43, -388, 0, 0, 0, 0, 235, -388, 0, 0, 0, 0, 427, -580, 0, 0, 0, 0, 619, -580)
 }
 point_count = 4
 
@@ -66,7 +66,7 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_8kv1n"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 724, -883, 0, 0, 0, 0, 596, -883, 0, 0, 0, 0, 468, -1203, 0, 0, 0, 0, 372, -1203)
+"points": PackedVector2Array(0, 0, 0, 0, 724, -883, 0, 0, 0, 0, 596, -883, 0, 0, 0, 0, 468, -1203, 0, 0, 0, 0, 340, -1203)
 }
 point_count = 4
 
@@ -501,7 +501,7 @@ script = ExtResource("16_137lg")
 
 [node name="MovingPlatform" parent="Others/Path2D1" index="0" instance=ExtResource("10_of7wd")]
 position = Vector2(166, -411)
-scale = Vector2(2, 1)
+scale = Vector2(2.5, 1)
 
 [node name="Path2D2" type="Path2D" parent="Others" index="1"]
 position = Vector2(2195.29, -1546.13)
@@ -511,7 +511,7 @@ script = ExtResource("16_137lg")
 
 [node name="MovingPlatform" parent="Others/Path2D2" index="0" instance=ExtResource("10_of7wd")]
 position = Vector2(180.906, -513.128)
-scale = Vector2(2, 1)
+scale = Vector2(2.5, 1)
 
 [node name="Path2D3" type="Path2D" parent="Others" index="2"]
 position = Vector2(2042, -1362)
@@ -520,7 +520,7 @@ script = ExtResource("16_137lg")
 
 [node name="MovingPlatform" parent="Others/Path2D3" index="0" instance=ExtResource("10_of7wd")]
 position = Vector2(134, -430)
-scale = Vector2(2, 1)
+scale = Vector2(2.5, 1)
 
 [node name="Path2D4" type="Path2D" parent="Others" index="3"]
 position = Vector2(2328, -1386)
@@ -528,8 +528,8 @@ curve = SubResource("Curve2D_qgg62")
 script = ExtResource("16_137lg")
 
 [node name="MovingPlatform" parent="Others/Path2D4" index="0" instance=ExtResource("10_of7wd")]
-position = Vector2(104, -342)
-scale = Vector2(2, 1)
+position = Vector2(40, -342)
+scale = Vector2(2.5, 1)
 
 [node name="Path2D5" type="Path2D" parent="Others" index="4"]
 position = Vector2(2197, -1084)
@@ -538,7 +538,7 @@ script = ExtResource("16_137lg")
 
 [node name="MovingPlatform" parent="Others/Path2D5" index="0" instance=ExtResource("10_of7wd")]
 position = Vector2(43, -388)
-scale = Vector2(2, 1)
+scale = Vector2(2.5, 1)
 
 [node name="Path2D6" type="Path2D" parent="Others" index="5"]
 position = Vector2(2220, -973)
@@ -547,7 +547,7 @@ script = ExtResource("16_137lg")
 
 [node name="MovingPlatform" parent="Others/Path2D6" index="0" instance=ExtResource("10_of7wd")]
 position = Vector2(596, -563)
-scale = Vector2(2, 1)
+scale = Vector2(2.5, 1)
 
 [node name="Path2D7" type="Path2D" parent="Others" index="6"]
 position = Vector2(2220, -973)
@@ -556,7 +556,7 @@ script = ExtResource("16_137lg")
 
 [node name="MovingPlatform" parent="Others/Path2D7" index="0" instance=ExtResource("10_of7wd")]
 position = Vector2(724, -883)
-scale = Vector2(2, 1)
+scale = Vector2(2.5, 1)
 
 [node name="HUD" parent="." index="13"]
 Text1 = "ステージ"
