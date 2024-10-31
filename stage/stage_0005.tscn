@@ -294,34 +294,17 @@ progress = 1297.69
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower1" index="0" instance=ExtResource("17_y64dy")]
 
-[node name="RocketMaid2Enemy2" parent="Enemy/Path2D1/PathFollower1" index="1" instance=ExtResource("17_y64dy")]
-position = Vector2(49.5803, 96)
-
 [node name="PathFollower2" parent="Enemy/Path2D1" index="1" instance=ExtResource("16_wjkh5")]
 position = Vector2(2163.48, -2644.5)
 progress = 2595.37
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower2" index="0" instance=ExtResource("18_ttfas")]
-position = Vector2(-2.05811, 0.238037)
-
-[node name="BirdEnemy4" parent="Enemy/Path2D1/PathFollower2" index="1" instance=ExtResource("18_ttfas")]
-position = Vector2(93.9419, 0.238037)
-
-[node name="BirdEnemy5" parent="Enemy/Path2D1/PathFollower2" index="2" instance=ExtResource("18_ttfas")]
-position = Vector2(-98.0581, 0.238037)
 
 [node name="PathFollower3" parent="Enemy/Path2D1" index="2" instance=ExtResource("16_wjkh5")]
 position = Vector2(2478, -1536.46)
 progress = 3893.06
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower3" index="0" instance=ExtResource("18_ttfas")]
-position = Vector2(-2.05811, 0.238037)
-
-[node name="BirdEnemy2" parent="Enemy/Path2D1/PathFollower3" index="1" instance=ExtResource("18_ttfas")]
-position = Vector2(-2.05811, -63.762)
-
-[node name="BirdEnemy3" parent="Enemy/Path2D1/PathFollower3" index="2" instance=ExtResource("18_ttfas")]
-position = Vector2(-2.05811, 64.2379)
 
 [node name="PathFollower4" parent="Enemy/Path2D1" index="3" instance=ExtResource("16_wjkh5")]
 position = Vector2(2889.92, -1345.82)
@@ -329,17 +312,11 @@ progress = 5190.75
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower4" index="0" instance=ExtResource("17_y64dy")]
 
-[node name="RocketMaid2Enemy2" parent="Enemy/Path2D1/PathFollower4" index="1" instance=ExtResource("17_y64dy")]
-position = Vector2(49.5803, 96)
-
 [node name="PathFollower5" parent="Enemy/Path2D1" index="4" instance=ExtResource("16_wjkh5")]
 position = Vector2(2637.59, -405.635)
 progress = 6488.44
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower5" index="0" instance=ExtResource("17_y64dy")]
-
-[node name="RocketMaid2Enemy2" parent="Enemy/Path2D1/PathFollower5" index="1" instance=ExtResource("17_y64dy")]
-position = Vector2(49.5803, 96)
 
 [node name="PathFollower6" parent="Enemy/Path2D1" index="5" instance=ExtResource("16_wjkh5")]
 position = Vector2(1881.53, -200.389)
@@ -347,17 +324,11 @@ progress = 7786.12
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower6" index="0" instance=ExtResource("17_y64dy")]
 
-[node name="RocketMaid2Enemy2" parent="Enemy/Path2D1/PathFollower6" index="1" instance=ExtResource("17_y64dy")]
-position = Vector2(49.5803, 96)
-
 [node name="PathFollower7" parent="Enemy/Path2D1" index="6" instance=ExtResource("16_wjkh5")]
 position = Vector2(1024.72, -491.622)
 progress = 9083.81
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower7" index="0" instance=ExtResource("17_y64dy")]
-
-[node name="RocketMaid2Enemy2" parent="Enemy/Path2D1/PathFollower7" index="1" instance=ExtResource("17_y64dy")]
-position = Vector2(49.5803, 96)
 
 [node name="PathFollower8" parent="Enemy/Path2D1" index="7" instance=ExtResource("16_wjkh5")]
 position = Vector2(395.132, -673.397)
@@ -365,29 +336,16 @@ progress = 10381.5
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower8" index="0" instance=ExtResource("17_y64dy")]
 
-[node name="RocketMaid2Enemy2" parent="Enemy/Path2D1/PathFollower8" index="1" instance=ExtResource("17_y64dy")]
-position = Vector2(49.5803, 96)
-
 [node name="PathFollower9" parent="Enemy/Path2D1" index="8" instance=ExtResource("16_wjkh5")]
 position = Vector2(630.488, -1494.81)
 progress = 11679.2
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower9" index="0" instance=ExtResource("17_y64dy")]
 
-[node name="RocketMaid2Enemy2" parent="Enemy/Path2D1/PathFollower9" index="1" instance=ExtResource("17_y64dy")]
-position = Vector2(49.5803, 96)
-
 [node name="PathFollower10" parent="Enemy/Path2D1" index="9" instance=ExtResource("16_wjkh5")]
 position = Vector2(448, -2624)
 
-[node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower10" index="0" instance=ExtResource("18_ttfas")]
-position = Vector2(-2.05811, 0.238037)
-
-[node name="BirdEnemy2" parent="Enemy/Path2D1/PathFollower10" index="1" instance=ExtResource("18_ttfas")]
-position = Vector2(-2.05811, -63.762)
-
-[node name="BirdEnemy3" parent="Enemy/Path2D1/PathFollower10" index="2" instance=ExtResource("18_ttfas")]
-position = Vector2(-2.05811, 64.2379)
+[node name="BirdEnemy2" parent="Enemy/Path2D1/PathFollower10" index="0" instance=ExtResource("18_ttfas")]
 
 [node name="FallingBlock3Enemy" parent="Enemy" index="17" instance=ExtResource("25_q58iy")]
 position = Vector2(144, -2912)
