@@ -15,6 +15,13 @@ public partial class BigDrillShot : Shot
         PlaySprite();
     }
 
+    public override void InitializeNode()
+    {
+        base.InitializeNode();
+        // 攻撃力強化の対象外
+        m_attackCorrection = 0;
+    }
+
     protected override void PlaySpawnedSe()
     {
         GetNode<SePlayer>("/root/SePlayer").Play("big_drill_shot");

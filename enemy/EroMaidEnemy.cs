@@ -27,6 +27,13 @@ public partial class EroMaidEnemy : Enemy
         _entryCount = EntryPoints is null ? 0 : EntryPoints.GetChildCount();
     }
 
+    public override void InitializeNode()
+    {
+        base.InitializeNode();
+        // 攻撃力強化の対象外
+        m_attackCorrection = 0;
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         Vector2 velocity = Velocity;
@@ -82,6 +89,12 @@ public partial class EroMaidEnemy : Enemy
             base.RemoveNode();
             return;
         }
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
+        GetNode<TextureProgressBar>("%HUD/BossLife").Value = 0;
     }
 
     public override void Damaged()

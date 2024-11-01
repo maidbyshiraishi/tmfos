@@ -39,6 +39,8 @@ public partial class TmfosEnemy : PathFollowEnemy
     public override void InitializeNode()
     {
         base.InitializeNode();
+        // 攻撃力強化の対象外
+        m_attackCorrection = 0;
         _teleportPosition = GetTree().GetNodesInGroup(TeleportPositionGroupName);
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
         _ = Connect(SignalName.NodeSpawned, new Callable(stageRoot, StageRoot.MethodName.SpawnNode));
@@ -52,6 +54,12 @@ public partial class TmfosEnemy : PathFollowEnemy
         }
 
         base._PhysicsProcess(delta);
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
+        GetNode<TextureProgressBar>("%HUD/BossLife").Value = 0;
     }
 
     public override void Damaged()

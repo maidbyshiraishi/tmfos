@@ -13,7 +13,7 @@ public partial class MaidFaucetEnemy : PathFollowEnemy
     /// 摘出現の間隔
     /// </summary>
     [Export]
-    public double WaitTime { get; set; } = 3f;
+    public double WaitTime { get; set; } = 2f;
 
     private EnemySpawner _spawnerLeft;
     private EnemySpawner _spawnerRight;
@@ -28,6 +28,13 @@ public partial class MaidFaucetEnemy : PathFollowEnemy
         GetNode<TextureProgressBar>("%HUD/BossLife").Value = Life;
     }
 
+    public override void InitializeNode()
+    {
+        base.InitializeNode();
+        // 攻撃力強化の対象外
+        m_attackCorrection = 0;
+    }
+
     /// <summary>
     /// 敵を生成する
     /// </summary>
@@ -39,7 +46,7 @@ public partial class MaidFaucetEnemy : PathFollowEnemy
         }
 
         RandomNumberGenerator random = new();
-        EnemyResourceName enemyName = random.RandiRange(0, 15) == 0 ? EnemyResourceName.RocketMaidEnemy : EnemyResourceName.NekomimiMaidEnemy;
+        EnemyResourceName enemyName = random.RandiRange(0, 4) == 0 ? EnemyResourceName.RocketMaidEnemy : EnemyResourceName.NekomimiMaidEnemy;
 
         if (m_direction is DirectionType.Left or DirectionType.Up)
         {
@@ -51,6 +58,12 @@ public partial class MaidFaucetEnemy : PathFollowEnemy
             _spawnerRight.EnemyName = enemyName;
             _spawnerRight.SpawnEnemy();
         }
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
+        GetNode<TextureProgressBar>("%HUD/BossLife").Value = 0;
     }
 
     public override void Damaged()

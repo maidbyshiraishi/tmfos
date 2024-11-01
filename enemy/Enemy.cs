@@ -12,12 +12,14 @@ namespace tmfos.enemy;
 public partial class Enemy : DurableMob, ISpawnedNode
 {
     protected Player m_player;
+    protected int m_attackCorrection = 0;
 
     public override void InitializeNode()
     {
         base.InitializeNode();
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
         m_player = stageRoot.GetNode<Player>("%Player");
+        m_attackCorrection = stageRoot.EnemyAttackCorrection;
     }
 
     public override void Dead()
@@ -65,7 +67,7 @@ public partial class Enemy : DurableMob, ISpawnedNode
         }
 
         SetSkipAttack();
-        player.AddDurability(-Attack);
+        player.AddDurability(-Attack - m_attackCorrection);
 
         if (effect is not null)
         {

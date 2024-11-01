@@ -35,6 +35,13 @@ public partial class MaidRobot2Enemy : Enemy
         _drillCount = DrillPoints is null ? 0 : DrillPoints.GetChildCount();
     }
 
+    public override void InitializeNode()
+    {
+        base.InitializeNode();
+        // 攻撃力強化の対象外
+        m_attackCorrection = 0;
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         if (!_active)
@@ -82,6 +89,12 @@ public partial class MaidRobot2Enemy : Enemy
 
         RandomNumberGenerator random = new();
         DrillPoints.GetNode<EnemySpawner>($"DrillShot{random.RandiRange(1, _drillCount)}").SpawnEnemy();
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
+        GetNode<TextureProgressBar>("%HUD/BossLife").Value = 0;
     }
 
     public override void Damaged()

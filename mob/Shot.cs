@@ -49,6 +49,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
 
     protected VisibleOnScreenNotifier2D m_visibleOnScreenNotifier2D;
     protected AnimatedSprite2D m_animatedSprite;
+    protected int m_attackCorrection = 0;
 
     private Vector2 _direction = Vector2.Right;
     private Timer _lifeTimer;
@@ -105,7 +106,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
         if (node is IDurable durable)
         {
             SetSkipAttack();
-            durable.AddDurability(-Attack - Weapon);
+            durable.AddDurability(-Attack - Weapon - m_attackCorrection);
         }
 
         if (!Penetration)
@@ -119,7 +120,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
         if (node is IDurable durable)
         {
             SetSkipAttack();
-            durable.AddDurability(-Attack - Weapon);
+            durable.AddDurability(-Attack - Weapon - m_attackCorrection);
         }
 
         if (!Penetration)

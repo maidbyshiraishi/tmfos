@@ -155,7 +155,7 @@ public partial class PathFollowEnemy : DurableShot
     {
         if (node is Player player)
         {
-            player.AddDurability(-Attack);
+            player.AddDurability(-Attack - m_attackCorrection);
         }
     }
 

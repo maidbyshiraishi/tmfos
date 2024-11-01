@@ -24,6 +24,7 @@ point_count = 53
 
 [node name="Stage" instance=ExtResource("1_c4j6q")]
 BgmStream = ExtResource("2_tjibb")
+EnemyAttackCorrection = 15
 
 [node name="ColorRect" parent="Background/Parallax2D3" index="0"]
 color = Color(0.0778797, 0.31562, 0.999995, 1)
@@ -70,7 +71,6 @@ position = Vector2(344, -120)
 Speed = 500.0
 
 [node name="MaidFaucetEnemy" parent="Enemy/Path2D/PathFollower" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("8_dbqsx")]
-Life = 500
 
 [node name="HUD" parent="." index="13"]
 Text1 = "メイドの出る蛇口"

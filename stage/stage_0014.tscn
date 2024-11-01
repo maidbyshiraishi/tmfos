@@ -105,6 +105,7 @@ point_count = 9
 [node name="Stage" instance=ExtResource("1_axhrv")]
 BgmStream = ExtResource("3_a3ho0")
 IsDarkZone = true
+EnemyAttackCorrection = 20
 
 [node name="ColorRect" parent="Background/Parallax2D3" index="0"]
 color = Color(0, 0, 0, 1)
@@ -313,28 +314,19 @@ unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("8_lxtlf")
 
-[node name="EnemySpawner" parent="Enemy" index="0" instance=ExtResource("19_n1kp4")]
-position = Vector2(512, -6592)
-
-[node name="EnemySpawner2" parent="Enemy" index="1" instance=ExtResource("19_n1kp4")]
-position = Vector2(472, -6592)
-
-[node name="EnemySpawner3" parent="Enemy" index="2" instance=ExtResource("19_n1kp4")]
+[node name="EnemySpawner3" parent="Enemy" index="0" instance=ExtResource("19_n1kp4")]
 position = Vector2(544, -6272)
 
-[node name="EnemySpawner4" parent="Enemy" index="3" instance=ExtResource("19_n1kp4")]
+[node name="EnemySpawner4" parent="Enemy" index="1" instance=ExtResource("19_n1kp4")]
 position = Vector2(496, -5760)
 
-[node name="EnemySpawner5" parent="Enemy" index="4" instance=ExtResource("19_n1kp4")]
+[node name="EnemySpawner5" parent="Enemy" index="2" instance=ExtResource("19_n1kp4")]
 position = Vector2(608, -5568)
 
-[node name="EnemySpawner6" parent="Enemy" index="5" instance=ExtResource("19_n1kp4")]
-position = Vector2(912, -5568)
-
-[node name="EnemySpawner7" parent="Enemy" index="6" instance=ExtResource("19_n1kp4")]
+[node name="EnemySpawner7" parent="Enemy" index="3" instance=ExtResource("19_n1kp4")]
 position = Vector2(848, -5344)
 
-[node name="Path2D1" type="Path2D" parent="Enemy" index="7"]
+[node name="Path2D1" type="Path2D" parent="Enemy" index="4"]
 curve = SubResource("Curve2D_xunk3")
 script = ExtResource("20_4a5c4")
 
@@ -350,7 +342,7 @@ position = Vector2(40, -24)
 [node name="FishEnemy3" parent="Enemy/Path2D1/PathFollower" index="2" instance=ExtResource("22_2ln0b")]
 position = Vector2(40, 24)
 
-[node name="Path2D2" type="Path2D" parent="Enemy" index="8"]
+[node name="Path2D2" type="Path2D" parent="Enemy" index="5"]
 curve = SubResource("Curve2D_g2n1v")
 script = ExtResource("20_4a5c4")
 
@@ -366,7 +358,7 @@ position = Vector2(40, -24)
 [node name="FishEnemy3" parent="Enemy/Path2D2/PathFollower" index="2" instance=ExtResource("22_2ln0b")]
 position = Vector2(40, 24)
 
-[node name="Path2D3" type="Path2D" parent="Enemy" index="9"]
+[node name="Path2D3" type="Path2D" parent="Enemy" index="6"]
 curve = SubResource("Curve2D_oogdi")
 script = ExtResource("20_4a5c4")
 
@@ -391,7 +383,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D3/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D4" type="Path2D" parent="Enemy" index="10"]
+[node name="Path2D4" type="Path2D" parent="Enemy" index="7"]
 curve = SubResource("Curve2D_msheu")
 script = ExtResource("20_4a5c4")
 
@@ -416,7 +408,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D4/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D5" type="Path2D" parent="Enemy" index="11"]
+[node name="Path2D5" type="Path2D" parent="Enemy" index="8"]
 curve = SubResource("Curve2D_28nlr")
 script = ExtResource("20_4a5c4")
 
@@ -441,7 +433,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D5/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D6" type="Path2D" parent="Enemy" index="12"]
+[node name="Path2D6" type="Path2D" parent="Enemy" index="9"]
 curve = SubResource("Curve2D_fp8r8")
 script = ExtResource("20_4a5c4")
 
@@ -466,7 +458,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D6/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D7" type="Path2D" parent="Enemy" index="13"]
+[node name="Path2D7" type="Path2D" parent="Enemy" index="10"]
 curve = SubResource("Curve2D_njyvp")
 script = ExtResource("20_4a5c4")
 
@@ -491,7 +483,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D7/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D8" type="Path2D" parent="Enemy" index="14"]
+[node name="Path2D8" type="Path2D" parent="Enemy" index="11"]
 curve = SubResource("Curve2D_kqwwu")
 script = ExtResource("20_4a5c4")
 
@@ -516,7 +508,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D8/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D9" type="Path2D" parent="Enemy" index="15"]
+[node name="Path2D9" type="Path2D" parent="Enemy" index="12"]
 curve = SubResource("Curve2D_1qmsn")
 script = ExtResource("20_4a5c4")
 
@@ -541,7 +533,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D9/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D10" type="Path2D" parent="Enemy" index="16"]
+[node name="Path2D10" type="Path2D" parent="Enemy" index="13"]
 position = Vector2(-88, -80)
 curve = SubResource("Curve2D_5iucx")
 script = ExtResource("20_4a5c4")
@@ -567,7 +559,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D10/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D11" type="Path2D" parent="Enemy" index="17"]
+[node name="Path2D11" type="Path2D" parent="Enemy" index="14"]
 curve = SubResource("Curve2D_r1s00")
 script = ExtResource("20_4a5c4")
 
@@ -592,7 +584,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D11/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D12" type="Path2D" parent="Enemy" index="18"]
+[node name="Path2D12" type="Path2D" parent="Enemy" index="15"]
 curve = SubResource("Curve2D_x6gj0")
 script = ExtResource("20_4a5c4")
 
@@ -617,7 +609,7 @@ position = Vector2(80, 0)
 [node name="FishEnemy6" parent="Enemy/Path2D12/PathFollower" index="5" instance=ExtResource("22_2ln0b")]
 position = Vector2(80, 40)
 
-[node name="Path2D13" type="Path2D" parent="Enemy" index="19"]
+[node name="Path2D13" type="Path2D" parent="Enemy" index="16"]
 curve = SubResource("Curve2D_81vvv")
 script = ExtResource("20_4a5c4")
 

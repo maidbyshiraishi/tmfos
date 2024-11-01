@@ -35,6 +35,8 @@ public partial class MaidRobot1Enemy : Enemy
     public override void InitializeNode()
     {
         base.InitializeNode();
+        // 攻撃力強化の対象外
+        m_attackCorrection = 0;
         Direction = Lib.GetLRDirection(Position, m_player.Position);
         ChangeSprite("walk", Direction);
     }
@@ -113,6 +115,12 @@ public partial class MaidRobot1Enemy : Enemy
         {
             DrillPoints.GetNode<EnemySpawner>($"DrillShot{random.RandiRange(1, _drillCount)}").SpawnEnemy();
         }
+    }
+
+    public override void Dead()
+    {
+        base.Dead();
+        GetNode<TextureProgressBar>("%HUD/BossLife").Value = 0;
     }
 
     public override void Damaged()

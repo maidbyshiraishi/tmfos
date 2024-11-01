@@ -41,6 +41,9 @@ public partial class StageRoot : DialogRoot, IStateful
     [Export]
     public float PlayerLifeTime { get; set; } = 0f;
 
+    [Export]
+    public int EnemyAttackCorrection { get; set; } = 0;
+
     private Hud _hud;
     private PlayerData _playerData;
     private Player _player;

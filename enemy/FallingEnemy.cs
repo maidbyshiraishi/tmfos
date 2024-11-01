@@ -48,7 +48,7 @@ public partial class FallingEnemy : Shot
     {
         if (node is Player player)
         {
-            player.AddDurability(-Attack);
+            player.AddDurability(-Attack - m_attackCorrection);
         }
 
         if (!Penetration)
