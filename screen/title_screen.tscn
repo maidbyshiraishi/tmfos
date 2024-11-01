@@ -40,7 +40,6 @@ position = Vector2(321, 147)
 scale = Vector2(2.25, 2.25)
 sprite_frames = ExtResource("3_7xxci")
 autoplay = "default"
-frame = 6
 frame_progress = 1.0
 
 [node name="Border" type="ReferenceRect" parent="."]
