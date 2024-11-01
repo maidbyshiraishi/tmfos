@@ -99,6 +99,7 @@ wait_time = 0.001
 one_shot = true
 
 [node name="ReferenceRect" type="Node2D" parent="."]
+visible = false
 
 [node name="ReferenceNormal" type="ReferenceRect" parent="ReferenceRect"]
 anchors_preset = 8

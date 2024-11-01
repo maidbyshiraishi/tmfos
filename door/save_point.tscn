@@ -53,6 +53,7 @@ script = ExtResource("10_rdr0j")
 DoorNo = 0
 
 [node name="StageEntryPoint" parent="." instance=ExtResource("2_htpx1")]
+position = Vector2(0, 10)
 
 [node name="TelBox" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
