@@ -1,6 +1,5 @@
 using Godot;
 using tmfos.command;
-using tmfos.data;
 using tmfos.mob;
 using tmfos.trigger;
 

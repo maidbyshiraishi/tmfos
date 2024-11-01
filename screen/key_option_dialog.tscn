@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://3r16tce2nd2t"]
+[gd_scene load_steps=13 format=3 uid="uid://3r16tce2nd2t"]
 
 [ext_resource type="PackedScene" uid="uid://lidl4lyg228v" path="res://screen/key_dialog_root.tscn" id="1_51pht"]
 [ext_resource type="Texture2D" uid="uid://si3xgb2yh3n2" path="res://contents/screen/key_option_dialog/swap.png" id="2_1qi7l"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dy1dvjhw72vd8" path="res://command/reset_default_key_options_command.tscn" id="5_dog2l"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_kjl5n"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="5_wq4oo"]
-[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="10_igkjo"]
 [ext_resource type="Script" path="res://command/OpenFileManagerCommand.cs" id="10_ja627"]
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="12_61sft"]
 
@@ -176,18 +175,6 @@ SeName = "menu_select"
 
 [node name="PlaySeCommand" parent="Control/Swap/Focus" index="0" instance=ExtResource("4_h8vmb")]
 SeName = "menu_move"
-
-[node name="EscapeKey" parent="." index="8" instance=ExtResource("10_igkjo")]
-ActionName = "ui_cancel"
-
-[node name="PlaySeCommand" parent="EscapeKey" index="0" instance=ExtResource("4_h8vmb")]
-SeName = "menu_select"
-
-[node name="LoadKeyOptionsCommand" parent="EscapeKey" index="1" instance=ExtResource("2_b7ksl")]
-
-[node name="UpdateDialogScreenCommand" parent="EscapeKey" index="2" instance=ExtResource("2_q4wlk")]
-
-[node name="CloseDialogCommand" parent="EscapeKey" index="3" instance=ExtResource("5_wq4oo")]
 
 [connection signal="pressed" from="Control/Up" to="." method="UpSet"]
 [connection signal="pressed" from="Control/Down" to="." method="DownSet"]

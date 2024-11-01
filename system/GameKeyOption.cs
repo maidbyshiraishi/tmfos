@@ -249,13 +249,54 @@ public partial class GameKeyOption : Node
 
     public void SwapAB()
     {
-        Array<InputEvent> uAcceptKeys = InputMap.ActionGetEvents("ui_accept");
+        Array<InputEvent> acceptKeys = InputMap.ActionGetEvents("ui_accept");
+        Array<InputEvent> reserveAcceptKeys = [];
         Array<InputEvent> bKeys = InputMap.ActionGetEvents("b");
+        Array<InputEvent> reserveBKeys = [];
+
+        foreach (InputEvent item in acceptKeys)
+        {
+            if (!CanChangeInputEvent(item))
+            {
+                reserveAcceptKeys.Add(item);
+            }
+        }
+
+        foreach (InputEvent item in reserveAcceptKeys)
+        {
+            _ = acceptKeys.Remove(item);
+        }
+
+        foreach (InputEvent item in bKeys)
+        {
+            if (!CanChangeInputEvent(item))
+            {
+                reserveBKeys.Add(item);
+            }
+        }
+
+        foreach (InputEvent item in reserveBKeys)
+        {
+            _ = bKeys.Remove(item);
+        }
+
         InputMap.EraseAction("b");
         InputMap.AddAction("b");
-        AddAllAction("b", uAcceptKeys);
+
+        foreach (InputEvent item in reserveBKeys)
+        {
+            acceptKeys.Add(item);
+        }
+
+        AddAllAction("b", acceptKeys);
         InputMap.EraseAction("ui_accept");
         InputMap.AddAction("ui_accept");
+
+        foreach (InputEvent item in reserveAcceptKeys)
+        {
+            bKeys.Add(item);
+        }
+
         AddAllAction("ui_accept", bKeys);
         CopyUISelect();
     }

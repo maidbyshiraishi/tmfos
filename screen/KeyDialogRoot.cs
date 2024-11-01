@@ -14,6 +14,8 @@ public partial class KeyDialogRoot : DialogRoot
     private bool _setMode = false;
     private string _setActionName;
     private Control _localFocus;
+    private string _localInfo;
+    private string _localActionName;
     private string _lastLabel;
 
     protected override void InitializeNode()
@@ -27,9 +29,21 @@ public partial class KeyDialogRoot : DialogRoot
     public override void Active()
     {
         base.Active();
-        _localFocus?.SetBlockSignals(true);
-        _localFocus?.GrabFocus();
-        _localFocus?.SetBlockSignals(true);
+        ActiveLastFocus();
+    }
+
+    private void ActiveLastFocus()
+    {
+        if (_localFocus is null)
+        {
+            return;
+        }
+
+        _localFocus.SetBlockSignals(true);
+        _info.Text = _localInfo;
+        UpdateLabel(_localActionName);
+        _localFocus.GrabFocus();
+        _localFocus.SetBlockSignals(false);
     }
 
     private void UpdateLabel(string actionName)
@@ -88,6 +102,8 @@ public partial class KeyDialogRoot : DialogRoot
         }
 
         _localFocus = GetFocus();
+        _localInfo = _info.Text;
+        _localActionName = name;
         ChangeFocusMode(false);
         _info.Text = text;
         _setMode = true;
@@ -211,7 +227,7 @@ public partial class KeyDialogRoot : DialogRoot
 
     public void HelpSet()
     {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["ヘルプキーは変更できません。"]);
+        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["ヘルプキーは変更できません。", false]);
     }
 
     public void HelpInfo()
@@ -347,23 +363,23 @@ public partial class KeyDialogRoot : DialogRoot
                         {
                             case Error.Ok:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}に設定しました。"]);
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}に設定しました。", false]);
                                 break;
 
                             case Error.AlreadyInUse:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}は既に使用されています。"]);
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}は既に使用されています。", false]);
                                 break;
 
                             default:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}に変更できませんでした。"]);
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}に変更できませんでした。", false]);
                                 break;
                         }
                     }
                     else
                     {
-                        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [ReplaceButtonName($"{key.AsText()}は設定できません。")]);
+                        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [ReplaceButtonName($"{key.AsText()}は設定できません。"), false]);
                     }
 
                     ChangeFocusMode(true);
@@ -379,17 +395,17 @@ public partial class KeyDialogRoot : DialogRoot
                     {
                         case Error.Ok:
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に設定しました。"]);
+                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に設定しました。", false]);
                             break;
 
                         case Error.AlreadyInUse:
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}は既に使用されています。"]);
+                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}は既に使用されています。", false]);
                             break;
 
                         default:
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に変更できませんでした。"]);
+                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に変更できませんでした。", false]);
                             break;
                     }
 
@@ -406,17 +422,17 @@ public partial class KeyDialogRoot : DialogRoot
                     {
                         case Error.Ok:
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}に設定しました。"]);
+                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}に設定しました。", false]);
                             break;
 
                         case Error.AlreadyInUse:
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}は既に使用されています。"]);
+                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}は既に使用されています。", false]);
                             break;
 
                         default:
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}に変更できませんでした。"]);
+                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}に変更できませんでした。", false]);
                             break;
                     }
 
