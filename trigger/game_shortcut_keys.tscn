@@ -23,6 +23,14 @@ ActionName = "pause"
 
 [node name="OpenStatusDialogCommand" parent="PauseKey" instance=ExtResource("4_schj0")]
 
+[node name="OptionKey" parent="." instance=ExtResource("1_0p2nk")]
+ActionName = "option"
+
+[node name="UnsetPlayerSearchCommand" parent="OptionKey" instance=ExtResource("3_x0rtt")]
+
+[node name="OpenDialogCommand" parent="OptionKey" instance=ExtResource("2_p8wi1")]
+DialogPath = "res://screen/option_dialog.tscn"
+
 [node name="HelpKey" parent="." instance=ExtResource("1_0p2nk")]
 ActionName = "help"
 

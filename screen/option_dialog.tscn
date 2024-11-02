@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dlogfuoolbbgt"]
+[gd_scene load_steps=18 format=3 uid="uid://dlogfuoolbbgt"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_v5t5f"]
 [ext_resource type="Script" path="res://screen/OptionDialog.cs" id="2_6qroc"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://db5heldrmq227" path="res://command/reset_default_game_options_command.tscn" id="13_gepbg"]
 [ext_resource type="Script" path="res://command/OpenFileManagerCommand.cs" id="14_j4mxk"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="16_0176u"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="17_04yvk"]
 
 [node name="OptionDialog" type="Control"]
 light_mask = 2
@@ -305,16 +306,27 @@ SeName = "menu_move"
 [node name="EscapeKey" parent="." instance=ExtResource("16_0176u")]
 ActionName = "ui_cancel"
 
-[node name="PlaySeCommand" parent="EscapeKey" instance=ExtResource("6_1beei")]
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
+Target = NodePath("../../Close")
+
+[node name="OptionKey" parent="." instance=ExtResource("16_0176u")]
+ActionName = "option"
+
+[node name="ReferenceContainer" parent="OptionKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="LoadGameOptionsCommand" parent="EscapeKey" instance=ExtResource("6_ox5kl")]
+[node name="LoadGameOptionsCommand" parent="Close" instance=ExtResource("6_ox5kl")]
 
-[node name="SetGameOptionsCommand" parent="EscapeKey" instance=ExtResource("7_54itn")]
+[node name="SetGameOptionsCommand" parent="Close" instance=ExtResource("7_54itn")]
 
-[node name="UpdateDialogScreenCommand" parent="EscapeKey" instance=ExtResource("8_foflq")]
+[node name="UpdateDialogScreenCommand" parent="Close" instance=ExtResource("8_foflq")]
 
-[node name="CloseDialogCommand" parent="EscapeKey" instance=ExtResource("5_fbf6f")]
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_fbf6f")]
 
 [connection signal="value_changed" from="Control/BgmSlider" to="." method="BgmVolumeChanged"]
 [connection signal="value_changed" from="Control/SeSlider" to="." method="SeVolumeChanged"]
