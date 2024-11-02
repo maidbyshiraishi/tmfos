@@ -1,79 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhr3w2puoqs4k"]
+[gd_scene load_steps=3 format=3 uid="uid://cuf8x85mhonvo"]
 
-[ext_resource type="Script" path="res://enemy/NekomimiMaidEnemy.cs" id="2_hwxl0"]
+[ext_resource type="PackedScene" uid="uid://vp0fhk4g3cgi" path="res://enemy/nekomimi_maid_root_enemy.tscn" id="1_nkvj7"]
 [ext_resource type="SpriteFrames" uid="uid://cls0d8056mrpf" path="res://contents/animation/enemy/nekomimi_maid_c5.tres" id="6_02v7o"]
-[ext_resource type="Script" path="res://mob/ActionChange.cs" id="7_yk5ki"]
-[ext_resource type="PackedScene" uid="uid://d3dxe0jrgncd4" path="res://enemy/eyesight64.tscn" id="8_irxg2"]
-[ext_resource type="Script" path="res://mob/BlockBreaker.cs" id="9_86ao8"]
-[ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="9_ws4cq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi5u"]
-size = Vector2(20, 60)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3sy"]
-size = Vector2(14, 42)
-
-[node name="NekomimiMaidEnemy" type="CharacterBody2D"]
-collision_layer = 32
-collision_mask = 1551
-script = ExtResource("2_hwxl0")
+[node name="NekomimiMaidEnemy" instance=ExtResource("1_nkvj7")]
 Life = 25
 MaxLife = 25
-DeadSe = "enemy_dead"
-DamageSe = "enemy_damage"
-TimeupSe = "enemy_dead"
-Direction = -1
-MaxSpeed = 180.0
-ReductionApproach = 8.0
-AirMaxSpeed = 180.0
-AirReductionApproach = 24.0
-JumpHeight = 150.0
 Attack = 10
-JumpSe = "enemy_jump"
-TouchdownSe = "enemy_touchdown"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("6_02v7o")
 animation = &"walk_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_1wi5u")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-scale = Vector2(1, 1.25)
-rect = Rect2(-16, -32, 32, 64)
-
-[node name="EyeSight" parent="." instance=ExtResource("8_irxg2")]
-
-[node name="ActionChange" type="Node2D" parent="." node_paths=PackedStringArray("ChangeTarget")]
-script = ExtResource("7_yk5ki")
-ChangeTarget = NodePath("..")
-
-[node name="Marker2D" type="Marker2D" parent="ActionChange"]
-
-[node name="BurialArea" parent="." instance=ExtResource("9_ws4cq")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_hp3sy")
-
-[node name="BlockBreaker" type="Node2D" parent="."]
-
-[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
-position = Vector2(0, -34)
-script = ExtResource("9_86ao8")
-VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
-
-[node name="Step" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
-position = Vector2(0, 34)
-script = ExtResource("9_86ao8")
-VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
-
-[node name="LifeTimer" type="Timer" parent="."]
-wait_time = 0.001
-one_shot = true
-
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
-[connection signal="Collided" from="BurialArea" to="." method="Burialed"]

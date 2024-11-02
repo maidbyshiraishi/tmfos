@@ -9,8 +9,6 @@ namespace tmfos.enemy;
 /// </summary>
 public partial class NekomimiMaidEnemy : EyesightEnemy, ISwimAction
 {
-    // todo: ネコミミメイドのカラーパターンをシーンの継承で実装したかった
-
     private bool _lastOnFloor;
 
     public override void InitializeNode()
