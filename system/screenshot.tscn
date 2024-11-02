@@ -11,6 +11,6 @@ process_mode = 3
 ActionName = "screenshot"
 
 [node name="PlaySeCommand" parent="ScreenshotKey" instance=ExtResource("2_k84cx")]
-SeName = "menu_select"
+SeName = "screenshot"
 
 [node name="SaveScreenshotCommand" parent="ScreenshotKey" instance=ExtResource("3_17c0v")]

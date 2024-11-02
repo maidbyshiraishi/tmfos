@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bh0d1pl6uidn6"]
+[gd_scene load_steps=39 format=3 uid="uid://bh0d1pl6uidn6"]
 
 [ext_resource type="Script" path="res://system/SePlayer.cs" id="1_vw2l8"]
 [ext_resource type="AudioStream" uid="uid://ylmkmncdx6ve" path="res://contents/se/barrier.ogg" id="2_ayq2r"]
@@ -37,6 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://ba7npbsdfqjku" path="res://contents/se/menu_select.ogg" id="28_jev3f"]
 [ext_resource type="AudioStream" uid="uid://dkf6553vupiba" path="res://contents/se/menu_move.ogg" id="29_yassr"]
 [ext_resource type="AudioStream" uid="uid://bg21pqkmyilq6" path="res://contents/se/search_point.ogg" id="30_8wwxl"]
+[ext_resource type="AudioStream" uid="uid://cnsmaudjdiihy" path="res://contents/se/screenshot.ogg" id="38_7kahk"]
 
 [node name="SePlayer" type="Node"]
 process_mode = 3
@@ -204,4 +205,9 @@ bus = &"SE"
 
 [node name="search_point" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_8wwxl")
+bus = &"SE"
+
+[node name="screenshot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_7kahk")
+max_polyphony = 2
 bus = &"SE"
