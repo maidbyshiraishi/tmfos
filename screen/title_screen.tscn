@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cex2tqli4fmgg"]
+[gd_scene load_steps=19 format=3 uid="uid://cex2tqli4fmgg"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_cy00v"]
 [ext_resource type="Script" path="res://screen/DialogRoot.cs" id="2_247ql"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="15_7piwm"]
 [ext_resource type="Script" path="res://command/VersionLabelCommand.cs" id="16_45g42"]
 [ext_resource type="PackedScene" uid="uid://c1wi0ukoa0dym" path="res://command/pause_timer_trigger_command.tscn" id="16_uikkl"]
-[ext_resource type="PackedScene" uid="uid://bb2nl5uh2vbd1" path="res://command/save_screenshot_command.tscn" id="16_vhcfa"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="17_uhsa7"]
 [ext_resource type="PackedScene" uid="uid://ye80q7cyvfw8" path="res://command/quit_game_command.tscn" id="18_85irx"]
 
@@ -255,11 +254,6 @@ VersionLabel = NodePath("../../LabelVersionNo")
 ActionName = "ui_cancel"
 
 [node name="QuitGameCommand" parent="EscapeKey" instance=ExtResource("18_85irx")]
-
-[node name="ScreenshotKey" parent="." instance=ExtResource("17_uhsa7")]
-ActionName = "screenshot"
-
-[node name="SaveScreenshotCommand" parent="ScreenshotKey" instance=ExtResource("16_vhcfa")]
 
 [node name="LabelOthers" type="Label" parent="."]
 layout_mode = 0

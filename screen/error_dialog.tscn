@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mbd4e44xpe7f"]
+[gd_scene load_steps=8 format=3 uid="uid://mbd4e44xpe7f"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_6muvo"]
 [ext_resource type="Script" path="res://screen/ErrorDialog.cs" id="2_e1527"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_3qtxr"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_sodei"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_y6bfa"]
-[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="8_jvlia"]
-[ext_resource type="PackedScene" uid="uid://bb2nl5uh2vbd1" path="res://command/save_screenshot_command.tscn" id="9_2e5va"]
 
 [node name="ErrorDialog" type="Control"]
 light_mask = 2
@@ -89,8 +87,3 @@ SeName = "menu_select"
 
 [node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_sodei")]
 SeName = "menu_move"
-
-[node name="ScreenshotKey" parent="." instance=ExtResource("8_jvlia")]
-ActionName = "screenshot"
-
-[node name="SaveScreenshotCommand" parent="ScreenshotKey" instance=ExtResource("9_2e5va")]

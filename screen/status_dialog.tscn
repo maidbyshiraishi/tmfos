@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://vcdflqtjndgb"]
+[gd_scene load_steps=27 format=3 uid="uid://vcdflqtjndgb"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_3g4yl"]
 [ext_resource type="Script" path="res://screen/StatusDialog.cs" id="2_lloag"]
@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="14_svsij"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="15_lt5vg"]
 [ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://command/pause_bgm_command.tscn" id="16_jur38"]
-[ext_resource type="PackedScene" uid="uid://bb2nl5uh2vbd1" path="res://command/save_screenshot_command.tscn" id="18_crcn4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vxu5"]
 atlas = ExtResource("12_8t0ni")
@@ -219,14 +218,6 @@ SeName = "menu_move"
 position = Vector2(96, 128)
 
 [node name="PauseBgmCommand" parent="Focus" instance=ExtResource("16_jur38")]
-
-[node name="ScreenshotKey" parent="." instance=ExtResource("13_73i7r")]
-ActionName = "screenshot"
-
-[node name="PlaySeCommand" parent="ScreenshotKey" instance=ExtResource("11_ndkyj")]
-SeName = "menu_select"
-
-[node name="SaveScreenshotCommand" parent="ScreenshotKey" instance=ExtResource("18_crcn4")]
 
 [node name="KeyReleaseedTrigger" parent="." instance=ExtResource("13_73i7r")]
 ActionName = "pause"

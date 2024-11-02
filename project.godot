@@ -27,6 +27,7 @@ MusicPlayer="*res://system/music_player.tscn"
 SePlayer="*res://system/se_player.tscn"
 DialogLayer="*res://system/dialog_layer.tscn"
 ScreenFader="*res://system/screen_fader.tscn"
+Screenshot="*res://system/screenshot.tscn"
 
 [debug]
 
