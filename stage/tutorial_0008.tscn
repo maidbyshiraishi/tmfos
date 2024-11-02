@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="7_sjnxl"]
 [ext_resource type="Script" path="res://player/Camera.cs" id="8_gj7ok"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="8_r1mnb"]
-[ext_resource type="PackedScene" uid="uid://biw1p2hfesvvj" path="res://enemy/nekomimi_maid_c1_enemy.tscn" id="10_oqp13"]
+[ext_resource type="PackedScene" uid="uid://bj2av3ao4sqda" path="res://enemy/nekomimi_maid_c1_enemy.tscn" id="10_oqp13"]
 [ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="10_te3u2"]
 
 [node name="Stage" instance=ExtResource("1_axhrv")]
