@@ -57,6 +57,7 @@ offset_right = 608.0
 offset_bottom = 424.0
 focus_neighbor_left = NodePath("../Back")
 focus_neighbor_right = NodePath("../Back")
+allow_search = false
 script = ExtResource("2_rwg38")
 
 [node name="Focus" parent="Control/LicenseList" instance=ExtResource("5_xti50")]
