@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://r5mbwmmdg3hw"]
+[gd_scene load_steps=12 format=3 uid="uid://r5mbwmmdg3hw"]
 
 [ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_oea57"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_cvu3c"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="5_yk18a"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="6_6yteb"]
 [ext_resource type="Texture2D" uid="uid://dgm70g5qndbge" path="res://contents/image/theater/ending_photo.png" id="8_5kpdt"]
+[ext_resource type="AudioStream" uid="uid://b80xdq1t3o76e" path="res://contents/bgm/bgm9.ogg" id="8_ghp75"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="9_1ty71"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="10_0nalh"]
 
@@ -145,13 +146,20 @@ position = Vector2(39, 2000)
 Target = NodePath("../../../../../CloseCommand")
 
 [node name="Focus" parent="Path2D/Socket/Contents" index="8" instance=ExtResource("5_yk18a")]
-position = Vector2(10, 10)
+position = Vector2(23, 28)
 
 [node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus" index="0" instance=ExtResource("3_d1l78")]
 Command = 1
 Stream = ExtResource("4_ss83w")
 
-[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="9"]
+[node name="Focus2" parent="Path2D/Socket/Contents" index="9" instance=ExtResource("5_yk18a")]
+position = Vector2(23, 736)
+
+[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus2" index="0" instance=ExtResource("3_d1l78")]
+Command = 1
+Stream = ExtResource("8_ghp75")
+
+[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="10"]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 1704.0
@@ -164,11 +172,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="EndingPhoto" type="Sprite2D" parent="Path2D/Socket/Contents" index="10"]
+[node name="EndingPhoto" type="Sprite2D" parent="Path2D/Socket/Contents" index="11"]
 position = Vector2(319, 1568)
 texture = ExtResource("8_5kpdt")
 
-[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="11"]
+[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="12"]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 1928.0
