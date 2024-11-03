@@ -59,21 +59,27 @@ DialogPath = "res://theater/talk_0009.tscn"
 
 [node name="ItemPanelLife" parent="Item" index="0" instance=ExtResource("5_0njl7")]
 position = Vector2(848, -272)
+Stateful = false
 
 [node name="ItemPanelLife2" parent="Item" index="1" instance=ExtResource("5_0njl7")]
 position = Vector2(784, -304)
+Stateful = false
 
 [node name="ItemPanelLife3" parent="Item" index="2" instance=ExtResource("5_0njl7")]
 position = Vector2(720, -336)
+Stateful = false
 
 [node name="ItemPanelLife4" parent="Item" index="3" instance=ExtResource("5_0njl7")]
 position = Vector2(528, -336)
+Stateful = false
 
 [node name="ItemPanelLife5" parent="Item" index="4" instance=ExtResource("5_0njl7")]
 position = Vector2(464, -304)
+Stateful = false
 
 [node name="ItemPanelLife6" parent="Item" index="5" instance=ExtResource("5_0njl7")]
 position = Vector2(400, -272)
+Stateful = false
 
 [node name="ItemPanelWeapon" parent="Item" index="6" instance=ExtResource("6_2caks")]
 position = Vector2(688, -336)
@@ -110,12 +116,15 @@ position = Vector2(624, -368)
 
 [node name="ItemPanelLife7" parent="Item" index="17" instance=ExtResource("5_0njl7")]
 position = Vector2(624, -400)
+Stateful = false
 
 [node name="ItemPanelLife8" parent="Item" index="18" instance=ExtResource("5_0njl7")]
 position = Vector2(640, -432)
+Stateful = false
 
 [node name="ItemPanelLife9" parent="Item" index="19" instance=ExtResource("5_0njl7")]
 position = Vector2(608, -432)
+Stateful = false
 
 [node name="Player" parent="." index="8" instance=ExtResource("5_sy0qw")]
 unique_name_in_owner = true
