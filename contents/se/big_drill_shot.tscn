@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://v5h2wu7ovhm8"]
+
+[ext_resource type="AudioStream" uid="uid://cbcujexgksa51" path="res://contents/se/big_drill_shot.ogg" id="1_538ws"]
+
+[node name="big_drill_shot" type="AudioStreamPlayer"]
+stream = ExtResource("1_538ws")
+max_polyphony = 3
+bus = &"SE"

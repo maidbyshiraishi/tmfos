@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxdgxooaf3d5p"]
+
+[ext_resource type="AudioStream" uid="uid://cujq6y3cpgn7g" path="res://contents/se/player_miss.ogg" id="1_ln4jf"]
+
+[node name="player_miss" type="AudioStreamPlayer"]
+stream = ExtResource("1_ln4jf")
+bus = &"SE"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvbibjv6rs3qy"]
+
+[ext_resource type="AudioStream" uid="uid://dkf6553vupiba" path="res://contents/se/menu_move.ogg" id="1_1hkyy"]
+
+[node name="menu_move" type="AudioStreamPlayer"]
+stream = ExtResource("1_1hkyy")
+max_polyphony = 3
+bus = &"SE"

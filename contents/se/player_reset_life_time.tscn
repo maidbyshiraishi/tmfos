@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwouyqoym40w0"]
+
+[ext_resource type="AudioStream" uid="uid://7k2v7qr8fsoe" path="res://contents/se/player_reset_life_time.ogg" id="1_byckr"]
+
+[node name="player_reset_life_time" type="AudioStreamPlayer"]
+stream = ExtResource("1_byckr")
+bus = &"SE"

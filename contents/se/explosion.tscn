@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsy1mgwpcmaq0"]
+
+[ext_resource type="AudioStream" uid="uid://d4ugu71lpkep" path="res://contents/se/explosion.ogg" id="1_cbv3j"]
+
+[node name="explosion" type="AudioStreamPlayer"]
+stream = ExtResource("1_cbv3j")
+max_polyphony = 3
+bus = &"SE"

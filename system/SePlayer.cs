@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 
 namespace tmfos.system;
 
@@ -18,11 +19,30 @@ public partial class SePlayer : Node
 
         if (value is null)
         {
-            GD.PrintErr($"効果音{name}が存在しません。");
+            Node node = Lib.GetPackedScene($"res://contents/se/{name}.tscn").Instantiate();
+
+            if (node is not null and AudioStreamPlayer aplayer)
+            {
+                AddChild(node);
+                aplayer.Play();
+            }
         }
         else
         {
             value.Play();
+        }
+    }
+
+    public void ClearAllAudioStreamPlayer()
+    {
+        Array<Node> nodes = GetChildren();
+
+        foreach (Node node in nodes)
+        {
+            if (node is AudioStreamPlayer aplayer && !aplayer.Playing)
+            {
+                _ = aplayer.CallDeferred(Node.MethodName.QueueFree);
+            }
         }
     }
 }

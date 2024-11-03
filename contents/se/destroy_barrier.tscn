@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2fcjkjquv4lk"]
+
+[ext_resource type="AudioStream" uid="uid://de2tlhdttydrj" path="res://contents/se/destroy_barrier.ogg" id="1_nbg5x"]
+
+[node name="destroy_barrier" type="AudioStreamPlayer"]
+stream = ExtResource("1_nbg5x")
+max_polyphony = 3
+bus = &"SE"

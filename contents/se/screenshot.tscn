@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://wfb8sp7j4bl8"]
+
+[ext_resource type="AudioStream" uid="uid://cnsmaudjdiihy" path="res://contents/se/screenshot.ogg" id="1_elah6"]
+
+[node name="screenshot" type="AudioStreamPlayer"]
+stream = ExtResource("1_elah6")
+max_polyphony = 2
+bus = &"SE"

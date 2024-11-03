@@ -50,6 +50,7 @@ public partial class DialogLayer : CanvasLayer
     /// <param name="argument">引数配列</param>
     public void OpenDialog(string path, string key = null, Variant[] argument = null)
     {
+        GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
         GetTree().Paused = true;
 
         if (string.IsNullOrWhiteSpace(path))
@@ -166,6 +167,8 @@ public partial class DialogLayer : CanvasLayer
     /// <param name="path">パス</param>
     public void OpenScreen(string path, string fadeout, string fadein)
     {
+        GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
+
         if (string.IsNullOrWhiteSpace(path))
         {
             GD.PrintErr("pathがNullOrWhiteSpaceです。ChangeSceneToFile()できません。");
@@ -219,6 +222,7 @@ public partial class DialogLayer : CanvasLayer
     /// <param name="slotNo">データ番号</param>
     public void OpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
     {
+        GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
         GetTree().Paused = true;
         _ = CallDeferred(MethodName.DeferredOpenGame, (int)startStageType, slotNo, fadeout, fadein);
     }

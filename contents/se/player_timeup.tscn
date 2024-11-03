@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfeur23jpbpch"]
+
+[ext_resource type="AudioStream" uid="uid://48p81qwhr30a" path="res://contents/se/player_timeup.ogg" id="1_rp7tm"]
+
+[node name="player_timeup" type="AudioStreamPlayer"]
+stream = ExtResource("1_rp7tm")
+bus = &"SE"

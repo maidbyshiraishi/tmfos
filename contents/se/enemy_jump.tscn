@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://48xmlliyd76d"]
+
+[ext_resource type="AudioStream" uid="uid://d06j4521qj8ns" path="res://contents/se/enemy_jump.ogg" id="1_ba742"]
+
+[node name="enemy_jump" type="AudioStreamPlayer"]
+stream = ExtResource("1_ba742")
+max_polyphony = 3
+bus = &"SE"

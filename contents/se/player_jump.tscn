@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://buvs8auey6rrc"]
+
+[ext_resource type="AudioStream" uid="uid://dbqh7a7aemfl5" path="res://contents/se/player_jump.ogg" id="1_lf70m"]
+
+[node name="player_jump" type="AudioStreamPlayer"]
+stream = ExtResource("1_lf70m")
+bus = &"SE"
