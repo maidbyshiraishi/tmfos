@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=4 uid="uid://cvvhkenirrk6w"]
+[gd_scene load_steps=26 format=4 uid="uid://cvvhkenirrk6w"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_cdwsu"]
 [ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="2_2mq1n"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="4_ctxes"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="4_rcfwq"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="5_th7nq"]
 [ext_resource type="Script" path="res://player/Camera.cs" id="6_3rygy"]
 [ext_resource type="PackedScene" uid="uid://bqx6umqbqp2jl" path="res://enemy/tentacle_root.tscn" id="6_l3it0"]
@@ -50,6 +51,30 @@ tile_map_data = PackedByteArray("AAATAP//AAAFAAcAAAAAAP//AAAAAAMAAAABAP//AAAAAAM
 position = Vector2(128, -64)
 DoorNo = 1
 Direction = 1
+
+[node name="ItemPanelLife" parent="Item" index="0" instance=ExtResource("4_rcfwq")]
+position = Vector2(272, -48)
+Stateful = false
+
+[node name="ItemPanelLife2" parent="Item" index="1" instance=ExtResource("4_rcfwq")]
+position = Vector2(272, -80)
+Stateful = false
+
+[node name="ItemPanelLife3" parent="Item" index="2" instance=ExtResource("4_rcfwq")]
+position = Vector2(240, -48)
+Stateful = false
+
+[node name="ItemPanelLife4" parent="Item" index="3" instance=ExtResource("4_rcfwq")]
+position = Vector2(240, -80)
+Stateful = false
+
+[node name="ItemPanelLife5" parent="Item" index="4" instance=ExtResource("4_rcfwq")]
+position = Vector2(272, -112)
+Stateful = false
+
+[node name="ItemPanelLife6" parent="Item" index="5" instance=ExtResource("4_rcfwq")]
+position = Vector2(240, -112)
+Stateful = false
 
 [node name="Player" parent="." index="8" instance=ExtResource("5_th7nq")]
 unique_name_in_owner = true

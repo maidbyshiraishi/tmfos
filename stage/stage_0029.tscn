@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cenrhhlnpwu8d"]
+[gd_scene load_steps=17 format=4 uid="uid://cenrhhlnpwu8d"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_3630f"]
 [ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_7dpo6"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bpnpsk7t6uv77" path="res://enemy/enemy_spawner.tscn" id="13_1u5or"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="13_ln23h"]
 [ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="15_m6wje"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="16_pvjk3"]
 
 [node name="Stage" instance=ExtResource("1_3630f")]
 BgmStream = ExtResource("2_7dpo6")
@@ -38,6 +39,22 @@ position = Vector2(144, -336)
 
 [node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("15_m6wje")]
 position = Vector2(496, -336)
+
+[node name="ItemPanelLife" parent="Item" index="2" instance=ExtResource("16_pvjk3")]
+position = Vector2(16, -48)
+Stateful = false
+
+[node name="ItemPanelLife2" parent="Item" index="3" instance=ExtResource("16_pvjk3")]
+position = Vector2(48, -48)
+Stateful = false
+
+[node name="ItemPanelLife3" parent="Item" index="4" instance=ExtResource("16_pvjk3")]
+position = Vector2(528, -304)
+Stateful = false
+
+[node name="ItemPanelLife4" parent="Item" index="5" instance=ExtResource("16_pvjk3")]
+position = Vector2(528, -272)
+Stateful = false
 
 [node name="Player" parent="." index="8" instance=ExtResource("4_o3e0h")]
 unique_name_in_owner = true

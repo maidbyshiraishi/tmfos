@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://eg2k2cp5tfgr"]
+[gd_scene load_steps=14 format=4 uid="uid://eg2k2cp5tfgr"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
+[ext_resource type="PackedScene" uid="uid://bvfryyxcw20bs" path="res://decoration/exit.tscn" id="3_guhal"]
 [ext_resource type="PackedScene" uid="uid://byeqvar802p5v" path="res://door/boss_door.tscn" id="3_mkaji"]
 [ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="3_vid54"]
 [ext_resource type="PackedScene" uid="uid://cdvrl2ikd782y" path="res://trigger/talk_ero_maid.tscn" id="4_7trk2"]
+[ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="4_vlshp"]
 [ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="5_0njl7"]
+[ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="5_b2g7p"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="5_sy0qw"]
 [ext_resource type="PackedScene" uid="uid://ci7ah8lulrk1q" path="res://item/item_panel_weapon.tscn" id="6_2caks"]
 [ext_resource type="Script" path="res://player/Camera.cs" id="6_dme0l"]
@@ -29,11 +32,26 @@ tile_map_data = PackedByteArray("AAAAAOD/AAAAAAMAAAAAAOH/AAAAAAMAAAAAAOL/AAAAAAM
 [node name="Foreground" parent="TileMap" index="2"]
 tile_map_data = PackedByteArray("AAAYAP3/AAAHAAEAAAAYAPz/AAAHAAEAAAAYAPv/AAAHAAEAAAAQAPf/AAAHAAEAAAAQAPj/AAAHAAEAAAAOAP3/AAAHAAEAAAAOAPz/AAAHAAEAAAAMAP3/AAAHAAEAAAAMAPz/AAAHAAEAAAAMAPv/AAAHAAEAAAAWAPf/AAAHAAEAAAAWAPj/AAAHAAEAAAAaAPn/AAAHAAEAAAAaAPr/AAAHAAEAAAAWAPz/AAAHAAEAAAAWAPv/AAAHAAEAAAAMAP7/AAAHAAEAAAAaAP7/AAAHAAEAAAAQAPz/AAAHAAEAAAA=")
 
+[node name="Exit" parent="Decoration1" index="0" instance=ExtResource("3_guhal")]
+position = Vector2(96, -176)
+
 [node name="BossDoor1" parent="Door" index="0" instance=ExtResource("3_mkaji")]
-position = Vector2(128, -64)
+position = Vector2(208, -63)
 DestStageNo = 15
 DestDoorNo = 3
 DoorNo = 1
+Direction = 1
+
+[node name="Warp2" parent="Door" index="1" instance=ExtResource("5_b2g7p")]
+position = Vector2(96, -128)
+DestStageNo = 1
+DestDoorNo = 1
+DoorNo = 2
+
+[node name="SavePoint3" parent="Door" index="2" instance=ExtResource("4_vlshp")]
+position = Vector2(303, -72)
+DoorNo = 3
+Direction = 1
 
 [node name="TalkTrigger" parent="Talk" index="0" instance=ExtResource("4_7trk2")]
 position = Vector2(624, -160)

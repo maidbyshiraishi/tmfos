@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b378gcnfrfdeg"]
+[gd_scene load_steps=15 format=4 uid="uid://b378gcnfrfdeg"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_oev74"]
 [ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_a3ugq"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="11_kfljp"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="12_t2u0o"]
 [ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="13_ohyl7"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="14_8oo6f"]
 
 [node name="Stage" instance=ExtResource("1_oev74")]
 BgmStream = ExtResource("2_a3ugq")
@@ -38,7 +39,31 @@ Direction = 1
 position = Vector2(160, -416)
 
 [node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("13_ohyl7")]
-position = Vector2(544, -416)
+position = Vector2(512, -416)
+
+[node name="ItemPanelLife" parent="Item" index="2" instance=ExtResource("14_8oo6f")]
+position = Vector2(48, -48)
+Stateful = false
+
+[node name="ItemPanelLife2" parent="Item" index="3" instance=ExtResource("14_8oo6f")]
+position = Vector2(80, -208)
+Stateful = false
+
+[node name="ItemPanelLife3" parent="Item" index="4" instance=ExtResource("14_8oo6f")]
+position = Vector2(112, -368)
+Stateful = false
+
+[node name="ItemPanelLife4" parent="Item" index="5" instance=ExtResource("14_8oo6f")]
+position = Vector2(592, -48)
+Stateful = false
+
+[node name="ItemPanelLife5" parent="Item" index="6" instance=ExtResource("14_8oo6f")]
+position = Vector2(528, -208)
+Stateful = false
+
+[node name="ItemPanelLife6" parent="Item" index="7" instance=ExtResource("14_8oo6f")]
+position = Vector2(560, -368)
+Stateful = false
 
 [node name="Player" parent="." index="8" instance=ExtResource("4_jhg73")]
 unique_name_in_owner = true

@@ -11,7 +11,7 @@ collision_layer = 64
 collision_mask = 156
 script = ExtResource("1_qc7wj")
 Speed = 400.0
-Attack = 10
+Attack = 60
 Direction = Vector2(0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

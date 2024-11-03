@@ -19,7 +19,7 @@ MaxLife = 1200
 DeadSe = "enemy_dead"
 DamageSe = "enemy_damage"
 TimeupSe = "enemy_dead"
-JumpTime = 5.0
+JumpTime = 3.0
 JumpHeight = 700.0
 JumpSe = "enemy_jump"
 TouchdownSe = "enemy_touchdown"
@@ -54,7 +54,7 @@ shape = SubResource("RectangleShape2D_hp3sy")
 [node name="DamageZone1" parent="DamageZone" instance=ExtResource("10_aw1a1")]
 position = Vector2(284, 159)
 scale = Vector2(22, 8)
-Value = -50
+Value = -100
 Continuous = true
 Stateful = false
 OneTime = false
@@ -62,7 +62,7 @@ OneTime = false
 [node name="DamageZone2" parent="DamageZone" instance=ExtResource("10_aw1a1")]
 position = Vector2(264, 48)
 scale = Vector2(20, 3)
-Value = -50
+Value = -100
 Continuous = true
 Stateful = false
 OneTime = false

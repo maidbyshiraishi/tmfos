@@ -121,7 +121,7 @@ public partial class EroMaidEnemy : Enemy
         }
 
         SetSkipAttack();
-        using PackedScene shot = Lib.GetPackedScene("res://enemy/enemy_shot1.tscn");
+        using PackedScene shot = Lib.GetPackedScene("res://enemy/enemy_shot2.tscn");
 
         for (float i = 0f; i < 360f; i += 30f)
         {

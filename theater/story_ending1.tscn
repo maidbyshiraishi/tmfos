@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dok77dg7j1gew" path="res://command/play_animation_command.tscn" id="5_12ygv"]
 [ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="5_jn6f3"]
 [ext_resource type="PackedScene" uid="uid://c21hot266v86s" path="res://command/go_next_page_command.tscn" id="6_hqai5"]
-[ext_resource type="AudioStream" uid="uid://bs70k8qsse4p5" path="res://contents/bgm/bgm2.ogg" id="6_y8347"]
+[ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="6_kbmb8"]
 [ext_resource type="Texture2D" uid="uid://btonxyxb0w02h" path="res://contents/image/theater/ending_2.png" id="8_1itra"]
 [ext_resource type="SpriteFrames" uid="uid://bal63oh35a03k" path="res://contents/animation/theater/ending_4.tres" id="8_uq37o"]
 [ext_resource type="PackedScene" uid="uid://8jidpood58yw" path="res://command/start_timer_trigger_command.tscn" id="9_b8o5f"]
@@ -161,7 +161,7 @@ position = Vector2(16, 17)
 
 [node name="ChangeBgmCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
 Command = 1
-Stream = ExtResource("6_y8347")
+Stream = ExtResource("6_kbmb8")
 
 [node name="PlayAnimationCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
@@ -411,7 +411,7 @@ position = Vector2(16, 17)
 
 [node name="ChangeBgmCommand" parent="Socket/Contents/Page7/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
 Command = 3
-Stream = ExtResource("6_y8347")
+Stream = ExtResource("6_kbmb8")
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page7/VisibleTrigger" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
 Target = NodePath("../../TimerTrigger")

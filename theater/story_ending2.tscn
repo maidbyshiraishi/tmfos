@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="10_0nalh"]
 
 [node name="ScrollTheater" instance=ExtResource("1_oea57")]
-ScrollTime = 30.0
+ScrollTime = 50.0
 metadata/_edit_horizontal_guides_ = [2176.0]
 metadata/_edit_vertical_guides_ = [640.0]
 
@@ -35,9 +35,9 @@ theme = ExtResource("2_cvu3c")
 [node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
 layout_mode = 0
 offset_left = -1.0
-offset_top = 112.0
+offset_top = 72.0
 offset_right = 639.0
-offset_bottom = 171.0
+offset_bottom = 131.0
 theme_override_font_sizes/font_size = 30
 text = "宇宙から来たメイド"
 horizontal_alignment = 1
@@ -146,20 +146,13 @@ position = Vector2(39, 2000)
 Target = NodePath("../../../../../CloseCommand")
 
 [node name="Focus" parent="Path2D/Socket/Contents" index="8" instance=ExtResource("5_yk18a")]
-position = Vector2(23, 28)
+position = Vector2(43, 91)
 
 [node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus" index="0" instance=ExtResource("3_d1l78")]
-Command = 1
-Stream = ExtResource("4_ss83w")
-
-[node name="Focus2" parent="Path2D/Socket/Contents" index="9" instance=ExtResource("5_yk18a")]
-position = Vector2(23, 736)
-
-[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus2" index="0" instance=ExtResource("3_d1l78")]
-Command = 1
+Command = 3
 Stream = ExtResource("8_ghp75")
 
-[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="10"]
+[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="9"]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 1704.0
@@ -172,11 +165,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="EndingPhoto" type="Sprite2D" parent="Path2D/Socket/Contents" index="11"]
+[node name="EndingPhoto" type="Sprite2D" parent="Path2D/Socket/Contents" index="10"]
 position = Vector2(319, 1568)
 texture = ExtResource("8_5kpdt")
 
-[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="12"]
+[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="11"]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 1928.0
