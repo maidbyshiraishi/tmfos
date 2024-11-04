@@ -12,7 +12,7 @@ public partial class GameKeyOption : Node
 
     // データ保存先
     private static readonly string KeyOptionFilePath = "user://key_options.dat";
-    private static readonly Array<Key> UnchangeableKeys = [Key.Enter, Key.KpEnter, Key.Kp8, Key.Kp2, Key.Kp4, Key.Kp6, Key.Up, Key.Down, Key.Left, Key.Right, Key.Escape];
+    private static readonly Array<Key> UnchangeableKeys = [Key.Enter, Key.KpEnter, Key.Kp8, Key.Kp2, Key.Kp4, Key.Kp6, Key.Up, Key.Down, Key.Left, Key.Right, Key.Escape, Key.F1];
 
     public override void _Ready()
     {
