@@ -24,6 +24,7 @@ public partial class TimerTrigger : Node
     {
         base._Ready();
         _ = Timer?.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.Exec));
+        _ = Connect(Node.SignalName.TreeExiting, new Callable(this, MethodName.StopTimer));
     }
 
     public virtual void Exec()
@@ -49,5 +50,10 @@ public partial class TimerTrigger : Node
         {
             Timer.Paused = paused;
         }
+    }
+
+    public void StopTimer()
+    {
+        PauseTimer(true);
     }
 }

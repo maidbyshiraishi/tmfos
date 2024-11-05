@@ -2,6 +2,5 @@
 
 [ext_resource type="Script" path="res://trigger/TimerTrigger.cs" id="1_m1gdd"]
 
-[node name="TimerTrigger" type="Node" node_paths=PackedStringArray("_timer")]
+[node name="TimerTrigger" type="Node"]
 script = ExtResource("1_m1gdd")
-_timer = NodePath("")
