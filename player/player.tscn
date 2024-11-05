@@ -25,6 +25,7 @@ floor_max_angle = 0.872665
 floor_snap_length = 8.0
 script = ExtResource("1_mswun")
 MaxLife = 100
+SkipDamageTime = 0.5
 DeadSe = "player_dead"
 DamageSe = "player_damage"
 TimeupSe = "player_timeup"

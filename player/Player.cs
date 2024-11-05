@@ -19,6 +19,9 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     [Signal]
     public delegate void MissedEventHandler();
 
+    [Export]
+    public float PlayerArmorRatio { get; set; } = 1f;
+
     private TileMapManager _tileMapManager;
     private CollisionShape2D _collision;
     private CollisionShape2D _burialCollision;
@@ -67,8 +70,8 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         GameData gdata = GetNode<GameData>("/root/GameData");
         _itemData = gdata.GetItemData();
         Life = gdata.GetPlayerData().Life;
+        PlayerArmorRatio = stageRoot.PlayerArmorRatio;
         Action = MobActionType.Walk;
-        SkipDamageTime = 0.5f;
         ChangeSprite("walk", Direction);
         ItemSearchEffect();
         CollisionOnewayBlock(true, _itemData.Shoes);

@@ -106,7 +106,7 @@ public partial class EroMaidEnemy : Enemy
 
     private void Laser()
     {
-        using PackedScene laser = Lib.GetPackedScene("res://enemy/enemy_laser.tscn");
+        using PackedScene laser = Lib.GetPackedScene("res://enemy/enemy_laser2.tscn");
         Vector2 shotDirection = m_player.GlobalPosition - GlobalPosition;
         Shot shotNode = (Shot)laser.Instantiate();
         shotNode.Penetration = true;
