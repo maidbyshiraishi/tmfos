@@ -46,23 +46,31 @@ position = Vector2(512, -416)
 position = Vector2(48, -48)
 Stateful = false
 
-[node name="ItemPanelLife2" parent="Item" index="3" instance=ExtResource("14_8oo6f")]
+[node name="ItemPanelLife7" parent="Item" index="3" instance=ExtResource("14_8oo6f")]
+position = Vector2(320, -48)
+Stateful = false
+
+[node name="ItemPanelLife8" parent="Item" index="4" instance=ExtResource("14_8oo6f")]
+position = Vector2(320, -80)
+Stateful = false
+
+[node name="ItemPanelLife2" parent="Item" index="5" instance=ExtResource("14_8oo6f")]
 position = Vector2(80, -208)
 Stateful = false
 
-[node name="ItemPanelLife3" parent="Item" index="4" instance=ExtResource("14_8oo6f")]
+[node name="ItemPanelLife3" parent="Item" index="6" instance=ExtResource("14_8oo6f")]
 position = Vector2(112, -368)
 Stateful = false
 
-[node name="ItemPanelLife4" parent="Item" index="5" instance=ExtResource("14_8oo6f")]
+[node name="ItemPanelLife4" parent="Item" index="7" instance=ExtResource("14_8oo6f")]
 position = Vector2(592, -48)
 Stateful = false
 
-[node name="ItemPanelLife5" parent="Item" index="6" instance=ExtResource("14_8oo6f")]
+[node name="ItemPanelLife5" parent="Item" index="8" instance=ExtResource("14_8oo6f")]
 position = Vector2(528, -208)
 Stateful = false
 
-[node name="ItemPanelLife6" parent="Item" index="7" instance=ExtResource("14_8oo6f")]
+[node name="ItemPanelLife6" parent="Item" index="9" instance=ExtResource("14_8oo6f")]
 position = Vector2(560, -368)
 Stateful = false
 

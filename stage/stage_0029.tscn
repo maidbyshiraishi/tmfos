@@ -49,11 +49,19 @@ Stateful = false
 position = Vector2(48, -48)
 Stateful = false
 
-[node name="ItemPanelLife3" parent="Item" index="4" instance=ExtResource("16_pvjk3")]
+[node name="ItemPanelLife5" parent="Item" index="4" instance=ExtResource("16_pvjk3")]
+position = Vector2(320, -80)
+Stateful = false
+
+[node name="ItemPanelLife6" parent="Item" index="5" instance=ExtResource("16_pvjk3")]
+position = Vector2(320, -48)
+Stateful = false
+
+[node name="ItemPanelLife3" parent="Item" index="6" instance=ExtResource("16_pvjk3")]
 position = Vector2(584, -48)
 Stateful = false
 
-[node name="ItemPanelLife4" parent="Item" index="5" instance=ExtResource("16_pvjk3")]
+[node name="ItemPanelLife4" parent="Item" index="7" instance=ExtResource("16_pvjk3")]
 position = Vector2(624, -48)
 Stateful = false
 
