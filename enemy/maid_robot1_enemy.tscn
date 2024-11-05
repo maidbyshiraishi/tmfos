@@ -21,6 +21,7 @@ MaxLife = 800
 DeadSe = "enemy_dead"
 DamageSe = "enemy_damage"
 TimeupSe = "enemy_dead"
+Attack = 80
 JumpSe = "enemy_jump"
 TouchdownSe = "enemy_touchdown"
 

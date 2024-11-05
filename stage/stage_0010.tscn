@@ -413,7 +413,7 @@ DestDoorNo = 2
 DoorNo = 4
 
 [node name="SavePoint5" parent="Door" index="4" instance=ExtResource("11_nu2b7")]
-position = Vector2(2184, -3144)
+position = Vector2(256, -4264)
 DoorNo = 5
 Direction = 1
 
@@ -681,7 +681,7 @@ position_smoothing_speed = 10.0
 script = ExtResource("9_boij6")
 
 [node name="ThreeMeterEnemy" parent="Enemy" index="0" instance=ExtResource("18_aossn")]
-position = Vector2(896, -4288)
+position = Vector2(976, -4320)
 
 [node name="ThreeMeterEnemy2" parent="Enemy" index="1" instance=ExtResource("18_aossn")]
 position = Vector2(1392, -3136)

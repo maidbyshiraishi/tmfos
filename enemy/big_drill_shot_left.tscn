@@ -8,7 +8,7 @@ collision_layer = 64
 collision_mask = 156
 script = ExtResource("1_3yhuq")
 Speed = 300.0
-Attack = 60
+Attack = 70
 Direction = Vector2(-1, 0)
 Penetration = true
 

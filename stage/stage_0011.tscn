@@ -205,19 +205,19 @@ position = Vector2(712, -2816)
 EnemyName = 5
 
 [node name="EnemySpawner4" parent="Enemy" index="1" instance=ExtResource("14_4j3gq")]
-position = Vector2(1280, -2688)
+position = Vector2(1408, -2688)
 EnemyName = 5
 
 [node name="EnemySpawner5" parent="Enemy" index="2" instance=ExtResource("14_4j3gq")]
-position = Vector2(1728, -2752)
+position = Vector2(1824, -2720)
 EnemyName = 5
 
 [node name="EnemySpawner6" parent="Enemy" index="3" instance=ExtResource("14_4j3gq")]
-position = Vector2(2208, -2424)
+position = Vector2(2304, -2624)
 EnemyName = 5
 
 [node name="EnemySpawner7" parent="Enemy" index="4" instance=ExtResource("14_4j3gq")]
-position = Vector2(2632, -2680)
+position = Vector2(2752, -2688)
 EnemyName = 5
 
 [node name="EnemySpawner8" parent="Enemy" index="5" instance=ExtResource("14_4j3gq")]
