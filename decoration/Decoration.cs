@@ -25,7 +25,7 @@ public partial class Decoration : Node2D, ISpawnedNode
 
     public void Finished()
     {
-        _ = CallDeferred(Node.MethodName.QueueFree);
+        QueueFree();
     }
 
     public void SetNodeInfo(Vector2 position, Vector2 direction)

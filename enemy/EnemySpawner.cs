@@ -106,7 +106,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
     public void RemoveNode()
     {
         SetPhysicsProcess(false);
-        _ = CallDeferred(Node.MethodName.QueueFree);
+        QueueFree();
     }
 
     /// <summary>

@@ -76,7 +76,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
     public virtual void RemoveNode()
     {
         SetPhysicsProcess(false);
-        _ = CallDeferred(Node.MethodName.QueueFree);
+        QueueFree();
     }
 
     public override void _PhysicsProcess(double delta)

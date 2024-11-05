@@ -36,7 +36,7 @@ public partial class Mob : CharacterBody2D, IGameNode
     public virtual void RemoveNode()
     {
         SetPhysicsProcess(false);
-        _ = CallDeferred(Node.MethodName.QueueFree);
+        QueueFree();
     }
 
     protected void PlaySprite(string name = null)

@@ -39,7 +39,7 @@ public partial class DialogRoot : Control
 
     public virtual void Close()
     {
-        _ = CallDeferred(Node.MethodName.QueueFree);
+        QueueFree();
     }
 
     public virtual void Active()

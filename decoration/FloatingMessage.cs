@@ -24,7 +24,7 @@ public partial class FloatingMessage : Marker2D, ISpawnedNode
 
     public void Finished(StringName animName)
     {
-        _ = CallDeferred(Node.MethodName.QueueFree);
+        QueueFree();
     }
 
     public void SetNodeInfo(Vector2 position, Vector2 direction, double lifeTime)

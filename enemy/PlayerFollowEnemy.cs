@@ -130,7 +130,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
     public void RemoveNode()
     {
         SetPhysicsProcess(false);
-        _ = CallDeferred(Node.MethodName.QueueFree);
+        QueueFree();
     }
 
     public void SetLifeTime(double lifeTime)
