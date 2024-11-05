@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c43txyodixmdu"]
+[gd_scene load_steps=46 format=3 uid="uid://c43txyodixmdu"]
 
 [ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_d358e"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_gd8bc"]
@@ -31,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://dsjunvv31st3c" path="res://contents/image/theater/talk_nekomimi_maid_pink.png" id="25_v3m32"]
 [ext_resource type="PackedScene" uid="uid://c5i6ntaj312ku" path="res://command/close_all_dialog_command.tscn" id="26_dbfgy"]
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="27_06meo"]
+[ext_resource type="Texture2D" uid="uid://dvukdxt2pi3t7" path="res://contents/image/theater/talk_nekomimi_maid_gold.png" id="28_wwd3q"]
+[ext_resource type="Texture2D" uid="uid://wuqe5q1lnttq" path="res://contents/image/theater/talk_nekomimi_maid_pink_m.png" id="29_dkij3"]
+[ext_resource type="Texture2D" uid="uid://te8if7joa5s" path="res://contents/image/theater/talk_nekomimi_maid_blue_m.png" id="30_rcdx7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk38a"]
 atlas = ExtResource("14_ncpnb")
@@ -245,6 +248,7 @@ offset_right = 236.0
 offset_bottom = 234.0
 
 [node name="Page3" type="Control" parent="Socket/Contents" index="2"]
+visible = false
 anchors_preset = 0
 offset_left = 168.0
 offset_top = 120.0
@@ -936,12 +940,22 @@ offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page19" index="0"]
-position = Vector2(152, 73)
+[node name="Sprite2D2" type="Sprite2D" parent="Socket/Contents/Page19" index="0"]
+position = Vector2(200, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("24_2ax1p")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Socket/Contents/Page19" index="1"]
+position = Vector2(144, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("25_v3m32")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Socket/Contents/Page19" index="2"]
+position = Vector2(96, 73)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("23_tbsam")
 
-[node name="Label" type="Label" parent="Socket/Contents/Page19" index="1"]
+[node name="Label" type="Label" parent="Socket/Contents/Page19" index="3"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 161.0
@@ -950,13 +964,13 @@ offset_bottom = 209.0
 text = "休みたい！"
 horizontal_alignment = 1
 
-[node name="VisibleTrigger" parent="Socket/Contents/Page19" index="2" instance=ExtResource("4_uclh4")]
+[node name="VisibleTrigger" parent="Socket/Contents/Page19" index="4" instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page19/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
 Target = NodePath("../../TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page19" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
+[node name="TimerTrigger" parent="Socket/Contents/Page19" index="5" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
 WaitTime = 3.0
 Timer = NodePath("Timer")
 
@@ -965,7 +979,7 @@ one_shot = true
 
 [node name="GoNextPageCommand" parent="Socket/Contents/Page19/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
 
-[node name="Control" type="Control" parent="Socket/Contents/Page19" index="4"]
+[node name="Control" type="Control" parent="Socket/Contents/Page19" index="6"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
@@ -1074,17 +1088,17 @@ offset_bottom = 360.0
 [node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page22" index="0"]
 position = Vector2(200, 73)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("24_2ax1p")
+texture = ExtResource("28_wwd3q")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Socket/Contents/Page22" index="1"]
 position = Vector2(144, 73)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("25_v3m32")
+texture = ExtResource("29_dkij3")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Socket/Contents/Page22" index="2"]
 position = Vector2(96, 73)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("23_tbsam")
+texture = ExtResource("30_rcdx7")
 
 [node name="Label" type="Label" parent="Socket/Contents/Page22" index="3"]
 layout_mode = 0

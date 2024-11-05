@@ -19,6 +19,7 @@
 
 [node name="Stage" instance=ExtResource("1_3630f")]
 BgmStream = ExtResource("2_7dpo6")
+PlayerArmorRatio = 0.0
 
 [node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
 texture = ExtResource("3_fgj8j")
@@ -49,11 +50,11 @@ position = Vector2(48, -48)
 Stateful = false
 
 [node name="ItemPanelLife3" parent="Item" index="4" instance=ExtResource("16_pvjk3")]
-position = Vector2(528, -304)
+position = Vector2(584, -48)
 Stateful = false
 
 [node name="ItemPanelLife4" parent="Item" index="5" instance=ExtResource("16_pvjk3")]
-position = Vector2(528, -272)
+position = Vector2(624, -48)
 Stateful = false
 
 [node name="Player" parent="." index="8" instance=ExtResource("4_o3e0h")]
@@ -88,9 +89,11 @@ offset_bottom = 130.0
 [node name="SweepObserver" parent="." index="14" instance=ExtResource("10_gyphy")]
 GroupName = "SweepEnemyObserver"
 
-[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("11_kgvgu")]
+[node name="SetPlayerInitialDurabilityCommand2" parent="SweepObserver" index="0" instance=ExtResource("11_kgvgu")]
 
-[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("12_sclwm")]
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="1" instance=ExtResource("11_kgvgu")]
+
+[node name="OpenDialogCommand" parent="SweepObserver" index="2" instance=ExtResource("12_sclwm")]
 DialogPath = "res://theater/talk_0013.tscn"
 
 [node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("13_ln23h")]
@@ -611,7 +614,7 @@ EnemyName = 17
 ManualMode = true
 
 [node name="DrillShot7" parent="BigDrillPoint" index="3" instance=ExtResource("13_1u5or")]
-position = Vector2(832, -128)
+position = Vector2(832, -192)
 EnemyName = 20
 ManualMode = true
 
@@ -641,6 +644,6 @@ EnemyName = 20
 ManualMode = true
 
 [node name="DrillShot1" parent="BigDrillPoint" index="9" instance=ExtResource("13_1u5or")]
-position = Vector2(-192, -128)
+position = Vector2(-192, -192)
 EnemyName = 20
 ManualMode = true

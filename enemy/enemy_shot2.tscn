@@ -3,4 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://cuw4wqmy5pcmw" path="res://enemy/enemy_shot1.tscn" id="1_tixwk"]
 
 [node name="EnemyShot2" instance=ExtResource("1_tixwk")]
-Attack = 60
+Attack = 5

@@ -46,7 +46,7 @@ public partial class MaidFaucetEnemy : PathFollowEnemy
         }
 
         RandomNumberGenerator random = new();
-        EnemyResourceName enemyName = random.RandiRange(0, 4) == 0 ? EnemyResourceName.RocketMaidEnemy : EnemyResourceName.NekomimiMaidEnemy;
+        EnemyResourceName enemyName = random.RandiRange(1, 8) == 1 ? EnemyResourceName.RocketMaidEnemy : EnemyResourceName.NekomimiMaidEnemy;
 
         if (m_direction is DirectionType.Left or DirectionType.Up)
         {

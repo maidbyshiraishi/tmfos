@@ -21,12 +21,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8w6d"]
 size = Vector2(80, 4)
 
-[node name="EnemyLaser" type="Area2D"]
+[node name="EnemyLaser1" type="Area2D"]
 collision_layer = 64
 collision_mask = 8
 script = ExtResource("1_0sgwu")
-Speed = 800.0
-Attack = 75
+Speed = 700.0
+Attack = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3u488")

@@ -105,7 +105,8 @@ point_count = 9
 [node name="Stage" instance=ExtResource("1_axhrv")]
 BgmStream = ExtResource("3_a3ho0")
 IsDarkZone = true
-EnemyAttackCorrection = 25
+EnemyAttackCorrection = 20
+PlayerArmorRatio = 0.8
 
 [node name="ColorRect" parent="Background/Parallax2D3" index="0"]
 color = Color(0, 0, 0, 1)

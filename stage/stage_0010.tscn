@@ -29,6 +29,7 @@
 BgmStream = ExtResource("3_ws2co")
 IsDarkZone = true
 EnemyAttackCorrection = 40
+PlayerArmorRatio = 0.7
 
 [node name="ColorRect" parent="Background/Parallax2D3" index="0"]
 color = Color(0, 0, 0, 1)

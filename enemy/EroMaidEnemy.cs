@@ -106,7 +106,7 @@ public partial class EroMaidEnemy : Enemy
 
     private void Laser()
     {
-        using PackedScene laser = Lib.GetPackedScene("res://enemy/enemy_laser2.tscn");
+        using PackedScene laser = Lib.GetPackedScene("res://enemy/enemy_laser1.tscn");
         Vector2 shotDirection = m_player.GlobalPosition - GlobalPosition;
         Shot shotNode = (Shot)laser.Instantiate();
         shotNode.Penetration = true;
@@ -115,7 +115,7 @@ public partial class EroMaidEnemy : Enemy
 
     private void Shot()
     {
-        if (SkipAttack || !_shot)
+        if (SkipAttack || _shot)
         {
             return;
         }
@@ -139,19 +139,19 @@ public partial class EroMaidEnemy : Enemy
         Marker2D point = EntryPoints.GetNode<Marker2D>(string.Format("Marker2D{0:#}", random.RandiRange(1, _entryCount)));
         Position = point.GlobalPosition;
         Direction = Lib.GetLRDirection(Position, m_player.Position);
-        _shot = random.RandiRange(1, 2) == 1;
+        _shot = random.RandiRange(1, 4) == 1;
 
         if (_shot)
-        {
-            PlaySprite("shot");
-        }
-        else
         {
             PlaySprite("laser");
             PackedScene decoration = Lib.GetPackedScene("res://decoration/excitation.tscn");
             Node decorationNode = decoration.Instantiate();
             _ = EmitSignal(Mob.SignalName.NodeSpawned, decorationNode, this, _marker.GlobalPosition, Vector2.Zero, 0f);
             _ = decorationNode.Connect(Node.SignalName.TreeExited, new Callable(this, MethodName.Laser));
+        }
+        else
+        {
+            PlaySprite("shot");
         }
     }
 }

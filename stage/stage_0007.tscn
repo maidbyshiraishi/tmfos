@@ -26,7 +26,8 @@ shader_parameter/depth = 0.02
 
 [node name="Stage" instance=ExtResource("1_axhrv")]
 BgmStream = ExtResource("3_2btgf")
-EnemyAttackCorrection = 35
+EnemyAttackCorrection = 30
+PlayerArmorRatio = 0.7
 
 [node name="ColorRect" parent="Background/Parallax2D3" index="0"]
 color = Color(0.382628, 0.105852, 0.0982356, 1)

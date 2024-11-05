@@ -17,7 +17,7 @@ MaxLife = 400
 DeadSe = "enemy_dead"
 DamageSe = "enemy_damage"
 TimeupSe = "enemy_dead"
-Attack = 80
+Attack = 30
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_e6xkj")
@@ -46,6 +46,7 @@ wait_time = 0.001
 one_shot = true
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="HitArea2D"]

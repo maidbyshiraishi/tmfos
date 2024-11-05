@@ -32,6 +32,7 @@ shader_parameter/depth = 0.02
 
 [node name="Stage" instance=ExtResource("1_cdwsu")]
 BgmStream = ExtResource("2_2mq1n")
+PlayerArmorRatio = 0.0
 metadata/_edit_horizontal_guides_ = [-480.0]
 metadata/_edit_vertical_guides_ = [640.0]
 
@@ -160,7 +161,7 @@ autoplay = "default"
 
 [node name="TentacleHead" parent="Enemy/TentacleRoot1" index="10" instance=ExtResource("8_id7ur")]
 Speed = 1.0
-MaxLength = 450.0
+MaxLength = 480.0
 
 [node name="DragonHeadEnemy" parent="Enemy/TentacleRoot1/TentacleHead" index="0" instance=ExtResource("10_5soym")]
 
@@ -260,6 +261,7 @@ autoplay = "default"
 
 [node name="TentacleHead" parent="Enemy/TentacleRoot2" index="10" instance=ExtResource("8_id7ur")]
 Speed = 2.0
+MaxLength = 400.0
 
 [node name="DragonHeadEnemy" parent="Enemy/TentacleRoot2/TentacleHead" index="0" instance=ExtResource("10_5soym")]
 
@@ -358,7 +360,6 @@ sprite_frames = ExtResource("8_ojrkh")
 autoplay = "default"
 
 [node name="TentacleHead" parent="Enemy/TentacleRoot3" index="10" instance=ExtResource("8_id7ur")]
-MaxLength = 200.0
 
 [node name="DragonHeadEnemy" parent="Enemy/TentacleRoot3/TentacleHead" index="0" instance=ExtResource("10_5soym")]
 
@@ -432,9 +433,11 @@ offset_bottom = 130.0
 [node name="SweepObserver" parent="." index="14" instance=ExtResource("9_bed55")]
 GroupName = "SweepEnemyObserver"
 
-[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("10_vr445")]
+[node name="SetPlayerInitialDurabilityCommand2" parent="SweepObserver" index="0" instance=ExtResource("10_vr445")]
 
-[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("11_7rqq8")]
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="1" instance=ExtResource("10_vr445")]
+
+[node name="OpenDialogCommand" parent="SweepObserver" index="2" instance=ExtResource("11_7rqq8")]
 DialogPath = "res://theater/talk_0036.tscn"
 
 [node name="TmfosEnemy" parent="." index="17" groups=["SweepEnemyObserver"] instance=ExtResource("11_o3bmi")]

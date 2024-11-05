@@ -46,7 +46,7 @@ public partial class NekomimiMaidEnemy : EyesightEnemy, ISwimAction
 
         if (DirectAttack("res:///decoration/explosion.tscn"))
         {
-            RemoveNode();
+            Dead();
         }
     }
 
