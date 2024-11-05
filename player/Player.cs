@@ -706,7 +706,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         if (value < 0)
         {
             // 最低でもダメージ1は受ける
-            value = Mathf.Clamp(value + _itemData.Armor, int.MinValue, -1);
+            value = Mathf.Clamp(value + (int)(_itemData.Armor * PlayerArmorRatio), int.MinValue, -1);
         }
 
         base.AddDurability(value);
