@@ -32,7 +32,7 @@ public partial class CollidableArea : Area2D
     [Export]
     public bool Search { get; set; } = false;
 
-    private readonly Array<Node2D> _target = [];
+    private readonly Array<ulong> _target = [];
     private bool _wait = false;
     private readonly bool[] _mask = new bool[32];
 
@@ -53,12 +53,36 @@ public partial class CollidableArea : Area2D
             return;
         }
 
-        foreach (Node2D node in _target)
+        Array<ulong> remove = [];
+
+        // todo: キャラクターが同時にOutOfBorderとFireに接触した場合、InvalidCastExceptionが発生する。OutOfBorderの仕様変更で対応し、根本解決していない。
+        // System.InvalidCastException: Unable to cast object of type 'Godot.GodotObject' to type 'Godot.Node2D'.
+
+        foreach (ulong id in _target)
         {
-            if ((OverlapsBody(node) || OverlapsArea(node)) && (!Search || (Search && node is ActionMob amob && amob.Search) || node.Name == "ItemSearch"))
+            if (!IsInstanceIdValid(id))
+            {
+                remove.Add(id);
+                continue;
+            }
+
+            GodotObject gobj = InstanceFromId(id);
+
+            if (!IsInstanceValid(gobj))
+            {
+                remove.Add(id);
+                continue;
+            }
+
+            if (gobj is Node2D node && (OverlapsArea(node) || OverlapsBody(node)) && (!Search || (Search && node is ActionMob amob && amob.Search) || node.Name == "ItemSearch"))
             {
                 _ = EmitSignal(SignalName.Collided, node, this);
             }
+        }
+
+        foreach (ulong id in remove)
+        {
+            _ = _target.Remove(id);
         }
 
         if (!Continuous)
@@ -106,9 +130,11 @@ public partial class CollidableArea : Area2D
 
     public void DeferredNodeEntered(Node2D node)
     {
-        if (!_target.Contains(node))
+        ulong id = node.GetInstanceId();
+
+        if (!_target.Contains(id))
         {
-            _target.Add(node);
+            _target.Add(id);
         }
     }
 
@@ -119,9 +145,11 @@ public partial class CollidableArea : Area2D
 
     public void DeferredNodeExited(Node2D node)
     {
-        if (_target.Contains(node))
+        ulong id = node.GetInstanceId();
+
+        if (_target.Contains(id))
         {
-            _ = _target.Remove(node);
+            _ = _target.Remove(id);
         }
     }
 
