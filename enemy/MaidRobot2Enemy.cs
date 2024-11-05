@@ -25,6 +25,7 @@ public partial class MaidRobot2Enemy : Enemy
     private int _drillCount = 0;
     private bool _active = false;
     private bool _jump = false;
+    private int _entryPoint = 1;
 
     public override void _Ready()
     {
@@ -88,7 +89,15 @@ public partial class MaidRobot2Enemy : Enemy
         }
 
         RandomNumberGenerator random = new();
-        DrillPoints.GetNode<EnemySpawner>($"DrillShot{random.RandiRange(1, _drillCount)}").SpawnEnemy();
+
+        int drill = random.RandiRange(1, _drillCount);
+
+        if (drill == _entryPoint)
+        {
+            return;
+        }
+
+        DrillPoints.GetNode<EnemySpawner>($"DrillShot{drill}").SpawnEnemy();
     }
 
     public override void Dead()
@@ -122,13 +131,15 @@ public partial class MaidRobot2Enemy : Enemy
 
     public void Respawn()
     {
-        if (!_active || !IsOnFloor())
+        if (!_active || MobState is MobStateType.Dead)
         {
             return;
         }
 
+        Velocity = Vector2.Zero;
         RandomNumberGenerator random = new();
-        Marker2D point = EntryPoints.GetNode<Marker2D>(string.Format("Marker2D{0:#}", random.RandiRange(1, _entryCount)));
+        _entryPoint=random.RandiRange(3, 2+_entryCount);
+        Marker2D point = EntryPoints.GetNode<Marker2D>(string.Format("Marker2D{0:#}", _entryPoint));
         Position = point.GlobalPosition;
     }
 }

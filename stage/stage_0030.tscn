@@ -100,11 +100,9 @@ offset_bottom = 130.0
 [node name="SweepObserver" parent="." index="14" instance=ExtResource("9_5kmyy")]
 GroupName = "SweepEnemyObserver"
 
-[node name="SetPlayerInitialDurabilityCommand2" parent="SweepObserver" index="0" instance=ExtResource("10_ve72n")]
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("10_ve72n")]
 
-[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="1" instance=ExtResource("10_ve72n")]
-
-[node name="OpenDialogCommand" parent="SweepObserver" index="2" instance=ExtResource("11_kfljp")]
+[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("11_kfljp")]
 DialogPath = "res://theater/talk_0014.tscn"
 
 [node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("12_t2u0o")]

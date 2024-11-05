@@ -25,7 +25,7 @@ PlayerArmorRatio = 0.0
 texture = ExtResource("3_fgj8j")
 
 [node name="Background" parent="TileMap" index="0"]
-tile_map_data = PackedByteArray("AAAEAP7/AAAEAAAAAAAEAP3/AAAEAAAAAAAEAPz/AAAEAAAAAAAEAPv/AAAEAAAAAAAEAPr/AAAEAAAAAAAEAPn/AAAEAAAAAAAEAPj/AAAEAAAAAAAEAPf/AAAEAAAAAAAEAPb/AAAEAAAAAAAPAP7/AAAEAAAAAAAPAP3/AAAEAAAAAAAPAPz/AAAEAAAAAAAPAPv/AAAEAAAAAAAPAPr/AAAEAAAAAAAPAPn/AAAEAAAAAAAPAPj/AAAEAAAAAAAPAPf/AAAEAAAAAAAPAPb/AAAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAPr/AAAEAAAAAAAEAPn/AAAEAAAAAAAEAPj/AAAEAAAAAAAEAPf/AAAEAAAAAAAEAPb/AAAEAAAAAAAPAPr/AAAEAAAAAAAPAPn/AAAEAAAAAAAPAPj/AAAEAAAAAAAPAPf/AAAEAAAAAAAPAPb/AAAEAAAAAAA=")
 
 [node name="Ground" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAIAP//AAAAAAMAAAAJAP//AAAAAAMAAAAKAP//AAAAAAMAAAALAP//AAAAAAMAAAAMAP//AAAAAAMAAAANAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP//AAAAAAMAAAARAP//AAAAAAMAAAASAP//AAAAAAMAAAATAP//AAAAAAMAAAA=")
@@ -97,11 +97,9 @@ offset_bottom = 130.0
 [node name="SweepObserver" parent="." index="14" instance=ExtResource("10_gyphy")]
 GroupName = "SweepEnemyObserver"
 
-[node name="SetPlayerInitialDurabilityCommand2" parent="SweepObserver" index="0" instance=ExtResource("11_kgvgu")]
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("11_kgvgu")]
 
-[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="1" instance=ExtResource("11_kgvgu")]
-
-[node name="OpenDialogCommand" parent="SweepObserver" index="2" instance=ExtResource("12_sclwm")]
+[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("12_sclwm")]
 DialogPath = "res://theater/talk_0013.tscn"
 
 [node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("13_ln23h")]
@@ -595,63 +593,53 @@ ManualMode = true
 
 [node name="BigEntryPoint" type="Node2D" parent="." index="20"]
 
-[node name="Marker2D1" type="Marker2D" parent="BigEntryPoint" index="0"]
-position = Vector2(128, -576)
+[node name="Marker2D3" type="Marker2D" parent="BigEntryPoint" index="0"]
+position = Vector2(130, -774)
 
-[node name="Marker2D2" type="Marker2D" parent="BigEntryPoint" index="1"]
-position = Vector2(320, -576)
+[node name="Marker2D4" type="Marker2D" parent="BigEntryPoint" index="1"]
+position = Vector2(322, -774)
 
-[node name="Marker2D3" type="Marker2D" parent="BigEntryPoint" index="2"]
-position = Vector2(512, -576)
+[node name="Marker2D5" type="Marker2D" parent="BigEntryPoint" index="2"]
+position = Vector2(514, -774)
 
 [node name="BigDrillPoint" type="Node2D" parent="." index="21"]
 
-[node name="DrillShot10" parent="BigDrillPoint" index="0" instance=ExtResource("13_1u5or")]
-position = Vector2(64, 192)
-EnemyName = 17
-ManualMode = true
-
-[node name="DrillShot9" parent="BigDrillPoint" index="1" instance=ExtResource("13_1u5or")]
+[node name="DrillShot8" parent="BigDrillPoint" index="0" instance=ExtResource("13_1u5or")]
 position = Vector2(320, 192)
 EnemyName = 17
 ManualMode = true
 
-[node name="DrillShot8" parent="BigDrillPoint" index="2" instance=ExtResource("13_1u5or")]
-position = Vector2(576, 192)
-EnemyName = 17
-ManualMode = true
-
-[node name="DrillShot7" parent="BigDrillPoint" index="3" instance=ExtResource("13_1u5or")]
+[node name="DrillShot7" parent="BigDrillPoint" index="1" instance=ExtResource("13_1u5or")]
 position = Vector2(832, -192)
 EnemyName = 20
 ManualMode = true
 
-[node name="DrillShot6" parent="BigDrillPoint" index="4" instance=ExtResource("13_1u5or")]
+[node name="DrillShot6" parent="BigDrillPoint" index="2" instance=ExtResource("13_1u5or")]
 position = Vector2(832, -384)
 EnemyName = 20
 ManualMode = true
 
-[node name="DrillShot5" parent="BigDrillPoint" index="5" instance=ExtResource("13_1u5or")]
+[node name="DrillShot5" parent="BigDrillPoint" index="3" instance=ExtResource("13_1u5or")]
 position = Vector2(576, -672)
 EnemyName = 18
 ManualMode = true
 
-[node name="DrillShot4" parent="BigDrillPoint" index="6" instance=ExtResource("13_1u5or")]
+[node name="DrillShot4" parent="BigDrillPoint" index="4" instance=ExtResource("13_1u5or")]
 position = Vector2(320, -672)
 EnemyName = 18
 ManualMode = true
 
-[node name="DrillShot3" parent="BigDrillPoint" index="7" instance=ExtResource("13_1u5or")]
+[node name="DrillShot3" parent="BigDrillPoint" index="5" instance=ExtResource("13_1u5or")]
 position = Vector2(64, -672)
 EnemyName = 18
 ManualMode = true
 
-[node name="DrillShot2" parent="BigDrillPoint" index="8" instance=ExtResource("13_1u5or")]
+[node name="DrillShot2" parent="BigDrillPoint" index="6" instance=ExtResource("13_1u5or")]
 position = Vector2(-192, -384)
 EnemyName = 20
 ManualMode = true
 
-[node name="DrillShot1" parent="BigDrillPoint" index="9" instance=ExtResource("13_1u5or")]
+[node name="DrillShot1" parent="BigDrillPoint" index="7" instance=ExtResource("13_1u5or")]
 position = Vector2(-192, -192)
 EnemyName = 20
 ManualMode = true
