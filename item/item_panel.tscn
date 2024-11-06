@@ -13,6 +13,7 @@
 size = Vector2(32, 32)
 
 [node name="ItemPanel" type="Node2D"]
+physics_interpolation_mode = 1
 script = ExtResource("1_x822f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

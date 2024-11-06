@@ -65,6 +65,7 @@ autoplay = "default"
 frame_progress = 0.0160338
 
 [node name="Area2D" type="Area2D" parent="."]
+physics_interpolation_mode = 1
 collision_layer = 256
 collision_mask = 8
 script = ExtResource("5_a070j")

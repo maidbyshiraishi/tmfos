@@ -3,5 +3,6 @@
 [ext_resource type="Script" path="res://others/CollidableArea.cs" id="1_432qh"]
 
 [node name="BurialArea" type="Area2D"]
+physics_interpolation_mode = 1
 collision_layer = 2048
 script = ExtResource("1_432qh")
