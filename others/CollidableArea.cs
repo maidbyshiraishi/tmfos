@@ -55,9 +55,6 @@ public partial class CollidableArea : Area2D
 
         Array<ulong> remove = [];
 
-        // todo: キャラクターが同時にOutOfBorderとFireに接触した場合、InvalidCastExceptionが発生する。OutOfBorderの仕様変更で対応し、根本解決していない。
-        // System.InvalidCastException: Unable to cast object of type 'Godot.GodotObject' to type 'Godot.Node2D'.
-
         foreach (ulong id in _target)
         {
             if (!IsInstanceIdValid(id))

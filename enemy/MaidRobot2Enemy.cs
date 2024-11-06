@@ -138,7 +138,7 @@ public partial class MaidRobot2Enemy : Enemy
 
         Velocity = Vector2.Zero;
         RandomNumberGenerator random = new();
-        _entryPoint=random.RandiRange(3, 2+_entryCount);
+        _entryPoint = random.RandiRange(3, 2 + _entryCount);
         Marker2D point = EntryPoints.GetNode<Marker2D>(string.Format("Marker2D{0:#}", _entryPoint));
         Position = point.GlobalPosition;
     }

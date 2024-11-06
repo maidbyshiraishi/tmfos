@@ -73,12 +73,18 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
     {
     }
 
-    public virtual void RemoveNode()
+    public virtual async void RemoveNode()
     {
         SetPhysicsProcess(false);
+        GlobalPosition = new Vector2(-2000, -2000);
+
+        for (int i = 0; i < 5; i++)
+        {
+            _ = await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        }
+
         QueueFree();
     }
-
     public override void _PhysicsProcess(double delta)
     {
         Vector2 vector2 = _direction * (float)(Speed * delta);

@@ -45,7 +45,7 @@ public partial class StageRoot : DialogRoot, IStateful
     public int EnemyAttackCorrection { get; set; } = 0;
 
     [Export]
-    public float PlayerArmorRatio { get; set; } =1f;
+    public float PlayerArmorRatio { get; set; } = 1f;
 
     private Hud _hud;
     private PlayerData _playerData;

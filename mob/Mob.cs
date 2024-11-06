@@ -33,9 +33,16 @@ public partial class Mob : CharacterBody2D, IGameNode
     {
     }
 
-    public virtual void RemoveNode()
+    public virtual async void RemoveNode()
     {
         SetPhysicsProcess(false);
+        GlobalPosition = new Vector2(-2000, -2000);
+
+        for (int i = 0; i < 5; i++)
+        {
+            _ = await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        }
+
         QueueFree();
     }
 
