@@ -678,12 +678,12 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
 
             case ItemType.Armor:
 
-                _itemData.Armor = Mathf.Clamp(_itemData.Armor + (flag ? 1 : -1), 0, 100);
+                _itemData.Armor = Mathf.Clamp(_itemData.Armor + (flag ? 1 : -1), 0, 150);
                 break;
 
             case ItemType.Weapon:
 
-                _itemData.Weapon = Mathf.Clamp(_itemData.Weapon + (flag ? 1 : -1), 0, 100);
+                _itemData.Weapon = Mathf.Clamp(_itemData.Weapon + (flag ? 1 : -1), 0, 150);
                 break;
         }
     }
