@@ -167,7 +167,8 @@ position = Vector2(0, -3)
 sprite_frames = ExtResource("8_ojrkh")
 autoplay = "default"
 
-[node name="TentacleHead" parent="Enemy/TentacleRoot1" index="10" instance=ExtResource("8_id7ur")]
+[node name="TentacleHead" parent="Enemy/TentacleRoot1" index="10" node_paths=PackedStringArray("Root") instance=ExtResource("8_id7ur")]
+Root = NodePath("..")
 Speed = 1.0
 MaxLength = 480.0
 
@@ -267,7 +268,8 @@ position = Vector2(0, -3)
 sprite_frames = ExtResource("8_ojrkh")
 autoplay = "default"
 
-[node name="TentacleHead" parent="Enemy/TentacleRoot2" index="10" instance=ExtResource("8_id7ur")]
+[node name="TentacleHead" parent="Enemy/TentacleRoot2" index="10" node_paths=PackedStringArray("Root") instance=ExtResource("8_id7ur")]
+Root = NodePath("..")
 Speed = 2.0
 MaxLength = 400.0
 
@@ -367,7 +369,8 @@ position = Vector2(0, -3)
 sprite_frames = ExtResource("8_ojrkh")
 autoplay = "default"
 
-[node name="TentacleHead" parent="Enemy/TentacleRoot3" index="10" instance=ExtResource("8_id7ur")]
+[node name="TentacleHead" parent="Enemy/TentacleRoot3" index="10" node_paths=PackedStringArray("Root") instance=ExtResource("8_id7ur")]
+Root = NodePath("..")
 
 [node name="DragonHeadEnemy" parent="Enemy/TentacleRoot3/TentacleHead" index="0" instance=ExtResource("10_5soym")]
 

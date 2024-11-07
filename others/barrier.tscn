@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwdcyrlhfp7k5"]
+[gd_scene load_steps=11 format=3 uid="uid://bwdcyrlhfp7k5"]
 
 [ext_resource type="Texture2D" uid="uid://cexw0onoh1fm1" path="res://contents/image/barrier.png" id="1_1hjrb"]
 [ext_resource type="Script" path="res://trigger/CollisionTrigger.cs" id="1_kkifm"]
 [ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/add_durability_command.tscn" id="3_p4orh"]
+[ext_resource type="Script" path="res://others/CollidableArea.cs" id="3_tjms6"]
 [ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="4_4gnrv"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_66uct"]
 
@@ -40,6 +41,9 @@ autoplay = "default"
 frame_progress = 0.965927
 
 [node name="Area2D" type="Area2D" parent="."]
+physics_interpolation_mode = 1
+collision_mask = 8
+script = ExtResource("3_tjms6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_o2anv")

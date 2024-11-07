@@ -38,6 +38,7 @@ public partial class CollidableArea : Area2D
 
     public override void _Ready()
     {
+        PhysicsInterpolationMode = PhysicsInterpolationModeEnum.On;
         _ = Connect(Area2D.SignalName.BodyEntered, new Callable(this, MethodName.NodeEntered));
         _ = Connect(Area2D.SignalName.BodyExited, new Callable(this, MethodName.NodeExited));
         _ = Connect(Area2D.SignalName.AreaEntered, new Callable(this, MethodName.Area2DEntered));
