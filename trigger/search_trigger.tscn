@@ -25,7 +25,7 @@ SeName = "player_search_lost"
 ExecFlag = false
 
 [node name="Area2D" type="Area2D" parent="."]
-physics_interpolation_mode = 1
+physics_interpolation_mode = 0
 collision_layer = 128
 collision_mask = 8
 script = ExtResource("2_x4n4f")

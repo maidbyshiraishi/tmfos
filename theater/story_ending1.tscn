@@ -137,6 +137,7 @@ pivot_offset = Vector2(160, 120)
 theme = ExtResource("2_gd8bc")
 
 [node name="Page1" type="Control" parent="Socket/Contents" index="0"]
+visible = false
 anchors_preset = 0
 offset_left = 168.0
 offset_top = 120.0
