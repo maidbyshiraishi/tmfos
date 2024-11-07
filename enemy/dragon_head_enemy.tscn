@@ -63,6 +63,7 @@ animations = [{
 size = Vector2(32, 31)
 
 [node name="DragonHeadEnemy" type="Area2D"]
+physics_interpolation_mode = 1
 collision_layer = 32
 collision_mask = 24
 script = ExtResource("1_ov7pa")
