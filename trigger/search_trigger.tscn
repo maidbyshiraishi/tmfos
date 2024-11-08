@@ -1,16 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp0tb8otk67q3"]
+[gd_scene load_steps=6 format=3 uid="uid://cp0tb8otk67q3"]
 
 [ext_resource type="Script" path="res://trigger/SearchTrigger.cs" id="2_7unlq"]
 [ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="2_q2dtd"]
-[ext_resource type="Script" path="res://others/CollidableArea.cs" id="2_x4n4f"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="3_tgr2u"]
 [ext_resource type="PackedScene" uid="uid://c51q2ghy4gmm2" path="res://command/unset_search_command.tscn" id="4_8vnms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jumfg"]
 size = Vector2(32, 32)
 
-[node name="SearchTrigger" type="Node2D"]
+[node name="SearchTrigger" type="Area2D"]
+collision_layer = 65536
+collision_mask = 0
 script = ExtResource("2_7unlq")
+Search = true
+OneTime = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jumfg")
 
 [node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("2_q2dtd")]
 Message = "発見!!"
@@ -23,16 +29,3 @@ SeName = "player_search_find"
 [node name="PlaySeCommandLost" parent="." instance=ExtResource("3_tgr2u")]
 SeName = "player_search_lost"
 ExecFlag = false
-
-[node name="Area2D" type="Area2D" parent="."]
-physics_interpolation_mode = 0
-collision_layer = 128
-collision_mask = 8
-script = ExtResource("2_x4n4f")
-Continuous = true
-Search = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_jumfg")
-
-[connection signal="Collided" from="Area2D" to="." method="SwitchSecret"]

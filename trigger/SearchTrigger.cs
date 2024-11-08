@@ -9,7 +9,7 @@ namespace tmfos.trigger;
 /// <summary>
 /// 探索トリガー
 /// </summary>
-public partial class SearchTrigger : Node2D, IStateful
+public partial class SearchTrigger : TriggerArea2D, IStateful
 {
     /// <summary>
     /// 状態
@@ -17,18 +17,11 @@ public partial class SearchTrigger : Node2D, IStateful
     [Export]
     public bool Switch { get; set; } = false;
 
-    /// <summary>
-    /// ステージをまたいで状態を保存するか
-    /// </summary>
-    [Export]
-    public bool Stateful { get; set; } = true;
-
     private bool _disable = false;
     private readonly Dictionary<Node2D, VisibleOnScreenEnabler2D> _enablerList = [];
 
     public override void _Ready()
     {
-        base._Ready();
         MakeEnabler();
 
         if (Stateful)
@@ -37,7 +30,7 @@ public partial class SearchTrigger : Node2D, IStateful
         }
     }
 
-    public virtual void SwitchSecret(Node2D node, Area2D area)
+    public override void Exec(Node2D node)
     {
         if (_disable)
         {
@@ -105,7 +98,7 @@ public partial class SearchTrigger : Node2D, IStateful
         }
     }
 
-    public virtual void StateSave()
+    public override void StateSave()
     {
         if (!Stateful)
         {
@@ -118,7 +111,7 @@ public partial class SearchTrigger : Node2D, IStateful
         gdata.SetStageData(stageNo, $"{name}_Switch", Switch ? 1 : 0);
     }
 
-    public virtual void StateLoad()
+    public override void StateLoad()
     {
         if (!Stateful)
         {

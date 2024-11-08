@@ -65,7 +65,7 @@ public partial class TriggerArea2D : Area2D, IStateful
         }
     }
 
-    public void Exec(Node2D node)
+    public virtual void Exec(Node2D node)
     {
         if (Disable || (OneTime && m_opened) || (PlayerOnly && node is not Player))
         {

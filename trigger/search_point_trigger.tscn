@@ -1,14 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://8636t7qupfox"]
+[gd_scene load_steps=16 format=3 uid="uid://8636t7qupfox"]
 
 [ext_resource type="Script" path="res://trigger/SearchPointTrigger.cs" id="1_knl6g"]
 [ext_resource type="Texture2D" uid="uid://bfsrq4c06pp15" path="res://contents/image/blank.png" id="2_j16us"]
-[ext_resource type="Script" path="res://others/CollidableArea.cs" id="3_8d861"]
 [ext_resource type="Texture2D" uid="uid://bi48pmdnfxjg6" path="res://contents/image/item/search_point.png" id="3_y7uac"]
 [ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="5_gob13"]
 [ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="6_mhng8"]
 [ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/switch_open_or_close_animation_command.tscn" id="6_nxjj3"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="7_hrsy2"]
 [ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="8_nlddd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
+size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmn14"]
 atlas = ExtResource("2_j16us")
@@ -58,26 +60,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
-size = Vector2(32, 32)
-
-[node name="SearchPointTrigger" type="Node2D"]
+[node name="SearchPointTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 4096
 script = ExtResource("1_knl6g")
 PlayerOnly = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_orwde")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 10
 sprite_frames = SubResource("SpriteFrames_etwst")
 animation = &"closed"
-
-[node name="Area2D" type="Area2D" parent="."]
-physics_interpolation_mode = 0
-collision_layer = 256
-collision_mask = 4096
-script = ExtResource("3_8d861")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_orwde")
 
 [node name="StateSaveCommand" parent="." instance=ExtResource("5_gob13")]
 
@@ -92,4 +87,4 @@ SeName = "search_point"
 [node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("8_nlddd")]
 Message = "？？？"
 
-[connection signal="Collided" from="Area2D" to="." method="Exec"]
+[connection signal="area_entered" from="." to="." method="ItemSearched"]
