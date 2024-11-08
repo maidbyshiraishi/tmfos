@@ -63,7 +63,6 @@ animations = [{
 size = Vector2(32, 31)
 
 [node name="DragonHeadEnemy" type="Area2D"]
-physics_interpolation_mode = 0
 collision_layer = 32
 collision_mask = 24
 script = ExtResource("1_ov7pa")
@@ -92,7 +91,6 @@ rect = Rect2(-40, -40, 80, 80)
 wait_time = 0.001
 one_shot = true
 
-[connection signal="area_entered" from="." to="." method="HitArea2D"]
 [connection signal="body_entered" from="." to="." method="HitNode2D"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]
