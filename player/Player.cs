@@ -25,6 +25,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     private TileMapManager _tileMapManager;
     private CollisionShape2D _collision;
     private CollisionShape2D _burialCollision;
+    private CollisionShape2D _eventFinderCollision;
     private ReferenceRect _referenceSwim;
     private ReferenceRect _referenceCrouch;
     private ReferenceRect _referenceNormal;
@@ -49,6 +50,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         AddToGroup(StageRoot.GameNodeGroup);
         _collision = GetNode<CollisionShape2D>("CollisionShape2D");
         _burialCollision = GetNode<CollisionShape2D>("BurialArea/CollisionShape2D");
+        _eventFinderCollision = GetNode<CollisionShape2D>("EventFinder/CollisionShape2D");
         _referenceSwim = GetNode<ReferenceRect>("ReferenceRect/ReferenceSwim");
         _referenceCrouch = GetNode<ReferenceRect>("ReferenceRect/ReferenceCrouch");
         _referenceNormal = GetNode<ReferenceRect>("ReferenceRect/ReferenceNormal");
@@ -615,6 +617,14 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         {
             rect.Size = reference.Size;
             _collision.Position = reference.Position + reference.PivotOffset;
+        }
+
+        Shape2D eventFinderShape = _eventFinderCollision.Shape;
+
+        if (eventFinderShape is RectangleShape2D eventFinderRect)
+        {
+            eventFinderRect.Size = reference.Size;
+            _eventFinderCollision.Position = reference.Position + reference.PivotOffset;
         }
 
         Shape2D burialShape = _burialCollision.Shape;
