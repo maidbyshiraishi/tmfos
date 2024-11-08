@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3x0uq0uifrnp"]
+[gd_scene load_steps=18 format=3 uid="uid://d3x0uq0uifrnp"]
 
 [ext_resource type="Script" path="res://door/SavePoint.cs" id="1_gpnbb"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="2_htpx1"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dmtbl7stpfhcb" path="res://command/create_thumbnail_command.tscn" id="3_ipyls"]
 [ext_resource type="PackedScene" uid="uid://2tm1u7k815es" path="res://command/stop_player_move_command.tscn" id="4_3nmgq"]
 [ext_resource type="SpriteFrames" uid="uid://c8u4kthw1kiu5" path="res://contents/animation/save.tres" id="4_hldde"]
-[ext_resource type="Script" path="res://others/CollidableArea.cs" id="5_a070j"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="6_cc5kf"]
 [ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/set_player_initial_durability_command.tscn" id="6_mur3q"]
 [ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="6_ntwn3"]
@@ -21,12 +20,32 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bi4qp"]
 radius = 18.0
 
-[node name="SavePoint" type="Node2D"]
+[node name="SavePoint" type="Area2D"]
+collision_layer = 65536
+collision_mask = 0
 script = ExtResource("1_gpnbb")
 Continuous = true
 Search = true
 Stateful = false
 OneTime = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bi4qp")
+
+[node name="TelBox" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = ExtResource("3_25df5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_hldde")
+autoplay = "default"
+frame_progress = 0.0160338
+
+[node name="StageEntryPoint" parent="." instance=ExtResource("2_htpx1")]
+position = Vector2(0, 10)
+
+[node name="Light" parent="." instance=ExtResource("6_ntwn3")]
+RangeRatio = 2.0
 
 [node name="CreateThumbnailCommand" parent="." instance=ExtResource("3_ipyls")]
 
@@ -42,7 +61,7 @@ SeName = "save_point"
 [node name="ResetPlayerLifeTimeCommand" parent="." instance=ExtResource("7_6s2y6")]
 
 [node name="UpdateSavePointDoorNoCommand" parent="." node_paths=PackedStringArray("ParentSavePoint") instance=ExtResource("8_b2nrd")]
-ParentSavePoint = NodePath("..")
+ParentSavePoint = NodePath("")
 
 [node name="StateSaveCommand" parent="." instance=ExtResource("8_0kbx6")]
 
@@ -51,29 +70,3 @@ ParentSavePoint = NodePath("..")
 [node name="OpenSaveAndLoadDialogCommand" parent="." instance=ExtResource("9_pcgmf")]
 script = ExtResource("10_rdr0j")
 DoorNo = 0
-
-[node name="StageEntryPoint" parent="." instance=ExtResource("2_htpx1")]
-position = Vector2(0, 10)
-
-[node name="TelBox" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
-sprite_frames = ExtResource("3_25df5")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("4_hldde")
-autoplay = "default"
-frame_progress = 0.0160338
-
-[node name="Area2D" type="Area2D" parent="."]
-physics_interpolation_mode = 0
-collision_layer = 256
-collision_mask = 8
-script = ExtResource("5_a070j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_bi4qp")
-
-[node name="Light" parent="." instance=ExtResource("6_ntwn3")]
-RangeRatio = 2.0
-
-[connection signal="Collided" from="Area2D" to="." method="Exec"]

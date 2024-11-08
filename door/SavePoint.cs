@@ -8,7 +8,7 @@ namespace tmfos.door;
 /// <summary>
 /// セーブポイント
 /// </summary>
-public partial class SavePoint : Trigger2D
+public partial class SavePoint : TriggerArea2D
 {
     /// <summary>
     /// ドア番号
