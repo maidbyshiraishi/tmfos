@@ -54,7 +54,7 @@ public partial class DurableMob : ActionMob, IDurable
         ResetLifeTime();
     }
 
-    public override void Burialed(Node2D body, Area2D area)
+    public override void Burialed(Node2D body)
     {
         Dead();
     }

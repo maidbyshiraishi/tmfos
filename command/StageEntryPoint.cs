@@ -43,7 +43,6 @@ public partial class StageEntryPoint : Node2D
     public void SetPlayerStartPosition(Player player)
     {
         player.Direction = Direction;
-        player.ChangeSprite("walk", Direction);
         player.Position = GlobalPosition;
 
         if (CommandTrigger is not null)

@@ -483,7 +483,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         _ = EmitSignal(Mob.SignalName.NodeSpawned, shotNode, this, GlobalPosition + offset.Position, shotDirection, 0f);
     }
 
-    public override void Burialed(Node2D body, Area2D area)
+    public override void Burialed(Node2D body)
     {
         if (_burialSkip)
         {
@@ -500,6 +500,11 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
             return;
         }
 
+        if (Action is MobActionType.Climb)
+        {
+            return;
+        }
+
         _standByClimb = false;
         Action = MobActionType.Climb;
         Velocity = Vector2.Zero;
@@ -508,6 +513,11 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
 
     public void UnsetClimb()
     {
+        if (Action is not MobActionType.Climb)
+        {
+            return;
+        }
+
         _standByClimb = false;
         Action = MobActionType.Walk;
         ChangeSprite("walk", Direction);
@@ -518,6 +528,11 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         if (!_itemData.Swim)
         {
             Dead();
+            return;
+        }
+
+        if (Action is MobActionType.Swim)
+        {
             return;
         }
 

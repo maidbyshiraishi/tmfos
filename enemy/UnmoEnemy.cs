@@ -107,7 +107,7 @@ public partial class UnmoEnemy : EyesightEnemy
         _skipTeleport = false;
     }
 
-    public override void Burialed(Node2D body, Area2D area)
+    public override void Burialed(Node2D body)
     {
     }
 }

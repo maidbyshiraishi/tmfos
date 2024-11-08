@@ -92,7 +92,6 @@ collision_mask = 0
 shape = SubResource("CircleShape2D_db8m6")
 
 [node name="BurialArea" parent="." instance=ExtResource("12_xkgep")]
-collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
 shape = SubResource("RectangleShape2D_iv8hm")
@@ -184,4 +183,4 @@ collision_mask = 3
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
-[connection signal="Collided" from="BurialArea" to="." method="Burialed"]
+[connection signal="body_entered" from="BurialArea" to="." method="Burialed"]

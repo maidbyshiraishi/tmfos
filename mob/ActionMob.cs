@@ -144,7 +144,7 @@ public partial class ActionMob : Mob
         GravityOnly(delta);
     }
 
-    public virtual void Burialed(Node2D body, Area2D area)
+    public virtual void Burialed(Node2D body)
     {
     }
 
