@@ -1,60 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://byeqvar802p5v"]
+[gd_scene load_steps=3 format=3 uid="uid://byeqvar802p5v"]
 
-[ext_resource type="Script" path="res://door/Gateway.cs" id="1_c2doj"]
-[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="2_s5swr"]
-[ext_resource type="Texture2D" uid="uid://crgv7jmmskd65" path="res://contents/image/door/boss_door.png" id="3_mi7ny"]
-[ext_resource type="Script" path="res://others/CollidableArea.cs" id="4_yrbmu"]
-[ext_resource type="PackedScene" uid="uid://c51q2ghy4gmm2" path="res://command/unset_search_command.tscn" id="5_gfpmq"]
-[ext_resource type="PackedScene" uid="uid://ctmg15jks4p00" path="res://command/save_player_life_time_command.tscn" id="6_fhvad"]
-[ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/set_player_initial_durability_command.tscn" id="7_gbmam"]
-[ext_resource type="PackedScene" uid="uid://colbvavuo7wh" path="res://command/change_stage_command.tscn" id="8_fnihf"]
+[ext_resource type="PackedScene" uid="uid://uv5cr60f44ds" path="res://door/door_root.tscn" id="1_okgbd"]
+[ext_resource type="SpriteFrames" uid="uid://d04dm8poe3guy" path="res://contents/animation/boss_door.tres" id="2_43nrb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_876km"]
-atlas = ExtResource("3_mi7ny")
-region = Rect2(0, 0, 32, 64)
+[node name="BossDoor" instance=ExtResource("1_okgbd")]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vjigu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_876km")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xpbj"]
-size = Vector2(32, 64)
-
-[node name="BossDoor" type="Node2D"]
-script = ExtResource("1_c2doj")
-Continuous = true
-Search = true
-Stateful = false
-
-[node name="StageEntryPoint" parent="." instance=ExtResource("2_s5swr")]
-position = Vector2(0, 2)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_vjigu")
-autoplay = "default"
-
-[node name="Area2D" type="Area2D" parent="."]
-physics_interpolation_mode = 0
-collision_layer = 256
-collision_mask = 8
-script = ExtResource("4_yrbmu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_5xpbj")
-
-[node name="UnsetPlayerSearchCommand" parent="." instance=ExtResource("5_gfpmq")]
-
-[node name="SavePlayerLifeTimeCommand" parent="." instance=ExtResource("6_fhvad")]
-
-[node name="SetPlayerInitialDurabilityCommand" parent="." instance=ExtResource("7_gbmam")]
-
-[node name="ChangeStageCommand" parent="." instance=ExtResource("8_fnihf")]
-
-[connection signal="Collided" from="Area2D" to="." method="Exec"]
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_43nrb")

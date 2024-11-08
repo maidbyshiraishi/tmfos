@@ -6,7 +6,7 @@
 size = Vector2(20, 60)
 
 [node name="EventFinder" type="Area2D"]
-collision_layer = 0
+collision_layer = 32768
 collision_mask = 65536
 script = ExtResource("1_paada")
 

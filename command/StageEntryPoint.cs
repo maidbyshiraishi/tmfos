@@ -28,7 +28,7 @@ public partial class StageEntryPoint : Node2D
     /// 開始時に停止するトリガー
     /// </summary>
     [Export]
-    public Trigger2D CommandTrigger { get; set; }
+    public TriggerArea2D CommandTrigger { get; set; }
 
     public override void _Ready()
     {
@@ -52,9 +52,9 @@ public partial class StageEntryPoint : Node2D
         }
     }
 
-    public void EnableCollidableArea(Node2D node)
+    public void EnableCollidableArea(Area2D node)
     {
-        if (node is Player)
+        if (node is EventFinder finder && finder.EventNode2D is Player)
         {
             CommandTrigger.Disable = false;
         }

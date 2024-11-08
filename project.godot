@@ -157,6 +157,7 @@ locale/translations=PackedStringArray("res://talk.ja.translation")
 2d_physics/layer_10="oneway_with_item_shoes"
 2d_physics/layer_11="oneway_block"
 2d_physics/layer_13="item_search_effect"
+2d_physics/layer_16="event_finder"
 2d_physics/layer_17="event"
 
 [physics]

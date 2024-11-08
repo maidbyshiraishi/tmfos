@@ -1,38 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bduv525n6j7aa"]
+[gd_scene load_steps=3 format=3 uid="uid://bduv525n6j7aa"]
 
-[ext_resource type="Script" path="res://door/Gateway.cs" id="1_mgk46"]
-[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="2_0ac5t"]
-[ext_resource type="SpriteFrames" uid="uid://cntxt2wqbmrox" path="res://contents/animation/warp.tres" id="3_0ib1l"]
-[ext_resource type="Script" path="res://others/CollidableArea.cs" id="4_5leeq"]
-[ext_resource type="PackedScene" uid="uid://colbvavuo7wh" path="res://command/change_stage_command.tscn" id="5_4hr0d"]
-[ext_resource type="PackedScene" uid="uid://ctmg15jks4p00" path="res://command/save_player_life_time_command.tscn" id="7_0w07w"]
+[ext_resource type="PackedScene" uid="uid://0k7eapnlceja" path="res://door/transparency_warp.tscn" id="1_v5rky"]
+[ext_resource type="SpriteFrames" uid="uid://cntxt2wqbmrox" path="res://contents/animation/warp.tres" id="2_77qbc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lhsey"]
+[node name="Warp" instance=ExtResource("1_v5rky")]
 
-[node name="Warp" type="Node2D"]
-script = ExtResource("1_mgk46")
-Stateful = false
-OneTime = false
-
-[node name="StageEntryPoint" parent="." node_paths=PackedStringArray("CommandTrigger") instance=ExtResource("2_0ac5t")]
-CommandTrigger = NodePath("..")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("3_0ib1l")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_77qbc")
 autoplay = "default"
-
-[node name="Area2D" type="Area2D" parent="."]
-physics_interpolation_mode = 0
-collision_layer = 256
-collision_mask = 8
-script = ExtResource("4_5leeq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_lhsey")
-
-[node name="SavePlayerLifeTimeCommand" parent="." instance=ExtResource("7_0w07w")]
-
-[node name="ChangeStageCommand" parent="." instance=ExtResource("5_4hr0d")]
-
-[connection signal="Collided" from="Area2D" to="." method="Exec"]
-[connection signal="body_exited" from="Area2D" to="StageEntryPoint" method="EnableCollidableArea"]

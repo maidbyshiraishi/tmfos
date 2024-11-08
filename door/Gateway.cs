@@ -9,7 +9,7 @@ namespace tmfos.door;
 /// <summary>
 /// ステージ間移動の出入り口
 /// </summary>
-public partial class Gateway : Trigger2D
+public partial class Gateway : TriggerArea2D
 {
     /// <summary>
     /// 移動先ステージ番号
