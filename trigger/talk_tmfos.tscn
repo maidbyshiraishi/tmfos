@@ -1,46 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmwso205kxo1g"]
+[gd_scene load_steps=3 format=3 uid="uid://dmwso205kxo1g"]
 
-[ext_resource type="Script" path="res://trigger/TalkTrigger.cs" id="1_tfvkf"]
-[ext_resource type="SpriteFrames" uid="uid://cjfnovaq4k8mu" path="res://contents/animation/decoration/bubble.tres" id="2_hct8g"]
-[ext_resource type="SpriteFrames" uid="uid://bxjyjxeb8flkm" path="res://contents/animation/theater/talk_tmfos_aera.tres" id="3_5irl2"]
-[ext_resource type="PackedScene" uid="uid://c51q2ghy4gmm2" path="res://command/unset_search_command.tscn" id="4_4dlts"]
-[ext_resource type="PackedScene" uid="uid://2tm1u7k815es" path="res://command/stop_player_move_command.tscn" id="5_xaqmt"]
-[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="6_5fb7j"]
-[ext_resource type="Script" path="res://others/CollidableArea.cs" id="7_gnqrd"]
+[ext_resource type="PackedScene" uid="uid://b3pkhij41efph" path="res://trigger/talk_root.tscn" id="1_0e61d"]
+[ext_resource type="SpriteFrames" uid="uid://bxjyjxeb8flkm" path="res://contents/animation/theater/talk_tmfos_aera.tres" id="2_2mstw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_taod5"]
-size = Vector2(20, 64)
+[node name="TalkTrigger" instance=ExtResource("1_0e61d")]
 
-[node name="TalkTrigger" type="Node2D"]
-script = ExtResource("1_tfvkf")
-Continuous = true
-Search = true
-Stateful = false
-OneTime = false
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -56)
-sprite_frames = ExtResource("2_hct8g")
-autoplay = "default"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("3_5irl2")
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = ExtResource("2_2mstw")
 animation = &"right"
 autoplay = "right"
-
-[node name="UnsetSearchCommand" parent="." instance=ExtResource("4_4dlts")]
-
-[node name="StopPlayerMoveCommand" parent="." instance=ExtResource("5_xaqmt")]
-
-[node name="OpenDialogCommand" parent="." instance=ExtResource("6_5fb7j")]
-
-[node name="Area2D" type="Area2D" parent="."]
-physics_interpolation_mode = 0
-collision_layer = 256
-collision_mask = 8
-script = ExtResource("7_gnqrd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_taod5")
-
-[connection signal="Collided" from="Area2D" to="." method="Exec"]

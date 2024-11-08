@@ -7,7 +7,7 @@ namespace tmfos.trigger;
 /// <summary>
 /// 会話イベントトリガー
 /// </summary>
-public partial class TalkTrigger : Trigger2D
+public partial class TalkTrigger : TriggerArea2D
 {
     /// <summary>
     /// ネコミミメイドの色指定
