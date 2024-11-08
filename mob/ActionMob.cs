@@ -165,25 +165,22 @@ public partial class ActionMob : Mob
     protected void CollisionTilemap(bool flag)
     {
         // レイヤ(*は死亡時に通過)
-        //  1*: tilemap(タイルマップ)
-        //  2*: others(その他マップ構成物 弾をはじく, 壊れる床, 移動する床, ベルトコンベア)
-        //  3*: others_pass_through(その他マップ構成物 弾を通す, ハシゴ, ダメージゾーン)
-        //  4*: player(プレーヤー)
+        //なし: 検出される必要のない何でもレイヤー(BurialAreaやEventFinderは一方的に相手を検出するだけ)
+        //  1*: tilemap(タイルマップ、BurialAreaで検出し壁埋まり対策を行う)
+        //  2*: tilemap_others(その他マップ構成物 弾をはじく, 壊れる床, 移動する床, ベルトコンベア)
+        //  3*: tilemap_pass_through(その他マップ構成物 弾を通す, ハシゴ, ダメージゾーン)
+        //  4 : player(プレーヤー)
         //  5 : player_shot(プレーヤー弾)
         //  6 : enemy(敵)
         //  7 : enemy_shot(敵弾)
-        //  8*: search(探索)
-        //  9*: event(アイテム、宝箱、セーブポイント、各種トリガー)
+        //  8 : search(探索エリア)
         // 10*: oneway_with_item_shoes(ブーツブロック一方通行ブロック)
         // 11*: oneway_block(一方通行ブロック)
-        // 12 : system(システム)
         // 13 : item_search_effect(虫眼鏡アイテム効果)
+        // 17 : event(アイテム、回復アイテム、宝箱、扉、ボス扉、ワープ、会話)
         SetCollisionMaskValue(1, flag);
         SetCollisionMaskValue(2, flag);
         SetCollisionMaskValue(3, flag);
-        SetCollisionMaskValue(4, flag);
-        SetCollisionMaskValue(8, flag);
-        SetCollisionMaskValue(9, flag);
         SetCollisionMaskValue(10, flag);
         SetCollisionMaskValue(11, flag);
     }

@@ -33,17 +33,6 @@ public static partial class Lib
         return text.TrimEnd('\n');
     }
 
-    public static void EnableLight(Node node)
-    {
-        if (!node.HasNode("PointLight2D"))
-        {
-            return;
-        }
-
-        PointLight2D pointLight2D = node.GetNode<PointLight2D>("PointLight2D");
-        pointLight2D.Show();
-    }
-
     public static PackedScene GetPackedScene(string path)
     {
         if (ResourceLoader.Exists(path))

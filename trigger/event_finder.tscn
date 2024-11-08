@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4nwxoqqvmpv2"]
+
+[ext_resource type="Script" path="res://trigger/EventFinder.cs" id="1_paada"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g16ji"]
+size = Vector2(20, 60)
+
+[node name="EventFinder" type="Area2D"]
+collision_layer = 0
+collision_mask = 65536
+script = ExtResource("1_paada")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g16ji")

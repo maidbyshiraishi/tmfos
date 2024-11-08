@@ -8,7 +8,7 @@ namespace tmfos.item;
 /// <summary>
 /// アイテムの親
 /// </summary>
-public partial class ItemPanel : Trigger2D
+public partial class ItemPanel : TriggerArea2D
 {
     [Export]
     public ItemType Item { get; set; } = ItemType.None;

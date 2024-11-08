@@ -1,47 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://lbs8cdc8j1h8"]
+[gd_scene load_steps=4 format=3 uid="uid://lbs8cdc8j1h8"]
 
-[ext_resource type="Script" path="res://item/ImmediateItemPanel.cs" id="1_k6no3"]
-[ext_resource type="SpriteFrames" uid="uid://g2hgs6epsra3" path="res://contents/animation/item/item_time.tres" id="2_tw1qr"]
-[ext_resource type="Script" path="res://others/CollidableArea.cs" id="3_vp672"]
-[ext_resource type="PackedScene" uid="uid://eywnthgffkk6" path="res://command/reset_player_life_time_command.tscn" id="4_soki7"]
-[ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="5_j5q3y"]
-[ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/switch_open_or_close_animation_command.tscn" id="6_61s56"]
-[ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="6_nli3b"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="7_bw3do"]
-[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="7_ukklw"]
+[ext_resource type="PackedScene" uid="uid://bvyr6cwo7qbyg" path="res://item/immediate_item_panel_root.tscn" id="1_sto4b"]
+[ext_resource type="SpriteFrames" uid="uid://g2hgs6epsra3" path="res://contents/animation/item/item_time.tres" id="2_p761n"]
+[ext_resource type="PackedScene" uid="uid://eywnthgffkk6" path="res://command/reset_player_life_time_command.tscn" id="3_vknxa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
-size = Vector2(32, 32)
+[node name="ItemPanelTime" instance=ExtResource("1_sto4b")]
+collision_layer = 65536
+collision_mask = 0
 
-[node name="ItemPanelLife" type="Node2D"]
-script = ExtResource("1_k6no3")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_tw1qr")
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_p761n")
 animation = &"closed"
 
-[node name="Area2D" type="Area2D" parent="."]
-physics_interpolation_mode = 0
-collision_layer = 256
-collision_mask = 8
-script = ExtResource("3_vp672")
+[node name="ResetPlayerLifeTimeCommand" parent="." index="2" instance=ExtResource("3_vknxa")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_orwde")
-
-[node name="ResetPlayerLifeTimeCommand" parent="." instance=ExtResource("4_soki7")]
-
-[node name="StateSaveCommand" parent="." instance=ExtResource("5_j5q3y")]
-
-[node name="StateBackupCommand" parent="." instance=ExtResource("6_nli3b")]
-
-[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("6_61s56")]
-AnimatedSprite2D = NodePath("../AnimatedSprite2D")
-
-[node name="PlaySeCommand" parent="." instance=ExtResource("7_bw3do")]
+[node name="PlaySeCommand" parent="." index="6"]
 SeName = "player_reset_life_time"
 
-[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("7_ukklw")]
-Message = "回復"
-
-[connection signal="Collided" from="Area2D" to="." method="Exec"]
+[node name="ShowFloatingMessageCommand" parent="." index="7"]
+Message = "時間回復"

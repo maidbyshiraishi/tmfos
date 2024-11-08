@@ -147,18 +147,17 @@ locale/translations=PackedStringArray("res://talk.ja.translation")
 [layer_names]
 
 2d_physics/layer_1="tilemap"
-2d_physics/layer_2="others"
-2d_physics/layer_3="others_pass_through"
+2d_physics/layer_2="tilemap_others"
+2d_physics/layer_3="tilemap_pass_through"
 2d_physics/layer_4="player"
 2d_physics/layer_5="player_shot"
 2d_physics/layer_6="enemy"
 2d_physics/layer_7="enemy_shot"
 2d_physics/layer_8="search"
-2d_physics/layer_9="event"
 2d_physics/layer_10="oneway_with_item_shoes"
 2d_physics/layer_11="oneway_block"
-2d_physics/layer_12="system"
 2d_physics/layer_13="item_search_effect"
+2d_physics/layer_17="event"
 
 [physics]
 

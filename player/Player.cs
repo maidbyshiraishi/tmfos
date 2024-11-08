@@ -690,6 +690,13 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
 
     public void EnableLight()
     {
+        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+
+        if (!stageRoot.IsDarkZone)
+        {
+            return;
+        }
+
         if (_itemData.Lamp)
         {
             GetNode<PointLight2D>("Light/PointLight2D").Hide();

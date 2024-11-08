@@ -1,6 +1,5 @@
 using Godot;
 using tmfos.stage;
-using tmfos.system;
 
 namespace tmfos.command;
 
@@ -26,6 +25,12 @@ public partial class Light : CommandNode2D, ILight
 
     public void EnableLight()
     {
-        Lib.EnableLight(this);
+        if (!HasNode("PointLight2D"))
+        {
+            return;
+        }
+
+        PointLight2D pointLight2D = GetNode<PointLight2D>("PointLight2D");
+        pointLight2D.Show();
     }
 }
