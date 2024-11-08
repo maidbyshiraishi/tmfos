@@ -1,13 +1,12 @@
 using Godot;
 using tmfos.command;
-using tmfos.trigger;
 
 namespace tmfos.item;
 
 /// <summary>
 /// 宝箱
 /// </summary>
-public partial class TreasureBox : Trigger2D
+public partial class TreasureBox : ImmediateItemPanel
 {
     /// <summary>
     /// 得点
@@ -22,12 +21,5 @@ public partial class TreasureBox : Trigger2D
         addScoreCommand.Score = Score;
         ShowFloatingMessageCommand showFloatingMessageCommand = GetNode<ShowFloatingMessageCommand>("ShowFloatingMessageCommand");
         showFloatingMessageCommand.Message = Score.ToString();
-    }
-
-    public override void SetOpened(bool opened)
-    {
-        base.SetOpened(opened);
-        SwitchOpenOrCloseAnimationCommand switchOpenOrCloseAnimationCommand = GetNode<SwitchOpenOrCloseAnimationCommand>("SwitchOpenOrCloseAnimationCommand");
-        switchOpenOrCloseAnimationCommand.Opened = opened;
     }
 }
