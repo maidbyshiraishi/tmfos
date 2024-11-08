@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dx6rootboa8f4"]
+[gd_scene load_steps=14 format=3 uid="uid://dx6rootboa8f4"]
 
 [ext_resource type="Script" path="res://player/Player.cs" id="1_mswun"]
 [ext_resource type="SpriteFrames" uid="uid://hrh82mdg1jsf" path="res://contents/animation/player/player.tres" id="2_hei51"]
@@ -18,6 +18,9 @@ radius = 200.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv8hm"]
 size = Vector2(14, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dja7"]
+size = Vector2(20, 60)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 8
@@ -98,6 +101,9 @@ shape = SubResource("RectangleShape2D_iv8hm")
 
 [node name="EventFinder" parent="." node_paths=PackedStringArray("EventNode2D") instance=ExtResource("8_fc10d")]
 EventNode2D = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
+shape = SubResource("RectangleShape2D_2dja7")
 
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 0.001

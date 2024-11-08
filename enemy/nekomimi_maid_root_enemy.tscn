@@ -1,16 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://vp0fhk4g3cgi"]
+[gd_scene load_steps=10 format=3 uid="uid://vp0fhk4g3cgi"]
 
 [ext_resource type="Script" path="res://enemy/NekomimiMaidEnemy.cs" id="1_lek7d"]
 [ext_resource type="PackedScene" uid="uid://d3dxe0jrgncd4" path="res://enemy/eyesight64.tscn" id="3_367j2"]
 [ext_resource type="Script" path="res://mob/ActionChange.cs" id="4_bqmvo"]
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="5_i422s"]
+[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://trigger/event_finder.tscn" id="5_wbksb"]
 [ext_resource type="Script" path="res://mob/BlockBreaker.cs" id="6_f8k0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi5u"]
 size = Vector2(20, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3sy"]
-size = Vector2(14, 42)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q6yt"]
+size = Vector2(20, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7qrv"]
+size = Vector2(20, 60)
 
 [node name="NekomimiMaidEnemy" type="CharacterBody2D"]
 collision_layer = 32
@@ -50,8 +54,14 @@ ChangeTarget = NodePath("..")
 [node name="BurialArea" parent="." instance=ExtResource("5_i422s")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_hp3sy")
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_8q6yt")
+
+[node name="EventFinder" parent="." node_paths=PackedStringArray("EventNode2D") instance=ExtResource("5_wbksb")]
+EventNode2D = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
+shape = SubResource("RectangleShape2D_t7qrv")
 
 [node name="BlockBreaker" type="Node2D" parent="."]
 
