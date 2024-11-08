@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpnaidfjkh1gf"]
-
-[ext_resource type="Script" path="res://command/ResetOneTimeCommand.cs" id="1_4xemk"]
-
-[node name="ResetOneTimeCommand" type="Node"]
-script = ExtResource("1_4xemk")

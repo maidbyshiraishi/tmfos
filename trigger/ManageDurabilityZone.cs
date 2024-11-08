@@ -6,7 +6,7 @@ namespace tmfos.trigger;
 /// <summary>
 /// 耐久力変更ゾーン
 /// </summary>
-public partial class ManageDurabilityZone : Trigger2D
+public partial class ManageDurabilityZone : TriggerArea2D
 {
     /// <summary>
     /// 耐久力の増減
