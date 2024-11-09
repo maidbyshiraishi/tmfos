@@ -10,8 +10,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u530y"]
 size = Vector2(30, 30)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy2hk"]
-size = Vector2(25, 25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtixs"]
+size = Vector2(21, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_riyp2"]
 size = Vector2(30, 30)
@@ -61,7 +61,7 @@ position = Vector2(300.654, -103.96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
 position = Vector2(-300.654, 103.96)
-shape = SubResource("RectangleShape2D_uy2hk")
+shape = SubResource("RectangleShape2D_gtixs")
 
 [node name="EventFinder" parent="." instance=ExtResource("6_08smb")]
 

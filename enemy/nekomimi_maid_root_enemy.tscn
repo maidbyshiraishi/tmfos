@@ -10,8 +10,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi5u"]
 size = Vector2(20, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q6yt"]
-size = Vector2(20, 63)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uye8j"]
+size = Vector2(14, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7qrv"]
 size = Vector2(20, 60)
@@ -54,8 +54,7 @@ ChangeTarget = NodePath("..")
 [node name="BurialArea" parent="." instance=ExtResource("5_i422s")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_8q6yt")
+shape = SubResource("RectangleShape2D_uye8j")
 
 [node name="EventFinder" parent="." node_paths=PackedStringArray("EventNode2D") instance=ExtResource("5_wbksb")]
 EventNode2D = NodePath("..")

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="8_p5x17"]
 [ext_resource type="PackedScene" uid="uid://bpnf82ngscqro" path="res://trigger/manage_durability_zone.tscn" id="10_aw1a1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3sy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05stx"]
 size = Vector2(15.5, 56)
 
 [node name="MaidRobot2Enemy" type="CharacterBody2D"]
@@ -47,7 +47,7 @@ ChangeTarget = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
 position = Vector2(0, -208)
-shape = SubResource("RectangleShape2D_hp3sy")
+shape = SubResource("RectangleShape2D_05stx")
 
 [node name="DamageZone" type="Node2D" parent="."]
 
