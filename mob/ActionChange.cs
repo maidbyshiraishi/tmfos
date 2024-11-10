@@ -9,9 +9,7 @@ namespace tmfos.mob;
 /// </summary>
 public partial class ActionChange : Node2D, IGameNode
 {
-    [Export]
-    public DurableMob ChangeTarget { get; set; }
-
+    private DurableMob _changeTarget;
     private TileMapManager _tileMapManager = null;
     private bool _ladder;
     private bool _water;
@@ -25,6 +23,11 @@ public partial class ActionChange : Node2D, IGameNode
         AddToGroup(StageRoot.PhysicsProcessGroup);
         _markerHead = GetNodeOrNull<Marker2D>("Head");
         _marker = GetNode<Marker2D>("Marker2D");
+
+        if (GetParent() is DurableMob dmob)
+        {
+            _changeTarget = dmob;
+        }
     }
 
     public void InitializeNode()
@@ -84,7 +87,7 @@ public partial class ActionChange : Node2D, IGameNode
     {
         _water = true;
 
-        if (ChangeTarget.MobState is MobStateType.Normal && ChangeTarget.Action is not MobActionType.Climb && ChangeTarget is ISwimAction swim)
+        if (_changeTarget.MobState is MobStateType.Normal && _changeTarget.Action is not MobActionType.Climb && _changeTarget is ISwimAction swim)
         {
             swim.SetSwim();
         }
@@ -94,7 +97,7 @@ public partial class ActionChange : Node2D, IGameNode
     {
         _water = false;
 
-        if (ChangeTarget.MobState is MobStateType.Normal && ChangeTarget is ISwimAction swim)
+        if (_changeTarget.MobState is MobStateType.Normal && _changeTarget is ISwimAction swim)
         {
             swim.UnsetSwim();
         }
@@ -104,7 +107,7 @@ public partial class ActionChange : Node2D, IGameNode
     {
         _ladder = true;
 
-        if (ChangeTarget.MobState is MobStateType.Normal && ChangeTarget is IClimbAction climb)
+        if (_changeTarget.MobState is MobStateType.Normal && _changeTarget is IClimbAction climb)
         {
             climb.SetClimb();
         }
@@ -114,16 +117,16 @@ public partial class ActionChange : Node2D, IGameNode
     {
         _ladder = false;
 
-        if (ChangeTarget.MobState is not MobStateType.Normal)
+        if (_changeTarget.MobState is not MobStateType.Normal)
         {
             return;
         }
 
-        if (_water && ChangeTarget is ISwimAction swim)
+        if (_water && _changeTarget is ISwimAction swim)
         {
             swim.SetSwim();
         }
-        else if (ChangeTarget is IClimbAction climb)
+        else if (_changeTarget is IClimbAction climb)
         {
             climb.UnsetClimb();
         }

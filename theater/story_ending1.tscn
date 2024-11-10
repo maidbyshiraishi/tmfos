@@ -159,6 +159,10 @@ position = Vector2(152, 89)
 scale = Vector2(0.72, 0.72)
 sprite_frames = ExtResource("3_lekac")
 
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page1/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page1/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
 [node name="VisibleTrigger" parent="Socket/Contents/Page1" index="2" instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
@@ -169,12 +173,7 @@ Stream = ExtResource("6_kbmb8")
 [node name="PlayAnimationCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
-[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page1" index="3" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("4_n05pt")]
-AnimatedSprite = NodePath("../AnimatedSprite2D")
-
-[node name="GoNextPageCommand" parent="Socket/Contents/Page1/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
-
-[node name="Control" type="Control" parent="Socket/Contents/Page1" index="4"]
+[node name="Control" type="Control" parent="Socket/Contents/Page1" index="3"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
@@ -215,28 +214,26 @@ Command = 2
 SeName = "crack"
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="2" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
 [node name="StartTimerTriggerCommand2" parent="Socket/Contents/Page2/VisibleTrigger" index="3" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger2")
+Target = NodePath("../../Timer2/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page2" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 2.5
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page2/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page2" index="3"]
+wait_time = 2.5
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page2/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page2/Timer" index="0" instance=ExtResource("9_jadeb")]
 
-[node name="TimerTrigger2" parent="Socket/Contents/Page2" index="4" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 2.0
-Timer = NodePath("Timer")
+[node name="GoNextPageCommand" parent="Socket/Contents/Page2/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
-[node name="Timer" type="Timer" parent="Socket/Contents/Page2/TimerTrigger2" index="0"]
+[node name="Timer2" type="Timer" parent="Socket/Contents/Page2" index="4"]
+wait_time = 2.0
 one_shot = true
 
-[node name="PlaySeCommand" parent="Socket/Contents/Page2/TimerTrigger2" index="1" instance=ExtResource("11_kvctf")]
+[node name="TimerTrigger" parent="Socket/Contents/Page2/Timer2" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page2/Timer2/TimerTrigger" index="0" instance=ExtResource("11_kvctf")]
 SeName = "gun_shot"
 
 [node name="Control" type="Control" parent="Socket/Contents/Page2" index="5"]
@@ -260,6 +257,16 @@ position = Vector2(152, 97)
 scale = Vector2(0.72, 0.72)
 sprite_frames = ExtResource("11_dfsgy")
 
+[node name="AnimationFrameCountTrigger" parent="Socket/Contents/Page3/AnimatedSprite2D" index="0" instance=ExtResource("16_l75sw")]
+FrameCount = 10
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimationFrameCountTrigger" index="0" instance=ExtResource("11_kvctf")]
+SeName = "explosion"
+
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page3/AnimatedSprite2D" index="1" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
 [node name="VisibleTrigger" parent="Socket/Contents/Page3" index="1" instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
@@ -270,19 +277,7 @@ Stream = ExtResource("14_nwdag")
 [node name="PlayAnimationCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
-[node name="AnimationFrameCountTrigger" parent="Socket/Contents/Page3" index="2" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("16_l75sw")]
-AnimatedSprite = NodePath("../AnimatedSprite2D")
-FrameCount = 10
-
-[node name="PlaySeCommand" parent="Socket/Contents/Page3/AnimationFrameCountTrigger" index="0" instance=ExtResource("11_kvctf")]
-SeName = "explosion"
-
-[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page3" index="3" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("4_n05pt")]
-AnimatedSprite = NodePath("../AnimatedSprite2D")
-
-[node name="GoNextPageCommand" parent="Socket/Contents/Page3/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
-
-[node name="Control" type="Control" parent="Socket/Contents/Page3" index="4"]
+[node name="Control" type="Control" parent="Socket/Contents/Page3" index="2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
@@ -305,18 +300,17 @@ sprite_frames = ExtResource("8_uq37o")
 frame = 8
 frame_progress = 1.0
 
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page4/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page4/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
 [node name="VisibleTrigger" parent="Socket/Contents/Page4" index="1" instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
 [node name="PlayAnimationCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
-[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page4" index="2" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("4_n05pt")]
-AnimatedSprite = NodePath("../AnimatedSprite2D")
-
-[node name="GoNextPageCommand" parent="Socket/Contents/Page4/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
-
-[node name="Control" type="Control" parent="Socket/Contents/Page4" index="3"]
+[node name="Control" type="Control" parent="Socket/Contents/Page4" index="2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
@@ -337,18 +331,17 @@ position = Vector2(152, 97)
 scale = Vector2(0.72, 0.72)
 sprite_frames = ExtResource("13_sn4bj")
 
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page5/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page5/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
 [node name="VisibleTrigger" parent="Socket/Contents/Page5" index="1" instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
 [node name="PlayAnimationCommand" parent="Socket/Contents/Page5/VisibleTrigger" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
-[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page5" index="2" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("4_n05pt")]
-AnimatedSprite = NodePath("../AnimatedSprite2D")
-
-[node name="GoNextPageCommand" parent="Socket/Contents/Page5/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
-
-[node name="Control" type="Control" parent="Socket/Contents/Page5" index="3"]
+[node name="Control" type="Control" parent="Socket/Contents/Page5" index="2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
@@ -369,18 +362,17 @@ position = Vector2(152, 97)
 scale = Vector2(0.72, 0.72)
 sprite_frames = SubResource("SpriteFrames_sbgk0")
 
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page6/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page6/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
 [node name="VisibleTrigger" parent="Socket/Contents/Page6" index="1" instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
 [node name="PlayAnimationCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
-[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page6" index="2" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("4_n05pt")]
-AnimatedSprite = NodePath("../AnimatedSprite2D")
-
-[node name="GoNextPageCommand" parent="Socket/Contents/Page6/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
-
-[node name="Control" type="Control" parent="Socket/Contents/Page6" index="3"]
+[node name="Control" type="Control" parent="Socket/Contents/Page6" index="2"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
@@ -418,16 +410,15 @@ Command = 3
 Stream = ExtResource("6_kbmb8")
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page7/VisibleTrigger" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page7" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page7/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page7" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page7/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page7/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page7/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page7" index="4"]
 layout_mode = 3
@@ -463,16 +454,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page8/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page8" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page8/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page8" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page8/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page8/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page8/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page8" index="4"]
 layout_mode = 3
@@ -508,16 +498,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page9/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page9" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page9/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page9" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page9/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page9/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page9/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page9" index="4"]
 layout_mode = 3
@@ -553,16 +542,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page10/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page10" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page10/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page10" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page10/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page10/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page10/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page10" index="4"]
 layout_mode = 3
@@ -598,16 +586,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page11/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page11" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page11/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page11" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page11/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page11/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page11/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page11" index="4"]
 layout_mode = 3
@@ -643,16 +630,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page12/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page12" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page12/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page12" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page12/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page12/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page12/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page12" index="4"]
 layout_mode = 3
@@ -688,16 +674,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page13/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page13" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page13/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page13" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page13/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page13/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page13/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page13" index="4"]
 layout_mode = 3
@@ -733,16 +718,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page14/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page14" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page14/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page14" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page14/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page14/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page14/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page14" index="4"]
 layout_mode = 3
@@ -778,16 +762,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page15/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page15" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page15/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page15" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page15/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page15/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page15/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page15" index="4"]
 layout_mode = 3
@@ -823,16 +806,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page16/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page16" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page16/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page16" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page16/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page16/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page16/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page16" index="4"]
 layout_mode = 3
@@ -868,16 +850,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page17/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page17" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page17/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page17" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page17/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page17/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page17/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page17" index="4"]
 layout_mode = 3
@@ -913,16 +894,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page18/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page18" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page18/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page18" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page18/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page18/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page18/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page18" index="4"]
 layout_mode = 3
@@ -968,16 +948,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page19/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page19" index="5" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page19/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page19" index="5"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page19/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page19/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page19/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page19" index="6"]
 layout_mode = 3
@@ -1013,16 +992,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page20/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page20" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page20/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page20" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page20/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page20/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page20/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page20" index="4"]
 layout_mode = 3
@@ -1058,16 +1036,15 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page21/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page21" index="3" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page21/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page21" index="3"]
+wait_time = 3.0
 one_shot = true
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page21/TimerTrigger" index="1" instance=ExtResource("6_hqai5")]
+[node name="TimerTrigger" parent="Socket/Contents/Page21/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page21/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page21" index="4"]
 layout_mode = 3
@@ -1113,18 +1090,17 @@ horizontal_alignment = 1
 position = Vector2(16, 17)
 
 [node name="StartTimerTriggerCommand" parent="Socket/Contents/Page22/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="TimerTrigger" parent="Socket/Contents/Page22" index="5" node_paths=PackedStringArray("Timer") instance=ExtResource("9_jadeb")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Socket/Contents/Page22/TimerTrigger" index="0"]
+[node name="Timer" type="Timer" parent="Socket/Contents/Page22" index="5"]
+wait_time = 3.0
 one_shot = true
 
-[node name="CloseAllDialogCommand" parent="Socket/Contents/Page22/TimerTrigger" index="1" instance=ExtResource("26_dbfgy")]
+[node name="TimerTrigger" parent="Socket/Contents/Page22/Timer" index="0" instance=ExtResource("9_jadeb")]
 
-[node name="OpenDialogCommand" parent="Socket/Contents/Page22/TimerTrigger" index="2" instance=ExtResource("27_06meo")]
+[node name="CloseAllDialogCommand" parent="Socket/Contents/Page22/Timer/TimerTrigger" index="0" instance=ExtResource("26_dbfgy")]
+
+[node name="OpenDialogCommand" parent="Socket/Contents/Page22/Timer/TimerTrigger" index="1" instance=ExtResource("27_06meo")]
 DialogPath = "res://theater/story_ending2.tscn"
 
 [node name="Control" type="Control" parent="Socket/Contents/Page22" index="6"]

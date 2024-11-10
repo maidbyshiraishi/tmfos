@@ -1,8 +1,8 @@
 using Godot;
+using tmfos.door;
 using tmfos.mob;
 using tmfos.player;
 using tmfos.stage;
-using tmfos.trigger;
 
 namespace tmfos.command;
 
@@ -24,12 +24,6 @@ public partial class StageEntryPoint : Node2D
     [Export]
     public DirectionType Direction { get; set; } = DirectionType.Left;
 
-    /// <summary>
-    /// 開始時に停止するトリガー
-    /// </summary>
-    [Export]
-    public TriggerArea2D CommandTrigger { get; set; }
-
     public override void _Ready()
     {
         base._Ready();
@@ -45,17 +39,9 @@ public partial class StageEntryPoint : Node2D
         player.Direction = Direction;
         player.Position = GlobalPosition;
 
-        if (CommandTrigger is not null)
+        if (GetParent() is Warp warp)
         {
-            CommandTrigger.Disable = true;
-        }
-    }
-
-    public void EnableCollidableArea(Area2D node)
-    {
-        if (node is EventFinder finder && finder.EventNode2D is Player)
-        {
-            CommandTrigger.Disable = false;
+            warp.DisableWarp();
         }
     }
 }

@@ -1,6 +1,9 @@
 using Godot;
 using Godot.Collections;
 using tmfos.mob;
+using tmfos.player;
+using tmfos.stage;
+using tmfos.system;
 
 namespace tmfos.enemy;
 
@@ -12,14 +15,12 @@ public partial class TentacleRoot : Node2D, IGameNode
     [Export]
     public bool AutoConnectTentacle = true;
 
+    private Player _player;
+
     public override void _Ready()
     {
         base._Ready();
-
-        if (AutoConnectTentacle)
-        {
-            ConnectTentacles();
-        }
+        AddToGroup(StageRoot.GameNodeGroup);
     }
 
     private void ConnectTentacles()
@@ -57,6 +58,13 @@ public partial class TentacleRoot : Node2D, IGameNode
 
     public virtual void InitializeNode()
     {
+        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        _player = stageRoot.GetNode<Player>("%Player");
+
+        if (AutoConnectTentacle)
+        {
+            ConnectTentacles();
+        }
     }
 
     public virtual void FinalizeNode()

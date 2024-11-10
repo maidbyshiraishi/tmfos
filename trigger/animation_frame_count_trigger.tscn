@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://trigger/AnimationFrameCountTrigger.cs" id="1_7q2pg"]
 
-[node name="AnimationFrameCountTrigger" type="Node" node_paths=PackedStringArray("AnimatedSprite")]
+[node name="AnimationFrameCountTrigger" type="Node"]
 script = ExtResource("1_7q2pg")
-AnimatedSprite = NodePath("")
 FrameCount = 11

@@ -10,9 +10,7 @@ namespace tmfos.trigger;
 /// </summary>
 public partial class EventFinder : Area2D
 {
-    [Export]
-    public Node2D EventNode2D { get; set; }
-
+    public Node2D EventNode2D;
     private readonly Array<ulong> _target = [];
 
     public override void _Ready()
@@ -20,6 +18,11 @@ public partial class EventFinder : Area2D
         _ = Connect(Area2D.SignalName.AreaEntered, new Callable(this, MethodName.Area2DEntered));
         _ = Connect(Area2D.SignalName.AreaExited, new Callable(this, MethodName.Area2DExited));
         AddToGroup(StageRoot.PhysicsProcessGroup);
+
+        if (GetParent() is ActionMob amob)
+        {
+            EventNode2D = amob;
+        }
     }
 
     public override void _PhysicsProcess(double delta)
@@ -49,7 +52,6 @@ public partial class EventFinder : Area2D
                 continue;
             }
 
-            // todo: 簡単に確認した限りでは動いているようだが、虫眼鏡アイテムの挙動検証
             if (gobj is TriggerArea2D node && OverlapsArea(node) && (!node.Search || (node.Search && EventNode2D is ActionMob amob && amob.Search)))
             {
                 node.Exec(EventNode2D);

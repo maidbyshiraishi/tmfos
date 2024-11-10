@@ -12,12 +12,8 @@ public partial class MaidRobot1Enemy : Enemy
     [Export]
     public float ShotWait { get; set; } = 1.5f;
 
-    [Export]
-    public Node2D EntryPoints { get; set; }
-
-    [Export]
-    public Node2D DrillPoints { get; set; }
-
+    private Node2D _entryPoint;
+    private Node2D _drillPoint;
     private bool _lastOnFloor;
     private int _entryCount = 0;
     private int _drillCount = 0;
@@ -25,11 +21,14 @@ public partial class MaidRobot1Enemy : Enemy
     public override void _Ready()
     {
         base._Ready();
+        // todo: グループのほうがいいかも？
+        _entryPoint = GetNode<Node2D>("%EntryPoint");
+        _drillPoint = GetNode<Node2D>("%DrillPoint");
+        _entryCount = _entryPoint is null ? 0 : _entryPoint.GetChildCount();
+        _drillCount = _drillPoint is null ? 0 : _drillPoint.GetChildCount();
         GetNode<Timer>("DrillTimer").WaitTime = ShotWait;
         GetNode<TextureProgressBar>("%HUD/BossLife").MaxValue = Life;
         GetNode<TextureProgressBar>("%HUD/BossLife").Value = Life;
-        _entryCount = EntryPoints is null ? 0 : EntryPoints.GetChildCount();
-        _drillCount = DrillPoints is null ? 0 : DrillPoints.GetChildCount();
     }
 
     public override void InitializeNode()
@@ -92,7 +91,7 @@ public partial class MaidRobot1Enemy : Enemy
     public override void RemoveNode()
     {
         // 死亡時は除去される
-        if (MobState is MobStateType.Dead || EntryPoints is null)
+        if (MobState is MobStateType.Dead || _entryPoint is null)
         {
             GetNode<MaidRobot2Enemy>("../MaidRobot2Enemy").Start();
             base.RemoveNode();
@@ -101,7 +100,7 @@ public partial class MaidRobot1Enemy : Enemy
 
         // 画面外に出たがまだ死んではいないので復帰させる
         RandomNumberGenerator random = new();
-        Marker2D point = EntryPoints.GetNode<Marker2D>(string.Format("Marker2D{0:#}", random.RandiRange(1, _entryCount)));
+        Marker2D point = _entryPoint.GetNode<Marker2D>(string.Format("Marker2D{0:#}", random.RandiRange(1, _entryCount)));
         Position = point.GlobalPosition;
         Direction = Lib.GetLRDirection(Position, m_player.Position);
         ChangeSprite("walk", Direction);
@@ -113,7 +112,7 @@ public partial class MaidRobot1Enemy : Enemy
 
         for (int i = 0; i < 3; i++)
         {
-            DrillPoints.GetNode<EnemySpawner>($"DrillShot{random.RandiRange(1, _drillCount)}").SpawnEnemy();
+            _drillPoint.GetNode<EnemySpawner>($"DrillShot{random.RandiRange(1, _drillCount)}").SpawnEnemy();
         }
     }
 

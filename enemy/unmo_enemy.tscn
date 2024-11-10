@@ -58,23 +58,20 @@ rect = Rect2(-20, -32, 40, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
 shape = SubResource("RectangleShape2D_0h4ql")
 
-[node name="EventFinder" parent="." node_paths=PackedStringArray("EventNode2D") instance=ExtResource("6_dgoom")]
-EventNode2D = NodePath("..")
+[node name="EventFinder" parent="." instance=ExtResource("6_dgoom")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
 shape = SubResource("RectangleShape2D_4dm7x")
 
 [node name="BlockBreaker" type="Node2D" parent="."]
 
-[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
+[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker"]
 position = Vector2(0, -34)
 script = ExtResource("8_x8f6o")
-VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 
-[node name="Step" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
+[node name="Step" type="Marker2D" parent="BlockBreaker"]
 position = Vector2(0, 34)
 script = ExtResource("8_x8f6o")
-VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 0.001

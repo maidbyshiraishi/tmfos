@@ -50,9 +50,8 @@ rect = Rect2(-20, -16, 40, 32)
 
 [node name="EyeSight" parent="." instance=ExtResource("5_j48dm")]
 
-[node name="ActionChange" type="Node2D" parent="." node_paths=PackedStringArray("ChangeTarget")]
+[node name="ActionChange" type="Node2D" parent="."]
 script = ExtResource("6_j0ptg")
-ChangeTarget = NodePath("..")
 
 [node name="Marker2D" type="Marker2D" parent="ActionChange"]
 

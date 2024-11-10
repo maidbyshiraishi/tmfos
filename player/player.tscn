@@ -71,9 +71,8 @@ autoplay = "light"
 
 [node name="VeilLight" parent="." instance=ExtResource("10_udeha")]
 
-[node name="ActionChange" type="Node2D" parent="." node_paths=PackedStringArray("ChangeTarget")]
+[node name="ActionChange" type="Node2D" parent="."]
 script = ExtResource("14_5r2in")
-ChangeTarget = NodePath("..")
 
 [node name="Head" type="Marker2D" parent="ActionChange"]
 position = Vector2(0, -14)
@@ -99,8 +98,7 @@ shape = SubResource("CircleShape2D_db8m6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
 shape = SubResource("RectangleShape2D_iv8hm")
 
-[node name="EventFinder" parent="." node_paths=PackedStringArray("EventNode2D") instance=ExtResource("8_fc10d")]
-EventNode2D = NodePath("..")
+[node name="EventFinder" parent="." instance=ExtResource("8_fc10d")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
 shape = SubResource("RectangleShape2D_2dja7")
@@ -171,16 +169,14 @@ position = Vector2(10, 20)
 [node name="BlockBreaker" type="Node2D" parent="."]
 visible = false
 
-[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
+[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker"]
 position = Vector2(0, -33)
 script = ExtResource("11_o6f57")
 WaitTime = 0.05
-VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 
-[node name="Step" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
+[node name="Step" type="Marker2D" parent="BlockBreaker"]
 position = Vector2(0, 34)
 script = ExtResource("11_o6f57")
-VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, 30)

@@ -14,9 +14,6 @@ public partial class TmfosEnemy : PathFollowEnemy
     [Signal]
     public delegate void NodeSpawnedEventHandler(Node node, Node spawner, Vector2 position, Vector2 direction, double lifeTime);
 
-    [Export]
-    public Marker2D MerkerPosition { get; set; }
-
     /// <summary>
     /// テレポート先グループ名
     /// </summary>
@@ -28,6 +25,7 @@ public partial class TmfosEnemy : PathFollowEnemy
 
     private Array<Node> _teleportPosition;
     private bool _tereportReserved = false;
+    private Marker2D _merkedPosition;
 
     public override void _Ready()
     {
@@ -48,9 +46,9 @@ public partial class TmfosEnemy : PathFollowEnemy
 
     public override void _PhysicsProcess(double delta)
     {
-        if (MobState is not MobStateType.Dead and not MobStateType.Timeup && MerkerPosition != null)
+        if (MobState is not MobStateType.Dead and not MobStateType.Timeup && _merkedPosition != null)
         {
-            GlobalPosition = MerkerPosition.GlobalPosition;
+            GlobalPosition = _merkedPosition.GlobalPosition;
         }
 
         base._PhysicsProcess(delta);
@@ -104,7 +102,7 @@ public partial class TmfosEnemy : PathFollowEnemy
 
         if (_teleportPosition[no] is Marker2D merker)
         {
-            MerkerPosition = merker;
+            _merkedPosition = merker;
         }
     }
 

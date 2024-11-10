@@ -32,11 +32,47 @@ tile_map_data = PackedByteArray("AAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAM
 [node name="Barrier1" parent="Decoration1" index="0" instance=ExtResource("3_ag827")]
 position = Vector2(560, -192)
 
+[node name="VisibleTrigger1" parent="Decoration1/Barrier1" index="4" instance=ExtResource("9_vq25t")]
+position = Vector2(-192, 176)
+
+[node name="ConditionalCommand" parent="Decoration1/Barrier1/VisibleTrigger1" index="0" instance=ExtResource("10_e5wko")]
+ConditionalExpression = "boss_0001==1"
+
+[node name="PlaySeCommand" parent="Decoration1/Barrier1/VisibleTrigger1/ConditionalCommand" index="0" instance=ExtResource("11_7guy7")]
+SeName = "destroy_barrier"
+
+[node name="FreeCommand" parent="Decoration1/Barrier1/VisibleTrigger1/ConditionalCommand" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("11_jsehq")]
+Target = NodePath("../../..")
+
 [node name="Barrier2" parent="Decoration1" index="1" instance=ExtResource("3_ag827")]
 position = Vector2(496, -192)
 
+[node name="VisibleTrigger2" parent="Decoration1/Barrier2" index="4" instance=ExtResource("9_vq25t")]
+position = Vector2(-176, 176)
+
+[node name="ConditionalCommand" parent="Decoration1/Barrier2/VisibleTrigger2" index="0" instance=ExtResource("10_e5wko")]
+ConditionalExpression = "boss_0002==1"
+
+[node name="PlaySeCommand" parent="Decoration1/Barrier2/VisibleTrigger2/ConditionalCommand" index="0" instance=ExtResource("11_7guy7")]
+SeName = "destroy_barrier"
+
+[node name="FreeCommand" parent="Decoration1/Barrier2/VisibleTrigger2/ConditionalCommand" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("11_jsehq")]
+Target = NodePath("../../..")
+
 [node name="Barrier3" parent="Decoration1" index="2" instance=ExtResource("3_ag827")]
 position = Vector2(432, -192)
+
+[node name="VisibleTrigger3" parent="Decoration1/Barrier3" index="4" instance=ExtResource("9_vq25t")]
+position = Vector2(-160, 176)
+
+[node name="ConditionalCommand" parent="Decoration1/Barrier3/VisibleTrigger3" index="0" instance=ExtResource("10_e5wko")]
+ConditionalExpression = "boss_0003==1"
+
+[node name="PlaySeCommand" parent="Decoration1/Barrier3/VisibleTrigger3/ConditionalCommand" index="0" instance=ExtResource("11_7guy7")]
+SeName = "destroy_barrier"
+
+[node name="FreeCommand" parent="Decoration1/Barrier3/VisibleTrigger3/ConditionalCommand" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("11_jsehq")]
+Target = NodePath("../../..")
 
 [node name="BossDoor1" parent="Door" index="0" instance=ExtResource("4_5wcb1")]
 position = Vector2(848, -64)
@@ -89,39 +125,3 @@ Text2 = "25"
 [node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("7_qbfaa")]
 position = Vector2(480, 16)
 scale = Vector2(60, 1)
-
-[node name="VisibleTrigger1" parent="." index="17" instance=ExtResource("9_vq25t")]
-position = Vector2(368, -16)
-
-[node name="ConditionalCommand" parent="VisibleTrigger1" index="0" instance=ExtResource("10_e5wko")]
-ConditionalExpression = "boss_0001==1"
-
-[node name="PlaySeCommand" parent="VisibleTrigger1/ConditionalCommand" index="0" instance=ExtResource("11_7guy7")]
-SeName = "destroy_barrier"
-
-[node name="FreeCommand" parent="VisibleTrigger1/ConditionalCommand" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("11_jsehq")]
-Target = NodePath("../../../Decoration1/Barrier1")
-
-[node name="VisibleTrigger2" parent="." index="18" instance=ExtResource("9_vq25t")]
-position = Vector2(320, -16)
-
-[node name="ConditionalCommand" parent="VisibleTrigger2" index="0" instance=ExtResource("10_e5wko")]
-ConditionalExpression = "boss_0002==1"
-
-[node name="PlaySeCommand" parent="VisibleTrigger2/ConditionalCommand" index="0" instance=ExtResource("11_7guy7")]
-SeName = "destroy_barrier"
-
-[node name="FreeCommand" parent="VisibleTrigger2/ConditionalCommand" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("11_jsehq")]
-Target = NodePath("../../../Decoration1/Barrier2")
-
-[node name="VisibleTrigger3" parent="." index="19" instance=ExtResource("9_vq25t")]
-position = Vector2(272, -16)
-
-[node name="ConditionalCommand" parent="VisibleTrigger3" index="0" instance=ExtResource("10_e5wko")]
-ConditionalExpression = "boss_0003==1"
-
-[node name="PlaySeCommand" parent="VisibleTrigger3/ConditionalCommand" index="0" instance=ExtResource("11_7guy7")]
-SeName = "destroy_barrier"
-
-[node name="FreeCommand" parent="VisibleTrigger3/ConditionalCommand" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("11_jsehq")]
-Target = NodePath("../../../Decoration1/Barrier3")

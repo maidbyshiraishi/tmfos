@@ -2,7 +2,5 @@
 
 [ext_resource type="Script" path="res://command/ChangeTentacleHeadTargetCommand.cs" id="1_53cfg"]
 
-[node name="ChangeTentacleHeadTargetCommand" type="Node" node_paths=PackedStringArray("Head", "Target")]
+[node name="ChangeTentacleHeadTargetCommand" type="Node"]
 script = ExtResource("1_53cfg")
-Head = NodePath("")
-Target = NodePath("")

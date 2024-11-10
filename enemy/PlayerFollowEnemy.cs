@@ -12,9 +12,6 @@ namespace tmfos.enemy;
 public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
 {
     [Export]
-    public Node2D ContainEnemy { get; set; }
-
-    [Export]
     public float MaxSpeed { get; set; } = 250f;
 
     [Export]
@@ -44,6 +41,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
     [Export]
     public double ExploreTime { get; set; } = 3f;
 
+    private Node2D _enemy;
     private Vector2 _velocity = Vector2.Zero;
     private Vector2 _startPosition;
     private Vector2 _oldPlayerPosition;
@@ -59,10 +57,12 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
         base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
+        _enemy = GetNode<Node2D>("Enemy");
         _exploreTimer = GetNode<Timer>("ExploreTimer");
+        _exploreTimer.WaitTime = ExploreTime;
         _ = _exploreTimer.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.ChangeExploreDirection));
 
-        if (ContainEnemy is ISpawnedNode ispawn)
+        if (_enemy is ISpawnedNode ispawn)
         {
             ispawn.SetLifeTime(LifeTime);
         }
@@ -70,7 +70,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
 
     public void InitializeNode()
     {
-        if (ContainEnemy is not IGameNode inode)
+        if (_enemy is not IGameNode inode)
         {
             RemoveNode();
             return;
@@ -164,7 +164,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
     {
         _playerInSight = false;
         _velocity = Vector2.Left * ExploreSpeed;
-        Lib.ResetTimer(_exploreTimer, ExploreTime);
+        Lib.ResetTimer(_exploreTimer);
     }
 
     public void ChangeExploreDirection()

@@ -37,9 +37,8 @@ position = Vector2(-4.00002, 7.99998)
 scale = Vector2(32.75, 8.25)
 rect = Rect2(-16, -32, 32, 64)
 
-[node name="ActionChange" type="Node2D" parent="." node_paths=PackedStringArray("ChangeTarget")]
+[node name="ActionChange" type="Node2D" parent="."]
 script = ExtResource("7_uh5tg")
-ChangeTarget = NodePath("..")
 
 [node name="Marker2D" type="Marker2D" parent="ActionChange"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://0k7eapnlceja"]
 
-[ext_resource type="Script" path="res://door/Gateway.cs" id="1_ujfy7"]
+[ext_resource type="Script" path="res://door/Warp.cs" id="1_kr7d6"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="2_i7qoi"]
 [ext_resource type="PackedScene" uid="uid://ctmg15jks4p00" path="res://command/save_player_life_time_command.tscn" id="7_sdqdb"]
 [ext_resource type="PackedScene" uid="uid://colbvavuo7wh" path="res://command/change_stage_command.tscn" id="9_s0c5a"]
@@ -10,18 +10,15 @@
 [node name="TransparencyWarp" type="Area2D"]
 collision_layer = 65536
 collision_mask = 32768
-script = ExtResource("1_ujfy7")
+script = ExtResource("1_kr7d6")
 Stateful = false
 OneTime = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lhsey")
 
-[node name="StageEntryPoint" parent="." node_paths=PackedStringArray("CommandTrigger") instance=ExtResource("2_i7qoi")]
-CommandTrigger = NodePath("..")
+[node name="StageEntryPoint" parent="." instance=ExtResource("2_i7qoi")]
 
 [node name="SavePlayerLifeTimeCommand" parent="." instance=ExtResource("7_sdqdb")]
 
 [node name="ChangeStageCommand" parent="." instance=ExtResource("9_s0c5a")]
-
-[connection signal="area_exited" from="." to="StageEntryPoint" method="EnableCollidableArea"]

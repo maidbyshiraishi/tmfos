@@ -16,17 +16,12 @@ public partial class UpdateSavePointDoorNoCommand : CommandNode
     [Export]
     public int DestDoorNo { get; set; }
 
-    [Export]
-    public SavePoint ParentSavePoint { get; set; }
-
     public override void DoCommand(Node node, bool flag)
     {
-        if (ParentSavePoint is null)
+        if (GetParent() is SavePoint savePoint)
         {
-            return;
+            StageData stageData = GetNode<GameData>("/root/GameData").GetStageData();
+            stageData.DoorNo = savePoint.DoorNo;
         }
-
-        StageData stageData = GetNode<GameData>("/root/GameData").GetStageData();
-        stageData.DoorNo = ParentSavePoint.DoorNo;
     }
 }

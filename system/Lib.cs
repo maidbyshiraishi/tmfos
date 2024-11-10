@@ -153,15 +153,14 @@ public static partial class Lib
         _ = control.Connect(Control.SignalName.MouseExited, exited);
     }
 
-    public static void ResetTimer(Timer timer, double time)
+    public static void ResetTimer(Timer timer)
     {
-        if (timer is null || Mathf.Abs(time) < 0.05f)
+        if (timer is null || Mathf.Abs(timer.WaitTime) < 0.05f)
         {
             return;
         }
 
         timer.Paused = false;
-        timer.WaitTime = time;
         _ = timer.CallDeferred(Timer.MethodName.Start);
     }
 

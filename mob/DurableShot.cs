@@ -43,8 +43,13 @@ public partial class DurableShot : Shot, IDurable
     public override void _Ready()
     {
         base._Ready();
-        _lifeTimer = GetNode<Timer>("LifeTimer");
-        _ = _lifeTimer.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.Timeup));
+        _lifeTimer = GetNodeOrNull<Timer>("LifeTimer");
+
+        if (_lifeTimer is not null && 0.05f <= Mathf.Abs(LifeTime))
+        {
+            _lifeTimer.WaitTime = LifeTime;
+            _ = _lifeTimer.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.Timeup));
+        }
     }
 
     public override void InitializeNode()
@@ -78,7 +83,7 @@ public partial class DurableShot : Shot, IDurable
 
     public virtual void ResetLifeTime()
     {
-        Lib.ResetTimer(_lifeTimer, LifeTime);
+        Lib.ResetTimer(_lifeTimer);
     }
 
     public virtual void AddDurability(int value)

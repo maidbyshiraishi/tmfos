@@ -58,9 +58,8 @@ rect = Rect2(-25, -45, 50, 90)
 
 [node name="EyeSight" parent="." instance=ExtResource("8_drow6")]
 
-[node name="ActionChange" type="Node2D" parent="." node_paths=PackedStringArray("ChangeTarget")]
+[node name="ActionChange" type="Node2D" parent="."]
 script = ExtResource("7_q2hx7")
-ChangeTarget = NodePath("..")
 
 [node name="Marker2D" type="Marker2D" parent="ActionChange"]
 
@@ -78,15 +77,13 @@ shape = SubResource("RectangleShape2D_fkfb6")
 
 [node name="BlockBreaker" type="Node2D" parent="."]
 
-[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
+[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker"]
 position = Vector2(0, -57)
 script = ExtResource("9_3a3ls")
-VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 
-[node name="Step" type="Marker2D" parent="BlockBreaker" node_paths=PackedStringArray("VisibleOnScreenNotifier")]
+[node name="Step" type="Marker2D" parent="BlockBreaker"]
 position = Vector2(0, 35)
 script = ExtResource("9_3a3ls")
-VisibleOnScreenNotifier = NodePath("../../VisibleOnScreenNotifier2D")
 
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 0.001

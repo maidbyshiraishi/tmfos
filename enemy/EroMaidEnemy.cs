@@ -9,9 +9,7 @@ namespace tmfos.enemy;
 /// </summary>
 public partial class EroMaidEnemy : Enemy
 {
-    [Export]
-    public Node2D EntryPoints { get; set; }
-
+    private Node2D _entryPoint;
     private bool _lastOnFloor;
     private int _entryCount = 0;
     private int _drillCount = 0;
@@ -21,10 +19,12 @@ public partial class EroMaidEnemy : Enemy
     public override void _Ready()
     {
         base._Ready();
+        // todo: グループのほうがいいかも？
+        _entryPoint = GetNode<Node2D>("%EntryPoint");
         GetNode<TextureProgressBar>("%HUD/BossLife").MaxValue = Life;
         GetNode<TextureProgressBar>("%HUD/BossLife").Value = Life;
         _marker = GetNode<Marker2D>("ExcitationtMarker2D");
-        _entryCount = EntryPoints is null ? 0 : EntryPoints.GetChildCount();
+        _entryCount = _entryPoint is null ? 0 : _entryPoint.GetChildCount();
     }
 
     public override void InitializeNode()
@@ -84,7 +84,7 @@ public partial class EroMaidEnemy : Enemy
     public override void RemoveNode()
     {
         // 死亡時は除去される
-        if (MobState is MobStateType.Dead || EntryPoints is null)
+        if (MobState is MobStateType.Dead || _entryPoint is null)
         {
             base.RemoveNode();
             return;
@@ -136,7 +136,7 @@ public partial class EroMaidEnemy : Enemy
     {
         Velocity = Vector2.Zero;
         RandomNumberGenerator random = new();
-        Marker2D point = EntryPoints.GetNode<Marker2D>(string.Format("Marker2D{0:#}", random.RandiRange(1, _entryCount)));
+        Marker2D point = _entryPoint.GetNode<Marker2D>(string.Format("Marker2D{0:#}", random.RandiRange(1, _entryCount)));
         Position = point.GlobalPosition;
         Direction = Lib.GetLRDirection(Position, m_player.Position);
         _shot = random.RandiRange(1, 4) == 1;

@@ -1,7 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cfymfls3a7ari"]
 
-[ext_resource type="Script" path="res://enemy/PathFollowEnemy.cs" id="1_ov7pa"]
+[ext_resource type="Script" path="res://enemy/DragonHeadEnemy.cs" id="1_1y1fp"]
 [ext_resource type="Texture2D" uid="uid://beoxnnini6dwh" path="res://contents/image/enemy/dragon_head.png" id="2_5s8fp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifn7i"]
+size = Vector2(32, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cnr6g"]
 atlas = ExtResource("2_5s8fp")
@@ -59,15 +62,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifn7i"]
-size = Vector2(32, 31)
-
 [node name="DragonHeadEnemy" type="Area2D"]
 collision_layer = 32
 collision_mask = 24
-script = ExtResource("1_ov7pa")
+script = ExtResource("1_1y1fp")
 FlyingSe = "rocket_maid"
-DamagedExecCommand = true
 Life = 10000000000
 MaxLife = 10000000000
 DeadSe = "enemy_dead"
@@ -75,13 +74,13 @@ DamageSe = "enemy_damage"
 TimeupSe = "enemy_dead"
 Attack = 15
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_ad5fx")
-animation = &"left"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ifn7i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ad5fx")
+animation = &"left"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(0.6, 0.6)

@@ -9,12 +9,6 @@ namespace tmfos.trigger;
 public partial class AnimationFrameCountTrigger : Node
 {
     /// <summary>
-    /// 再生中のAnimatedSprite2D
-    /// </summary>
-    [Export]
-    public AnimatedSprite2D AnimatedSprite { get; set; }
-
-    /// <summary>
     /// コマンドを実行するフレーム
     /// </summary>
     [Export]
@@ -25,16 +19,15 @@ public partial class AnimationFrameCountTrigger : Node
     public override void _Ready()
     {
         base._Ready();
-        _ = AnimatedSprite?.Connect(AnimatedSprite2D.SignalName.FrameChanged, new Callable(this, MethodName.CountUp));
+
+        if (GetParent() is AnimatedSprite2D animatedSprite)
+        {
+            _ = animatedSprite.Connect(AnimatedSprite2D.SignalName.FrameChanged, new Callable(this, MethodName.CountUp));
+        }
     }
 
     private void CountUp()
     {
-        if (AnimatedSprite is null)
-        {
-            return;
-        }
-
         _now++;
 
         if (_now == FrameCount)

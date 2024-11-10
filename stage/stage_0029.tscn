@@ -74,15 +74,11 @@ unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("5_yairb")
 
-[node name="MaidRobot1Enemy" parent="Enemy" index="0" node_paths=PackedStringArray("EntryPoints", "DrillPoints") groups=["SweepEnemyObserver"] instance=ExtResource("4_065pf")]
+[node name="MaidRobot1Enemy" parent="Enemy" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("4_065pf")]
 position = Vector2(592, -96)
-EntryPoints = NodePath("../../EntryPoint")
-DrillPoints = NodePath("../../DrillPoint")
 
-[node name="MaidRobot2Enemy" parent="Enemy" index="1" node_paths=PackedStringArray("EntryPoints", "DrillPoints") groups=["SweepEnemyObserver"] instance=ExtResource("5_23xl0")]
+[node name="MaidRobot2Enemy" parent="Enemy" index="1" groups=["SweepEnemyObserver"] instance=ExtResource("5_23xl0")]
 position = Vector2(312, -752)
-EntryPoints = NodePath("../../BigEntryPoint")
-DrillPoints = NodePath("../../BigDrillPoint")
 
 [node name="HUD" parent="." index="13"]
 Text1 = "メイドロボ"
@@ -107,6 +103,7 @@ position = Vector2(480, 16)
 scale = Vector2(60, 1)
 
 [node name="EntryPoint" type="Node2D" parent="." index="18"]
+unique_name_in_owner = true
 
 [node name="Marker2D1" type="Marker2D" parent="EntryPoint" index="0"]
 position = Vector2(0, -96)
@@ -130,6 +127,7 @@ position = Vector2(320, -576)
 position = Vector2(512, -576)
 
 [node name="DrillPoint" type="Node2D" parent="." index="19"]
+unique_name_in_owner = true
 
 [node name="DrillShot92" parent="DrillPoint" index="0" instance=ExtResource("13_1u5or")]
 position = Vector2(8, 8)
@@ -592,6 +590,7 @@ EnemyName = 16
 ManualMode = true
 
 [node name="BigEntryPoint" type="Node2D" parent="." index="20"]
+unique_name_in_owner = true
 
 [node name="Marker2D3" type="Marker2D" parent="BigEntryPoint" index="0"]
 position = Vector2(130, -774)
@@ -603,6 +602,7 @@ position = Vector2(322, -774)
 position = Vector2(514, -774)
 
 [node name="BigDrillPoint" type="Node2D" parent="." index="21"]
+unique_name_in_owner = true
 
 [node name="DrillShot8" parent="BigDrillPoint" index="0" instance=ExtResource("13_1u5or")]
 position = Vector2(320, 192)

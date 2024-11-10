@@ -51,12 +51,10 @@ shape = SubResource("RectangleShape2D_o2anv")
 [node name="AddDurabilityCommand" parent="." instance=ExtResource("3_p4orh")]
 Value = -9999
 
-[node name="TimerTrigger" parent="." node_paths=PackedStringArray("Timer") instance=ExtResource("4_4gnrv")]
-WaitTime = 1.0
-Timer = NodePath("Timer")
-
-[node name="PlaySeCommand" parent="TimerTrigger" instance=ExtResource("5_66uct")]
-SeName = "barrier"
-
-[node name="Timer" type="Timer" parent="TimerTrigger"]
+[node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="TimerTrigger" parent="Timer" instance=ExtResource("4_4gnrv")]
+
+[node name="PlaySeCommand" parent="Timer/TimerTrigger" instance=ExtResource("5_66uct")]
+SeName = "barrier"

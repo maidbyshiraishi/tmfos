@@ -14,12 +14,8 @@ public partial class MaidRobot2Enemy : Enemy
     [Export]
     public float JumpWait { get; set; } = 3f;
 
-    [Export]
-    public Node2D EntryPoints { get; set; }
-
-    [Export]
-    public Node2D DrillPoints { get; set; }
-
+    private Node2D _bigEntryPoint;
+    private Node2D _bigDrillPoint;
     private bool _lastOnFloor;
     private int _entryCount = 0;
     private int _drillCount = 0;
@@ -30,10 +26,13 @@ public partial class MaidRobot2Enemy : Enemy
     public override void _Ready()
     {
         base._Ready();
+        // todo: グループのほうがいいかも？
+        _bigEntryPoint = GetNode<Node2D>("%BigEntryPoint");
+        _bigDrillPoint = GetNode<Node2D>("%BigDrillPoint");
+        _entryCount = _bigEntryPoint is null ? 0 : _bigEntryPoint.GetChildCount();
+        _drillCount = _bigDrillPoint is null ? 0 : _bigDrillPoint.GetChildCount();
         GetNode<Timer>("DrillTimer").WaitTime = ShotWait;
         GetNode<Timer>("JumpTimer").WaitTime = JumpWait;
-        _entryCount = EntryPoints is null ? 0 : EntryPoints.GetChildCount();
-        _drillCount = DrillPoints is null ? 0 : DrillPoints.GetChildCount();
     }
 
     public override void InitializeNode()
@@ -97,7 +96,7 @@ public partial class MaidRobot2Enemy : Enemy
             return;
         }
 
-        DrillPoints.GetNode<EnemySpawner>($"DrillShot{drill}").SpawnEnemy();
+        _bigDrillPoint.GetNode<EnemySpawner>($"DrillShot{drill}").SpawnEnemy();
     }
 
     public override void Dead()
@@ -139,7 +138,7 @@ public partial class MaidRobot2Enemy : Enemy
         Velocity = Vector2.Zero;
         RandomNumberGenerator random = new();
         _entryPoint = random.RandiRange(3, 2 + _entryCount);
-        Marker2D point = EntryPoints.GetNode<Marker2D>(string.Format("Marker2D{0:#}", _entryPoint));
+        Marker2D point = _bigEntryPoint.GetNode<Marker2D>(string.Format("Marker2D{0:#}", _entryPoint));
         Position = point.GlobalPosition;
     }
 }

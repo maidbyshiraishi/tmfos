@@ -34,9 +34,8 @@ shape = SubResource("RectangleShape2D_kjcr7")
 scale = Vector2(1.5, 1.25)
 rect = Rect2(-16, -32, 32, 64)
 
-[node name="ActionChange" type="Node2D" parent="." node_paths=PackedStringArray("ChangeTarget")]
+[node name="ActionChange" type="Node2D" parent="."]
 script = ExtResource("7_ca0nf")
-ChangeTarget = NodePath("..")
 
 [node name="Marker2D" type="Marker2D" parent="ActionChange"]
 
@@ -44,15 +43,13 @@ ChangeTarget = NodePath("..")
 wait_time = 0.001
 one_shot = true
 
-[node name="BlockBreakerHead" type="Marker2D" parent="." node_paths=PackedStringArray("VisibleOnScreenNotifier")]
+[node name="BlockBreakerHead" type="Marker2D" parent="."]
 position = Vector2(0, -32)
 script = ExtResource("9_mj3je")
-VisibleOnScreenNotifier = NodePath("../VisibleOnScreenNotifier2D")
 
-[node name="Step" type="Marker2D" parent="." node_paths=PackedStringArray("VisibleOnScreenNotifier")]
+[node name="Step" type="Marker2D" parent="."]
 position = Vector2(0, 32)
 script = ExtResource("9_mj3je")
-VisibleOnScreenNotifier = NodePath("../VisibleOnScreenNotifier2D")
 
 [node name="WarpTimer" type="Timer" parent="."]
 autostart = true

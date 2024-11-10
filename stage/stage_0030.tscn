@@ -83,9 +83,8 @@ unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("5_1uiaw")
 
-[node name="EroMaidEnemy" parent="Enemy" index="0" node_paths=PackedStringArray("EntryPoints") groups=["SweepEnemyObserver"] instance=ExtResource("6_wj2e1")]
+[node name="EroMaidEnemy" parent="Enemy" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("6_wj2e1")]
 position = Vector2(320, -352)
-EntryPoints = NodePath("../../EntryPoint")
 
 [node name="HUD" parent="." index="13"]
 Text1 = "エロメイド"
@@ -110,6 +109,7 @@ position = Vector2(480, 16)
 scale = Vector2(60, 1)
 
 [node name="EntryPoint" type="Node2D" parent="." index="18"]
+unique_name_in_owner = true
 
 [node name="Marker2D1" type="Marker2D" parent="EntryPoint" index="0"]
 position = Vector2(128, -64)

@@ -6,12 +6,10 @@ namespace tmfos.enemy;
 /// <summary>
 /// 触手の首
 /// </summary>
-public partial class TentacleNeck : Node2D
+public partial class TentacleNeck : CharacterBody2D
 {
-    [Export]
     public Node2D MobPrevious { get; set; }
 
-    [Export]
     public Node2D MobSubsequent { get; set; }
 
     private AnimatedSprite2D _sprite;

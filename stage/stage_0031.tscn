@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cvvhkenirrk6w"]
+[gd_scene load_steps=23 format=4 uid="uid://cvvhkenirrk6w"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_cdwsu"]
 [ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="2_2mq1n"]
@@ -17,9 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="11_7rqq8"]
 [ext_resource type="PackedScene" uid="uid://dvcg4jkd64dvn" path="res://enemy/tmfos_enemy.tscn" id="11_o3bmi"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="12_67s0e"]
-[ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="12_asd0i"]
-[ext_resource type="PackedScene" uid="uid://8jidpood58yw" path="res://command/start_timer_trigger_command.tscn" id="13_oboyg"]
-[ext_resource type="PackedScene" uid="uid://bye7ngyrlnbx2" path="res://command/change_tentacle_head_target_command.tscn" id="14_8nh81"]
 [ext_resource type="Texture2D" uid="uid://bgs46uwca6xsq" path="res://contents/image/decoration/dragon_leg.png" id="14_i3x6e"]
 [ext_resource type="Texture2D" uid="uid://bxvr2jhhma4w3" path="res://contents/image/decoration/dragon_body.png" id="17_qsunl"]
 [ext_resource type="Shader" path="res://contents/shader/raster_scroll.gdshader" id="19_tt0bg"]
@@ -167,33 +164,14 @@ position = Vector2(0, -3)
 sprite_frames = ExtResource("8_ojrkh")
 autoplay = "default"
 
-[node name="TentacleHead" parent="Enemy/TentacleRoot1" index="10" node_paths=PackedStringArray("Root") instance=ExtResource("8_id7ur")]
-Root = NodePath("..")
+[node name="TentacleHead" parent="Enemy/TentacleRoot1" index="10" instance=ExtResource("8_id7ur")]
 Speed = 1.0
 MaxLength = 480.0
 
 [node name="DragonHeadEnemy" parent="Enemy/TentacleRoot1/TentacleHead" index="0" instance=ExtResource("10_5soym")]
 
-[node name="ChangeTentacleHeadTargetCommand" parent="Enemy/TentacleRoot1/TentacleHead/DragonHeadEnemy" index="4" node_paths=PackedStringArray("Head", "Target") instance=ExtResource("14_8nh81")]
-Head = NodePath("../..")
-Target = NodePath("../../..")
-
-[node name="StartTimerTriggerCommand" parent="Enemy/TentacleRoot1/TentacleHead/DragonHeadEnemy" index="5" node_paths=PackedStringArray("Target") instance=ExtResource("13_oboyg")]
-Target = NodePath("../../../TimerTrigger")
-
 [node name="Marker2D" type="Marker2D" parent="Enemy/TentacleRoot1/TentacleHead" index="1" groups=["TeleportPosition"]]
 position = Vector2(0, -16)
-
-[node name="TimerTrigger" parent="Enemy/TentacleRoot1" index="11" node_paths=PackedStringArray("Timer") instance=ExtResource("12_asd0i")]
-WaitTime = 2.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Enemy/TentacleRoot1/TimerTrigger" index="0"]
-one_shot = true
-
-[node name="ChangeTentacleHeadTargetCommand" parent="Enemy/TentacleRoot1/TimerTrigger" index="1" node_paths=PackedStringArray("Head", "Target") instance=ExtResource("14_8nh81")]
-Head = NodePath("../../TentacleHead")
-Target = NodePath("../../../../Player")
 
 [node name="TentacleRoot2" parent="Enemy" index="1" instance=ExtResource("6_l3it0")]
 position = Vector2(520, -368)
@@ -268,33 +246,14 @@ position = Vector2(0, -3)
 sprite_frames = ExtResource("8_ojrkh")
 autoplay = "default"
 
-[node name="TentacleHead" parent="Enemy/TentacleRoot2" index="10" node_paths=PackedStringArray("Root") instance=ExtResource("8_id7ur")]
-Root = NodePath("..")
+[node name="TentacleHead" parent="Enemy/TentacleRoot2" index="10" instance=ExtResource("8_id7ur")]
 Speed = 2.0
 MaxLength = 400.0
 
 [node name="DragonHeadEnemy" parent="Enemy/TentacleRoot2/TentacleHead" index="0" instance=ExtResource("10_5soym")]
 
-[node name="ChangeTentacleHeadTargetCommand" parent="Enemy/TentacleRoot2/TentacleHead/DragonHeadEnemy" index="4" node_paths=PackedStringArray("Head", "Target") instance=ExtResource("14_8nh81")]
-Head = NodePath("../..")
-Target = NodePath("../../..")
-
-[node name="StartTimerTriggerCommand" parent="Enemy/TentacleRoot2/TentacleHead/DragonHeadEnemy" index="5" node_paths=PackedStringArray("Target") instance=ExtResource("13_oboyg")]
-Target = NodePath("../../../TimerTrigger")
-
 [node name="Marker2D" type="Marker2D" parent="Enemy/TentacleRoot2/TentacleHead" index="1" groups=["TeleportPosition"]]
 position = Vector2(0, -16)
-
-[node name="TimerTrigger" parent="Enemy/TentacleRoot2" index="11" node_paths=PackedStringArray("Timer") instance=ExtResource("12_asd0i")]
-WaitTime = 3.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Enemy/TentacleRoot2/TimerTrigger" index="0"]
-one_shot = true
-
-[node name="ChangeTentacleHeadTargetCommand" parent="Enemy/TentacleRoot2/TimerTrigger" index="1" node_paths=PackedStringArray("Head", "Target") instance=ExtResource("14_8nh81")]
-Head = NodePath("../../TentacleHead")
-Target = NodePath("../../../../Player")
 
 [node name="TentacleRoot3" parent="Enemy" index="2" instance=ExtResource("6_l3it0")]
 position = Vector2(536, -328)
@@ -369,31 +328,12 @@ position = Vector2(0, -3)
 sprite_frames = ExtResource("8_ojrkh")
 autoplay = "default"
 
-[node name="TentacleHead" parent="Enemy/TentacleRoot3" index="10" node_paths=PackedStringArray("Root") instance=ExtResource("8_id7ur")]
-Root = NodePath("..")
+[node name="TentacleHead" parent="Enemy/TentacleRoot3" index="10" instance=ExtResource("8_id7ur")]
 
 [node name="DragonHeadEnemy" parent="Enemy/TentacleRoot3/TentacleHead" index="0" instance=ExtResource("10_5soym")]
 
-[node name="ChangeTentacleHeadTargetCommand" parent="Enemy/TentacleRoot3/TentacleHead/DragonHeadEnemy" index="4" node_paths=PackedStringArray("Head", "Target") instance=ExtResource("14_8nh81")]
-Head = NodePath("../..")
-Target = NodePath("../../..")
-
-[node name="StartTimerTriggerCommand" parent="Enemy/TentacleRoot3/TentacleHead/DragonHeadEnemy" index="5" node_paths=PackedStringArray("Target") instance=ExtResource("13_oboyg")]
-Target = NodePath("../../../TimerTrigger")
-
 [node name="Marker2D" type="Marker2D" parent="Enemy/TentacleRoot3/TentacleHead" index="1" groups=["TeleportPosition"]]
 position = Vector2(0, -16)
-
-[node name="TimerTrigger" parent="Enemy/TentacleRoot3" index="11" node_paths=PackedStringArray("Timer") instance=ExtResource("12_asd0i")]
-WaitTime = 1.0
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="Enemy/TentacleRoot3/TimerTrigger" index="0"]
-one_shot = true
-
-[node name="ChangeTentacleHeadTargetCommand" parent="Enemy/TentacleRoot3/TimerTrigger" index="1" node_paths=PackedStringArray("Head", "Target") instance=ExtResource("14_8nh81")]
-Head = NodePath("../../TentacleHead")
-Target = NodePath("../../../../Player")
 
 [node name="DragonLeg" type="Sprite2D" parent="Decoration2" index="0"]
 position = Vector2(612, -206)

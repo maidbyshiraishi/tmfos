@@ -12,9 +12,7 @@ public partial class BlockBreaker : Marker2D, IGameNode
     [Export]
     public float WaitTime { get; set; } = 0.4f;
 
-    [Export]
-    public VisibleOnScreenNotifier2D VisibleOnScreenNotifier { get; set; }
-
+    private VisibleOnScreenNotifier2D _visibleOnScreenNotifier;
     private bool _wait = false;
     private TileMapManager _tileMapManager = null;
 
@@ -23,6 +21,7 @@ public partial class BlockBreaker : Marker2D, IGameNode
         base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
+        _visibleOnScreenNotifier = GetOwner<Node>().GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
     }
 
     public void InitializeNode()
@@ -49,7 +48,7 @@ public partial class BlockBreaker : Marker2D, IGameNode
         }
 
         Vector2I step = (Vector2I)GlobalPosition;
-        bool visible = VisibleOnScreenNotifier is not null && VisibleOnScreenNotifier.Visible;
+        bool visible = _visibleOnScreenNotifier is not null && _visibleOnScreenNotifier.Visible;
 
         if (_tileMapManager.BlockCollided(step, visible))
         {

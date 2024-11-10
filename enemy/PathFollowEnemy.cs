@@ -14,9 +14,6 @@ public partial class PathFollowEnemy : DurableShot
     [Export]
     public string FlyingSe { get; set; }
 
-    [Export]
-    public bool DamagedExecCommand { get; set; } = false;
-
     private Vector2 _velocity = Vector2.Zero;
     private Vector2 _lastPosition;
     private Vector2 _deadPosition;
@@ -179,15 +176,5 @@ public partial class PathFollowEnemy : DurableShot
         _deadPosition = GlobalPosition;
         _velocity = Vector2.Zero;
         SetCollisionMaskValue(4, false);
-    }
-
-    public override void Damaged()
-    {
-        base.Damaged();
-
-        if (DamagedExecCommand)
-        {
-            Lib.ExecCommands(this, null, true);
-        }
     }
 }

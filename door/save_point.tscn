@@ -60,8 +60,7 @@ SeName = "save_point"
 
 [node name="ResetPlayerLifeTimeCommand" parent="." instance=ExtResource("7_6s2y6")]
 
-[node name="UpdateSavePointDoorNoCommand" parent="." node_paths=PackedStringArray("ParentSavePoint") instance=ExtResource("8_b2nrd")]
-ParentSavePoint = NodePath("")
+[node name="UpdateSavePointDoorNoCommand" parent="." instance=ExtResource("8_b2nrd")]
 
 [node name="StateSaveCommand" parent="." instance=ExtResource("8_0kbx6")]
 

@@ -8,23 +8,18 @@ namespace tmfos.trigger;
 /// </summary>
 public partial class TimerTrigger : Node
 {
-    /// <summary>
-    /// 待機時間
-    /// </summary>
-    [Export]
-    public double WaitTime { get; set; } = 5d;
-
-    /// <summary>
-    /// 使用するタイマー
-    /// </summary>
-    [Export]
-    public Timer Timer { get; set; }
+    private Timer _timer;
 
     public override void _Ready()
     {
         base._Ready();
-        _ = Timer?.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.Exec));
-        _ = Connect(Node.SignalName.TreeExiting, new Callable(this, MethodName.StopTimer));
+
+        if (GetParent() is Timer timer)
+        {
+            _timer = timer;
+            _ = _timer.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.Exec));
+            _ = Connect(Node.SignalName.TreeExiting, new Callable(this, MethodName.StopTimer));
+        }
     }
 
     public virtual void Exec()
@@ -37,7 +32,7 @@ public partial class TimerTrigger : Node
     /// </summary>
     public void ResetTimer()
     {
-        Lib.ResetTimer(Timer, WaitTime);
+        Lib.ResetTimer(_timer);
     }
 
     /// <summary>
@@ -46,9 +41,9 @@ public partial class TimerTrigger : Node
     /// <param name="paused">停止するか</param>
     public void PauseTimer(bool paused)
     {
-        if (Timer is not null)
+        if (_timer is not null)
         {
-            Timer.Paused = paused;
+            _timer.Paused = paused;
         }
     }
 

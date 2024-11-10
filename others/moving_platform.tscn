@@ -7,9 +7,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0ce7"]
 size = Vector2(40, 10)
 
-[node name="MovingPlatform" node_paths=PackedStringArray("CharacterBody") instance=ExtResource("1_72pvf")]
+[node name="MovingPlatform" instance=ExtResource("1_72pvf")]
 script = ExtResource("2_hstsh")
-CharacterBody = NodePath("CharacterBody2D")
 Reverse = false
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." index="0"]

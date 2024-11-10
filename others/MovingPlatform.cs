@@ -7,12 +7,17 @@ namespace tmfos.others;
 /// </summary>
 public partial class MovingPlatform : PathFollow
 {
-    [Export]
-    public CharacterBody2D CharacterBody { get; set; }
+    private CharacterBody2D _characterBody;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        _characterBody = GetNodeOrNull<CharacterBody2D>("CharacterBody2D");
+    }
 
     protected override void ExecLoop()
     {
-        if (CharacterBody is null)
+        if (_characterBody is null)
         {
             return;
         }
@@ -21,26 +26,26 @@ public partial class MovingPlatform : PathFollow
         {
             case 0.0f:
 
-                CharacterBody.SetCollisionLayerValue(2, true);
+                _characterBody.SetCollisionLayerValue(2, true);
                 ProgressRatio = 1.0f;
                 ReachedToEdge();
                 break;
 
             case 1.0f:
 
-                CharacterBody.SetCollisionLayerValue(2, true);
+                _characterBody.SetCollisionLayerValue(2, true);
                 ProgressRatio = 0.0f;
                 ReachedToEdge();
                 break;
 
             case < 0.01f when Reverse && ParentPathLooped:
 
-                CharacterBody.SetCollisionLayerValue(2, false);
+                _characterBody.SetCollisionLayerValue(2, false);
                 break;
 
             case > 0.09f when !Reverse && !ParentPathLooped:
 
-                CharacterBody.SetCollisionLayerValue(2, false);
+                _characterBody.SetCollisionLayerValue(2, false);
                 break;
         }
     }

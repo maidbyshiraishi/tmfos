@@ -6,7 +6,7 @@ namespace tmfos.trigger;
 /// <summary>
 /// 接触時にコマンドを実行するトリガー
 /// </summary>
-public partial class CollisionTrigger : Node2D
+public partial class CollisionTrigger : Area2D
 {
     public void Exec(Node2D node)
     {

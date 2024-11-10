@@ -52,12 +52,12 @@ border_color = Color(0, 0, 0, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="TimerTrigger" parent="." node_paths=PackedStringArray("Timer") instance=ExtResource("4_dhnnd")]
-Timer = NodePath("Timer")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 
-[node name="Timer" type="Timer" parent="TimerTrigger"]
+[node name="TimerTrigger" parent="Timer" instance=ExtResource("4_dhnnd")]
 
-[node name="OpenDialogCommand" parent="TimerTrigger" instance=ExtResource("7_0002q")]
+[node name="OpenDialogCommand" parent="Timer/TimerTrigger" instance=ExtResource("7_0002q")]
 DialogPath = "res:///theater/story_opening.tscn"
 
 [node name="Control" type="Control" parent="."]
@@ -89,7 +89,7 @@ DialogPath = "res://screen/select_game_dialog.tscn"
 SeName = "menu_move"
 
 [node name="ResetUtilTimerCommand" parent="Control/Start/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
-Target = NodePath("../../../../TimerTrigger")
+Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="Continue" type="Button" parent="Control"]
 light_mask = 2
@@ -116,7 +116,7 @@ DialogPath = "res://screen/load_dialog.tscn"
 SeName = "menu_move"
 
 [node name="ResetUtilTimerCommand" parent="Control/Continue/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
-Target = NodePath("../../../../TimerTrigger")
+Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="Option" type="Button" parent="Control"]
 light_mask = 2
@@ -144,7 +144,7 @@ DialogPath = "res://screen/option_dialog.tscn"
 SeName = "menu_move"
 
 [node name="ResetUtilTimerCommand" parent="Control/Option/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
-Target = NodePath("../../../../TimerTrigger")
+Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="Quit" type="Button" parent="Control"]
 light_mask = 2
@@ -171,7 +171,7 @@ DialogPath = "res://screen/quit_dialog.tscn"
 SeName = "menu_move"
 
 [node name="ResetUtilTimerCommand" parent="Control/Quit/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
-Target = NodePath("../../../../TimerTrigger")
+Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="BGM" type="Button" parent="Control"]
 light_mask = 2
@@ -201,7 +201,7 @@ DialogPath = "res://screen/jukebox_dialog.tscn"
 SeName = "menu_move"
 
 [node name="ResetUtilTimerCommand" parent="Control/BGM/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
-Target = NodePath("../../../../TimerTrigger")
+Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="License" type="Button" parent="Control"]
 light_mask = 2
@@ -230,20 +230,20 @@ Screen = "res://screen/license_select_screen.tscn"
 SeName = "menu_move"
 
 [node name="ResetUtilTimerCommand" parent="Control/License/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
-Target = NodePath("../../../../TimerTrigger")
+Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="Focus" parent="." instance=ExtResource("13_6nn80")]
 position = Vector2(10, 10)
 
 [node name="StartUtilTimerCommand" parent="Focus" node_paths=PackedStringArray("Target") instance=ExtResource("14_bx83m")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 
 [node name="ChangeBgmCommand" parent="Focus" instance=ExtResource("15_7piwm")]
 Command = 1
 Stream = ExtResource("3_xoh7v")
 
 [node name="PauseUtilTimerCommand" parent="Focus" node_paths=PackedStringArray("Target") instance=ExtResource("16_uikkl")]
-Target = NodePath("../../TimerTrigger")
+Target = NodePath("../../Timer/TimerTrigger")
 ExecFlag = false
 
 [node name="VersionLabelCommand" type="Node" parent="Focus" node_paths=PackedStringArray("VersionLabel")]
