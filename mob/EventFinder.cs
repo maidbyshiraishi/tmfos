@@ -1,9 +1,9 @@
 using Godot;
 using Godot.Collections;
-using tmfos.mob;
 using tmfos.stage;
+using tmfos.trigger;
 
-namespace tmfos.trigger;
+namespace tmfos.mob;
 
 /// <summary>
 /// イベント処理との接触判定を行う。

@@ -74,7 +74,6 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         Life = gdata.GetPlayerData().Life;
         PlayerArmorRatio = stageRoot.PlayerArmorRatio;
         Action = MobActionType.Walk;
-        ChangeSprite("walk", Direction);
         ItemSearchEffect();
         CollisionOnewayBlock(true, _itemData.Shoes);
     }

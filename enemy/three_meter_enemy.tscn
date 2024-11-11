@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cs5mc0lekfh58"]
 
 [ext_resource type="Script" path="res://enemy/ThreeMeterEnemy.cs" id="2_nef2t"]
-[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://trigger/event_finder.tscn" id="6_72c7s"]
+[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="6_72c7s"]
 [ext_resource type="SpriteFrames" uid="uid://cn3j6o2wkhaqj" path="res://contents/animation/enemy/three_meter.tres" id="7_gh0bv"]
 [ext_resource type="Script" path="res://mob/ActionChange.cs" id="7_q2hx7"]
 [ext_resource type="PackedScene" uid="uid://d3dxe0jrgncd4" path="res://enemy/eyesight64.tscn" id="8_drow6"]

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d3dxe0jrgncd4" path="res://enemy/eyesight64.tscn" id="3_367j2"]
 [ext_resource type="Script" path="res://mob/ActionChange.cs" id="4_bqmvo"]
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="5_i422s"]
-[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://trigger/event_finder.tscn" id="5_wbksb"]
+[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="5_wbksb"]
 [ext_resource type="Script" path="res://mob/BlockBreaker.cs" id="6_f8k0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi5u"]

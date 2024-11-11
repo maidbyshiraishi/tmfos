@@ -9,7 +9,7 @@
 
 [node name="TransparencyWarp" type="Area2D"]
 collision_layer = 65536
-collision_mask = 32768
+collision_mask = 0
 script = ExtResource("1_kr7d6")
 Stateful = false
 OneTime = false

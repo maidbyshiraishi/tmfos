@@ -23,7 +23,7 @@ size = Vector2(32, 32)
 
 [node name="FallingBlock1Enemy" type="Area2D"]
 collision_layer = 32
-collision_mask = 24
+collision_mask = 8
 script = ExtResource("1_gcaro")
 Speed = 180.0
 Attack = 10

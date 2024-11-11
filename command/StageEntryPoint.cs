@@ -38,6 +38,7 @@ public partial class StageEntryPoint : Node2D
     {
         player.Direction = Direction;
         player.Position = GlobalPosition;
+        player.ChangeSprite("walk", Direction);
 
         if (GetParent() is Warp warp)
         {

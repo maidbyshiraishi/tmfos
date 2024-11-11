@@ -1,6 +1,6 @@
 using Godot;
+using tmfos.mob;
 using tmfos.player;
-using tmfos.trigger;
 
 namespace tmfos.door;
 

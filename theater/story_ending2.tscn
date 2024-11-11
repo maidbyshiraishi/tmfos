@@ -100,9 +100,9 @@ layout_mode = 0
 offset_left = -1.0
 offset_top = 456.0
 offset_right = 639.0
-offset_bottom = 1319.0
+offset_bottom = 1337.0
 text = "Godot Engine 4
-Microsoft Windows 10/11
+Microsoft Windows 11/10/2000
 Lubuntu 22.04 LTS
 Microsoft Office Home and Business 2021
 VisualStudio 2022 Community Edition
@@ -130,6 +130,7 @@ RX 8 Standard
 xyzzy
 メモ帳
 FreeMind
+VirtualBox
 LIFEBOOK UH93/G2
 LIFEBOOK SH76/K
 Roland UA-101

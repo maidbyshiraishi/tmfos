@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cik3d77vxoy8w"]
 
 [ext_resource type="Script" path="res://enemy/UnmoEnemy.cs" id="2_s6pr3"]
-[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://trigger/event_finder.tscn" id="6_dgoom"]
+[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="6_dgoom"]
 [ext_resource type="SpriteFrames" uid="uid://icua64bw8un" path="res://contents/animation/enemy/unmo.tres" id="7_m4x2x"]
 [ext_resource type="PackedScene" uid="uid://d3dxe0jrgncd4" path="res://enemy/eyesight64.tscn" id="8_7pjb8"]
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="8_bocfx"]

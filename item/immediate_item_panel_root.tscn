@@ -11,6 +11,8 @@
 size = Vector2(32, 32)
 
 [node name="ImmediateItemPanel" type="Area2D"]
+collision_layer = 65536
+collision_mask = 0
 script = ExtResource("1_12ivl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

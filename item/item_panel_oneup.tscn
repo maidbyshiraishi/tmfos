@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bwp4y1nte25hm" path="res://command/add_remain_command.tscn" id="3_8pjax"]
 
 [node name="ItemPanelOneup" instance=ExtResource("1_wx6kj")]
-collision_layer = 65536
-collision_mask = 0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_qdiqi")

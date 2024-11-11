@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4nwxoqqvmpv2"]
 
-[ext_resource type="Script" path="res://trigger/EventFinder.cs" id="1_paada"]
+[ext_resource type="Script" path="res://mob/EventFinder.cs" id="1_paada"]
 
 [node name="EventFinder" type="Area2D"]
 collision_layer = 32768

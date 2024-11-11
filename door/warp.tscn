@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cntxt2wqbmrox" path="res://contents/animation/warp.tres" id="2_77qbc"]
 
 [node name="Warp" instance=ExtResource("1_v5rky")]
+collision_mask = 32768
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_77qbc")

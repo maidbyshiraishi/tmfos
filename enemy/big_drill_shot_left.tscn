@@ -5,7 +5,7 @@
 
 [node name="BigDrillShotLeft" type="Area2D"]
 collision_layer = 64
-collision_mask = 156
+collision_mask = 8
 script = ExtResource("1_3yhuq")
 Speed = 300.0
 Attack = 15
