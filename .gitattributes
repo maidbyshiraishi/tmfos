@@ -1,4 +1,4 @@
-﻿*.cs text eol=lf diff=csharp
+﻿*.cs text eol=crlf diff=csharp
 
 *.import text eol=lf
 *.tscn text eol=lf
