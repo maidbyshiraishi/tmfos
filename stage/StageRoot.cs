@@ -16,8 +16,8 @@ namespace tmfos.stage;
 /// </summary>
 public partial class StageRoot : DialogRoot, IStateful
 {
-    public static readonly string StagePath = "res:///stage/stage_{0:D4}.tscn";
-    public static readonly string TutorialPath = "res:///stage/tutorial_{0:D4}.tscn";
+    public static readonly string StagePath = "res://stage/stage_{0:D4}.tscn";
+    public static readonly string TutorialPath = "res://stage/tutorial_{0:D4}.tscn";
     public static readonly string LightSourceGroup = "LightSource";
     public static readonly string StatefulGroup = "StatefulGroup";
     public static readonly string StageEntryPointGroup = "StageEntryPointGroup";

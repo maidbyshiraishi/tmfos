@@ -45,7 +45,7 @@ public partial class UnmoEnemy : EyesightEnemy
         Velocity = velocity;
         _ = MoveAndSlide();
 
-        if (DirectAttack("res:///decoration/slash.tscn") && MobState is MobStateType.Dead)
+        if (DirectAttack("res://decoration/slash.tscn") && MobState is MobStateType.Dead)
         {
             SetCollisionMaskValue(4, false);
         }

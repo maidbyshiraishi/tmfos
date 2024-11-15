@@ -44,7 +44,7 @@ public partial class NekomimiMaidEnemy : EyesightEnemy, ISwimAction
         Velocity = velocity;
         _ = MoveAndSlide();
 
-        if (DirectAttack("res:///decoration/explosion.tscn"))
+        if (DirectAttack("res://decoration/explosion.tscn"))
         {
             RemoveNode();
         }

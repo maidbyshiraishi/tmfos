@@ -477,7 +477,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     {
         SetSkipAttack();
         Vector2 shotDirection = Direction is DirectionType.Left ? Vector2.Left : Vector2.Right;
-        PackedScene shot = Lib.GetPackedScene("res:///player/player_shot1.tscn");
+        PackedScene shot = Lib.GetPackedScene("res://player/player_shot1.tscn");
         Shot shotNode = (Shot)shot.Instantiate();
         shotNode.Penetration = _itemData.Penetration;
         shotNode.Weapon = _itemData.Weapon;

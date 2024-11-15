@@ -44,7 +44,7 @@ public partial class CatEnemy : EyesightEnemy, ISwimAction
         Velocity = velocity;
         _ = MoveAndSlide();
 
-        if (DirectAttack("res:///decoration/slash.tscn"))
+        if (DirectAttack("res://decoration/slash.tscn"))
         {
             if (MobState is MobStateType.Dead)
             {

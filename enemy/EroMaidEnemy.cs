@@ -51,7 +51,7 @@ public partial class EroMaidEnemy : Enemy
         Velocity = velocity;
         _ = MoveAndSlide();
 
-        if (DirectAttack("res:///decoration/slash.tscn"))
+        if (DirectAttack("res://decoration/slash.tscn"))
         {
             if (MobState == MobStateType.Dead)
             {

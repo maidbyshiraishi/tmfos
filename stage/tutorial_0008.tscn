@@ -71,7 +71,7 @@ Text2 = "8"
 GroupName = "SweepEnemyObserver"
 
 [node name="OpenDialogCommand" parent="SweepObserver" index="0" instance=ExtResource("5_nqyc7")]
-DialogPath = "res:///theater/tutorial_ending.tscn"
+DialogPath = "res://theater/tutorial_ending.tscn"
 
 [node name="Message" type="Control" parent="." index="15"]
 light_mask = 2

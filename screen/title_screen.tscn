@@ -58,7 +58,7 @@ wait_time = 5.0
 [node name="TimerTrigger" parent="Timer" instance=ExtResource("4_dhnnd")]
 
 [node name="OpenDialogCommand" parent="Timer/TimerTrigger" instance=ExtResource("7_0002q")]
-DialogPath = "res:///theater/story_opening.tscn"
+DialogPath = "res://theater/story_opening.tscn"
 
 [node name="Control" type="Control" parent="."]
 light_mask = 2

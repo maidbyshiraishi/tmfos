@@ -47,7 +47,7 @@ public static partial class Lib
 
     public static void ShowFloatingMessage(Node node, string text, Color color)
     {
-        PackedScene scene = GetPackedScene("res:///decoration/floating_message.tscn");
+        PackedScene scene = GetPackedScene("res://decoration/floating_message.tscn");
         FloatingMessage fmsg = scene.Instantiate() as FloatingMessage;
         fmsg.Text = text;
         fmsg.Color = color;
