@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3x0uq0uifrnp"]
+[gd_scene load_steps=17 format=3 uid="uid://d3x0uq0uifrnp"]
 
 [ext_resource type="Script" path="res://door/SavePoint.cs" id="1_gpnbb"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="2_htpx1"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://yg1jndcg1o16" path="res://command/update_save_point_door_no_command.tscn" id="8_b2nrd"]
 [ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="9_5xqv6"]
 [ext_resource type="PackedScene" uid="uid://cdrvd77nuu0w" path="res://command/open_save_and_load_dialog_command.tscn" id="9_pcgmf"]
-[ext_resource type="Script" path="res://command/OpenSaveAndLoadDialogCommand.cs" id="10_rdr0j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bi4qp"]
 radius = 18.0
@@ -67,5 +66,4 @@ SeName = "save_point"
 [node name="StateBackupCommand" parent="." instance=ExtResource("9_5xqv6")]
 
 [node name="OpenSaveAndLoadDialogCommand" parent="." instance=ExtResource("9_pcgmf")]
-script = ExtResource("10_rdr0j")
 DoorNo = 0
