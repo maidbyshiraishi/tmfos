@@ -260,7 +260,7 @@ public partial class DialogLayer : CanvasLayer
         {
             string msg = $"ゲームを開始できません。エラーの値は{e}です。";
             GD.PrintErr(msg);
-            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/save_confirm_dialog.tscn", "ErrorDialog", [msg]);
+            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
             return;
         }
 

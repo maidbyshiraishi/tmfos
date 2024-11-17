@@ -66,7 +66,7 @@ public partial class SaveConfirmDialog : DialogRoot
         {
             string msg = $"ゲームデータのセーブ中にエラーが発生しました。エラーの発生したデータはゲームデータ{_slotNo}です。エラーの値は{e}です。";
             GD.PrintErr(msg);
-            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/save_confirm_dialog.tscn", "ErrorDialog", [msg]);
+            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
             return;
         }
 
