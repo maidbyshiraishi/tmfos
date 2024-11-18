@@ -31,19 +31,19 @@ public partial class Camera : Camera2D, IGameNode
         Vector2 viewportSize = GetViewport().GetVisibleRect().Size;
 
         // 画面サイズがビューポートよりも小さい場合は拡張する
-        if (Mathf.Abs(LimitLeft) + Mathf.Abs(LimitRight) < viewportSize.X)
+        if (Mathf.Abs(LimitLeft - LimitRight) < viewportSize.X)
         {
             // 左右に拡張する
             int expand = (int)(viewportSize.X - (Mathf.Abs(LimitLeft) + Mathf.Abs(LimitRight))) / 2;
-            LimitLeft += Mathf.Sign(LimitLeft) * expand;
-            LimitRight += Mathf.Sign(LimitRight) * expand;
+            LimitLeft -= expand;
+            LimitRight += expand;
         }
 
-        if (Mathf.Abs(LimitTop) + Mathf.Abs(LimitBottom) < viewportSize.Y)
+        if (Mathf.Abs(LimitTop - LimitBottom) < viewportSize.Y)
         {
             //上方向へ拡張する
-            int expand = (int)(viewportSize.Y - (Mathf.Abs(LimitTop) + Mathf.Abs(LimitBottom)));
-            LimitTop += Mathf.Sign(LimitTop) * expand;
+            int expand = (int)(viewportSize.Y - Mathf.Abs(LimitTop - LimitBottom));
+            LimitTop -= expand;
         }
     }
 
