@@ -34,7 +34,7 @@ public partial class Camera : Camera2D, IGameNode
         if (Mathf.Abs(LimitLeft - LimitRight) < viewportSize.X)
         {
             // 左右に拡張する
-            int expand = (int)(viewportSize.X - (Mathf.Abs(LimitLeft) + Mathf.Abs(LimitRight))) / 2;
+            int expand = (int)(viewportSize.X - Mathf.Abs(LimitLeft - LimitRight)) / 2;
             LimitLeft -= expand;
             LimitRight += expand;
         }
