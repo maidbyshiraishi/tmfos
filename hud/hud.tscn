@@ -127,7 +127,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(50, 50)
 
 [node name="DelayContainer" parent="Start/VisibleCommand" instance=ExtResource("6_21ded")]
-WaitTime = 2.0
+WaitTime = 1.0
 
 [node name="HideCanvasItemCommand" parent="Start/VisibleCommand/DelayContainer" node_paths=PackedStringArray("Target") instance=ExtResource("6_5oplt")]
 Target = NodePath("../../..")
