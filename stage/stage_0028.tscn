@@ -1,21 +1,21 @@
-[gd_scene load_steps=18 format=4 uid="uid://b265df2m2ctni"]
+[gd_scene load_steps=18 format=4 uid="uid://dbp1j2mulrcta"]
 
-[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_c4j6q"]
-[ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_tjibb"]
-[ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="3_h6ea6"]
-[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="3_i8l3f"]
-[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_akw35"]
-[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="6_uwgsw"]
-[ext_resource type="Script" path="res://others/Path.cs" id="6_y02gt"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="7_v7g0q"]
-[ext_resource type="PackedScene" uid="uid://ctiruf54e1osm" path="res://others/path_follow.tscn" id="7_ylgfr"]
-[ext_resource type="PackedScene" uid="uid://g3nvbufurd2s" path="res://enemy/maid_faucet_enemy.tscn" id="8_dbqsx"]
-[ext_resource type="PackedScene" uid="uid://bkpmusncycni5" path="res://hud/boss_life.tscn" id="9_17fti"]
-[ext_resource type="PackedScene" uid="uid://c7uf428mr1fso" path="res://trigger/sweep_observer.tscn" id="9_32vwb"]
-[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="10_8jlsm"]
-[ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/set_player_initial_durability_command.tscn" id="10_p6god"]
-[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="10_u83t3"]
-[ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="15_oetsk"]
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_wujt5"]
+[ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_fmbk3"]
+[ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="3_yixhr"]
+[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="4_6l67q"]
+[ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="5_tv2t6"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="6_r051c"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="7_4ww3d"]
+[ext_resource type="Script" uid="uid://2t6f88nsttua" path="res://player/Camera.cs" id="8_g12ww"]
+[ext_resource type="Script" uid="uid://bakuvtxqvgbjs" path="res://others/Path.cs" id="9_ajbrg"]
+[ext_resource type="PackedScene" uid="uid://ctiruf54e1osm" path="res://others/path_follow.tscn" id="10_omfnd"]
+[ext_resource type="PackedScene" uid="uid://g3nvbufurd2s" path="res://enemy/maid_faucet_enemy.tscn" id="11_jpid3"]
+[ext_resource type="PackedScene" uid="uid://bkpmusncycni5" path="res://hud/boss_life.tscn" id="12_v1083"]
+[ext_resource type="PackedScene" uid="uid://c7uf428mr1fso" path="res://trigger/sweep_observer.tscn" id="13_xkro4"]
+[ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/set_player_initial_durability_command.tscn" id="14_q5772"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="15_tlff7"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="16_mli6q"]
 
 [sub_resource type="Curve2D" id="Curve2D_kjocw"]
 _data = {
@@ -23,79 +23,79 @@ _data = {
 }
 point_count = 53
 
-[node name="Stage" instance=ExtResource("1_c4j6q")]
-BgmStream = ExtResource("2_tjibb")
+[node name="Stage" instance=ExtResource("1_wujt5")]
+BgmStream = ExtResource("2_fmbk3")
 PlayerArmorRatio = 0.0
 
 [node name="ColorRect" parent="Background/Parallax2D3" index="0"]
 color = Color(0.0778797, 0.31562, 0.999995, 1)
 
 [node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
-texture = ExtResource("3_h6ea6")
+texture = ExtResource("3_yixhr")
 
 [node name="Ground" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAIAP//AAAAAAMAAAAJAP//AAAAAAMAAAAKAP//AAAAAAMAAAALAP//AAAAAAMAAAAMAP//AAAAAAMAAAANAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP//AAAAAAMAAAARAP//AAAAAAMAAAASAP//AAAAAAMAAAATAP//AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAATAPb/AAAAAAMAAAABAPv/AAAHAAIAAAACAPv/AAAHAAIAAAADAPv/AAAHAAIAAAAEAPv/AAAHAAIAAAAFAPv/AAAHAAIAAAAHAPv/AAAHAAIAAAAIAPv/AAAHAAIAAAAJAPv/AAAHAAIAAAAKAPv/AAAHAAIAAAALAPv/AAAHAAIAAAAMAPv/AAAHAAIAAAAOAPv/AAAHAAIAAAAPAPv/AAAHAAIAAAAQAPv/AAAHAAIAAAARAPv/AAAHAAIAAAATAPv/AAAAAAMAAAALAPj/AAAHAAIAAAAKAPj/AAAHAAIAAAATAPH/AAAAAAMAAAATAPL/AAAAAAMAAAATAPP/AAAAAAMAAAATAPT/AAAAAAMAAAATAPX/AAAAAAMAAAATAPf/AAAAAAMAAAATAPj/AAAAAAMAAAATAPn/AAAAAAMAAAATAPz/AAAAAAMAAAATAP3/AAAAAAMAAAATAP7/AAAAAAMAAAATAPr/AAAAAAMAAAASAPv/AAAHAAIAAAAJAPj/AAAHAAIAAAAIAPj/AAAHAAIAAAASAPX/AAAHAAIAAAARAPX/AAAHAAIAAAAQAPX/AAAHAAIAAAAPAPX/AAAHAAIAAAAOAPX/AAAHAAIAAAANAPX/AAAHAAIAAAAMAPX/AAAHAAIAAAALAPX/AAAHAAIAAAAKAPX/AAAHAAIAAAAJAPX/AAAHAAIAAAAIAPX/AAAHAAIAAAAHAPX/AAAHAAIAAAAGAPX/AAAHAAIAAAAFAPX/AAAHAAIAAAAEAPX/AAAHAAIAAAADAPX/AAAHAAIAAAACAPX/AAAHAAIAAAABAPX/AAAHAAIAAAABAPH/AAAAAAMAAAACAPH/AAAAAAMAAAADAPH/AAAAAAMAAAAEAPH/AAAAAAMAAAAFAPH/AAAAAAMAAAAGAPH/AAAAAAMAAAAHAPH/AAAAAAMAAAAIAPH/AAAAAAMAAAAJAPH/AAAAAAMAAAAKAPH/AAAAAAMAAAALAPH/AAAAAAMAAAAMAPH/AAAAAAMAAAANAPH/AAAAAAMAAAAOAPH/AAAAAAMAAAAPAPH/AAAAAAMAAAAQAPH/AAAAAAMAAAARAPH/AAAAAAMAAAASAPH/AAAAAAMAAAAGAPr/AAAAAAMAAAANAPr/AAAAAAMAAAAEAP7/AAAEAAIAAAAPAP7/AAAEAAIAAAA=")
 
-[node name="StageEntryPoint1" parent="Door" index="0" instance=ExtResource("3_i8l3f")]
+[node name="StageEntryPoint1" parent="Door" index="0" instance=ExtResource("4_6l67q")]
 position = Vector2(320, -64)
 DoorNo = 1
 Direction = 1
 
-[node name="ItemPanelArmor" parent="Item" index="0" instance=ExtResource("15_oetsk")]
+[node name="ItemPanelArmor" parent="Item" index="0" instance=ExtResource("5_tv2t6")]
 position = Vector2(160, -256)
 
-[node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("15_oetsk")]
+[node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("5_tv2t6")]
 position = Vector2(480, -256)
 
-[node name="ItemPanelArmor3" parent="Item" index="2" instance=ExtResource("15_oetsk")]
+[node name="ItemPanelArmor3" parent="Item" index="2" instance=ExtResource("5_tv2t6")]
 position = Vector2(160, -400)
 
-[node name="ItemPanelArmor4" parent="Item" index="3" instance=ExtResource("15_oetsk")]
+[node name="ItemPanelArmor4" parent="Item" index="3" instance=ExtResource("5_tv2t6")]
 position = Vector2(480, -400)
 
-[node name="ItemPanelLife" parent="Item" index="4" instance=ExtResource("6_uwgsw")]
+[node name="ItemPanelLife" parent="Item" index="4" instance=ExtResource("6_r051c")]
 position = Vector2(48, -48)
 Stateful = false
 
-[node name="ItemPanelLife2" parent="Item" index="5" instance=ExtResource("6_uwgsw")]
+[node name="ItemPanelLife2" parent="Item" index="5" instance=ExtResource("6_r051c")]
 position = Vector2(48, -80)
 Stateful = false
 
-[node name="ItemPanelLife5" parent="Item" index="6" instance=ExtResource("6_uwgsw")]
+[node name="ItemPanelLife5" parent="Item" index="6" instance=ExtResource("6_r051c")]
 position = Vector2(320, -48)
 Stateful = false
 
-[node name="ItemPanelLife6" parent="Item" index="7" instance=ExtResource("6_uwgsw")]
+[node name="ItemPanelLife6" parent="Item" index="7" instance=ExtResource("6_r051c")]
 position = Vector2(320, -80)
 Stateful = false
 
-[node name="ItemPanelLife3" parent="Item" index="8" instance=ExtResource("6_uwgsw")]
+[node name="ItemPanelLife3" parent="Item" index="8" instance=ExtResource("6_r051c")]
 position = Vector2(592, -432)
 Stateful = false
 
-[node name="ItemPanelLife4" parent="Item" index="9" instance=ExtResource("6_uwgsw")]
+[node name="ItemPanelLife4" parent="Item" index="9" instance=ExtResource("6_r051c")]
 position = Vector2(592, -400)
 Stateful = false
 
-[node name="Player" parent="." index="8" instance=ExtResource("6_akw35")]
+[node name="Player" parent="." index="8" instance=ExtResource("7_4ww3d")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
 [node name="Camera" type="Camera2D" parent="Player" index="13"]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
-script = ExtResource("7_v7g0q")
+script = ExtResource("8_g12ww")
 
 [node name="Path2D" type="Path2D" parent="Enemy" index="0"]
 position = Vector2(-8, -8)
 curve = SubResource("Curve2D_kjocw")
-script = ExtResource("6_y02gt")
+script = ExtResource("9_ajbrg")
 
-[node name="PathFollower" parent="Enemy/Path2D" index="0" instance=ExtResource("7_ylgfr")]
+[node name="PathFollower" parent="Enemy/Path2D" index="0" instance=ExtResource("10_omfnd")]
 position = Vector2(344, -120)
 Speed = 500.0
 
-[node name="MaidFaucetEnemy" parent="Enemy/Path2D/PathFollower" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("8_dbqsx")]
+[node name="MaidFaucetEnemy" parent="Enemy/Path2D/PathFollower" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("11_jpid3")]
 
 [node name="HUD" parent="." index="13"]
 Text1 = "メイドの出る蛇口"
@@ -103,18 +103,18 @@ Text2 = "を"
 Text3 = "撃破せよ！！"
 BossMode = true
 
-[node name="BossLife" parent="HUD" index="6" instance=ExtResource("9_17fti")]
+[node name="BossLife" parent="HUD" index="6" instance=ExtResource("12_v1083")]
 offset_top = 98.0
 offset_bottom = 130.0
 
-[node name="SweepObserver" parent="." index="14" instance=ExtResource("9_32vwb")]
+[node name="SweepObserver" parent="." index="14" instance=ExtResource("13_xkro4")]
 GroupName = "SweepEnemyObserver"
 
-[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("10_p6god")]
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("14_q5772")]
 
-[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("10_u83t3")]
+[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("15_tlff7")]
 DialogPath = "res://theater/talk_0012.tscn"
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("10_8jlsm")]
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("16_mli6q")]
 position = Vector2(480, 16)
 scale = Vector2(60, 1)
