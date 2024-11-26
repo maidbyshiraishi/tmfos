@@ -17,6 +17,7 @@ shape = SubResource("CircleShape2D_rl141")
 [node name="Enemy" parent="." instance=ExtResource("2_4ipe4")]
 
 [node name="ExploreTimer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="body_entered" from="." to="." method="FindPlayer"]
 [connection signal="body_exited" from="." to="." method="LostPlayer"]

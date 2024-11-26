@@ -157,18 +157,21 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
     public void FindPlayer(Node2D node)
     {
         _playerInSight = true;
-        _exploreTimer.Stop();
     }
 
     public void LostPlayer(Node2D node)
     {
         _playerInSight = false;
         _velocity = Vector2.Left * ExploreSpeed;
-        Lib.ResetTimer(_exploreTimer);
     }
 
     public void ChangeExploreDirection()
     {
+        if (_playerInSight)
+        {
+            return;
+        }
+
         _velocity *= -1f;
     }
 }

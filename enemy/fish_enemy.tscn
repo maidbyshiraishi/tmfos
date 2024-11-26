@@ -14,6 +14,7 @@ DeadSe = "enemy_dead"
 DamageSe = "enemy_damage"
 TimeupSe = "enemy_dead"
 Attack = 50
+SkipAttackTime = 1.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_0dj64")

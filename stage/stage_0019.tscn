@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="8_2tg26"]
 [ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="9_edqua"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="10_viopi"]
-[ext_resource type="Script" uid="uid://2t6f88nsttua" path="res://player/Camera.cs" id="11_sodjg"]
+[ext_resource type="Script" path="res://player/Camera.cs" id="11_sodjg"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="12_xrc0r"]
 [ext_resource type="PackedScene" uid="uid://du3iipceh2xvo" path="res://command/conditional_command.tscn" id="13_p5b1b"]
 [ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://command/free_command.tscn" id="14_f8k8i"]

@@ -153,7 +153,15 @@ public partial class PathFollowEnemy : DurableShot
         if (node is Player player)
         {
             player.AddDurability(-Attack - m_attackCorrection);
+            BlinkCollision();
         }
+    }
+
+    private async void BlinkCollision()
+    {
+        _collision.SetDeferred("disabled", true);
+        _ = await ToSignal(GetTree().CreateTimer(SkipAttackTime), Timer.SignalName.Timeout);
+        _collision.SetDeferred("disabled", false);
     }
 
     protected override void PlaySpawnedSe()
