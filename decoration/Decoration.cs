@@ -15,8 +15,6 @@ public partial class Decoration : Node2D, ISpawnedNode
 
     public override void _Ready()
     {
-        base._Ready();
-
         if (SeName is not null)
         {
             GetNode<SePlayer>("/root/SePlayer").Play(SeName);

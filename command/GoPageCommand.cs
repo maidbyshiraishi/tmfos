@@ -18,7 +18,6 @@ public partial class GoPageCommand : CommandNode, IStoryTheaterContent
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StoryTheater.StoryTheaterContentGroup);
     }
 

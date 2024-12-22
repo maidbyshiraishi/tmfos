@@ -18,7 +18,6 @@ public partial class ActionChange : Node2D, IGameNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
         _markerHead = GetNodeOrNull<Marker2D>("Head");
@@ -46,7 +45,6 @@ public partial class ActionChange : Node2D, IGameNode
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
         bool tiledataHead;
         bool tiledata;
 

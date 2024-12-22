@@ -69,7 +69,6 @@ public partial class StageRoot : DialogRoot, IStateful
 
     public override void _ExitTree()
     {
-        base._ExitTree();
         GetTree().CallGroup(GameNodeGroup, "FinalizeNode");
     }
 
@@ -89,7 +88,6 @@ public partial class StageRoot : DialogRoot, IStateful
 
     protected override void FinalizeNode()
     {
-        base.FinalizeNode();
         GetTree().CallGroup(GameNodeGroup, "FinalizeNode");
     }
 

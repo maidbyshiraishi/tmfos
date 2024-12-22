@@ -16,7 +16,6 @@ public partial class GameKeyOption : Node
 
     public override void _Ready()
     {
-        base._Ready();
         LoadKeyOptions();
     }
 

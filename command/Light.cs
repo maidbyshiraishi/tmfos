@@ -17,7 +17,6 @@ public partial class Light : CommandNode2D, ILight
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.LightSourceGroup);
         PointLight2D light = GetNode<PointLight2D>("PointLight2D");
         light.TextureScale = RangeRatio;

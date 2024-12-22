@@ -27,7 +27,6 @@ public partial class TileMapManager : Node2D
 
     public override void _Ready()
     {
-        base._Ready();
         _layers.Add(BackgroundLayerPath, GetNode<TileMapLayer>(BackgroundLayerPath));
         _layers.Add(GroundLayerPath, GetNode<TileMapLayer>(GroundLayerPath));
         _layers.Add(ForegroundLayerPath, GetNode<TileMapLayer>(ForegroundLayerPath));

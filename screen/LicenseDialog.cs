@@ -22,7 +22,6 @@ public partial class LicenseDialog : DialogRoot
 
     protected override void InitializeNode()
     {
-        base.InitializeNode();
         _componentName = GetNode<TextEdit>("Control/ComponentName");
         _partsList = GetNode<OptionButton>("Control/Parts");
         _files = GetNode<TextEdit>("Control/Files");

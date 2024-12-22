@@ -17,7 +17,6 @@ public partial class FloatingMessage : Marker2D, ISpawnedNode
 
     public override void _Ready()
     {
-        base._Ready();
         GetNode<Label>("Label").Text = Text;
         GetNode<Label>("Label").SelfModulate = Color;
     }

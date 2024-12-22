@@ -17,7 +17,6 @@ public partial class Mob : CharacterBody2D, IGameNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         m_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         m_visibleOnScreenNotifier2D = GetNodeOrNull<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");

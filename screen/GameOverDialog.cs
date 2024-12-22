@@ -11,7 +11,6 @@ public partial class GameOverDialog : DialogRoot
 {
     protected override void InitializeNode()
     {
-        base.InitializeNode();
         GameData gdata = GetNode<GameData>("/root/GameData");
         string[] date = gdata.GetFileDates();
 

@@ -12,7 +12,6 @@ public partial class GoNextPageCommand : CommandNode, IStoryTheaterContent
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StoryTheater.StoryTheaterContentGroup);
     }
 

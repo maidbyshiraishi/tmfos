@@ -12,7 +12,6 @@ public partial class Camera : Camera2D, IGameNode
 {
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         Enabled = false;
     }

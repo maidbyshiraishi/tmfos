@@ -10,8 +10,6 @@ public partial class AnimationFinishedTrigger : Node
 {
     public override void _Ready()
     {
-        base._Ready();
-
         if (GetParent() is AnimatedSprite2D animatedSprite)
         {
             _ = animatedSprite.Connect(AnimatedSprite2D.SignalName.AnimationFinished, new Callable(this, MethodName.Exec));

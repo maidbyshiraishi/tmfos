@@ -17,7 +17,6 @@ public partial class PlayerShot1 : Shot
 
     public override void InitializeNode()
     {
-        base.InitializeNode();
         // 攻撃力強化の対象外
         m_attackCorrection = 0;
     }

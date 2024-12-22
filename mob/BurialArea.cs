@@ -12,7 +12,6 @@ public partial class BurialArea : Area2D
 
     public override void _Ready()
     {
-        base._Ready();
         _collisionShape = GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
     }
 

@@ -17,14 +17,11 @@ public partial class KeyReleaseedTrigger : Node
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.PhysicsProcessGroup);
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
-
         if (!string.IsNullOrEmpty(ActionName) && Input.IsActionJustReleased(ActionName))
         {
             Exec(this);

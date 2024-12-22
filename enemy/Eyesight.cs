@@ -37,7 +37,6 @@ public partial class Eyesight : Node2D
 
     public override void _Ready()
     {
-        base._Ready();
         _leftDown1 = GetNode<RayCast2D>("LeftDown1");
         _leftDown2 = GetNode<RayCast2D>("LeftDown2");
         _leftDown3 = GetNode<RayCast2D>("LeftDown3");

@@ -27,8 +27,6 @@ public partial class EventFinder : Area2D
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
-
         if (EventNode2D is null)
         {
             return;

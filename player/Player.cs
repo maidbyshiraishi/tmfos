@@ -581,13 +581,11 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
 
     public override void FullRecovered()
     {
-        base.FullRecovered();
         PlaySe("player_full_recovered");
     }
 
     public override void Recovered()
     {
-        base.Recovered();
         PlaySe("player_recovered");
     }
 

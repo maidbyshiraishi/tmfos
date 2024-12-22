@@ -29,7 +29,6 @@ public partial class Hud : CanvasLayer, IGameNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         _time = GetNodeOrNull<Label>("Time");
         _time.Hide();

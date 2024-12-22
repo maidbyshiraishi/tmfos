@@ -57,7 +57,6 @@ public partial class MusicPlayer : Node
 
     public override void _Ready()
     {
-        base._Ready();
         _deck1 = GetNode<AudioStreamPlayer>("Deck1");
         _deck2 = GetNode<AudioStreamPlayer>("Deck2");
         _deck1.VolumeDb = 0;

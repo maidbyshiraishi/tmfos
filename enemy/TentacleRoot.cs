@@ -19,7 +19,6 @@ public partial class TentacleRoot : Node2D, IGameNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
     }
 

@@ -82,7 +82,6 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         _marker = GetNode<Marker2D>("Marker2D");
 

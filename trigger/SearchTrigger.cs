@@ -1,7 +1,6 @@
 using Godot;
 using System.Collections.Generic;
 using tmfos.command;
-using tmfos.stage;
 using tmfos.system;
 
 namespace tmfos.trigger;
@@ -23,11 +22,7 @@ public partial class SearchTrigger : TriggerArea2D, IStateful
     public override void _Ready()
     {
         MakeEnabler();
-
-        if (Stateful)
-        {
-            AddToGroup(StageRoot.StatefulGroup);
-        }
+        base._Ready();
     }
 
     public override void Exec(Node2D node)

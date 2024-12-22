@@ -10,7 +10,6 @@ public partial class CommandTextEdit : TextEdit
 {
     public override void _Ready()
     {
-        base._Ready();
         Lib.ConnectFocusSignal(this, new Callable(this, MethodName.ExecFocusEntered), new Callable(this, MethodName.ExecFocusExited));
     }
 

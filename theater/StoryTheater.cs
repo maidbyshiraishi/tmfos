@@ -36,7 +36,6 @@ public partial class StoryTheater : DialogRoot
 
     protected override void InitializeNode()
     {
-        base.InitializeNode();
         _socket = GetNode<Control>("Socket");
         _content = _socket.GetNode<Control>("Contents");
         // 一枚目のみを表示状態に切り替える
@@ -124,7 +123,6 @@ public partial class StoryTheater : DialogRoot
     public override void GetArgument()
     {
         GetGameArgument("StoryTheater");
-        base.GetArgument();
     }
 
     private void CloseStory()

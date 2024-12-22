@@ -13,7 +13,6 @@ public partial class LicenseSelectScreen : DialogRoot
 
     protected override void InitializeNode()
     {
-        base.InitializeNode();
         _licenseList = GetNode<ItemList>("Control/LicenseList");
         AddItemLicenseList();
     }

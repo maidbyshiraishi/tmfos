@@ -26,7 +26,6 @@ public partial class StageEntryPoint : Node2D
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.StageEntryPointGroup);
     }
 

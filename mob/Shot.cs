@@ -56,7 +56,6 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
         m_animatedSprite = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");

@@ -5,9 +5,4 @@ namespace tmfos.enemy;
 /// </summary>
 public partial class DragonHeadEnemy : PathFollowEnemy
 {
-    public override void Damaged()
-    {
-
-        base.Damaged();
-    }
 }

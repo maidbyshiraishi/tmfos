@@ -20,7 +20,6 @@ public partial class KeyDialogRoot : DialogRoot
 
     protected override void InitializeNode()
     {
-        base.InitializeNode();
         _info = GetNode<Label>("Info");
         _keyInfo = GetNode<Label>("KeyInfo");
         UpInfo();
@@ -450,7 +449,6 @@ public partial class KeyDialogRoot : DialogRoot
 
     public override void UpdateDialogScreen()
     {
-        base.UpdateDialogScreen();
         UpdateLabel(_lastLabel);
     }
 

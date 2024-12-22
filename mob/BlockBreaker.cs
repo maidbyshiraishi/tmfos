@@ -18,7 +18,6 @@ public partial class BlockBreaker : Marker2D, IGameNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
         _visibleOnScreenNotifier = GetOwner<Node>().GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
@@ -40,8 +39,6 @@ public partial class BlockBreaker : Marker2D, IGameNode
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
-
         if (_wait)
         {
             return;

@@ -54,7 +54,6 @@ public partial class DurableShot : Shot, IDurable
 
     public override void InitializeNode()
     {
-        base.InitializeNode();
         Life = MaxLife;
         ResetLifeTime();
     }

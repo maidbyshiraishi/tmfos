@@ -57,8 +57,6 @@ public partial class TriggerArea2D : Area2D, IStateful
 
     public override void _Ready()
     {
-        base._Ready();
-
         if (Stateful)
         {
             AddToGroup(StageRoot.StatefulGroup);

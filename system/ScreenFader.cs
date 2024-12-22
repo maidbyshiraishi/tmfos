@@ -19,7 +19,6 @@ public partial class ScreenFader : CanvasLayer
 
     public override void _Ready()
     {
-        base._Ready();
         Fader = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
 }

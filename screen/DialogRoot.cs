@@ -15,7 +15,6 @@ public partial class DialogRoot : Control
 
     public override void _Ready()
     {
-        base._Ready();
         GetArgument();
         InitializeNode();
     }

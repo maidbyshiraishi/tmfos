@@ -10,7 +10,6 @@ public partial class Path : Path2D
 {
     public override void _Ready()
     {
-        base._Ready();
         SetChildrenPathLooped();
     }
 

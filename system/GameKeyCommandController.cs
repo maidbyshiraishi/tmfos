@@ -36,7 +36,6 @@ public partial class GameKeyCommandController : Node
 
     public override void _Ready()
     {
-        base._Ready();
         _ = _buffer.Resize(_bufferSize);
     }
 

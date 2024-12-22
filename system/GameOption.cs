@@ -31,7 +31,6 @@ public partial class GameOption : Node
 
     public override void _Ready()
     {
-        base._Ready();
         LoadOptions();
         SetOptions();
     }

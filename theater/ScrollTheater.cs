@@ -52,6 +52,5 @@ public partial class ScrollTheater : DialogRoot
     public override void GetArgument()
     {
         GetGameArgument("ScrollTheater");
-        base.GetArgument();
     }
 }

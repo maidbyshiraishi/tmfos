@@ -54,7 +54,6 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
         _enemy = GetNode<Node2D>("Enemy");

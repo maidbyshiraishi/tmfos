@@ -23,7 +23,6 @@ public partial class FallingEnemy : Shot
 
     public override void InitializeNode()
     {
-        base.InitializeNode();
         PlaySprite();
     }
 

@@ -12,8 +12,6 @@ public partial class TimerTrigger : Node
 
     public override void _Ready()
     {
-        base._Ready();
-
         if (GetParent() is Timer timer)
         {
             _timer = timer;

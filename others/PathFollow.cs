@@ -23,7 +23,6 @@ public partial class PathFollow : PathFollow2D
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.PhysicsProcessGroup);
     }
 

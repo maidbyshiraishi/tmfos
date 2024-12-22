@@ -29,7 +29,6 @@ public partial class TentacleHead : Area2D, IGameNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
         _timer = GetNodeOrNull<Timer>("Timer");

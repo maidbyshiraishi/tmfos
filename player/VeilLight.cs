@@ -14,7 +14,6 @@ public partial class VeilLight : Node2D, IGameNode
 
     public override void _Ready()
     {
-        base._Ready();
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
     }
@@ -35,8 +34,6 @@ public partial class VeilLight : Node2D, IGameNode
 
     public override void _PhysicsProcess(double delta)
     {
-        base._PhysicsProcess(delta);
-
         Vector2I step = (Vector2I)GlobalPosition;
 
         if (_tileMapManager.GetTileData(TileMapManager.VeilLayerPath, step) is null)

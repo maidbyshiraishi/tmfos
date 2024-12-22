@@ -18,8 +18,6 @@ public partial class AnimationFrameCountTrigger : Node
 
     public override void _Ready()
     {
-        base._Ready();
-
         if (GetParent() is AnimatedSprite2D animatedSprite)
         {
             _ = animatedSprite.Connect(AnimatedSprite2D.SignalName.FrameChanged, new Callable(this, MethodName.CountUp));
