@@ -46,6 +46,6 @@ public partial class JukeboxDialog : DialogRoot
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.BgmVolume = BgmVolume;
-        option.SetOptionsVolume();
+        option.SetOptions();
     }
 }

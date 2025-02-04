@@ -63,7 +63,7 @@ public partial class OptionDialog : DialogRoot
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.BgmVolume = BgmVolume;
-        option.SetOptionsVolume();
+        option.SetOptions();
     }
 
     /// <summary>
@@ -76,7 +76,7 @@ public partial class OptionDialog : DialogRoot
         GetNode<Label>("SeValue").Text = $"{SeVolume}%";
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.SeVolume = SeVolume;
-        option.SetOptionsVolume();
+        option.SetOptions();
         GetNode<SePlayer>("/root/SePlayer").Play("menu_select");
     }
 
@@ -92,7 +92,7 @@ public partial class OptionDialog : DialogRoot
         // ウィンドウ状態に関しては即座にシステムに反映する
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.Fullscreen = Fullscreen;
-        option.SetOptionsFullscreen();
+        option.SetWindowMode();
     }
 
     public override void _Input(InputEvent ievent)

@@ -11,6 +11,6 @@ public partial class ResetDefaultGameOptionsCommand : CommandNode
     public override void DoCommand(Node node, bool flag)
     {
         GameOption option = GetNode<GameOption>("/root/GameOption");
-        option.ResetDefault();
+        option.ResetOptions();
     }
 }

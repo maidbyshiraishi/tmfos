@@ -7,12 +7,17 @@ namespace tmfos.system;
 /// </summary>
 public partial class GameOption : Node
 {
-    // データ保存先
-    private static readonly string OptionFilePath = "user://options.dat";
-
+    private static readonly string OptionsFilePath = "user://options.dat";
     private static readonly float DefaultVolume = 50f;
 
-    private ConfigFile _options = new();
+    private static readonly string ScreenOptionsFilePath = "user://screen_options.dat";
+    private static readonly int DefaultSizeX = 640;
+    private static readonly int DefaultSizeY = 480;
+
+    private static readonly string ProjectSettingsFilePath = "user://override.cfg";
+
+    private ConfigFile _audioVolumeOptions = new();
+    private ConfigFile _screenOptions = new();
 
     /// <summary>
     /// BGM音量
@@ -31,15 +36,21 @@ public partial class GameOption : Node
 
     public override void _Ready()
     {
+        if (!LoadScreenOptions())
+        {
+            _ = CalcScreenOptions();
+            //OS.SetRestartOnExit(true);
+            //GetTree().Quit();
+        }
+
         LoadOptions();
         SetOptions();
     }
 
-    public void ResetDefault()
+    public void ResetOptions()
     {
         BgmVolume = DefaultVolume;
         SeVolume = DefaultVolume;
-        Fullscreen = false;
     }
 
     /// <summary>
@@ -47,40 +58,32 @@ public partial class GameOption : Node
     /// </summary>
     public void LoadOptions()
     {
-        _options.Clear();
-        ResetDefault();
-        Error e = _options.Load(OptionFilePath);
+        _audioVolumeOptions.Clear();
+        ResetOptions();
+        Error e = _audioVolumeOptions.Load(OptionsFilePath);
 
         if (e is Error.FileNotFound)
         {
             return;
         }
-
-        if (e is not Error.Ok)
+        else if (e is not Error.Ok)
         {
-            GD.PrintErr($"設定ファイル{OptionFilePath}を読み込めませんでした。エラーコードは{e}です。");
+            GD.PrintErr($"設定ファイル{OptionsFilePath}を読み込めませんでした。エラーコードは{e}です。");
             return;
         }
 
-        string bgm = _options.GetValue("Volume", "BGM", DefaultVolume).ToString();
+        string strBgm = _audioVolumeOptions.GetValue("Volume", "BGM", DefaultVolume).ToString();
 
-        if (!string.IsNullOrWhiteSpace(bgm) && float.TryParse(bgm, out float fbgm))
+        if (!string.IsNullOrWhiteSpace(strBgm) && float.TryParse(strBgm, out float fBgm))
         {
-            BgmVolume = Mathf.Clamp(fbgm, 0f, 100f);
+            BgmVolume = Mathf.Clamp(fBgm, 0f, 100f);
         }
 
-        string se = _options.GetValue("Volume", "SE", DefaultVolume).ToString();
+        string strSe = _audioVolumeOptions.GetValue("Volume", "SE", DefaultVolume).ToString();
 
-        if (!string.IsNullOrWhiteSpace(se) && float.TryParse(se, out float fse))
+        if (!string.IsNullOrWhiteSpace(strSe) && float.TryParse(strSe, out float fSe))
         {
-            SeVolume = Mathf.Clamp(fse, 0f, 100f);
-        }
-
-        string fullscreen = _options.GetValue("Window", "Fullscreen", false).ToString();
-
-        if (!string.IsNullOrWhiteSpace(fullscreen) && bool.TryParse(fullscreen, out bool bfullscreen))
-        {
-            Fullscreen = bfullscreen;
+            SeVolume = Mathf.Clamp(fSe, 0f, 100f);
         }
     }
 
@@ -91,30 +94,20 @@ public partial class GameOption : Node
     {
         BgmVolume = Mathf.Clamp(BgmVolume, 0f, 100f);
         SeVolume = Mathf.Clamp(SeVolume, 0f, 100f);
-        _options.SetValue("Volume", "BGM", BgmVolume);
-        _options.SetValue("Volume", "SE", SeVolume);
-        _options.SetValue("Window", "Fullscreen", Fullscreen);
-        Error e = _options.Save(OptionFilePath);
+        _audioVolumeOptions.SetValue("Volume", "BGM", BgmVolume);
+        _audioVolumeOptions.SetValue("Volume", "SE", SeVolume);
+        Error e = _audioVolumeOptions.Save(OptionsFilePath);
 
         if (e is not Error.Ok)
         {
-            GD.PrintErr($"ゲーム設定の保存中にエラーが発生しました。ゲームは続行されます。エラーの値は{e}です。");
+            GD.PrintErr($"設定ファイル{OptionsFilePath}を保存できません弟子t。エラーコードは{e}です。");
         }
-    }
-
-    /// <summary>
-    /// ゲームシステム設定を適用する
-    /// </summary>
-    public void SetOptions()
-    {
-        SetOptionsVolume();
-        SetOptionsFullscreen();
     }
 
     /// <summary>
     /// BGM音量を適用する
     /// </summary>
-    public void SetOptionsVolume()
+    public void SetOptions()
     {
         BgmVolume = Mathf.Clamp(BgmVolume, 0f, 100f);
         SeVolume = Mathf.Clamp(SeVolume, 0f, 100f);
@@ -137,21 +130,28 @@ public partial class GameOption : Node
     /// <summary>
     /// ウィンドウ・フルスクリーン表示を適用する
     /// </summary>
-    public void SetOptionsFullscreen()
+    public void SetWindowMode()
     {
         //設定がウィンドウで現在フルスクリーンならウィンドウに切り替える
         if (!Fullscreen && DisplayServer.WindowGetMode() is DisplayServer.WindowMode.Fullscreen)
         {
             DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-            //寸法が設定サイズより小さい場合は補正する
-            Vector2 size = DisplayServer.WindowGetSize();
-            int width = (int)ProjectSettings.GetSetting("display/window/size/viewport_width");
-            int height = (int)ProjectSettings.GetSetting("display/window/size/viewport_height");
+            LoadWindowSizeAndPosition();
+        }
+        //設定がフルスクリーンで現在ウィンドウならフルスクリーンに切り替える
+        else if (Fullscreen && DisplayServer.WindowGetMode() is DisplayServer.WindowMode.Windowed)
+        {
+            SaveWindowSizeAndPosition();
+            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+        }
+    }
 
-            if (size.X < width || size.Y < height)
-            {
-                DisplayServer.WindowSetSize(new Vector2I(width, height));
-            }
+    public void ChangeWindowMode()
+    {
+        //設定がウィンドウで現在フルスクリーンならウィンドウに切り替える
+        if (!Fullscreen && DisplayServer.WindowGetMode() is DisplayServer.WindowMode.Fullscreen)
+        {
+            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
         }
         //設定がフルスクリーンで現在ウィンドウならフルスクリーンに切り替える
         else if (Fullscreen && DisplayServer.WindowGetMode() is DisplayServer.WindowMode.Windowed)
@@ -160,13 +160,221 @@ public partial class GameOption : Node
         }
     }
 
+    public void LoadWindowSizeAndPosition()
+    {
+        int window_width_override = ProjectSettings.GetSetting("display/window/size/window_width_override", DefaultSizeX).AsInt32();
+        int window_height_override = ProjectSettings.GetSetting("display/window/size/window_height_override", DefaultSizeY).AsInt32();
+        Vector2I initial_position = ProjectSettings.GetSetting("display/window/size/initial_position").AsVector2I();
+        DisplayServer.WindowSetSize(new(window_width_override, window_height_override));
+        DisplayServer.WindowSetPosition(initial_position);
+    }
+
+    public void SaveWindowSizeAndPosition()
+    {
+        Vector2I size = DisplayServer.WindowGetSize();
+        Vector2I position = DisplayServer.WindowGetPosition();
+
+        if (DefaultSizeX == size.X)
+        {
+            ProjectSettings.Clear("display/window/size/window_width_override");
+        }
+        else
+        {
+            ProjectSettings.SetSetting("display/window/size/window_width_override", size.X);
+        }
+
+        if (DefaultSizeY == size.Y)
+        {
+            ProjectSettings.Clear("display/window/size/window_height_override");
+        }
+        else
+        {
+            ProjectSettings.SetSetting("display/window/size/window_height_override", size.Y);
+        }
+
+        ProjectSettings.SetSetting("display/window/size/initial_position_type", (int)Window.WindowInitialPosition.Absolute);
+
+        if (position == Vector2I.Zero)
+        {
+            ProjectSettings.Clear("display/window/size/initial_position");
+        }
+        else
+        {
+            ProjectSettings.SetSetting("display/window/size/initial_position", position);
+        }
+
+        Error e = ProjectSettings.SaveCustom(ProjectSettingsFilePath);
+
+        if (e is not Error.Ok)
+        {
+            GD.PrintErr($"プロジェクト設定を保存できませんでした。ゲームは続行されます。エラーの値は{e}です。");
+        }
+    }
+
     public override void _UnhandledInput(InputEvent ievent)
     {
         if (ievent.IsActionPressed("toggle_fullscreen"))
         {
             Fullscreen = !Fullscreen;
-            SetOptionsFullscreen();
-            SaveOptions();
+            SetWindowMode();
+        }
+    }
+
+    public bool LoadScreenOptions()
+    {
+        // ウィンドウモードだけ先に済ませる
+        Fullscreen = DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen;
+        ChangeWindowMode();
+
+        _screenOptions.Clear();
+        Error e = _screenOptions.Load(ScreenOptionsFilePath);
+
+        if (e is Error.FileNotFound)
+        {
+            return false;
+        }
+        else if (e is not Error.Ok)
+        {
+            GD.PrintErr($"設定ファイル{ScreenOptionsFilePath}を読み込めませんでした。エラーコードは{e}です。");
+            return false;
+        }
+
+        string strConfigureed = _screenOptions.GetValue("ScreenOptions", "Configured", false).ToString();
+
+        if (!string.IsNullOrWhiteSpace(strConfigureed) && bool.TryParse(strConfigureed, out bool bConfigureed))
+        {
+            return bConfigureed;
+        }
+
+        // 現在の画面からはみ出すなら再計算する
+
+        return false;
+    }
+
+    private bool CalcScreenOptions()
+    {
+        // ウィンドウモードだけ先に済ませる
+        Fullscreen = false;
+        ChangeWindowMode();
+
+        // 基本的な情報を集める
+        Rect2I screenRect = DisplayServer.ScreenGetUsableRect();
+        Vector2I screenOrigin = screenRect.Position;
+        Vector2I screenSize = screenRect.Size;
+        Vector2I windowContentOnlySize = DisplayServer.WindowGetSize();
+        Vector2I windowDecoratedSize = DisplayServer.WindowGetSizeWithDecorations();
+        // タイトルバーとボーダーのサイズを求める
+        Vector2I windowBorderSize = windowDecoratedSize - windowContentOnlySize;
+        // 基準サイズは640x480にタイトルバーとボーダーのサイズを加えたもの
+        Vector2I windowContentOnlyOriginalSize = new(DefaultSizeX, DefaultSizeY);
+        Vector2I windowDecoratedOriginalSize = windowContentOnlyOriginalSize + windowBorderSize;
+        // windowDecoratedSizeからscreenSizeに収まるちょうどいい大きさを求める
+        // 画面サイズギリギリになり過ぎないように0.8倍する。
+        float scaleX = screenSize.X / (float)windowDecoratedOriginalSize.X * 0.8f;
+        float scaleY = screenSize.Y / (float)windowDecoratedOriginalSize.Y * 0.8f;
+        // 拡大率の低いほうを採用するが、
+        float scale = Mathf.Min(scaleX, scaleY);
+        int newWindowSizeX = Mathf.FloorToInt(windowContentOnlyOriginalSize.X * scale);
+        int newWindowSizeY = Mathf.FloorToInt(windowContentOnlyOriginalSize.Y * scale);
+
+        // screenOriginを基準にウィンドウ位置を求める
+        int newWindowPositionX = screenOrigin.X + ((screenSize.X - newWindowSizeX) / 2);
+        int newWindowPositionY = screenOrigin.Y + ((screenSize.Y - newWindowSizeY) / 2);
+
+        // 設定を反映する
+        DisplayServer.WindowSetSize(new(newWindowSizeX, newWindowSizeY));
+        DisplayServer.WindowSetPosition(new(newWindowPositionX, newWindowPositionY));
+
+        _screenOptions.Clear();
+        _screenOptions.SetValue("ScreenOptions", "Configured", true);
+        Error e1 = _screenOptions.Save(ScreenOptionsFilePath);
+
+        if (e1 is not Error.Ok)
+        {
+            GD.PrintErr($"設定ファイル{ScreenOptionsFilePath}を保存できません弟子t。エラーコードは{e1}です。");
+            return false;
+        }
+
+        return true;
+    }
+
+    public void SaveScreenOptions()
+    {
+        if (Fullscreen)
+        {
+            ProjectSettings.SetSetting("display/window/size/mode", (int)DisplayServer.WindowMode.Fullscreen);
+        }
+        else
+        {
+            ProjectSettings.Clear("display/window/size/mode");
+
+            // ウィンドウ状態、位置、サイズを保存する
+            Vector2I size = DisplayServer.WindowGetSize();
+            Vector2I position = DisplayServer.WindowGetPosition();
+
+            if (DefaultSizeX == size.X)
+            {
+                ProjectSettings.Clear("display/window/size/window_width_override");
+            }
+            else
+            {
+                ProjectSettings.SetSetting("display/window/size/window_width_override", size.X);
+            }
+
+            if (DefaultSizeY == size.Y)
+            {
+                ProjectSettings.Clear("display/window/size/window_height_override");
+            }
+            else
+            {
+                ProjectSettings.SetSetting("display/window/size/window_height_override", size.Y);
+            }
+
+            ProjectSettings.SetSetting("display/window/size/initial_position_type", (int)Window.WindowInitialPosition.Absolute);
+
+            if (position == Vector2I.Zero)
+            {
+                ProjectSettings.Clear("display/window/size/initial_position");
+            }
+            else
+            {
+                ProjectSettings.SetSetting("display/window/size/initial_position", position);
+            }
+        }
+
+        Error e = ProjectSettings.SaveCustom(ProjectSettingsFilePath);
+
+        if (e is not Error.Ok)
+        {
+            GD.PrintErr($"プロジェクト設定を保存できませんでした。ゲームは続行されます。エラーの値は{e}です。");
+        }
+    }
+
+    public void SaveWindowMode()
+    {
+        if (Fullscreen)
+        {
+            ProjectSettings.SetSetting("display/window/size/mode", (int)DisplayServer.WindowMode.Fullscreen);
+        }
+        else
+        {
+            ProjectSettings.Clear("display/window/size/mode");
+        }
+
+        Error e = ProjectSettings.SaveCustom(ProjectSettingsFilePath);
+
+        if (e is not Error.Ok)
+        {
+            GD.PrintErr($"プロジェクト設定を保存できませんでした。ゲームは続行されます。エラーの値は{e}です。");
+        }
+    }
+
+    public override void _Notification(int what)
+    {
+        if (what == NotificationWMCloseRequest)
+        {
+            SaveScreenOptions();
+            GetTree().Quit();
         }
     }
 }

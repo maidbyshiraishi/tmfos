@@ -181,9 +181,9 @@ ExecFlag = false
 [node name="Back" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 159.0
+offset_left = 160.0
 offset_top = 256.0
-offset_right = 309.0
+offset_right = 304.0
 offset_bottom = 288.0
 text = "保存して戻る"
 script = ExtResource("3_ll8rd")
@@ -205,12 +205,12 @@ SeName = "menu_move"
 [node name="Undo" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 104.0
+offset_left = 96.0
 offset_top = 309.0
-offset_right = 299.0
+offset_right = 304.0
 offset_bottom = 359.0
 focus_neighbor_right = NodePath("../Reset")
-text = "前回保存した値に
+text = "前回保存した音量に
 リセット"
 script = ExtResource("3_ll8rd")
 
@@ -233,11 +233,11 @@ SeName = "menu_move"
 [node name="Reset" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 342.0
+offset_left = 336.0
 offset_top = 311.0
-offset_right = 539.0
+offset_right = 544.0
 offset_bottom = 361.0
-text = "ゲームの初期値に
+text = "ゲームの初期音量に
 リセット"
 script = ExtResource("3_ll8rd")
 
@@ -283,9 +283,9 @@ SeName = "menu_move"
 [node name="KeyConfig" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 331.0
+offset_left = 336.0
 offset_top = 256.0
-offset_right = 481.0
+offset_right = 480.0
 offset_bottom = 288.0
 text = "操作設定"
 script = ExtResource("3_ll8rd")
