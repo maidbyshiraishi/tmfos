@@ -62,6 +62,8 @@ public partial class GameKeyOption : Node
             {
                 string str = data.ToString();
                 Array<InputEvent> keys = (Array<InputEvent>)GD.StrToVar(str);
+                // StrToVarしなくてもよい。リリースしてしまったので変更しない。
+                // Array<InputEvent> keys = data.AsGodotArray<InputEvent>();
 
                 foreach (InputEvent key in keys)
                 {
@@ -114,6 +116,8 @@ public partial class GameKeyOption : Node
             }
 
             keyOptions.SetValue("KeyOption", actionName, GD.VarToStr(data));
+            // VarToStrしなくてもよい。リリースしてしまったので変更しない。
+            // keyOptions.SetValue("KeyOption", actionName, data);
         }
 
         Error e = keyOptions.Save(KeyOptionFilePath);
