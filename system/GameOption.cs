@@ -36,12 +36,18 @@ public partial class GameOption : Node
 
     public override void _Ready()
     {
+
+#if TOOLS
+        // デバッグ実行時はAbsolute指定は動作しないため、毎回位置調整する。
+        _ = CalcScreenOptions();
+#else
         if (!LoadScreenOptions())
         {
             _ = CalcScreenOptions();
             //OS.SetRestartOnExit(true);
             //GetTree().Quit();
         }
+#endif
 
         LoadOptions();
         SetOptions();
@@ -286,7 +292,15 @@ public partial class GameOption : Node
         DisplayServer.WindowSetPosition(new(newWindowPositionX, newWindowPositionY));
 
         _screenOptions.Clear();
+
+#if TOOLS
+        // デバッグ実行時は画面設定を未設定にする。
+        // デバッグとリリース実行を行き来するとき、falseしておくと再計算が動く。
+        _screenOptions.SetValue("ScreenOptions", "Configured", false);
+#else
         _screenOptions.SetValue("ScreenOptions", "Configured", true);
+#endif
+
         Error e1 = _screenOptions.Save(ScreenOptionsFilePath);
 
         if (e1 is not Error.Ok)
@@ -341,6 +355,15 @@ public partial class GameOption : Node
                 ProjectSettings.SetSetting("display/window/size/initial_position", position);
             }
         }
+
+#if TOOLS
+        // デバッグ実行時は位置、サイズをクリアしておく。
+        // リリース実行後にデバッグ実行した場合もクリアする。
+        ProjectSettings.Clear("display/window/size/window_width_override");
+        ProjectSettings.Clear("display/window/size/window_height_override");
+        ProjectSettings.Clear("display/window/size/initial_position_type");
+        ProjectSettings.Clear("display/window/size/initial_position");
+#endif
 
         Error e = ProjectSettings.SaveCustom(ProjectSettingsFilePath);
 
