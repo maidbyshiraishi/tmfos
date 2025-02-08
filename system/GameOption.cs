@@ -78,19 +78,8 @@ public partial class GameOption : Node
             return;
         }
 
-        string strBgm = _audioVolumeOptions.GetValue("Volume", "BGM", DefaultVolume).ToString();
-
-        if (!string.IsNullOrWhiteSpace(strBgm) && float.TryParse(strBgm, out float fBgm))
-        {
-            BgmVolume = Mathf.Clamp(fBgm, 0f, 100f);
-        }
-
-        string strSe = _audioVolumeOptions.GetValue("Volume", "SE", DefaultVolume).ToString();
-
-        if (!string.IsNullOrWhiteSpace(strSe) && float.TryParse(strSe, out float fSe))
-        {
-            SeVolume = Mathf.Clamp(fSe, 0f, 100f);
-        }
+        BgmVolume = (float)Mathf.Clamp(_audioVolumeOptions.GetValue("Volume", "BGM", DefaultVolume).AsDouble(), 0f, 100f);
+        SeVolume = (float)Mathf.Clamp(_audioVolumeOptions.GetValue("Volume", "SE", DefaultVolume).AsDouble(), 0f, 100f);
     }
 
     /// <summary>
@@ -245,16 +234,7 @@ public partial class GameOption : Node
             return false;
         }
 
-        string strConfigureed = _screenOptions.GetValue("ScreenOptions", "Configured", false).ToString();
-
-        if (!string.IsNullOrWhiteSpace(strConfigureed) && bool.TryParse(strConfigureed, out bool bConfigureed))
-        {
-            return bConfigureed;
-        }
-
-        // 現在の画面からはみ出すなら再計算する
-
-        return false;
+        return _screenOptions.GetValue("ScreenOptions", "Configured", false).AsBool();
     }
 
     private bool CalcScreenOptions()
