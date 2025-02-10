@@ -7,6 +7,9 @@ namespace tmfos.system;
 /// </summary>
 public partial class GameOption : Node
 {
+    // todo: ProjectSettingsはプロジェクト設定を変更してもSaveCustom()した時点での値が優先されてしまう。ConfigFileを使用した代替処理を予定している。バージョン1.2.7のリリースは延期。
+    // 例えば、プロジェクト設定でバージョンを変更してもSaveCustom()された値が優先され、過去のバージョンのままになってしまった。
+    // SaveCustom()すれば前回実行時の画面状態をゲーム開始時から引き継げるが、プロジェクト設定を変更しなければならない値を更新できなくなる。
     private static readonly string OptionsFilePath = "user://options.dat";
     private static readonly float DefaultVolume = 50f;
 
