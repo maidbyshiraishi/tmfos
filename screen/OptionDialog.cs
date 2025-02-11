@@ -92,7 +92,7 @@ public partial class OptionDialog : DialogRoot
         // ウィンドウ状態に関しては即座にシステムに反映する
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.Fullscreen = Fullscreen;
-        option.SetWindowMode();
+        option.ChangeWindowMode();
     }
 
     public override void _Input(InputEvent ievent)
@@ -109,5 +109,12 @@ public partial class OptionDialog : DialogRoot
     {
         GetNode<Label>("FullscreenCheckValue").Text = flag ? "ON" : "OFF";
         GetNode<CheckButton>("Control/FullscreenCheck").SetPressedNoSignal(flag);
+    }
+
+    public void ResetDefaultScreenOptions()
+    {
+        GameOption option = GetNode<GameOption>("/root/GameOption");
+        option.CalcScreenOptions();
+        option.ApplyScreenOptions();
     }
 }

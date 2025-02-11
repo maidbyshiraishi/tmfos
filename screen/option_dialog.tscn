@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dlogfuoolbbgt"]
+[gd_scene load_steps=19 format=3 uid="uid://dlogfuoolbbgt"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_v5t5f"]
 [ext_resource type="Script" path="res://screen/OptionDialog.cs" id="2_6qroc"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/update_dialog_screen_command.tscn" id="8_foflq"]
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="10_2vtvi"]
 [ext_resource type="PackedScene" uid="uid://db5heldrmq227" path="res://command/reset_default_game_options_command.tscn" id="13_gepbg"]
+[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="14_2iwl1"]
 [ext_resource type="Script" path="res://command/OpenFileManagerCommand.cs" id="14_j4mxk"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="16_0176u"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="17_04yvk"]
@@ -206,9 +207,9 @@ SeName = "menu_move"
 light_mask = 2
 layout_mode = 0
 offset_left = 96.0
-offset_top = 309.0
+offset_top = 304.0
 offset_right = 304.0
-offset_bottom = 359.0
+offset_bottom = 360.0
 focus_neighbor_right = NodePath("../Reset")
 text = "前回保存した音量に
 リセット"
@@ -234,9 +235,9 @@ SeName = "menu_move"
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0
-offset_top = 311.0
+offset_top = 304.0
 offset_right = 544.0
-offset_bottom = 361.0
+offset_bottom = 360.0
 text = "ゲームの初期音量に
 リセット"
 script = ExtResource("3_ll8rd")
@@ -257,13 +258,37 @@ SeName = "menu_select"
 [node name="PlaySeCommand" parent="Control/Reset/Focus" instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
+[node name="ResetScreen" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 96.0
+offset_top = 376.0
+offset_right = 304.0
+offset_bottom = 416.0
+theme = ExtResource("14_2iwl1")
+text = "ゲームの初期画面設定に
+リセット"
+script = ExtResource("3_ll8rd")
+
+[node name="Exec" parent="Control/ResetScreen" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/ResetScreen/Exec" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="UpdateDialogScreenCommand" parent="Control/ResetScreen/Exec" instance=ExtResource("8_foflq")]
+
+[node name="Focus" parent="Control/ResetScreen" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/ResetScreen/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
 [node name="OpenFileManager" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 320.0
-offset_top = 384.0
+offset_left = 336.0
+offset_top = 376.0
 offset_right = 560.0
-offset_bottom = 416.0
+offset_bottom = 408.0
 text = "データフォルダを開く"
 script = ExtResource("3_ll8rd")
 
@@ -331,3 +356,4 @@ SeName = "menu_select"
 [connection signal="value_changed" from="Control/BgmSlider" to="." method="BgmVolumeChanged"]
 [connection signal="value_changed" from="Control/SeSlider" to="." method="SeVolumeChanged"]
 [connection signal="toggled" from="Control/FullscreenCheck" to="." method="FullscreenChanged"]
+[connection signal="pressed" from="Control/ResetScreen" to="." method="ResetDefaultScreenOptions"]
