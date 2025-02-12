@@ -183,9 +183,9 @@ ExecFlag = false
 light_mask = 2
 layout_mode = 0
 offset_left = 160.0
-offset_top = 256.0
-offset_right = 304.0
-offset_bottom = 288.0
+offset_top = 248.0
+offset_right = 312.0
+offset_bottom = 280.0
 text = "保存して戻る"
 script = ExtResource("3_ll8rd")
 
@@ -206,11 +206,10 @@ SeName = "menu_move"
 [node name="Undo" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 96.0
-offset_top = 304.0
-offset_right = 304.0
-offset_bottom = 360.0
-focus_neighbor_right = NodePath("../Reset")
+offset_left = 104.0
+offset_top = 296.0
+offset_right = 312.0
+offset_bottom = 352.0
 text = "前回保存した音量に
 リセット"
 script = ExtResource("3_ll8rd")
@@ -234,10 +233,10 @@ SeName = "menu_move"
 [node name="Reset" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 336.0
-offset_top = 304.0
-offset_right = 544.0
-offset_bottom = 360.0
+offset_left = 328.0
+offset_top = 296.0
+offset_right = 536.0
+offset_bottom = 352.0
 text = "ゲームの初期音量に
 リセット"
 script = ExtResource("3_ll8rd")
@@ -261,10 +260,10 @@ SeName = "menu_move"
 [node name="ResetScreen" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 96.0
-offset_top = 376.0
-offset_right = 304.0
-offset_bottom = 416.0
+offset_left = 104.0
+offset_top = 368.0
+offset_right = 312.0
+offset_bottom = 408.0
 theme = ExtResource("14_2iwl1")
 text = "ゲームの初期画面設定に
 リセット"
@@ -285,10 +284,10 @@ SeName = "menu_move"
 [node name="OpenFileManager" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 336.0
-offset_top = 376.0
-offset_right = 560.0
-offset_bottom = 408.0
+offset_left = 328.0
+offset_top = 368.0
+offset_right = 552.0
+offset_bottom = 400.0
 text = "データフォルダを開く"
 script = ExtResource("3_ll8rd")
 
@@ -308,10 +307,10 @@ SeName = "menu_move"
 [node name="KeyConfig" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 336.0
-offset_top = 256.0
+offset_left = 328.0
+offset_top = 248.0
 offset_right = 480.0
-offset_bottom = 288.0
+offset_bottom = 280.0
 text = "操作設定"
 script = ExtResource("3_ll8rd")
 
