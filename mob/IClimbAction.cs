@@ -5,7 +5,7 @@ namespace tmfos.mob;
 /// </summary>
 public interface IClimbAction
 {
-    public void SetClimb();
+    void SetClimb();
 
-    public void UnsetClimb();
+    void UnsetClimb();
 }

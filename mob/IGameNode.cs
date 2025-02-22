@@ -8,15 +8,15 @@ public interface IGameNode
     /// <summary>
     /// 初期化
     /// </summary>
-    public void InitializeNode();
+    void InitializeNode();
 
     /// <summary>
     /// 終了
     /// </summary>
-    public void FinalizeNode();
+    void FinalizeNode();
 
     /// <summary>
     /// 外部要因による除去
     /// </summary>
-    public void RemoveNode();
+    void RemoveNode();
 }

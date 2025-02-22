@@ -5,17 +5,17 @@ namespace tmfos.mob;
 /// </summary>
 public interface IDurable
 {
-    public void AddDurability(int value);
+    void AddDurability(int value);
 
-    public void SetDurability(int value);
+    void SetDurability(int value);
 
-    public void FullRecovered();
+    void FullRecovered();
 
-    public void Recovered();
+    void Recovered();
 
-    public void Damaged();
+    void Damaged();
 
-    public void Dead();
+    void Dead();
 
-    public void Resurrected();
+    void Resurrected();
 }

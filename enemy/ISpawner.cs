@@ -7,9 +7,9 @@ namespace tmfos.enemy;
 /// </summary>
 public interface ISpawner
 {
-    public void SetSpawned();
+    void SetSpawned();
 
-    public void ResetSpawned();
+    void ResetSpawned();
 
-    public Callable GetSignalMethod();
+    Callable GetSignalMethod();
 }

@@ -5,7 +5,7 @@ namespace tmfos.mob;
 /// </summary>
 public interface ICrouchAction
 {
-    public void SetCrouch();
+    void SetCrouch();
 
-    public void UnsetCrouch();
+    void UnsetCrouch();
 }

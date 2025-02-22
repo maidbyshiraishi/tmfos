@@ -5,5 +5,5 @@ namespace tmfos.others;
 /// </summary>
 public interface IPathFollower
 {
-    public void ReachedToEdge(float progressRatio, bool reverse, EdgeHandlingType edgeHandling);
+    void ReachedToEdge(float progressRatio, bool reverse, EdgeHandlingType edgeHandling);
 }

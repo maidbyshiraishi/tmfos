@@ -5,7 +5,7 @@ namespace tmfos.mob;
 /// </summary>
 public interface ISwimAction
 {
-    public void SetSwim();
+    void SetSwim();
 
-    public void UnsetSwim();
+    void UnsetSwim();
 }

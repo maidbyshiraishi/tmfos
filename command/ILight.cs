@@ -5,5 +5,5 @@ namespace tmfos.command;
 /// </summary>
 public interface ILight
 {
-    public void EnableLight();
+    void EnableLight();
 }

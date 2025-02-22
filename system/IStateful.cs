@@ -5,7 +5,7 @@ namespace tmfos.system;
 /// </summary>
 public interface IStateful
 {
-    public void StateSave();
+    void StateSave();
 
-    public void StateLoad();
+    void StateLoad();
 }

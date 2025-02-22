@@ -12,5 +12,5 @@ public interface ICommand
     /// </summary>
     /// <param name="node">Node</param>
     /// <param name="flag">裏表フラグ</param>
-    public void ExecCommand(Node node, bool flag);
+    void ExecCommand(Node node, bool flag);
 }
