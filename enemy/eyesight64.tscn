@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3dxe0jrgncd4"]
 
-[ext_resource type="Script" path="res://enemy/Eyesight.cs" id="1_x4srt"]
+[ext_resource type="Script" uid="uid://bofu6dt71dek6" path="res://enemy/Eyesight.cs" id="1_x4srt"]
 
 [node name="EyeSight" type="Node2D"]
 script = ExtResource("1_x4srt")

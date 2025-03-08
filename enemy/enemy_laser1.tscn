@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvv58jomlnq7t"]
 
-[ext_resource type="Script" path="res://enemy/EnemyShot1.cs" id="1_0sgwu"]
+[ext_resource type="Script" uid="uid://bixtpgy0fqt6f" path="res://enemy/EnemyShot1.cs" id="1_0sgwu"]
 [ext_resource type="Texture2D" uid="uid://bken6xnjd0tw5" path="res://contents/image/enemy/laser_shot.png" id="2_sllw7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tswr"]

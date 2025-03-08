@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://dljghosduiafb"]
 
 [ext_resource type="Theme" uid="uid://hw4u24o28muj" path="res://contents/theme/theme_license_screen.tres" id="1_6e7sn"]
-[ext_resource type="Script" path="res://screen/LicenseDialog.cs" id="1_t0hyo"]
-[ext_resource type="Script" path="res://gui/CommandTextEdit.cs" id="3_6nktv"]
-[ext_resource type="Script" path="res://gui/CommandButton.cs" id="3_jckh2"]
+[ext_resource type="Script" uid="uid://bsig6s41ylbjy" path="res://screen/LicenseDialog.cs" id="1_t0hyo"]
+[ext_resource type="Script" uid="uid://ba53h7rnpmb3j" path="res://gui/CommandTextEdit.cs" id="3_6nktv"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_jckh2"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_pep1c"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_qq2oq"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_5schq"]
-[ext_resource type="Script" path="res://gui/CommandOptionButton.cs" id="6_ueuul"]
+[ext_resource type="Script" uid="uid://b3kjh7ir2pht1" path="res://gui/CommandOptionButton.cs" id="6_ueuul"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="9_1r2ly"]
 [ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="10_xgtig"]
 

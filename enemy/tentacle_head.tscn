@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnft7p4pr55wx"]
 
-[ext_resource type="Script" path="res://enemy/TentacleHead.cs" id="1_p6owc"]
+[ext_resource type="Script" uid="uid://1opqdboeeyj2" path="res://enemy/TentacleHead.cs" id="1_p6owc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gan8l"]
 size = Vector2(32, 32)

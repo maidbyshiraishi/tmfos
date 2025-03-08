@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_bot7j"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_o3dla"]
 [ext_resource type="Texture2D" uid="uid://dsjunvv31st3c" path="res://contents/image/theater/talk_nekomimi_maid_pink.png" id="7_wl2qp"]
-[ext_resource type="Script" path="res://gui/CommandButton.cs" id="12_kq0tp"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="12_kq0tp"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="13_ew0ah"]
 
 [node name="StoryTheater" instance=ExtResource("1_0eywl")]

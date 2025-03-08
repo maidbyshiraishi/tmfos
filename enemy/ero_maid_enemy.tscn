@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3q04xrtn7kjp"]
 
-[ext_resource type="Script" path="res://enemy/EroMaidEnemy.cs" id="1_bm4am"]
+[ext_resource type="Script" uid="uid://dtbob4nhqvx57" path="res://enemy/EroMaidEnemy.cs" id="1_bm4am"]
 [ext_resource type="SpriteFrames" uid="uid://b72wxiomk7n7m" path="res://contents/animation/enemy/ero_maid.tres" id="6_uib5v"]
-[ext_resource type="Script" path="res://mob/ActionChange.cs" id="7_ca0nf"]
-[ext_resource type="Script" path="res://mob/BlockBreaker.cs" id="9_mj3je"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="7_ca0nf"]
+[ext_resource type="Script" uid="uid://de5v18kphpatm" path="res://mob/BlockBreaker.cs" id="9_mj3je"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjcr7"]
 size = Vector2(16, 64)

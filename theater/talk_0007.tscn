@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_m7gmo"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_88j7r"]
 [ext_resource type="Texture2D" uid="uid://dvg1xqbxow6so" path="res://contents/image/theater/talk_nekomimi_maid_gold_m.png" id="3_xwkco"]
-[ext_resource type="Script" path="res://gui/CommandButton.cs" id="4_hi0pm"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="4_hi0pm"]
 [ext_resource type="PackedScene" uid="uid://c21hot266v86s" path="res://command/go_next_page_command.tscn" id="5_2lpl4"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_ccphp"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="5_v1gqp"]

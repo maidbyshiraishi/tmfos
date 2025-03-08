@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://mqkdiygn6qtn"]
 
-[ext_resource type="Script" path="res://enemy/MaidRobot2Enemy.cs" id="1_34v8d"]
+[ext_resource type="Script" uid="uid://c6ej656fanvdq" path="res://enemy/MaidRobot2Enemy.cs" id="1_34v8d"]
 [ext_resource type="SpriteFrames" uid="uid://dyu1txjt6bgx1" path="res://contents/animation/enemy/maid_robot2.tres" id="6_gv2gr"]
-[ext_resource type="Script" path="res://mob/ActionChange.cs" id="7_uh5tg"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="7_uh5tg"]
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="8_p5x17"]
 [ext_resource type="PackedScene" uid="uid://bpnf82ngscqro" path="res://trigger/manage_durability_zone.tscn" id="10_aw1a1"]
 

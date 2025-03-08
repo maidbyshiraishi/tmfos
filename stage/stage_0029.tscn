@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="5_wxq0n"]
 [ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="6_p6o3w"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="7_gkirw"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="8_mc0cu"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="8_mc0cu"]
 [ext_resource type="PackedScene" uid="uid://bkxp5hemjf3f2" path="res://enemy/maid_robot1_enemy.tscn" id="9_pwq5d"]
 [ext_resource type="PackedScene" uid="uid://mqkdiygn6qtn" path="res://enemy/maid_robot2_enemy.tscn" id="10_kp4ph"]
 [ext_resource type="PackedScene" uid="uid://bkpmusncycni5" path="res://hud/boss_life.tscn" id="11_71xba"]

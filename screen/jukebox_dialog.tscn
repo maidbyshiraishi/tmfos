@@ -1,8 +1,8 @@
 [gd_scene load_steps=23 format=3 uid="uid://cgo5nw4mlh7pe"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_d5hvi"]
-[ext_resource type="Script" path="res://screen/JukeboxDialog.cs" id="2_lfgcj"]
-[ext_resource type="Script" path="res://gui/CommandButton.cs" id="3_jq3u4"]
+[ext_resource type="Script" uid="uid://cgtirgj6hx117" path="res://screen/JukeboxDialog.cs" id="2_lfgcj"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_jq3u4"]
 [ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="4_vx7g3"]
 [ext_resource type="AudioStream" uid="uid://cxifjqga3hnbc" path="res://contents/bgm/bgm1.ogg" id="5_aw767"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_3u2lt"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://command/set_game_options_command.tscn" id="17_54top"]
 [ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/update_dialog_screen_command.tscn" id="18_ngv3k"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="19_ntrhu"]
-[ext_resource type="Script" path="res://gui/CommandHSlider.cs" id="20_7u47n"]
+[ext_resource type="Script" uid="uid://b06hw6ekb5ra3" path="res://gui/CommandHSlider.cs" id="20_7u47n"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="21_e5wmd"]
 [ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="22_dbkvd"]
 

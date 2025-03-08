@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c43x5oelr5tdh"]
 
-[ext_resource type="Script" path="res://enemy/PathFollowEnemy.cs" id="1_gtsem"]
+[ext_resource type="Script" uid="uid://bfjyfcwp3oqr3" path="res://enemy/PathFollowEnemy.cs" id="1_gtsem"]
 [ext_resource type="SpriteFrames" uid="uid://b1dpxlhcsnnk6" path="res://contents/animation/enemy/rocket_maid.tres" id="4_eyhpk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifn7i"]

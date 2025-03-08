@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://ddw2g00yqtlmx"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_6lvyk"]
-[ext_resource type="Script" path="res://stage/StageRoot.cs" id="2_xo2a5"]
-[ext_resource type="Script" path="res://stage/TileMapManager.cs" id="3_7d20q"]
+[ext_resource type="Script" uid="uid://c2bmiqjw4pbih" path="res://stage/StageRoot.cs" id="2_xo2a5"]
+[ext_resource type="Script" uid="uid://cye0gbvy5dsmh" path="res://stage/TileMapManager.cs" id="3_7d20q"]
 [ext_resource type="Material" uid="uid://bgrevkcxkpwc5" path="res://contents/material/transparent_hole_material.tres" id="4_cbc8h"]
 [ext_resource type="TileSet" uid="uid://vlqhnvwag8d" path="res://contents/tilemap/tileset.tres" id="4_wd8vw"]
 [ext_resource type="PackedScene" uid="uid://cr2lwjlb07c3g" path="res://hud/hud.tscn" id="15_lldo5"]

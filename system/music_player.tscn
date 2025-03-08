@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cooxg6bevunkv"]
 
-[ext_resource type="Script" path="res://system/MusicPlayer.cs" id="1_3lnsu"]
+[ext_resource type="Script" uid="uid://8dkmsj6ihpvo" path="res://system/MusicPlayer.cs" id="1_3lnsu"]
 [ext_resource type="AnimationLibrary" uid="uid://ovdk80futh4x" path="res://contents/fader/fader.res" id="2_o4wot"]
 
 [node name="MusicPlayer" type="Node"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://c1fq5j7tejrsb"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_io2f8"]
-[ext_resource type="Script" path="res://screen/SaveAndLoadDialog.cs" id="2_lpckr"]
-[ext_resource type="Script" path="res://gui/CommandButton.cs" id="3_dcmc3"]
+[ext_resource type="Script" uid="uid://d288ljmwjh5lu" path="res://screen/SaveAndLoadDialog.cs" id="2_lpckr"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_dcmc3"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_6n7x1"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_exge7"]
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="4_uwu2y"]

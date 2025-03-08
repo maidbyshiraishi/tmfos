@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://7rukkxaiuebp"]
 
-[ext_resource type="Script" path="res://system/ScreenFader.cs" id="1_oumqm"]
+[ext_resource type="Script" uid="uid://dd8lurcc3im18" path="res://system/ScreenFader.cs" id="1_oumqm"]
 [ext_resource type="SpriteFrames" uid="uid://dvammxfthwtsp" path="res://contents/animation/screen_fader.tres" id="2_o6su0"]
 
 [node name="ScreenFader" type="CanvasLayer"]

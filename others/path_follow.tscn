@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ctiruf54e1osm"]
 
-[ext_resource type="Script" path="res://others/PathFollow.cs" id="1_dmsey"]
+[ext_resource type="Script" uid="uid://bnsftr1mg10nu" path="res://others/PathFollow.cs" id="1_dmsey"]
 
 [node name="PathFollower" type="PathFollow2D"]
 rotates = false

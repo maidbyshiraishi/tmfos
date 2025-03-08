@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://dx6rootboa8f4"]
 
-[ext_resource type="Script" path="res://player/Player.cs" id="1_mswun"]
+[ext_resource type="Script" uid="uid://i2x7pu54mpg5" path="res://player/Player.cs" id="1_mswun"]
 [ext_resource type="SpriteFrames" uid="uid://hrh82mdg1jsf" path="res://contents/animation/player/player.tres" id="2_hei51"]
 [ext_resource type="AnimationLibrary" uid="uid://iatjjdmt7kj6" path="res://contents/animation/decoration/player_light.res" id="3_oq15j"]
 [ext_resource type="Texture2D" uid="uid://dlo2wegv2i24e" path="res://contents/image/decoration/light.png" id="3_xhs2b"]
 [ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="8_fc10d"]
 [ext_resource type="PackedScene" uid="uid://yt4jxbbnr7fq" path="res://player/veil_light.tscn" id="10_udeha"]
-[ext_resource type="Script" path="res://mob/BlockBreaker.cs" id="11_o6f57"]
+[ext_resource type="Script" uid="uid://de5v18kphpatm" path="res://mob/BlockBreaker.cs" id="11_o6f57"]
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="12_xkgep"]
-[ext_resource type="Script" path="res://mob/ActionChange.cs" id="14_5r2in"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="14_5r2in"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rivfx"]
 size = Vector2(20, 60)

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://8636t7qupfox" path="res://trigger/search_point_trigger.tscn" id="11_8kxpr"]
 [ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="12_p3een"]
 [ext_resource type="PackedScene" uid="uid://c48l268v1hmlo" path="res://item/treasure_box.tscn" id="12_pqejh"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="12_xxjyq"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="12_xxjyq"]
 
 [node name="Stage" instance=ExtResource("1_axhrv")]
 BgmStream = ExtResource("2_i7jew")

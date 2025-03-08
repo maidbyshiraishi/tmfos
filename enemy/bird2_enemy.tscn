@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://dkdich8y3mtxu"]
 
-[ext_resource type="Script" path="res://enemy/PathFollowEnemy.cs" id="1_sg71d"]
+[ext_resource type="Script" uid="uid://bfjyfcwp3oqr3" path="res://enemy/PathFollowEnemy.cs" id="1_sg71d"]
 [ext_resource type="Texture2D" uid="uid://beliclx6ilmbh" path="res://contents/image/enemy/bird.png" id="4_easj7"]
 [ext_resource type="Texture2D" uid="uid://dgdxa802jnhpm" path="res://contents/image/enemy/bird_vertical.png" id="5_6l78d"]
 

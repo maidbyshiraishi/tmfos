@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="5_w1i10"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="6_44iah"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_a4214"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="7_2xw83"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="7_2xw83"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="8_eppo0"]
 [ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="9_im3d5"]
 [ext_resource type="PackedScene" uid="uid://c48l268v1hmlo" path="res://item/treasure_box.tscn" id="11_u07g6"]

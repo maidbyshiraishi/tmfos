@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://g3nvbufurd2s"]
 
-[ext_resource type="Script" path="res://enemy/MaidFaucetEnemy.cs" id="2_5y1t7"]
+[ext_resource type="Script" uid="uid://css7le6l07ouo" path="res://enemy/MaidFaucetEnemy.cs" id="2_5y1t7"]
 [ext_resource type="SpriteFrames" uid="uid://bwqttoq6pgjpq" path="res://contents/animation/enemy/maid_faucet.tres" id="4_e6xkj"]
 [ext_resource type="PackedScene" uid="uid://bpnpsk7t6uv77" path="res://enemy/enemy_spawner.tscn" id="5_ja1wp"]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://cobv8osufkdu8"]
 
 [ext_resource type="Theme" uid="uid://hw4u24o28muj" path="res://contents/theme/theme_license_screen.tres" id="1_5mfh1"]
-[ext_resource type="Script" path="res://screen/LicenseSelectScreen.cs" id="1_68j83"]
-[ext_resource type="Script" path="res://gui/CommandItemList.cs" id="2_rwg38"]
-[ext_resource type="Script" path="res://gui/CommandButton.cs" id="2_vxqgw"]
+[ext_resource type="Script" uid="uid://uff4fgmynulg" path="res://screen/LicenseSelectScreen.cs" id="1_68j83"]
+[ext_resource type="Script" uid="uid://brq1j3nhjvax4" path="res://gui/CommandItemList.cs" id="2_rwg38"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="2_vxqgw"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="3_eqtxm"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_u1swl"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_xti50"]

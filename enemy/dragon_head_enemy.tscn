@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cfymfls3a7ari"]
 
-[ext_resource type="Script" path="res://enemy/DragonHeadEnemy.cs" id="1_1y1fp"]
+[ext_resource type="Script" uid="uid://cntskyhk2f5np" path="res://enemy/DragonHeadEnemy.cs" id="1_1y1fp"]
 [ext_resource type="Texture2D" uid="uid://beoxnnini6dwh" path="res://contents/image/enemy/dragon_head.png" id="2_5s8fp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifn7i"]

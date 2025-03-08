@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwgpmesybxk2s"]
 
-[ext_resource type="Script" path="res://enemy/PathFollowEnemy.cs" id="1_8e6ox"]
+[ext_resource type="Script" uid="uid://bfjyfcwp3oqr3" path="res://enemy/PathFollowEnemy.cs" id="1_8e6ox"]
 [ext_resource type="SpriteFrames" uid="uid://clfqssgnd5ggs" path="res://contents/animation/enemy/fish.tres" id="4_0dj64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs4gn"]

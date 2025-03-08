@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuoskst448e28"]
 
-[ext_resource type="Script" path="res://command/Light.cs" id="1_6dydd"]
+[ext_resource type="Script" uid="uid://c5n54y3nte4hq" path="res://command/Light.cs" id="1_6dydd"]
 [ext_resource type="Texture2D" uid="uid://dlo2wegv2i24e" path="res://contents/image/decoration/light.png" id="2_1vioq"]
 [ext_resource type="Animation" uid="uid://gl0kgmwfjqnr" path="res://contents/animation/decoration/light.res" id="3_mcykk"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vorup"]
 _data = {
-"light": ExtResource("3_mcykk")
+&"light": ExtResource("3_mcykk")
 }
 
 [node name="Light" type="Node2D"]

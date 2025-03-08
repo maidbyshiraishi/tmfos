@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhup343k13tvw"]
 
-[ext_resource type="Script" path="res://enemy/DrillShot.cs" id="1_yn0jy"]
+[ext_resource type="Script" uid="uid://bx2yhhgegb58j" path="res://enemy/DrillShot.cs" id="1_yn0jy"]
 [ext_resource type="SpriteFrames" uid="uid://p1chjaecrkr8" path="res://contents/animation/enemy/big_drill_shot_lr.tres" id="2_umr03"]
 
 [node name="BigDrillShotRight" type="Area2D"]

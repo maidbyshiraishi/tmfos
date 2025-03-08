@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfijtjiu76g53" path="res://item/item_panel_penetration.tscn" id="7_t5g3l"]
 [ext_resource type="PackedScene" uid="uid://ci7ah8lulrk1q" path="res://item/item_panel_weapon.tscn" id="8_tnc8s"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="9_f23sm"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="10_ak56o"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="10_ak56o"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="11_lysqu"]
 
 [node name="Stage" instance=ExtResource("1_kd538")]

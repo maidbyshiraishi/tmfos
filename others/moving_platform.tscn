@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ba1ipn4gbqrse"]
 
 [ext_resource type="PackedScene" uid="uid://ctiruf54e1osm" path="res://others/path_follow.tscn" id="1_72pvf"]
-[ext_resource type="Script" path="res://others/MovingPlatform.cs" id="2_hstsh"]
+[ext_resource type="Script" uid="uid://cni8pd2ud5hnx" path="res://others/MovingPlatform.cs" id="2_hstsh"]
 [ext_resource type="SpriteFrames" uid="uid://wgxxdbkf56jh" path="res://contents/animation/moving_platform.tres" id="2_xfkop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0ce7"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://vp0fhk4g3cgi"]
 
-[ext_resource type="Script" path="res://enemy/NekomimiMaidEnemy.cs" id="1_lek7d"]
+[ext_resource type="Script" uid="uid://cb5wtx2qbytoj" path="res://enemy/NekomimiMaidEnemy.cs" id="1_lek7d"]
 [ext_resource type="PackedScene" uid="uid://d3dxe0jrgncd4" path="res://enemy/eyesight64.tscn" id="3_367j2"]
-[ext_resource type="Script" path="res://mob/ActionChange.cs" id="4_bqmvo"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="4_bqmvo"]
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="5_i422s"]
 [ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="5_wbksb"]
-[ext_resource type="Script" path="res://mob/BlockBreaker.cs" id="6_f8k0o"]
+[ext_resource type="Script" uid="uid://de5v18kphpatm" path="res://mob/BlockBreaker.cs" id="6_f8k0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi5u"]
 size = Vector2(20, 60)

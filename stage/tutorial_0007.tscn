@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_osk4u"]
 [ext_resource type="PackedScene" uid="uid://tnv76mlyklkx" path="res://item/item_panel_lamp.tscn" id="7_4rpht"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="7_ba3jm"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="8_27j5l"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="8_27j5l"]
 [ext_resource type="PackedScene" uid="uid://yyq021ra4g7a" path="res://decoration/torch.tscn" id="9_v3kt5"]
 [ext_resource type="PackedScene" uid="uid://gbo2sbr8uow2" path="res://decoration/lamp.tscn" id="10_cgwxt"]
 [ext_resource type="PackedScene" uid="uid://clybmlb5rps41" path="res://others/fire.tscn" id="11_tpdqo"]

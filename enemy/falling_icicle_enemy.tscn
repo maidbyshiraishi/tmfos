@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dh15teehhoau2"]
 
-[ext_resource type="Script" path="res://enemy/FallingEnemy.cs" id="1_ee0yv"]
+[ext_resource type="Script" uid="uid://cf46wm87flp23" path="res://enemy/FallingEnemy.cs" id="1_ee0yv"]
 [ext_resource type="Texture2D" uid="uid://cdbhl3l1yfktg" path="res://contents/image/enemy/icicle.png" id="2_x1pv0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g04id"]

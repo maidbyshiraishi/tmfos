@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="4_pbbwe"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_1t5vm"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="6_v166r"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="7_i6ik5"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="7_i6ik5"]
 [ext_resource type="PackedScene" uid="uid://c48l268v1hmlo" path="res://item/treasure_box.tscn" id="7_lup55"]
 [ext_resource type="PackedScene" uid="uid://ba1ipn4gbqrse" path="res://others/moving_platform.tscn" id="10_8m4xj"]
-[ext_resource type="Script" path="res://others/Path.cs" id="11_qpwfv"]
+[ext_resource type="Script" uid="uid://bp7o1f4om8pah" path="res://others/Path.cs" id="11_qpwfv"]
 
 [sub_resource type="Curve2D" id="Curve2D_dxmp7"]
 _data = {

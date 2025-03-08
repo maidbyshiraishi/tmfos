@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://8636t7qupfox" path="res://trigger/search_point_trigger.tscn" id="10_6jhpr"]
 [ext_resource type="PackedScene" uid="uid://bxh4bg4eirq7n" path="res://item/item_panel_oneup.tscn" id="10_g3su4"]
 [ext_resource type="PackedScene" uid="uid://nqrx7dj7drb4" path="res://item/item_panel_shoes.tscn" id="12_as1ti"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="13_d7thu"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="13_d7thu"]
 [ext_resource type="PackedScene" uid="uid://6fi87qq65ewm" path="res://trigger/talk_nekomimi_maid.tscn" id="15_sn7y8"]
 
 [node name="Stage" instance=ExtResource("1_axhrv")]

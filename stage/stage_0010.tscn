@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ci7ah8lulrk1q" path="res://item/item_panel_weapon.tscn" id="15_nhcgt"]
 [ext_resource type="PackedScene" uid="uid://bxh4bg4eirq7n" path="res://item/item_panel_oneup.tscn" id="16_xj7y7"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="17_i2sf4"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="18_dxx8l"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="18_dxx8l"]
 [ext_resource type="PackedScene" uid="uid://cs5mc0lekfh58" path="res://enemy/three_meter_enemy.tscn" id="19_nhmyt"]
 [ext_resource type="PackedScene" uid="uid://cik3d77vxoy8w" path="res://enemy/unmo_enemy.tscn" id="20_2teoc"]
 [ext_resource type="PackedScene" uid="uid://bpnpsk7t6uv77" path="res://enemy/enemy_spawner.tscn" id="21_vjkoi"]

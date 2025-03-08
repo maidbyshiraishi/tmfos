@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://du45ne6v10als"]
 
 [ext_resource type="PackedScene" uid="uid://cmgjdqegyd5vc" path="res://theater/theater_root.tscn" id="1_bywp0"]
-[ext_resource type="Script" path="res://theater/ScrollTheater.cs" id="2_10en7"]
+[ext_resource type="Script" uid="uid://ccvrcmcvgcbiv" path="res://theater/ScrollTheater.cs" id="2_10en7"]
 
 [sub_resource type="Curve2D" id="Curve2D_c18ss"]
 _data = {

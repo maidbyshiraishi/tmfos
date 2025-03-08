@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="6_y7vl1"]
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_ypllr"]
 [ext_resource type="PackedScene" uid="uid://b4bdx5h7oqq66" path="res://item/item_panel_swim.tscn" id="7_3m8i4"]
-[ext_resource type="Script" path="res://player/Camera.cs" id="7_ub1mu"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="7_ub1mu"]
 
 [node name="Stage" instance=ExtResource("1_axhrv")]
 BgmStream = ExtResource("2_22mxi")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvcg4jkd64dvn"]
 
-[ext_resource type="Script" path="res://enemy/TmfosEnemy.cs" id="1_3gci2"]
+[ext_resource type="Script" uid="uid://bmuioc4iuqk77" path="res://enemy/TmfosEnemy.cs" id="1_3gci2"]
 [ext_resource type="SpriteFrames" uid="uid://bxjyjxeb8flkm" path="res://contents/animation/theater/talk_tmfos_aera.tres" id="1_hxh40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq0w7"]

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_u3e57"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_6q11o"]
 [ext_resource type="Texture2D" uid="uid://dtlbqtufjbmht" path="res://contents/image/theater/talk_maid_faucet.png" id="3_1lr65"]
-[ext_resource type="Script" path="res://gui/CommandButton.cs" id="4_cxxfn"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="4_cxxfn"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_16oy1"]
 [ext_resource type="PackedScene" uid="uid://c21hot266v86s" path="res://command/go_next_page_command.tscn" id="6_kctu2"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="7_qijlq"]

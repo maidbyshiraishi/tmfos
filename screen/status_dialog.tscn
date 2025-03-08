@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://vcdflqtjndgb"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_3g4yl"]
-[ext_resource type="Script" path="res://screen/StatusDialog.cs" id="2_lloag"]
+[ext_resource type="Script" uid="uid://dunefiu8tamhm" path="res://screen/StatusDialog.cs" id="2_lloag"]
 [ext_resource type="SpriteFrames" uid="uid://cgbu62mkp8lr7" path="res://contents/animation/item/item_shoes.tres" id="3_daqtq"]
 [ext_resource type="SpriteFrames" uid="uid://ciotjlw5k8aa8" path="res://contents/animation/item/item_swim.tres" id="4_du2no"]
 [ext_resource type="SpriteFrames" uid="uid://j46rxr8ayrwf" path="res://contents/animation/item/item_wall_jump.tres" id="5_vfqsd"]
@@ -9,7 +9,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bkf16286rfo6f" path="res://contents/animation/item/item_lamp.tres" id="7_ygkv4"]
 [ext_resource type="SpriteFrames" uid="uid://cghj5d5o7go75" path="res://contents/animation/item/item_search.tres" id="8_ej1mj"]
 [ext_resource type="SpriteFrames" uid="uid://dbrayaj5m04td" path="res://contents/animation/item/item_boss1.tres" id="9_dmuvt"]
-[ext_resource type="Script" path="res://gui/CommandButton.cs" id="9_nfjam"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="9_nfjam"]
 [ext_resource type="SpriteFrames" uid="uid://384kdk0v261q" path="res://contents/animation/item/item_armor.tres" id="9_qutn6"]
 [ext_resource type="Texture2D" uid="uid://c1a3fgbx1a0uv" path="res://contents/image/item/item_closed.png" id="10_51m28"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="10_bbngo"]

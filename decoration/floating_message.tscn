@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbgpbiprludnm"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_twul8"]
-[ext_resource type="Script" path="res://decoration/FloatingMessage.cs" id="2_ldr4u"]
+[ext_resource type="Script" uid="uid://vaivyvkpwthx" path="res://decoration/FloatingMessage.cs" id="2_ldr4u"]
 [ext_resource type="Animation" uid="uid://cmsfdis0lfh2y" path="res://contents/animation/decoration/floating_message.res" id="3_aq7pr"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ipbui"]
 _data = {
-"floating_message": ExtResource("3_aq7pr")
+&"floating_message": ExtResource("3_aq7pr")
 }
 
 [node name="FloatingMessage" type="Marker2D"]
