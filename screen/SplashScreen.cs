@@ -27,6 +27,6 @@ public partial class SplashScreen : DialogRoot
     /// </summary>
     public void GoNextScreen()
     {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenScreen("res://screen/title_screen.tscn", ScreenFader.Fadeout1, ScreenFader.Fadein1);
+        GetNode<DialogLayer>("/root/DialogLayer").OpenScreen("res://screen/title_screen.tscn", "fadeout_1", "fadein_1");
     }
 }

@@ -63,10 +63,12 @@ public partial class TmfosEnemy : PathFollowEnemy
     public override void Damaged()
     {
         PlaySprite("laser");
-        PackedScene decoration = Lib.GetPackedScene("res://decoration/excitation.tscn");
-        Node decorationNode = decoration.Instantiate();
-        _ = EmitSignal(Mob.SignalName.NodeSpawned, decorationNode, this, GlobalPosition, Vector2.Zero, 0f);
-        _ = decorationNode.Connect(Node.SignalName.TreeExited, new Callable(this, MethodName.Laser));
+
+        if (Lib.GetPackedScene<PackedScene>("res://decoration/excitation.tscn") is PackedScene pack && pack.Instantiate() is Node decoration)
+        {
+            _ = EmitSignal(Mob.SignalName.NodeSpawned, decoration, this, GlobalPosition, Vector2.Zero, 0f);
+            _ = decoration.Connect(Node.SignalName.TreeExited, new Callable(this, MethodName.Laser));
+        }
 
         base.Damaged();
         ReadyForWarp();
@@ -108,10 +110,12 @@ public partial class TmfosEnemy : PathFollowEnemy
 
     private void Laser()
     {
-        using PackedScene laser = Lib.GetPackedScene("res://enemy/enemy_laser2.tscn");
         Vector2 shotDirection = m_player.GlobalPosition - GlobalPosition;
-        Shot shotNode = (Shot)laser.Instantiate();
-        shotNode.Penetration = true;
-        _ = EmitSignal(Mob.SignalName.NodeSpawned, shotNode, this, GlobalPosition, shotDirection, 0f);
+
+        if (Lib.GetPackedScene<PackedScene>("res://enemy/enemy_laser2.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
+        {
+            shot.Penetration = true;
+            _ = EmitSignal(Mob.SignalName.NodeSpawned, shot, this, GlobalPosition, shotDirection, 0f);
+        }
     }
 }

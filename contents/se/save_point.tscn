@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnqitdk75a5m2"]
-
-[ext_resource type="AudioStream" uid="uid://d31ucbeodrcc1" path="res://contents/se/save_point.ogg" id="1_44edj"]
-
-[node name="save_point" type="AudioStreamPlayer"]
-stream = ExtResource("1_44edj")
-bus = &"SE"

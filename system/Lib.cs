@@ -33,11 +33,16 @@ public static partial class Lib
         return text.TrimEnd('\n');
     }
 
-    public static PackedScene GetPackedScene(string path)
+    public static T GetPackedScene<T>(string path) where T : class
     {
-        if (ResourceLoader.Exists(path))
+        if (string.IsNullOrWhiteSpace(path))
         {
-            PackedScene pack = GD.Load<PackedScene>(path);
+            GD.PrintErr("pathがnullまたはホワイトスペースです。リソースファイルを読み込めません。");
+            return null;
+        }
+
+        if (ResourceLoader.Load(path) is T pack)
+        {
             return pack;
         }
 
@@ -47,11 +52,12 @@ public static partial class Lib
 
     public static void ShowFloatingMessage(Node node, string text, Color color)
     {
-        PackedScene scene = GetPackedScene("res://decoration/floating_message.tscn");
-        FloatingMessage fmsg = scene.Instantiate() as FloatingMessage;
-        fmsg.Text = text;
-        fmsg.Color = color;
-        node.AddChild(fmsg);
+        if (GetPackedScene<PackedScene>("res://decoration/floating_message.tscn") is PackedScene pack && pack.Instantiate() is FloatingMessage fmsg)
+        {
+            fmsg.Text = text;
+            fmsg.Color = color;
+            node.AddChild(fmsg);
+        }
     }
 
     public static DirectionType GetUDLRDirection(Vector2 v1, Vector2 v2)

@@ -1,4 +1,5 @@
 using Godot;
+using tmfos.decoration;
 using tmfos.mob;
 using tmfos.player;
 using tmfos.stage;
@@ -69,11 +70,9 @@ public partial class Enemy : DurableMob, ISpawnedNode
         SetSkipAttack();
         player.AddDurability(-Attack - m_attackCorrection);
 
-        if (effect is not null)
+        if (Lib.GetPackedScene<PackedScene>(effect) is PackedScene pack && pack.Instantiate() is Decoration decoration)
         {
-            PackedScene decoration = Lib.GetPackedScene(effect);
-            Node decorationNode = decoration.Instantiate();
-            _ = EmitSignal(Mob.SignalName.NodeSpawned, decorationNode, this, Position, Vector2.Zero, 0f);
+            _ = EmitSignal(Mob.SignalName.NodeSpawned, decoration, this, Position, Vector2.Zero, 0f);
         }
 
         return true;

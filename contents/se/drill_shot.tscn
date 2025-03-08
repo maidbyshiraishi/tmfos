@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://tl76lfk1sfik"]
-
-[ext_resource type="AudioStream" uid="uid://dgp5483q5rkhf" path="res://contents/se/drill_shot.ogg" id="1_4cg1a"]
-
-[node name="drill_shot" type="AudioStreamPlayer"]
-stream = ExtResource("1_4cg1a")
-max_polyphony = 3
-bus = &"SE"

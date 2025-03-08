@@ -7,18 +7,29 @@ namespace tmfos.system;
 /// </summary>
 public partial class ScreenFader : CanvasLayer
 {
-    public const string None = null;
-    public static readonly string Fadein1 = "screen_fadein1";
-    public static readonly string Fadeout1 = "screen_fadeout1";
-    public static readonly string Fadein2 = "screen_fadein2";
-    public static readonly string Fadeout2 = "screen_fadeout2";
-    public static readonly string Fadein3 = "screen_fadein3";
-    public static readonly string Fadeout3 = "screen_fadeout3";
+    [Signal]
+    public delegate void ScreenFadeFinishedEventHandler();
 
-    public AnimatedSprite2D Fader { get; private set; }
-
-    public override void _Ready()
+    public void ScreenFade(string effectName)
     {
-        Fader = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        if (GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D") is AnimatedSprite2D fader && !string.IsNullOrWhiteSpace(effectName) && fader.SpriteFrames.HasAnimation(effectName))
+        {
+            fader.Play(effectName);
+            return;
+        }
+
+        WaitProcessFrame();
+    }
+
+    private async void WaitProcessFrame()
+    {
+        _ = await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        _ = await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        AnimationFinished();
+    }
+
+    public void AnimationFinished()
+    {
+        _ = EmitSignal(SignalName.ScreenFadeFinished);
     }
 }

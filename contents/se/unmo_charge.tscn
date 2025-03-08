@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dapd7e8pkm648"]
-
-[ext_resource type="AudioStream" uid="uid://iaxspm402kqe" path="res://contents/se/unmo_charge.ogg" id="1_1e51g"]
-
-[node name="unmo_charge" type="AudioStreamPlayer"]
-stream = ExtResource("1_1e51g")
-max_polyphony = 3
-bus = &"SE"

@@ -196,7 +196,7 @@ public partial class StageRoot : DialogRoot, IStateful
         if (0 < _playerData.Remain)
         {
             _playerData.Life = PlayerData.InitialLife;
-            GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.Restart, GameData.DefaultSlotNo, ScreenFader.Fadeout1, ScreenFader.Fadein1);
+            GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.Restart, GameData.DefaultSlotNo, "fadeout_1", "fadein_1");
         }
         else
         {

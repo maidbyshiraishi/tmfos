@@ -120,15 +120,11 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
 
         RandomNumberGenerator random = new();
         string resource = string.Format(EnemyResourceList[EnemyName.ToString()], random.RandiRange(1, 8));
-        PackedScene enemy = Lib.GetPackedScene(resource);
 
-        if (enemy is null)
+        if (Lib.GetPackedScene<PackedScene>(resource) is PackedScene pack && pack.Instantiate() is Node enemy)
         {
-            return;
+            _ = EmitSignal(SignalName.NodeSpawned, enemy, this, GlobalPosition + _marker.Position, Vector2.Zero, EnemyLifeTime);
         }
-
-        Node enemyNode = enemy.Instantiate();
-        _ = EmitSignal(SignalName.NodeSpawned, enemyNode, this, GlobalPosition + _marker.Position, Vector2.Zero, EnemyLifeTime);
     }
 
     public void SetSpawned()

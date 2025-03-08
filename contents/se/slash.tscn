@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://e14mr1rtdkwa"]
-
-[ext_resource type="AudioStream" uid="uid://cfsg3wk0mksq5" path="res://contents/se/slash.ogg" id="1_16i8a"]
-
-[node name="slash" type="AudioStreamPlayer"]
-stream = ExtResource("1_16i8a")
-max_polyphony = 3
-bus = &"SE"

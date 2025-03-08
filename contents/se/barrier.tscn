@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://7n7fms67b3gc"]
-
-[ext_resource type="AudioStream" uid="uid://ylmkmncdx6ve" path="res://contents/se/barrier.ogg" id="1_7thc6"]
-
-[node name="barrier" type="AudioStreamPlayer"]
-stream = ExtResource("1_7thc6")
-bus = &"SE"

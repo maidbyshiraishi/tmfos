@@ -25,13 +25,13 @@ public partial class ChangeStageCommand : CommandNode
     /// フェイドアウトエフェクト
     /// </summary>
     [Export]
-    public string Fadeout { get; set; } = ScreenFader.Fadeout1;
+    public string Fadeout { get; set; } = "fadeout_1";
 
     /// <summary>
     /// フェイドインエフェクト
     /// </summary>
     [Export]
-    public string Fadein { get; set; } = ScreenFader.Fadein1;
+    public string Fadein { get; set; } = "fadein_1";
 
     public override void DoCommand(Node node, bool flag)
     {

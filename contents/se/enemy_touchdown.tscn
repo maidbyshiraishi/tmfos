@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq5excyew4n5"]
-
-[ext_resource type="AudioStream" uid="uid://b6ejof25sgvao" path="res://contents/se/enemy_touchdown.ogg" id="1_b3fbd"]
-
-[node name="enemy_touchdown" type="AudioStreamPlayer"]
-stream = ExtResource("1_b3fbd")
-max_polyphony = 3
-bus = &"SE"

@@ -8,29 +8,37 @@ namespace tmfos.system;
 /// </summary>
 public partial class SePlayer : Node
 {
-    internal void Play(string name)
+    [Export]
+    public Dictionary<string, int> MaxPolyphony { get; set; } = [];
+
+    public void Play(string name)
     {
         if (string.IsNullOrWhiteSpace(name))
         {
             return;
         }
 
-        AudioStreamPlayer value = GetNodeOrNull<AudioStreamPlayer>(name);
-
-        if (value is null)
+        if (GetNodeOrNull<AudioStreamPlayer>(name) is AudioStreamPlayer se && IsInstanceValid(se))
         {
-            Node node = Lib.GetPackedScene($"res://contents/se/{name}.tscn").Instantiate();
+            se.Play();
+            return;
+        }
 
-            if (node is not null and AudioStreamPlayer aplayer)
-            {
-                AddChild(node);
-                aplayer.Play();
-            }
-        }
-        else
+        if (Lib.GetPackedScene<AudioStream>($"res://contents/se/{name}.ogg") is not AudioStream audio)
         {
-            value.Play();
+            return;
         }
+
+        AudioStreamPlayer audioStreamPlayer = new()
+        {
+            Name = name,
+            Bus = "SE",
+            MaxPolyphony = MaxPolyphony.TryGetValue(name, out int value) ? value : 1,
+            Stream = audio
+        };
+
+        AddChild(audioStreamPlayer);
+        audioStreamPlayer.Play();
     }
 
     public void ClearAllAudioStreamPlayer()
@@ -41,7 +49,8 @@ public partial class SePlayer : Node
         {
             if (node is AudioStreamPlayer aplayer && !aplayer.Playing)
             {
-                _ = aplayer.CallDeferred(Node.MethodName.QueueFree);
+                aplayer.Name = "remove";
+                aplayer.QueueFree();
             }
         }
     }

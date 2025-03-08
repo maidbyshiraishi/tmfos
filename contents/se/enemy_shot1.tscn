@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dku60kwrsr55s"]
-
-[ext_resource type="AudioStream" uid="uid://c3lao3ayfsm50" path="res://contents/se/enemy_shot1.ogg" id="1_8gu25"]
-
-[node name="enemy_shot1" type="AudioStreamPlayer"]
-stream = ExtResource("1_8gu25")
-max_polyphony = 3
-bus = &"SE"

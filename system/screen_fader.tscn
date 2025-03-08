@@ -12,4 +12,6 @@ script = ExtResource("1_oumqm")
 position = Vector2(320, 240)
 scale = Vector2(20, 20)
 sprite_frames = ExtResource("2_o6su0")
-animation = &"screen_fadeout3"
+animation = &"none"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="AnimationFinished"]

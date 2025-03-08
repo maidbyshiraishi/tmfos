@@ -176,13 +176,14 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
         }
 
         SetSkipAttack();
-        using PackedScene shot = Lib.GetPackedScene("res://enemy/enemy_shot1.tscn");
 
-        for (float i = 0f; i < 360f; i += 60f)
+        if (Lib.GetPackedScene<PackedScene>("res://enemy/enemy_shot1.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
         {
-            Vector2 shotDirection = Vector2.Right.Rotated(Mathf.DegToRad(i));
-            Shot shotNode = (Shot)shot.Instantiate();
-            _ = EmitSignal(Mob.SignalName.NodeSpawned, shotNode, this, GlobalPosition, shotDirection, 0f);
+            for (float i = 0f; i < 360f; i += 60f)
+            {
+                Vector2 shotDirection = Vector2.Right.Rotated(Mathf.DegToRad(i));
+                _ = EmitSignal(Mob.SignalName.NodeSpawned, shot, this, GlobalPosition, shotDirection, 0f);
+            }
         }
     }
 }

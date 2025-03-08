@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3s8t80l5n522"]
-
-[ext_resource type="AudioStream" uid="uid://btdw5t1os1lml" path="res://contents/se/rocket_maid.ogg" id="1_alqqx"]
-
-[node name="rocket_maid" type="AudioStreamPlayer"]
-stream = ExtResource("1_alqqx")
-max_polyphony = 2
-bus = &"SE"

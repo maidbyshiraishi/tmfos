@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw6t2hho0d06u"]
-
-[ext_resource type="AudioStream" uid="uid://b80sanfv6v112" path="res://contents/se/player_recovered.ogg" id="1_hfovw"]
-
-[node name="player_recovered" type="AudioStreamPlayer"]
-stream = ExtResource("1_hfovw")
-bus = &"SE"

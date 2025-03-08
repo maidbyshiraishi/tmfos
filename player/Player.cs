@@ -477,11 +477,13 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     {
         SetSkipAttack();
         Vector2 shotDirection = Direction is DirectionType.Left ? Vector2.Left : Vector2.Right;
-        PackedScene shot = Lib.GetPackedScene("res://player/player_shot1.tscn");
-        Shot shotNode = (Shot)shot.Instantiate();
-        shotNode.Penetration = _itemData.Penetration;
-        shotNode.Weapon = _itemData.Weapon;
-        _ = EmitSignal(Mob.SignalName.NodeSpawned, shotNode, this, GlobalPosition + offset.Position, shotDirection, 0f);
+
+        if (Lib.GetPackedScene<PackedScene>("res://player/player_shot1.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
+        {
+            shot.Penetration = _itemData.Penetration;
+            shot.Weapon = _itemData.Weapon;
+            _ = EmitSignal(Mob.SignalName.NodeSpawned, shot, this, GlobalPosition + offset.Position, shotDirection, 0f);
+        }
     }
 
     public override void Burialed(Node2D body)

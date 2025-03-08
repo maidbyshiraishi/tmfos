@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcmpkq4v1xfvs"]
-
-[ext_resource type="AudioStream" uid="uid://cqh3xk4ildjtc" path="res://contents/se/unmo_teleport.ogg" id="1_k8dt7"]
-
-[node name="unmo_teleport" type="AudioStreamPlayer"]
-stream = ExtResource("1_k8dt7")
-max_polyphony = 3
-bus = &"SE"

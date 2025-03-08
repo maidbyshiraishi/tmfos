@@ -1,7 +1,6 @@
 using Godot;
 using tmfos.command;
 using tmfos.mob;
-using tmfos.system;
 using tmfos.trigger;
 
 namespace tmfos.door;
@@ -30,10 +29,10 @@ public partial class Gateway : TriggerArea2D
     public int DoorNo { get; set; }
 
     [Export]
-    public string Fadeout { get; set; } = ScreenFader.Fadeout1;
+    public string Fadeout { get; set; } = "fadeout_1";
 
     [Export]
-    public string Fadein { get; set; } = ScreenFader.Fadein1;
+    public string Fadein { get; set; } = "fadein_1";
 
     /// <summary>
     /// 出現時プレーヤー方向

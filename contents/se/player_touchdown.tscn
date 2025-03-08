@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgys73rl8livv"]
-
-[ext_resource type="AudioStream" uid="uid://blcqbtv0pyd7s" path="res://contents/se/player_touchdown.ogg" id="1_qpw2p"]
-
-[node name="player_touchdown" type="AudioStreamPlayer"]
-stream = ExtResource("1_qpw2p")
-bus = &"SE"

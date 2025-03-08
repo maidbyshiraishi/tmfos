@@ -69,7 +69,11 @@ public partial class DialogLayer : CanvasLayer
 
     private void DeferredOpenDialog(string path)
     {
-        Node node = Lib.GetPackedScene(path).Instantiate();
+        if (Lib.GetPackedScene<PackedScene>(path) is not PackedScene pack || pack.Instantiate() is not Node node)
+        {
+            return;
+        }
+
         DialogRoot screen = GetCurrentScreen();
 
         if (screen is null)
@@ -193,24 +197,18 @@ public partial class DialogLayer : CanvasLayer
 
     private async void DeferredOpenScreen(string path, string fadeout, string fadein)
     {
-        AnimatedSprite2D fader = GetNode<ScreenFader>("/root/ScreenFader").Fader;
-
-        if (!string.IsNullOrWhiteSpace(fadeout) && fader.SpriteFrames is not null && fader.SpriteFrames.HasAnimation(fadeout))
-        {
-            fader.Play(fadeout);
-            _ = await ToSignal(fader, AnimatedSprite2D.SignalName.AnimationFinished);
-        }
-
+        ScreenFader fader = GetNode<ScreenFader>("/root/ScreenFader");
+        fader.ScreenFade(fadeout);
+        _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
         CloseAllDialog();
-        PackedScene pack = Lib.GetPackedScene(path);
-        _ = GetTree().ChangeSceneToPacked(pack);
 
-        if (!string.IsNullOrWhiteSpace(fadein) && fader.SpriteFrames is not null && fader.SpriteFrames.HasAnimation(fadein))
+        if (Lib.GetPackedScene<PackedScene>(path) is PackedScene pack)
         {
-            fader.Play(fadein);
-            _ = await ToSignal(fader, AnimatedSprite2D.SignalName.AnimationFinished);
+            _ = GetTree().ChangeSceneToPacked(pack);
         }
 
+        fader.ScreenFade(fadein);
+        _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
         GetCurrentScreen().Active();
         GetTree().Paused = false;
     }

@@ -106,11 +106,13 @@ public partial class EroMaidEnemy : Enemy
 
     private void Laser()
     {
-        using PackedScene laser = Lib.GetPackedScene("res://enemy/enemy_laser1.tscn");
         Vector2 shotDirection = m_player.GlobalPosition - GlobalPosition;
-        Shot shotNode = (Shot)laser.Instantiate();
-        shotNode.Penetration = true;
-        _ = EmitSignal(Mob.SignalName.NodeSpawned, shotNode, this, GlobalPosition, shotDirection, 0f);
+
+        if (Lib.GetPackedScene<PackedScene>("res://enemy/enemy_laser1.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
+        {
+            shot.Penetration = true;
+            _ = EmitSignal(Mob.SignalName.NodeSpawned, shot, this, GlobalPosition, shotDirection, 0f);
+        }
     }
 
     private void Shot()
@@ -121,14 +123,16 @@ public partial class EroMaidEnemy : Enemy
         }
 
         SetSkipAttack();
-        using PackedScene shot = Lib.GetPackedScene("res://enemy/enemy_shot2.tscn");
 
-        for (float i = 0f; i < 360f; i += 30f)
+        if (Lib.GetPackedScene<PackedScene>("res://enemy/enemy_shot2.tscn") is PackedScene pack && pack.Instantiate() is Shot)
         {
-            Vector2 shotDirection = Vector2.Right.Rotated(Mathf.DegToRad(i));
-            Shot shotNode = (Shot)shot.Instantiate();
-            shotNode.Penetration = true;
-            _ = EmitSignal(Mob.SignalName.NodeSpawned, shotNode, this, GlobalPosition, shotDirection, 0f);
+            for (float i = 0f; i < 360f; i += 30f)
+            {
+                Vector2 shotDirection = Vector2.Right.Rotated(Mathf.DegToRad(i));
+                Shot shot = pack.Instantiate() as Shot;
+                shot.Penetration = true;
+                _ = EmitSignal(Mob.SignalName.NodeSpawned, shot, this, GlobalPosition, shotDirection, 0f);
+            }
         }
     }
 
@@ -144,10 +148,12 @@ public partial class EroMaidEnemy : Enemy
         if (_shot)
         {
             PlaySprite("laser");
-            PackedScene decoration = Lib.GetPackedScene("res://decoration/excitation.tscn");
-            Node decorationNode = decoration.Instantiate();
-            _ = EmitSignal(Mob.SignalName.NodeSpawned, decorationNode, this, _marker.GlobalPosition, Vector2.Zero, 0f);
-            _ = decorationNode.Connect(Node.SignalName.TreeExited, new Callable(this, MethodName.Laser));
+
+            if (Lib.GetPackedScene<PackedScene>("res://decoration/excitation.tscn") is PackedScene pack && pack.Instantiate() is Node decoration)
+            {
+                _ = EmitSignal(Mob.SignalName.NodeSpawned, decoration, this, _marker.GlobalPosition, Vector2.Zero, 0f);
+                _ = decoration.Connect(Node.SignalName.TreeExited, new Callable(this, MethodName.Laser));
+            }
         }
         else
         {

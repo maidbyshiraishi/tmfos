@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bef5vuyg2f5u7"]
-
-[ext_resource type="AudioStream" uid="uid://bqo0bi06rvkch" path="res://contents/se/crack.ogg" id="1_1pb07"]
-
-[node name="crack" type="AudioStreamPlayer"]
-stream = ExtResource("1_1pb07")
-max_polyphony = 2
-bus = &"SE"
