@@ -5,3 +5,22 @@
 [node name="SePlayer" type="Node"]
 process_mode = 3
 script = ExtResource("1_vw2l8")
+MaxPolyphony = {
+"big_drill_shot": 3,
+"crack": 2,
+"destroy_barrier": 3,
+"drill_shot": 3,
+"enemy_damage": 3,
+"enemy_dead": 3,
+"enemy_jump": 3,
+"enemy_shot1": 3,
+"enemy_touchdown": 3,
+"explosion": 3,
+"menu_move": 3,
+"player_shot1": 3,
+"rocket_maid": 2,
+"screenshot": 2,
+"slash": 3,
+"unmo_charge": 3,
+"unmo_teleport": 3
+}
