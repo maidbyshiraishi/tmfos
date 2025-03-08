@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_25k3g"]
 [ext_resource type="AudioStream" uid="uid://cxifjqga3hnbc" path="res://contents/bgm/bgm1.ogg" id="2_px0uj"]
 [ext_resource type="Texture2D" uid="uid://cpjlc5yqlgald" path="res://contents/image/background/mountain.png" id="3_n1wsl"]
-[ext_resource type="Shader" uid="uid://40uwbx4yp2mb" path="res://contents/shader/raster_scroll.gdshader" id="4_cty2j"]
+[ext_resource type="Shader" path="res://contents/shader/raster_scroll.gdshader" id="4_cty2j"]
 [ext_resource type="Texture2D" uid="uid://cuyf2x2dxvmci" path="res://contents/image/background/gray_gradation.png" id="5_wc8do"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="6_607je"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="7_casjg"]

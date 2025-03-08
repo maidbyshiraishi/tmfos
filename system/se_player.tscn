@@ -24,3 +24,9 @@ MaxPolyphony = {
 "unmo_charge": 3,
 "unmo_teleport": 3
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="ClearAllAudioStreamPlayer"]
