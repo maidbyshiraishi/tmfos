@@ -35,16 +35,6 @@ public partial class VeilLight : Node2D, IGameNode
     public override void _PhysicsProcess(double delta)
     {
         Vector2I step = (Vector2I)GlobalPosition;
-
-        if (_tileMapManager.GetTileData(TileMapManager.VeilLayerPath, step) is null)
-        {
-            RenderingServer.GlobalShaderParameterSet("TransparentEnabled", false);
-        }
-        else
-        {
-            Vector2 position = GetViewport().GetScreenTransform() * GetGlobalTransformWithCanvas() * Position;
-            RenderingServer.GlobalShaderParameterSet("TransparentEnabled", true);
-            RenderingServer.GlobalShaderParameterSet("TransparentCircleCenter", position);
-        }
+        _tileMapManager.VisibleTileMapLayer(TileMapManager.VeilLayerPath, _tileMapManager.GetTileData(TileMapManager.VeilLayerPath, step) is null);
     }
 }

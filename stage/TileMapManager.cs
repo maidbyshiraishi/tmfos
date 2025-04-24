@@ -124,4 +124,9 @@ public partial class TileMapManager : Node2D
         TileData tileData = layer.GetCellTileData(local);
         return tileData is null ? new Variant() : tileData.GetCustomData(name);
     }
+
+    public void VisibleTileMapLayer(string layerPath, bool visible)
+    {
+        _layers[layerPath].Visible = visible;
+    }
 }

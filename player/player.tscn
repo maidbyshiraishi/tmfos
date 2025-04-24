@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dx6rootboa8f4"]
+[gd_scene load_steps=15 format=3 uid="uid://dx6rootboa8f4"]
 
 [ext_resource type="Script" uid="uid://i2x7pu54mpg5" path="res://player/Player.cs" id="1_mswun"]
 [ext_resource type="SpriteFrames" uid="uid://hrh82mdg1jsf" path="res://contents/animation/player/player.tres" id="2_hei51"]
-[ext_resource type="AnimationLibrary" uid="uid://iatjjdmt7kj6" path="res://contents/animation/decoration/player_light.res" id="3_oq15j"]
 [ext_resource type="Texture2D" uid="uid://dlo2wegv2i24e" path="res://contents/image/decoration/light.png" id="3_xhs2b"]
 [ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="8_fc10d"]
 [ext_resource type="PackedScene" uid="uid://yt4jxbbnr7fq" path="res://player/veil_light.tscn" id="10_udeha"]
@@ -12,6 +11,40 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rivfx"]
 size = Vector2(20, 60)
+
+[sub_resource type="Animation" id="Animation_d4a7k"]
+resource_name = "light"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.9, 0.8, 0.7, 0.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2DLampItem:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.8, 0.8, 0.7, 0.9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rgyib"]
+_data = {
+&"light": SubResource("Animation_d4a7k")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_db8m6"]
 radius = 200.0
@@ -40,7 +73,7 @@ TouchdownSe = "player_touchdown"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = ExtResource("2_hei51")
-animation = &"walk_left"
+animation = &"swim_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rivfx")
@@ -52,20 +85,20 @@ rect = Rect2(-16, -32, 32, 64)
 
 [node name="PointLight2D" type="PointLight2D" parent="Light"]
 visible = false
-energy = 0.3
+energy = 0.9
 blend_mode = 2
 texture = ExtResource("3_xhs2b")
 
 [node name="PointLight2DLampItem" type="PointLight2D" parent="Light"]
 visible = false
-energy = 0.3
+energy = 0.8
 blend_mode = 2
 texture = ExtResource("3_xhs2b")
 texture_scale = 5.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Light"]
 libraries = {
-"": ExtResource("3_oq15j")
+&"": SubResource("AnimationLibrary_rgyib")
 }
 autoplay = "light"
 

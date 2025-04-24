@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bgrevkcxkpwc5"]
-
-[ext_resource type="Shader" path="res://contents/shader/transparent_hole.gdshader" id="1_vnemf"]
-
-[resource]
-shader = ExtResource("1_vnemf")
-shader_parameter/CircleRadius = 80.0
-shader_parameter/CircleBlur = 0.1
