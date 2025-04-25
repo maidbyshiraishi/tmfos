@@ -9,13 +9,20 @@ namespace tmfos.stage;
 /// </summary>
 public partial class TileMapManager : Node2D
 {
+    [Export]
+    public float ObservationHoleRadius { get; set; } = 80f;
+
+    [Export]
+    public int ObservationHoleVertexCount { get; set; } = 12;
+
     public static readonly string BackgroundLayerPath = "Background";
     public static readonly string GroundLayerPath = "Ground";
     public static readonly string ForegroundLayerPath = "Foreground";
-    public static readonly string VeilLayerPath = "Veil";
+    public static readonly string VeilLayerPath = "ObservationHole/Veil";
 
     private Dictionary<string, TileMapLayer> _layers = [];
     private bool _transparent = false;
+    private Polygon2D _observationHole;
 
     private Dictionary<int, Vector2I> _crackTiles = new() {
         {5, new Vector2I(1,5)},
@@ -31,6 +38,25 @@ public partial class TileMapManager : Node2D
         _layers.Add(GroundLayerPath, GetNode<TileMapLayer>(GroundLayerPath));
         _layers.Add(ForegroundLayerPath, GetNode<TileMapLayer>(ForegroundLayerPath));
         _layers.Add(VeilLayerPath, GetNode<TileMapLayer>(VeilLayerPath));
+        MakeObservationHole();
+    }
+
+    private void MakeObservationHole()
+    {
+        _observationHole = GetNode<Polygon2D>("ObservationHole");
+        Vector2[] list = new Vector2[ObservationHoleVertexCount];
+        Vector2 line = new(ObservationHoleRadius, 0f);
+        int length = list.Length;
+        float angle = Mathf.DegToRad(360f / length);
+        list[0] = line;
+
+        for (int i = 1; i < length; i++)
+        {
+            line = line.Rotated(angle);
+            list[i] = line;
+        }
+
+        _observationHole.Polygon = list;
     }
 
     /// <summary>
@@ -125,8 +151,9 @@ public partial class TileMapManager : Node2D
         return tileData is null ? new Variant() : tileData.GetCustomData(name);
     }
 
-    public void VisibleTileMapLayer(string layerPath, bool visible)
+    internal void OpenObservationHole(bool flag, Vector2 position)
     {
-        _layers[layerPath].Visible = visible;
+        // todo: 切り抜かないとき、はるか彼方の画面外を切り抜いているが、一時的に無効にできないのか？
+        _observationHole.Offset = flag ? position : new(-2000, -2000);
     }
 }

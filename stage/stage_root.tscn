@@ -60,8 +60,14 @@ tile_set = ExtResource("4_wd8vw")
 z_index = 1
 tile_set = ExtResource("4_wd8vw")
 
-[node name="Veil" type="TileMapLayer" parent="TileMap"]
+[node name="ObservationHole" type="Polygon2D" parent="TileMap"]
+clip_children = 1
 z_index = 2
+invert_enabled = true
+invert_border = 16384.0
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Veil" type="TileMapLayer" parent="TileMap/ObservationHole"]
 tile_set = ExtResource("4_wd8vw")
 
 [node name="Decoration1" type="Node2D" parent="."]
