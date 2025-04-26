@@ -30,7 +30,7 @@ public partial class GameData : Node
     public int LastSlotNo { get; private set; } = DefaultSlotNo;
 
     private static readonly string DataFilePath = "user://save{0:0000}.dat";
-    private static readonly byte[] Pass = [0x38, 0x2D, 0x2D, 0x7A, 0xFF, 0x69, 0x46, 0x4F - 51, 0x5F, 0x6A, 0x6C, 0x75, 0x79, 0x31, 0x2D, 0x77, 0x32, 0x38, 0x64, 0x54, 0x72, 0x49, 0x48 - 48, 0x42, 0x6E, 0x4D, 0x38, 0x33, 0x66, 0x33, 0xEA, 0x75];
+    private static readonly string Pass = "password";
     private static readonly string StageSection = "{0:D4}";
 
     private Image _thumbnail;
@@ -100,7 +100,7 @@ public partial class GameData : Node
 
         StartNewGame();
         string file = string.Format(DataFilePath, slotNo);
-        Error e = UseEncriptData ? _file.LoadEncrypted(file, Pass) : _file.Load(file);
+        Error e = UseEncriptData ? _file.LoadEncryptedPass(file, Pass) : _file.Load(file);
 
         if (e is not Error.Ok)
         {
@@ -172,7 +172,7 @@ public partial class GameData : Node
 
         _packData.RemoveIllegalKey(_file);
         string file = string.Format(DataFilePath, slotNo);
-        e = UseEncriptData ? _file.SaveEncrypted(file, Pass) : _file.Save(file);
+        e = UseEncriptData ? _file.LoadEncryptedPass(file, Pass) : _file.Save(file);
 
         if (e is not Error.Ok)
         {
@@ -227,7 +227,7 @@ public partial class GameData : Node
 
         if (FileAccess.FileExists(file))
         {
-            Error e = UseEncriptData ? data.LoadEncrypted(file, Pass) : data.Load(file);
+            Error e = UseEncriptData ? data.LoadEncryptedPass(file, Pass) : data.Load(file);
 
             if (e is not Error.Ok)
             {
