@@ -12,8 +12,8 @@ public partial class CommandButton : Button
 
     public override void _Ready()
     {
-        _ = Connect(BaseButton.SignalName.Pressed, new Callable(this, MethodName.Exec));
-        Lib.ConnectFocusSignal(this, new Callable(this, MethodName.ExecFocusEntered), new Callable(this, MethodName.ExecFocusExited));
+        _ = Connect(BaseButton.SignalName.Pressed, new(this, MethodName.Exec));
+        Lib.ConnectFocusSignal(this, new(this, MethodName.ExecFocusEntered), new(this, MethodName.ExecFocusExited));
     }
 
     public virtual void Exec()

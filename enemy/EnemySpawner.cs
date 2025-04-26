@@ -94,7 +94,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
     public void InitializeNode()
     {
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
-        _ = Connect(SignalName.NodeSpawned, new Callable(stageRoot, StageRoot.MethodName.SpawnNode));
+        _ = Connect(SignalName.NodeSpawned, new(stageRoot, StageRoot.MethodName.SpawnNode));
         _player = stageRoot.GetNode<Player>("%Player");
     }
 
@@ -139,6 +139,6 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
 
     public Callable GetSignalMethod()
     {
-        return new Callable(this, MethodName.ResetSpawned);
+        return new(this, MethodName.ResetSpawned);
     }
 }

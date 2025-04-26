@@ -27,7 +27,7 @@ public class FlagData : GameDataRoot
 
     public FlagData Copy()
     {
-        return new FlagData(_flag);
+        return new(_flag);
     }
 
     public void SetFlag(string key, int value)

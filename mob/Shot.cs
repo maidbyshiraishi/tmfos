@@ -60,7 +60,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
         AddToGroup(StageRoot.PhysicsProcessGroup);
         m_animatedSprite = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
         m_visibleOnScreenNotifier2D = GetNodeOrNull<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-        _ = m_visibleOnScreenNotifier2D.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new Callable(this, MethodName.PlaySpawnedSe));
+        _ = m_visibleOnScreenNotifier2D.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.PlaySpawnedSe));
         CalcDirection();
     }
 
@@ -75,7 +75,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
     public virtual async void RemoveNode()
     {
         SetPhysicsProcess(false);
-        GlobalPosition = new Vector2(-2000, -2000);
+        GlobalPosition = new(-2000f, -2000f);
 
         for (int i = 0; i < 5; i++)
         {

@@ -36,7 +36,7 @@ public partial class TentacleHead : Area2D, IGameNode
         if (_timer is not null && 0.05f <= Mathf.Abs(WaitTime))
         {
             _timer.WaitTime = WaitTime;
-            _ = _timer.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.SetTargetPlayer));
+            _ = _timer.Connect(Timer.SignalName.Timeout, new(this, MethodName.SetTargetPlayer));
         }
     }
 

@@ -25,7 +25,7 @@ public partial class Mob : CharacterBody2D, IGameNode
     public virtual void InitializeNode()
     {
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
-        _ = Connect(SignalName.NodeSpawned, new Callable(stageRoot, StageRoot.MethodName.SpawnNode));
+        _ = Connect(SignalName.NodeSpawned, new(stageRoot, StageRoot.MethodName.SpawnNode));
     }
 
     public virtual void FinalizeNode()
@@ -35,7 +35,7 @@ public partial class Mob : CharacterBody2D, IGameNode
     public virtual async void RemoveNode()
     {
         SetPhysicsProcess(false);
-        GlobalPosition = new Vector2(-2000, -2000);
+        GlobalPosition = new(-2000f, -2000f);
 
         for (int i = 0; i < 5; i++)
         {

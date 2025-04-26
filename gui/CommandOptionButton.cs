@@ -10,7 +10,7 @@ public partial class CommandOptionButton : OptionButton
 {
     public override void _Ready()
     {
-        Lib.ConnectFocusSignal(this, new Callable(this, MethodName.ExecFocusEntered), new Callable(this, MethodName.ExecFocusExited));
+        Lib.ConnectFocusSignal(this, new(this, MethodName.ExecFocusEntered), new(this, MethodName.ExecFocusExited));
     }
 
     public virtual void ExecFocusEntered()

@@ -20,6 +20,6 @@ public partial class Warp : Gateway
     internal void DisableWarp()
     {
         Disable = true;
-        _ = Connect(Area2D.SignalName.AreaExited, new Callable(this, MethodName.EnableWarp));
+        _ = Connect(Area2D.SignalName.AreaExited, new(this, MethodName.EnableWarp));
     }
 }

@@ -25,11 +25,11 @@ public partial class TileMapManager : Node2D
     private Polygon2D _observationHole;
 
     private Dictionary<int, Vector2I> _crackTiles = new() {
-        {5, new Vector2I(1,5)},
-        {4, new Vector2I(2,5)},
-        {3, new Vector2I(3,5)},
-        {2, new Vector2I(4,5)},
-        {1, new Vector2I(5,5)}
+        {5, new(1,5)},
+        {4, new(2,5)},
+        {3, new(3,5)},
+        {2, new(4,5)},
+        {1, new(5,5)}
     };
 
     public override void _Ready()
@@ -148,7 +148,7 @@ public partial class TileMapManager : Node2D
         TileMapLayer layer = _layers[layerPath];
         Vector2I local = layer.LocalToMap(coords);
         TileData tileData = layer.GetCellTileData(local);
-        return tileData is null ? new Variant() : tileData.GetCustomData(name);
+        return tileData is null ? new() : tileData.GetCustomData(name);
     }
 
     internal void OpenObservationHole(bool flag, Vector2 position)

@@ -15,8 +15,8 @@ public partial class EventFinder : Area2D
 
     public override void _Ready()
     {
-        _ = Connect(Area2D.SignalName.AreaEntered, new Callable(this, MethodName.Area2DEntered));
-        _ = Connect(Area2D.SignalName.AreaExited, new Callable(this, MethodName.Area2DExited));
+        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.Area2DEntered));
+        _ = Connect(Area2D.SignalName.AreaExited, new(this, MethodName.Area2DExited));
         AddToGroup(StageRoot.PhysicsProcessGroup);
 
         if (GetParent() is ActionMob amob)

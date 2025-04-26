@@ -66,8 +66,8 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     {
         base.InitializeNode();
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
-        _ = Connect(SignalName.Missed, new Callable(stageRoot, StageRoot.MethodName.Miss));
-        _ = Connect(SignalName.HudUpdated, new Callable(stageRoot, StageRoot.MethodName.UpdateHud));
+        _ = Connect(SignalName.Missed, new(stageRoot, StageRoot.MethodName.Miss));
+        _ = Connect(SignalName.HudUpdated, new(stageRoot, StageRoot.MethodName.UpdateHud));
         _tileMapManager = stageRoot.GetNode<TileMapManager>("TileMap");
         GameData gdata = GetNode<GameData>("/root/GameData");
         _itemData = gdata.GetItemData();

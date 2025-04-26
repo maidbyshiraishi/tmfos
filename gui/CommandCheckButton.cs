@@ -10,8 +10,8 @@ public partial class CommandCheckButton : CheckButton
 {
     public override void _Ready()
     {
-        _ = Connect(BaseButton.SignalName.Toggled, new Callable(this, MethodName.ExecToggled));
-        Lib.ConnectFocusSignal(this, new Callable(this, MethodName.ExecFocusEntered), new Callable(this, MethodName.ExecFocusExited));
+        _ = Connect(BaseButton.SignalName.Toggled, new(this, MethodName.ExecToggled));
+        Lib.ConnectFocusSignal(this, new(this, MethodName.ExecFocusEntered), new(this, MethodName.ExecFocusExited));
     }
 
     public virtual void ExecToggled(bool toggledOn)

@@ -32,8 +32,8 @@ public partial class ScrollTheater : DialogRoot
         _content = GetNode<Control>("Path2D/Socket/Contents");
         Vector2 screenSize = GetViewport().GetVisibleRect().Size;
         Vector2 scrollSize = _content.GetRect().Size;
-        _path.Curve.SetPointPosition(0, new Vector2(screenSize.X / 2f, screenSize.Y));
-        _path.Curve.SetPointPosition(1, new Vector2(screenSize.X / 2f, -scrollSize.Y));
+        _path.Curve.SetPointPosition(0, new(screenSize.X / 2f, screenSize.Y));
+        _path.Curve.SetPointPosition(1, new(screenSize.X / 2f, -scrollSize.Y));
         _scrollSpeed = 1f / ScrollTime;
         _running = true;
     }

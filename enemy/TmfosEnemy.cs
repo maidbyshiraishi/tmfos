@@ -41,7 +41,7 @@ public partial class TmfosEnemy : PathFollowEnemy
         m_attackCorrection = 0;
         _teleportPosition = GetTree().GetNodesInGroup(TeleportPositionGroupName);
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
-        _ = Connect(SignalName.NodeSpawned, new Callable(stageRoot, StageRoot.MethodName.SpawnNode));
+        _ = Connect(SignalName.NodeSpawned, new(stageRoot, StageRoot.MethodName.SpawnNode));
     }
 
     public override void _PhysicsProcess(double delta)
@@ -67,7 +67,7 @@ public partial class TmfosEnemy : PathFollowEnemy
         if (Lib.GetPackedScene<PackedScene>("res://decoration/excitation.tscn") is PackedScene pack && pack.Instantiate() is Node decoration)
         {
             _ = EmitSignal(Mob.SignalName.NodeSpawned, decoration, this, GlobalPosition, Vector2.Zero, 0f);
-            _ = decoration.Connect(Node.SignalName.TreeExited, new Callable(this, MethodName.Laser));
+            _ = decoration.Connect(Node.SignalName.TreeExited, new(this, MethodName.Laser));
         }
 
         base.Damaged();

@@ -59,7 +59,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
         _enemy = GetNode<Node2D>("Enemy");
         _exploreTimer = GetNode<Timer>("ExploreTimer");
         _exploreTimer.WaitTime = ExploreTime;
-        _ = _exploreTimer.Connect(Timer.SignalName.Timeout, new Callable(this, MethodName.ChangeExploreDirection));
+        _ = _exploreTimer.Connect(Timer.SignalName.Timeout, new(this, MethodName.ChangeExploreDirection));
 
         if (_enemy is ISpawnedNode ispawn)
         {
@@ -129,7 +129,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
     public virtual async void RemoveNode()
     {
         SetPhysicsProcess(false);
-        GlobalPosition = new Vector2(-2000, -2000);
+        GlobalPosition = new(-2000f, -2000f);
 
         for (int i = 0; i < 5; i++)
         {

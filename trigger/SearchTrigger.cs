@@ -67,7 +67,7 @@ public partial class SearchTrigger : TriggerArea2D, IStateful
                 VisibleOnScreenEnabler2D enabler = new()
                 {
                     EnableNodePath = node2d.GetPath(),
-                    Position = new Vector2(320f, 240f)
+                    Position = new(320f, 240f)
                 };
 
                 _enablerList.Add(node2d, enabler);

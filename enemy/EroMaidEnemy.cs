@@ -152,7 +152,7 @@ public partial class EroMaidEnemy : Enemy
             if (Lib.GetPackedScene<PackedScene>("res://decoration/excitation.tscn") is PackedScene pack && pack.Instantiate() is Node decoration)
             {
                 _ = EmitSignal(Mob.SignalName.NodeSpawned, decoration, this, _marker.GlobalPosition, Vector2.Zero, 0f);
-                _ = decoration.Connect(Node.SignalName.TreeExited, new Callable(this, MethodName.Laser));
+                _ = decoration.Connect(Node.SignalName.TreeExited, new(this, MethodName.Laser));
             }
         }
         else

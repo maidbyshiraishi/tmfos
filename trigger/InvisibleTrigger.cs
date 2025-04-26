@@ -10,8 +10,8 @@ public partial class InvisibleTrigger : VisibleOnScreenNotifier2D
 {
     public override void _Ready()
     {
-        _ = Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new Callable(this, MethodName.Exited));
-        _ = Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new Callable(this, MethodName.Entered));
+        _ = Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.Exited));
+        _ = Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, MethodName.Entered));
     }
 
     public void Entered()
