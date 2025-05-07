@@ -20,14 +20,15 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GameScreenOption="*res://system/game_screen_option.tscn"
+DialogLayer="*res://system/dialog_layer.tscn"
+GameArgument="*res://system/game_argument.tscn"
+ScreenFader="*res://system/screen_fader.tscn"
 GameOption="*res://system/game_option.tscn"
 GameKeyOption="*res://system/game_key_option.tscn"
-GameArgument="*res://system/game_argument.tscn"
 GameData="*res://system/game_data.tscn"
 MusicPlayer="*res://system/music_player.tscn"
 SePlayer="*res://system/se_player.tscn"
-DialogLayer="*res://system/dialog_layer.tscn"
-ScreenFader="*res://system/screen_fader.tscn"
 Screenshot="*res://system/screenshot.tscn"
 
 [debug]

@@ -5,8 +5,3 @@
 [node name="GameOption" type="Node"]
 process_mode = 3
 script = ExtResource("1_pou7w")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-
-[connection signal="timeout" from="Timer" to="." method="CorrectOnScreen"]

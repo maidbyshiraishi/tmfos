@@ -10,6 +10,6 @@ public partial class SaveScreenOptionsCommand : CommandNode
 {
     public override void DoCommand(Node node, bool flag)
     {
-        GetNode<GameOption>("/root/GameOption").SaveScreenOptions();
+        GetNode<GameScreenOption>("/root/GameScreenOption").SaveScreenOptions();
     }
 }
