@@ -202,6 +202,7 @@ offset_left = 88.0
 offset_top = 280.0
 offset_right = 312.0
 offset_bottom = 312.0
+focus_neighbor_right = NodePath("../Data8")
 text = "メイドを超えろ"
 script = ExtResource("3_jq3u4")
 
@@ -223,6 +224,7 @@ offset_left = 336.0
 offset_top = 240.0
 offset_right = 552.0
 offset_bottom = 272.0
+focus_neighbor_left = NodePath("../Data9")
 text = "地球のメイドが急ぐ!!"
 script = ExtResource("3_jq3u4")
 
@@ -244,6 +246,7 @@ offset_left = 336.0
 offset_top = 280.0
 offset_right = 552.0
 offset_bottom = 312.0
+focus_neighbor_left = NodePath("../Data6")
 text = "お宝と秘密の歌"
 script = ExtResource("3_jq3u4")
 
@@ -265,6 +268,7 @@ offset_left = 88.0
 offset_top = 240.0
 offset_right = 312.0
 offset_bottom = 272.0
+focus_neighbor_right = NodePath("../Data7")
 text = "地球のメイドの一休み"
 script = ExtResource("3_jq3u4")
 
