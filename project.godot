@@ -12,9 +12,8 @@ config_version=5
 
 config/name="tmfos"
 config/description="地球のメイドたちは宇宙から来たメイドに戦いを挑んだが、一人残らず敗北した。地球は宇宙から来たメイドに支配された。15年の月日が流れ、密かに育てられた地球最後のメイドが宇宙から来たメイドに戦いを挑んだ・・・。"
-config/version="1.2.12"
+config/version="1.2.13"
 run/main_scene="res://screen/splash_screen.tscn"
-config/project_settings_override="user://override.cfg"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -39,7 +38,7 @@ file_logging/enable_file_logging.pc=false
 
 window/size/viewport_width=640
 window/size/viewport_height=480
-window/size/initial_position_type=3
+window/size/initial_position_type=4
 window/stretch/mode="viewport"
 
 [dotnet]
