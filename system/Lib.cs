@@ -151,10 +151,10 @@ public static partial class Lib
         control.SetBlockSignals(false);
     }
 
-    public static void ConnectFocusSignal(Control control, Callable entered, Callable exited)
+    public static void ConnectFocusSignal(Control control, Callable entered, Callable exited, Callable moudeEntered)
     {
         _ = control.Connect(Control.SignalName.FocusEntered, entered);
-        _ = control.Connect(Control.SignalName.MouseEntered, entered);
+        _ = control.Connect(Control.SignalName.MouseEntered, moudeEntered);
         _ = control.Connect(Control.SignalName.FocusExited, exited);
         _ = control.Connect(Control.SignalName.MouseExited, exited);
     }
