@@ -19,7 +19,8 @@ public partial class EroMaidEnemy : Enemy
     public override void _Ready()
     {
         base._Ready();
-        // todo: グループのほうがいいかも？
+        // シーン全体からノードを参照するときにグループを使う。
+        // 自ノード下にあるグループのみを参照するようなことはできない。
         _entryPoint = GetNode<Node2D>("%EntryPoint");
         GetNode<TextureProgressBar>("%HUD/BossLife").MaxValue = Life;
         GetNode<TextureProgressBar>("%HUD/BossLife").Value = Life;

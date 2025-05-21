@@ -21,7 +21,6 @@ public partial class MaidRobot1Enemy : Enemy
     public override void _Ready()
     {
         base._Ready();
-        // todo: グループのほうがいいかも？
         _entryPoint = GetNode<Node2D>("%EntryPoint");
         _drillPoint = GetNode<Node2D>("%DrillPoint");
         _entryCount = _entryPoint is null ? 0 : _entryPoint.GetChildCount();
