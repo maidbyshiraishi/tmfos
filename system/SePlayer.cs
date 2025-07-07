@@ -18,7 +18,7 @@ public partial class SePlayer : Node
             return;
         }
 
-        if (GetNodeOrNull<AudioStreamPlayer>(name) is AudioStreamPlayer se && IsInstanceValid(se))
+        if (GetNodeOrNull(name) is AudioStreamPlayer se && IsInstanceValid(se))
         {
             se.Play();
             return;

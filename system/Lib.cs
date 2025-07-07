@@ -35,6 +35,7 @@ public static partial class Lib
 
     public static T GetPackedScene<T>(string path) where T : class
     {
+        // todo: 利用箇所がクドいのでスッキリ書きたい
         if (string.IsNullOrWhiteSpace(path))
         {
             GD.PrintErr("pathがnullまたはホワイトスペースです。リソースファイルを読み込めません。");

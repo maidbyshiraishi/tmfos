@@ -12,7 +12,7 @@ public partial class ScreenFader : CanvasLayer
 
     public void ScreenFade(string effectName)
     {
-        if (GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D") is AnimatedSprite2D fader && !string.IsNullOrWhiteSpace(effectName) && fader.SpriteFrames.HasAnimation(effectName))
+        if (GetNodeOrNull("AnimatedSprite2D") is AnimatedSprite2D fader && !string.IsNullOrWhiteSpace(effectName) && fader.SpriteFrames.HasAnimation(effectName))
         {
             fader.Play(effectName);
             return;
