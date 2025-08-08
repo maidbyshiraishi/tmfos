@@ -1,0 +1,179 @@
+[gd_scene load_steps=18 format=3 uid="uid://dkdich8y3mtxu"]
+
+[ext_resource type="Script" uid="uid://bfjyfcwp3oqr3" path="res://enemy/PathFollowEnemy.cs" id="1_sg71d"]
+[ext_resource type="Texture2D" uid="uid://beliclx6ilmbh" path="res://contents/image/enemy/bird.png" id="4_easj7"]
+[ext_resource type="Texture2D" uid="uid://dgdxa802jnhpm" path="res://contents/image/enemy/bird_vertical.png" id="5_6l78d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0d8b"]
+atlas = ExtResource("4_easj7")
+region = Rect2(312, 0, 78, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ik8w"]
+atlas = ExtResource("4_easj7")
+region = Rect2(390, 0, 78, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saaux"]
+atlas = ExtResource("4_easj7")
+region = Rect2(468, 0, 78, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh8ih"]
+atlas = ExtResource("4_easj7")
+region = Rect2(546, 0, 78, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqmsf"]
+atlas = ExtResource("5_6l78d")
+region = Rect2(116, 0, 58, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0pep"]
+atlas = ExtResource("5_6l78d")
+region = Rect2(174, 0, 58, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b16y"]
+atlas = ExtResource("4_easj7")
+region = Rect2(0, 0, 78, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqo37"]
+atlas = ExtResource("4_easj7")
+region = Rect2(78, 0, 78, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wuxm"]
+atlas = ExtResource("4_easj7")
+region = Rect2(156, 0, 78, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_561fx"]
+atlas = ExtResource("4_easj7")
+region = Rect2(234, 0, 78, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmqew"]
+atlas = ExtResource("5_6l78d")
+region = Rect2(0, 0, 58, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pff1i"]
+atlas = ExtResource("5_6l78d")
+region = Rect2(58, 0, 58, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8uyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0d8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ik8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saaux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh8ih")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqmsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0pep")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b16y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqo37")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wuxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_561fx")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmqew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pff1i")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1ch7"]
+size = Vector2(64, 30)
+
+[node name="BirdEnemy" type="Area2D"]
+collision_layer = 32
+collision_mask = 24
+script = ExtResource("1_sg71d")
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+Attack = 30
+SkipAttackTime = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t8uyw")
+animation = &"left"
+frame = 1
+frame_progress = 0.514903
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l1ch7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1, 0.96)
+rect = Rect2(-40, -25, 80, 50)
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="ReferenceLeftRight" type="ReferenceRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -15.0
+offset_right = 32.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 15)
+
+[node name="ReferenceUpDown" type="ReferenceRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 17.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(17, 15)
+
+[connection signal="body_entered" from="." to="." method="HitNode2D"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]

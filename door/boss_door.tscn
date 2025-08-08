@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://byeqvar802p5v"]
+
+[ext_resource type="PackedScene" uid="uid://uv5cr60f44ds" path="res://door/door_root.tscn" id="1_okgbd"]
+[ext_resource type="SpriteFrames" uid="uid://d04dm8poe3guy" path="res://contents/animation/boss_door.tres" id="2_43nrb"]
+
+[node name="BossDoor" instance=ExtResource("1_okgbd")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_43nrb")

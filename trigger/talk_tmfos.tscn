@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmwso205kxo1g"]
+
+[ext_resource type="PackedScene" uid="uid://b3pkhij41efph" path="res://trigger/talk_root.tscn" id="1_0e61d"]
+[ext_resource type="SpriteFrames" uid="uid://bxjyjxeb8flkm" path="res://contents/animation/theater/talk_tmfos_aera.tres" id="2_2mstw"]
+
+[node name="TalkTrigger" instance=ExtResource("1_0e61d")]
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = ExtResource("2_2mstw")
+animation = &"right"
+autoplay = "right"

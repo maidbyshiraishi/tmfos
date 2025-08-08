@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://smtb6ht422wj"]
+
+[ext_resource type="Script" uid="uid://dh826lhojx4mc" path="res://system/GameKeyOption.cs" id="1_id7dh"]
+
+[node name="GameKeyOption" type="Node"]
+process_mode = 3
+script = ExtResource("1_id7dh")

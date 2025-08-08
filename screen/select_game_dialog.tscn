@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3j6ii4ofco4h"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_xu4kg"]
+[ext_resource type="Script" uid="uid://bbykkikdla4im" path="res://screen/DialogRoot.cs" id="2_et8xc"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="4_7ld51"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="5_6ftgk"]
+[ext_resource type="PackedScene" uid="uid://closkw7p3bd1g" path="res://command/open_game_command.tscn" id="5_47qdj"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_ya3lr"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_wq8wx"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="9_sr0rb"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="10_gr1id"]
+
+[node name="SelectGame" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_xu4kg")
+script = ExtResource("2_et8xc")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 210.0
+offset_top = 134.0
+offset_right = 427.0
+offset_bottom = 349.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 210.0
+offset_top = 133.0
+offset_right = 427.0
+offset_bottom = 349.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Message" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 230.0
+offset_top = 154.0
+offset_right = 410.0
+offset_bottom = 184.0
+text = "選択"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+offset_top = 14.0
+offset_bottom = 14.0
+
+[node name="Start" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 246.0
+offset_top = 193.0
+offset_right = 396.0
+offset_bottom = 225.0
+text = "本編"
+script = ExtResource("4_7ld51")
+
+[node name="Exec" parent="Control/Start" instance=ExtResource("6_wq8wx")]
+
+[node name="PlaySeCommand" parent="Control/Start/Exec" instance=ExtResource("5_ya3lr")]
+SeName = "menu_select"
+
+[node name="OpenGameCommand" parent="Control/Start/Exec" instance=ExtResource("5_47qdj")]
+
+[node name="Focus" parent="Control/Start" instance=ExtResource("6_wq8wx")]
+
+[node name="PlaySeCommand" parent="Control/Start/Focus" instance=ExtResource("5_ya3lr")]
+SeName = "menu_move"
+
+[node name="Tutorial" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 246.0
+offset_top = 233.0
+offset_right = 396.0
+offset_bottom = 265.0
+text = "チュートリアル"
+script = ExtResource("4_7ld51")
+
+[node name="Exec" parent="Control/Tutorial" instance=ExtResource("6_wq8wx")]
+
+[node name="PlaySeCommand" parent="Control/Tutorial/Exec" instance=ExtResource("5_ya3lr")]
+SeName = "menu_select"
+
+[node name="OpenGameCommand" parent="Control/Tutorial/Exec" instance=ExtResource("5_47qdj")]
+StartGame = 1
+
+[node name="Focus" parent="Control/Tutorial" instance=ExtResource("6_wq8wx")]
+
+[node name="PlaySeCommand" parent="Control/Tutorial/Focus" instance=ExtResource("5_ya3lr")]
+SeName = "menu_move"
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 246.0
+offset_top = 282.0
+offset_right = 396.0
+offset_bottom = 314.0
+text = "タイトルに戻る"
+script = ExtResource("4_7ld51")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("6_wq8wx")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_ya3lr")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("5_6ftgk")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("6_wq8wx")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_ya3lr")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("9_sr0rb")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("10_gr1id")]
+Target = NodePath("../../Control/Back")

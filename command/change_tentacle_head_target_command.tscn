@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bye7ngyrlnbx2"]
+
+[ext_resource type="Script" uid="uid://ds3y6svx6ag8n" path="res://command/ChangeTentacleHeadTargetCommand.cs" id="1_53cfg"]
+
+[node name="ChangeTentacleHeadTargetCommand" type="Node"]
+script = ExtResource("1_53cfg")

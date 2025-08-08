@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://yrui033occah"]
+
+[ext_resource type="PackedScene" uid="uid://bpnf82ngscqro" path="res://trigger/manage_durability_zone.tscn" id="1_pb5fd"]
+[ext_resource type="SpriteFrames" uid="uid://x4yxfnrq827f" path="res://contents/animation/enemy/dragon_head.tres" id="2_eccvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqbnj"]
+size = Vector2(32, 26)
+
+[node name="DragonHead" instance=ExtResource("1_pb5fd")]
+Continuous = true
+Stateful = false
+OneTime = false
+PlayerOnly = false
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_cqbnj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_eccvi")
+animation = &"left"
+autoplay = "left"
+
+[node name="AddDurabilityCommand" parent="." index="2"]
+Value = -20

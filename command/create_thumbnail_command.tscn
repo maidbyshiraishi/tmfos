@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmtbl7stpfhcb"]
+
+[ext_resource type="Script" uid="uid://cqq84r3aq4npl" path="res://command/CreateThumbnailCommand.cs" id="1_qp887"]
+
+[node name="CreateThumbnailCommand" type="Node"]
+script = ExtResource("1_qp887")

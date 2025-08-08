@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://chluqke5uik6n"]
+
+[ext_resource type="Script" uid="uid://bofu6dt71dek6" path="res://enemy/Eyesight.cs" id="1_5of03"]
+
+[node name="EyeSight" type="Node2D"]
+script = ExtResource("1_5of03")
+
+[node name="LeftDown1" type="RayCast2D" parent="."]
+position = Vector2(-20, 15)
+target_position = Vector2(0, 48)
+collision_mask = 1537
+
+[node name="LeftDown2" type="RayCast2D" parent="."]
+position = Vector2(-90, 15)
+target_position = Vector2(0, 96)
+collision_mask = 1537
+
+[node name="LeftDown3" type="RayCast2D" parent="."]
+position = Vector2(-160, 15)
+target_position = Vector2(0, 96)
+collision_mask = 1537
+
+[node name="RightDown1" type="RayCast2D" parent="."]
+position = Vector2(20, 15)
+target_position = Vector2(0, 48)
+collision_mask = 1537
+
+[node name="RightDown2" type="RayCast2D" parent="."]
+position = Vector2(90, 15)
+target_position = Vector2(0, 96)
+collision_mask = 1537
+
+[node name="RightDown3" type="RayCast2D" parent="."]
+position = Vector2(160, 15)
+target_position = Vector2(0, 96)
+collision_mask = 1537
+
+[node name="CanJumpLeft1" type="RayCast2D" parent="."]
+position = Vector2(-8, -24)
+target_position = Vector2(0, -50)
+collision_mask = 1537
+
+[node name="CanJumpLeft2" type="RayCast2D" parent="."]
+position = Vector2(-8, -73)
+target_position = Vector2(-20, 0)
+collision_mask = 1537
+
+[node name="CanJumpRight1" type="RayCast2D" parent="."]
+position = Vector2(8, -24)
+target_position = Vector2(0, -50)
+collision_mask = 1537
+
+[node name="CanJumpRight2" type="RayCast2D" parent="."]
+position = Vector2(8, -73)
+target_position = Vector2(20, 0)
+collision_mask = 1537
+
+[node name="LongLeft" type="RayCast2D" parent="."]
+position = Vector2(-10, 5)
+target_position = Vector2(-170, 0)
+collision_mask = 9
+
+[node name="ShortLeft" type="RayCast2D" parent="."]
+position = Vector2(-10, 3)
+target_position = Vector2(-64, 0)
+collision_mask = 1561
+
+[node name="LongRight" type="RayCast2D" parent="."]
+position = Vector2(10, 5)
+target_position = Vector2(170, 0)
+collision_mask = 9
+
+[node name="ShortRight" type="RayCast2D" parent="."]
+position = Vector2(10, 3)
+target_position = Vector2(64, 0)
+collision_mask = 1561

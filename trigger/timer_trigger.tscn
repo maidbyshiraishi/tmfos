@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxafv8tj6dexo"]
+
+[ext_resource type="Script" uid="uid://bja2qf75qpyd0" path="res://trigger/TimerTrigger.cs" id="1_m1gdd"]
+
+[node name="TimerTrigger" type="Node"]
+script = ExtResource("1_m1gdd")

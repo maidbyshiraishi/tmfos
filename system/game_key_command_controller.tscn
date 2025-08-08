@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bloqiph3x75j6"]
+
+[ext_resource type="Script" uid="uid://dguy08tqonp1k" path="res://system/GameKeyCommandController.cs" id="1_onjj1"]
+
+[node name="GameKeyCommandController" type="Node"]
+script = ExtResource("1_onjj1")

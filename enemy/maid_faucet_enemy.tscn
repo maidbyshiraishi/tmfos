@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://g3nvbufurd2s"]
+
+[ext_resource type="Script" uid="uid://css7le6l07ouo" path="res://enemy/MaidFaucetEnemy.cs" id="2_5y1t7"]
+[ext_resource type="SpriteFrames" uid="uid://bwqttoq6pgjpq" path="res://contents/animation/enemy/maid_faucet.tres" id="4_e6xkj"]
+[ext_resource type="PackedScene" uid="uid://bpnpsk7t6uv77" path="res://enemy/enemy_spawner.tscn" id="5_ja1wp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb7yn"]
+size = Vector2(48, 30)
+
+[node name="MaidFaucetEnemy" type="Area2D"]
+collision_layer = 32
+collision_mask = 24
+script = ExtResource("2_5y1t7")
+WaitTime = 1.0
+Life = 400
+MaxLife = 400
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+Attack = 30
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_e6xkj")
+animation = &"left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eb7yn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-21.3333, 12)
+scale = Vector2(1.06667, 1.2)
+rect = Rect2(-10, -30, 60, 40)
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+
+[node name="EnemySpawnerLeft" parent="EnemySpawner" instance=ExtResource("5_ja1wp")]
+position = Vector2(-24, 24)
+ManualMode = true
+
+[node name="EnemySpawnerRight" parent="EnemySpawner" instance=ExtResource("5_ja1wp")]
+position = Vector2(24, 24)
+ManualMode = true
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="HitArea2D"]
+[connection signal="body_entered" from="." to="." method="HitNode2D"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
+[connection signal="timeout" from="Timer" to="." method="SpawnEnemy"]

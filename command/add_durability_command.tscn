@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://detvqwqihlaoj"]
+
+[ext_resource type="Script" uid="uid://tkvp66k670to" path="res://command/AddDurabilityCommand.cs" id="1_vfjx5"]
+
+[node name="AddDurabilityCommand" type="Node"]
+script = ExtResource("1_vfjx5")

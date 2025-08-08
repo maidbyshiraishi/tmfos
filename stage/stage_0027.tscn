@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=4 uid="uid://dvxmo6e13tvds"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_t6gf8"]
+[ext_resource type="AudioStream" uid="uid://dbcsppfshlabl" path="res://contents/bgm/bgm8.ogg" id="2_vfqx5"]
+[ext_resource type="PackedScene" uid="uid://bvfryyxcw20bs" path="res://decoration/exit.tscn" id="3_lhl3a"]
+[ext_resource type="PackedScene" uid="uid://gbo2sbr8uow2" path="res://decoration/lamp.tscn" id="4_ou2ek"]
+[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="5_qlqyd"]
+[ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="6_lujaf"]
+[ext_resource type="PackedScene" uid="uid://tnv76mlyklkx" path="res://item/item_panel_lamp.tscn" id="7_a5wpg"]
+[ext_resource type="PackedScene" uid="uid://6fi87qq65ewm" path="res://trigger/talk_nekomimi_maid.tscn" id="8_j3q88"]
+[ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="9_hbqhs"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="10_6nis2"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="11_r2dy4"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="12_aksl6"]
+
+[node name="Stage" instance=ExtResource("1_t6gf8")]
+BgmStream = ExtResource("2_vfqx5")
+IsDarkZone = true
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAAAPH/AAAAAAUAAAAAAPL/AAAAAAUAAAAAAPP/AAAAAAUAAAAAAPT/AAAAAAUAAAAAAPX/AAAAAAUAAAAAAPb/AAAAAAUAAAAAAPf/AAAAAAUAAAAAAPj/AAAAAAUAAAAAAPn/AAAAAAUAAAAAAPr/AAAAAAUAAAAAAPv/AAAAAAUAAAAAAPz/AAAAAAUAAAAAAP3/AAAAAAUAAAAAAP7/AAAAAAUAAAAAAP//AAAAAAUAAAABAP//AAAAAAUAAAACAP//AAAAAAUAAAADAP//AAAAAAUAAAAEAP//AAAAAAUAAAAFAP//AAAAAAUAAAAGAP//AAAAAAUAAAAHAP//AAAAAAUAAAAIAP//AAAAAAUAAAAJAP//AAAAAAUAAAAKAP//AAAAAAUAAAALAP//AAAAAAUAAAAMAP//AAAAAAUAAAANAP//AAAAAAUAAAAOAP//AAAAAAUAAAAPAP//AAAAAAUAAAAQAP//AAAAAAUAAAARAP//AAAAAAUAAAASAP//AAAAAAUAAAATAP//AAAAAAUAAAATAP7/AAAAAAUAAAATAP3/AAAAAAUAAAATAPz/AAAAAAUAAAATAPv/AAAAAAUAAAATAPr/AAAAAAUAAAATAPn/AAAAAAUAAAATAPj/AAAAAAUAAAATAPf/AAAAAAUAAAATAPb/AAAAAAUAAAATAPX/AAAAAAUAAAATAPT/AAAAAAUAAAATAPP/AAAAAAUAAAATAPL/AAAAAAUAAAATAPH/AAAAAAUAAAASAPH/AAAAAAUAAAARAPH/AAAAAAUAAAAQAPH/AAAAAAUAAAAPAPH/AAAAAAUAAAAOAPH/AAAAAAUAAAANAPH/AAAAAAUAAAAMAPH/AAAAAAUAAAALAPH/AAAAAAUAAAAKAPH/AAAAAAUAAAAJAPH/AAAAAAUAAAAIAPH/AAAAAAUAAAAHAPH/AAAAAAUAAAAGAPH/AAAAAAUAAAAFAPH/AAAAAAUAAAAEAPH/AAAAAAUAAAADAPH/AAAAAAUAAAACAPH/AAAAAAUAAAABAPH/AAAAAAUAAAA=")
+
+[node name="Exit" parent="Decoration1" index="0" instance=ExtResource("3_lhl3a")]
+position = Vector2(128, -176)
+
+[node name="Lamp" parent="Decoration1" index="1" instance=ExtResource("4_ou2ek")]
+position = Vector2(400, -48)
+
+[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("5_qlqyd")]
+position = Vector2(576, -64)
+DestStageNo = 6
+DestDoorNo = 1
+DoorNo = 1
+
+[node name="Warp2" parent="Door" index="1" instance=ExtResource("6_lujaf")]
+position = Vector2(128, -128)
+DestStageNo = 1
+DestDoorNo = 1
+DoorNo = 2
+
+[node name="ItemPanelLamp" parent="Item" index="0" instance=ExtResource("7_a5wpg")]
+position = Vector2(240, -128)
+
+[node name="TalkTrigger" parent="Item" index="1" instance=ExtResource("8_j3q88")]
+position = Vector2(384, -64)
+Color = 2
+DialogPath = "res://theater/talk_0011.tscn"
+
+[node name="ItemPanelArmor" parent="Item" index="2" instance=ExtResource("9_hbqhs")]
+position = Vector2(528, -176)
+
+[node name="ItemPanelArmor2" parent="Item" index="3" instance=ExtResource("9_hbqhs")]
+position = Vector2(560, -176)
+
+[node name="ItemPanelArmor3" parent="Item" index="4" instance=ExtResource("9_hbqhs")]
+position = Vector2(576, -208)
+
+[node name="ItemPanelArmor4" parent="Item" index="5" instance=ExtResource("9_hbqhs")]
+position = Vector2(544, -208)
+
+[node name="ItemPanelArmor5" parent="Item" index="6" instance=ExtResource("9_hbqhs")]
+position = Vector2(592, -176)
+
+[node name="ItemPanelArmor6" parent="Item" index="7" instance=ExtResource("9_hbqhs")]
+position = Vector2(544, -144)
+
+[node name="ItemPanelArmor7" parent="Item" index="8" instance=ExtResource("9_hbqhs")]
+position = Vector2(576, -144)
+
+[node name="Player" parent="." index="8" instance=ExtResource("10_6nis2")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("11_r2dy4")
+
+[node name="HUD" parent="." index="13"]
+Text1 = "ステージ"
+Text2 = "27"
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("12_aksl6")]
+position = Vector2(480, 16)
+scale = Vector2(60, 1)

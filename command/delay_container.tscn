@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn7no3720iabm"]
+
+[ext_resource type="Script" uid="uid://c6e6v37h6ycu6" path="res://command/DelayContainer.cs" id="1_yvios"]
+
+[node name="DelayContainer" type="Node"]
+script = ExtResource("1_yvios")

@@ -1,0 +1,188 @@
+[gd_scene load_steps=12 format=3 uid="uid://r5mbwmmdg3hw"]
+
+[ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_oea57"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_cvu3c"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="3_d1l78"]
+[ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="4_ss83w"]
+[ext_resource type="PackedScene" uid="uid://bxxxgp6ky5syd" path="res://trigger/invisible_trigger.tscn" id="5_yivp3"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="5_yk18a"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="6_6yteb"]
+[ext_resource type="Texture2D" uid="uid://dgm70g5qndbge" path="res://contents/image/theater/ending_photo.png" id="8_5kpdt"]
+[ext_resource type="AudioStream" uid="uid://b80xdq1t3o76e" path="res://contents/bgm/bgm9.ogg" id="8_ghp75"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="9_1ty71"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="10_0nalh"]
+
+[node name="ScrollTheater" instance=ExtResource("1_oea57")]
+ScrollTime = 50.0
+metadata/_edit_horizontal_guides_ = [2176.0]
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="Background" parent="." index="0"]
+color = Color(0, 0, 0, 1)
+
+[node name="Contents" type="Control" parent="Path2D/Socket" index="0"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 2136.0
+grow_horizontal = 2
+pivot_offset = Vector2(320, 0)
+theme = ExtResource("2_cvu3c")
+
+[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 72.0
+offset_right = 639.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 30
+text = "宇宙から来たメイド"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" instance=ExtResource("3_d1l78")]
+Stream = ExtResource("4_ss83w")
+
+[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 201.0
+offset_right = 639.0
+offset_bottom = 259.0
+theme_override_font_sizes/font_size = 30
+text = "製造
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label3" type="Label" parent="Path2D/Socket/Contents" index="3"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 377.0
+offset_right = 639.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 30
+text = "開発環境"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="4"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 248.0
+offset_right = 639.0
+offset_bottom = 306.0
+text = "白石
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="5"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 360.0
+offset_right = 639.0
+offset_bottom = 392.0
+text = "(書くことないので水増し)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label4" type="Label" parent="Path2D/Socket/Contents" index="6"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 456.0
+offset_right = 639.0
+offset_bottom = 1337.0
+text = "Godot Engine 4
+Microsoft Windows 11/10/2000
+Lubuntu 22.04 LTS
+Microsoft Office Home and Business 2021
+VisualStudio 2022 Community Edition
+Blender 4.2
+MagicaVoxel
+SpriteStack
+Aseprite
+ClipStudio Paint 1.13.2
+SpriteMancer
+FL Studio 2024
+MIXTURE
+EZDrummer
+Ultra Analog VA-1
+Ultra Analog VA-3
+Strum SG-2
+BLUE RHYTHMS
+Analog Orchestra
+KOMPLETE 13 SELECT
+bx_console Forcusrite SC
+bx_masterdesk
+DSP Motion
+VOICEVOX
+Autoformer
+RX 8 Standard
+xyzzy
+メモ帳
+FreeMind
+VirtualBox
+LIFEBOOK UH93/G2
+LIFEBOOK SH76/K
+Roland UA-101
+XP-PEN Artist 12 (2nd Generation)
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="7" instance=ExtResource("5_yivp3")]
+position = Vector2(39, 2000)
+
+[node name="ReferenceContainer" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("6_6yteb")]
+Target = NodePath("../../../../../CloseCommand")
+
+[node name="Focus" parent="Path2D/Socket/Contents" index="8" instance=ExtResource("5_yk18a")]
+position = Vector2(43, 91)
+
+[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus" index="0" instance=ExtResource("3_d1l78")]
+Command = 3
+Stream = ExtResource("8_ghp75")
+
+[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="9"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 1704.0
+offset_right = 607.0
+offset_bottom = 1840.0
+theme_override_font_sizes/font_size = 30
+text = "最後まで遊んでくれて、
+ありがとう！！"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="EndingPhoto" type="Sprite2D" parent="Path2D/Socket/Contents" index="10"]
+position = Vector2(319, 1568)
+texture = ExtResource("8_5kpdt")
+
+[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="11"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 1928.0
+offset_right = 607.0
+offset_bottom = 1992.0
+theme_override_font_sizes/font_size = 30
+text = "完"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="CloseCommand" parent="." index="4" instance=ExtResource("9_1ty71")]
+
+[node name="GoScreenCommand" parent="CloseCommand" index="0" instance=ExtResource("10_0nalh")]
+Screen = "res://screen/title_screen.tscn"

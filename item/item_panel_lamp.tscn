@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://tnv76mlyklkx"]
+
+[ext_resource type="PackedScene" uid="uid://drm6s3qj4id31" path="res://item/item_panel_root.tscn" id="1_r2upk"]
+[ext_resource type="SpriteFrames" uid="uid://bkf16286rfo6f" path="res://contents/animation/item/item_lamp.tres" id="2_xe4j0"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="3_5tyoj"]
+
+[node name="ItemPanelLamp" instance=ExtResource("1_r2upk")]
+Item = 5
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_xe4j0")
+animation = &"closed"
+
+[node name="Light" parent="." index="2" instance=ExtResource("3_5tyoj")]
+RangeRatio = 2.0

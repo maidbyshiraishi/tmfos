@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvcg4jkd64dvn"]
+
+[ext_resource type="Script" uid="uid://bmuioc4iuqk77" path="res://enemy/TmfosEnemy.cs" id="1_3gci2"]
+[ext_resource type="SpriteFrames" uid="uid://bxjyjxeb8flkm" path="res://contents/animation/theater/talk_tmfos_aera.tres" id="1_hxh40"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq0w7"]
+size = Vector2(20, 64)
+
+[node name="Tmfos" type="Area2D"]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("1_3gci2")
+Life = 2000
+MaxLife = 2000
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_hxh40")
+animation = &"left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fq0w7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-16, 20)
+scale = Vector2(0.8, 2)
+rect = Rect2(-10, -30, 60, 40)
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]

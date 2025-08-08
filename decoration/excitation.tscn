@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyt5pd06m54tv"]
+
+[ext_resource type="Script" uid="uid://p7acrf4hg7rc" path="res://decoration/Decoration.cs" id="1_hiqpa"]
+[ext_resource type="SpriteFrames" uid="uid://c16ugm37o7apr" path="res://contents/animation/decoration/excitation.tres" id="2_towrs"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="3_b27se"]
+
+[node name="Excitation" type="Node2D"]
+script = ExtResource("1_hiqpa")
+SeName = "excitation"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_towrs")
+autoplay = "default"
+
+[node name="Light" parent="." instance=ExtResource("3_b27se")]
+RangeRatio = 2.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="Finished"]

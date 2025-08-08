@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci7ah8lulrk1q"]
+
+[ext_resource type="PackedScene" uid="uid://drm6s3qj4id31" path="res://item/item_panel_root.tscn" id="1_3ldhw"]
+[ext_resource type="SpriteFrames" uid="uid://b5l668dc1np3q" path="res://contents/animation/item/item_weapon.tres" id="2_xqd2f"]
+
+[node name="ItemPanelWeapon" instance=ExtResource("1_3ldhw")]
+Item = 8
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_xqd2f")
+animation = &"closed"

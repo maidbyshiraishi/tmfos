@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c64vi22vqujm"]
+
+[ext_resource type="PackedScene" uid="uid://cuw4wqmy5pcmw" path="res://enemy/enemy_shot1.tscn" id="1_tixwk"]
+
+[node name="EnemyShot2" instance=ExtResource("1_tixwk")]
+Attack = 5

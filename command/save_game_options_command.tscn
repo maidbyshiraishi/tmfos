@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvxgt01dp4as0"]
+
+[ext_resource type="Script" uid="uid://bf5msgfjya78u" path="res://command/SaveGameOptionsCommand.cs" id="1_whof0"]
+
+[node name="SaveGameOptionsCommand" type="Node"]
+script = ExtResource("1_whof0")

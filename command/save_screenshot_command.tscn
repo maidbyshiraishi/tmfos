@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb2nl5uh2vbd1"]
+
+[ext_resource type="Script" uid="uid://cyoqyg4yyxm3k" path="res://command/SaveScreenshotCommand.cs" id="1_bp0pq"]
+
+[node name="SaveScreenshotCommand" type="Node"]
+script = ExtResource("1_bp0pq")

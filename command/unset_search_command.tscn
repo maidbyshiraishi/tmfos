@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c51q2ghy4gmm2"]
+
+[ext_resource type="Script" uid="uid://cxy5ojg6we7jn" path="res://command/UnsetSearchCommand.cs" id="1_5smon"]
+
+[node name="UnsetSearchCommand" type="Node"]
+script = ExtResource("1_5smon")

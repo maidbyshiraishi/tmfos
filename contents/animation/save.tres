@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c8u4kthw1kiu5"]
+
+[ext_resource type="Texture2D" uid="uid://skykmkemdyv4" path="res://contents/image/door/tel.png" id="1_dcmlx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2unks"]
+atlas = ExtResource("1_dcmlx")
+region = Rect2(0, 0, 34, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igo0a"]
+atlas = ExtResource("1_dcmlx")
+region = Rect2(34, 0, 34, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqomm"]
+atlas = ExtResource("1_dcmlx")
+region = Rect2(68, 0, 34, 26)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2unks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igo0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqomm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

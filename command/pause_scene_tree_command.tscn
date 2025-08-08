@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu1ibmk0hx8b8"]
+
+[ext_resource type="Script" uid="uid://d3n6ehy7m28ul" path="res://command/PauseSceneTreeCommand.cs" id="1_disod"]
+
+[node name="PauseSceneTreeCommand" type="Node"]
+script = ExtResource("1_disod")

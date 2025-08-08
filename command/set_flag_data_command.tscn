@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vl3m0ob736ea"]
+
+[ext_resource type="Script" uid="uid://v8mxqtv28fa" path="res://command/SetFlagDataCommand.cs" id="1_6d1cq"]
+
+[node name="SetFlagDataCommand" type="Node"]
+script = ExtResource("1_6d1cq")

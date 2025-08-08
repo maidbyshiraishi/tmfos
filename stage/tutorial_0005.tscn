@@ -1,0 +1,269 @@
+[gd_scene load_steps=15 format=4 uid="uid://c2fqqtkjpltol"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
+[ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="2_i7jew"]
+[ext_resource type="Texture2D" uid="uid://dp7lcyaom8de3" path="res://contents/image/background/pattern2.png" id="2_lwj4y"]
+[ext_resource type="Texture2D" uid="uid://dgvjvsytsnp0r" path="res://contents/image/background/blue_gradation.png" id="2_t24mv"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="4_g687t"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_3n8h5"]
+[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="7_mqyhy"]
+[ext_resource type="PackedScene" uid="uid://cp0tb8otk67q3" path="res://trigger/search_trigger.tscn" id="8_m3kq4"]
+[ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="8_t0twg"]
+[ext_resource type="PackedScene" uid="uid://4nssb2x5202j" path="res://command/search_container.tscn" id="9_idsxm"]
+[ext_resource type="PackedScene" uid="uid://8636t7qupfox" path="res://trigger/search_point_trigger.tscn" id="11_8kxpr"]
+[ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="12_p3een"]
+[ext_resource type="PackedScene" uid="uid://c48l268v1hmlo" path="res://item/treasure_box.tscn" id="12_pqejh"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="12_xxjyq"]
+
+[node name="Stage" instance=ExtResource("1_axhrv")]
+BgmStream = ExtResource("2_i7jew")
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("2_lwj4y")
+
+[node name="Parallax2D1" parent="Background" index="2"]
+visible = true
+
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+texture = ExtResource("2_t24mv")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAAAO7/AAAAAAUAAAAAAPP/AAAAAAUAAAAAAPn/AAAAAAUAAAAAAPr/AAAAAAUAAAABAO7/AAAAAAUAAAABAPP/AAAAAAUAAAABAPn/AAAAAAUAAAABAPr/AAAAAAUAAAAHAP7/AAAAAAQAAAAHAP//AAAAAAUAAAAIAP7/AAAAAAQAAAAIAP//AAAAAAUAAAAPAPD/AAAAAAUAAAARAPb/AAAAAAUAAAARAPf/AAAAAAUAAAASAPn/AAAHAAAAAAASAPr/AAAHAAEAAAATAPn/AAAAAAUAAAATAPr/AAAAAAUAAAAYAPD/AAAAAAUAAAAYAPb/AAAAAAUAAAAYAPf/AAAAAAUAAAAYAP7/AAAAAAUAAAAYAP//AAAAAAUAAAAZAPD/AAAAAAUAAAAZAPX/AAACAAAAAAAZAPb/AAAAAAQAAAAZAPf/AAAAAAUAAAAZAP7/AAAAAAUAAAAZAP//AAAAAAUAAAAAAOv/AAAAAAUAAAAAAOz/AAAAAAUAAAAAAO3/AAAAAAUAAAAAAO//AAAAAAUAAAAAAPD/AAAAAAUAAAAAAPH/AAAAAAUAAAAAAPL/AAAAAAUAAAAAAPT/AAAAAAUAAAAAAPX/AAAAAAUAAAAAAPb/AAAAAAUAAAAAAPf/AAAAAAUAAAAAAPj/AAAAAAUAAAAAAPv/AAAAAAUAAAAAAPz/AAAAAAUAAAAAAP3/AAAAAAUAAAAAAP7/AAAAAAUAAAAAAP//AAAAAAUAAAABAOv/AAAAAAUAAAABAOz/AAAAAAUAAAABAO3/AAAAAAUAAAABAO//AAAAAAUAAAABAPD/AAAAAAUAAAABAPH/AAAAAAUAAAABAPL/AAAAAAUAAAABAPT/AAAAAAUAAAABAPX/AAAAAAUAAAABAPb/AAAAAAUAAAABAPf/AAAAAAUAAAABAPj/AAAAAAUAAAABAPv/AAAAAAUAAAABAPz/AAAAAAUAAAABAP3/AAAAAAUAAAABAP7/AAAAAAUAAAABAP//AAAAAAUAAAACAOv/AAAAAAUAAAACAPD/AAAAAAUAAAACAPb/AAAAAAUAAAACAPf/AAAAAAUAAAACAP7/AAAAAAUAAAACAP//AAAAAAUAAAADAOv/AAAAAAUAAAADAPD/AAAAAAUAAAADAPb/AAAAAAUAAAADAPf/AAAAAAUAAAADAP7/AAAAAAUAAAADAP//AAAAAAUAAAAEAOv/AAAAAAUAAAAEAPD/AAAAAAUAAAAEAPb/AAAAAAUAAAAEAPf/AAAAAAUAAAAEAP7/AAAAAAUAAAAEAP//AAAAAAUAAAAFAOv/AAAAAAUAAAAFAPD/AAAAAAUAAAAFAPb/AAAAAAUAAAAFAPf/AAAAAAUAAAAFAP7/AAAAAAQAAAAFAP//AAAAAAUAAAAGAOv/AAAAAAUAAAAGAPD/AAAAAAUAAAAGAPb/AAAAAAUAAAAGAPf/AAAAAAUAAAAGAP3/AAACAAEAAAAGAP7/AAAAAAQAAAAGAP//AAAAAAUAAAAHAOv/AAAAAAUAAAAHAPD/AAAAAAUAAAAHAPb/AAAAAAUAAAAHAPf/AAAAAAUAAAAIAOv/AAAAAAUAAAAIAPD/AAAAAAUAAAAIAPb/AAAAAAUAAAAIAPf/AAAAAAUAAAAJAOv/AAAAAAUAAAAJAPD/AAAAAAUAAAAJAPb/AAAAAAUAAAAJAPf/AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAKAOv/AAAAAAUAAAAKAPD/AAAAAAUAAAAKAPb/AAAAAAUAAAAKAPf/AAAAAAUAAAAKAP7/AAAAAAUAAAAKAP//AAAAAAUAAAALAOv/AAAAAAUAAAALAPD/AAAAAAUAAAALAPb/AAAAAAUAAAALAPf/AAAAAAUAAAALAP7/AAAAAAUAAAALAP//AAAAAAUAAAAMAOv/AAAAAAUAAAAMAPD/AAAAAAUAAAAMAPb/AAAAAAUAAAAMAPf/AAAAAAUAAAAMAP7/AAAAAAUAAAAMAP//AAAAAAUAAAANAOv/AAAAAAUAAAANAPD/AAAAAAUAAAANAPb/AAAAAAUAAAANAPf/AAAAAAUAAAANAP7/AAAAAAUAAAANAP//AAAAAAUAAAAOAOv/AAAAAAUAAAAOAPD/AAAAAAUAAAAOAPb/AAAAAAUAAAAOAPf/AAAAAAUAAAAOAP7/AAAAAAUAAAAOAP//AAAAAAUAAAAPAOv/AAAAAAUAAAAPAPb/AAAAAAUAAAAPAPf/AAAAAAUAAAAPAP7/AAAAAAQAAAAPAP//AAAAAAUAAAAQAOv/AAAAAAUAAAAQAPD/AAAAAAUAAAAQAPb/AAAAAAUAAAAQAPf/AAAAAAUAAAAQAP3/AAACAAEAAAAQAP7/AAAAAAQAAAAQAP//AAAAAAUAAAARAOv/AAAAAAUAAAARAPD/AAAAAAUAAAARAP3/AAACAAEAAAARAP7/AAAAAAQAAAARAP//AAAAAAUAAAASAOv/AAAAAAUAAAASAPD/AAAAAAUAAAASAPb/AAAAAAUAAAASAPf/AAAAAAUAAAASAPj/AAAHAAAAAAASAPv/AAAHAAAAAAASAPz/AAAHAAEAAAASAP3/AAAHAAAAAAASAP7/AAAAAAQAAAASAP//AAAAAAUAAAATAOv/AAAAAAUAAAATAPD/AAAAAAUAAAATAPb/AAAAAAUAAAATAPf/AAAAAAUAAAATAPj/AAAAAAUAAAATAPv/AAAAAAUAAAATAPz/AAAAAAUAAAATAP3/AAAAAAUAAAATAP7/AAAAAAUAAAATAP//AAAAAAUAAAAUAOv/AAAAAAUAAAAUAPD/AAAAAAUAAAAUAPb/AAAAAAUAAAAUAPf/AAAAAAUAAAAUAP7/AAAAAAUAAAAUAP//AAAAAAUAAAAVAOv/AAAAAAUAAAAVAPD/AAAAAAUAAAAVAPb/AAAAAAUAAAAVAPf/AAAAAAUAAAAVAP7/AAAAAAUAAAAVAP//AAAAAAUAAAAWAOv/AAAAAAUAAAAWAPD/AAAAAAUAAAAWAPb/AAAAAAUAAAAWAPf/AAAAAAUAAAAWAP7/AAAAAAUAAAAWAP//AAAAAAUAAAAXAOv/AAAAAAUAAAAXAPD/AAAAAAUAAAAXAPb/AAAAAAUAAAAXAPf/AAAAAAUAAAAXAP7/AAAAAAUAAAAXAP//AAAAAAUAAAAYAOv/AAAAAAUAAAAZAOv/AAAAAAUAAAAaAOv/AAAAAAUAAAAaAPD/AAAAAAUAAAAaAPb/AAAAAAQAAAAaAPf/AAAAAAUAAAAaAP7/AAAAAAUAAAAaAP//AAAAAAUAAAAbAOv/AAAAAAUAAAAbAPD/AAAAAAUAAAAbAPX/AAACAAEAAAAbAPb/AAAAAAQAAAAbAPf/AAAAAAUAAAAbAP7/AAAAAAUAAAAbAP//AAAAAAUAAAAcAOv/AAAAAAUAAAAcAPD/AAAAAAUAAAAcAPH/AAAHAAAAAAAcAPL/AAAHAAEAAAAcAPP/AAAHAAAAAAAcAPT/AAAHAAAAAAAcAPX/AAAHAAEAAAAcAPb/AAAAAAQAAAAcAPf/AAAAAAUAAAAcAP7/AAAAAAUAAAAcAP//AAAAAAUAAAAdAOv/AAAAAAUAAAAdAPD/AAAAAAUAAAAdAPb/AAAAAAUAAAAdAPf/AAAAAAUAAAAdAP7/AAAAAAUAAAAdAP//AAAAAAUAAAAeAOv/AAAAAAUAAAAeAPD/AAAAAAUAAAAeAPb/AAAAAAUAAAAeAPf/AAAAAAUAAAAeAP7/AAAAAAUAAAAeAP//AAAAAAUAAAAfAOv/AAAAAAUAAAAfAPD/AAAAAAUAAAAfAPb/AAAAAAUAAAAfAPf/AAAAAAUAAAAfAP7/AAAAAAUAAAAfAP//AAAAAAUAAAAgAOv/AAAAAAUAAAAgAPD/AAAAAAUAAAAgAPb/AAAAAAUAAAAgAPf/AAAAAAUAAAAgAP7/AAAAAAUAAAAgAP//AAAAAAUAAAAhAOv/AAAAAAUAAAAhAPD/AAAAAAUAAAAhAPb/AAAAAAUAAAAhAPf/AAAAAAUAAAAhAP7/AAAAAAUAAAAhAP//AAAAAAUAAAAiAOv/AAAAAAUAAAAiAPD/AAAAAAUAAAAiAPb/AAAAAAUAAAAiAPf/AAAAAAUAAAAiAP7/AAAAAAUAAAAiAP//AAAAAAUAAAAjAOv/AAAAAAUAAAAjAOz/AAAAAAUAAAAjAO3/AAAAAAUAAAAjAO7/AAAAAAUAAAAjAO//AAAAAAUAAAAjAPD/AAAAAAUAAAAjAPH/AAAAAAUAAAAjAPL/AAAAAAUAAAAjAPP/AAAAAAUAAAAjAPT/AAAAAAUAAAAjAPX/AAAAAAUAAAAjAPb/AAAAAAUAAAAjAPf/AAAAAAUAAAAjAPj/AAAAAAUAAAAjAPn/AAAAAAUAAAAjAPr/AAAAAAUAAAAjAPv/AAAAAAUAAAAjAPz/AAAAAAUAAAAjAP3/AAAAAAUAAAAjAP7/AAAAAAUAAAAjAP//AAAAAAUAAAAkAOv/AAAAAAUAAAAkAOz/AAAAAAUAAAAkAO3/AAAAAAUAAAAkAO7/AAAAAAUAAAAkAO//AAAAAAUAAAAkAPD/AAAAAAUAAAAkAPH/AAAAAAUAAAAkAPL/AAAAAAUAAAAkAPP/AAAAAAUAAAAkAPT/AAAAAAUAAAAkAPX/AAAAAAUAAAAkAPb/AAAAAAUAAAAkAPf/AAAAAAUAAAAkAPj/AAAAAAUAAAAkAPn/AAAAAAUAAAAkAPr/AAAAAAUAAAAkAPv/AAAAAAUAAAAkAPz/AAAAAAUAAAAkAP3/AAAAAAUAAAAkAP7/AAAAAAUAAAAkAP//AAAAAAUAAAA=")
+
+[node name="Foreground" parent="TileMap" index="2"]
+tile_map_data = PackedByteArray("AAAOAPD/AAABAAUAAAAPAPD/AAABAAUAAAAhAPb/AAAGAAUAAAAhAPf/AAABAAUAAAAiAPb/AAABAAUAAAAiAPf/AAABAAUAAAAFAP7/AAAGAAUAAAAGAP7/AAAGAAUAAAAHAP7/AAAGAAUAAAAIAP7/AAAGAAUAAAAEAP7/AAAGAAUAAAAPAP7/AAAGAAUAAAAOAP7/AAAGAAUAAAANAP7/AAAGAAUAAAAKAP7/AAAGAAUAAAAYAPb/AAAGAAUAAAAZAPb/AAAGAAUAAAAaAPb/AAAGAAUAAAAbAPb/AAAGAAUAAAAcAPb/AAAGAAUAAAAdAPb/AAAGAAUAAAAWAPb/AAAGAAUAAAACAPb/AAAGAAUAAAADAPb/AAAGAAUAAAAEAPb/AAAGAAUAAAAHAPb/AAAGAAUAAAAIAPb/AAAGAAUAAAAJAPb/AAAGAAUAAAAKAPb/AAAGAAUAAAAMAPb/AAAGAAUAAAASAP7/AAAGAAUAAAARAP7/AAAGAAUAAAAQAP7/AAAGAAUAAAAiAP7/AAAGAAUAAAAhAP7/AAAGAAUAAAAgAP7/AAAGAAUAAAAgAPb/AAAGAAUAAAATAP3/AAAEAAYAAAATAPz/AAAEAAYAAAAjAP3/AAAEAAYAAAAjAPH/AAAEAAYAAAABAPX/AAADAAYAAAACAPf/AAAGAAUAAQABAPf/AAADAAUAAAABAPj/AAADAAYAAAASAPf/AAAGAAUAAQATAPj/AAAEAAYAAAAiAPD/AAAGAAUAAQAaAPD/AAAGAAUAAQAbAPD/AAAGAAUAAQAcAPD/AAAGAAUAAQAdAPD/AAAGAAUAAQAeAPD/AAAGAAUAAQADAPD/AAAGAAUAAQAEAPD/AAAGAAUAAQAFAPD/AAAGAAUAAQAGAPD/AAAGAAUAAQAHAPD/AAAGAAUAAQAIAPD/AAAGAAUAAQAJAPD/AAAGAAUAAQALAPD/AAAGAAUAAQAMAPD/AAAGAAUAAQAgAPf/AAAGAAUAAQAfAPf/AAAGAAUAAQAeAPf/AAAGAAUAAQALAPf/AAAGAAUAAQAMAPf/AAAGAAUAAQANAPf/AAAGAAUAAQAaAPX/AAABAAMAAAAHAP3/AAABAAMAAAA=")
+
+[node name="Veil" parent="TileMap/ObservationHole" index="3"]
+tile_map_data = PackedByteArray("AAAaAOz/AAAHAAUAAAAaAO3/AAAHAAUAAAAaAO7/AAAHAAUAAAAaAO//AAAHAAUAAAAbAO//AAAHAAUAAAAbAO7/AAAHAAUAAAAbAO3/AAAHAAUAAAAbAOz/AAAHAAUAAAAcAOz/AAAHAAUAAAAcAO3/AAAHAAUAAAAcAO7/AAAHAAUAAAAcAO//AAAHAAUAAAAdAO//AAAHAAUAAAAeAO//AAAHAAUAAAAfAO//AAAHAAUAAAAgAO//AAAHAAUAAAAhAO//AAAHAAUAAAAiAO//AAAHAAUAAAAiAO7/AAAHAAUAAAAiAO3/AAAHAAUAAAAiAOz/AAAHAAUAAAAhAOz/AAAHAAUAAAAgAOz/AAAHAAUAAAAfAOz/AAAHAAUAAAAeAOz/AAAHAAUAAAAdAOz/AAAHAAUAAAAdAO3/AAAHAAUAAAAeAO3/AAAHAAUAAAAfAO3/AAAHAAUAAAAgAO3/AAAHAAUAAAAhAO3/AAAHAAUAAAAhAO7/AAAHAAUAAAAgAO7/AAAHAAUAAAAfAO7/AAAHAAUAAAAeAO7/AAAHAAUAAAAdAO7/AAAHAAUAAAA=")
+
+[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("7_mqyhy")]
+position = Vector2(112, -96)
+DestStageNo = 4
+DestDoorNo = 2
+DoorNo = 1
+Direction = 1
+
+[node name="WoodDoor3" parent="Door" index="1" instance=ExtResource("7_mqyhy")]
+position = Vector2(656, -96)
+DestStageNo = 5
+DestDoorNo = 2
+DoorNo = 3
+Direction = 1
+
+[node name="Warp4" parent="Door" index="2" instance=ExtResource("12_p3een")]
+position = Vector2(888, -152)
+DestStageNo = 5
+DestDoorNo = 5
+DoorNo = 4
+
+[node name="Warp5" parent="Door" index="3" instance=ExtResource("12_p3een")]
+position = Vector2(112, -432)
+DestStageNo = 5
+DestDoorNo = 4
+DoorNo = 5
+Direction = 1
+
+[node name="Warp6" parent="Door" index="4" instance=ExtResource("12_p3een")]
+position = Vector2(192, -376)
+DestStageNo = 5
+DestDoorNo = 5
+DoorNo = 6
+Direction = 1
+
+[node name="Warp7" parent="Door" index="5" instance=ExtResource("12_p3een")]
+position = Vector2(352, -376)
+DestStageNo = 5
+DestDoorNo = 5
+DoorNo = 7
+Direction = 1
+
+[node name="Warp8" parent="Door" index="6" instance=ExtResource("12_p3een")]
+position = Vector2(520, -376)
+DestStageNo = 5
+DestDoorNo = 5
+DoorNo = 8
+Direction = 1
+
+[node name="Warp9" parent="Door" index="7" instance=ExtResource("12_p3een")]
+position = Vector2(696, -376)
+DestStageNo = 5
+DestDoorNo = 5
+DoorNo = 9
+Direction = 1
+
+[node name="Warp11" parent="Door" index="8" instance=ExtResource("12_p3een")]
+position = Vector2(1056, -408)
+DestStageNo = 5
+DestDoorNo = 5
+DoorNo = 11
+
+[node name="Warp13" parent="Door" index="9" instance=ExtResource("12_p3een")]
+position = Vector2(128, -592)
+DestStageNo = 5
+DestDoorNo = 12
+DoorNo = 13
+Direction = 1
+
+[node name="WoodDoor14" parent="Door" index="10" instance=ExtResource("7_mqyhy")]
+position = Vector2(992.992, -544.008)
+DestStageNo = 6
+DestDoorNo = 1
+DoorNo = 14
+
+[node name="SavePoint15" parent="Door" index="11" instance=ExtResource("8_t0twg")]
+position = Vector2(1072, -552)
+DoorNo = 15
+
+[node name="Search1" parent="Search" index="1" instance=ExtResource("8_m3kq4")]
+position = Vector2(240, -80)
+
+[node name="SearchContainer" parent="Search/Search1" index="5" instance=ExtResource("9_idsxm")]
+
+[node name="TreasureBox1" parent="Search/Search1/SearchContainer" index="0" instance=ExtResource("12_pqejh")]
+position = Vector2(128, 8)
+Score = 5000
+
+[node name="TreasureBox2" parent="Search/Search1/SearchContainer" index="1" instance=ExtResource("12_pqejh")]
+position = Vector2(176, 8)
+Score = 5000
+
+[node name="TreasureBox3" parent="Search/Search1/SearchContainer" index="2" instance=ExtResource("12_pqejh")]
+position = Vector2(224, 8)
+Score = 5000
+
+[node name="WoodDoor2" parent="Search/Search1/SearchContainer" index="3" instance=ExtResource("7_mqyhy")]
+position = Vector2(75, -16)
+DestStageNo = 5
+DestDoorNo = 3
+DoorNo = 2
+
+[node name="SearchPointTrigger" parent="Search/Search1" index="6" instance=ExtResource("11_8kxpr")]
+
+[node name="Search2" parent="Search" index="2" instance=ExtResource("8_m3kq4")]
+position = Vector2(848, -336)
+
+[node name="SearchContainer" parent="Search/Search2" index="5" instance=ExtResource("9_idsxm")]
+
+[node name="Warp12" parent="Search/Search2/SearchContainer" index="0" instance=ExtResource("12_p3een")]
+position = Vector2(129, -72)
+DestStageNo = 5
+DestDoorNo = 13
+DoorNo = 12
+
+[node name="SearchPointTrigger" parent="Search/Search2" index="6" instance=ExtResource("11_8kxpr")]
+
+[node name="Player" parent="." index="8" instance=ExtResource("6_3n8h5")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("12_xxjyq")
+
+[node name="HUD" parent="." index="13"]
+Text1 = "チュートリアル"
+Text2 = "5"
+
+[node name="Message" type="Control" parent="." index="16"]
+light_mask = 2
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.0
+anchor_top = -12.5
+anchor_right = 4.0
+anchor_bottom = -12.5
+offset_top = 1.52588e-05
+offset_right = 352.0
+offset_bottom = 88.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20]特定の場所で[color=#ff6666]上キー[/color]を押すと[color=#ff6666]隠された何か[/color]を発見できます。この辺です！
+↓↓↓[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 43.5
+anchor_top = -15.5
+anchor_right = 43.5
+anchor_bottom = -15.5
+offset_left = -6.10352e-05
+offset_top = 1.52588e-05
+offset_right = 384.0
+offset_bottom = 80.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]ワープホール[/color]は上キーを押さなくても触れるだけで移動する不思議な扉です。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Message" index="2"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 47.0
+anchor_top = -27.5
+anchor_right = 47.0
+anchor_bottom = -27.5
+offset_right = 192.0
+offset_bottom = 72.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]何か隠れてますよ？[/color]
+↓↓↓[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Message" index="3"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 10.0
+anchor_top = -29.0
+anchor_right = 21.0
+anchor_bottom = -29.0
+offset_top = 3.05176e-05
+offset_right = 256.0
+offset_bottom = 72.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]ポーズキー[/color]でゲームが一時停止します。また、所有するアイテムも確認でいます。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Message" index="4"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.5
+anchor_top = -37.5
+anchor_right = 20.5
+anchor_bottom = -37.5
+offset_right = 304.0
+offset_bottom = 90.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]崩れる床[/color]に注意！下からジャンプしても壊れます。
+↓↓↓[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Message" index="5"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 37.5
+anchor_top = -37.3745
+anchor_right = 38.5625
+anchor_bottom = -37.3745
+offset_right = 215.0
+offset_bottom = 85.992
+bbcode_enabled = true
+text = "[right][outline_size=10][outline_color=black][font_size=20]→
+[color=#ff6666]すり抜ける壁[/color]に注意　→
+→[/font_size][/outline_color][/outline_size][/right]"
+metadata/_edit_use_anchors_ = true
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("4_g687t")]
+position = Vector2(584, 16)
+scale = Vector2(100, 1)

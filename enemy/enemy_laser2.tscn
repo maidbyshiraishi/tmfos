@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp3g4uq4e6isw"]
+
+[ext_resource type="PackedScene" uid="uid://bvv58jomlnq7t" path="res://enemy/enemy_laser1.tscn" id="1_oa11a"]
+
+[node name="EnemyLaser2" instance=ExtResource("1_oa11a")]
+Speed = 800.0
+Attack = 20

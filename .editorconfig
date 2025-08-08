@@ -1,0 +1,50 @@
+﻿# Top-most EditorConfig file
+root = true
+
+[project.godot]
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+[export_presets.cfg]
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+[*.cs]
+end_of_line = crlf
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+[*.csv]
+end_of_line = crlf
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+[*.import]
+end_of_line = lf
+charset = utf-8
+
+[*.tscn]
+end_of_line = lf
+charset = utf-8
+
+[*.tres]
+end_of_line = lf
+charset = utf-8
+
+[*.sln]
+end_of_line = crlf
+charset = utf-8-bom
+
+[*.csproj]
+end_of_line = crlf
+charset = utf-8-bom
+
+[*.user]
+end_of_line = crlf
+charset = utf-8-bom

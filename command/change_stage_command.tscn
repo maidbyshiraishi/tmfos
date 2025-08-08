@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://colbvavuo7wh"]
+
+[ext_resource type="Script" uid="uid://ccckqerocxefw" path="res://command/ChangeStageCommand.cs" id="1_uqrnv"]
+
+[node name="ChangeStageCommand" type="Node"]
+script = ExtResource("1_uqrnv")

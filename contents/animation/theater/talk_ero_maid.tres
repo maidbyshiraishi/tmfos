@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://baxl5h3k8smor"]
+
+[ext_resource type="Texture2D" uid="uid://cwevqjvt3m1wg" path="res://contents/image/enemy/ero_maid.png" id="1_qk2aj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4fny"]
+atlas = ExtResource("1_qk2aj")
+region = Rect2(252, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unvr8"]
+atlas = ExtResource("1_qk2aj")
+region = Rect2(288, 0, 36, 68)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4fny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unvr8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://81medvmp06lf"]
+
+[ext_resource type="Script" uid="uid://6a30mxl56m8e" path="res://command/ShowFloatingMessageCommand.cs" id="1_sq2kl"]
+
+[node name="ShowFloatingMessageCommand" type="Node2D"]
+script = ExtResource("1_sq2kl")

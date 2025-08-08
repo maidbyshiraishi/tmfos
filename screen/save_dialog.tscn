@@ -1,0 +1,323 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8efgwywgy52c"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_suyo3"]
+[ext_resource type="Script" uid="uid://bpj71me7s3bwd" path="res://screen/SaveDialog.cs" id="2_8m601"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_xv85v"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_enxr1"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_fia06"]
+[ext_resource type="PackedScene" uid="uid://b17554w0hqp2u" path="res://command/open_save_confirm_dialog_command.tscn" id="5_xc4cv"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_eyd7u"]
+[ext_resource type="Texture2D" uid="uid://bhriv1fhw8rgk" path="res://contents/image/null.png" id="8_wje0o"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="9_xhwvx"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="10_mxc8x"]
+
+[node name="SaveDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_suyo3")
+script = ExtResource("2_8m601")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 576.0
+offset_bottom = 456.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 576.0
+offset_bottom = 456.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 40.0
+offset_right = 384.0
+offset_bottom = 65.0
+text = "セーブ"
+horizontal_alignment = 1
+
+[node name="Sprite2D1" type="Sprite2D" parent="."]
+position = Vector2(176, 170)
+texture = ExtResource("8_wje0o")
+
+[node name="Date1" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 112.0
+offset_top = 171.0
+offset_right = 240.0
+offset_bottom = 218.0
+text = "YYYY-MM-DD
+HH:MM:SS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(320, 170)
+texture = ExtResource("8_wje0o")
+
+[node name="Date2" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 171.0
+offset_right = 384.0
+offset_bottom = 218.0
+text = "YYYY-MM-DD
+HH:MM:SS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(464, 170)
+texture = ExtResource("8_wje0o")
+
+[node name="Date3" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 400.0
+offset_top = 171.0
+offset_right = 528.0
+offset_bottom = 218.0
+text = "YYYY-MM-DD
+HH:MM:SS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(176, 338)
+texture = ExtResource("8_wje0o")
+
+[node name="Date4" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 112.0
+offset_top = 339.0
+offset_right = 240.0
+offset_bottom = 386.0
+text = "YYYY-MM-DD
+HH:MM:SS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(320, 338)
+texture = ExtResource("8_wje0o")
+
+[node name="Date5" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 339.0
+offset_right = 384.0
+offset_bottom = 386.0
+text = "YYYY-MM-DD
+HH:MM:SS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(464, 338)
+texture = ExtResource("8_wje0o")
+
+[node name="Date6" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 400.0
+offset_top = 339.0
+offset_right = 528.0
+offset_bottom = 386.0
+text = "YYYY-MM-DD
+HH:MM:SS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Data1" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 128.0
+offset_top = 82.0
+offset_right = 224.0
+offset_bottom = 114.0
+text = "データ1"
+script = ExtResource("3_xv85v")
+
+[node name="Exec" parent="Control/Data1" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data1/Exec" instance=ExtResource("5_fia06")]
+SeName = "menu_select"
+
+[node name="OpenSaveConfirmDialogCommand" parent="Control/Data1/Exec" instance=ExtResource("5_xc4cv")]
+
+[node name="Focus" parent="Control/Data1" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data1/Focus" instance=ExtResource("5_fia06")]
+SeName = "menu_move"
+
+[node name="Data2" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 272.0
+offset_top = 82.0
+offset_right = 368.0
+offset_bottom = 114.0
+text = "データ2"
+script = ExtResource("3_xv85v")
+
+[node name="Exec" parent="Control/Data2" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data2/Exec" instance=ExtResource("5_fia06")]
+SeName = "menu_select"
+
+[node name="OpenSaveConfirmDialogCommand" parent="Control/Data2/Exec" instance=ExtResource("5_xc4cv")]
+SlotNo = 2
+
+[node name="Focus" parent="Control/Data2" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data2/Focus" instance=ExtResource("5_fia06")]
+SeName = "menu_move"
+
+[node name="Data3" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 416.0
+offset_top = 82.0
+offset_right = 512.0
+offset_bottom = 114.0
+text = "データ3
+"
+script = ExtResource("3_xv85v")
+
+[node name="Exec" parent="Control/Data3" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data3/Exec" instance=ExtResource("5_fia06")]
+SeName = "menu_select"
+
+[node name="OpenSaveConfirmDialogCommand" parent="Control/Data3/Exec" instance=ExtResource("5_xc4cv")]
+SlotNo = 3
+
+[node name="Focus" parent="Control/Data3" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data3/Focus" instance=ExtResource("5_fia06")]
+SeName = "menu_move"
+
+[node name="Data4" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 128.0
+offset_top = 250.0
+offset_right = 224.0
+offset_bottom = 282.0
+text = "データ4
+"
+script = ExtResource("3_xv85v")
+
+[node name="Exec" parent="Control/Data4" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data4/Exec" instance=ExtResource("5_fia06")]
+SeName = "menu_select"
+
+[node name="OpenSaveConfirmDialogCommand" parent="Control/Data4/Exec" instance=ExtResource("5_xc4cv")]
+SlotNo = 4
+
+[node name="Focus" parent="Control/Data4" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data4/Focus" instance=ExtResource("5_fia06")]
+SeName = "menu_move"
+
+[node name="Data5" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 272.0
+offset_top = 250.0
+offset_right = 368.0
+offset_bottom = 282.0
+text = "データ5"
+script = ExtResource("3_xv85v")
+
+[node name="Exec" parent="Control/Data5" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data5/Exec" instance=ExtResource("5_fia06")]
+SeName = "menu_select"
+
+[node name="OpenSaveConfirmDialogCommand" parent="Control/Data5/Exec" instance=ExtResource("5_xc4cv")]
+SlotNo = 5
+
+[node name="Focus" parent="Control/Data5" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data5/Focus" instance=ExtResource("5_fia06")]
+SeName = "menu_move"
+
+[node name="Data6" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 416.0
+offset_top = 250.0
+offset_right = 512.0
+offset_bottom = 282.0
+text = "データ6"
+script = ExtResource("3_xv85v")
+
+[node name="Exec" parent="Control/Data6" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data6/Exec" instance=ExtResource("5_fia06")]
+SeName = "menu_select"
+
+[node name="OpenSaveConfirmDialogCommand" parent="Control/Data6/Exec" instance=ExtResource("5_xc4cv")]
+SlotNo = 6
+
+[node name="Focus" parent="Control/Data6" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Data6/Focus" instance=ExtResource("5_fia06")]
+SeName = "menu_move"
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 272.0
+offset_top = 408.0
+offset_right = 368.0
+offset_bottom = 440.0
+text = "戻る"
+script = ExtResource("3_xv85v")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_fia06")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_enxr1")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_fia06")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("9_xhwvx")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("10_mxc8x")]
+Target = NodePath("../../Control/Back")

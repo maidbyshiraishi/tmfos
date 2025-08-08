@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bq4q6ye36ijld"]
+
+[ext_resource type="Texture2D" uid="uid://bi48pmdnfxjg6" path="res://contents/image/item/search_point.png" id="1_ube2c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wairr"]
+atlas = ExtResource("1_ube2c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn3n0"]
+atlas = ExtResource("1_ube2c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unkk6"]
+atlas = ExtResource("1_ube2c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwq5d"]
+atlas = ExtResource("1_ube2c")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wairr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn3n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unkk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwq5d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

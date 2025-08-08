@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://clybmlb5rps41"]
+
+[ext_resource type="PackedScene" uid="uid://bpnf82ngscqro" path="res://trigger/manage_durability_zone.tscn" id="1_p5xko"]
+[ext_resource type="SpriteFrames" uid="uid://cwed04ka2vl2b" path="res://contents/animation/fire.tres" id="2_igr3h"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="3_y4siv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkuvg"]
+size = Vector2(32, 17)
+
+[node name="Fire" instance=ExtResource("1_p5xko")]
+Continuous = true
+Stateful = false
+OneTime = false
+PlayerOnly = false
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_kkuvg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_igr3h")
+autoplay = "default"
+
+[node name="Light" parent="." index="2" instance=ExtResource("3_y4siv")]
+RangeRatio = 2.5

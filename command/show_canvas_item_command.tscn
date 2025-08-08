@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc0w3te8ab0ed"]
+
+[ext_resource type="Script" uid="uid://dquj53wihua4c" path="res://command/ShowCanvasItemCommand.cs" id="1_k08lp"]
+
+[node name="ShowCanvasItemCommand" type="Node"]
+script = ExtResource("1_k08lp")

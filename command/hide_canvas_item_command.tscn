@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dph8bmjbs5k1c"]
+
+[ext_resource type="Script" uid="uid://c40sp7ws25xee" path="res://command/HideCanvasItemCommand.cs" id="1_xkjcg"]
+
+[node name="HideCanvasItemCommand" type="Node"]
+script = ExtResource("1_xkjcg")

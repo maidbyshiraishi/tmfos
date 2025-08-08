@@ -1,0 +1,221 @@
+[gd_scene load_steps=15 format=3 uid="uid://dx6rootboa8f4"]
+
+[ext_resource type="Script" uid="uid://i2x7pu54mpg5" path="res://player/Player.cs" id="1_mswun"]
+[ext_resource type="SpriteFrames" uid="uid://hrh82mdg1jsf" path="res://contents/animation/player/player.tres" id="2_hei51"]
+[ext_resource type="Texture2D" uid="uid://dlo2wegv2i24e" path="res://contents/image/decoration/light.png" id="3_xhs2b"]
+[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="8_fc10d"]
+[ext_resource type="PackedScene" uid="uid://yt4jxbbnr7fq" path="res://player/veil_light.tscn" id="10_udeha"]
+[ext_resource type="Script" uid="uid://de5v18kphpatm" path="res://mob/BlockBreaker.cs" id="11_o6f57"]
+[ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="12_xkgep"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="14_5r2in"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rivfx"]
+size = Vector2(20, 60)
+
+[sub_resource type="Animation" id="Animation_d4a7k"]
+resource_name = "light"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.9, 0.8, 0.7, 0.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2DLampItem:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.8, 0.8, 0.7, 0.9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rgyib"]
+_data = {
+&"light": SubResource("Animation_d4a7k")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_db8m6"]
+radius = 200.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv8hm"]
+size = Vector2(14, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dja7"]
+size = Vector2(20, 60)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 7
+floor_max_angle = 0.872665
+floor_snap_length = 8.0
+script = ExtResource("1_mswun")
+MaxLife = 100
+SkipDamageTime = 0.5
+DeadSe = "player_dead"
+DamageSe = "player_damage"
+TimeupSe = "player_timeup"
+SkipAttackTime = 0.2
+JumpSe = "player_jump"
+TouchdownSe = "player_touchdown"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = ExtResource("2_hei51")
+animation = &"swim_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rivfx")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-16, -32, 32, 64)
+
+[node name="Light" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+visible = false
+energy = 0.9
+blend_mode = 2
+texture = ExtResource("3_xhs2b")
+
+[node name="PointLight2DLampItem" type="PointLight2D" parent="Light"]
+visible = false
+energy = 0.8
+blend_mode = 2
+texture = ExtResource("3_xhs2b")
+texture_scale = 5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Light"]
+libraries = {
+&"": SubResource("AnimationLibrary_rgyib")
+}
+autoplay = "light"
+
+[node name="VeilLight" parent="." instance=ExtResource("10_udeha")]
+
+[node name="ActionChange" type="Node2D" parent="."]
+script = ExtResource("14_5r2in")
+
+[node name="Head" type="Marker2D" parent="ActionChange"]
+position = Vector2(0, -14)
+
+[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+position = Vector2(0, 8)
+
+[node name="SearchNode" type="Node2D" parent="."]
+visible = false
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="SearchNode"]
+enable_node_path = NodePath("../ItemSearch")
+
+[node name="ItemSearch" type="Area2D" parent="SearchNode"]
+collision_layer = 4096
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchNode/ItemSearch"]
+shape = SubResource("CircleShape2D_db8m6")
+
+[node name="BurialArea" parent="." instance=ExtResource("12_xkgep")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+shape = SubResource("RectangleShape2D_iv8hm")
+
+[node name="EventFinder" parent="." instance=ExtResource("8_fc10d")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
+shape = SubResource("RectangleShape2D_2dja7")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="ReferenceRect" type="Node2D" parent="."]
+visible = false
+
+[node name="ReferenceNormal" type="ReferenceRect" parent="ReferenceRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -30.0
+offset_right = 10.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10, 30)
+
+[node name="ReferenceSwim" type="ReferenceRect" parent="ReferenceRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 17)
+
+[node name="ReferenceCrouch" type="ReferenceRect" parent="ReferenceRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_right = 10.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10, 15)
+
+[node name="ShotMarker" type="Node2D" parent="."]
+visible = false
+
+[node name="ShotLeft" type="Marker2D" parent="ShotMarker"]
+position = Vector2(-10, -5)
+
+[node name="ShotRight" type="Marker2D" parent="ShotMarker"]
+position = Vector2(10, -5)
+
+[node name="CrouchShotLeft" type="Marker2D" parent="ShotMarker"]
+position = Vector2(-10, 20)
+
+[node name="CrouchShotRight" type="Marker2D" parent="ShotMarker"]
+position = Vector2(10, 20)
+
+[node name="BlockBreaker" type="Node2D" parent="."]
+visible = false
+
+[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker"]
+position = Vector2(0, -33)
+script = ExtResource("11_o6f57")
+WaitTime = 0.05
+
+[node name="Step" type="Marker2D" parent="BlockBreaker"]
+position = Vector2(0, 34)
+script = ExtResource("11_o6f57")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 30)
+target_position = Vector2(0, 48)
+collision_mask = 3
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
+[connection signal="body_entered" from="BurialArea" to="." method="Burialed"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmgjdqegyd5vc"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_enrlp"]
+[ext_resource type="Texture2D" uid="uid://b2yd7fk3oq04l" path="res://contents/image/theater/screen_frame.png" id="3_8lpnw"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="3_wvbmn"]
+[ext_resource type="PackedScene" uid="uid://bb2nl5uh2vbd1" path="res://command/save_screenshot_command.tscn" id="4_yr3m4"]
+
+[node name="TheaterRoot" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_enrlp")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[node name="Frame" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(320, 240)
+texture = ExtResource("3_8lpnw")
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="ScreenshotKey" parent="." instance=ExtResource("3_wvbmn")]
+ActionName = "screenshot"
+
+[node name="SaveScreenshotCommand" parent="ScreenshotKey" instance=ExtResource("4_yr3m4")]

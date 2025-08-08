@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://12plpn187kwe"]
+
+[ext_resource type="Script" uid="uid://bsevr81a4j6kr" path="res://command/PauseNodePhysicsProcessCommand.cs" id="1_m03dq"]
+
+[node name="PauseNodePhysicsProcessCommand" type="Node"]
+script = ExtResource("1_m03dq")

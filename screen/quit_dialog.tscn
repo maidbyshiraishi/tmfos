@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://ds0pvn8co3ybh"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_1xxu1"]
+[ext_resource type="Script" uid="uid://bbykkikdla4im" path="res://screen/DialogRoot.cs" id="2_6y54e"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_bhue4"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="5_b0tyc"]
+[ext_resource type="PackedScene" uid="uid://ye80q7cyvfw8" path="res://command/quit_game_command.tscn" id="5_l1lxq"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_tha8w"]
+[ext_resource type="PackedScene" uid="uid://ccfoaeal7mdmt" path="res://command/save_screen_options_command.tscn" id="6_0257w"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_fesdb"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="8_grakq"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="9_o5pnm"]
+
+[node name="QuitDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_1xxu1")
+script = ExtResource("2_6y54e")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 160.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 160.0
+offset_top = 119.0
+offset_right = 480.0
+offset_bottom = 359.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Message" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 200.0
+offset_top = 140.0
+offset_right = 440.0
+offset_bottom = 170.0
+text = "終了しますか？"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Yes" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 224.0
+offset_top = 239.0
+offset_right = 304.0
+offset_bottom = 271.0
+text = "はい"
+script = ExtResource("3_bhue4")
+
+[node name="Exec" parent="Control/Yes" instance=ExtResource("6_fesdb")]
+
+[node name="PlaySeCommand" parent="Control/Yes/Exec" instance=ExtResource("5_tha8w")]
+SeName = "menu_select"
+
+[node name="SaveScreenOptionsCommand" parent="Control/Yes/Exec" instance=ExtResource("6_0257w")]
+
+[node name="QuitGameCommand" parent="Control/Yes/Exec" instance=ExtResource("5_l1lxq")]
+
+[node name="Focus" parent="Control/Yes" instance=ExtResource("6_fesdb")]
+
+[node name="PlaySeCommand" parent="Control/Yes/Focus" instance=ExtResource("5_tha8w")]
+SeName = "menu_move"
+
+[node name="No" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 239.0
+offset_right = 416.0
+offset_bottom = 271.0
+text = "いいえ"
+script = ExtResource("3_bhue4")
+
+[node name="Exec" parent="Control/No" instance=ExtResource("6_fesdb")]
+
+[node name="PlaySeCommand" parent="Control/No/Exec" instance=ExtResource("5_tha8w")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Control/No/Exec" instance=ExtResource("5_b0tyc")]
+
+[node name="Focus" parent="Control/No" instance=ExtResource("6_fesdb")]
+
+[node name="PlaySeCommand" parent="Control/No/Focus" instance=ExtResource("5_tha8w")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("8_grakq")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("9_o5pnm")]
+Target = NodePath("../../Control/No")

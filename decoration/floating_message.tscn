@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbgpbiprludnm"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_twul8"]
+[ext_resource type="Script" uid="uid://vaivyvkpwthx" path="res://decoration/FloatingMessage.cs" id="2_ldr4u"]
+[ext_resource type="Animation" uid="uid://bc3r652ovqet2" path="res://contents/animation/decoration/floating_message.tres" id="3_abe3q"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ipbui"]
+_data = {
+&"floating_message": ExtResource("3_abe3q")
+}
+
+[node name="FloatingMessage" type="Marker2D"]
+script = ExtResource("2_ldr4u")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -20.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(75, 20)
+theme = ExtResource("1_twul8")
+text = "Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ipbui")
+}
+autoplay = "floating_message"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="Finished"]

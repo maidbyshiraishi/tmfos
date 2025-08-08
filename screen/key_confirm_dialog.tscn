@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpji65tooke31"]
+
+[ext_resource type="PackedScene" uid="uid://lidl4lyg228v" path="res://screen/key_dialog_root.tscn" id="1_51pht"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="3_7x486"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_kryo0"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="4_s36ja"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_xjasl"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_4cohy"]
+[ext_resource type="Script" uid="uid://cfo0do8tadpiv" path="res://command/OpenFileManagerCommand.cs" id="7_vt8ys"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="8_mby00"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="9_sd7cw"]
+
+[node name="KeyConfirmDialog" instance=ExtResource("1_51pht")]
+
+[node name="Title" parent="." index="2"]
+text = "操作確認"
+
+[node name="Back" type="Button" parent="Control" index="10"]
+light_mask = 2
+layout_mode = 0
+offset_left = 56.0
+offset_top = 405.0
+offset_right = 296.0
+offset_bottom = 437.0
+text = "戻る"
+script = ExtResource("3_kryo0")
+
+[node name="Exec" parent="Control/Back" index="0" instance=ExtResource("6_4cohy")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" index="0" instance=ExtResource("5_xjasl")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" index="1" instance=ExtResource("3_7x486")]
+
+[node name="Focus" parent="Control/Back" index="1" instance=ExtResource("6_4cohy")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" index="0" instance=ExtResource("5_xjasl")]
+SeName = "menu_move"
+
+[node name="OpenDialogButton" type="Button" parent="Control" index="11"]
+light_mask = 2
+layout_mode = 0
+offset_left = 224.0
+offset_top = 453.0
+offset_right = 416.0
+offset_bottom = 485.0
+text = "操作を変更する"
+script = ExtResource("3_kryo0")
+
+[node name="Exec" parent="Control/OpenDialogButton" index="0" instance=ExtResource("6_4cohy")]
+
+[node name="OpenDialogCommand" parent="Control/OpenDialogButton/Exec" index="0" instance=ExtResource("4_s36ja")]
+DialogPath = "res://screen/key_option_dialog.tscn"
+
+[node name="PlaySeCommand" parent="Control/OpenDialogButton/Exec" index="1" instance=ExtResource("5_xjasl")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/OpenDialogButton" index="1" instance=ExtResource("6_4cohy")]
+
+[node name="PlaySeCommand" parent="Control/OpenDialogButton/Focus" index="0" instance=ExtResource("5_xjasl")]
+SeName = "menu_move"
+
+[node name="OpenFileManager" type="Button" parent="Control" index="12"]
+light_mask = 2
+layout_mode = 0
+offset_left = 344.0
+offset_top = 405.0
+offset_right = 584.0
+offset_bottom = 437.0
+text = "データフォルダを開く"
+script = ExtResource("3_kryo0")
+
+[node name="Exec" parent="Control/OpenFileManager" index="0" instance=ExtResource("6_4cohy")]
+
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" index="0" instance=ExtResource("5_xjasl")]
+SeName = "menu_select"
+
+[node name="OpenFileManagerCommand" type="Node" parent="Control/OpenFileManager/Exec" index="1"]
+script = ExtResource("7_vt8ys")
+
+[node name="Focus" parent="Control/OpenFileManager" index="1" instance=ExtResource("6_4cohy")]
+
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" index="0" instance=ExtResource("5_xjasl")]
+SeName = "menu_move"
+
+[node name="KeyReleaseedTrigger" parent="." index="7" instance=ExtResource("8_mby00")]
+ActionName = "help"
+
+[node name="ButtonPressedCommand" parent="KeyReleaseedTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_sd7cw")]
+Target = NodePath("../../Control/Back")
+
+[node name="EscapeKey" parent="." index="8" instance=ExtResource("8_mby00")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_sd7cw")]
+Target = NodePath("../../Control/Back")

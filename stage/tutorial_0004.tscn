@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=4 uid="uid://5qnhbt0sjh0o"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
+[ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="2_ns1s3"]
+[ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="2_xbh3p"]
+[ext_resource type="Texture2D" uid="uid://bwdd24muur4u6" path="res://contents/image/background/dark_gradation.png" id="3_gijo4"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="4_cixlx"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_8mhtp"]
+[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="7_mpdn1"]
+[ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="8_0ovpt"]
+[ext_resource type="PackedScene" uid="uid://c0jsvrme3e6hk" path="res://item/item_panel_wall_jump.tscn" id="8_5dyah"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="8_661k2"]
+
+[node name="Stage" instance=ExtResource("1_axhrv")]
+BgmStream = ExtResource("2_ns1s3")
+
+[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+color = Color(0.368627, 0.415686, 0.509804, 1)
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("2_xbh3p")
+
+[node name="Parallax2D1" parent="Background" index="2"]
+visible = true
+
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+texture = ExtResource("3_gijo4")
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAATAPL/AAAEAAAAAAATAPP/AAAEAAAAAAATAPT/AAAEAAAAAAATAPX/AAAEAAAAAAATAPb/AAAEAAAAAAATAPf/AAAEAAAAAAATAPj/AAAEAAAAAAATAPn/AAAEAAAAAAATAPr/AAAEAAAAAAATAPv/AAAEAAAAAAATAPz/AAAEAAAAAAATAP3/AAAEAAAAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAJAP7/AAAAAAMAAAAJAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP7/AAAAAAMAAAAQAP//AAAAAAMAAAARAP7/AAAAAAMAAAARAP//AAAAAAMAAAASAP7/AAAAAAMAAAASAP//AAAAAAMAAAATAP7/AAAAAAMAAAATAP//AAAAAAMAAAAUAPn/AAADAAIAAAAUAPr/AAADAAIAAAAUAPv/AAADAAIAAAAUAPz/AAADAAIAAAAUAP3/AAAEAAIAAAAUAP7/AAAAAAMAAAAUAP//AAAAAAMAAAAVAP7/AAAAAAMAAAAVAP//AAAAAAMAAAAWAP7/AAAAAAMAAAAWAP//AAAAAAMAAAAXAPn/AAADAAIAAAAXAPr/AAAEAAIAAAAXAP7/AAAAAAMAAAAXAP//AAAAAAMAAAAYAP7/AAAAAAMAAAAYAP//AAAAAAMAAAAZAPz/AAAAAAMAAAAZAP3/AAAAAAMAAAAZAP7/AAAAAAMAAAAZAP//AAAAAAMAAAAAAOv/AAAAAAMAAAAAAOz/AAAAAAMAAAAAAO3/AAAAAAMAAAAAAO7/AAAAAAMAAAAAAO//AAAAAAMAAAAAAPD/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP//AAAAAAMAAAABAOv/AAAAAAMAAAABAOz/AAAAAAMAAAABAO3/AAAAAAMAAAABAO7/AAAAAAMAAAABAO//AAAAAAMAAAABAPD/AAAAAAMAAAABAPH/AAAAAAMAAAABAPL/AAAAAAMAAAABAPP/AAAAAAMAAAABAPT/AAAAAAMAAAABAPX/AAAAAAMAAAABAPb/AAAAAAMAAAABAPf/AAAAAAMAAAABAPj/AAAAAAMAAAABAPn/AAAAAAMAAAABAPr/AAAAAAMAAAABAPv/AAAAAAMAAAABAPz/AAAAAAMAAAABAP3/AAAAAAMAAAABAP7/AAAAAAMAAAABAP//AAAAAAMAAAACAP7/AAAAAAMAAAACAP//AAAAAAMAAAADAP7/AAAAAAMAAAADAP//AAAAAAMAAAAEAP7/AAAAAAMAAAAEAP//AAAAAAMAAAAFAP7/AAAAAAMAAAAFAP//AAAAAAMAAAAGAP7/AAAAAAMAAAAGAP//AAAAAAMAAAAHAP7/AAAAAAMAAAAHAP//AAAAAAMAAAAIAP7/AAAAAAMAAAAIAP//AAAAAAMAAAAKAP7/AAAAAAMAAAAKAP//AAAAAAMAAAALAP7/AAAAAAMAAAALAP//AAAAAAMAAAAMAP7/AAAAAAMAAAAMAP//AAAAAAMAAAANAP7/AAAAAAMAAAANAP//AAAAAAMAAAAOAP7/AAAAAAMAAAAPAP7/AAAAAAMAAAAUAPP/AAAEAAEAAAAUAPT/AAADAAIAAAAUAPX/AAADAAIAAAAUAPb/AAADAAIAAAAUAPf/AAADAAIAAAAUAPj/AAADAAIAAAAXAOv/AAAEAAEAAAAXAOz/AAADAAIAAAAXAO3/AAADAAIAAAAXAO7/AAADAAIAAAAXAO//AAADAAIAAAAXAPD/AAADAAIAAAAXAPH/AAADAAIAAAAXAPL/AAADAAIAAAAXAPP/AAADAAIAAAAXAPT/AAADAAIAAAAXAPX/AAADAAIAAAAXAPb/AAADAAIAAAAXAPf/AAADAAIAAAAXAPj/AAADAAIAAAAaAPz/AAAAAAMAAAAaAP3/AAAAAAMAAAAaAP7/AAAAAAMAAAAaAP//AAAAAAMAAAAbAPr/AAAAAAMAAAAbAPv/AAAAAAMAAAAbAPz/AAAAAAMAAAAbAP3/AAAAAAMAAAAbAP7/AAAAAAMAAAAbAP//AAAAAAMAAAAcAPr/AAAAAAMAAAAcAPv/AAAAAAMAAAAcAPz/AAAAAAMAAAAcAP3/AAAAAAMAAAAcAP7/AAAAAAMAAAAcAP//AAAAAAMAAAAdAPj/AAAAAAMAAAAdAPn/AAAAAAMAAAAdAPr/AAAAAAMAAAAdAPv/AAAAAAMAAAAdAPz/AAAAAAMAAAAdAP3/AAAAAAMAAAAdAP7/AAAAAAMAAAAdAP//AAAAAAMAAAAeAPj/AAAAAAMAAAAeAPn/AAAAAAMAAAAeAPr/AAAAAAMAAAAeAPv/AAAAAAMAAAAeAPz/AAAAAAMAAAAeAP3/AAAAAAMAAAAeAP7/AAAAAAMAAAAeAP//AAAAAAMAAAAfAPb/AAAAAAMAAAAfAPf/AAAAAAMAAAAfAPj/AAAAAAMAAAAfAPn/AAAAAAMAAAAfAPr/AAAAAAMAAAAfAPv/AAAAAAMAAAAfAPz/AAAAAAMAAAAfAP3/AAAAAAMAAAAfAP7/AAAAAAMAAAAfAP//AAAAAAMAAAAgAPb/AAAAAAMAAAAgAPf/AAAAAAMAAAAgAPj/AAAAAAMAAAAgAPn/AAAAAAMAAAAgAPr/AAAAAAMAAAAgAPv/AAAAAAMAAAAgAPz/AAAAAAMAAAAgAP3/AAAAAAMAAAAgAP7/AAAAAAMAAAAgAP//AAAAAAMAAAAhAPb/AAAAAAMAAAAhAPf/AAAAAAMAAAAhAPj/AAAAAAMAAAAhAPn/AAAAAAMAAAAhAPr/AAAAAAMAAAAhAPv/AAAAAAMAAAAhAPz/AAAAAAMAAAAhAP3/AAAAAAMAAAAhAP7/AAAAAAMAAAAhAP//AAAAAAMAAAAiAPb/AAAAAAMAAAAiAPf/AAAAAAMAAAAiAPj/AAAAAAMAAAAiAPn/AAAAAAMAAAAiAPr/AAAAAAMAAAAiAPv/AAAAAAMAAAAiAPz/AAAAAAMAAAAiAP3/AAAAAAMAAAAiAP7/AAAAAAMAAAAiAP//AAAAAAMAAAAjAOv/AAAAAAMAAAAjAOz/AAAAAAMAAAAjAO3/AAAAAAMAAAAjAO7/AAAAAAMAAAAjAO//AAAAAAMAAAAjAPD/AAAAAAMAAAAjAPH/AAAAAAMAAAAjAPL/AAAAAAMAAAAjAPP/AAAAAAMAAAAjAPT/AAAAAAMAAAAjAPX/AAAAAAMAAAAjAPb/AAAAAAMAAAAjAPf/AAAAAAMAAAAjAPj/AAAAAAMAAAAjAPn/AAAAAAMAAAAjAPr/AAAAAAMAAAAjAPv/AAAAAAMAAAAjAPz/AAAAAAMAAAAjAP3/AAAAAAMAAAAjAP7/AAAAAAMAAAAjAP//AAAAAAMAAAAkAOv/AAAAAAMAAAAkAOz/AAAAAAMAAAAkAO3/AAAAAAMAAAAkAO7/AAAAAAMAAAAkAO//AAAAAAMAAAAkAPD/AAAAAAMAAAAkAPH/AAAAAAMAAAAkAPL/AAAAAAMAAAAkAPP/AAAAAAMAAAAkAPT/AAAAAAMAAAAkAPX/AAAAAAMAAAAkAPb/AAAAAAMAAAAkAPf/AAAAAAMAAAAkAPj/AAAAAAMAAAAkAPn/AAAAAAMAAAAkAPr/AAAAAAMAAAAkAPv/AAAAAAMAAAAkAPz/AAAAAAMAAAAkAP3/AAAAAAMAAAAkAP7/AAAAAAMAAAAkAP//AAAAAAMAAAA=")
+
+[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("7_mpdn1")]
+position = Vector2(1088, -352)
+DestStageNo = 3
+DestDoorNo = 2
+DoorNo = 1
+
+[node name="WoodDoor2" parent="Door" index="1" instance=ExtResource("7_mpdn1")]
+position = Vector2(128, -96)
+DestStageNo = 5
+DestDoorNo = 1
+DoorNo = 2
+Direction = 1
+
+[node name="SavePoint3" parent="Door" index="2" instance=ExtResource("8_0ovpt")]
+position = Vector2(424, -104)
+DoorNo = 3
+
+[node name="ItemPanelWallJump" parent="Item" index="0" instance=ExtResource("8_5dyah")]
+position = Vector2(944, -400)
+
+[node name="Player" parent="." index="8" instance=ExtResource("6_8mhtp")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("8_661k2")
+
+[node name="HUD" parent="." index="13"]
+Text1 = "チュートリアル"
+Text2 = "4"
+
+[node name="Message" type="Control" parent="." index="16"]
+light_mask = 2
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.5
+anchor_top = -18.0
+anchor_right = 15.5
+anchor_bottom = -18.0
+offset_right = 352.0
+offset_bottom = 88.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20]そろそろ一度セーブしてみましょう。[color=#ff6666]メイド電話[/color]で[color=#ff6666]上キー[/color]を押せばセーブとロードができます。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 48.0
+anchor_top = -31.5
+anchor_right = 48.0
+anchor_bottom = -31.5
+offset_left = -6.10352e-05
+offset_right = 352.0
+offset_bottom = 88.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]壁ジャンプアイテム[/color]があると壁でジャンプできます。左右の壁をジャンプで交互に登ってみましょう。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("4_cixlx")]
+position = Vector2(592, 16)
+scale = Vector2(100, 1)

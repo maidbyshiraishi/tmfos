@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwdicr50ybci3"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_kvdu4"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="2_jtdig"]
+
+[node name="CommandPressButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_kvdu4")
+text = "Button"
+script = ExtResource("2_jtdig")

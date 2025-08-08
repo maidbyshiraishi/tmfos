@@ -1,0 +1,144 @@
+[gd_scene load_steps=14 format=4 uid="uid://bhmbi7hs16eq6"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_c0i7l"]
+[ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="2_5g4xr"]
+[ext_resource type="PackedScene" uid="uid://bvfryyxcw20bs" path="res://decoration/exit.tscn" id="3_mmxo5"]
+[ext_resource type="PackedScene" uid="uid://byeqvar802p5v" path="res://door/boss_door.tscn" id="4_33fuo"]
+[ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="5_a6epe"]
+[ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="6_gse6f"]
+[ext_resource type="PackedScene" uid="uid://cdvrl2ikd782y" path="res://trigger/talk_ero_maid.tscn" id="7_p0pty"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="8_a8dyu"]
+[ext_resource type="PackedScene" uid="uid://ci7ah8lulrk1q" path="res://item/item_panel_weapon.tscn" id="9_ybii5"]
+[ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="10_736ys"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="11_oa7wj"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="12_4tip8"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="13_nuvrl"]
+
+[node name="Stage" instance=ExtResource("1_c0i7l")]
+NoBgm = true
+
+[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+color = Color(0.301961, 0, 0.0941176, 1)
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("2_5g4xr")
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAAMAP7/AAAJAAEAAAAaAP7/AAAJAAEAAAAOAP3/AAAJAAEAAAAQAPz/AAAJAAEAAAAWAPz/AAAJAAEAAAAYAP3/AAAJAAEAAAAMAP3/AAAIAAMAAAAMAPz/AAAIAAMAAAAMAPv/AAAIAAMAAAAMAPr/AAAIAAMAAAAOAPz/AAAIAAMAAAAOAPv/AAAIAAMAAAAOAPr/AAAIAAMAAAAOAPn/AAAIAAMAAAAQAPv/AAAIAAMAAAAQAPr/AAAIAAMAAAAQAPn/AAAIAAMAAAAQAPj/AAAIAAMAAAAWAPv/AAAIAAMAAAAWAPr/AAAIAAMAAAAWAPn/AAAIAAMAAAAWAPj/AAAIAAMAAAAYAPz/AAAIAAMAAAAYAPv/AAAIAAMAAAAYAPr/AAAIAAMAAAAYAPn/AAAIAAMAAAAaAP3/AAAIAAMAAAAaAPz/AAAIAAMAAAAaAPv/AAAIAAMAAAAaAPr/AAAIAAMAAAAaAPn/AAAJAAAAAAAYAPj/AAAJAAAAAAAWAPf/AAAJAAAAAAAQAPf/AAAJAAAAAAAOAPj/AAAJAAAAAAAMAPn/AAAJAAAAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAAAOD/AAAAAAMAAAAAAOH/AAAAAAMAAAAAAOL/AAAAAAMAAAAAAOP/AAAAAAMAAAAAAOT/AAAAAAMAAAAAAOX/AAAAAAMAAAAAAOb/AAAAAAMAAAAAAOf/AAAAAAMAAAAAAOj/AAAAAAMAAAAAAOn/AAAAAAMAAAAAAOr/AAAAAAMAAAAAAOv/AAAAAAMAAAAAAOz/AAAAAAMAAAAAAO3/AAAAAAMAAAAAAO7/AAAAAAMAAAAAAO//AAAAAAMAAAAAAPD/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP//AAAAAAMAAAABAOD/AAAAAAMAAAABAP//AAAAAAMAAAACAOD/AAAAAAMAAAACAP//AAAAAAMAAAADAOD/AAAAAAMAAAADAP//AAAAAAMAAAAEAOD/AAAAAAMAAAAEAP//AAAAAAMAAAAFAOD/AAAAAAMAAAAFAP//AAAAAAMAAAAGAOD/AAAAAAMAAAAGAP//AAAAAAMAAAAHAOD/AAAAAAMAAAAHAP//AAAAAAMAAAAIAOD/AAAAAAMAAAAIAP//AAAAAAMAAAAJAOD/AAAAAAMAAAAJAP//AAAAAAMAAAAKAOD/AAAAAAMAAAAKAP//AAAAAAMAAAALAOD/AAAAAAMAAAALAP//AAAAAAMAAAAMAOD/AAAAAAMAAAAMAP//AAAAAAMAAAANAOD/AAAAAAMAAAANAP//AAAAAAMAAAAOAOD/AAAAAAMAAAAOAP//AAAAAAMAAAAPAOD/AAAAAAMAAAAPAP//AAAAAAMAAAAQAOD/AAAAAAMAAAAQAP//AAAAAAMAAAARAOD/AAAAAAMAAAARAP//AAAAAAMAAAASAOD/AAAAAAMAAAASAP//AAAAAAMAAAATAOD/AAAAAAMAAAATAP//AAAAAAMAAAAUAOD/AAAAAAMAAAAUAP//AAAAAAMAAAAVAOD/AAAAAAMAAAAVAP//AAAAAAMAAAAWAOD/AAAAAAMAAAAWAP//AAAAAAMAAAAXAOD/AAAAAAMAAAAXAP//AAAAAAMAAAAYAOD/AAAAAAMAAAAYAP//AAAAAAMAAAAZAOD/AAAAAAMAAAAZAP//AAAAAAMAAAAaAOD/AAAAAAMAAAAaAP//AAAAAAMAAAAbAOD/AAAAAAMAAAAbAP//AAAAAAMAAAAcAOD/AAAAAAMAAAAcAP//AAAAAAMAAAAdAOD/AAAAAAMAAAAdAP//AAAAAAMAAAAeAOD/AAAAAAMAAAAeAP//AAAAAAMAAAAfAOD/AAAAAAMAAAAfAOH/AAAAAAMAAAAfAOL/AAAAAAMAAAAfAOP/AAAAAAMAAAAfAOT/AAAAAAMAAAAfAOX/AAAAAAMAAAAfAOb/AAAAAAMAAAAfAOf/AAAAAAMAAAAfAOj/AAAAAAMAAAAfAOn/AAAAAAMAAAAfAOr/AAAAAAMAAAAfAOv/AAAAAAMAAAAfAOz/AAAAAAMAAAAfAO3/AAAAAAMAAAAfAO7/AAAAAAMAAAAfAO//AAAAAAMAAAAfAPD/AAAAAAMAAAAfAPH/AAAAAAMAAAAfAPL/AAAAAAMAAAAfAPP/AAAAAAMAAAAfAPT/AAAAAAMAAAAfAPX/AAAAAAMAAAAfAPb/AAAAAAMAAAAfAPf/AAAAAAMAAAAfAPj/AAAAAAMAAAAfAPn/AAAAAAMAAAAfAPr/AAAAAAMAAAAfAPv/AAAAAAMAAAAfAPz/AAAAAAMAAAAfAP3/AAAAAAMAAAAfAP7/AAAAAAMAAAAfAP//AAAAAAMAAAAOAP7/AAAAAAMAAAAPAP7/AAAAAAMAAAAQAP7/AAAAAAMAAAARAP7/AAAAAAMAAAASAP7/AAAAAAMAAAATAP7/AAAAAAMAAAAUAP7/AAAAAAMAAAAVAP7/AAAAAAMAAAAWAP7/AAAAAAMAAAAXAP7/AAAAAAMAAAAQAP3/AAAAAAMAAAARAP3/AAAAAAMAAAASAP3/AAAAAAMAAAATAP3/AAAAAAMAAAAUAP3/AAAAAAMAAAAVAP3/AAAAAAMAAAASAPz/AAAAAAMAAAATAPz/AAAAAAMAAAASAPX/AAAAAAMAAAATAPX/AAAAAAMAAAARAPb/AAAAAAMAAAAQAPb/AAAAAAMAAAAPAPf/AAAAAAMAAAAOAPf/AAAAAAMAAAANAPj/AAAAAAMAAAAMAPj/AAAAAAMAAAAUAPz/AAAAAAMAAAAWAP3/AAAAAAMAAAAYAP7/AAAAAAMAAAAUAPX/AAAAAAMAAAAVAPb/AAAAAAMAAAAWAPb/AAAAAAMAAAAXAPf/AAAAAAMAAAAYAPf/AAAAAAMAAAAZAPj/AAAAAAMAAAAaAPj/AAAAAAMAAAAbAPj/AAAAAAMAAAALAPj/AAAAAAMAAAA=")
+
+[node name="Foreground" parent="TileMap" index="2"]
+tile_map_data = PackedByteArray("AAAYAP3/AAAHAAEAAAAYAPz/AAAHAAEAAAAYAPv/AAAHAAEAAAAQAPf/AAAHAAEAAAAQAPj/AAAHAAEAAAAOAP3/AAAHAAEAAAAOAPz/AAAHAAEAAAAMAP3/AAAHAAEAAAAMAPz/AAAHAAEAAAAMAPv/AAAHAAEAAAAWAPf/AAAHAAEAAAAWAPj/AAAHAAEAAAAaAPn/AAAHAAEAAAAaAPr/AAAHAAEAAAAWAPz/AAAHAAEAAAAWAPv/AAAHAAEAAAAMAP7/AAAHAAEAAAAaAP7/AAAHAAEAAAAQAPz/AAAHAAEAAAA=")
+
+[node name="Exit" parent="Decoration1" index="0" instance=ExtResource("3_mmxo5")]
+position = Vector2(96, -176)
+
+[node name="BossDoor1" parent="Door" index="0" instance=ExtResource("4_33fuo")]
+position = Vector2(208, -63)
+DestStageNo = 15
+DestDoorNo = 3
+DoorNo = 1
+Direction = 1
+
+[node name="Warp2" parent="Door" index="1" instance=ExtResource("5_a6epe")]
+position = Vector2(96, -128)
+DestStageNo = 1
+DestDoorNo = 1
+DoorNo = 2
+
+[node name="SavePoint3" parent="Door" index="2" instance=ExtResource("6_gse6f")]
+position = Vector2(303, -72)
+DoorNo = 3
+Direction = 1
+
+[node name="TalkTrigger" parent="Talk" index="0" instance=ExtResource("7_p0pty")]
+position = Vector2(624, -160)
+DialogPath = "res://theater/talk_0009.tscn"
+
+[node name="ItemPanelLife" parent="Item" index="0" instance=ExtResource("8_a8dyu")]
+position = Vector2(848, -272)
+Stateful = false
+
+[node name="ItemPanelLife2" parent="Item" index="1" instance=ExtResource("8_a8dyu")]
+position = Vector2(784, -304)
+Stateful = false
+
+[node name="ItemPanelLife3" parent="Item" index="2" instance=ExtResource("8_a8dyu")]
+position = Vector2(720, -336)
+Stateful = false
+
+[node name="ItemPanelLife4" parent="Item" index="3" instance=ExtResource("8_a8dyu")]
+position = Vector2(528, -336)
+Stateful = false
+
+[node name="ItemPanelLife5" parent="Item" index="4" instance=ExtResource("8_a8dyu")]
+position = Vector2(464, -304)
+Stateful = false
+
+[node name="ItemPanelLife6" parent="Item" index="5" instance=ExtResource("8_a8dyu")]
+position = Vector2(400, -272)
+Stateful = false
+
+[node name="ItemPanelWeapon" parent="Item" index="6" instance=ExtResource("9_ybii5")]
+position = Vector2(688, -336)
+
+[node name="ItemPanelWeapon2" parent="Item" index="7" instance=ExtResource("9_ybii5")]
+position = Vector2(752, -304)
+
+[node name="ItemPanelWeapon3" parent="Item" index="8" instance=ExtResource("9_ybii5")]
+position = Vector2(880, -272)
+
+[node name="ItemPanelWeapon4" parent="Item" index="9" instance=ExtResource("9_ybii5")]
+position = Vector2(816, -272)
+
+[node name="ItemPanelWeapon5" parent="Item" index="10" instance=ExtResource("9_ybii5")]
+position = Vector2(656, -368)
+
+[node name="ItemPanelArmor" parent="Item" index="11" instance=ExtResource("10_736ys")]
+position = Vector2(592, -368)
+
+[node name="ItemPanelArmor2" parent="Item" index="12" instance=ExtResource("10_736ys")]
+position = Vector2(368, -272)
+
+[node name="ItemPanelArmor3" parent="Item" index="13" instance=ExtResource("10_736ys")]
+position = Vector2(496, -304)
+
+[node name="ItemPanelArmor4" parent="Item" index="14" instance=ExtResource("10_736ys")]
+position = Vector2(560, -336)
+
+[node name="ItemPanelArmor5" parent="Item" index="15" instance=ExtResource("10_736ys")]
+position = Vector2(432, -272)
+
+[node name="ItemPanelArmor6" parent="Item" index="16" instance=ExtResource("10_736ys")]
+position = Vector2(624, -368)
+
+[node name="ItemPanelLife7" parent="Item" index="17" instance=ExtResource("8_a8dyu")]
+position = Vector2(624, -400)
+Stateful = false
+
+[node name="ItemPanelLife8" parent="Item" index="18" instance=ExtResource("8_a8dyu")]
+position = Vector2(640, -432)
+Stateful = false
+
+[node name="ItemPanelLife9" parent="Item" index="19" instance=ExtResource("8_a8dyu")]
+position = Vector2(608, -432)
+Stateful = false
+
+[node name="Player" parent="." index="8" instance=ExtResource("11_oa7wj")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("12_4tip8")
+
+[node name="HUD" parent="." index="13"]
+Text1 = "ステージ"
+Text2 = "20"
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("13_nuvrl")]
+position = Vector2(480, 16)
+scale = Vector2(60, 1)

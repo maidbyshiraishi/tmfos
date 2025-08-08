@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0jsvrme3e6hk"]
+
+[ext_resource type="PackedScene" uid="uid://drm6s3qj4id31" path="res://item/item_panel_root.tscn" id="1_xer3e"]
+[ext_resource type="SpriteFrames" uid="uid://j46rxr8ayrwf" path="res://contents/animation/item/item_wall_jump.tres" id="2_bixwu"]
+
+[node name="ItemPanelWallJump" instance=ExtResource("1_xer3e")]
+Item = 3
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_bixwu")
+animation = &"closed"

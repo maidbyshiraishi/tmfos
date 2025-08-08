@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=4 uid="uid://dc8o5jxtanr3i"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
+[ext_resource type="Texture2D" uid="uid://dgvjvsytsnp0r" path="res://contents/image/background/blue_gradation.png" id="2_8yn1m"]
+[ext_resource type="Texture2D" uid="uid://dp7lcyaom8de3" path="res://contents/image/background/pattern2.png" id="3_ct8fu"]
+[ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="3_lgh2m"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="5_w1i10"]
+[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="6_44iah"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_a4214"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="7_2xw83"]
+[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="8_eppo0"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="9_im3d5"]
+[ext_resource type="PackedScene" uid="uid://c48l268v1hmlo" path="res://item/treasure_box.tscn" id="11_u07g6"]
+
+[node name="Stage" instance=ExtResource("1_axhrv")]
+BgmStream = ExtResource("3_lgh2m")
+
+[node name="Parallax2D2" parent="Background" index="1"]
+repeat_size = Vector2(640, 0)
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("3_ct8fu")
+
+[node name="Parallax2D1" parent="Background" index="2"]
+visible = true
+
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+texture = ExtResource("2_8yn1m")
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAAGAPL/AAAAAAAAAAARAPH/AAAAAAAAAAAbAPL/AAAAAAAAAAAeAPH/AAAAAAAAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAEAP//AAAAAAUAAAAFAP//AAAAAAUAAAAGAP//AAAAAAUAAAAYAP7/AAAAAAUAAAAYAP//AAAAAAUAAAAZAP7/AAAAAAUAAAAZAP//AAAAAAUAAAAAAO//AAAAAAUAAAAAAPD/AAAAAAUAAAAAAPH/AAAAAAUAAAAAAPL/AAAAAAUAAAAAAPP/AAAAAAUAAAAAAPT/AAAAAAUAAAAAAPX/AAAAAAUAAAAAAPb/AAAAAAUAAAAAAPf/AAAAAAUAAAAAAPj/AAAAAAUAAAAAAPn/AAAAAAUAAAAAAPr/AAAAAAUAAAAAAPv/AAAAAAUAAAAAAPz/AAAAAAUAAAAAAP3/AAAAAAUAAAAAAP7/AAAAAAUAAAAAAP//AAAAAAUAAAABAO//AAAAAAUAAAABAPD/AAAAAAUAAAABAPH/AAAAAAUAAAABAPL/AAAAAAUAAAABAPP/AAAAAAUAAAABAPT/AAAAAAUAAAABAPX/AAAAAAUAAAABAPb/AAAAAAUAAAABAPf/AAAAAAUAAAABAPj/AAAAAAUAAAABAPn/AAAAAAUAAAABAPr/AAAAAAUAAAABAPv/AAAAAAUAAAABAPz/AAAAAAUAAAABAP3/AAAAAAUAAAABAP7/AAAAAAUAAAABAP//AAAAAAUAAAACAP3/AAACAAEAAAACAP7/AAAAAAQAAAACAP//AAAAAAUAAAADAP3/AAACAAAAAAADAP7/AAAAAAQAAAADAP//AAAAAAUAAAAEAP3/AAACAAAAAAAEAP7/AAAAAAQAAAAFAP3/AAACAAEAAAAFAP7/AAAAAAQAAAAGAP3/AAACAAEAAAAGAP7/AAAAAAQAAAAHAP3/AAACAAAAAAAHAP7/AAAAAAQAAAAHAP//AAAAAAUAAAAIAP7/AAAAAAUAAAAIAP//AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAKAP7/AAAAAAUAAAAKAP//AAAAAAUAAAALAP7/AAAAAAUAAAALAP//AAAAAAUAAAAMAP7/AAAAAAUAAAAMAP//AAAAAAUAAAAOAP3/AAAAAAUAAAAOAP7/AAAAAAUAAAAOAP//AAAAAAUAAAAPAPz/AAAAAAUAAAAPAP3/AAAAAAUAAAAPAP7/AAAAAAUAAAAPAP//AAAAAAUAAAAQAPz/AAAAAAUAAAAQAP3/AAAAAAUAAAAQAP7/AAAAAAUAAAAQAP//AAAAAAUAAAARAPz/AAAAAAUAAAARAP3/AAAAAAUAAAARAP7/AAAAAAUAAAARAP//AAAAAAUAAAASAP3/AAAAAAUAAAASAP7/AAAAAAUAAAASAP//AAAAAAUAAAATAP7/AAAAAAUAAAATAP//AAAAAAUAAAAUAP7/AAAAAAUAAAAUAP//AAAAAAUAAAAVAP7/AAAAAAUAAAAVAP//AAAAAAUAAAAWAP7/AAAAAAUAAAAWAP//AAAAAAUAAAAXAP7/AAAAAAUAAAAXAP//AAAAAAUAAAAaAP7/AAAAAAUAAAAaAP//AAAAAAUAAAAbAP7/AAAAAAUAAAAbAP//AAAAAAUAAAAcAP7/AAAAAAUAAAAcAP//AAAAAAUAAAAdAP7/AAAAAAUAAAAdAP//AAAAAAUAAAAeAP7/AAAAAAUAAAAeAP//AAAAAAUAAAAfAP7/AAAAAAUAAAAfAP//AAAAAAUAAAAgAP7/AAAAAAUAAAAgAP//AAAAAAUAAAAhAP7/AAAAAAUAAAAhAP//AAAAAAUAAAAiAP7/AAAAAAUAAAAiAP//AAAAAAUAAAAjAO//AAAAAAUAAAAjAPD/AAAAAAUAAAAjAPH/AAAAAAUAAAAjAPL/AAAAAAUAAAAjAPP/AAAAAAUAAAAjAPT/AAAAAAUAAAAjAPX/AAAAAAUAAAAjAPb/AAAAAAUAAAAjAPf/AAAAAAUAAAAjAPj/AAAAAAUAAAAjAPn/AAAAAAUAAAAjAPr/AAAAAAUAAAAjAPv/AAAAAAUAAAAjAPz/AAAAAAUAAAAjAP3/AAAAAAUAAAAjAP7/AAAAAAUAAAAjAP//AAAAAAUAAAAkAO//AAAAAAUAAAAkAPD/AAAAAAUAAAAkAPH/AAAAAAUAAAAkAPL/AAAAAAUAAAAkAPP/AAAAAAUAAAAkAPT/AAAAAAUAAAAkAPX/AAAAAAUAAAAkAPb/AAAAAAUAAAAkAPf/AAAAAAUAAAAkAPj/AAAAAAUAAAAkAPn/AAAAAAUAAAAkAPr/AAAAAAUAAAAkAPv/AAAAAAUAAAAkAPz/AAAAAAUAAAAkAP3/AAAAAAUAAAAkAP7/AAAAAAUAAAAkAP//AAAAAAUAAAANAP7/AAAAAAUAAAANAP//AAAAAAUAAAA=")
+
+[node name="Foreground" parent="TileMap" index="2"]
+tile_map_data = PackedByteArray("AAAHAP7/AAAGAAUAAAAIAP7/AAAGAAUAAAAJAP7/AAAGAAUAAAAGAP7/AAAGAAUAAAAFAP7/AAAGAAUAAAACAP7/AAAGAAUAAAADAP7/AAAGAAUAAAAEAP7/AAAGAAUAAAARAPz/AAAGAAYAAAASAP3/AAAGAAYAAAAXAP7/AAAGAAUAAAAYAP7/AAAGAAUAAAAZAP7/AAAGAAUAAAAaAP7/AAAGAAUAAAAPAPz/AAAFAAYAAAAOAP3/AAAEAAYAAAAjAP3/AAAEAAYAAAAiAP7/AAAGAAUAAAABAP3/AAADAAYAAAATAP7/AAAGAAUAAAANAP7/AAAGAAUAAAA=")
+
+[node name="StageEntryPoint1" parent="Door" index="0" instance=ExtResource("6_44iah")]
+position = Vector2(320, -96)
+DoorNo = 1
+Direction = 1
+
+[node name="WoodDoor2" parent="Door" index="1" instance=ExtResource("8_eppo0")]
+position = Vector2(976, -96)
+DestStageNo = 2
+DestDoorNo = 1
+DoorNo = 2
+
+[node name="ItemPanelLife" parent="Item" index="0" instance=ExtResource("9_im3d5")]
+position = Vector2(144, -176)
+
+[node name="TreasureBox" parent="Item" index="1" instance=ExtResource("11_u07g6")]
+position = Vector2(528, -136)
+
+[node name="Player" parent="." index="8" instance=ExtResource("6_a4214")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("7_2xw83")
+
+[node name="HUD" parent="." index="13"]
+Text1 = "チュートリアル"
+Text2 = "1"
+
+[node name="Message" type="Control" parent="." index="16"]
+light_mask = 2
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.0
+anchor_top = -22.0
+anchor_right = 12.0
+anchor_bottom = -22.0
+offset_left = -1.52588e-05
+offset_top = 3.05176e-05
+offset_right = 352.0
+offset_bottom = 96.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]F1キー[/color]または[color=#ff6666]ガイド[/color]、[color=#ff6666]Xboxホーム[/color]、[color=#ff6666]Sony PS[/color]で現在の操作設定とゲーム内で用いられるキー名を確認しましょう。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 36.0
+anchor_top = -20.0
+anchor_right = 37.0
+anchor_bottom = -19.9995
+offset_right = 288.0
+offset_bottom = 95.992
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]左右キー[/color]で左右に移動します。[color=#ff6666]Aキー[/color]でジャンプします。[color=#ff6666]下キー[/color]でしゃがみます。[/font_size][/outline_color][/outline_size][/center]
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Message" index="2"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 54.0
+anchor_top = -13.0
+anchor_right = 54.0
+anchor_bottom = -13.0
+offset_left = -6.10352e-05
+offset_top = 1.52588e-05
+offset_right = 224.0
+offset_bottom = 64.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]上キー[/color]で扉に入って次に進みましょう。[/font_size][/outline_color][/outline_size][/center]
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Message" index="3"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.0
+anchor_top = -14.0
+anchor_right = 4.0
+anchor_bottom = -14.0
+offset_right = 160.0
+offset_bottom = 48.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]回復[/color]アイテム[/font_size][/outline_color][/outline_size][/center]
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("5_w1i10")]
+position = Vector2(552, 16)
+scale = Vector2(100, 1)

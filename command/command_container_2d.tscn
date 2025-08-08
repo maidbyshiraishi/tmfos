@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://slh2hvgtrn7u"]
+
+[ext_resource type="Script" uid="uid://kigirr703uj3" path="res://command/CommandContainer2D.cs" id="1_ooi11"]
+
+[node name="CommandContainer2D" type="Node2D"]
+script = ExtResource("1_ooi11")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw431olrpwodf"]
+
+[ext_resource type="Script" uid="uid://bx2yhhgegb58j" path="res://enemy/DrillShot.cs" id="1_tlkbk"]
+[ext_resource type="SpriteFrames" uid="uid://badsywef4ifg1" path="res://contents/animation/enemy/drill_shot_lr.tres" id="2_pkkqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ar34g"]
+size = Vector2(32, 16)
+
+[node name="DrillShotLeft" type="Area2D"]
+collision_layer = 64
+collision_mask = 8
+script = ExtResource("1_tlkbk")
+Speed = 400.0
+Attack = 5
+Direction = Vector2(-1, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_pkkqp")
+animation = &"left"
+autoplay = "left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ar34g")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(3.42857, 2.28571)
+rect = Rect2(-7, -7, 14, 14)
+
+[connection signal="area_entered" from="." to="." method="HitArea2D"]
+[connection signal="body_entered" from="." to="." method="HitNode2D"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]

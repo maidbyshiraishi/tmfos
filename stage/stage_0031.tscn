@@ -1,0 +1,409 @@
+[gd_scene load_steps=23 format=4 uid="uid://6e48r4g4pmxj"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_m2bb3"]
+[ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="2_3wiog"]
+[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="3_v3gm7"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="4_8qobo"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="5_h3f47"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="6_ymd20"]
+[ext_resource type="PackedScene" uid="uid://bqx6umqbqp2jl" path="res://enemy/tentacle_root.tscn" id="7_ybjpv"]
+[ext_resource type="PackedScene" uid="uid://bnnvd0mbb2rrj" path="res://enemy/tentacle_neck.tscn" id="8_tesba"]
+[ext_resource type="SpriteFrames" uid="uid://du2surv2spbsb" path="res://contents/animation/enemy/dragon_neck.tres" id="9_2dp7r"]
+[ext_resource type="PackedScene" uid="uid://bnft7p4pr55wx" path="res://enemy/tentacle_head.tscn" id="10_fcuef"]
+[ext_resource type="PackedScene" uid="uid://cfymfls3a7ari" path="res://enemy/dragon_head_enemy.tscn" id="11_cmkho"]
+[ext_resource type="Texture2D" uid="uid://bgs46uwca6xsq" path="res://contents/image/decoration/dragon_leg.png" id="12_vkkmy"]
+[ext_resource type="Texture2D" uid="uid://bxvr2jhhma4w3" path="res://contents/image/decoration/dragon_body.png" id="13_t40vv"]
+[ext_resource type="Shader" uid="uid://bsxyfpwy6v3d3" path="res://contents/shader/raster_scroll.gdshader" id="14_jxaq4"]
+[ext_resource type="Texture2D" uid="uid://1byvvsya18nl" path="res://contents/image/decoration/dragon_tail.png" id="15_smsxn"]
+[ext_resource type="PackedScene" uid="uid://bkpmusncycni5" path="res://hud/boss_life.tscn" id="16_vv7ib"]
+[ext_resource type="PackedScene" uid="uid://c7uf428mr1fso" path="res://trigger/sweep_observer.tscn" id="17_c1nar"]
+[ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/set_player_initial_durability_command.tscn" id="18_mb301"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="19_hxg78"]
+[ext_resource type="PackedScene" uid="uid://dvcg4jkd64dvn" path="res://enemy/tmfos_enemy.tscn" id="20_15mma"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="21_iwqut"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cie7"]
+shader = ExtResource("14_jxaq4")
+shader_parameter/speed = 0.5
+shader_parameter/depth = 0.02
+
+[node name="Stage" instance=ExtResource("1_m2bb3")]
+BgmStream = ExtResource("2_3wiog")
+PlayerArmorRatio = 0.0
+metadata/_edit_horizontal_guides_ = [-480.0]
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+color = Color(0, 0, 0, 1)
+
+[node name="Parallax2D2" parent="Background" index="1"]
+visible = false
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAARAP//AAAHAAMAAAASAP7/AAAHAAMAAAARAP7/AAAHAAMAAAARAP3/AAAHAAMAAAASAP3/AAAHAAMAAAASAPz/AAAHAAMAAAASAPv/AAAHAAMAAAATAPv/AAAFAAMAAAATAPr/AAAHAAMAAAASAPr/AAAHAAMAAAATAP7/AAADAAMAAAATAP//AAADAAMAAAASAP//AAAHAAMAAAATAP3/AAADAAMAAAATAPz/AAADAAMAAAARAPz/AAAHAAMAAAAQAP3/AAADAAMAAAAQAPz/AAADAAMAAAAPAPz/AAAHAAMAAAAPAPv/AAAHAAMAAAAPAP3/AAAHAAMAAAAOAP3/AAAHAAMAAAAOAP7/AAAHAAMAAAAOAP//AAAHAAMAAAANAP//AAAIAAMAAAAPAP7/AAAHAAMAAAAPAP//AAAHAAMAAAAQAP7/AAADAAMAAAAQAP//AAADAAMAAAARAPv/AAAHAAMAAAARAPr/AAAHAAMAAAARAPn/AAAHAAMAAAARAPj/AAAHAAMAAAARAPf/AAAHAAMAAAASAPn/AAAHAAMAAAASAPj/AAAHAAMAAAASAPf/AAAHAAMAAAASAPb/AAAHAAMAAAASAPX/AAAHAAMAAAALAP//AAAIAAMAAAALAP7/AAAIAAMAAAALAP3/AAAIAAMAAAALAPz/AAAIAAMAAAALAPv/AAAIAAMAAAALAPr/AAAIAAMAAAALAPn/AAAIAAMAAAALAPj/AAAIAAMAAAALAPf/AAAIAAMAAAALAPb/AAAIAAMAAAALAPX/AAAIAAMAAAALAPT/AAAIAAMAAAALAPP/AAAIAAMAAAALAPL/AAAIAAMAAAALAPH/AAAIAAMAAAANAP7/AAAIAAMAAAANAP3/AAAIAAMAAAANAPz/AAAIAAMAAAANAPv/AAAIAAMAAAANAPr/AAAIAAMAAAANAPn/AAAIAAMAAAANAPj/AAAIAAMAAAANAPf/AAAIAAMAAAANAPb/AAAIAAMAAAANAPX/AAAIAAMAAAANAPT/AAAIAAMAAAANAPP/AAAIAAMAAAANAPL/AAAIAAMAAAANAPH/AAAIAAMAAAAPAPn/AAAIAAMAAAAPAPj/AAAIAAMAAAAPAPf/AAAIAAMAAAAPAPb/AAAIAAMAAAAPAPX/AAAIAAMAAAAPAPT/AAAIAAMAAAAPAPP/AAAIAAMAAAAPAPL/AAAIAAMAAAAPAPH/AAAIAAMAAAAQAPv/AAAFAAMAAAAQAPr/AAAHAAMAAAAQAPn/AAAHAAMAAAAPAPr/AAAIAAMAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAATAP//AAAFAAcAAAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAAAP7/AAAEAAIAAAAAAP3/AAADAAIAAAAAAPz/AAADAAIAAAAAAPv/AAADAAIAAAAAAPr/AAADAAIAAAAAAPn/AAADAAIAAAAAAPj/AAADAAIAAAAAAPf/AAADAAIAAAAAAPb/AAADAAIAAAAAAPX/AAADAAIAAAAAAPT/AAADAAIAAAAAAPP/AAADAAIAAAAAAPL/AAADAAIAAAAAAPH/AAADAAIAAAAIAP//AAAAAAMAAAA=")
+
+[node name="StageEntryPoint1" parent="Door" index="0" instance=ExtResource("3_v3gm7")]
+position = Vector2(128, -64)
+DoorNo = 1
+Direction = 1
+
+[node name="ItemPanelLife" parent="Item" index="0" instance=ExtResource("4_8qobo")]
+position = Vector2(272, -48)
+Stateful = false
+
+[node name="ItemPanelLife2" parent="Item" index="1" instance=ExtResource("4_8qobo")]
+position = Vector2(272, -80)
+Stateful = false
+
+[node name="ItemPanelLife3" parent="Item" index="2" instance=ExtResource("4_8qobo")]
+position = Vector2(240, -48)
+Stateful = false
+
+[node name="ItemPanelLife4" parent="Item" index="3" instance=ExtResource("4_8qobo")]
+position = Vector2(240, -80)
+Stateful = false
+
+[node name="ItemPanelLife7" parent="Item" index="4" instance=ExtResource("4_8qobo")]
+position = Vector2(128, -48)
+Stateful = false
+
+[node name="ItemPanelLife8" parent="Item" index="5" instance=ExtResource("4_8qobo")]
+position = Vector2(128, -80)
+Stateful = false
+
+[node name="ItemPanelLife5" parent="Item" index="6" instance=ExtResource("4_8qobo")]
+position = Vector2(272, -112)
+Stateful = false
+
+[node name="ItemPanelLife6" parent="Item" index="7" instance=ExtResource("4_8qobo")]
+position = Vector2(240, -112)
+Stateful = false
+
+[node name="Player" parent="." index="8" instance=ExtResource("5_h3f47")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("6_ymd20")
+
+[node name="TentacleRoot1" parent="Enemy" index="0" instance=ExtResource("7_ybjpv")]
+position = Vector2(520, -344)
+
+[node name="TentacleNeck1" parent="Enemy/TentacleRoot1" index="0" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck1" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck2" parent="Enemy/TentacleRoot1" index="1" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck2" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck3" parent="Enemy/TentacleRoot1" index="2" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck3" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck4" parent="Enemy/TentacleRoot1" index="3" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck4" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck5" parent="Enemy/TentacleRoot1" index="4" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck5" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck6" parent="Enemy/TentacleRoot1" index="5" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck6" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck7" parent="Enemy/TentacleRoot1" index="6" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck7" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck8" parent="Enemy/TentacleRoot1" index="7" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck8" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck9" parent="Enemy/TentacleRoot1" index="8" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck9" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck10" parent="Enemy/TentacleRoot1" index="9" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot1/TentacleNeck10" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleHead" parent="Enemy/TentacleRoot1" index="10" instance=ExtResource("10_fcuef")]
+Speed = 1.0
+MaxLength = 480.0
+
+[node name="DragonHeadEnemy" parent="Enemy/TentacleRoot1/TentacleHead" index="0" instance=ExtResource("11_cmkho")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemy/TentacleRoot1/TentacleHead" index="1" groups=["TeleportPosition"]]
+position = Vector2(0, -16)
+
+[node name="TentacleRoot2" parent="Enemy" index="1" instance=ExtResource("7_ybjpv")]
+position = Vector2(520, -368)
+
+[node name="TentacleNeck1" parent="Enemy/TentacleRoot2" index="0" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck1" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck2" parent="Enemy/TentacleRoot2" index="1" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck2" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck3" parent="Enemy/TentacleRoot2" index="2" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck3" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck4" parent="Enemy/TentacleRoot2" index="3" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck4" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck5" parent="Enemy/TentacleRoot2" index="4" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck5" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck6" parent="Enemy/TentacleRoot2" index="5" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck6" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck7" parent="Enemy/TentacleRoot2" index="6" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck7" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck8" parent="Enemy/TentacleRoot2" index="7" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck8" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck9" parent="Enemy/TentacleRoot2" index="8" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck9" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck10" parent="Enemy/TentacleRoot2" index="9" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot2/TentacleNeck10" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleHead" parent="Enemy/TentacleRoot2" index="10" instance=ExtResource("10_fcuef")]
+Speed = 2.0
+MaxLength = 400.0
+
+[node name="DragonHeadEnemy" parent="Enemy/TentacleRoot2/TentacleHead" index="0" instance=ExtResource("11_cmkho")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemy/TentacleRoot2/TentacleHead" index="1" groups=["TeleportPosition"]]
+position = Vector2(0, -16)
+
+[node name="TentacleRoot3" parent="Enemy" index="2" instance=ExtResource("7_ybjpv")]
+position = Vector2(536, -328)
+
+[node name="TentacleNeck1" parent="Enemy/TentacleRoot3" index="0" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck1" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck2" parent="Enemy/TentacleRoot3" index="1" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck2" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck3" parent="Enemy/TentacleRoot3" index="2" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck3" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck4" parent="Enemy/TentacleRoot3" index="3" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck4" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck5" parent="Enemy/TentacleRoot3" index="4" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck5" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck6" parent="Enemy/TentacleRoot3" index="5" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck6" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck7" parent="Enemy/TentacleRoot3" index="6" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck7" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck8" parent="Enemy/TentacleRoot3" index="7" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck8" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck9" parent="Enemy/TentacleRoot3" index="8" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck9" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleNeck10" parent="Enemy/TentacleRoot3" index="9" instance=ExtResource("8_tesba")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/TentacleRoot3/TentacleNeck10" index="0"]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("9_2dp7r")
+autoplay = "default"
+
+[node name="TentacleHead" parent="Enemy/TentacleRoot3" index="10" instance=ExtResource("10_fcuef")]
+
+[node name="DragonHeadEnemy" parent="Enemy/TentacleRoot3/TentacleHead" index="0" instance=ExtResource("11_cmkho")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemy/TentacleRoot3/TentacleHead" index="1" groups=["TeleportPosition"]]
+position = Vector2(0, -16)
+
+[node name="DragonLeg" type="Sprite2D" parent="Decoration2" index="0"]
+position = Vector2(612, -206)
+rotation = -1.76228
+texture = ExtResource("12_vkkmy")
+
+[node name="DragonLeg3" type="Sprite2D" parent="Decoration2" index="1"]
+position = Vector2(544, -304)
+rotation = -1.76228
+texture = ExtResource("12_vkkmy")
+
+[node name="DragonLeg2" type="Sprite2D" parent="Decoration2" index="2"]
+position = Vector2(536, -225)
+rotation = 2.01891
+texture = ExtResource("12_vkkmy")
+flip_h = true
+
+[node name="DragonLeg4" type="Sprite2D" parent="Decoration2" index="3"]
+position = Vector2(512, -392)
+rotation = 3.40322
+texture = ExtResource("12_vkkmy")
+flip_h = true
+
+[node name="DragonBody" type="Sprite2D" parent="Decoration2" index="4"]
+position = Vector2(576, -288)
+texture = ExtResource("13_t40vv")
+
+[node name="DragonTail" type="Sprite2D" parent="Decoration2" index="5"]
+material = SubResource("ShaderMaterial_1cie7")
+position = Vector2(576, -104)
+texture = ExtResource("15_smsxn")
+
+[node name="DragonTail2" type="Sprite2D" parent="Decoration2" index="6"]
+material = SubResource("ShaderMaterial_1cie7")
+position = Vector2(576, -104)
+texture = ExtResource("15_smsxn")
+
+[node name="HUD" parent="." index="13"]
+Text1 = "地球"
+Text2 = "を"
+Text3 = "取り戻せ！！"
+BossMode = true
+
+[node name="BossLife" parent="HUD" index="6" instance=ExtResource("16_vv7ib")]
+offset_top = 98.0
+offset_bottom = 130.0
+
+[node name="SweepObserver" parent="." index="14" instance=ExtResource("17_c1nar")]
+GroupName = "SweepEnemyObserver"
+
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("18_mb301")]
+
+[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("19_hxg78")]
+DialogPath = "res://theater/talk_0036.tscn"
+
+[node name="TmfosEnemy" parent="." index="17" groups=["SweepEnemyObserver"] instance=ExtResource("20_15mma")]
+position = Vector2(528, -240)
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("21_iwqut")]
+position = Vector2(480, 16)
+scale = Vector2(60, 1)
+
+[node name="Marker2D" type="Marker2D" parent="." index="19" groups=["TeleportPosition"]]
+position = Vector2(504, -424)
+
+[node name="Marker2D2" type="Marker2D" parent="." index="20" groups=["TeleportPosition"]]
+position = Vector2(528, -240)
+
+[node name="Marker2D3" type="Marker2D" parent="." index="21" groups=["TeleportPosition"]]
+position = Vector2(496, -176)
+
+[node name="Marker2D4" type="Marker2D" parent="." index="22" groups=["TeleportPosition"]]
+position = Vector2(464, -112)
