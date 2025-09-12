@@ -50,7 +50,7 @@ autowrap_mode = 3
 
 [node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page1" index="1"]
 position = Vector2(80, 81)
-scale = Vector2(0.72, 0.72)
+scale = Vector2(0.80, 0.80)
 texture = ExtResource("3_cwc6p")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
@@ -100,7 +100,7 @@ autowrap_mode = 3
 
 [node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page2" index="1"]
 position = Vector2(80, 81)
-scale = Vector2(0.72, 0.72)
+scale = Vector2(0.80, 0.80)
 texture = ExtResource("3_cwc6p")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page2" index="2"]
@@ -150,7 +150,7 @@ autowrap_mode = 3
 
 [node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page3" index="1"]
 position = Vector2(80, 81)
-scale = Vector2(0.72, 0.72)
+scale = Vector2(0.80, 0.80)
 texture = ExtResource("3_cwc6p")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page3" index="2"]
