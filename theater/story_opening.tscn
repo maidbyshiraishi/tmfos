@@ -99,12 +99,12 @@ vertical_alignment = 1
 [node name="Label4" type="Label" parent="Path2D/Socket/Contents" index="6"]
 layout_mode = 0
 offset_left = -3.0
-offset_top = 1248.0
+offset_top = 1256.0
 offset_right = 537.0
-offset_bottom = 1369.0
+offset_bottom = 1352.0
 text = "15年の月日が流れ、
-密かに育てられた地球最後のメイドが
-宇宙から来たメイドに戦いを挑んだ・・・。"
+地球の未来は密かに育てられた
+地球最後のメイドに託された・・・。"
 horizontal_alignment = 1
 vertical_alignment = 1
 
