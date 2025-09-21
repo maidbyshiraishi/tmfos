@@ -1,0 +1,90 @@
+[gd_scene load_steps=16 format=3 uid="uid://8636t7qupfox"]
+
+[ext_resource type="Script" uid="uid://b1ccl54jl78c8" path="res://trigger/SearchPointTrigger.cs" id="1_knl6g"]
+[ext_resource type="Texture2D" uid="uid://bfsrq4c06pp15" path="res://contents/image/blank.png" id="2_j16us"]
+[ext_resource type="Texture2D" uid="uid://bi48pmdnfxjg6" path="res://contents/image/item/search_point.png" id="3_y7uac"]
+[ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="5_gob13"]
+[ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="6_mhng8"]
+[ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/switch_open_or_close_animation_command.tscn" id="6_nxjj3"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="7_hrsy2"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="8_nlddd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmn14"]
+atlas = ExtResource("2_j16us")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fi38"]
+atlas = ExtResource("3_y7uac")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ab0l"]
+atlas = ExtResource("3_y7uac")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3g7x"]
+atlas = ExtResource("3_y7uac")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7d8x"]
+atlas = ExtResource("3_y7uac")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_etwst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmn14")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fi38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ab0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3g7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7d8x")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[node name="SearchPointTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 4096
+script = ExtResource("1_knl6g")
+PlayerOnly = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_orwde")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_etwst")
+animation = &"closed"
+
+[node name="StateSaveCommand" parent="." instance=ExtResource("5_gob13")]
+
+[node name="StateBackupCommand" parent="." instance=ExtResource("6_mhng8")]
+
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("6_nxjj3")]
+AnimatedSprite2D = NodePath("../AnimatedSprite2D")
+
+[node name="PlaySeCommand" parent="." instance=ExtResource("7_hrsy2")]
+SeName = "search_point"
+
+[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("8_nlddd")]
+Message = "？？？"
+
+[connection signal="area_entered" from="." to="." method="ItemSearched"]

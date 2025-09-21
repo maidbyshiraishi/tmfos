@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://mbd4e44xpe7f"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_6muvo"]
+[ext_resource type="Script" uid="uid://f31osgutrfnu" path="res://screen/ErrorDialog.cs" id="2_e1527"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_uaioc"]
+[ext_resource type="Script" uid="uid://ba53h7rnpmb3j" path="res://gui/CommandTextEdit.cs" id="3_y8be8"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_3qtxr"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_sodei"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_y6bfa"]
+
+[node name="ErrorDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_6muvo")
+script = ExtResource("2_e1527")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 63.0
+offset_right = 576.0
+offset_bottom = 415.0
+color = Color(1, 0, 0, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 63.0
+offset_right = 576.0
+offset_bottom = 415.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Message" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 200.0
+offset_top = 87.0
+offset_right = 440.0
+offset_bottom = 117.0
+text = "エラーが発生しました。"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Message" type="TextEdit" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 104.0
+offset_top = 143.0
+offset_right = 536.0
+offset_bottom = 327.0
+wrap_mode = 1
+script = ExtResource("3_y8be8")
+
+[node name="Focus" parent="Control/Message" instance=ExtResource("6_y6bfa")]
+
+[node name="PlaySeCommand" parent="Control/Message/Focus" instance=ExtResource("5_sodei")]
+SeName = "menu_move"
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 280.0
+offset_top = 359.0
+offset_right = 360.0
+offset_bottom = 391.0
+text = "戻る
+"
+script = ExtResource("3_uaioc")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("6_y6bfa")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_sodei")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_3qtxr")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("6_y6bfa")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_sodei")]
+SeName = "menu_move"

@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfgkcob1tsbe5"]
+
+[ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_hgo6w"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_80djy"]
+[ext_resource type="Texture2D" uid="uid://dvukdxt2pi3t7" path="res://contents/image/theater/talk_nekomimi_maid_gold.png" id="3_upn23"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_u1hpn"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="5_h7rha"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="6_hfpx2"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="7_4d3ts"]
+
+[node name="StoryTheater" instance=ExtResource("1_hgo6w")]
+metadata/_edit_horizontal_guides_ = [118.0, 359.0]
+metadata/_edit_vertical_guides_ = [166.0, 479.0]
+
+[node name="Background" parent="." index="0"]
+color = Color(0.313726, 0.313726, 0.313726, 0.784314)
+
+[node name="Contents" type="Control" parent="Socket" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -241.0
+offset_right = 320.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 120)
+theme = ExtResource("2_80djy")
+
+[node name="Page1" type="Control" parent="Socket/Contents" index="0"]
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Label" type="Label" parent="Socket/Contents/Page1" index="0"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 304.0
+offset_bottom = 193.0
+text = "talk_0021_1"
+autowrap_mode = 3
+
+[node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page1" index="1"]
+position = Vector2(80, 81)
+scale = Vector2(0.80, 0.80)
+texture = ExtResource("3_upn23")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="CloseButton" type="Button" parent="Socket/Contents/Page1/Control" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.175
+anchor_right = 0.1
+anchor_bottom = 0.175
+offset_right = 104.0
+offset_bottom = 32.0
+text = "会話終了"
+script = ExtResource("5_h7rha")
+
+[node name="Exec" parent="Socket/Contents/Page1/Control/CloseButton" index="0" instance=ExtResource("7_4d3ts")]
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page1/Control/CloseButton/Exec" index="0" instance=ExtResource("4_u1hpn")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Socket/Contents/Page1/Control/CloseButton/Exec" index="1" instance=ExtResource("6_hfpx2")]
+
+[node name="CloseCommand" parent="." index="4" instance=ExtResource("7_4d3ts")]
+
+[node name="CloseDialogCommand" parent="CloseCommand" index="0" instance=ExtResource("6_hfpx2")]

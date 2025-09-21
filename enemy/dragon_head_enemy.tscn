@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfymfls3a7ari"]
+
+[ext_resource type="Script" uid="uid://cntskyhk2f5np" path="res://enemy/DragonHeadEnemy.cs" id="1_1y1fp"]
+[ext_resource type="Texture2D" uid="uid://beoxnnini6dwh" path="res://contents/image/enemy/dragon_head.png" id="2_5s8fp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifn7i"]
+size = Vector2(32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnr6g"]
+atlas = ExtResource("2_5s8fp")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqrv0"]
+atlas = ExtResource("2_5s8fp")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45p4k"]
+atlas = ExtResource("2_5s8fp")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otm1q"]
+atlas = ExtResource("2_5s8fp")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ad5fx"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnr6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqrv0")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45p4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otm1q")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="DragonHeadEnemy" type="Area2D"]
+collision_layer = 32
+collision_mask = 24
+script = ExtResource("1_1y1fp")
+FlyingSe = "rocket_maid"
+Life = 10000000000
+MaxLife = 10000000000
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+Attack = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ifn7i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ad5fx")
+animation = &"left"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.6, 0.6)
+rect = Rect2(-40, -40, 80, 80)
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="HitNode2D"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]

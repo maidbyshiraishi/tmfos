@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=4 uid="uid://cpeug00amy0gx"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
+[ext_resource type="Texture2D" uid="uid://bwdd24muur4u6" path="res://contents/image/background/dark_gradation.png" id="2_d8ed4"]
+[ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="2_x26fk"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="4_2hq3l"]
+[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="5_akuhu"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_osk4u"]
+[ext_resource type="PackedScene" uid="uid://tnv76mlyklkx" path="res://item/item_panel_lamp.tscn" id="7_4rpht"]
+[ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="7_ba3jm"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="8_27j5l"]
+[ext_resource type="PackedScene" uid="uid://yyq021ra4g7a" path="res://decoration/torch.tscn" id="9_v3kt5"]
+[ext_resource type="PackedScene" uid="uid://gbo2sbr8uow2" path="res://decoration/lamp.tscn" id="10_cgwxt"]
+[ext_resource type="PackedScene" uid="uid://clybmlb5rps41" path="res://others/fire.tscn" id="11_tpdqo"]
+
+[node name="Stage" instance=ExtResource("1_axhrv")]
+BgmStream = ExtResource("2_x26fk")
+IsDarkZone = true
+
+[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+color = Color(0, 0, 0, 1)
+
+[node name="Parallax2D2" parent="Background" index="1"]
+visible = false
+
+[node name="Parallax2D1" parent="Background" index="2"]
+visible = true
+
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+texture = ExtResource("2_d8ed4")
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAAIAPL/AAAAAAEAAAASAPb/AAAAAAEAAAAbAPL/AAAAAAEAAAAcAPL/AAAAAAEAAAAQAPX/AAAAAAEAAAAQAPP/AAAAAAEAAAAaAPf/AAAAAAEAAAAIAPj/AAAAAAEAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAHAP7/AAAAAAUAAAAHAP//AAAAAAUAAAALAP7/AAAAAAUAAAALAP//AAAAAAUAAAAPAP7/AAAAAAUAAAAPAP//AAAAAAUAAAAYAP7/AAAAAAUAAAAYAP//AAAAAAUAAAAZAP7/AAAAAAUAAAAZAP//AAAAAAUAAAAAAO//AAAAAAUAAAAAAPD/AAAAAAUAAAAAAPH/AAAAAAUAAAAAAPL/AAAAAAUAAAAAAPP/AAAAAAUAAAAAAPT/AAAAAAUAAAAAAPX/AAAAAAUAAAAAAPb/AAAAAAUAAAAAAPf/AAAAAAUAAAAAAPj/AAAAAAUAAAAAAPn/AAAAAAUAAAAAAPr/AAAAAAUAAAAAAPv/AAAAAAUAAAAAAPz/AAAAAAUAAAAAAP3/AAAAAAUAAAAAAP7/AAAAAAUAAAAAAP//AAAAAAUAAAABAO//AAAAAAUAAAABAPD/AAAAAAUAAAABAPH/AAAAAAUAAAABAPL/AAAAAAUAAAABAPP/AAAAAAUAAAABAPT/AAAAAAUAAAABAPX/AAAAAAUAAAABAPb/AAAAAAUAAAABAPf/AAAAAAUAAAABAPj/AAAAAAUAAAABAPn/AAAAAAUAAAABAPr/AAAAAAUAAAABAPv/AAAAAAUAAAABAPz/AAAAAAUAAAABAP3/AAAAAAUAAAABAP7/AAAAAAUAAAABAP//AAAAAAUAAAACAPr/AAAAAAUAAAACAPv/AAAAAAUAAAACAPz/AAAAAAUAAAACAP3/AAAAAAUAAAACAP7/AAAAAAUAAAACAP//AAAAAAUAAAADAPr/AAAAAAUAAAADAPv/AAAAAAUAAAADAPz/AAAAAAUAAAADAP3/AAAAAAUAAAADAP7/AAAAAAUAAAADAP//AAAAAAUAAAAEAPv/AAAAAAUAAAAEAPz/AAAAAAUAAAAEAP3/AAAAAAUAAAAEAP7/AAAAAAUAAAAEAP//AAAAAAUAAAAFAPz/AAAAAAUAAAAFAP3/AAAAAAUAAAAFAP7/AAAAAAUAAAAFAP//AAAAAAUAAAAGAP3/AAAAAAUAAAAGAP7/AAAAAAUAAAAGAP//AAAAAAUAAAAIAP7/AAAAAAUAAAAIAP//AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAKAP7/AAAAAAUAAAAKAP//AAAAAAUAAAAMAP7/AAAAAAUAAAAMAP//AAAAAAUAAAANAP7/AAAAAAUAAAANAP//AAAAAAUAAAAOAP7/AAAAAAUAAAAOAP//AAAAAAUAAAAQAP7/AAAAAAUAAAAQAP//AAAAAAUAAAARAP7/AAAAAAUAAAARAP//AAAAAAUAAAASAPv/AAAAAAUAAAASAPz/AAAAAAUAAAASAP3/AAAAAAUAAAASAP7/AAAAAAUAAAASAP//AAAAAAUAAAAWAPv/AAAAAAUAAAAWAPz/AAAAAAUAAAAWAP3/AAAAAAUAAAAWAP7/AAAAAAUAAAAWAP//AAAAAAUAAAAXAP7/AAAAAAUAAAAXAP//AAAAAAUAAAAaAPv/AAAAAAUAAAAaAPz/AAAAAAUAAAAaAP3/AAAAAAUAAAAaAP7/AAAAAAUAAAAaAP//AAAAAAUAAAAbAP7/AAAAAAUAAAAbAP//AAAAAAUAAAAcAP7/AAAAAAUAAAAcAP//AAAAAAUAAAAdAP7/AAAAAAUAAAAdAP//AAAAAAUAAAAeAP7/AAAAAAUAAAAeAP//AAAAAAUAAAAfAP7/AAAAAAUAAAAfAP//AAAAAAUAAAAgAP7/AAAAAAUAAAAgAP//AAAAAAUAAAAhAP7/AAAAAAUAAAAhAP//AAAAAAUAAAAiAP7/AAAAAAUAAAAiAP//AAAAAAUAAAAjAO//AAAAAAUAAAAjAPD/AAAAAAUAAAAjAPH/AAAAAAUAAAAjAPL/AAAAAAUAAAAjAPP/AAAAAAUAAAAjAPT/AAAAAAUAAAAjAPX/AAAAAAUAAAAjAPb/AAAAAAUAAAAjAPf/AAAAAAUAAAAjAPj/AAAAAAUAAAAjAPn/AAAAAAUAAAAjAPr/AAAAAAUAAAAjAPv/AAAAAAUAAAAjAPz/AAAAAAUAAAAjAP3/AAAAAAUAAAAjAP7/AAAAAAUAAAAjAP//AAAAAAUAAAAkAO//AAAAAAUAAAAkAPD/AAAAAAUAAAAkAPH/AAAAAAUAAAAkAPL/AAAAAAUAAAAkAPP/AAAAAAUAAAAkAPT/AAAAAAUAAAAkAPX/AAAAAAUAAAAkAPb/AAAAAAUAAAAkAPf/AAAAAAUAAAAkAPj/AAAAAAUAAAAkAPn/AAAAAAUAAAAkAPr/AAAAAAUAAAAkAPv/AAAAAAUAAAAkAPz/AAAAAAUAAAAkAP3/AAAAAAUAAAAkAP7/AAAAAAUAAAAkAP//AAAAAAUAAAA=")
+
+[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("5_akuhu")]
+position = Vector2(1104, -96)
+DestStageNo = 6
+DestDoorNo = 2
+DoorNo = 1
+
+[node name="WoodDoor2" parent="Door" index="1" instance=ExtResource("5_akuhu")]
+position = Vector2(80, -224)
+DestStageNo = 8
+DestDoorNo = 1
+DoorNo = 2
+Direction = 1
+
+[node name="SavePoint3" parent="Door" index="2" instance=ExtResource("7_ba3jm")]
+position = Vector2(400, -104)
+DoorNo = 3
+
+[node name="ItemPanelLamp" parent="Item" index="0" instance=ExtResource("7_4rpht")]
+position = Vector2(976, -176)
+
+[node name="Player" parent="." index="8" instance=ExtResource("6_osk4u")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("8_27j5l")
+
+[node name="Torch4" parent="Decoration2" index="0" instance=ExtResource("9_v3kt5")]
+position = Vector2(1008, -176)
+
+[node name="Lamp" parent="Decoration2" index="1" instance=ExtResource("10_cgwxt")]
+position = Vector2(656, -84)
+
+[node name="Fire1" parent="Others" index="0" instance=ExtResource("11_tpdqo")]
+position = Vector2(784, -80)
+
+[node name="Fire2" parent="Others" index="1" instance=ExtResource("11_tpdqo")]
+position = Vector2(816, -80)
+
+[node name="Fire3" parent="Others" index="2" instance=ExtResource("11_tpdqo")]
+position = Vector2(752, -80)
+
+[node name="HUD" parent="." index="13"]
+Text1 = "チュートリアル"
+Text2 = "7"
+
+[node name="Message" type="Control" parent="." index="16"]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 17.0
+offset_bottom = 7.0
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 53.9375
+anchor_top = -15.4375
+anchor_right = 53.9375
+anchor_bottom = -15.437
+offset_right = 224.0
+offset_bottom = 63.992
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]ランプアイテム[/color]で明るくなります。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("4_2hq3l")]
+position = Vector2(592, 16)
+scale = Vector2(100, 1)

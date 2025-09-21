@@ -1,0 +1,186 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcvu6ejh8rllm"]
+
+[ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_vf7dm"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_yh2og"]
+[ext_resource type="Texture2D" uid="uid://wuqe5q1lnttq" path="res://contents/image/theater/talk_nekomimi_maid_pink_m.png" id="3_bltvt"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="4_wkmpt"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_7bdu0"]
+[ext_resource type="PackedScene" uid="uid://c21hot266v86s" path="res://command/go_next_page_command.tscn" id="5_vjbqc"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_1yo6f"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="7_34t5h"]
+
+[node name="StoryTheater" instance=ExtResource("1_vf7dm")]
+metadata/_edit_horizontal_guides_ = [118.0, 359.0]
+metadata/_edit_vertical_guides_ = [166.0, 479.0]
+
+[node name="Background" parent="." index="0"]
+color = Color(0.313726, 0.313726, 0.313726, 0.784314)
+
+[node name="Contents" type="Control" parent="Socket" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -241.0
+offset_right = 320.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 120)
+theme = ExtResource("2_yh2og")
+
+[node name="Page1" type="Control" parent="Socket/Contents" index="0"]
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Label" type="Label" parent="Socket/Contents/Page1" index="0"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 304.0
+offset_bottom = 193.0
+text = "talk_0005_1"
+autowrap_mode = 3
+
+[node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page1" index="1"]
+position = Vector2(80, 81)
+scale = Vector2(0.80, 0.80)
+texture = ExtResource("3_bltvt")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="NextButton" type="Button" parent="Socket/Contents/Page1/Control" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.175
+anchor_right = 0.1
+anchor_bottom = 0.175
+offset_right = 104.0
+offset_bottom = 32.0
+text = "次へ"
+script = ExtResource("4_wkmpt")
+
+[node name="Exec" parent="Socket/Contents/Page1/Control/NextButton" index="0" instance=ExtResource("6_1yo6f")]
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page1/Control/NextButton/Exec" index="0" instance=ExtResource("5_7bdu0")]
+SeName = "menu_select"
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page1/Control/NextButton/Exec" index="1" instance=ExtResource("5_vjbqc")]
+
+[node name="Page2" type="Control" parent="Socket/Contents" index="1"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Label" type="Label" parent="Socket/Contents/Page2" index="0"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 304.0
+offset_bottom = 193.0
+text = "talk_0005_2"
+autowrap_mode = 3
+
+[node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page2" index="1"]
+position = Vector2(80, 81)
+scale = Vector2(0.80, 0.80)
+texture = ExtResource("3_bltvt")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page2" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 194.0
+offset_top = 189.0
+offset_right = 234.0
+offset_bottom = 229.0
+
+[node name="NextButton" type="Button" parent="Socket/Contents/Page2/Control" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.3
+anchor_right = 0.15
+anchor_bottom = 0.3
+offset_right = 104.0
+offset_bottom = 32.0
+text = "次へ"
+script = ExtResource("4_wkmpt")
+
+[node name="Exec" parent="Socket/Contents/Page2/Control/NextButton" index="0" instance=ExtResource("6_1yo6f")]
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page2/Control/NextButton/Exec" index="0" instance=ExtResource("5_7bdu0")]
+SeName = "menu_select"
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page2/Control/NextButton/Exec" index="1" instance=ExtResource("5_vjbqc")]
+
+[node name="Page3" type="Control" parent="Socket/Contents" index="2"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Label" type="Label" parent="Socket/Contents/Page3" index="0"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 304.0
+offset_bottom = 193.0
+text = "talk_0005_3"
+autowrap_mode = 3
+
+[node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page3" index="1"]
+position = Vector2(80, 81)
+scale = Vector2(0.80, 0.80)
+texture = ExtResource("3_bltvt")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page3" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 193.0
+offset_top = 196.0
+offset_right = 233.0
+offset_bottom = 236.0
+
+[node name="CloseButton" type="Button" parent="Socket/Contents/Page3/Control" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.175
+anchor_top = 0.125
+anchor_right = 0.175
+anchor_bottom = 0.125
+offset_right = 104.0
+offset_bottom = 32.0
+text = "会話終了"
+script = ExtResource("4_wkmpt")
+
+[node name="Exec" parent="Socket/Contents/Page3/Control/CloseButton" index="0" instance=ExtResource("6_1yo6f")]
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page3/Control/CloseButton/Exec" index="0" instance=ExtResource("5_7bdu0")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Socket/Contents/Page3/Control/CloseButton/Exec" index="1" instance=ExtResource("7_34t5h")]
+
+[node name="CloseCommand" parent="." index="4" instance=ExtResource("6_1yo6f")]
+
+[node name="CloseDialogCommand" parent="CloseCommand" index="0" instance=ExtResource("7_34t5h")]

@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://cndfm82hr74ml"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_d7tyb"]
+[ext_resource type="Script" uid="uid://bybf2khkc51t5" path="res://screen/SaveConfirmDialog.cs" id="2_bw4sd"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_laxxg"]
+[ext_resource type="Texture2D" uid="uid://bhriv1fhw8rgk" path="res://contents/image/null.png" id="3_pdf4y"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_hyx0i"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_n0jil"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_6np16"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="7_ow43t"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="8_welsv"]
+
+[node name="SaveConfirmDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_d7tyb")
+script = ExtResource("2_bw4sd")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 160.0
+offset_top = 64.0
+offset_right = 480.0
+offset_bottom = 384.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 160.0
+offset_top = 64.0
+offset_right = 480.0
+offset_bottom = 384.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Message" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 80.0
+offset_right = 448.0
+offset_bottom = 144.0
+text = "セーブします。
+よろしいですか？"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 200)
+texture = ExtResource("3_pdf4y")
+
+[node name="Data" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = 288.0
+text = "data"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Date" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 288.0
+offset_right = 448.0
+offset_bottom = 320.0
+text = "YYYY-MM-DD HH:MM:SS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Yes" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 224.0
+offset_top = 328.0
+offset_right = 304.0
+offset_bottom = 360.0
+text = "はい"
+script = ExtResource("3_laxxg")
+
+[node name="Exec" parent="Control/Yes" instance=ExtResource("5_6np16")]
+
+[node name="PlaySeCommand" parent="Control/Yes/Exec" instance=ExtResource("4_n0jil")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Yes" instance=ExtResource("5_6np16")]
+
+[node name="PlaySeCommand" parent="Control/Yes/Focus" instance=ExtResource("4_n0jil")]
+SeName = "menu_move"
+
+[node name="No" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 328.0
+offset_right = 416.0
+offset_bottom = 360.0
+text = "いいえ"
+script = ExtResource("3_laxxg")
+
+[node name="Exec" parent="Control/No" instance=ExtResource("5_6np16")]
+
+[node name="PlaySeCommand" parent="Control/No/Exec" instance=ExtResource("4_n0jil")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Control/No/Exec" instance=ExtResource("4_hyx0i")]
+
+[node name="Focus" parent="Control/No" instance=ExtResource("5_6np16")]
+
+[node name="PlaySeCommand" parent="Control/No/Focus" instance=ExtResource("4_n0jil")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("7_ow43t")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("8_welsv")]
+Target = NodePath("../../Control/No")
+
+[connection signal="pressed" from="Control/Yes" to="." method="Yes"]

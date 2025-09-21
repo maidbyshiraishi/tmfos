@@ -1,0 +1,77 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://df0ncbj4ep7ht"]
+
+[ext_resource type="Texture2D" uid="uid://b2xrh67esh58" path="res://contents/image/enemy/maid_robot1.png" id="1_0jxah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irllv"]
+atlas = ExtResource("1_0jxah")
+region = Rect2(296, 0, 74, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5aii"]
+atlas = ExtResource("1_0jxah")
+region = Rect2(370, 0, 74, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhol2"]
+atlas = ExtResource("1_0jxah")
+region = Rect2(444, 0, 74, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs4e8"]
+atlas = ExtResource("1_0jxah")
+region = Rect2(518, 0, 74, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljc7w"]
+atlas = ExtResource("1_0jxah")
+region = Rect2(0, 0, 74, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmtgw"]
+atlas = ExtResource("1_0jxah")
+region = Rect2(74, 0, 74, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfqsk"]
+atlas = ExtResource("1_0jxah")
+region = Rect2(148, 0, 74, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je2kk"]
+atlas = ExtResource("1_0jxah")
+region = Rect2(222, 0, 74, 130)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irllv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5aii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhol2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs4e8")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljc7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmtgw")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfqsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je2kk")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 8.0
+}]

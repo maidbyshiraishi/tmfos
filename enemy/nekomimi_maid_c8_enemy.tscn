@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2in2qfnoui8c"]
+
+[ext_resource type="PackedScene" uid="uid://vp0fhk4g3cgi" path="res://enemy/nekomimi_maid_root_enemy.tscn" id="1_iiw7e"]
+[ext_resource type="SpriteFrames" uid="uid://6ylvs1tx4o1v" path="res://contents/animation/enemy/nekomimi_maid_c8.tres" id="2_4bhme"]
+
+[node name="NekomimiMaidEnemy" instance=ExtResource("1_iiw7e")]
+Life = 30
+MaxLife = 30
+Attack = 25
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_4bhme")
+animation = &"walk_left"

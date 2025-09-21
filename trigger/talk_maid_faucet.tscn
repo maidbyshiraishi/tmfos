@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://taoksyhkk4ul"]
+
+[ext_resource type="PackedScene" uid="uid://b3pkhij41efph" path="res://trigger/talk_root.tscn" id="1_t43cb"]
+[ext_resource type="SpriteFrames" uid="uid://dqtd2xv61rhcw" path="res://contents/animation/theater/talk_maid_faucet.tres" id="2_4txl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_er67b"]
+size = Vector2(48, 32)
+
+[node name="TalkTrigger" instance=ExtResource("1_t43cb")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_er67b")
+
+[node name="AnimatedSprite2D2" parent="." index="1"]
+position = Vector2(0, -40)
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = ExtResource("2_4txl0")

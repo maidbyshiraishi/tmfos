@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4nwxoqqvmpv2"]
+
+[ext_resource type="Script" uid="uid://b4j2n1yqbp4im" path="res://mob/EventFinder.cs" id="1_paada"]
+
+[node name="EventFinder" type="Area2D"]
+collision_layer = 32768
+collision_mask = 65536
+script = ExtResource("1_paada")

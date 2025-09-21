@@ -1,0 +1,358 @@
+[gd_scene load_steps=19 format=3 uid="uid://dlogfuoolbbgt"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_v5t5f"]
+[ext_resource type="Script" uid="uid://dbgqehgiq62lx" path="res://screen/OptionDialog.cs" id="2_6qroc"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_ll8rd"]
+[ext_resource type="Script" uid="uid://b06hw6ekb5ra3" path="res://gui/CommandHSlider.cs" id="3_qt1xi"]
+[ext_resource type="PackedScene" uid="uid://bvxgt01dp4as0" path="res://command/save_game_options_command.tscn" id="4_i66bl"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="5_fbf6f"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="6_1beei"]
+[ext_resource type="Script" uid="uid://bx6js6k5haswe" path="res://gui/CommandCheckButton.cs" id="6_523ew"]
+[ext_resource type="PackedScene" uid="uid://cxuhm7osw7v00" path="res://command/load_game_options_command.tscn" id="6_ox5kl"]
+[ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://command/set_game_options_command.tscn" id="7_54itn"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="7_m7caj"]
+[ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/update_dialog_screen_command.tscn" id="8_foflq"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="10_2vtvi"]
+[ext_resource type="PackedScene" uid="uid://db5heldrmq227" path="res://command/reset_default_game_options_command.tscn" id="13_gepbg"]
+[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="14_2iwl1"]
+[ext_resource type="Script" uid="uid://cfo0do8tadpiv" path="res://command/OpenFileManagerCommand.cs" id="14_j4mxk"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="16_0176u"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="17_04yvk"]
+
+[node name="OptionDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_v5t5f")
+script = ExtResource("2_6qroc")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 50.0
+offset_top = 55.0
+offset_right = 590.0
+offset_bottom = 431.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 48.0
+offset_top = 55.0
+offset_right = 592.0
+offset_bottom = 431.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 290.0
+offset_top = 70.0
+offset_right = 350.0
+offset_bottom = 100.0
+text = "設定"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bgm" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 100.0
+offset_top = 120.0
+offset_right = 220.0
+offset_bottom = 150.0
+text = "BGM 音量"
+vertical_alignment = 1
+
+[node name="BgmValue" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 470.0
+offset_top = 120.0
+offset_right = 540.0
+offset_bottom = 150.0
+text = "0%
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Se" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 100.0
+offset_top = 160.0
+offset_right = 220.0
+offset_bottom = 190.0
+text = "効果音 音量"
+vertical_alignment = 1
+
+[node name="SeValue" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 470.0
+offset_top = 160.0
+offset_right = 540.0
+offset_bottom = 190.0
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fullscreen" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 240.0
+offset_bottom = 230.0
+text = "フルスクリーン"
+vertical_alignment = 1
+
+[node name="FullscreenCheckValue" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 310.0
+offset_top = 200.0
+offset_right = 360.0
+offset_bottom = 230.0
+text = "OFF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="BgmSlider" type="HSlider" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 260.0
+offset_top = 120.0
+offset_right = 460.0
+offset_bottom = 150.0
+step = 5.0
+script = ExtResource("3_qt1xi")
+
+[node name="Focus" parent="Control/BgmSlider" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/BgmSlider/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="SeSlider" type="HSlider" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 260.0
+offset_top = 160.0
+offset_right = 460.0
+offset_bottom = 190.0
+step = 5.0
+script = ExtResource("3_qt1xi")
+
+[node name="Focus" parent="Control/SeSlider" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/SeSlider/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="FullscreenCheck" type="CheckButton" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 231.0
+alignment = 1
+script = ExtResource("6_523ew")
+
+[node name="Focus" parent="Control/FullscreenCheck" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/FullscreenCheck/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="Toggled" parent="Control/FullscreenCheck" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="PlaySeCommand2" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+ExecFlag = false
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 160.0
+offset_top = 248.0
+offset_right = 312.0
+offset_bottom = 280.0
+text = "保存して戻る"
+script = ExtResource("3_ll8rd")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="SaveGameOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("4_i66bl")]
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("5_fbf6f")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="Undo" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 104.0
+offset_top = 296.0
+offset_right = 312.0
+offset_bottom = 352.0
+text = "前回保存した音量に
+リセット"
+script = ExtResource("3_ll8rd")
+
+[node name="Exec" parent="Control/Undo" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/Undo/Exec" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="LoadGameOptionsCommand" parent="Control/Undo/Exec" instance=ExtResource("6_ox5kl")]
+
+[node name="SetGameOptionsCommand" parent="Control/Undo/Exec" instance=ExtResource("7_54itn")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" instance=ExtResource("8_foflq")]
+
+[node name="Focus" parent="Control/Undo" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/Undo/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="Reset" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 328.0
+offset_top = 296.0
+offset_right = 536.0
+offset_bottom = 352.0
+text = "ゲームの初期音量に
+リセット"
+script = ExtResource("3_ll8rd")
+
+[node name="Exec" parent="Control/Reset" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/Reset/Exec" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="ResetDefaultGameOptionsCommand" parent="Control/Reset/Exec" instance=ExtResource("13_gepbg")]
+
+[node name="SetGameOptionsCommand" parent="Control/Reset/Exec" instance=ExtResource("7_54itn")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" instance=ExtResource("8_foflq")]
+
+[node name="Focus" parent="Control/Reset" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/Reset/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="ResetScreen" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 104.0
+offset_top = 368.0
+offset_right = 312.0
+offset_bottom = 408.0
+theme = ExtResource("14_2iwl1")
+text = "ゲームの初期画面設定に
+リセット"
+script = ExtResource("3_ll8rd")
+
+[node name="Exec" parent="Control/ResetScreen" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/ResetScreen/Exec" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="UpdateDialogScreenCommand" parent="Control/ResetScreen/Exec" instance=ExtResource("8_foflq")]
+
+[node name="Focus" parent="Control/ResetScreen" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/ResetScreen/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="OpenFileManager" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 328.0
+offset_top = 368.0
+offset_right = 552.0
+offset_bottom = 400.0
+text = "データフォルダを開く"
+script = ExtResource("3_ll8rd")
+
+[node name="Exec" parent="Control/OpenFileManager" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="OpenFileManagerCommand" type="Node" parent="Control/OpenFileManager/Exec"]
+script = ExtResource("14_j4mxk")
+
+[node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="KeyConfig" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 328.0
+offset_top = 248.0
+offset_right = 480.0
+offset_bottom = 280.0
+text = "操作設定"
+script = ExtResource("3_ll8rd")
+
+[node name="Exec" parent="Control/KeyConfig" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/KeyConfig/Exec" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="OpenDialogCommand" parent="Control/KeyConfig/Exec" instance=ExtResource("10_2vtvi")]
+DialogPath = "res://screen/key_option_dialog.tscn"
+
+[node name="Focus" parent="Control/KeyConfig" instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Control/KeyConfig/Focus" instance=ExtResource("6_1beei")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("16_0176u")]
+ActionName = "ui_cancel"
+
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
+Target = NodePath("../../Close")
+
+[node name="OptionKey" parent="." instance=ExtResource("16_0176u")]
+ActionName = "option"
+
+[node name="ReferenceContainer" parent="OptionKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("7_m7caj")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("6_1beei")]
+SeName = "menu_select"
+
+[node name="LoadGameOptionsCommand" parent="Close" instance=ExtResource("6_ox5kl")]
+
+[node name="SetGameOptionsCommand" parent="Close" instance=ExtResource("7_54itn")]
+
+[node name="UpdateDialogScreenCommand" parent="Close" instance=ExtResource("8_foflq")]
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_fbf6f")]
+
+[connection signal="value_changed" from="Control/BgmSlider" to="." method="BgmVolumeChanged"]
+[connection signal="value_changed" from="Control/SeSlider" to="." method="SeVolumeChanged"]
+[connection signal="toggled" from="Control/FullscreenCheck" to="." method="FullscreenChanged"]
+[connection signal="pressed" from="Control/ResetScreen" to="." method="ResetDefaultScreenOptions"]

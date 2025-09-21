@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://c0r2tdxw6d16n"]
+
+[ext_resource type="Texture2D" uid="uid://bmb2juv50vyvr" path="res://contents/image/enemy/nekomimi_maid_c6.png" id="1_dbh73"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m42dc"]
+atlas = ExtResource("1_dbh73")
+region = Rect2(272, 0, 34, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jke52"]
+atlas = ExtResource("1_dbh73")
+region = Rect2(306, 0, 34, 66)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m42dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jke52")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckm0edg6gqx0v"]
+
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="1_8sueh"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="2_k84cx"]
+[ext_resource type="PackedScene" uid="uid://bb2nl5uh2vbd1" path="res://command/save_screenshot_command.tscn" id="3_17c0v"]
+
+[node name="Screenshot" type="Node"]
+process_mode = 3
+
+[node name="ScreenshotKey" parent="." instance=ExtResource("1_8sueh")]
+ActionName = "screenshot"
+
+[node name="PlaySeCommand" parent="ScreenshotKey" instance=ExtResource("2_k84cx")]
+SeName = "screenshot"
+
+[node name="SaveScreenshotCommand" parent="ScreenshotKey" instance=ExtResource("3_17c0v")]

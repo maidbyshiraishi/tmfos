@@ -1,0 +1,335 @@
+[gd_scene load_steps=23 format=3 uid="uid://cgo5nw4mlh7pe"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_d5hvi"]
+[ext_resource type="Script" uid="uid://cgtirgj6hx117" path="res://screen/JukeboxDialog.cs" id="2_lfgcj"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_jq3u4"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="4_vx7g3"]
+[ext_resource type="AudioStream" uid="uid://cxifjqga3hnbc" path="res://contents/bgm/bgm1.ogg" id="5_aw767"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_3u2lt"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="7_dkqhw"]
+[ext_resource type="AudioStream" uid="uid://bs70k8qsse4p5" path="res://contents/bgm/bgm2.ogg" id="8_v6pem"]
+[ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="9_enea4"]
+[ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="10_ahwfl"]
+[ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="11_6g68o"]
+[ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="12_60qon"]
+[ext_resource type="AudioStream" uid="uid://bpebfe8y5slk2" path="res://contents/bgm/bgm7.ogg" id="13_b635v"]
+[ext_resource type="AudioStream" uid="uid://dbcsppfshlabl" path="res://contents/bgm/bgm8.ogg" id="14_esh35"]
+[ext_resource type="AudioStream" uid="uid://b80xdq1t3o76e" path="res://contents/bgm/bgm9.ogg" id="15_rvqik"]
+[ext_resource type="PackedScene" uid="uid://cxuhm7osw7v00" path="res://command/load_game_options_command.tscn" id="16_rncda"]
+[ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://command/set_game_options_command.tscn" id="17_54top"]
+[ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/update_dialog_screen_command.tscn" id="18_ngv3k"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="19_ntrhu"]
+[ext_resource type="Script" uid="uid://b06hw6ekb5ra3" path="res://gui/CommandHSlider.cs" id="20_7u47n"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="21_e5wmd"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="22_dbkvd"]
+
+[node name="JukeboxDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_d5hvi")
+script = ExtResource("2_lfgcj")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 576.0
+offset_bottom = 456.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 576.0
+offset_bottom = 456.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 552.0
+offset_bottom = 65.0
+text = "ジュークボックス"
+horizontal_alignment = 1
+
+[node name="Bgm" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 368.0
+offset_right = 192.0
+offset_bottom = 398.0
+text = "BGM 音量"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BgmValue" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 480.0
+offset_top = 368.0
+offset_right = 550.0
+offset_bottom = 398.0
+text = "0%
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Data1" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 80.0
+offset_right = 552.0
+offset_bottom = 112.0
+text = "宇宙から来たメイドのテーマ"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data1" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data1/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data1" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data1/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("5_aw767")
+
+[node name="Data2" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 120.0
+offset_right = 552.0
+offset_bottom = 152.0
+text = "地球のメイドの旅 昼の部"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data2" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data2/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data2" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data2/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("8_v6pem")
+
+[node name="Data3" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 320.0
+offset_right = 552.0
+offset_bottom = 352.0
+text = "地球のメイドの旅 大団円
+"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data3" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data3/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data3" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data3/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("9_enea4")
+
+[node name="Data4" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 160.0
+offset_right = 552.0
+offset_bottom = 192.0
+text = "地球のメイドの旅 夜の部
+"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data4" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data4/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data4" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data4/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("10_ahwfl")
+
+[node name="Data5" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 200.0
+offset_right = 552.0
+offset_bottom = 232.0
+focus_neighbor_bottom = NodePath("../Data9")
+text = "決闘!! 地球のメイド 対 宇宙のメイド"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data5" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data5/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data5" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data5/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("11_6g68o")
+
+[node name="Data6" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 280.0
+offset_right = 312.0
+offset_bottom = 312.0
+focus_neighbor_right = NodePath("../Data8")
+text = "メイドを超えろ"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data6" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data6/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data6" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data6/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("12_60qon")
+
+[node name="Data7" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 240.0
+offset_right = 552.0
+offset_bottom = 272.0
+focus_neighbor_left = NodePath("../Data9")
+text = "地球のメイドが急ぐ!!"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data7" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data7/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data7" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data7/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("13_b635v")
+
+[node name="Data8" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 280.0
+offset_right = 552.0
+offset_bottom = 312.0
+focus_neighbor_left = NodePath("../Data6")
+text = "お宝と秘密の歌"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data8" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data8/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data8" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data8/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("14_esh35")
+
+[node name="Data9" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 240.0
+offset_right = 312.0
+offset_bottom = 272.0
+focus_neighbor_right = NodePath("../Data7")
+text = "地球のメイドの一休み"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Data9" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Data9/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Data9" instance=ExtResource("6_3u2lt")]
+
+[node name="ChangeBgmCommand" parent="Control/Data9/Exec" instance=ExtResource("4_vx7g3")]
+Command = 1
+Stream = ExtResource("15_rvqik")
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 272.0
+offset_top = 408.0
+offset_right = 368.0
+offset_bottom = 440.0
+text = "戻る"
+script = ExtResource("3_jq3u4")
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("7_dkqhw")]
+SeName = "menu_select"
+
+[node name="LoadGameOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("16_rncda")]
+
+[node name="SetGameOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("17_54top")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Back/Exec" instance=ExtResource("18_ngv3k")]
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("19_ntrhu")]
+
+[node name="BgmSlider" type="HSlider" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 208.0
+offset_top = 368.0
+offset_right = 472.0
+offset_bottom = 398.0
+step = 5.0
+script = ExtResource("20_7u47n")
+
+[node name="Focus" parent="Control/BgmSlider" instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Control/BgmSlider/Focus" instance=ExtResource("7_dkqhw")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("21_e5wmd")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("22_dbkvd")]
+Target = NodePath("../../Control/Back")
+
+[connection signal="value_changed" from="Control/BgmSlider" to="." method="BgmVolumeChanged"]

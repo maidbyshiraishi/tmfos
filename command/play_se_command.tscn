@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpr5v3p6w81h3"]
+
+[ext_resource type="Script" uid="uid://ccukrweqv1fjb" path="res://command/PlaySeCommand.cs" id="1_37pxl"]
+
+[node name="PlaySeCommand" type="Node"]
+script = ExtResource("1_37pxl")

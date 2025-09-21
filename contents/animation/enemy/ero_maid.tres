@@ -1,0 +1,84 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://b72wxiomk7n7m"]
+
+[ext_resource type="Texture2D" uid="uid://cwevqjvt3m1wg" path="res://contents/image/enemy/ero_maid.png" id="1_sn8fo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78rt5"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(108, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ljt"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(144, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogfue"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(180, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pf4m"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(216, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlvkd"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(0, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfs3l"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(36, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjm1f"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(72, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgtcf"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(252, 0, 36, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_357ct"]
+atlas = ExtResource("1_sn8fo")
+region = Rect2(288, 0, 36, 68)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ljt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogfue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pf4m")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlvkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfs3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjm1f")
+}],
+"loop": true,
+"name": &"laser",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgtcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_357ct")
+}],
+"loop": true,
+"name": &"shot",
+"speed": 8.0
+}]

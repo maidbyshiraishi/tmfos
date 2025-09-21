@@ -1,0 +1,232 @@
+[gd_scene load_steps=27 format=3 uid="uid://vcdflqtjndgb"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_3g4yl"]
+[ext_resource type="Script" uid="uid://dunefiu8tamhm" path="res://screen/StatusDialog.cs" id="2_lloag"]
+[ext_resource type="SpriteFrames" uid="uid://cgbu62mkp8lr7" path="res://contents/animation/item/item_shoes.tres" id="3_daqtq"]
+[ext_resource type="SpriteFrames" uid="uid://ciotjlw5k8aa8" path="res://contents/animation/item/item_swim.tres" id="4_du2no"]
+[ext_resource type="SpriteFrames" uid="uid://j46rxr8ayrwf" path="res://contents/animation/item/item_wall_jump.tres" id="5_vfqsd"]
+[ext_resource type="SpriteFrames" uid="uid://bilodduoqy5dn" path="res://contents/animation/item/item_penetration.tres" id="6_du43x"]
+[ext_resource type="SpriteFrames" uid="uid://bkf16286rfo6f" path="res://contents/animation/item/item_lamp.tres" id="7_ygkv4"]
+[ext_resource type="SpriteFrames" uid="uid://cghj5d5o7go75" path="res://contents/animation/item/item_search.tres" id="8_ej1mj"]
+[ext_resource type="SpriteFrames" uid="uid://dbrayaj5m04td" path="res://contents/animation/item/item_boss1.tres" id="9_dmuvt"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="9_nfjam"]
+[ext_resource type="SpriteFrames" uid="uid://384kdk0v261q" path="res://contents/animation/item/item_armor.tres" id="9_qutn6"]
+[ext_resource type="Texture2D" uid="uid://c1a3fgbx1a0uv" path="res://contents/image/item/item_closed.png" id="10_51m28"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="10_bbngo"]
+[ext_resource type="SpriteFrames" uid="uid://bd86ui4de6tqx" path="res://contents/animation/item/item_boss2.tres" id="10_hbedo"]
+[ext_resource type="SpriteFrames" uid="uid://b5l668dc1np3q" path="res://contents/animation/item/item_weapon.tres" id="11_464jh"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="11_ndkyj"]
+[ext_resource type="Texture2D" uid="uid://npnrgko113ig" path="res://contents/image/item/item_boss3.png" id="12_8t0ni"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="12_rslh3"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="13_73i7r"]
+[ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://command/resume_bgm_command.tscn" id="13_atbak"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="14_svsij"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="15_lt5vg"]
+[ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://command/pause_bgm_command.tscn" id="16_jur38"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vxu5"]
+atlas = ExtResource("12_8t0ni")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i18w"]
+atlas = ExtResource("10_51m28")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wpbn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vxu5")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i18w")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[node name="StatusDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_3g4yl")
+script = ExtResource("2_lloag")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 95.0
+offset_right = 576.0
+offset_bottom = 384.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 95.0
+offset_right = 576.0
+offset_bottom = 384.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 112.0
+offset_right = 448.0
+offset_bottom = 142.0
+text = "一時停止と所有アイテム"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemShoes" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(120, 192)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_daqtq")
+animation = &"closed"
+
+[node name="ItemSwim" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(200, 192)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("4_du2no")
+animation = &"closed"
+
+[node name="ItemWallJump" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(280, 192)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("5_vfqsd")
+animation = &"closed"
+
+[node name="ItemPenetration" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(360, 192)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("6_du43x")
+animation = &"closed"
+
+[node name="ItemLamp" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(440, 192)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("7_ygkv4")
+animation = &"closed"
+
+[node name="ItemSearch" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(520, 192)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("8_ej1mj")
+animation = &"closed"
+
+[node name="ItemBoss1" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(160, 272)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("9_dmuvt")
+animation = &"closed"
+
+[node name="ItemBoss2" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(240, 272)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("10_hbedo")
+animation = &"closed"
+
+[node name="ItemBoss3" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(320, 272)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4wpbn")
+animation = &"closed"
+
+[node name="ItemArmor" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(400, 272)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("9_qutn6")
+animation = &"closed"
+
+[node name="ItemArmorLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 288.0
+offset_right = 438.0
+offset_bottom = 310.0
+text = "100"
+horizontal_alignment = 1
+
+[node name="ItemWeapon" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(480, 272)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("11_464jh")
+animation = &"closed"
+
+[node name="ItemWeaponLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 288.0
+offset_right = 518.0
+offset_bottom = 310.0
+text = "100"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+offset_top = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 280.0
+offset_top = 288.0
+offset_right = 360.0
+offset_bottom = 320.0
+text = "戻る"
+script = ExtResource("9_nfjam")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("12_rslh3")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("11_ndkyj")]
+SeName = "menu_select"
+
+[node name="ResumeBgmCommand" parent="Control/Back/Exec" instance=ExtResource("13_atbak")]
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("10_bbngo")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("12_rslh3")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("11_ndkyj")]
+SeName = "menu_move"
+
+[node name="Focus" parent="." instance=ExtResource("15_lt5vg")]
+position = Vector2(96, 128)
+
+[node name="PauseBgmCommand" parent="Focus" instance=ExtResource("16_jur38")]
+
+[node name="KeyReleaseedTrigger" parent="." instance=ExtResource("13_73i7r")]
+ActionName = "pause"
+
+[node name="ButtonPressedCommand" parent="KeyReleaseedTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("14_svsij")]
+Target = NodePath("../../Control/Back")
+
+[node name="EscapeKey" parent="." instance=ExtResource("13_73i7r")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("14_svsij")]
+Target = NodePath("../../Control/Back")

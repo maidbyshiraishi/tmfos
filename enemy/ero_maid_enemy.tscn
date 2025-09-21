@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3q04xrtn7kjp"]
+
+[ext_resource type="Script" uid="uid://dtbob4nhqvx57" path="res://enemy/EroMaidEnemy.cs" id="1_bm4am"]
+[ext_resource type="SpriteFrames" uid="uid://b72wxiomk7n7m" path="res://contents/animation/enemy/ero_maid.tres" id="6_uib5v"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="7_ca0nf"]
+[ext_resource type="Script" uid="uid://de5v18kphpatm" path="res://mob/BlockBreaker.cs" id="9_mj3je"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjcr7"]
+size = Vector2(16, 64)
+
+[node name="EroMaidEnemy" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 1551
+script = ExtResource("1_bm4am")
+Life = 1200
+MaxLife = 1200
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+Attack = 10
+JumpSe = "enemy_jump"
+TouchdownSe = "enemy_touchdown"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = ExtResource("6_uib5v")
+animation = &"laser"
+frame_progress = 0.349191
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kjcr7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1.5, 1.25)
+rect = Rect2(-16, -32, 32, 64)
+
+[node name="ActionChange" type="Node2D" parent="."]
+script = ExtResource("7_ca0nf")
+
+[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="BlockBreakerHead" type="Marker2D" parent="."]
+position = Vector2(0, -32)
+script = ExtResource("9_mj3je")
+
+[node name="Step" type="Marker2D" parent="."]
+position = Vector2(0, 32)
+script = ExtResource("9_mj3je")
+
+[node name="WarpTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ExcitationtMarker2D" type="Marker2D" parent="."]
+position = Vector2(0, 8)
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="Shot"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
+[connection signal="timeout" from="WarpTimer" to="." method="Warp"]

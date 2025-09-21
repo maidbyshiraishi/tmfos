@@ -1,0 +1,184 @@
+[gd_scene load_steps=13 format=4 uid="uid://ds52eyqi0sj7w"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
+[ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="2_3jltj"]
+[ext_resource type="Texture2D" uid="uid://dgvjvsytsnp0r" path="res://contents/image/background/blue_gradation.png" id="2_np4y0"]
+[ext_resource type="Texture2D" uid="uid://dp7lcyaom8de3" path="res://contents/image/background/pattern2.png" id="2_vm6xn"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="4_pbbwe"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="6_1t5vm"]
+[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="6_v166r"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="7_i6ik5"]
+[ext_resource type="PackedScene" uid="uid://c48l268v1hmlo" path="res://item/treasure_box.tscn" id="7_lup55"]
+[ext_resource type="PackedScene" uid="uid://ba1ipn4gbqrse" path="res://others/moving_platform.tscn" id="10_8m4xj"]
+[ext_resource type="Script" uid="uid://bp7o1f4om8pah" path="res://others/Path.cs" id="11_qpwfv"]
+
+[sub_resource type="Curve2D" id="Curve2D_dxmp7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 39.236, -324.688, 0, 0, 0, 0, 275.236, -388.748, 0, 0, 0, 0, 454.236, -263.239, 0, 0, 0, 0, 37.236, -123.239, 0, 0, 0, 0, 100.236, -51.2393, 0, 0, 0, 0, 260.236, -51.2393)
+}
+point_count = 6
+
+[node name="Stage" instance=ExtResource("1_axhrv")]
+BgmStream = ExtResource("2_3jltj")
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("2_vm6xn")
+
+[node name="Parallax2D1" parent="Background" index="2"]
+visible = true
+
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+texture = ExtResource("2_np4y0")
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAAIAO7/AAAAAAAAAAALAO//AAAAAAAAAAAVAO7/AAAAAAAAAAAcAO7/AAAAAAAAAAAJAPX/AAAEAAAAAAAJAPb/AAAEAAAAAAAJAPf/AAAEAAAAAAAJAPj/AAAEAAAAAAAJAPn/AAAEAAAAAAAJAPr/AAAEAAAAAAAJAPv/AAAEAAAAAAAJAPz/AAAEAAAAAAAJAP3/AAAEAAAAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAYAP7/AAAAAAUAAAAYAP//AAAAAAUAAAAZAP7/AAAAAAUAAAAZAP//AAAAAAUAAAAAAOz/AAAAAAUAAAAAAO3/AAAAAAUAAAAAAO7/AAAAAAUAAAAAAO//AAAAAAUAAAAAAPD/AAAAAAUAAAAAAPH/AAAAAAUAAAAAAPL/AAAAAAUAAAAAAPP/AAAAAAUAAAAAAPT/AAAAAAUAAAAAAPX/AAAAAAUAAAAAAPb/AAAAAAUAAAAAAPf/AAAAAAUAAAAAAPj/AAAAAAUAAAAAAPn/AAAAAAUAAAAAAPr/AAAAAAUAAAAAAPv/AAAAAAUAAAAAAPz/AAAAAAUAAAAAAP3/AAAAAAUAAAAAAP7/AAAAAAUAAAAAAP//AAAAAAUAAAABAOz/AAAAAAUAAAABAO3/AAAAAAUAAAABAO7/AAAAAAUAAAABAO//AAAAAAUAAAABAPD/AAAAAAUAAAABAPH/AAAAAAUAAAABAPL/AAAAAAUAAAABAPP/AAAAAAUAAAABAPT/AAAAAAUAAAABAPX/AAAAAAUAAAABAPb/AAAAAAUAAAABAPf/AAAAAAUAAAABAPj/AAAAAAUAAAABAPn/AAAAAAUAAAABAPr/AAAAAAUAAAABAPv/AAAAAAUAAAABAPz/AAAAAAUAAAABAP3/AAAAAAUAAAABAP7/AAAAAAUAAAABAP//AAAAAAUAAAACAPb/AAAAAAMAAAACAP3/AAACAAAAAAACAP7/AAAAAAQAAAACAP//AAAAAAUAAAADAPb/AAAAAAMAAAADAP3/AAACAAEAAAADAP7/AAAAAAQAAAADAP//AAAAAAUAAAAEAPb/AAAAAAMAAAAEAP3/AAACAAAAAAAEAP7/AAAAAAQAAAAEAP//AAAAAAUAAAAFAP3/AAACAAEAAAAFAP7/AAAAAAQAAAAFAP//AAAAAAUAAAAGAP3/AAACAAAAAAAGAP7/AAAAAAQAAAAGAP//AAAAAAUAAAAHAPb/AAAAAAMAAAAHAP3/AAACAAAAAAAHAP7/AAAAAAQAAAAHAP//AAAAAAUAAAAIAPb/AAAAAAMAAAAIAP7/AAAAAAUAAAAIAP//AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAKAP7/AAAAAAUAAAAKAP//AAAAAAUAAAALAP7/AAAAAAUAAAALAP//AAAAAAUAAAAMAP7/AAAAAAUAAAAMAP//AAAAAAUAAAANAP7/AAAAAAUAAAANAP//AAAAAAUAAAAOAP7/AAAAAAUAAAAOAP//AAAAAAUAAAAPAPL/AAAAAAMAAAAPAP7/AAAAAAUAAAAPAP//AAAAAAUAAAAQAPL/AAAAAAMAAAAQAP7/AAAAAAUAAAAQAP//AAAAAAUAAAARAP7/AAAAAAUAAAARAP//AAAAAAUAAAASAP7/AAAAAAUAAAASAP//AAAAAAUAAAATAP7/AAAAAAUAAAATAP//AAAAAAUAAAAUAP7/AAAAAAUAAAAUAP//AAAAAAUAAAAVAP7/AAAAAAUAAAAVAP//AAAAAAUAAAAWAP7/AAAAAAUAAAAWAP//AAAAAAUAAAAXAP7/AAAAAAUAAAAXAP//AAAAAAUAAAAaAP7/AAAAAAUAAAAaAP//AAAAAAUAAAAbAP7/AAAAAAUAAAAbAP//AAAAAAUAAAAcAP7/AAAAAAUAAAAcAP//AAAAAAUAAAAdAP7/AAAAAAUAAAAdAP//AAAAAAUAAAAeAP7/AAAAAAUAAAAeAP//AAAAAAUAAAAfAP7/AAAAAAUAAAAfAP//AAAAAAUAAAAgAP7/AAAAAAUAAAAgAP//AAAAAAUAAAAhAP7/AAAAAAUAAAAhAP//AAAAAAUAAAAiAP7/AAAAAAUAAAAiAP//AAAAAAUAAAAjAOz/AAAAAAUAAAAjAO3/AAAAAAUAAAAjAO7/AAAAAAUAAAAjAO//AAAAAAUAAAAjAPD/AAAAAAUAAAAjAPH/AAAAAAUAAAAjAPL/AAAAAAUAAAAjAPP/AAAAAAUAAAAjAPT/AAAAAAUAAAAjAPX/AAAAAAUAAAAjAPb/AAAAAAUAAAAjAPf/AAAAAAUAAAAjAPj/AAAAAAUAAAAjAPn/AAAAAAUAAAAjAPr/AAAAAAUAAAAjAPv/AAAAAAUAAAAjAPz/AAAAAAUAAAAjAP3/AAAAAAUAAAAjAP7/AAAAAAUAAAAjAP//AAAAAAUAAAAkAOz/AAAAAAUAAAAkAO3/AAAAAAUAAAAkAO7/AAAAAAUAAAAkAO//AAAAAAUAAAAkAPD/AAAAAAUAAAAkAPH/AAAAAAUAAAAkAPL/AAAAAAUAAAAkAPP/AAAAAAUAAAAkAPT/AAAAAAUAAAAkAPX/AAAAAAUAAAAkAPb/AAAAAAUAAAAkAPf/AAAAAAUAAAAkAPj/AAAAAAUAAAAkAPn/AAAAAAUAAAAkAPr/AAAAAAUAAAAkAPv/AAAAAAUAAAAkAPz/AAAAAAUAAAAkAP3/AAAAAAUAAAAkAP7/AAAAAAUAAAAkAP//AAAAAAUAAAA=")
+
+[node name="Foreground" parent="TileMap" index="2"]
+tile_map_data = PackedByteArray("AAACAP7/AAAGAAUAAAADAP7/AAAGAAUAAAAEAP7/AAAGAAUAAAAFAP7/AAAGAAUAAAAGAP7/AAAGAAUAAAAHAP7/AAAGAAUAAAAIAP7/AAAGAAUAAAAJAP7/AAAGAAUAAAAWAP7/AAAGAAUAAAAUAP7/AAAGAAUAAAAXAP7/AAAGAAUAAAAYAP7/AAAGAAUAAAAZAP7/AAAGAAUAAAAIAPb/AAAGAAYAAAAHAPb/AAAGAAUAAAABAP3/AAADAAYAAAAjAPn/AAAEAAYAAAAjAPv/AAAEAAYAAAAjAPz/AAAEAAYAAAA=")
+
+[node name="Veil" parent="TileMap/ObservationHole" index="3"]
+tile_map_data = PackedByteArray("AAAFAPb/AAAHAAMAAAAGAPb/AAAHAAMAAAA=")
+
+[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("6_v166r")]
+position = Vector2(992, -96)
+DestStageNo = 1
+DestDoorNo = 2
+DoorNo = 1
+
+[node name="WoodDoor2" parent="Door" index="1" instance=ExtResource("6_v166r")]
+position = Vector2(112, -352)
+DestStageNo = 3
+DestDoorNo = 1
+DoorNo = 2
+Direction = 1
+
+[node name="TreasureBox" parent="Item" index="0" instance=ExtResource("7_lup55")]
+position = Vector2(512, -456)
+Score = 30000
+
+[node name="Player" parent="." index="8" instance=ExtResource("6_1t5vm")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("7_i6ik5")
+
+[node name="Path2D" type="Path2D" parent="Others" index="0"]
+position = Vector2(570.764, -95.4087)
+curve = SubResource("Curve2D_dxmp7")
+script = ExtResource("11_qpwfv")
+
+[node name="MovingPlatform" parent="Others/Path2D" index="0" instance=ExtResource("10_8m4xj")]
+position = Vector2(39.236, -324.688)
+scale = Vector2(2, 1)
+
+[node name="HUD" parent="." index="13"]
+Text1 = "チュートリアル"
+Text2 = "2"
+
+[node name="Message" type="Control" parent="." index="16"]
+light_mask = 2
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.0
+anchor_top = -20.5
+anchor_right = 20.0
+anchor_bottom = -20.5
+offset_top = 3.05176e-05
+offset_right = 344.0
+offset_bottom = 72.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20]ハシゴに触れて[color=#ff6666]上下キー[/color]で昇り降り、[color=#ff6666]Aキー[/color]を押せば飛び降ります。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.0
+anchor_top = -28.0
+anchor_right = 4.0
+anchor_bottom = -28.0
+offset_right = 128.0
+offset_bottom = 48.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20]扉は[color=#ff6666]上キー[/color][/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Message" index="2"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 54.0
+anchor_top = -16.0
+anchor_right = 54.0
+anchor_bottom = -16.0
+offset_left = -6.10352e-05
+offset_right = 256.0
+offset_bottom = 64.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20]再び[color=#ff6666]上キー[/color]で扉に入れば、戻ることもできます。[/font_size][/outline_color][/outline_size][/center]
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Message" index="3"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.0
+anchor_top = -18.0
+anchor_right = 6.0
+anchor_bottom = -18.0
+offset_right = 192.0
+offset_bottom = 64.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]↑↑↑
+落とし穴[/color]に注意[/font_size][/outline_color][/outline_size][/center]
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Message" index="4"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 36.0
+anchor_top = -9.0
+anchor_right = 36.0
+anchor_bottom = -9.0
+offset_right = 352.0
+offset_bottom = 80.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20]タイミングよくジャンプすれば[color=#ff6666]動く床[/color]に乗れるかもしれません。[/font_size][/outline_color][/outline_size][/center]
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Message" index="5"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 24.4375
+anchor_top = -36.9995
+anchor_right = 24.4375
+anchor_bottom = -36.9995
+offset_right = 233.0
+offset_bottom = 79.992
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20]宝箱で得点を稼ぐと、
+残機が増えます。[/font_size][/outline_color][/outline_size][/center]
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("4_pbbwe")]
+position = Vector2(592, 16)
+scale = Vector2(100, 1)

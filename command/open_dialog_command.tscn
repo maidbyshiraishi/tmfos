@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4dnj27cvdryh"]
+
+[ext_resource type="Script" uid="uid://wy7mgv845oik" path="res://command/OpenDialogCommand.cs" id="1_objr1"]
+
+[node name="OpenDialogCommand" type="Node"]
+script = ExtResource("1_objr1")

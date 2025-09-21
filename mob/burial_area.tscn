@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://drc08xeh4qw6l"]
+
+[ext_resource type="Script" uid="uid://bo3oltns12uiv" path="res://mob/BurialArea.cs" id="1_yuumk"]
+
+[node name="BurialArea" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_yuumk")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="Switch"]

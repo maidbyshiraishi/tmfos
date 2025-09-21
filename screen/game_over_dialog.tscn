@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://1r3bf0p5fbvc"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_tkbct"]
+[ext_resource type="Script" uid="uid://cag1382la6trd" path="res://screen/GameOverDialog.cs" id="2_0hk0x"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_w7ysc"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="4_eem4s"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="4_hn36s"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_vithm"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_4jja0"]
+[ext_resource type="PackedScene" uid="uid://cg4ynh8jijq7k" path="res://command/open_load_confirm_dialog_command.tscn" id="6_72bpm"]
+
+[node name="GameOverDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_tkbct")
+script = ExtResource("2_0hk0x")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 120.0
+offset_top = 110.0
+offset_right = 520.0
+offset_bottom = 360.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 120.0
+offset_top = 111.0
+offset_right = 520.0
+offset_bottom = 361.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 250.0
+offset_top = 124.0
+offset_right = 390.0
+offset_bottom = 154.0
+text = "ゲームオーバー"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 160.0
+offset_right = 504.0
+offset_bottom = 200.0
+text = "ゲームの再開方法を選んでください。"
+
+[node name="LastLoad" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 220.0
+offset_top = 227.0
+offset_right = 420.0
+offset_bottom = 259.0
+text = "前回データをロード"
+script = ExtResource("3_w7ysc")
+
+[node name="Exec" parent="Control/LastLoad" instance=ExtResource("5_4jja0")]
+
+[node name="PlaySeCommand" parent="Control/LastLoad/Exec" instance=ExtResource("4_vithm")]
+SeName = "menu_select"
+
+[node name="OpenLoadConfirmDialogCommand" parent="Control/LastLoad/Exec" instance=ExtResource("6_72bpm")]
+
+[node name="Focus" parent="Control/LastLoad" instance=ExtResource("5_4jja0")]
+
+[node name="PlaySeCommand" parent="Control/LastLoad/Focus" instance=ExtResource("4_vithm")]
+SeName = "menu_move"
+
+[node name="Load" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 221.0
+offset_top = 267.0
+offset_right = 421.0
+offset_bottom = 299.0
+text = "他データをロード"
+script = ExtResource("3_w7ysc")
+
+[node name="Exec" parent="Control/Load" instance=ExtResource("5_4jja0")]
+
+[node name="PlaySeCommand" parent="Control/Load/Exec" instance=ExtResource("4_vithm")]
+SeName = "menu_select"
+
+[node name="OpenDialogCommand" parent="Control/Load/Exec" instance=ExtResource("4_eem4s")]
+DialogPath = "res://screen/load_dialog.tscn"
+
+[node name="Focus" parent="Control/Load" instance=ExtResource("5_4jja0")]
+
+[node name="PlaySeCommand" parent="Control/Load/Focus" instance=ExtResource("4_vithm")]
+SeName = "menu_move"
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 245.0
+offset_top = 314.0
+offset_right = 395.0
+offset_bottom = 346.0
+text = "タイトルへ戻る"
+script = ExtResource("3_w7ysc")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("5_4jja0")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("4_vithm")]
+SeName = "menu_select"
+
+[node name="GoScreenCommand" parent="Control/Back/Exec" instance=ExtResource("4_hn36s")]
+Screen = "res://screen/title_screen.tscn"
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("5_4jja0")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("4_vithm")]
+SeName = "menu_move"

@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://mqkdiygn6qtn"]
+
+[ext_resource type="Script" uid="uid://c6ej656fanvdq" path="res://enemy/MaidRobot2Enemy.cs" id="1_34v8d"]
+[ext_resource type="SpriteFrames" uid="uid://dyu1txjt6bgx1" path="res://contents/animation/enemy/maid_robot2.tres" id="6_gv2gr"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="7_uh5tg"]
+[ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="8_p5x17"]
+[ext_resource type="PackedScene" uid="uid://bpnf82ngscqro" path="res://trigger/manage_durability_zone.tscn" id="10_aw1a1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05stx"]
+size = Vector2(15.5, 56)
+
+[node name="MaidRobot2Enemy" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 1543
+script = ExtResource("1_34v8d")
+ShotWait = 2.0
+Life = 1200
+MaxLife = 1200
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+JumpTime = 3.0
+JumpHeight = 700.0
+JumpSe = "enemy_jump"
+TouchdownSe = "enemy_touchdown"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = ExtResource("6_gv2gr")
+animation = &"dead"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-64, 240, -512, 240, -512, 104, -312, -104, -312, -240, 312, -240, 312, -104, 512, 104, 512, 240, 64, 240, 64, -216, -64, -216)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.00002, 7.99998)
+scale = Vector2(32.75, 8.25)
+rect = Rect2(-16, -32, 32, 64)
+
+[node name="ActionChange" type="Node2D" parent="."]
+script = ExtResource("7_uh5tg")
+
+[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+
+[node name="BurialArea" parent="." instance=ExtResource("8_p5x17")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+position = Vector2(0, -208)
+shape = SubResource("RectangleShape2D_05stx")
+
+[node name="DamageZone" type="Node2D" parent="."]
+
+[node name="DamageZone1" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+position = Vector2(284, 159)
+scale = Vector2(22, 8)
+Value = -30
+Continuous = true
+Stateful = false
+OneTime = false
+
+[node name="DamageZone2" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+position = Vector2(264, 48)
+scale = Vector2(20, 3)
+Value = -30
+Continuous = true
+Stateful = false
+OneTime = false
+
+[node name="DamageZone3" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+position = Vector2(224, -24)
+scale = Vector2(16, 4)
+Value = -50
+Continuous = true
+Stateful = false
+OneTime = false
+
+[node name="DamageZone4" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+position = Vector2(-284, 159)
+scale = Vector2(22, 8)
+Value = -50
+Continuous = true
+Stateful = false
+OneTime = false
+
+[node name="DamageZone5" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+position = Vector2(-264, 48)
+scale = Vector2(20, 3)
+Value = -50
+Continuous = true
+Stateful = false
+OneTime = false
+
+[node name="DamageZone6" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+position = Vector2(-224, -24)
+scale = Vector2(16, 4)
+Value = -50
+Continuous = true
+Stateful = false
+OneTime = false
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="DrillTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="JumpTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="Respawn"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
+[connection signal="body_entered" from="BurialArea" to="." method="Burialed"]
+[connection signal="timeout" from="DrillTimer" to="." method="ShotDrill"]
+[connection signal="timeout" from="JumpTimer" to="." method="Jump"]

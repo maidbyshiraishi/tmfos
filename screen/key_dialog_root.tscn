@@ -1,0 +1,318 @@
+[gd_scene load_steps=7 format=3 uid="uid://lidl4lyg228v"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_w8hyl"]
+[ext_resource type="Script" uid="uid://dx6ivbf123nq1" path="res://screen/KeyDialogRoot.cs" id="2_em2c1"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_hsus7"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_mrjcw"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_3ci4d"]
+[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="6_ncksm"]
+
+[node name="KeyOptionDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_w8hyl")
+script = ExtResource("2_em2c1")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 624.0
+offset_bottom = 464.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 616.0
+offset_bottom = 464.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 220.0
+offset_top = 25.0
+offset_right = 420.0
+offset_bottom = 55.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyLabel" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 600.0
+offset_bottom = 89.0
+text = "設定済みキー"
+horizontal_alignment = 1
+
+[node name="KeyInfo" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 320.0
+offset_top = 96.0
+offset_right = 600.0
+offset_bottom = 248.0
+autowrap_mode = 3
+
+[node name="Info" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 40.0
+offset_top = 264.0
+offset_right = 600.0
+offset_bottom = 368.0
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+offset_top = -37.0
+offset_bottom = -37.0
+
+[node name="Up" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 104.0
+offset_top = 85.0
+offset_right = 136.0
+offset_bottom = 117.0
+focus_neighbor_bottom = NodePath("../Down")
+text = "上"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/Up" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Up/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Up" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Up/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="Down" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 104.0
+offset_top = 149.0
+offset_right = 136.0
+offset_bottom = 181.0
+focus_neighbor_top = NodePath("../Up")
+text = "下"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/Down" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Down/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Down" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Down/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="Left" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 72.0
+offset_top = 117.0
+offset_right = 104.0
+offset_bottom = 149.0
+focus_neighbor_right = NodePath("../Right")
+text = "左"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/Left" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Left/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Left" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Left/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="Right" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 136.0
+offset_top = 117.0
+offset_right = 168.0
+offset_bottom = 149.0
+focus_neighbor_left = NodePath("../Left")
+text = "右"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/Right" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Right/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Right" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Right/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="A" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 149.0
+offset_right = 224.0
+offset_bottom = 181.0
+text = "A"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/A" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/A/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/A" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/A/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="B" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 240.0
+offset_top = 149.0
+offset_right = 272.0
+offset_bottom = 181.0
+focus_neighbor_right = NodePath(".")
+text = "B"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/B" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/B/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/B" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/B/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="Pause" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 213.0
+offset_right = 136.0
+offset_bottom = 245.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath("../Option")
+text = "ポーズ
+"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/Pause" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Pause/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Pause" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Pause/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="Option" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 144.0
+offset_top = 213.0
+offset_right = 264.0
+offset_bottom = 245.0
+focus_neighbor_left = NodePath("../Pause")
+focus_neighbor_right = NodePath(".")
+text = "オプション
+"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/Option" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Option/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Option" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Option/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="Screenshot" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 144.0
+offset_top = 253.0
+offset_right = 280.0
+offset_bottom = 285.0
+focus_neighbor_left = NodePath("../Help")
+focus_neighbor_right = NodePath(".")
+theme = ExtResource("6_ncksm")
+text = "スクリーンショット
+"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/Screenshot" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Screenshot/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Screenshot" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Screenshot/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[node name="Help" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 253.0
+offset_right = 136.0
+offset_bottom = 285.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath("../Screenshot")
+text = "ヘルプ
+"
+script = ExtResource("3_hsus7")
+
+[node name="Exec" parent="Control/Help" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Help/Exec" instance=ExtResource("4_mrjcw")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Help" instance=ExtResource("5_3ci4d")]
+
+[node name="PlaySeCommand" parent="Control/Help/Focus" instance=ExtResource("4_mrjcw")]
+SeName = "menu_move"
+
+[connection signal="focus_entered" from="Control/Up" to="." method="UpInfo"]
+[connection signal="mouse_entered" from="Control/Up" to="." method="UpInfo"]
+[connection signal="focus_entered" from="Control/Down" to="." method="DownInfo"]
+[connection signal="mouse_entered" from="Control/Down" to="." method="DownInfo"]
+[connection signal="focus_entered" from="Control/Left" to="." method="LeftInfo"]
+[connection signal="mouse_entered" from="Control/Left" to="." method="LeftInfo"]
+[connection signal="focus_entered" from="Control/Right" to="." method="RightInfo"]
+[connection signal="mouse_entered" from="Control/Right" to="." method="RightInfo"]
+[connection signal="focus_entered" from="Control/A" to="." method="AInfo"]
+[connection signal="mouse_entered" from="Control/A" to="." method="AInfo"]
+[connection signal="focus_entered" from="Control/B" to="." method="BInfo"]
+[connection signal="mouse_entered" from="Control/B" to="." method="BInfo"]
+[connection signal="focus_entered" from="Control/Pause" to="." method="PauseInfo"]
+[connection signal="mouse_entered" from="Control/Pause" to="." method="PauseInfo"]
+[connection signal="focus_entered" from="Control/Option" to="." method="OptionInfo"]
+[connection signal="mouse_entered" from="Control/Option" to="." method="OptionInfo"]
+[connection signal="focus_entered" from="Control/Screenshot" to="." method="ScreenshotInfo"]
+[connection signal="mouse_entered" from="Control/Screenshot" to="." method="ScreenshotInfo"]
+[connection signal="focus_entered" from="Control/Help" to="." method="HelpInfo"]
+[connection signal="mouse_entered" from="Control/Help" to="." method="HelpInfo"]

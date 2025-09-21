@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkxp5hemjf3f2"]
+
+[ext_resource type="Script" uid="uid://c754mdmt7isiy" path="res://enemy/MaidRobot1Enemy.cs" id="1_rr7fa"]
+[ext_resource type="SpriteFrames" uid="uid://df0ncbj4ep7ht" path="res://contents/animation/enemy/maid_robot1.tres" id="6_4tyit"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="7_xrvjj"]
+[ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="8_bfswm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wi5u"]
+size = Vector2(32, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nko60"]
+size = Vector2(22, 84)
+
+[node name="MaidRobot1Enemy" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 1551
+script = ExtResource("1_rr7fa")
+ShotWait = 0.8
+Life = 800
+MaxLife = 800
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+Attack = 15
+JumpSe = "enemy_jump"
+TouchdownSe = "enemy_touchdown"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = ExtResource("6_4tyit")
+animation = &"walk_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_1wi5u")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(9.53674e-07, 4)
+scale = Vector2(2.5, 2.125)
+rect = Rect2(-16, -32, 32, 64)
+
+[node name="ActionChange" type="Node2D" parent="."]
+script = ExtResource("7_xrvjj")
+
+[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+
+[node name="BurialArea" parent="." instance=ExtResource("8_bfswm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+shape = SubResource("RectangleShape2D_nko60")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="DrillTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
+[connection signal="body_entered" from="BurialArea" to="." method="Burialed"]
+[connection signal="timeout" from="DrillTimer" to="." method="ShotDrill"]

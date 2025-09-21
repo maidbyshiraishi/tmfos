@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0nfuaiabmb4m"]
+
+[ext_resource type="Script" uid="uid://c7odk6csxtgx4" path="res://screen/SplashScreen.cs" id="1_qmdx5"]
+[ext_resource type="AudioStream" uid="uid://u70yote4eu06" path="res://contents/screen/splash_screen/splash2-1.ogg" id="2_j741j"]
+[ext_resource type="AudioStream" uid="uid://bs5m27q1epvi1" path="res://contents/screen/splash_screen/splash2-2.ogg" id="3_jjt3q"]
+[ext_resource type="Texture2D" uid="uid://dyjt2limqo7pu" path="res://contents/screen/splash_screen/mask.png" id="4_yckid"]
+[ext_resource type="SpriteFrames" uid="uid://dnknkd26561su" path="res://contents/screen/splash_screen/nekomimi_maid.tres" id="5_04yhv"]
+[ext_resource type="Texture2D" uid="uid://clafw0kko01ia" path="res://contents/screen/splash_screen/frame.png" id="6_3amho"]
+
+[node name="SplashScreen" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qmdx5")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="Audio1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_j741j")
+bus = &"SE"
+
+[node name="Audio2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jjt3q")
+bus = &"SE"
+
+[node name="PlayStart" type="VisibleOnScreenNotifier2D" parent="."]
+light_mask = 2
+rect = Rect2(0, 0, 20, 20)
+
+[node name="Mask" type="Sprite2D" parent="."]
+clip_children = 1
+light_mask = 2
+position = Vector2(320, 192)
+texture = ExtResource("4_yckid")
+
+[node name="Image" type="AnimatedSprite2D" parent="Mask"]
+light_mask = 2
+position = Vector2(-8, 5)
+sprite_frames = ExtResource("5_04yhv")
+
+[node name="Frame" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(319, 240)
+texture = ExtResource("6_3amho")
+
+[node name="Label" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 415.0
+offset_top = 396.0
+offset_right = 605.0
+offset_bottom = 421.0
+text = "VOICEVOX:四国めたん"
+
+[connection signal="finished" from="Audio1" to="." method="PlayAudio2"]
+[connection signal="finished" from="Audio2" to="." method="GoNextScreen"]
+[connection signal="screen_entered" from="PlayStart" to="." method="PlayStart"]

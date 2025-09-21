@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmwmiioyegn2h"]
+
+[ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_hkun2"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_enhlb"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="4_qo557"]
+[ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="5_7ds7q"]
+[ext_resource type="PackedScene" uid="uid://bxxxgp6ky5syd" path="res://trigger/invisible_trigger.tscn" id="5_im1r4"]
+[ext_resource type="Texture2D" uid="uid://cv81a3o8fnnqx" path="res://contents/image/theater/talk_player.png" id="5_qlvsl"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="7_pualw"]
+
+[node name="ScrollTheater" instance=ExtResource("1_hkun2")]
+metadata/_edit_vertical_guides_ = [320.0]
+
+[node name="Contents" type="Control" parent="Path2D/Socket" index="0"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -270.0
+offset_right = 270.0
+offset_bottom = 768.0
+grow_horizontal = 2
+pivot_offset = Vector2(270, 0)
+theme = ExtResource("2_enhlb")
+
+[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 84.0
+offset_right = 541.0
+offset_bottom = 143.0
+text = "宇宙から来たメイド撃退の準備はできた！"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" instance=ExtResource("4_qo557")]
+Stream = ExtResource("5_7ds7q")
+
+[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 460.0
+offset_right = 541.0
+offset_bottom = 563.0
+text = "地球の未来は、
+地球最後のメイドである\"あなた\"に託された！"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 620.0
+offset_right = 541.0
+offset_bottom = 664.0
+text = "本編に続く・・・"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="TalkPlayer" type="Sprite2D" parent="Path2D/Socket/Contents" index="4"]
+position = Vector2(269, 340)
+texture = ExtResource("5_qlvsl")
+
+[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="5" instance=ExtResource("5_im1r4")]
+position = Vector2(269, 720)
+
+[node name="GoScreenCommand" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" instance=ExtResource("7_pualw")]
+Screen = "res://screen/title_screen.tscn"

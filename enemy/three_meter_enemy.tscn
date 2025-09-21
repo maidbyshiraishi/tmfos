@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://cs5mc0lekfh58"]
+
+[ext_resource type="Script" uid="uid://br8ivdowtrivy" path="res://enemy/ThreeMeterEnemy.cs" id="2_nef2t"]
+[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="6_72c7s"]
+[ext_resource type="SpriteFrames" uid="uid://cn3j6o2wkhaqj" path="res://contents/animation/enemy/three_meter.tres" id="7_gh0bv"]
+[ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="7_q2hx7"]
+[ext_resource type="PackedScene" uid="uid://d3dxe0jrgncd4" path="res://enemy/eyesight64.tscn" id="8_drow6"]
+[ext_resource type="Script" uid="uid://de5v18kphpatm" path="res://mob/BlockBreaker.cs" id="9_3a3ls"]
+[ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="9_h64ah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hutj"]
+size = Vector2(32, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gab14"]
+size = Vector2(22, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkfb6"]
+size = Vector2(32, 88)
+
+[node name="ThreeMeterEnemy" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 1551
+script = ExtResource("2_nef2t")
+Life = 200
+MaxLife = 200
+DeadSe = "enemy_dead"
+DamageSe = "enemy_damage"
+TimeupSe = "enemy_dead"
+Direction = -1
+Approach = 95.0
+MaxSpeed = 150.0
+ReductionApproach = 32.0
+AirApproach = 100.0
+AirMaxSpeed = 150.0
+AirReductionApproach = 32.0
+JumpTime = 2.0
+ShortJumpHeight = 40.0
+JumpHeight = 100.0
+Attack = 15
+SkipAttackTime = 2.0
+JumpSe = "enemy_jump"
+TouchdownSe = "enemy_touchdown"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+sprite_frames = ExtResource("7_gh0bv")
+animation = &"walk_left"
+frame_progress = 0.53163
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_4hutj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.14577e-06, -12)
+scale = Vector2(1.28, 1.15556)
+rect = Rect2(-25, -45, 50, 90)
+
+[node name="EyeSight" parent="." instance=ExtResource("8_drow6")]
+
+[node name="ActionChange" type="Node2D" parent="."]
+script = ExtResource("7_q2hx7")
+
+[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+
+[node name="BurialArea" parent="." instance=ExtResource("9_h64ah")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_gab14")
+
+[node name="EventFinder" parent="." instance=ExtResource("6_72c7s")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_fkfb6")
+
+[node name="BlockBreaker" type="Node2D" parent="."]
+
+[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker"]
+position = Vector2(0, -57)
+script = ExtResource("9_3a3ls")
+
+[node name="Step" type="Marker2D" parent="BlockBreaker"]
+position = Vector2(0, 35)
+script = ExtResource("9_3a3ls")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
+[connection signal="body_entered" from="BurialArea" to="." method="Burialed"]

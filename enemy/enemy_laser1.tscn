@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvv58jomlnq7t"]
+
+[ext_resource type="Script" uid="uid://bixtpgy0fqt6f" path="res://enemy/EnemyShot1.cs" id="1_0sgwu"]
+[ext_resource type="Texture2D" uid="uid://bken6xnjd0tw5" path="res://contents/image/enemy/laser_shot.png" id="2_sllw7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tswr"]
+atlas = ExtResource("2_sllw7")
+region = Rect2(0, 0, 100, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u488"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tswr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8w6d"]
+size = Vector2(80, 4)
+
+[node name="EnemyLaser1" type="Area2D"]
+collision_layer = 64
+collision_mask = 8
+script = ExtResource("1_0sgwu")
+Speed = 700.0
+Attack = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3u488")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_t8w6d")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(6.85714, 1.14286)
+rect = Rect2(-7, -7, 14, 14)
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="HitArea2D"]
+[connection signal="body_entered" from="." to="." method="HitNode2D"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]

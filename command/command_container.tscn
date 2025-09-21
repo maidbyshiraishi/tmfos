@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpnl48f76kgdj"]
+
+[ext_resource type="Script" uid="uid://bw3gaoxpxmwba" path="res://command/CommandContainer.cs" id="1_bmgg6"]
+
+[node name="CommandContainer" type="Node"]
+script = ExtResource("1_bmgg6")

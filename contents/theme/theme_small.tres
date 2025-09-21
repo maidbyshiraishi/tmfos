@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cib6gefddtud7"]
+
+[ext_resource type="FontFile" uid="uid://dcfilbgkpb732" path="res://contents/font/pixel_mplus10-regular.ttf" id="1_3kbdn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plrp2"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfpm0"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2wxq"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4u6an"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv5g0"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s2pk"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_akjuq"]
+thickness = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wguk"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_svckl"]
+thickness = 15
+vertical = true
+
+[resource]
+default_font = ExtResource("1_3kbdn")
+default_font_size = 13
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 13
+Button/fonts/font = ExtResource("1_3kbdn")
+Button/styles/hover = SubResource("StyleBoxFlat_plrp2")
+Button/styles/normal = SubResource("StyleBoxFlat_gfpm0")
+Button/styles/pressed = SubResource("StyleBoxFlat_s2wxq")
+CheckButton/constants/outline_size = 13
+CheckButton/styles/hover = SubResource("StyleBoxFlat_4u6an")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_kv5g0")
+CheckButton/styles/pressed = SubResource("StyleBoxFlat_6s2pk")
+HScrollBar/styles/scroll = SubResource("StyleBoxLine_akjuq")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 13
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 13
+TextEdit/constants/outline_size = 13
+TextEdit/styles/focus = SubResource("StyleBoxFlat_4wguk")
+VScrollBar/styles/scroll = SubResource("StyleBoxLine_svckl")

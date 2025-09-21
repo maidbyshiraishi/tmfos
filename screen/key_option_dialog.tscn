@@ -1,0 +1,191 @@
+[gd_scene load_steps=13 format=3 uid="uid://3r16tce2nd2t"]
+
+[ext_resource type="PackedScene" uid="uid://lidl4lyg228v" path="res://screen/key_dialog_root.tscn" id="1_51pht"]
+[ext_resource type="Texture2D" uid="uid://si3xgb2yh3n2" path="res://contents/screen/key_option_dialog/swap.png" id="2_1qi7l"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="2_3h2oq"]
+[ext_resource type="PackedScene" uid="uid://b0u0fyqn1oqdg" path="res://command/load_key_options_command.tscn" id="2_b7ksl"]
+[ext_resource type="PackedScene" uid="uid://cu6skmjvn6qt1" path="res://command/save_key_options_command.tscn" id="2_o5guw"]
+[ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/update_dialog_screen_command.tscn" id="2_q4wlk"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_h8vmb"]
+[ext_resource type="PackedScene" uid="uid://dy1dvjhw72vd8" path="res://command/reset_default_key_options_command.tscn" id="5_dog2l"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_kjl5n"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="5_wq4oo"]
+[ext_resource type="Script" uid="uid://cfo0do8tadpiv" path="res://command/OpenFileManagerCommand.cs" id="10_ja627"]
+[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="12_61sft"]
+
+[node name="KeyOptionDialog" instance=ExtResource("1_51pht")]
+
+[node name="Border" parent="." index="1"]
+offset_left = 16.0
+offset_right = 624.0
+
+[node name="Title" parent="." index="2"]
+text = "操作設定"
+
+[node name="Swap2" type="Sprite2D" parent="." index="6"]
+position = Vector2(232, 100)
+texture = ExtResource("2_1qi7l")
+
+[node name="Right" parent="Control" index="3"]
+focus_neighbor_right = NodePath("../A")
+
+[node name="A" parent="Control" index="4"]
+focus_neighbor_left = NodePath("../Right")
+focus_neighbor_top = NodePath("../Swap")
+
+[node name="Pause" parent="Control" index="6"]
+offset_left = 80.0
+offset_top = 205.0
+offset_right = 160.0
+offset_bottom = 237.0
+
+[node name="Option" parent="Control" index="7"]
+offset_left = 168.0
+offset_top = 205.0
+offset_right = 296.0
+offset_bottom = 237.0
+
+[node name="Screenshot" parent="Control" index="8"]
+offset_left = 168.0
+offset_top = 245.0
+offset_right = 296.0
+offset_bottom = 277.0
+
+[node name="Help" parent="Control" index="9"]
+offset_left = 80.0
+offset_top = 245.0
+offset_right = 160.0
+offset_bottom = 277.0
+focus_neighbor_bottom = NodePath("../Back")
+
+[node name="Back" type="Button" parent="Control" index="10"]
+light_mask = 2
+layout_mode = 0
+offset_left = 48.0
+offset_top = 405.0
+offset_right = 304.0
+offset_bottom = 437.0
+text = "保存して戻る"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/Back" index="0" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+
+[node name="SaveKeyOptionsCommand" parent="Control/Back/Exec" index="1" instance=ExtResource("2_o5guw")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Back/Exec" index="2" instance=ExtResource("2_q4wlk")]
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" index="3" instance=ExtResource("5_wq4oo")]
+
+[node name="Focus" parent="Control/Back" index="1" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+
+[node name="Undo" type="Button" parent="Control" index="11"]
+light_mask = 2
+layout_mode = 0
+offset_left = 48.0
+offset_top = 453.0
+offset_right = 304.0
+offset_bottom = 485.0
+text = "前回保存した値にリセット"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/Undo" index="0" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Undo/Exec" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+
+[node name="LoadKeyOptionsCommand" parent="Control/Undo/Exec" index="1" instance=ExtResource("2_b7ksl")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" index="2" instance=ExtResource("2_q4wlk")]
+
+[node name="Focus" parent="Control/Undo" index="1" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Undo/Focus" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+
+[node name="Reset" type="Button" parent="Control" index="12"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 453.0
+offset_right = 592.0
+offset_bottom = 485.0
+text = "ゲームの初期値にリセット"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/Reset" index="0" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Reset/Exec" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+
+[node name="ResetDefaultKeyOptionsCommand" parent="Control/Reset/Exec" index="1" instance=ExtResource("5_dog2l")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" index="2" instance=ExtResource("2_q4wlk")]
+
+[node name="Focus" parent="Control/Reset" index="1" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Reset/Focus" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+
+[node name="OpenFileManager" type="Button" parent="Control" index="13"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 405.0
+offset_right = 592.0
+offset_bottom = 437.0
+text = "データフォルダを開く"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/OpenFileManager" index="0" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+
+[node name="OpenFileManagerCommand" type="Node" parent="Control/OpenFileManager/Exec" index="1"]
+script = ExtResource("10_ja627")
+
+[node name="Focus" parent="Control/OpenFileManager" index="1" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+
+[node name="Swap" type="Button" parent="Control" index="14"]
+light_mask = 2
+layout_mode = 0
+offset_left = 184.0
+offset_top = 101.0
+offset_right = 280.0
+offset_bottom = 125.0
+theme = ExtResource("12_61sft")
+text = "設定入れ替え"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/Swap" index="0" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Swap/Exec" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+
+[node name="Focus" parent="Control/Swap" index="1" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Swap/Focus" index="0" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+
+[connection signal="pressed" from="Control/Up" to="." method="UpSet"]
+[connection signal="pressed" from="Control/Down" to="." method="DownSet"]
+[connection signal="pressed" from="Control/Left" to="." method="LeftSet"]
+[connection signal="pressed" from="Control/Right" to="." method="RightSet"]
+[connection signal="pressed" from="Control/A" to="." method="ASet"]
+[connection signal="pressed" from="Control/B" to="." method="BSet"]
+[connection signal="pressed" from="Control/Pause" to="." method="PauseSet"]
+[connection signal="pressed" from="Control/Option" to="." method="OptionSet"]
+[connection signal="pressed" from="Control/Screenshot" to="." method="ScreenshotSet"]
+[connection signal="pressed" from="Control/Help" to="." method="HelpSet"]
+[connection signal="focus_entered" from="Control/Swap" to="." method="SwapInfo"]
+[connection signal="mouse_entered" from="Control/Swap" to="." method="SwapInfo"]
+[connection signal="pressed" from="Control/Swap" to="." method="SwapAB"]

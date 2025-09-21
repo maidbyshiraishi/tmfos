@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfyifaiqj6jnn"]
+
+[ext_resource type="Script" uid="uid://ccua5ohoshy11" path="res://system/GameOption.cs" id="1_pou7w"]
+
+[node name="GameOption" type="Node"]
+process_mode = 3
+script = ExtResource("1_pou7w")

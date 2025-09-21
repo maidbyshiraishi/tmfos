@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://p1chjaecrkr8"]
+
+[ext_resource type="Texture2D" uid="uid://yj5erpo2ao46" path="res://contents/image/enemy/big_drill_shot_lr.png" id="1_sfa6m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veo8g"]
+atlas = ExtResource("1_sfa6m")
+region = Rect2(0, 0, 420, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpw02"]
+atlas = ExtResource("1_sfa6m")
+region = Rect2(420, 0, 420, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oeuc"]
+atlas = ExtResource("1_sfa6m")
+region = Rect2(840, 0, 420, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vm45"]
+atlas = ExtResource("1_sfa6m")
+region = Rect2(1260, 0, 420, 252)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veo8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpw02")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oeuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vm45")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]

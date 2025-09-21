@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://du3iipceh2xvo"]
+
+[ext_resource type="Script" uid="uid://1eji4vub7bsi" path="res://command/ConditionalCommand.cs" id="1_wubb5"]
+
+[node name="ConditionalCommand" type="Node"]
+script = ExtResource("1_wubb5")

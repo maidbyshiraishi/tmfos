@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://r4oifw5npwps"]
+
+[ext_resource type="Script" uid="uid://s8q1p1o75nit" path="res://trigger/KeyReleaseedTrigger.cs" id="1_2areh"]
+
+[node name="KeyReleaseedTrigger" type="Node"]
+script = ExtResource("1_2areh")

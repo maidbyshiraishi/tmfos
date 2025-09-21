@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://drm6s3qj4id31"]
+
+[ext_resource type="Script" uid="uid://ddtd58a00dc3n" path="res://item/ItemPanel.cs" id="1_x822f"]
+[ext_resource type="PackedScene" uid="uid://djhc7dqnrqetm" path="res://command/manage_item_command.tscn" id="3_hsc8j"]
+[ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="4_f8mi3"]
+[ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/switch_open_or_close_animation_command.tscn" id="4_rtm01"]
+[ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="5_q84il"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="7_os105"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="8_p6trf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k05ie"]
+size = Vector2(32, 32)
+
+[node name="ItemPanel" type="Area2D"]
+collision_layer = 65536
+collision_mask = 0
+script = ExtResource("1_x822f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k05ie")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="ManageItemCommand" parent="." instance=ExtResource("3_hsc8j")]
+
+[node name="StateSaveCommand" parent="." instance=ExtResource("4_f8mi3")]
+
+[node name="StateBackupCommand" parent="." instance=ExtResource("5_q84il")]
+
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("4_rtm01")]
+AnimatedSprite2D = NodePath("../AnimatedSprite2D")
+
+[node name="PlaySeCommand" parent="." instance=ExtResource("7_os105")]
+SeName = "player_get_item"
+
+[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("8_p6trf")]

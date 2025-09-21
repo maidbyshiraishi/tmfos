@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdkba5kbxtem5"]
+
+[ext_resource type="Script" uid="uid://tviqhd82ni7e" path="res://trigger/CollisionTrigger.cs" id="1_pwe44"]
+[ext_resource type="PackedScene" uid="uid://6wed4oxwfoko" path="res://command/remove_i_game_node_command.tscn" id="4_kqf3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etdmo"]
+size = Vector2(32, 32)
+
+[node name="OutOfBorder" type="Area2D"]
+collision_layer = 2048
+collision_mask = 40
+script = ExtResource("1_pwe44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_etdmo")
+
+[node name="RemoveIGameNodeCommand" parent="." instance=ExtResource("4_kqf3a")]
+ExecFlag = false
+
+[connection signal="area_exited" from="." to="." method="ExecExitArea2D"]
+[connection signal="body_exited" from="." to="." method="ExecExit"]

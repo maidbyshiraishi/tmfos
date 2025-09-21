@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cooxg6bevunkv"]
+
+[ext_resource type="Script" uid="uid://8dkmsj6ihpvo" path="res://system/MusicPlayer.cs" id="1_3lnsu"]
+[ext_resource type="AnimationLibrary" uid="uid://lvlvnwm33h4e" path="res://contents/fader/fader.tres" id="2_ee2uv"]
+
+[node name="MusicPlayer" type="Node"]
+process_mode = 3
+script = ExtResource("1_3lnsu")
+
+[node name="Deck1" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="Deck2" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
+
+[node name="Fader" type="AnimationPlayer" parent="."]
+libraries = {
+&"fader": ExtResource("2_ee2uv")
+}
+
+[connection signal="animation_finished" from="Fader" to="." method="Finished"]

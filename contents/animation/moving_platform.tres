@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://wgxxdbkf56jh"]
+
+[ext_resource type="Texture2D" uid="uid://cp7myj56oy06f" path="res://contents/image/moving_platform.png" id="1_nfi2p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uprpd"]
+atlas = ExtResource("1_nfi2p")
+region = Rect2(0, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuenw"]
+atlas = ExtResource("1_nfi2p")
+region = Rect2(40, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8mij"]
+atlas = ExtResource("1_nfi2p")
+region = Rect2(80, 0, 40, 10)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uprpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuenw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8mij")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]

@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dyu1txjt6bgx1"]
+
+[ext_resource type="Texture2D" uid="uid://jhlm0a82o4lm" path="res://contents/image/enemy/maid_robot2.png" id="1_dmvsu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhao0"]
+atlas = ExtResource("1_dmvsu")
+region = Rect2(0, 0, 1021, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hphx"]
+atlas = ExtResource("1_dmvsu")
+region = Rect2(0, 0, 1021, 480)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhao0")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hphx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]

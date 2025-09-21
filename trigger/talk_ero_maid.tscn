@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdvrl2ikd782y"]
+
+[ext_resource type="PackedScene" uid="uid://b3pkhij41efph" path="res://trigger/talk_root.tscn" id="1_gpn1l"]
+[ext_resource type="SpriteFrames" uid="uid://baxl5h3k8smor" path="res://contents/animation/theater/talk_ero_maid.tres" id="2_c8j0p"]
+
+[node name="TalkTrigger" instance=ExtResource("1_gpn1l")]
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = ExtResource("2_c8j0p")

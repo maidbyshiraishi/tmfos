@@ -1,0 +1,155 @@
+[gd_scene load_steps=16 format=3 uid="uid://g3hdps2tkgeh"]
+
+[ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_6emye"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_7amvo"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_6py3m"]
+[ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="4_cu71a"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="4_h87ul"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="5_qcw2s"]
+[ext_resource type="PackedScene" uid="uid://bxxxgp6ky5syd" path="res://trigger/invisible_trigger.tscn" id="6_8lq7n"]
+[ext_resource type="Texture2D" uid="uid://xgfax0xpflhn" path="res://contents/image/theater/story_opening_shadowclip.png" id="8_5a5po"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="8_42s1e"]
+[ext_resource type="Texture2D" uid="uid://7xexluhr6u51" path="res://contents/image/theater/story_opening_star.png" id="8_suro3"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="9_0lcym"]
+[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="9_76s3t"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="9_nxx3m"]
+[ext_resource type="Texture2D" uid="uid://cv81a3o8fnnqx" path="res://contents/image/theater/talk_player.png" id="10_cgxtx"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="13_ehk5a"]
+
+[node name="ScrollTheater" instance=ExtResource("1_6emye")]
+ScrollTime = 15.0
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="Contents" type="Control" parent="Path2D/Socket" index="0"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -270.0
+offset_right = 270.0
+offset_bottom = 1723.0
+grow_horizontal = 2
+theme = ExtResource("1_7amvo")
+
+[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 540.0
+offset_bottom = 73.0
+text = "1999年7月"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="VisibleCommand" parent="Path2D/Socket/Contents" index="1" instance=ExtResource("5_qcw2s")]
+position = Vector2(19, 25)
+
+[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/VisibleCommand" index="0" instance=ExtResource("4_h87ul")]
+Command = 1
+Stream = ExtResource("4_cu71a")
+
+[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 328.0
+offset_right = 537.0
+offset_bottom = 370.0
+text = "宇宙の果て、メイド座の彼方から一人のメイドが飛来した。"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label7" type="Label" parent="Path2D/Socket/Contents" index="3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 424.0
+offset_right = 545.0
+offset_bottom = 521.0
+text = "宇宙から来たメイドは、
+地球人類に対し、
+地球の即時受け渡しを要求した。
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="4"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 576.0
+offset_right = 545.0
+offset_bottom = 672.0
+text = "地球のメイドたちは
+宇宙から来たメイドに戦いを挑んだが、
+一人残らず敗北した。"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="5"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 944.0
+offset_right = 537.0
+offset_bottom = 984.0
+text = "地球は宇宙から来たメイドに支配された。"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Path2D/Socket/Contents" index="6"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 1256.0
+offset_right = 537.0
+offset_bottom = 1352.0
+text = "15年の月日が流れ、
+地球の未来は密かに育てられた
+地球最後のメイドに託された・・・。"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="7" instance=ExtResource("6_8lq7n")]
+position = Vector2(269, 1568)
+
+[node name="ReferenceContainer" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_nxx3m")]
+Target = NodePath("../../../../../CloseCommand")
+
+[node name="StoryOpening001" type="Sprite2D" parent="Path2D/Socket/Contents" index="8"]
+position = Vector2(269, 836)
+texture = ExtResource("8_5a5po")
+
+[node name="StoryOpening002" type="Sprite2D" parent="Path2D/Socket/Contents" index="9"]
+position = Vector2(269, 216)
+texture = ExtResource("8_suro3")
+
+[node name="TalkPlayer" type="Sprite2D" parent="Path2D/Socket/Contents" index="10"]
+position = Vector2(269, 1152)
+texture = ExtResource("10_cgxtx")
+
+[node name="CloseButton" type="Button" parent="Control" index="0"]
+light_mask = 2
+layout_mode = 0
+offset_left = 520.0
+offset_top = 424.0
+offset_right = 624.0
+offset_bottom = 456.0
+theme = ExtResource("9_76s3t")
+text = "タイトルに戻る"
+script = ExtResource("3_6py3m")
+
+[node name="Exec" parent="Control/CloseButton" index="0" instance=ExtResource("9_0lcym")]
+
+[node name="PlaySeCommand" parent="Control/CloseButton/Exec" index="0" instance=ExtResource("13_ehk5a")]
+SeName = "menu_select"
+
+[node name="ReferenceContainer" parent="Control/CloseButton/Exec" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("9_nxx3m")]
+Target = NodePath("../../../../CloseCommand")
+
+[node name="Focus" parent="Control/CloseButton" index="1" instance=ExtResource("9_0lcym")]
+
+[node name="PlaySeCommand" parent="Control/CloseButton/Focus" index="0" instance=ExtResource("13_ehk5a")]
+SeName = "menu_move"
+
+[node name="CloseCommand" parent="." index="4" instance=ExtResource("9_0lcym")]
+
+[node name="CloseDialogCommand" parent="CloseCommand" index="0" instance=ExtResource("8_42s1e")]

@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddw2g00yqtlmx"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_6lvyk"]
+[ext_resource type="Script" uid="uid://c2bmiqjw4pbih" path="res://stage/StageRoot.cs" id="2_xo2a5"]
+[ext_resource type="Script" uid="uid://cye0gbvy5dsmh" path="res://stage/TileMapManager.cs" id="3_7d20q"]
+[ext_resource type="TileSet" uid="uid://vlqhnvwag8d" path="res://contents/tilemap/tileset.tres" id="4_wd8vw"]
+[ext_resource type="PackedScene" uid="uid://cr2lwjlb07c3g" path="res://hud/hud.tscn" id="15_lldo5"]
+[ext_resource type="PackedScene" uid="uid://t3a2cd5gj8rn" path="res://trigger/game_shortcut_keys.tscn" id="16_6btra"]
+
+[node name="Stage" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_6lvyk")
+script = ExtResource("2_xo2a5")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background"]
+z_index = -1000
+repeat_size = Vector2(1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Background/Parallax2D3"]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0.447059, 0.678431, 0.933333, 1)
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background"]
+z_index = -990
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(640, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2"]
+modulate = Color(1, 1, 1, 0.196078)
+centered = false
+
+[node name="Parallax2D1" type="Parallax2D" parent="Background"]
+visible = false
+z_index = -980
+repeat_size = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D1"]
+scale = Vector2(2, 2)
+centered = false
+
+[node name="DarkZone" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="TileMap" type="Node2D" parent="."]
+script = ExtResource("3_7d20q")
+
+[node name="Background" type="TileMapLayer" parent="TileMap"]
+z_index = -1
+tile_set = ExtResource("4_wd8vw")
+
+[node name="Ground" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("4_wd8vw")
+
+[node name="Foreground" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+tile_set = ExtResource("4_wd8vw")
+
+[node name="ObservationHole" type="Polygon2D" parent="TileMap"]
+clip_children = 1
+z_index = 2
+invert_enabled = true
+invert_border = 16384.0
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Veil" type="TileMapLayer" parent="TileMap/ObservationHole"]
+tile_set = ExtResource("4_wd8vw")
+
+[node name="Decoration1" type="Node2D" parent="."]
+
+[node name="Door" type="Node2D" parent="."]
+
+[node name="Talk" type="Node2D" parent="."]
+
+[node name="Search" type="Node2D" parent="."]
+
+[node name="SearchList" type="CanvasLayer" parent="Search"]
+
+[node name="Item" type="Node2D" parent="."]
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Decoration2" type="Node2D" parent="."]
+
+[node name="Spawned" type="Node2D" parent="."]
+
+[node name="Others" type="Node2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("15_lldo5")]
+unique_name_in_owner = true
+
+[node name="GameShortcutKeys" parent="." instance=ExtResource("16_6btra")]
+
+[node name="Blind" type="Node2D" parent="."]
+
+[node name="OutOfBorder" type="Node2D" parent="."]

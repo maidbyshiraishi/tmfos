@@ -1,0 +1,157 @@
+[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://bwqttoq6pgjpq"]
+
+[ext_resource type="Texture2D" uid="uid://6hhahjvx7j" path="res://contents/image/enemy/maid_faucet.png" id="1_p1inb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qseho"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(0, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxvqp"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(183, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de0rt"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(61, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v18l"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(244, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x73sp"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(122, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qubh0"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(305, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp627"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(183, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f1xk"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(244, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtqs2"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(305, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsv58"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(0, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmrsh"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(61, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3a2b"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(122, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq1ya"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(183, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4704"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(244, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k0n5"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(305, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0acbh"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(0, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssp7r"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(61, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv1yy"]
+atlas = ExtResource("1_p1inb")
+region = Rect2(122, 0, 61, 42)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qseho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxvqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de0rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v18l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x73sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qubh0")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp627")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f1xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtqs2")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsv58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmrsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3a2b")
+}],
+"loop": true,
+"name": &"left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq1ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4704")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k0n5")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0acbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssp7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv1yy")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]

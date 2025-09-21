@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://didcowdro63l3"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_joip0"]
+[ext_resource type="Script" uid="uid://c2ou3vlk72cmw" path="res://screen/MessageDialog.cs" id="2_2kunl"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_27h6v"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_be5gd"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_ny3dk"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_8kyvh"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="7_nxi2a"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="8_qtv6w"]
+
+[node name="MessageDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_joip0")
+script = ExtResource("2_2kunl")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 63.0
+offset_right = 576.0
+offset_bottom = 233.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 64.0
+offset_top = 63.0
+offset_right = 576.0
+offset_bottom = 233.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Message" type="Label" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 67.0
+offset_top = 66.0
+offset_right = 574.0
+offset_bottom = 174.0
+text = "メッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 280.0
+offset_top = 180.0
+offset_right = 360.0
+offset_bottom = 212.0
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "戻る
+"
+script = ExtResource("3_27h6v")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("6_8kyvh")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_ny3dk")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_be5gd")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("6_8kyvh")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_ny3dk")]
+SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("7_nxi2a")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("8_qtv6w")]
+Target = NodePath("../../Control/Back")

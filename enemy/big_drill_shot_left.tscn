@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://baqd0f61bgcvs"]
+
+[ext_resource type="Script" uid="uid://bx2yhhgegb58j" path="res://enemy/DrillShot.cs" id="1_3yhuq"]
+[ext_resource type="SpriteFrames" uid="uid://p1chjaecrkr8" path="res://contents/animation/enemy/big_drill_shot_lr.tres" id="2_v7j4w"]
+
+[node name="BigDrillShotLeft" type="Area2D"]
+collision_layer = 64
+collision_mask = 8
+script = ExtResource("1_3yhuq")
+Speed = 300.0
+Attack = 15
+Direction = Vector2(-1, 0)
+Penetration = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_v7j4w")
+animation = &"left"
+autoplay = "left"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(208, 72, 208, -72, 128, -72, 128, -128, -208, -24, -208, 24, 128, 128, 128, 64)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(32, 20.5714)
+rect = Rect2(-7, -7, 14, 14)
+
+[connection signal="area_entered" from="." to="." method="HitArea2D"]
+[connection signal="body_entered" from="." to="." method="HitNode2D"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]

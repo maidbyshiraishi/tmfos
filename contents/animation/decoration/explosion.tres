@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://c3jmiotvlx7kb"]
+
+[ext_resource type="Texture2D" uid="uid://cb57fifd3nx0s" path="res://contents/image/decoration/explosion.png" id="1_r81rt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3yr5"]
+atlas = ExtResource("1_r81rt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id25a"]
+atlas = ExtResource("1_r81rt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tyrx"]
+atlas = ExtResource("1_r81rt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmfs2"]
+atlas = ExtResource("1_r81rt")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3yr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id25a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tyrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmfs2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]

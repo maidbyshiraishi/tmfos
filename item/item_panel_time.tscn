@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://lbs8cdc8j1h8"]
+
+[ext_resource type="PackedScene" uid="uid://bvyr6cwo7qbyg" path="res://item/immediate_item_panel_root.tscn" id="1_sto4b"]
+[ext_resource type="SpriteFrames" uid="uid://g2hgs6epsra3" path="res://contents/animation/item/item_time.tres" id="2_p761n"]
+[ext_resource type="PackedScene" uid="uid://eywnthgffkk6" path="res://command/reset_player_life_time_command.tscn" id="3_vknxa"]
+
+[node name="ItemPanelTime" instance=ExtResource("1_sto4b")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_p761n")
+animation = &"closed"
+
+[node name="ResetPlayerLifeTimeCommand" parent="." index="2" instance=ExtResource("3_vknxa")]
+
+[node name="PlaySeCommand" parent="." index="6"]
+SeName = "player_reset_life_time"
+
+[node name="ShowFloatingMessageCommand" parent="." index="7"]
+Message = "時間回復"

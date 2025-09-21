@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3477h6mkndyp"]
+
+[ext_resource type="Script" uid="uid://bvtp4iknpn56d" path="res://trigger/PhysicsProcessTrigger.cs" id="1_djea4"]
+
+[node name="PhysicsProcessTrigger" type="Node"]
+script = ExtResource("1_djea4")

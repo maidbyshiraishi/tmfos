@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d368aaamgvhpo"]
+
+[ext_resource type="Script" uid="uid://d0h4kub5w67nl" path="res://system/GameScreenOption.cs" id="1_g0dlk"]
+
+[node name="GameScreenOption" type="Node"]
+script = ExtResource("1_g0dlk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="CorrectOnScreen"]

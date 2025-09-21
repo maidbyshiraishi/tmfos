@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvyr6cwo7qbyg"]
+
+[ext_resource type="Script" uid="uid://ckuwfraq2fo6f" path="res://item/ImmediateItemPanel.cs" id="1_12ivl"]
+[ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state_save_command.tscn" id="4_gb44b"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_m28hp"]
+[ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state_backup_command.tscn" id="5_uhx74"]
+[ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/switch_open_or_close_animation_command.tscn" id="6_5svtm"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="7_5odch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
+size = Vector2(32, 32)
+
+[node name="ImmediateItemPanel" type="Area2D"]
+collision_layer = 65536
+collision_mask = 0
+script = ExtResource("1_12ivl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_orwde")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="StateSaveCommand" parent="." instance=ExtResource("4_gb44b")]
+
+[node name="StateBackupCommand" parent="." instance=ExtResource("5_uhx74")]
+
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("6_5svtm")]
+AnimatedSprite2D = NodePath("../AnimatedSprite2D")
+
+[node name="PlaySeCommand" parent="." instance=ExtResource("5_m28hp")]
+
+[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("7_5odch")]

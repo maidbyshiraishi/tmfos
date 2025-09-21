@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=4 uid="uid://3s5mlqipborf"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
+[ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="2_da5fc"]
+[ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="2_owyln"]
+[ext_resource type="PackedScene" uid="uid://c7uf428mr1fso" path="res://trigger/sweep_observer.tscn" id="3_d3usv"]
+[ext_resource type="Texture2D" uid="uid://bwdd24muur4u6" path="res://contents/image/background/dark_gradation.png" id="3_qquc8"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="4_bj4pb"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="5_nqyc7"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="7_sjnxl"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="8_gj7ok"]
+[ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="8_r1mnb"]
+[ext_resource type="PackedScene" uid="uid://bj2av3ao4sqda" path="res://enemy/nekomimi_maid_c1_enemy.tscn" id="10_oqp13"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="10_te3u2"]
+
+[node name="Stage" instance=ExtResource("1_axhrv")]
+BgmStream = ExtResource("2_da5fc")
+
+[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("2_owyln")
+
+[node name="Parallax2D1" parent="Background" index="2"]
+visible = true
+
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+texture = ExtResource("3_qquc8")
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAAjAPb/AAAEAAAAAAAjAPf/AAAEAAAAAAAjAPj/AAAEAAAAAAAjAPn/AAAEAAAAAAAjAPr/AAAEAAAAAAAjAPv/AAAEAAAAAAAjAPz/AAAEAAAAAAAjAP3/AAAEAAAAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAALAP7/AAAAAAMAAAALAP//AAAAAAMAAAAYAP7/AAAAAAMAAAAYAP//AAAAAAMAAAAZAP7/AAAAAAMAAAAZAP//AAAAAAMAAAAAAO//AAAAAAMAAAAAAPD/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP//AAAAAAMAAAABAO//AAAAAAMAAAABAPD/AAAAAAMAAAABAPH/AAAAAAMAAAABAPL/AAAAAAMAAAABAPP/AAAAAAMAAAABAPT/AAAAAAMAAAABAPX/AAAAAAMAAAABAPb/AAAAAAMAAAABAPf/AAAAAAMAAAABAPj/AAAAAAMAAAABAPn/AAAAAAMAAAABAPr/AAAAAAMAAAABAPv/AAAAAAMAAAABAPz/AAAAAAMAAAABAP3/AAAAAAMAAAABAP7/AAAAAAMAAAABAP//AAAAAAMAAAACAP7/AAAAAAMAAAACAP//AAAAAAMAAAADAP7/AAAAAAMAAAADAP//AAAAAAMAAAAEAP7/AAAAAAMAAAAEAP//AAAAAAMAAAAFAP7/AAAAAAMAAAAFAP//AAAAAAMAAAAGAP7/AAAAAAMAAAAGAP//AAAAAAMAAAAHAP7/AAAAAAMAAAAHAP//AAAAAAMAAAAIAP7/AAAAAAMAAAAIAP//AAAAAAMAAAAJAP7/AAAAAAMAAAAJAP//AAAAAAMAAAAKAP7/AAAAAAMAAAAKAP//AAAAAAMAAAAMAP7/AAAAAAMAAAAMAP//AAAAAAMAAAANAP7/AAAAAAMAAAANAP//AAAAAAMAAAAOAP7/AAAAAAMAAAAOAP//AAAAAAMAAAAPAP7/AAAAAAMAAAAPAP//AAAAAAMAAAAQAP7/AAAAAAMAAAAQAP//AAAAAAMAAAARAP7/AAAAAAMAAAARAP//AAAAAAMAAAASAP7/AAAAAAMAAAASAP//AAAAAAMAAAATAP7/AAAAAAMAAAATAP//AAAAAAMAAAAUAP7/AAAAAAMAAAAUAP//AAAAAAMAAAAVAP7/AAAAAAMAAAAVAP//AAAAAAMAAAAWAP7/AAAAAAMAAAAWAP//AAAAAAMAAAAXAP7/AAAAAAMAAAAXAP//AAAAAAMAAAAaAP7/AAAAAAMAAAAaAP//AAAAAAMAAAAbAP7/AAAAAAMAAAAbAP//AAAAAAMAAAAcAP7/AAAAAAMAAAAcAP//AAAAAAMAAAAdAP7/AAAAAAMAAAAdAP//AAAAAAMAAAAeAP7/AAAAAAMAAAAeAP//AAAAAAMAAAAfAP7/AAAAAAMAAAAfAP//AAAAAAMAAAAgAP7/AAAAAAMAAAAgAP//AAAAAAMAAAAhAP7/AAAAAAMAAAAhAP//AAAAAAMAAAAiAPf/AAAEAAEAAAAiAPj/AAADAAIAAAAiAPn/AAADAAIAAAAiAPr/AAADAAIAAAAiAPv/AAADAAIAAAAiAPz/AAADAAIAAAAiAP3/AAAEAAIAAAAiAP7/AAAAAAMAAAAiAP//AAAAAAMAAAAjAP7/AAAAAAMAAAAjAP//AAAAAAMAAAAkAP7/AAAAAAMAAAAkAP//AAAAAAMAAAAlAP7/AAAAAAMAAAAlAP//AAAAAAMAAAAmAP7/AAAAAAMAAAAmAP//AAAAAAMAAAAnAP7/AAAAAAMAAAAnAP//AAAAAAMAAAAoAP7/AAAAAAMAAAAoAP//AAAAAAMAAAApAP7/AAAAAAMAAAApAP//AAAAAAMAAAAqAP7/AAAAAAMAAAAqAP//AAAAAAMAAAArAP7/AAAAAAMAAAArAP//AAAAAAMAAAAsAP7/AAAAAAMAAAAsAP//AAAAAAMAAAAtAP7/AAAAAAMAAAAtAP//AAAAAAMAAAAuAP7/AAAAAAMAAAAuAP//AAAAAAMAAAAvAO//AAAAAAMAAAAvAPD/AAAAAAMAAAAvAPH/AAAAAAMAAAAvAPL/AAAAAAMAAAAvAPP/AAAAAAMAAAAvAPT/AAAAAAMAAAAvAPX/AAAAAAMAAAAvAPb/AAAAAAMAAAAvAPf/AAAAAAMAAAAvAPj/AAAAAAMAAAAvAPn/AAAAAAMAAAAvAPr/AAAAAAMAAAAvAPv/AAAAAAMAAAAvAPz/AAAAAAMAAAAvAP3/AAAAAAMAAAAvAP7/AAAAAAMAAAAvAP//AAAAAAMAAAAwAO//AAAAAAMAAAAwAPD/AAAAAAMAAAAwAPH/AAAAAAMAAAAwAPL/AAAAAAMAAAAwAPP/AAAAAAMAAAAwAPT/AAAAAAMAAAAwAPX/AAAAAAMAAAAwAPb/AAAAAAMAAAAwAPf/AAAAAAMAAAAwAPj/AAAAAAMAAAAwAPn/AAAAAAMAAAAwAPr/AAAAAAMAAAAwAPv/AAAAAAMAAAAwAPz/AAAAAAMAAAAwAP3/AAAAAAMAAAAwAP7/AAAAAAMAAAAwAP//AAAAAAMAAAAmAPn/AAAEAAEAAAAmAP3/AAAEAAIAAAAmAPr/AAADAAIAAAAmAPv/AAADAAIAAAAmAPz/AAADAAIAAAA=")
+
+[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("8_r1mnb")]
+position = Vector2(1376, -96)
+DestStageNo = 7
+DestDoorNo = 2
+DoorNo = 1
+
+[node name="ItemPanelLife" parent="Item" index="0" instance=ExtResource("10_te3u2")]
+position = Vector2(1296, -176)
+Stateful = false
+
+[node name="Player" parent="." index="8" instance=ExtResource("7_sjnxl")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("8_gj7ok")
+
+[node name="NekomimiMaid2" parent="Enemy" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("10_oqp13")]
+position = Vector2(968, -96)
+Direction = 1
+
+[node name="NekomimiMaid4" parent="Enemy" index="1" groups=["SweepEnemyObserver"] instance=ExtResource("10_oqp13")]
+position = Vector2(864, -96)
+
+[node name="NekomimiMaid6" parent="Enemy" index="2" groups=["SweepEnemyObserver"] instance=ExtResource("10_oqp13")]
+position = Vector2(760, -96)
+
+[node name="HUD" parent="." index="13"]
+Text1 = "チュートリアル"
+Text2 = "8"
+
+[node name="SweepObserver" parent="." index="14" instance=ExtResource("3_d3usv")]
+GroupName = "SweepEnemyObserver"
+
+[node name="OpenDialogCommand" parent="SweepObserver" index="0" instance=ExtResource("5_nqyc7")]
+DialogPath = "res://theater/tutorial_ending.tscn"
+
+[node name="Message" type="Control" parent="." index="15"]
+light_mask = 2
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 59.0
+anchor_top = -32.0
+anchor_right = 59.0
+anchor_bottom = -32.0
+offset_left = -6.10352e-05
+offset_right = 328.0
+offset_bottom = 64.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]Bボタン[/color]攻撃できます。敵を殺してチュートリアルは終了です。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 58.5
+anchor_top = -28.0
+anchor_right = 58.5
+anchor_bottom = -28.0
+offset_top = 3.05176e-05
+offset_right = 352.0
+offset_bottom = 96.0
+bbcode_enabled = true
+text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]F1キー[/color]または[color=#ff6666]ガイド[/color]、[color=#ff6666]Xboxホーム[/color]、[color=#ff6666]Sony PS[/color]で現在の操作設定とゲーム内で用いられるキー名を確認しましょう。[/font_size][/outline_color][/outline_size][/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("4_bj4pb")]
+position = Vector2(584, 16)
+scale = Vector2(100, 1)

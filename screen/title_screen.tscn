@@ -1,0 +1,250 @@
+[gd_scene load_steps=18 format=3 uid="uid://cex2tqli4fmgg"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_cy00v"]
+[ext_resource type="Script" uid="uid://bbykkikdla4im" path="res://screen/DialogRoot.cs" id="2_247ql"]
+[ext_resource type="SpriteFrames" uid="uid://conv8w2dmcsmi" path="res://contents/screen/title_screen/title_logo.tres" id="3_7xxci"]
+[ext_resource type="AudioStream" uid="uid://bs70k8qsse4p5" path="res://contents/bgm/bgm2.ogg" id="3_xoh7v"]
+[ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="4_dhnnd"]
+[ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="6_xtjut"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="7_0002q"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="8_l4ku3"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="9_bvcnx"]
+[ext_resource type="PackedScene" uid="uid://dfi1gl664gbvs" path="res://command/reset_timer_trigger_command.tscn" id="10_wn5nd"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="13_6nn80"]
+[ext_resource type="PackedScene" uid="uid://8jidpood58yw" path="res://command/start_timer_trigger_command.tscn" id="14_bx83m"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="15_7piwm"]
+[ext_resource type="Script" uid="uid://dfext5h4kynvd" path="res://command/VersionLabelCommand.cs" id="16_45g42"]
+[ext_resource type="PackedScene" uid="uid://c1wi0ukoa0dym" path="res://command/pause_timer_trigger_command.tscn" id="16_uikkl"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="17_uhsa7"]
+[ext_resource type="PackedScene" uid="uid://ye80q7cyvfw8" path="res://command/quit_game_command.tscn" id="18_85irx"]
+
+[node name="TitleScreen" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_cy00v")
+script = ExtResource("2_247ql")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Title" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+position = Vector2(321, 147)
+scale = Vector2(2.25, 2.25)
+sprite_frames = ExtResource("3_7xxci")
+autoplay = "default"
+frame_progress = 1.0
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 424.0
+offset_top = 304.0
+offset_right = 608.0
+offset_bottom = 416.0
+border_color = Color(0, 0, 0, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="TimerTrigger" parent="Timer" instance=ExtResource("4_dhnnd")]
+
+[node name="OpenDialogCommand" parent="Timer/TimerTrigger" instance=ExtResource("7_0002q")]
+DialogPath = "res://theater/story_opening.tscn"
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Start" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 2
+offset_left = 245.0
+offset_top = 279.0
+offset_right = 395.0
+offset_bottom = 309.0
+size_flags_horizontal = 4
+text = "最初から"
+script = ExtResource("6_xtjut")
+
+[node name="Exec" parent="Control/Start" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/Start/Exec" instance=ExtResource("9_bvcnx")]
+SeName = "menu_select"
+
+[node name="OpenDialogCommand" parent="Control/Start/Exec" instance=ExtResource("7_0002q")]
+DialogPath = "res://screen/select_game_dialog.tscn"
+
+[node name="Focus" parent="Control/Start" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/Start/Focus" instance=ExtResource("9_bvcnx")]
+SeName = "menu_move"
+
+[node name="ResetUtilTimerCommand" parent="Control/Start/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
+Target = NodePath("../../../../Timer/TimerTrigger")
+
+[node name="Continue" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 2
+offset_left = 245.0
+offset_top = 314.0
+offset_right = 395.0
+offset_bottom = 344.0
+size_flags_horizontal = 4
+text = "ロード"
+script = ExtResource("6_xtjut")
+
+[node name="Exec" parent="Control/Continue" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/Continue/Exec" instance=ExtResource("9_bvcnx")]
+SeName = "menu_select"
+
+[node name="OpenDialogCommand" parent="Control/Continue/Exec" instance=ExtResource("7_0002q")]
+DialogPath = "res://screen/load_dialog.tscn"
+
+[node name="Focus" parent="Control/Continue" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/Continue/Focus" instance=ExtResource("9_bvcnx")]
+SeName = "menu_move"
+
+[node name="ResetUtilTimerCommand" parent="Control/Continue/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
+Target = NodePath("../../../../Timer/TimerTrigger")
+
+[node name="Option" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 245.0
+offset_top = 349.0
+offset_right = 395.0
+offset_bottom = 379.0
+size_flags_horizontal = 4
+text = "設定"
+script = ExtResource("6_xtjut")
+
+[node name="Exec" parent="Control/Option" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/Option/Exec" instance=ExtResource("9_bvcnx")]
+SeName = "menu_select"
+
+[node name="OpenDialogCommand" parent="Control/Option/Exec" instance=ExtResource("7_0002q")]
+DialogPath = "res://screen/option_dialog.tscn"
+
+[node name="Focus" parent="Control/Option" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/Option/Focus" instance=ExtResource("9_bvcnx")]
+SeName = "menu_move"
+
+[node name="ResetUtilTimerCommand" parent="Control/Option/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
+Target = NodePath("../../../../Timer/TimerTrigger")
+
+[node name="Quit" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 2
+offset_left = 245.0
+offset_top = 384.0
+offset_right = 395.0
+offset_bottom = 414.0
+size_flags_horizontal = 4
+text = "終了"
+script = ExtResource("6_xtjut")
+
+[node name="Exec" parent="Control/Quit" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/Quit/Exec" instance=ExtResource("9_bvcnx")]
+SeName = "menu_select"
+
+[node name="OpenDialogCommand" parent="Control/Quit/Exec" instance=ExtResource("7_0002q")]
+DialogPath = "res://screen/quit_dialog.tscn"
+
+[node name="Focus" parent="Control/Quit" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/Quit/Focus" instance=ExtResource("9_bvcnx")]
+SeName = "menu_move"
+
+[node name="ResetUtilTimerCommand" parent="Control/Quit/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
+Target = NodePath("../../../../Timer/TimerTrigger")
+
+[node name="BGM" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 2
+offset_left = 448.0
+offset_top = 352.0
+offset_right = 608.0
+offset_bottom = 392.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+text = "BGMを聞く"
+script = ExtResource("6_xtjut")
+
+[node name="Exec" parent="Control/BGM" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/BGM/Exec" instance=ExtResource("9_bvcnx")]
+SeName = "menu_select"
+
+[node name="OpenDialogCommand" parent="Control/BGM/Exec" instance=ExtResource("7_0002q")]
+DialogPath = "res://screen/jukebox_dialog.tscn"
+
+[node name="Focus" parent="Control/BGM" instance=ExtResource("8_l4ku3")]
+
+[node name="PlaySeCommand" parent="Control/BGM/Focus" instance=ExtResource("9_bvcnx")]
+SeName = "menu_move"
+
+[node name="ResetUtilTimerCommand" parent="Control/BGM/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("10_wn5nd")]
+Target = NodePath("../../../../Timer/TimerTrigger")
+
+[node name="Focus" parent="." instance=ExtResource("13_6nn80")]
+position = Vector2(10, 10)
+
+[node name="StartUtilTimerCommand" parent="Focus" node_paths=PackedStringArray("Target") instance=ExtResource("14_bx83m")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="ChangeBgmCommand" parent="Focus" instance=ExtResource("15_7piwm")]
+Command = 1
+Stream = ExtResource("3_xoh7v")
+
+[node name="PauseUtilTimerCommand" parent="Focus" node_paths=PackedStringArray("Target") instance=ExtResource("16_uikkl")]
+Target = NodePath("../../Timer/TimerTrigger")
+ExecFlag = false
+
+[node name="VersionLabelCommand" type="Node" parent="Focus" node_paths=PackedStringArray("VersionLabel")]
+script = ExtResource("16_45g42")
+VersionLabel = NodePath("../../LabelVersionNo")
+
+[node name="EscapeKey" parent="." instance=ExtResource("17_uhsa7")]
+ActionName = "ui_cancel"
+
+[node name="QuitGameCommand" parent="EscapeKey" instance=ExtResource("18_85irx")]
+
+[node name="LabelOthers" type="Label" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 312.0
+offset_right = 654.0
+offset_bottom = 334.0
+scale = Vector2(0.8, 0.8)
+text = "その他"
+horizontal_alignment = 1
+
+[node name="LabelVersion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 440.0
+offset_right = 96.0
+offset_bottom = 464.0
+text = "Version"
+vertical_alignment = 2
+
+[node name="LabelVersionNo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 440.0
+offset_right = 208.0
+offset_bottom = 464.0
+vertical_alignment = 2

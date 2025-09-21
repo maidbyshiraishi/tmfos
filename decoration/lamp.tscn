@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://gbo2sbr8uow2"]
+
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="1_y65he"]
+[ext_resource type="SpriteFrames" uid="uid://b3xve88b1cck0" path="res://contents/animation/decoration/lamp.tres" id="2_m4jx2"]
+
+[node name="Lamp" type="Node2D"]
+
+[node name="Light" parent="." instance=ExtResource("1_y65he")]
+RangeRatio = 3.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_m4jx2")

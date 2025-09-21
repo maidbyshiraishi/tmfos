@@ -1,0 +1,114 @@
+[gd_scene load_steps=16 format=4 uid="uid://t7pg3qsjyi5u"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_fh2vt"]
+[ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="2_x4ttm"]
+[ext_resource type="PackedScene" uid="uid://bvfryyxcw20bs" path="res://decoration/exit.tscn" id="3_4m88k"]
+[ext_resource type="PackedScene" uid="uid://byeqvar802p5v" path="res://door/boss_door.tscn" id="4_qqaof"]
+[ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="5_6stqu"]
+[ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="6_xf6jg"]
+[ext_resource type="PackedScene" uid="uid://taoksyhkk4ul" path="res://trigger/talk_maid_faucet.tscn" id="7_m656m"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="8_2tg26"]
+[ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="9_edqua"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="10_viopi"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="11_sodjg"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="12_xrc0r"]
+[ext_resource type="PackedScene" uid="uid://du3iipceh2xvo" path="res://command/conditional_command.tscn" id="13_p5b1b"]
+[ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://command/free_command.tscn" id="14_f8k8i"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="15_aeshf"]
+
+[node name="Stage" instance=ExtResource("1_fh2vt")]
+NoBgm = true
+
+[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+color = Color(0.0784314, 0.313726, 1, 1)
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("2_x4ttm")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAAAOD/AAAAAAMAAAAAAOH/AAAAAAMAAAAAAOL/AAAAAAMAAAAAAOP/AAAAAAMAAAAAAOT/AAAAAAMAAAAAAOX/AAAAAAMAAAAAAOb/AAAAAAMAAAAAAOf/AAAAAAMAAAAAAOj/AAAAAAMAAAAAAOn/AAAAAAMAAAAAAOr/AAAAAAMAAAAAAOv/AAAAAAMAAAAAAOz/AAAAAAMAAAAAAO3/AAAAAAMAAAAAAO7/AAAAAAMAAAAAAO//AAAAAAMAAAAAAPD/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP//AAAAAAMAAAABAOD/AAAAAAMAAAABAP//AAAAAAMAAAACAOD/AAAAAAMAAAACAP//AAAAAAMAAAADAOD/AAAAAAMAAAADAP//AAAAAAMAAAAEAOD/AAAAAAMAAAAEAP//AAAAAAMAAAAFAOD/AAAAAAMAAAAFAP//AAAAAAMAAAAGAOD/AAAAAAMAAAAGAP//AAAAAAMAAAAHAOD/AAAAAAMAAAAHAP//AAAAAAMAAAAIAOD/AAAAAAMAAAAIAP//AAAAAAMAAAAJAOD/AAAAAAMAAAAJAP//AAAAAAMAAAAKAOD/AAAAAAMAAAAKAP//AAAAAAMAAAALAOD/AAAAAAMAAAALAP//AAAAAAMAAAAMAOD/AAAAAAMAAAAMAP//AAAAAAMAAAANAOD/AAAAAAMAAAANAP//AAAAAAMAAAAOAOD/AAAAAAMAAAAOAP//AAAAAAMAAAAPAOD/AAAAAAMAAAAPAP//AAAAAAMAAAAQAOD/AAAAAAMAAAAQAP//AAAAAAMAAAARAOD/AAAAAAMAAAARAP//AAAAAAMAAAASAOD/AAAAAAMAAAASAP//AAAAAAMAAAATAOD/AAAAAAMAAAATAP//AAAAAAMAAAAUAOD/AAAAAAMAAAAUAP//AAAAAAMAAAAVAOD/AAAAAAMAAAAVAP//AAAAAAMAAAAWAOD/AAAAAAMAAAAWAP//AAAAAAMAAAAXAOD/AAAAAAMAAAAXAP//AAAAAAMAAAAYAOD/AAAAAAMAAAAYAP//AAAAAAMAAAAZAOD/AAAAAAMAAAAZAP//AAAAAAMAAAAaAOD/AAAAAAMAAAAaAP//AAAAAAMAAAAbAOD/AAAAAAMAAAAbAP//AAAAAAMAAAAcAOD/AAAAAAMAAAAcAP//AAAAAAMAAAAdAOD/AAAAAAMAAAAdAP//AAAAAAMAAAAeAOD/AAAAAAMAAAAeAP//AAAAAAMAAAAfAOD/AAAAAAMAAAAfAOH/AAAAAAMAAAAfAOL/AAAAAAMAAAAfAOP/AAAAAAMAAAAfAOT/AAAAAAMAAAAfAOX/AAAAAAMAAAAfAOb/AAAAAAMAAAAfAOf/AAAAAAMAAAAfAOj/AAAAAAMAAAAfAOn/AAAAAAMAAAAfAOr/AAAAAAMAAAAfAOv/AAAAAAMAAAAfAOz/AAAAAAMAAAAfAO3/AAAAAAMAAAAfAO7/AAAAAAMAAAAfAO//AAAAAAMAAAAfAPD/AAAAAAMAAAAfAPH/AAAAAAMAAAAfAPL/AAAAAAMAAAAfAPP/AAAAAAMAAAAfAPT/AAAAAAMAAAAfAPX/AAAAAAMAAAAfAPb/AAAAAAMAAAAfAPf/AAAAAAMAAAAfAPj/AAAAAAMAAAAfAPn/AAAAAAMAAAAfAPr/AAAAAAMAAAAfAPv/AAAAAAMAAAAfAPz/AAAAAAMAAAAfAP3/AAAAAAMAAAAfAP7/AAAAAAMAAAAfAP//AAAAAAMAAAAWAP7/AAAAAAMAAAAWAP3/AAAAAAMAAAAWAPz/AAAAAAMAAAAXAP7/AAAAAAMAAAAXAP3/AAAAAAMAAAAXAPz/AAAAAAMAAAAYAPz/AAAAAAMAAAAYAP3/AAAAAAMAAAAYAP7/AAAAAAMAAAAZAPv/AAAAAAMAAAAZAPz/AAAAAAMAAAAZAP3/AAAAAAMAAAAZAP7/AAAAAAMAAAAaAPr/AAAAAAMAAAAbAPr/AAAAAAMAAAAcAPr/AAAAAAMAAAAaAPv/AAAAAAMAAAAbAPv/AAAAAAMAAAAcAPv/AAAAAAMAAAAdAPv/AAAAAAMAAAAeAPv/AAAAAAMAAAAdAPr/AAAAAAMAAAAeAPr/AAAAAAMAAAAeAPz/AAAAAAMAAAAdAPz/AAAAAAMAAAAdAP3/AAAAAAMAAAAdAP7/AAAAAAMAAAAcAP7/AAAAAAMAAAAbAP7/AAAAAAMAAAAaAP7/AAAAAAMAAAAaAP3/AAAAAAMAAAAaAPz/AAAAAAMAAAAbAPz/AAAAAAMAAAAcAPz/AAAAAAMAAAAcAP3/AAAAAAMAAAAbAP3/AAAAAAMAAAAeAP7/AAAAAAMAAAAeAP3/AAAAAAMAAAAcAPn/AAAAAAMAAAAdAPn/AAAAAAMAAAAeAPn/AAAAAAMAAAAdAPj/AAAAAAMAAAAeAPj/AAAAAAMAAAAbAPn/AAAAAAMAAAAZAPr/AAAAAAMAAAAYAPv/AAAAAAMAAAAXAPv/AAAAAAMAAAAVAPz/AAAAAAMAAAAVAP3/AAAAAAMAAAAVAP7/AAAAAAMAAAA=")
+
+[node name="Exit" parent="Decoration1" index="0" instance=ExtResource("3_4m88k")]
+position = Vector2(128, -176)
+
+[node name="BossDoor1" parent="Door" index="0" instance=ExtResource("4_qqaof")]
+position = Vector2(256, -64)
+DestStageNo = 14
+DestDoorNo = 4
+DoorNo = 1
+
+[node name="Warp2" parent="Door" index="1" instance=ExtResource("5_6stqu")]
+position = Vector2(128, -128)
+DestStageNo = 1
+DestDoorNo = 1
+DoorNo = 2
+
+[node name="SavePoint3" parent="Door" index="2" instance=ExtResource("6_xf6jg")]
+position = Vector2(416, -72)
+DoorNo = 3
+Direction = 1
+
+[node name="TalkTrigger" parent="Talk" index="0" instance=ExtResource("7_m656m")]
+position = Vector2(968, -304)
+DialogPath = "res://theater/talk_0008.tscn"
+
+[node name="ItemPanelLife" parent="Item" index="0" instance=ExtResource("8_2tg26")]
+position = Vector2(384, -144)
+Stateful = false
+
+[node name="ItemPanelLife2" parent="Item" index="1" instance=ExtResource("8_2tg26")]
+position = Vector2(416, -144)
+Stateful = false
+
+[node name="ItemPanelLife3" parent="Item" index="2" instance=ExtResource("8_2tg26")]
+position = Vector2(448, -144)
+Stateful = false
+
+[node name="ItemPanelLife4" parent="Item" index="3" instance=ExtResource("8_2tg26")]
+position = Vector2(400, -176)
+Stateful = false
+
+[node name="ItemPanelLife5" parent="Item" index="4" instance=ExtResource("8_2tg26")]
+position = Vector2(432, -176)
+Stateful = false
+
+[node name="ItemPanelArmor" parent="Item" index="5" instance=ExtResource("9_edqua")]
+position = Vector2(544, -144)
+
+[node name="ItemPanelArmor2" parent="Item" index="6" instance=ExtResource("9_edqua")]
+position = Vector2(512, -144)
+
+[node name="ItemPanelArmor3" parent="Item" index="7" instance=ExtResource("9_edqua")]
+position = Vector2(576, -144)
+
+[node name="ItemPanelArmor4" parent="Item" index="8" instance=ExtResource("9_edqua")]
+position = Vector2(528, -176)
+
+[node name="ItemPanelArmor5" parent="Item" index="9" instance=ExtResource("9_edqua")]
+position = Vector2(560, -176)
+
+[node name="Player" parent="." index="8" instance=ExtResource("10_viopi")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("11_sodjg")
+
+[node name="HUD" parent="." index="13"]
+Text1 = "ステージ"
+Text2 = "19"
+
+[node name="VisibleTrigger" parent="." index="14" instance=ExtResource("12_xrc0r")]
+position = Vector2(256, -104)
+
+[node name="ConditionalCommand" parent="VisibleTrigger" index="0" instance=ExtResource("13_p5b1b")]
+ConditionalExpression = "boss_0001==1"
+
+[node name="FreeCommand" parent="VisibleTrigger/ConditionalCommand" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("14_f8k8i")]
+Target = NodePath("../../../Talk/TalkTrigger")
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("15_aeshf")]
+position = Vector2(480, 16)
+scale = Vector2(60, 1)

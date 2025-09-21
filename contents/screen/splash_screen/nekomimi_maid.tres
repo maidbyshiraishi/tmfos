@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dnknkd26561su"]
+
+[ext_resource type="Texture2D" uid="uid://cv6q0vglugxio" path="res://contents/screen/splash_screen/nekomimi_maid.png" id="1_xuqkp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bh0j"]
+atlas = ExtResource("1_xuqkp")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tq04"]
+atlas = ExtResource("1_xuqkp")
+region = Rect2(160, 0, 160, 160)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bh0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tq04")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]

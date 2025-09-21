@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwdcyrlhfp7k5"]
+
+[ext_resource type="Texture2D" uid="uid://cexw0onoh1fm1" path="res://contents/image/barrier.png" id="1_1hjrb"]
+[ext_resource type="Script" uid="uid://b8pxskd78s3kv" path="res://trigger/TriggerArea2D.cs" id="1_7fh5b"]
+[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/add_durability_command.tscn" id="3_p4orh"]
+[ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="4_4gnrv"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_66uct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tifsx"]
+atlas = ExtResource("1_1hjrb")
+region = Rect2(0, 0, 32, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4262"]
+atlas = ExtResource("1_1hjrb")
+region = Rect2(32, 0, 32, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21c8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tifsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4262")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2anv"]
+size = Vector2(32, 256)
+
+[node name="Barrier" type="Area2D"]
+collision_layer = 65536
+collision_mask = 0
+script = ExtResource("1_7fh5b")
+Continuous = true
+Stateful = false
+OneTime = false
+PlayerOnly = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_21c8a")
+autoplay = "default"
+frame_progress = 0.965927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o2anv")
+
+[node name="AddDurabilityCommand" parent="." instance=ExtResource("3_p4orh")]
+Value = -9999
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="TimerTrigger" parent="Timer" instance=ExtResource("4_4gnrv")]
+
+[node name="PlaySeCommand" parent="Timer/TimerTrigger" instance=ExtResource("5_66uct")]
+SeName = "barrier"

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh0d1pl6uidn6"]
+
+[ext_resource type="Script" uid="uid://bfr3ff7q4b743" path="res://system/SePlayer.cs" id="1_vw2l8"]
+
+[node name="SePlayer" type="Node"]
+process_mode = 3
+script = ExtResource("1_vw2l8")
+MaxPolyphony = {
+"big_drill_shot": 3,
+"crack": 2,
+"destroy_barrier": 3,
+"drill_shot": 3,
+"enemy_damage": 3,
+"enemy_dead": 3,
+"enemy_jump": 3,
+"enemy_shot1": 3,
+"enemy_touchdown": 3,
+"explosion": 3,
+"menu_move": 3,
+"player_shot1": 3,
+"rocket_maid": 2,
+"screenshot": 2,
+"slash": 3,
+"unmo_charge": 3,
+"unmo_teleport": 3
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="ClearAllAudioStreamPlayer"]

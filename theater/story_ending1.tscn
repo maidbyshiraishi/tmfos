@@ -1,0 +1,1116 @@
+[gd_scene load_steps=46 format=3 uid="uid://c43txyodixmdu"]
+
+[ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_d358e"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_gd8bc"]
+[ext_resource type="SpriteFrames" uid="uid://drkcmcuy7titr" path="res://contents/animation/theater/ending_1.tres" id="3_lekac"]
+[ext_resource type="PackedScene" uid="uid://t1hjabn8aisl" path="res://trigger/animation_finished_trigger.tscn" id="4_n05pt"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="4_uclh4"]
+[ext_resource type="PackedScene" uid="uid://dok77dg7j1gew" path="res://command/play_animation_command.tscn" id="5_12ygv"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="5_jn6f3"]
+[ext_resource type="PackedScene" uid="uid://c21hot266v86s" path="res://command/go_next_page_command.tscn" id="6_hqai5"]
+[ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="6_kbmb8"]
+[ext_resource type="Texture2D" uid="uid://btonxyxb0w02h" path="res://contents/image/theater/ending_2.png" id="8_1itra"]
+[ext_resource type="SpriteFrames" uid="uid://bal63oh35a03k" path="res://contents/animation/theater/ending_4.tres" id="8_uq37o"]
+[ext_resource type="PackedScene" uid="uid://8jidpood58yw" path="res://command/start_timer_trigger_command.tscn" id="9_b8o5f"]
+[ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="9_jadeb"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="10_m6aw4"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="10_sy5j5"]
+[ext_resource type="SpriteFrames" uid="uid://cnj4edmp6q1mi" path="res://contents/animation/theater/ending_3.tres" id="11_dfsgy"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="11_kvctf"]
+[ext_resource type="SpriteFrames" uid="uid://dfncn70tyidfi" path="res://contents/animation/theater/ending_5.tres" id="13_sn4bj"]
+[ext_resource type="Texture2D" uid="uid://d3pjye7gou75w" path="res://contents/image/theater/ending_6.png" id="14_ncpnb"]
+[ext_resource type="AudioStream" uid="uid://bpebfe8y5slk2" path="res://contents/bgm/bgm7.ogg" id="14_nwdag"]
+[ext_resource type="PackedScene" uid="uid://hi53euar7cy6" path="res://trigger/animation_frame_count_trigger.tscn" id="16_l75sw"]
+[ext_resource type="Texture2D" uid="uid://cxa21oma3yrhp" path="res://contents/image/theater/talk_tmfos.png" id="18_4s2p6"]
+[ext_resource type="Texture2D" uid="uid://cv81a3o8fnnqx" path="res://contents/image/theater/talk_player.png" id="19_rrfbe"]
+[ext_resource type="Texture2D" uid="uid://dtlbqtufjbmht" path="res://contents/image/theater/talk_maid_faucet.png" id="20_x4c8r"]
+[ext_resource type="Texture2D" uid="uid://drlah5bpc786" path="res://contents/image/theater/talk_maid_robot.png" id="21_kodfr"]
+[ext_resource type="Texture2D" uid="uid://b765fsqsilynd" path="res://contents/image/theater/talk_ero_maid.png" id="22_cvo6y"]
+[ext_resource type="Texture2D" uid="uid://chhxrm5arc088" path="res://contents/image/theater/talk_nekomimi_maid_blue.png" id="23_tbsam"]
+[ext_resource type="Texture2D" uid="uid://dvg1xqbxow6so" path="res://contents/image/theater/talk_nekomimi_maid_gold_m.png" id="24_2ax1p"]
+[ext_resource type="Texture2D" uid="uid://dsjunvv31st3c" path="res://contents/image/theater/talk_nekomimi_maid_pink.png" id="25_v3m32"]
+[ext_resource type="PackedScene" uid="uid://c5i6ntaj312ku" path="res://command/close_all_dialog_command.tscn" id="26_dbfgy"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="27_06meo"]
+[ext_resource type="Texture2D" uid="uid://dvukdxt2pi3t7" path="res://contents/image/theater/talk_nekomimi_maid_gold.png" id="28_wwd3q"]
+[ext_resource type="Texture2D" uid="uid://wuqe5q1lnttq" path="res://contents/image/theater/talk_nekomimi_maid_pink_m.png" id="29_dkij3"]
+[ext_resource type="Texture2D" uid="uid://te8if7joa5s" path="res://contents/image/theater/talk_nekomimi_maid_blue_m.png" id="30_rcdx7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk38a"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iebv2"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu1om"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl1vp"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl8yr"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtilc"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fujio"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ah0"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrq30"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpqhw"]
+atlas = ExtResource("14_ncpnb")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbgk0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk38a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iebv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu1om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl1vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl8yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtilc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fujio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6ah0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrq30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpqhw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="StoryTheater" instance=ExtResource("1_d358e")]
+metadata/_edit_horizontal_guides_ = [118.0, 359.0]
+metadata/_edit_vertical_guides_ = [166.0, 479.0]
+
+[node name="Background" parent="." index="0"]
+color = Color(0, 0, 0, 1)
+
+[node name="Contents" type="Control" parent="Socket" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -241.0
+offset_right = 320.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 120)
+theme = ExtResource("2_gd8bc")
+
+[node name="Page1" type="Control" parent="Socket/Contents" index="0"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Socket/Contents/Page1" index="0"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 169.0
+offset_right = 280.0
+offset_bottom = 225.0
+bbcode_enabled = true
+text = "[center][rainbow][wave]地球を救った英雄だ！
+万歳！万歳！！万歳！！！[/wave][/rainbow][/center]"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page1" index="1"]
+position = Vector2(152, 89)
+scale = Vector2(0.72, 0.72)
+sprite_frames = ExtResource("3_lekac")
+
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page1/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page1/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page1" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+Command = 1
+Stream = ExtResource("6_kbmb8")
+
+[node name="PlayAnimationCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+AnimatedSprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page1" index="3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page2" type="Control" parent="Socket/Contents" index="1"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page2" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_1itra")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page2" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 225.0
+text = "地球にメイドは不要！
+死ね！"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page2" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+Command = 2
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="1" instance=ExtResource("11_kvctf")]
+SeName = "crack"
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="2" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="StartTimerTriggerCommand2" parent="Socket/Contents/Page2/VisibleTrigger" index="3" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer2/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page2" index="3"]
+wait_time = 2.5
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page2/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page2/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Timer2" type="Timer" parent="Socket/Contents/Page2" index="4"]
+wait_time = 2.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page2/Timer2" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page2/Timer2/TimerTrigger" index="0" instance=ExtResource("11_kvctf")]
+SeName = "gun_shot"
+
+[node name="Control" type="Control" parent="Socket/Contents/Page2" index="5"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page3" type="Control" parent="Socket/Contents" index="2"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page3" index="0"]
+position = Vector2(152, 97)
+scale = Vector2(0.72, 0.72)
+sprite_frames = ExtResource("11_dfsgy")
+
+[node name="AnimationFrameCountTrigger" parent="Socket/Contents/Page3/AnimatedSprite2D" index="0" instance=ExtResource("16_l75sw")]
+FrameCount = 10
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimationFrameCountTrigger" index="0" instance=ExtResource("11_kvctf")]
+SeName = "explosion"
+
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page3/AnimatedSprite2D" index="1" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page3" index="1" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+Command = 1
+Stream = ExtResource("14_nwdag")
+
+[node name="PlayAnimationCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+AnimatedSprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page3" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page4" type="Control" parent="Socket/Contents" index="3"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page4" index="0"]
+position = Vector2(152, 97)
+scale = Vector2(0.72, 0.72)
+sprite_frames = ExtResource("8_uq37o")
+frame = 8
+frame_progress = 1.0
+
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page4/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page4/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page4" index="1" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="PlayAnimationCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+AnimatedSprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page4" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page5" type="Control" parent="Socket/Contents" index="4"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page5" index="0"]
+position = Vector2(152, 97)
+scale = Vector2(0.72, 0.72)
+sprite_frames = ExtResource("13_sn4bj")
+
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page5/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page5/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page5" index="1" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="PlayAnimationCommand" parent="Socket/Contents/Page5/VisibleTrigger" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+AnimatedSprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page5" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page6" type="Control" parent="Socket/Contents" index="5"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page6" index="0"]
+position = Vector2(152, 97)
+scale = Vector2(0.72, 0.72)
+sprite_frames = SubResource("SpriteFrames_sbgk0")
+
+[node name="AnimationFinishedTrigger" parent="Socket/Contents/Page6/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page6/AnimatedSprite2D/AnimationFinishedTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page6" index="1" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="PlayAnimationCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+AnimatedSprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page6" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page7" type="Control" parent="Socket/Contents" index="6"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page7" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_4s2p6")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page7" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "危機一髪だったわね"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page7" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page7/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+Command = 3
+Stream = ExtResource("6_kbmb8")
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page7/VisibleTrigger" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page7" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page7/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page7/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page7" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page8" type="Control" parent="Socket/Contents" index="7"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page8" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("19_rrfbe")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page8" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "助けてくれたのね？"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page8" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page8/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page8" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page8/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page8/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page8" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page9" type="Control" parent="Socket/Contents" index="8"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page9" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("21_kodfr")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page9" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "粉々にしてやったロボ"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page9" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page9/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page9" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page9/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page9/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page9" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page10" type="Control" parent="Socket/Contents" index="9"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page10" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("20_x4c8r")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page10" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "恩知らずな連中だったな"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page10" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page10/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page10" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page10/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page10/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page10" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page11" type="Control" parent="Socket/Contents" index="10"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page11" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("19_rrfbe")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page11" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "故郷がなくなっちゃったわ"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page11" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page11/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page11" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page11/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page11/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page11" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page12" type="Control" parent="Socket/Contents" index="11"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page12" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("22_cvo6y")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page12" index="1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 161.0
+offset_right = 304.0
+offset_bottom = 225.0
+text = "私たちと一緒に来ない？"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page12" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page12/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page12" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page12/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page12/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page12" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page13" type="Control" parent="Socket/Contents" index="12"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page13" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_4s2p6")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page13" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "どうする？"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page13" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page13/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page13" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page13/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page13/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page13" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page14" type="Control" parent="Socket/Contents" index="13"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page14" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_4s2p6")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page14" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "歓迎するぞ？"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page14" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page14/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page14" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page14/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page14/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page14" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page15" type="Control" parent="Socket/Contents" index="14"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page15" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("19_rrfbe")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page15" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "他に行くところはないし"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page15" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page15/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page15" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page15/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page15/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page15" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page16" type="Control" parent="Socket/Contents" index="15"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page16" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("19_rrfbe")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page16" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "お世話になるしかないわね"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page16" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page16/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page16" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page16/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page16/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page16" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page17" type="Control" parent="Socket/Contents" index="16"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page17" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_4s2p6")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page17" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "よし、決まりだ。"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page17" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page17/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page17" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page17/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page17/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page17" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page18" type="Control" parent="Socket/Contents" index="17"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page18" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_4s2p6")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page18" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "次の目的地は・・・"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page18" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page18/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page18" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page18/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page18/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page18" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page19" type="Control" parent="Socket/Contents" index="18"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Socket/Contents/Page19" index="0"]
+position = Vector2(200, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("24_2ax1p")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Socket/Contents/Page19" index="1"]
+position = Vector2(144, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("25_v3m32")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Socket/Contents/Page19" index="2"]
+position = Vector2(96, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("23_tbsam")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page19" index="3"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "休みたい！"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page19" index="4" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page19/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page19" index="5"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page19/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page19/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page19" index="6"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page20" type="Control" parent="Socket/Contents" index="19"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page20" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_4s2p6")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page20" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "わかったわかった"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page20" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page20/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page20" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page20/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page20/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page20" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page21" type="Control" parent="Socket/Contents" index="20"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page21" index="0"]
+position = Vector2(152, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_4s2p6")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page21" index="1"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "目的地はリゾート惑星だ！"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page21" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page21/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page21" index="3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page21/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page21/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page21" index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page22" type="Control" parent="Socket/Contents" index="21"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page22" index="0"]
+position = Vector2(200, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("28_wwd3q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Socket/Contents/Page22" index="1"]
+position = Vector2(144, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("29_dkij3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Socket/Contents/Page22" index="2"]
+position = Vector2(96, 73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("30_rcdx7")
+
+[node name="Label" type="Label" parent="Socket/Contents/Page22" index="3"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 161.0
+offset_right = 280.0
+offset_bottom = 209.0
+text = "やったー！"
+horizontal_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page22" index="4" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="StartTimerTriggerCommand" parent="Socket/Contents/Page22/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_b8o5f")]
+Target = NodePath("../../Timer/TimerTrigger")
+
+[node name="Timer" type="Timer" parent="Socket/Contents/Page22" index="5"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerTrigger" parent="Socket/Contents/Page22/Timer" index="0" instance=ExtResource("9_jadeb")]
+
+[node name="CloseAllDialogCommand" parent="Socket/Contents/Page22/Timer/TimerTrigger" index="0" instance=ExtResource("26_dbfgy")]
+
+[node name="OpenDialogCommand" parent="Socket/Contents/Page22/Timer/TimerTrigger" index="1" instance=ExtResource("27_06meo")]
+DialogPath = "res://theater/story_ending2.tscn"
+
+[node name="Control" type="Control" parent="Socket/Contents/Page22" index="6"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="CloseCommand" parent="." index="4" instance=ExtResource("10_sy5j5")]
+
+[node name="CloseDialogCommand" parent="CloseCommand" index="0" instance=ExtResource("10_m6aw4")]

@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bxjyjxeb8flkm"]
+
+[ext_resource type="Texture2D" uid="uid://ct116wwxn4bvo" path="res://contents/image/theater/talk_tmfos_area.png" id="1_2s68t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffvlc"]
+atlas = ExtResource("1_2s68t")
+region = Rect2(0, 0, 41, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73jyv"]
+atlas = ExtResource("1_2s68t")
+region = Rect2(41, 0, 41, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgrcp"]
+atlas = ExtResource("1_2s68t")
+region = Rect2(82, 0, 41, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcjx3"]
+atlas = ExtResource("1_2s68t")
+region = Rect2(123, 0, 41, 65)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffvlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73jyv")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgrcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcjx3")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]

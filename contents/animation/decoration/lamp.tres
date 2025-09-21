@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b3xve88b1cck0"]
+
+[ext_resource type="Texture2D" uid="uid://b2gs4u2an6xvc" path="res://contents/image/decoration/lamp.png" id="1_c44sm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5ugy"]
+atlas = ExtResource("1_c44sm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttq0d"]
+atlas = ExtResource("1_c44sm")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5ugy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttq0d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

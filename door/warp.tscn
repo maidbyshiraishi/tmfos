@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bduv525n6j7aa"]
+
+[ext_resource type="PackedScene" uid="uid://0k7eapnlceja" path="res://door/transparency_warp.tscn" id="1_v5rky"]
+[ext_resource type="SpriteFrames" uid="uid://cntxt2wqbmrox" path="res://contents/animation/warp.tres" id="2_77qbc"]
+
+[node name="Warp" instance=ExtResource("1_v5rky")]
+collision_mask = 32768
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_77qbc")
+autoplay = "default"

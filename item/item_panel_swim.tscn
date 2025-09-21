@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4bdx5h7oqq66"]
+
+[ext_resource type="PackedScene" uid="uid://drm6s3qj4id31" path="res://item/item_panel_root.tscn" id="1_5jprw"]
+[ext_resource type="SpriteFrames" uid="uid://ciotjlw5k8aa8" path="res://contents/animation/item/item_swim.tres" id="2_1r3ij"]
+
+[node name="ItemPanelSwim" instance=ExtResource("1_5jprw")]
+Item = 2
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_1r3ij")
+animation = &"closed"

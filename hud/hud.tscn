@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr2lwjlb07c3g"]
+
+[ext_resource type="Script" uid="uid://ca6twhskwvrpa" path="res://hud/Hud.cs" id="1_paadw"]
+[ext_resource type="Texture2D" uid="uid://bh84tbdwj2fsg" path="res://contents/image/hud/remain.png" id="2_ecvx6"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="3_bwh5j"]
+[ext_resource type="Texture2D" uid="uid://cpt586bx8siar" path="res://contents/image/hud/life.png" id="4_wpn8b"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="5_s8sqa"]
+[ext_resource type="PackedScene" uid="uid://dph8bmjbs5k1c" path="res://command/hide_canvas_item_command.tscn" id="6_5oplt"]
+[ext_resource type="PackedScene" uid="uid://cn7no3720iabm" path="res://command/delay_container.tscn" id="6_21ded"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_paadw")
+Text3 = "スタート!!"
+
+[node name="RemainIcon" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(34, 446)
+texture = ExtResource("2_ecvx6")
+
+[node name="Remain" type="Label" parent="."]
+light_mask = 2
+offset_left = 60.0
+offset_top = 430.0
+offset_right = 160.0
+offset_bottom = 456.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("3_bwh5j")
+text = "3"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Life" type="TextureProgressBar" parent="."]
+light_mask = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 170.0
+offset_bottom = 42.0
+texture_progress = ExtResource("4_wpn8b")
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" type="Label" parent="."]
+light_mask = 2
+offset_left = 305.0
+offset_top = 430.0
+offset_right = 335.0
+offset_bottom = 456.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("3_bwh5j")
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="."]
+light_mask = 2
+offset_left = 450.0
+offset_top = 10.0
+offset_right = 570.0
+offset_bottom = 36.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("3_bwh5j")
+text = "0000000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Control" parent="."]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_bwh5j")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label1" type="Label" parent="Start"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.25625
+anchor_right = 0.332812
+anchor_bottom = 0.25625
+offset_top = -3.0
+offset_bottom = 27.0
+scale = Vector2(3, 3)
+text = "ステージ"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Start"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0109375
+anchor_top = 0.45625
+anchor_right = 0.0109375
+anchor_bottom = 0.45625
+offset_left = -7.0
+offset_top = -9.0
+offset_right = 206.0
+offset_bottom = 21.0
+scale = Vector2(3, 3)
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Start"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.056249
+anchor_bottom = -0.056249
+offset_top = 327.0
+offset_right = 213.0
+offset_bottom = 357.0
+scale = Vector2(3, 3)
+text = "スタート!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VisibleCommand" parent="Start" instance=ExtResource("5_s8sqa")]
+position = Vector2(50, 50)
+
+[node name="DelayContainer" parent="Start/VisibleCommand" instance=ExtResource("6_21ded")]
+WaitTime = 1.0
+
+[node name="HideCanvasItemCommand" parent="Start/VisibleCommand/DelayContainer" node_paths=PackedStringArray("Target") instance=ExtResource("6_5oplt")]
+Target = NodePath("../../..")

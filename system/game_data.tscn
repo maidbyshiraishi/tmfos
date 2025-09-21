@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://nux2i30010u"]
+
+[ext_resource type="Script" uid="uid://dawhenu115pcw" path="res://system/GameData.cs" id="1_tpgm8"]
+
+[node name="GameData" type="Node"]
+process_mode = 3
+script = ExtResource("1_tpgm8")

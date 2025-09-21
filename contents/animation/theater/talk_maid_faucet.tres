@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dqtd2xv61rhcw"]
+
+[ext_resource type="Texture2D" uid="uid://6hhahjvx7j" path="res://contents/image/enemy/maid_faucet.png" id="1_j0cnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w34gv"]
+atlas = ExtResource("1_j0cnx")
+region = Rect2(0, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b7s5"]
+atlas = ExtResource("1_j0cnx")
+region = Rect2(61, 0, 61, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp4dw"]
+atlas = ExtResource("1_j0cnx")
+region = Rect2(122, 0, 61, 42)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w34gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b7s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp4dw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,645 @@
+[gd_scene load_steps=17 format=4 uid="uid://dukcq3h6kl87u"]
+
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_wfbol"]
+[ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_p4m1k"]
+[ext_resource type="Texture2D" uid="uid://ctw5x33l0rti4" path="res://contents/image/background/maid_robot.png" id="3_px2hc"]
+[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="4_ttquu"]
+[ext_resource type="PackedScene" uid="uid://d37sgf7lmbve0" path="res://item/item_panel_armor.tscn" id="5_wxq0n"]
+[ext_resource type="PackedScene" uid="uid://d4kkkr734ep2c" path="res://item/item_panel_life.tscn" id="6_p6o3w"]
+[ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="7_gkirw"]
+[ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="8_mc0cu"]
+[ext_resource type="PackedScene" uid="uid://bkxp5hemjf3f2" path="res://enemy/maid_robot1_enemy.tscn" id="9_pwq5d"]
+[ext_resource type="PackedScene" uid="uid://mqkdiygn6qtn" path="res://enemy/maid_robot2_enemy.tscn" id="10_kp4ph"]
+[ext_resource type="PackedScene" uid="uid://bkpmusncycni5" path="res://hud/boss_life.tscn" id="11_71xba"]
+[ext_resource type="PackedScene" uid="uid://c7uf428mr1fso" path="res://trigger/sweep_observer.tscn" id="12_rk02u"]
+[ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/set_player_initial_durability_command.tscn" id="13_lf1a1"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="14_xeyag"]
+[ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="15_5kyph"]
+[ext_resource type="PackedScene" uid="uid://bpnpsk7t6uv77" path="res://enemy/enemy_spawner.tscn" id="16_w350y"]
+
+[node name="Stage" instance=ExtResource("1_wfbol")]
+BgmStream = ExtResource("2_p4m1k")
+PlayerArmorRatio = 0.0
+
+[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+texture = ExtResource("3_px2hc")
+
+[node name="Background" parent="TileMap" index="0"]
+tile_map_data = PackedByteArray("AAAEAPr/AAAEAAAAAAAEAPn/AAAEAAAAAAAEAPj/AAAEAAAAAAAEAPf/AAAEAAAAAAAEAPb/AAAEAAAAAAAPAPr/AAAEAAAAAAAPAPn/AAAEAAAAAAAPAPj/AAAEAAAAAAAPAPf/AAAEAAAAAAAPAPb/AAAEAAAAAAA=")
+
+[node name="Ground" parent="TileMap" index="1"]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAIAP//AAAAAAMAAAAJAP//AAAAAAMAAAAKAP//AAAAAAMAAAALAP//AAAAAAMAAAAMAP//AAAAAAMAAAANAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP//AAAAAAMAAAARAP//AAAAAAMAAAASAP//AAAAAAMAAAATAP//AAAAAAMAAAA=")
+
+[node name="StageEntryPoint1" parent="Door" index="0" instance=ExtResource("4_ttquu")]
+position = Vector2(320, -64)
+DoorNo = 1
+Direction = 1
+
+[node name="ItemPanelArmor" parent="Item" index="0" instance=ExtResource("5_wxq0n")]
+position = Vector2(144, -336)
+
+[node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("5_wxq0n")]
+position = Vector2(496, -336)
+
+[node name="ItemPanelLife" parent="Item" index="2" instance=ExtResource("6_p6o3w")]
+position = Vector2(16, -48)
+Stateful = false
+
+[node name="ItemPanelLife2" parent="Item" index="3" instance=ExtResource("6_p6o3w")]
+position = Vector2(48, -48)
+Stateful = false
+
+[node name="ItemPanelLife5" parent="Item" index="4" instance=ExtResource("6_p6o3w")]
+position = Vector2(320, -80)
+Stateful = false
+
+[node name="ItemPanelLife6" parent="Item" index="5" instance=ExtResource("6_p6o3w")]
+position = Vector2(320, -48)
+Stateful = false
+
+[node name="ItemPanelLife3" parent="Item" index="6" instance=ExtResource("6_p6o3w")]
+position = Vector2(584, -48)
+Stateful = false
+
+[node name="ItemPanelLife4" parent="Item" index="7" instance=ExtResource("6_p6o3w")]
+position = Vector2(624, -48)
+Stateful = false
+
+[node name="Player" parent="." index="8" instance=ExtResource("7_gkirw")]
+unique_name_in_owner = true
+position = Vector2(-3000, 0)
+
+[node name="Camera" type="Camera2D" parent="Player" index="13"]
+unique_name_in_owner = true
+position_smoothing_speed = 10.0
+script = ExtResource("8_mc0cu")
+
+[node name="MaidRobot1Enemy" parent="Enemy" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("9_pwq5d")]
+position = Vector2(592, -96)
+
+[node name="MaidRobot2Enemy" parent="Enemy" index="1" groups=["SweepEnemyObserver"] instance=ExtResource("10_kp4ph")]
+position = Vector2(312, -752)
+
+[node name="HUD" parent="." index="13"]
+Text1 = "メイドロボ"
+Text2 = "を"
+Text3 = "撃破せよ！！"
+BossMode = true
+
+[node name="BossLife" parent="HUD" index="6" instance=ExtResource("11_71xba")]
+offset_top = 98.0
+offset_bottom = 130.0
+
+[node name="SweepObserver" parent="." index="14" instance=ExtResource("12_rk02u")]
+GroupName = "SweepEnemyObserver"
+
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("13_lf1a1")]
+
+[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("14_xeyag")]
+DialogPath = "res://theater/talk_0013.tscn"
+
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("15_5kyph")]
+position = Vector2(480, 16)
+scale = Vector2(60, 1)
+
+[node name="EntryPoint" type="Node2D" parent="." index="18"]
+unique_name_in_owner = true
+
+[node name="Marker2D1" type="Marker2D" parent="EntryPoint" index="0"]
+position = Vector2(0, -96)
+
+[node name="Marker2D2" type="Marker2D" parent="EntryPoint" index="1"]
+position = Vector2(640, -96)
+
+[node name="Marker2D3" type="Marker2D" parent="EntryPoint" index="2"]
+position = Vector2(0, -320)
+
+[node name="Marker2D4" type="Marker2D" parent="EntryPoint" index="3"]
+position = Vector2(640, -320)
+
+[node name="Marker2D5" type="Marker2D" parent="EntryPoint" index="4"]
+position = Vector2(128, -576)
+
+[node name="Marker2D6" type="Marker2D" parent="EntryPoint" index="5"]
+position = Vector2(320, -576)
+
+[node name="Marker2D7" type="Marker2D" parent="EntryPoint" index="6"]
+position = Vector2(512, -576)
+
+[node name="DrillPoint" type="Node2D" parent="." index="19"]
+unique_name_in_owner = true
+
+[node name="DrillShot92" parent="DrillPoint" index="0" instance=ExtResource("16_w350y")]
+position = Vector2(8, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot91" parent="DrillPoint" index="1" instance=ExtResource("16_w350y")]
+position = Vector2(32, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot90" parent="DrillPoint" index="2" instance=ExtResource("16_w350y")]
+position = Vector2(56, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot89" parent="DrillPoint" index="3" instance=ExtResource("16_w350y")]
+position = Vector2(80, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot88" parent="DrillPoint" index="4" instance=ExtResource("16_w350y")]
+position = Vector2(104, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot87" parent="DrillPoint" index="5" instance=ExtResource("16_w350y")]
+position = Vector2(128, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot86" parent="DrillPoint" index="6" instance=ExtResource("16_w350y")]
+position = Vector2(152, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot85" parent="DrillPoint" index="7" instance=ExtResource("16_w350y")]
+position = Vector2(176, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot84" parent="DrillPoint" index="8" instance=ExtResource("16_w350y")]
+position = Vector2(200, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot83" parent="DrillPoint" index="9" instance=ExtResource("16_w350y")]
+position = Vector2(224, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot82" parent="DrillPoint" index="10" instance=ExtResource("16_w350y")]
+position = Vector2(248, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot81" parent="DrillPoint" index="11" instance=ExtResource("16_w350y")]
+position = Vector2(272, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot80" parent="DrillPoint" index="12" instance=ExtResource("16_w350y")]
+position = Vector2(296, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot79" parent="DrillPoint" index="13" instance=ExtResource("16_w350y")]
+position = Vector2(320, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot78" parent="DrillPoint" index="14" instance=ExtResource("16_w350y")]
+position = Vector2(344, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot77" parent="DrillPoint" index="15" instance=ExtResource("16_w350y")]
+position = Vector2(368, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot76" parent="DrillPoint" index="16" instance=ExtResource("16_w350y")]
+position = Vector2(392, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot75" parent="DrillPoint" index="17" instance=ExtResource("16_w350y")]
+position = Vector2(416, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot74" parent="DrillPoint" index="18" instance=ExtResource("16_w350y")]
+position = Vector2(440, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot73" parent="DrillPoint" index="19" instance=ExtResource("16_w350y")]
+position = Vector2(464, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot72" parent="DrillPoint" index="20" instance=ExtResource("16_w350y")]
+position = Vector2(488, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot71" parent="DrillPoint" index="21" instance=ExtResource("16_w350y")]
+position = Vector2(512, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot70" parent="DrillPoint" index="22" instance=ExtResource("16_w350y")]
+position = Vector2(536, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot69" parent="DrillPoint" index="23" instance=ExtResource("16_w350y")]
+position = Vector2(560, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot68" parent="DrillPoint" index="24" instance=ExtResource("16_w350y")]
+position = Vector2(584, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot67" parent="DrillPoint" index="25" instance=ExtResource("16_w350y")]
+position = Vector2(608, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot66" parent="DrillPoint" index="26" instance=ExtResource("16_w350y")]
+position = Vector2(632, 8)
+EnemyName = 13
+ManualMode = true
+
+[node name="DrillShot65" parent="DrillPoint" index="27" instance=ExtResource("16_w350y")]
+position = Vector2(648, -40)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot64" parent="DrillPoint" index="28" instance=ExtResource("16_w350y")]
+position = Vector2(648, -64)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot63" parent="DrillPoint" index="29" instance=ExtResource("16_w350y")]
+position = Vector2(648, -88)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot62" parent="DrillPoint" index="30" instance=ExtResource("16_w350y")]
+position = Vector2(648, -112)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot61" parent="DrillPoint" index="31" instance=ExtResource("16_w350y")]
+position = Vector2(648, -136)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot60" parent="DrillPoint" index="32" instance=ExtResource("16_w350y")]
+position = Vector2(648, -160)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot59" parent="DrillPoint" index="33" instance=ExtResource("16_w350y")]
+position = Vector2(648, -184)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot58" parent="DrillPoint" index="34" instance=ExtResource("16_w350y")]
+position = Vector2(648, -208)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot57" parent="DrillPoint" index="35" instance=ExtResource("16_w350y")]
+position = Vector2(648, -232)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot56" parent="DrillPoint" index="36" instance=ExtResource("16_w350y")]
+position = Vector2(648, -256)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot55" parent="DrillPoint" index="37" instance=ExtResource("16_w350y")]
+position = Vector2(648, -280)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot54" parent="DrillPoint" index="38" instance=ExtResource("16_w350y")]
+position = Vector2(648, -304)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot53" parent="DrillPoint" index="39" instance=ExtResource("16_w350y")]
+position = Vector2(648, -328)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot52" parent="DrillPoint" index="40" instance=ExtResource("16_w350y")]
+position = Vector2(648, -352)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot51" parent="DrillPoint" index="41" instance=ExtResource("16_w350y")]
+position = Vector2(648, -376)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot50" parent="DrillPoint" index="42" instance=ExtResource("16_w350y")]
+position = Vector2(648, -400)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot49" parent="DrillPoint" index="43" instance=ExtResource("16_w350y")]
+position = Vector2(648, -424)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot48" parent="DrillPoint" index="44" instance=ExtResource("16_w350y")]
+position = Vector2(648, -448)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot47" parent="DrillPoint" index="45" instance=ExtResource("16_w350y")]
+position = Vector2(648, -472)
+EnemyName = 15
+ManualMode = true
+
+[node name="DrillShot46" parent="DrillPoint" index="46" instance=ExtResource("16_w350y")]
+position = Vector2(632, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot45" parent="DrillPoint" index="47" instance=ExtResource("16_w350y")]
+position = Vector2(608, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot44" parent="DrillPoint" index="48" instance=ExtResource("16_w350y")]
+position = Vector2(584, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot43" parent="DrillPoint" index="49" instance=ExtResource("16_w350y")]
+position = Vector2(560, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot42" parent="DrillPoint" index="50" instance=ExtResource("16_w350y")]
+position = Vector2(536, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot41" parent="DrillPoint" index="51" instance=ExtResource("16_w350y")]
+position = Vector2(512, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot40" parent="DrillPoint" index="52" instance=ExtResource("16_w350y")]
+position = Vector2(488, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot39" parent="DrillPoint" index="53" instance=ExtResource("16_w350y")]
+position = Vector2(464, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot38" parent="DrillPoint" index="54" instance=ExtResource("16_w350y")]
+position = Vector2(440, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot37" parent="DrillPoint" index="55" instance=ExtResource("16_w350y")]
+position = Vector2(416, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot36" parent="DrillPoint" index="56" instance=ExtResource("16_w350y")]
+position = Vector2(392, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot35" parent="DrillPoint" index="57" instance=ExtResource("16_w350y")]
+position = Vector2(368, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot34" parent="DrillPoint" index="58" instance=ExtResource("16_w350y")]
+position = Vector2(344, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot33" parent="DrillPoint" index="59" instance=ExtResource("16_w350y")]
+position = Vector2(320, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot32" parent="DrillPoint" index="60" instance=ExtResource("16_w350y")]
+position = Vector2(296, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot31" parent="DrillPoint" index="61" instance=ExtResource("16_w350y")]
+position = Vector2(272, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot30" parent="DrillPoint" index="62" instance=ExtResource("16_w350y")]
+position = Vector2(248, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot29" parent="DrillPoint" index="63" instance=ExtResource("16_w350y")]
+position = Vector2(224, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot28" parent="DrillPoint" index="64" instance=ExtResource("16_w350y")]
+position = Vector2(200, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot27" parent="DrillPoint" index="65" instance=ExtResource("16_w350y")]
+position = Vector2(176, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot26" parent="DrillPoint" index="66" instance=ExtResource("16_w350y")]
+position = Vector2(152, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot25" parent="DrillPoint" index="67" instance=ExtResource("16_w350y")]
+position = Vector2(128, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot24" parent="DrillPoint" index="68" instance=ExtResource("16_w350y")]
+position = Vector2(104, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot23" parent="DrillPoint" index="69" instance=ExtResource("16_w350y")]
+position = Vector2(80, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot22" parent="DrillPoint" index="70" instance=ExtResource("16_w350y")]
+position = Vector2(56, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot21" parent="DrillPoint" index="71" instance=ExtResource("16_w350y")]
+position = Vector2(32, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot20" parent="DrillPoint" index="72" instance=ExtResource("16_w350y")]
+position = Vector2(8, -496)
+EnemyName = 14
+ManualMode = true
+
+[node name="DrillShot19" parent="DrillPoint" index="73" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -472)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot18" parent="DrillPoint" index="74" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -448)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot17" parent="DrillPoint" index="75" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -424)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot16" parent="DrillPoint" index="76" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -400)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot15" parent="DrillPoint" index="77" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -376)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot14" parent="DrillPoint" index="78" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -352)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot13" parent="DrillPoint" index="79" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -328)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot12" parent="DrillPoint" index="80" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -304)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot11" parent="DrillPoint" index="81" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -280)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot10" parent="DrillPoint" index="82" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -256)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot9" parent="DrillPoint" index="83" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -232)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot8" parent="DrillPoint" index="84" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -208)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot7" parent="DrillPoint" index="85" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -184)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot6" parent="DrillPoint" index="86" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -160)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot5" parent="DrillPoint" index="87" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -136)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot4" parent="DrillPoint" index="88" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -112)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot3" parent="DrillPoint" index="89" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -88)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot2" parent="DrillPoint" index="90" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -64)
+EnemyName = 16
+ManualMode = true
+
+[node name="DrillShot1" parent="DrillPoint" index="91" instance=ExtResource("16_w350y")]
+position = Vector2(-8, -44)
+EnemyName = 16
+ManualMode = true
+
+[node name="BigEntryPoint" type="Node2D" parent="." index="20"]
+unique_name_in_owner = true
+
+[node name="Marker2D3" type="Marker2D" parent="BigEntryPoint" index="0"]
+position = Vector2(130, -774)
+
+[node name="Marker2D4" type="Marker2D" parent="BigEntryPoint" index="1"]
+position = Vector2(322, -774)
+
+[node name="Marker2D5" type="Marker2D" parent="BigEntryPoint" index="2"]
+position = Vector2(514, -774)
+
+[node name="BigDrillPoint" type="Node2D" parent="." index="21"]
+unique_name_in_owner = true
+
+[node name="DrillShot8" parent="BigDrillPoint" index="0" instance=ExtResource("16_w350y")]
+position = Vector2(320, 192)
+EnemyName = 17
+ManualMode = true
+
+[node name="DrillShot7" parent="BigDrillPoint" index="1" instance=ExtResource("16_w350y")]
+position = Vector2(832, -192)
+EnemyName = 20
+ManualMode = true
+
+[node name="DrillShot6" parent="BigDrillPoint" index="2" instance=ExtResource("16_w350y")]
+position = Vector2(832, -384)
+EnemyName = 20
+ManualMode = true
+
+[node name="DrillShot5" parent="BigDrillPoint" index="3" instance=ExtResource("16_w350y")]
+position = Vector2(576, -672)
+EnemyName = 18
+ManualMode = true
+
+[node name="DrillShot4" parent="BigDrillPoint" index="4" instance=ExtResource("16_w350y")]
+position = Vector2(320, -672)
+EnemyName = 18
+ManualMode = true
+
+[node name="DrillShot3" parent="BigDrillPoint" index="5" instance=ExtResource("16_w350y")]
+position = Vector2(64, -672)
+EnemyName = 18
+ManualMode = true
+
+[node name="DrillShot2" parent="BigDrillPoint" index="6" instance=ExtResource("16_w350y")]
+position = Vector2(-192, -384)
+EnemyName = 20
+ManualMode = true
+
+[node name="DrillShot1" parent="BigDrillPoint" index="7" instance=ExtResource("16_w350y")]
+position = Vector2(-192, -192)
+EnemyName = 20
+ManualMode = true
