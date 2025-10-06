@@ -191,12 +191,8 @@ script = ExtResource("3_ll8rd")
 
 [node name="Exec" parent="Control/Back" instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("6_1beei")]
-SeName = "menu_select"
-
-[node name="SaveGameOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("4_i66bl")]
-
-[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("5_fbf6f")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/Back" instance=ExtResource("7_m7caj")]
 
@@ -344,11 +340,7 @@ Target = NodePath("../../Close")
 [node name="PlaySeCommand" parent="Close" instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="LoadGameOptionsCommand" parent="Close" instance=ExtResource("6_ox5kl")]
-
-[node name="SetGameOptionsCommand" parent="Close" instance=ExtResource("7_54itn")]
-
-[node name="UpdateDialogScreenCommand" parent="Close" instance=ExtResource("8_foflq")]
+[node name="SaveGameOptionsCommand" parent="Close" instance=ExtResource("4_i66bl")]
 
 [node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_fbf6f")]
 

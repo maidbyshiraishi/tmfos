@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b17554w0hqp2u" path="res://command/open_save_confirm_dialog_command.tscn" id="5_xc4cv"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_eyd7u"]
 [ext_resource type="Texture2D" uid="uid://bhriv1fhw8rgk" path="res://contents/image/null.png" id="8_wje0o"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="9_k1tom"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="9_xhwvx"]
-[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="10_mxc8x"]
 
 [node name="SaveDialog" type="Control"]
 light_mask = 2
@@ -306,10 +306,8 @@ script = ExtResource("3_xv85v")
 
 [node name="Exec" parent="Control/Back" instance=ExtResource("6_eyd7u")]
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_fia06")]
-SeName = "menu_select"
-
-[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_enxr1")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("9_k1tom")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/Back" instance=ExtResource("6_eyd7u")]
 
@@ -319,5 +317,12 @@ SeName = "menu_move"
 [node name="EscapeKey" parent="." instance=ExtResource("9_xhwvx")]
 ActionName = "escape"
 
-[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("10_mxc8x")]
-Target = NodePath("../../Control/Back")
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("9_k1tom")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("6_eyd7u")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_fia06")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("4_enxr1")]

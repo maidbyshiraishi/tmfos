@@ -20,9 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="12_rslh3"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="13_73i7r"]
 [ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://command/resume_bgm_command.tscn" id="13_atbak"]
-[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="14_svsij"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="15_lt5vg"]
 [ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://command/pause_bgm_command.tscn" id="16_jur38"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="22_xo2r3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vxu5"]
 atlas = ExtResource("12_8t0ni")
@@ -202,12 +202,8 @@ script = ExtResource("9_nfjam")
 
 [node name="Exec" parent="Control/Back" instance=ExtResource("12_rslh3")]
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("11_ndkyj")]
-SeName = "menu_select"
-
-[node name="ResumeBgmCommand" parent="Control/Back/Exec" instance=ExtResource("13_atbak")]
-
-[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("10_bbngo")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("22_xo2r3")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/Back" instance=ExtResource("12_rslh3")]
 
@@ -222,11 +218,20 @@ position = Vector2(96, 128)
 [node name="KeyReleaseedTrigger" parent="." instance=ExtResource("13_73i7r")]
 ActionName = "pause"
 
-[node name="ButtonPressedCommand" parent="KeyReleaseedTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("14_svsij")]
-Target = NodePath("../../Control/Back")
+[node name="ReferenceContainer" parent="KeyReleaseedTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("22_xo2r3")]
+Target = NodePath("../../Close")
 
 [node name="EscapeKey" parent="." instance=ExtResource("13_73i7r")]
 ActionName = "escape"
 
-[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("14_svsij")]
-Target = NodePath("../../Control/Back")
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("22_xo2r3")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("12_rslh3")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("11_ndkyj")]
+SeName = "menu_select"
+
+[node name="ResumeBgmCommand" parent="Close" instance=ExtResource("13_atbak")]
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("10_bbngo")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://1r3bf0p5fbvc"]
+[gd_scene load_steps=11 format=3 uid="uid://1r3bf0p5fbvc"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_tkbct"]
 [ext_resource type="Script" uid="uid://cag1382la6trd" path="res://screen/GameOverDialog.cs" id="2_0hk0x"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_vithm"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_4jja0"]
 [ext_resource type="PackedScene" uid="uid://cg4ynh8jijq7k" path="res://command/open_load_confirm_dialog_command.tscn" id="6_72bpm"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="8_u8xc0"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="9_tmkm6"]
 
 [node name="GameOverDialog" type="Control"]
 light_mask = 2
@@ -116,13 +118,24 @@ script = ExtResource("3_w7ysc")
 
 [node name="Exec" parent="Control/Back" instance=ExtResource("5_4jja0")]
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("4_vithm")]
-SeName = "menu_select"
-
-[node name="GoScreenCommand" parent="Control/Back/Exec" instance=ExtResource("4_hn36s")]
-Screen = "res://screen/title_screen.tscn"
+[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("8_u8xc0")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/Back" instance=ExtResource("5_4jja0")]
 
 [node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("4_vithm")]
 SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("9_tmkm6")]
+ActionName = "escape"
+
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("8_u8xc0")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("5_4jja0")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("4_vithm")]
+SeName = "menu_select"
+
+[node name="GoScreenCommand" parent="Close" instance=ExtResource("4_hn36s")]
+Screen = "res://screen/title_screen.tscn"

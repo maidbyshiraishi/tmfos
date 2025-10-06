@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_tha8w"]
 [ext_resource type="PackedScene" uid="uid://ccfoaeal7mdmt" path="res://command/save_screen_options_command.tscn" id="6_0257w"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_fesdb"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="8_eh15n"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="8_grakq"]
-[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="9_o5pnm"]
 
 [node name="QuitDialog" type="Control"]
 light_mask = 2
@@ -89,10 +89,8 @@ script = ExtResource("3_bhue4")
 
 [node name="Exec" parent="Control/No" instance=ExtResource("6_fesdb")]
 
-[node name="PlaySeCommand" parent="Control/No/Exec" instance=ExtResource("5_tha8w")]
-SeName = "menu_select"
-
-[node name="CloseDialogCommand" parent="Control/No/Exec" instance=ExtResource("5_b0tyc")]
+[node name="ReferenceContainer" parent="Control/No/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("8_eh15n")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/No" instance=ExtResource("6_fesdb")]
 
@@ -102,5 +100,12 @@ SeName = "menu_move"
 [node name="EscapeKey" parent="." instance=ExtResource("8_grakq")]
 ActionName = "escape"
 
-[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("9_o5pnm")]
-Target = NodePath("../../Control/No")
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("8_eh15n")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("6_fesdb")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_tha8w")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_b0tyc")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cgo5nw4mlh7pe"]
+[gd_scene load_steps=22 format=3 uid="uid://cgo5nw4mlh7pe"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_d5hvi"]
 [ext_resource type="Script" uid="uid://cgtirgj6hx117" path="res://screen/JukeboxDialog.cs" id="2_lfgcj"]
@@ -15,13 +15,12 @@
 [ext_resource type="AudioStream" uid="uid://bpebfe8y5slk2" path="res://contents/bgm/bgm7.ogg" id="13_b635v"]
 [ext_resource type="AudioStream" uid="uid://dbcsppfshlabl" path="res://contents/bgm/bgm8.ogg" id="14_esh35"]
 [ext_resource type="AudioStream" uid="uid://b80xdq1t3o76e" path="res://contents/bgm/bgm9.ogg" id="15_rvqik"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="16_mlxpv"]
 [ext_resource type="PackedScene" uid="uid://cxuhm7osw7v00" path="res://command/load_game_options_command.tscn" id="16_rncda"]
 [ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://command/set_game_options_command.tscn" id="17_54top"]
-[ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/update_dialog_screen_command.tscn" id="18_ngv3k"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="19_ntrhu"]
 [ext_resource type="Script" uid="uid://b06hw6ekb5ra3" path="res://gui/CommandHSlider.cs" id="20_7u47n"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="21_e5wmd"]
-[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="22_dbkvd"]
 
 [node name="JukeboxDialog" type="Control"]
 light_mask = 2
@@ -300,16 +299,8 @@ SeName = "menu_move"
 
 [node name="Exec" parent="Control/Back" instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("7_dkqhw")]
-SeName = "menu_select"
-
-[node name="LoadGameOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("16_rncda")]
-
-[node name="SetGameOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("17_54top")]
-
-[node name="UpdateDialogScreenCommand" parent="Control/Back/Exec" instance=ExtResource("18_ngv3k")]
-
-[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("19_ntrhu")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("16_mlxpv")]
+Target = NodePath("../../../../Close")
 
 [node name="BgmSlider" type="HSlider" parent="Control"]
 light_mask = 2
@@ -329,7 +320,18 @@ SeName = "menu_move"
 [node name="EscapeKey" parent="." instance=ExtResource("21_e5wmd")]
 ActionName = "escape"
 
-[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("22_dbkvd")]
-Target = NodePath("../../Control/Back")
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("16_mlxpv")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("6_3u2lt")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("7_dkqhw")]
+SeName = "menu_select"
+
+[node name="LoadGameOptionsCommand" parent="Close" instance=ExtResource("16_rncda")]
+
+[node name="SetGameOptionsCommand" parent="Close" instance=ExtResource("17_54top")]
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("19_ntrhu")]
 
 [connection signal="value_changed" from="Control/BgmSlider" to="." method="BgmVolumeChanged"]

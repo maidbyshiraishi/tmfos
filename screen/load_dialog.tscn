@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bhriv1fhw8rgk" path="res://contents/image/null.png" id="4_yfnfx"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_rb77u"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_l5kjv"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="8_0313y"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="10_q8wqv"]
-[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="11_1j5bx"]
 
 [node name="LoadDialog" type="Control"]
 light_mask = 2
@@ -305,10 +305,8 @@ script = ExtResource("3_odxq0")
 
 [node name="Exec" parent="Control/Back" instance=ExtResource("6_l5kjv")]
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_rb77u")]
-SeName = "menu_select"
-
-[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_fv1pr")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("8_0313y")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/Back" instance=ExtResource("6_l5kjv")]
 
@@ -318,5 +316,12 @@ SeName = "menu_move"
 [node name="EscapeKey" parent="." instance=ExtResource("10_q8wqv")]
 ActionName = "escape"
 
-[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("11_1j5bx")]
-Target = NodePath("../../Control/Back")
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("8_0313y")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("6_l5kjv")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_rb77u")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("4_fv1pr")]

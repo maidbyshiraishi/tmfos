@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://mbd4e44xpe7f"]
+[gd_scene load_steps=10 format=3 uid="uid://mbd4e44xpe7f"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_6muvo"]
 [ext_resource type="Script" uid="uid://f31osgutrfnu" path="res://screen/ErrorDialog.cs" id="2_e1527"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_3qtxr"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_sodei"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_y6bfa"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="7_p7hul"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="8_ojohy"]
 
 [node name="ErrorDialog" type="Control"]
 light_mask = 2
@@ -78,12 +80,23 @@ script = ExtResource("3_uaioc")
 
 [node name="Exec" parent="Control/Back" instance=ExtResource("6_y6bfa")]
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_sodei")]
-SeName = "menu_select"
-
-[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_3qtxr")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("7_p7hul")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/Back" instance=ExtResource("6_y6bfa")]
 
 [node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_sodei")]
 SeName = "menu_move"
+
+[node name="EscapeKey" parent="." instance=ExtResource("8_ojohy")]
+ActionName = "escape"
+
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("7_p7hul")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("6_y6bfa")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_sodei")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("4_3qtxr")]

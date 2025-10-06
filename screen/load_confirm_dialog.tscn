@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_u5n53"]
 [ext_resource type="PackedScene" uid="uid://closkw7p3bd1g" path="res://command/open_game_command.tscn" id="6_ts8r3"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="7_6u611"]
-[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://command/button_pressed_command.tscn" id="8_wbp2d"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="8_j6b1a"]
 
 [node name="LoadConfirmDialog" type="Control"]
 light_mask = 2
@@ -115,10 +115,8 @@ script = ExtResource("3_cwijq")
 
 [node name="Exec" parent="Control/No" instance=ExtResource("5_u5n53")]
 
-[node name="PlaySeCommand" parent="Control/No/Exec" instance=ExtResource("4_jlgsu")]
-SeName = "menu_select"
-
-[node name="CloseDialogCommand" parent="Control/No/Exec" instance=ExtResource("4_u4xrp")]
+[node name="ReferenceContainer" parent="Control/No/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("8_j6b1a")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/No" instance=ExtResource("5_u5n53")]
 
@@ -128,5 +126,12 @@ SeName = "menu_move"
 [node name="EscapeKey" parent="." instance=ExtResource("7_6u611")]
 ActionName = "escape"
 
-[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("8_wbp2d")]
-Target = NodePath("../../Control/No")
+[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("8_j6b1a")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("5_u5n53")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("4_jlgsu")]
+SeName = "menu_select"
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("4_u4xrp")]
