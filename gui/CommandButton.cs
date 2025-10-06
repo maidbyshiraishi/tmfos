@@ -9,6 +9,7 @@ namespace tmfos.gui;
 public partial class CommandButton : Button
 {
     // todo: ボタンなどの各種シグナルを自動的に接続したい。
+    // teosにて対応済みだが逆輸入は行わない。
 
     public override void _Ready()
     {

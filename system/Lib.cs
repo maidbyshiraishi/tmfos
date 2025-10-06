@@ -36,6 +36,7 @@ public static partial class Lib
     public static T GetPackedScene<T>(string path) where T : class
     {
         // todo: 利用箇所がクドいのでスッキリ書きたい
+        // teosにて対応済みだが逆輸入は行わない。
         if (string.IsNullOrWhiteSpace(path))
         {
             GD.PrintErr("pathがnullまたはホワイトスペースです。リソースファイルを読み込めません。");
