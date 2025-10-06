@@ -122,7 +122,7 @@ SeName = "menu_select"
 SeName = "menu_move"
 
 [node name="EscapeKey" parent="." instance=ExtResource("9_sr0rb")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("10_gr1id")]
 Target = NodePath("../../Control/Back")

@@ -218,7 +218,7 @@ script = ExtResource("16_45g42")
 VersionLabel = NodePath("../../LabelVersionNo")
 
 [node name="EscapeKey" parent="." instance=ExtResource("17_uhsa7")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="QuitGameCommand" parent="EscapeKey" instance=ExtResource("18_85irx")]
 

@@ -8,7 +8,7 @@
 [node name="GameShortcutKeys" type="Node"]
 
 [node name="EscapeKey" parent="." instance=ExtResource("1_0p2nk")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="UnsetPlayerSearchCommand" parent="EscapeKey" instance=ExtResource("3_x0rtt")]
 

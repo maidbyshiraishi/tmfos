@@ -327,7 +327,7 @@ script = ExtResource("20_7u47n")
 SeName = "menu_move"
 
 [node name="EscapeKey" parent="." instance=ExtResource("21_e5wmd")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("22_dbkvd")]
 Target = NodePath("../../Control/Back")

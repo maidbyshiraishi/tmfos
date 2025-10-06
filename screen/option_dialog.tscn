@@ -328,7 +328,7 @@ DialogPath = "res://screen/key_option_dialog.tscn"
 SeName = "menu_move"
 
 [node name="EscapeKey" parent="." instance=ExtResource("16_0176u")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
 Target = NodePath("../../Close")

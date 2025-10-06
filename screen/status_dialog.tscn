@@ -226,7 +226,7 @@ ActionName = "pause"
 Target = NodePath("../../Control/Back")
 
 [node name="EscapeKey" parent="." instance=ExtResource("13_73i7r")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("14_svsij")]
 Target = NodePath("../../Control/Back")

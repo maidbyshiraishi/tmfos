@@ -90,7 +90,7 @@ ActionName = "help"
 Target = NodePath("../../Control/Back")
 
 [node name="EscapeKey" parent="." index="8" instance=ExtResource("8_mby00")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="ButtonPressedCommand" parent="EscapeKey" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_sd7cw")]
 Target = NodePath("../../Control/Back")
