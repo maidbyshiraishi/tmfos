@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwqwdmxtivcgi"]
+[gd_scene load_steps=13 format=3 uid="uid://dwqwdmxtivcgi"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_qstp4"]
 [ext_resource type="Script" uid="uid://bbykkikdla4im" path="res://screen/DialogRoot.cs" id="2_vos01"]
-[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="3_ippq8"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_q8hdc"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="4_h25fl"]
 [ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://command/resume_bgm_command.tscn" id="5_i6yow"]
@@ -27,7 +26,7 @@ layout_mode = 0
 offset_left = 160.0
 offset_top = 120.0
 offset_right = 480.0
-offset_bottom = 368.0
+offset_bottom = 304.0
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Border" type="ReferenceRect" parent="."]
@@ -36,7 +35,7 @@ layout_mode = 0
 offset_left = 160.0
 offset_top = 119.0
 offset_right = 480.0
-offset_bottom = 367.0
+offset_bottom = 303.0
 border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
@@ -52,19 +51,6 @@ text = "エスケープ！"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Message2" type="Label" parent="."]
-light_mask = 2
-layout_mode = 0
-offset_left = 192.0
-offset_top = 184.0
-offset_right = 448.0
-offset_bottom = 240.0
-theme = ExtResource("3_ippq8")
-text = "続けてESCキーまたはXbox Backキーを押せばタイトルに戻ります。"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
 [node name="Control" type="Control" parent="."]
 light_mask = 2
 anchors_preset = 0
@@ -73,20 +59,16 @@ anchors_preset = 0
 light_mask = 2
 layout_mode = 0
 offset_left = 240.0
-offset_top = 256.0
+offset_top = 192.0
 offset_right = 400.0
-offset_bottom = 288.0
+offset_bottom = 224.0
 text = "戻る"
 script = ExtResource("3_q8hdc")
 
 [node name="Exec" parent="Control/Back" instance=ExtResource("7_8rrvl")]
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("6_j4fdm")]
-SeName = "menu_select"
-
-[node name="ResumeBgmCommand" parent="Control/Back/Exec" instance=ExtResource("5_i6yow")]
-
-[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("5_x0pca")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("12_ippq8")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" parent="Control/Back" instance=ExtResource("7_8rrvl")]
 
@@ -97,16 +79,21 @@ SeName = "menu_move"
 light_mask = 2
 layout_mode = 0
 offset_left = 240.0
-offset_top = 304.0
+offset_top = 240.0
 offset_right = 400.0
-offset_bottom = 336.0
+offset_bottom = 272.0
 text = "タイトルに戻る"
 script = ExtResource("3_q8hdc")
 
 [node name="Exec" parent="Control/Title" instance=ExtResource("7_8rrvl")]
 
-[node name="ReferenceContainer" parent="Control/Title/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("12_ippq8")]
-Target = NodePath("../../../../Escape")
+[node name="PlaySeCommand" parent="Control/Title/Exec" instance=ExtResource("6_j4fdm")]
+SeName = "menu_select"
+
+[node name="ResumeBgmCommand" parent="Control/Title/Exec" instance=ExtResource("5_i6yow")]
+
+[node name="GoScreenCommand" parent="Control/Title/Exec" instance=ExtResource("4_h25fl")]
+Screen = "res://screen/title_screen.tscn"
 
 [node name="Focus" parent="Control/Title" instance=ExtResource("7_8rrvl")]
 
@@ -122,14 +109,13 @@ position = Vector2(200, 158)
 ActionName = "escape"
 
 [node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("12_ippq8")]
-Target = NodePath("../../Escape")
+Target = NodePath("../../Close")
 
-[node name="Escape" parent="." instance=ExtResource("7_8rrvl")]
+[node name="Close" parent="." instance=ExtResource("7_8rrvl")]
 
-[node name="PlaySeCommand" parent="Escape" instance=ExtResource("6_j4fdm")]
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("6_j4fdm")]
 SeName = "menu_select"
 
-[node name="ResumeBgmCommand" parent="Escape" instance=ExtResource("5_i6yow")]
+[node name="ResumeBgmCommand" parent="Close" instance=ExtResource("5_i6yow")]
 
-[node name="GoScreenCommand" parent="Escape" instance=ExtResource("4_h25fl")]
-Screen = "res://screen/title_screen.tscn"
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_x0pca")]

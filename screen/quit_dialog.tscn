@@ -24,7 +24,7 @@ layout_mode = 0
 offset_left = 160.0
 offset_top = 120.0
 offset_right = 480.0
-offset_bottom = 360.0
+offset_bottom = 268.0
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Border" type="ReferenceRect" parent="."]
@@ -33,7 +33,7 @@ layout_mode = 0
 offset_left = 160.0
 offset_top = 119.0
 offset_right = 480.0
-offset_bottom = 359.0
+offset_bottom = 267.0
 border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
@@ -57,9 +57,9 @@ anchors_preset = 0
 light_mask = 2
 layout_mode = 0
 offset_left = 224.0
-offset_top = 239.0
+offset_top = 200.0
 offset_right = 304.0
-offset_bottom = 271.0
+offset_bottom = 232.0
 text = "はい"
 script = ExtResource("3_bhue4")
 
@@ -81,9 +81,9 @@ SeName = "menu_move"
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0
-offset_top = 239.0
+offset_top = 200.0
 offset_right = 416.0
-offset_bottom = 271.0
+offset_bottom = 232.0
 text = "いいえ"
 script = ExtResource("3_bhue4")
 

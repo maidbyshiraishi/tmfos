@@ -30,7 +30,7 @@ public partial class MessageDialog : DialogRoot
 
     public void SetMessage(string message)
     {
-        Label textEdit = GetNode<Label>("Control/Message");
+        Label textEdit = GetNode<Label>("Message");
         textEdit.Text = message;
     }
 
