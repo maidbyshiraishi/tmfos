@@ -30,10 +30,6 @@ MusicPlayer="*res://system/music_player.tscn"
 SePlayer="*res://system/se_player.tscn"
 Screenshot="*res://system/screenshot.tscn"
 
-[debug]
-
-file_logging/enable_file_logging.pc=false
-
 [display]
 
 window/size/viewport_width=640
@@ -49,10 +45,6 @@ project/assembly_name="tmfos"
 
 movie_writer/movie_file="rec.avi"
 movie_writer/fps=30
-
-[filesystem]
-
-import/fbx/enabled=false
 
 [input]
 
@@ -179,5 +171,4 @@ locale/translations=PackedStringArray("res://talk.ja.translation")
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
-textures/vram_compression/import_etc2_astc=true
 shader_compiler/shader_cache/enabled=false
