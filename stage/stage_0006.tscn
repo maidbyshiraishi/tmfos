@@ -1,9 +1,8 @@
-[gd_scene load_steps=38 format=4 uid="uid://b1mvncxivsdav"]
+[gd_scene load_steps=36 format=4 uid="uid://b1mvncxivsdav"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_7kni4"]
 [ext_resource type="AudioStream" uid="uid://cxifjqga3hnbc" path="res://contents/bgm/bgm1.ogg" id="2_l41is"]
 [ext_resource type="Texture2D" uid="uid://c20sg2513jne5" path="res://contents/image/background/ice_mountain.png" id="3_4ghfx"]
-[ext_resource type="Shader" uid="uid://bsxyfpwy6v3d3" path="res://contents/shader/raster_scroll.gdshader" id="4_58vnh"]
 [ext_resource type="Texture2D" uid="uid://bwdd24muur4u6" path="res://contents/image/background/dark_gradation.png" id="5_48i3x"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="6_0dhoc"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="7_hkq5k"]
@@ -25,11 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://dh15teehhoau2" path="res://enemy/falling_icicle_enemy.tscn" id="23_bblq6"]
 [ext_resource type="PackedScene" uid="uid://d5twdpj38unk" path="res://enemy/falling_block5_enemy.tscn" id="24_fgaeh"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="25_dqyf1"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5d52"]
-shader = ExtResource("4_58vnh")
-shader_parameter/speed = 0.2
-shader_parameter/depth = 0.02
 
 [sub_resource type="Curve2D" id="Curve2D_e2kag"]
 _data = {
@@ -114,7 +108,6 @@ texture = ExtResource("3_4ghfx")
 visible = true
 
 [node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
-material = SubResource("ShaderMaterial_m5d52")
 texture = ExtResource("5_48i3x")
 
 [node name="Ground" parent="TileMap" index="1"]

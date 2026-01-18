@@ -1,9 +1,8 @@
-[gd_scene load_steps=30 format=4 uid="uid://s7k5h417qpmc"]
+[gd_scene load_steps=28 format=4 uid="uid://s7k5h417qpmc"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_wg7mc"]
 [ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="2_axsfl"]
 [ext_resource type="Texture2D" uid="uid://c20sg2513jne5" path="res://contents/image/background/ice_mountain.png" id="3_8yruw"]
-[ext_resource type="Shader" uid="uid://bsxyfpwy6v3d3" path="res://contents/shader/raster_scroll.gdshader" id="4_y2i8a"]
 [ext_resource type="Texture2D" uid="uid://cuyf2x2dxvmci" path="res://contents/image/background/gray_gradation.png" id="5_gduaq"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="6_out43"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="7_jrqc7"]
@@ -28,11 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://d5twdpj38unk" path="res://enemy/falling_block5_enemy.tscn" id="26_q0uhc"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="27_l3kip"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgujb"]
-shader = ExtResource("4_y2i8a")
-shader_parameter/speed = 0.02
-shader_parameter/depth = 0.2
-
 [sub_resource type="Curve2D" id="Curve2D_o86lr"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 360, -3512, 0, 0, 0, 0, 408, -3152, 0, 0, 0, 0, 552, -2856, 0, 0, 0, 0, 416, -2736, 0, 0, 0, 0, 592, -2528, 0, 0, 0, 0, 592, -2096, 0, 0, 0, 0, 752, -1968)
@@ -55,7 +49,6 @@ texture = ExtResource("3_8yruw")
 visible = true
 
 [node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
-material = SubResource("ShaderMaterial_pgujb")
 texture = ExtResource("5_gduaq")
 
 [node name="Ground" parent="TileMap" index="1"]
@@ -64,7 +57,7 @@ tile_map_data = PackedByteArray("AAAAACz/AAAFAAAAAAAAAC3/AAAFAAAAAAAAAC7/AAAFAAA
 [node name="Foreground" parent="TileMap" index="2"]
 tile_map_data = PackedByteArray("AAA+AHX/AAABAAMAAAAHACn/AAABAAMAAAA=")
 
-[node name="Veil" parent="TileMap/ObservationHole" index="3"]
+[node name="Veil" parent="TileMap/ObservationHole" index="0"]
 tile_map_data = PackedByteArray("AAAIACX/AAAGAAcAAAAIACb/AAAGAAcAAAAIACf/AAAGAAcAAAAIACj/AAAGAAcAAAAIACn/AAAGAAcAAAAIACr/AAAGAAcAAAAIACv/AAAGAAcAAAAIACz/AAAGAAcAAAAJACX/AAAGAAcAAAAJACb/AAAGAAcAAAAJACf/AAAGAAcAAAAJACj/AAAGAAcAAAAJACn/AAAGAAcAAAAJACr/AAAGAAcAAAAJACv/AAAGAAcAAAAJACz/AAAGAAcAAAAKACX/AAAGAAcAAAAKACb/AAAGAAcAAAAKACf/AAAGAAcAAAAKACj/AAAGAAcAAAAKACn/AAAGAAcAAAAKACr/AAAGAAcAAAAKACv/AAAGAAcAAAAKACz/AAAGAAcAAAALACX/AAAGAAcAAAALACb/AAAGAAcAAAALACf/AAAGAAcAAAALACj/AAAGAAcAAAALACn/AAAGAAcAAAALACr/AAAGAAcAAAALACv/AAAGAAcAAAALACz/AAAGAAcAAAAMACX/AAAGAAcAAAAMACb/AAAGAAcAAAAMACf/AAAGAAcAAAAMACj/AAAGAAcAAAAMACn/AAAGAAcAAAAMACr/AAAGAAcAAAAMACv/AAAGAAcAAAAMACz/AAAGAAcAAAAHACb/AAAGAAcAAAAHACf/AAAGAAcAAAAHACj/AAAGAAcAAAAHACn/AAAGAAcAAAAJACT/AAAGAAcAAAAKACT/AAAGAAcAAAALACT/AAAGAAcAAAAJAC3/AAAGAAcAAAAKAC3/AAAGAAcAAAALAC3/AAAGAAcAAAAMAC3/AAAGAAcAAAAIAC3/AAAGAAcAAAAIAC7/AAAGAAcAAAAJAC7/AAAGAAcAAAAKAC7/AAAGAAcAAAA4AHT/AAAGAAcAAAA4AHX/AAAGAAcAAAA5AHT/AAAGAAcAAAA5AHX/AAAGAAcAAAA6AHT/AAAGAAcAAAA6AHX/AAAGAAcAAAA7AHT/AAAGAAcAAAA7AHX/AAAGAAcAAAA8AHT/AAAGAAcAAAA8AHX/AAAGAAcAAAA9AHT/AAAGAAcAAAA9AHX/AAAGAAcAAAA+AHT/AAAGAAcAAAA+AHX/AAAGAAcAAAA=")
 
 [node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("6_out43")]

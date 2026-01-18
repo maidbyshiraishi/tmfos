@@ -1,9 +1,8 @@
-[gd_scene load_steps=20 format=4 uid="uid://c2c5w4yskcqih"]
+[gd_scene load_steps=18 format=4 uid="uid://c2c5w4yskcqih"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_g2764"]
 [ext_resource type="AudioStream" uid="uid://bs70k8qsse4p5" path="res://contents/bgm/bgm2.ogg" id="2_n1wd4"]
 [ext_resource type="Texture2D" uid="uid://c20sg2513jne5" path="res://contents/image/background/ice_mountain.png" id="3_b4fwm"]
-[ext_resource type="Shader" uid="uid://bsxyfpwy6v3d3" path="res://contents/shader/raster_scroll.gdshader" id="4_pxj5s"]
 [ext_resource type="Texture2D" uid="uid://cdka7121qpbnn" path="res://contents/image/background/pink_gradation.png" id="5_xqilb"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="6_2qh0d"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="7_14p3a"]
@@ -18,11 +17,6 @@
 [ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="16_7nxpp"]
 [ext_resource type="PackedScene" uid="uid://bpnpsk7t6uv77" path="res://enemy/enemy_spawner.tscn" id="17_uepac"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="18_wmdpg"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aol3x"]
-shader = ExtResource("4_pxj5s")
-shader_parameter/speed = 0.2
-shader_parameter/depth = 0.02
 
 [node name="Stage" instance=ExtResource("1_g2764")]
 BgmStream = ExtResource("2_n1wd4")
@@ -43,7 +37,6 @@ texture = ExtResource("3_b4fwm")
 visible = true
 
 [node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
-material = SubResource("ShaderMaterial_aol3x")
 texture = ExtResource("5_xqilb")
 
 [node name="Background" parent="TileMap" index="0"]
@@ -55,7 +48,7 @@ tile_map_data = PackedByteArray("AABSAHj/AAAAAAYAAABRAHf/AAAAAAYAAABQAHf/AAAAAAY
 [node name="Foreground" parent="TileMap" index="2"]
 tile_map_data = PackedByteArray("AAAoAL7/AAABAAMAAABbAPf/AAABAAUAAABbAPj/AAABAAUAAABbAPn/AAABAAUAAABbAPr/AAABAAUAAAA=")
 
-[node name="Veil" parent="TileMap/ObservationHole" index="3"]
+[node name="Veil" parent="TileMap/ObservationHole" index="0"]
 tile_map_data = PackedByteArray("AABeAGf/AAAHAAYAAABeAGb/AAAHAAYAAABeAGX/AAAHAAYAAABeAGT/AAAHAAYAAABcAGL/AAAHAAYAAABcAGP/AAAHAAYAAABcAGT/AAAHAAYAAABcAGX/AAAHAAYAAABcAGb/AAAHAAYAAABdAGP/AAAHAAYAAABdAGT/AAAHAAYAAABdAGX/AAAHAAYAAABdAGb/AAAHAAYAAABbAGL/AAAHAAYAAABbAGP/AAAHAAYAAABbAGT/AAAHAAYAAABbAGX/AAAHAAYAAABbAGb/AAAHAAYAAABaAGL/AAAHAAYAAABaAGP/AAAHAAYAAABaAGT/AAAHAAYAAABaAGX/AAAHAAYAAABaAGb/AAAHAAYAAABeAIf/AAAHAAYAAABeAIj/AAAHAAYAAABeAIn/AAAHAAYAAABeAIr/AAAHAAYAAABcAPn/AAAHAAYAAABcAPr/AAAHAAYAAABcAPv/AAAHAAYAAABcAPz/AAAHAAYAAABdAPz/AAAHAAYAAABeAPz/AAAHAAYAAABfAPz/AAAHAAYAAABfAPv/AAAHAAYAAABfAPr/AAAHAAYAAABfAPn/AAAHAAYAAABfAPj/AAAHAAYAAABeAPj/AAAHAAYAAABdAPj/AAAHAAYAAABdAPn/AAAHAAYAAABdAPr/AAAHAAYAAABeAPn/AAAHAAYAAABeAPr/AAAHAAYAAABeAPv/AAAHAAYAAABdAPv/AAAHAAYAAAA=")
 
 [node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("6_2qh0d")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://6e48r4g4pmxj"]
+[gd_scene load_steps=21 format=4 uid="uid://6e48r4g4pmxj"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_m2bb3"]
 [ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="2_3wiog"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cfymfls3a7ari" path="res://enemy/dragon_head_enemy.tscn" id="11_cmkho"]
 [ext_resource type="Texture2D" uid="uid://bgs46uwca6xsq" path="res://contents/image/decoration/dragon_leg.png" id="12_vkkmy"]
 [ext_resource type="Texture2D" uid="uid://bxvr2jhhma4w3" path="res://contents/image/decoration/dragon_body.png" id="13_t40vv"]
-[ext_resource type="Shader" uid="uid://bsxyfpwy6v3d3" path="res://contents/shader/raster_scroll.gdshader" id="14_jxaq4"]
 [ext_resource type="Texture2D" uid="uid://1byvvsya18nl" path="res://contents/image/decoration/dragon_tail.png" id="15_smsxn"]
 [ext_resource type="PackedScene" uid="uid://bkpmusncycni5" path="res://hud/boss_life.tscn" id="16_vv7ib"]
 [ext_resource type="PackedScene" uid="uid://c7uf428mr1fso" path="res://trigger/sweep_observer.tscn" id="17_c1nar"]
@@ -21,11 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="19_hxg78"]
 [ext_resource type="PackedScene" uid="uid://dvcg4jkd64dvn" path="res://enemy/tmfos_enemy.tscn" id="20_15mma"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="21_iwqut"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cie7"]
-shader = ExtResource("14_jxaq4")
-shader_parameter/speed = 0.5
-shader_parameter/depth = 0.02
 
 [node name="Stage" instance=ExtResource("1_m2bb3")]
 BgmStream = ExtResource("2_3wiog")
@@ -361,13 +355,7 @@ flip_h = true
 position = Vector2(576, -288)
 texture = ExtResource("13_t40vv")
 
-[node name="DragonTail" type="Sprite2D" parent="Decoration2" index="5"]
-material = SubResource("ShaderMaterial_1cie7")
-position = Vector2(576, -104)
-texture = ExtResource("15_smsxn")
-
-[node name="DragonTail2" type="Sprite2D" parent="Decoration2" index="6"]
-material = SubResource("ShaderMaterial_1cie7")
+[node name="DragonTail2" type="Sprite2D" parent="Decoration2" index="5"]
 position = Vector2(576, -104)
 texture = ExtResource("15_smsxn")
 
