@@ -21,13 +21,13 @@ public partial class SplashScreen : DialogRoot
     /// </summary>
     public void PlayStart()
     {
-        GetNode<AudioStreamPlayer>("Audio1").Play();
+        GetNode<AudioStreamPlayer>("Audio_1").Play();
     }
 
     public void PlayAudio2()
     {
         GetNode<AnimatedSprite2D>("Mask/Image").Frame = 1;
-        GetNode<AudioStreamPlayer>("Audio2").Play();
+        GetNode<AudioStreamPlayer>("Audio_2").Play();
     }
 
     /// <summary>

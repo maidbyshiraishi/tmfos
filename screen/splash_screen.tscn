@@ -20,11 +20,11 @@ offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0, 0, 0, 1)
 
-[node name="Audio1" type="AudioStreamPlayer" parent="."]
+[node name="Audio_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_j741j")
 bus = &"SE"
 
-[node name="Audio2" type="AudioStreamPlayer" parent="."]
+[node name="Audio_2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_jjt3q")
 bus = &"SE"
 
