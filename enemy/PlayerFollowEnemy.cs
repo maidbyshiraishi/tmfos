@@ -60,6 +60,9 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
         _exploreTimer = GetNode<Timer>("ExploreTimer");
         _exploreTimer.WaitTime = ExploreTime;
         _ = _exploreTimer.Connect(Timer.SignalName.Timeout, new(this, MethodName.ChangeExploreDirection));
+        _ = GetNode<Area2D>("Enemy").Connect(Node.SignalName.TreeExiting, new(this, MethodName.RemoveNode));
+        _ = Connect(Area2D.SignalName.BodyEntered, new(this, MethodName.FindPlayer));
+        _ = Connect(Area2D.SignalName.BodyExited, new(this, MethodName.LostPlayer));
 
         if (_enemy is ISpawnedNode ispawn)
         {

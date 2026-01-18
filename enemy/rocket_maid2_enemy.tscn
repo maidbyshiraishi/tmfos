@@ -65,8 +65,3 @@ pivot_offset = Vector2(15, 35)
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 0.001
 one_shot = true
-
-[connection signal="body_entered" from="." to="." method="HitNode2D"]
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]

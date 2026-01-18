@@ -56,8 +56,3 @@ autostart = true
 
 [node name="ExcitationtMarker2D" type="Marker2D" parent="."]
 position = Vector2(0, 8)
-
-[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="Shot"]
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
-[connection signal="timeout" from="WarpTimer" to="." method="Warp"]

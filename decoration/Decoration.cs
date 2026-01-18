@@ -15,6 +15,8 @@ public partial class Decoration : Node2D, ISpawnedNode
 
     public override void _Ready()
     {
+        _ = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D")?.Connect(AnimatedSprite2D.SignalName.AnimationFinished, new(this, MethodName.Finished));
+
         if (SeName is not null)
         {
             GetNode<SePlayer>("/root/SePlayer").Play(SeName);

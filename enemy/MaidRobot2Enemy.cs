@@ -31,7 +31,10 @@ public partial class MaidRobot2Enemy : Enemy
         _entryCount = _bigEntryPoint is null ? 0 : _bigEntryPoint.GetChildCount();
         _drillCount = _bigDrillPoint is null ? 0 : _bigDrillPoint.GetChildCount();
         GetNode<Timer>("DrillTimer").WaitTime = ShotWait;
+        _ = GetNode<Timer>("DrillTimer").Connect(Timer.SignalName.Timeout, new(this, MethodName.ShotDrill));
         GetNode<Timer>("JumpTimer").WaitTime = JumpWait;
+        _ = GetNode<Timer>("JumpTimer").Connect(Timer.SignalName.Timeout, new(this, MethodName.Jump));
+        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, MethodName.Respawn));
     }
 
     public override void InitializeNode()

@@ -20,6 +20,8 @@ public partial class Mob : CharacterBody2D, IGameNode
         AddToGroup(StageRoot.GameNodeGroup);
         m_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         m_visibleOnScreenNotifier2D = GetNodeOrNull<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
+        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(m_animatedSprite, CanvasItem.MethodName.Show));
+        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(m_animatedSprite, CanvasItem.MethodName.Hide));
     }
 
     public virtual void InitializeNode()

@@ -17,6 +17,7 @@ public partial class FloatingMessage : Marker2D, ISpawnedNode
 
     public override void _Ready()
     {
+        _ = GetNodeOrNull<AnimationPlayer>("AnimationPlayer")?.Connect(AnimationMixer.SignalName.AnimationFinished, new(this, MethodName.Finished));
         GetNode<Label>("Label").Text = Text;
         GetNode<Label>("Label").SelfModulate = Color;
     }

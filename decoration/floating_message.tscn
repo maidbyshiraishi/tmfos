@@ -35,5 +35,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_ipbui")
 }
 autoplay = "floating_message"
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="Finished"]

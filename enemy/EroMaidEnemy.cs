@@ -26,6 +26,8 @@ public partial class EroMaidEnemy : Enemy
         GetNode<TextureProgressBar>("%HUD/BossLife").Value = Life;
         _marker = GetNode<Marker2D>("ExcitationtMarker2D");
         _entryCount = _entryPoint is null ? 0 : _entryPoint.GetChildCount();
+        _ = GetNode<AnimatedSprite2D>("AnimatedSprite2D").Connect(AnimatedSprite2D.SignalName.AnimationLooped, new(this, MethodName.Shot));
+        _ = GetNode<Timer>("WarpTimer").Connect(Timer.SignalName.Timeout, new(this, MethodName.Warp));
     }
 
     public override void InitializeNode()

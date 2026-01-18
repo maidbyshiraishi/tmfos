@@ -14,6 +14,12 @@ public partial class JukeboxDialog : DialogRoot
     [Export]
     public float BgmVolume { get; set; } = 100f;
 
+    public override void _Ready()
+    {
+        base._Ready();
+        _ = GetNode<HSlider>("Control/BgmSlider").Connect(Range.SignalName.ValueChanged, new(this, MethodName.BgmVolumeChanged));
+    }
+
     public override void Active()
     {
         UpdateDialogScreen();

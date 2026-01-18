@@ -26,6 +26,7 @@ public partial class MaidRobot1Enemy : Enemy
         _entryCount = _entryPoint is null ? 0 : _entryPoint.GetChildCount();
         _drillCount = _drillPoint is null ? 0 : _drillPoint.GetChildCount();
         GetNode<Timer>("DrillTimer").WaitTime = ShotWait;
+        _ = GetNode<Timer>("DrillTimer").Connect(Timer.SignalName.Timeout, new(this, MethodName.ShotDrill));
         GetNode<TextureProgressBar>("%HUD/BossLife").MaxValue = Life;
         GetNode<TextureProgressBar>("%HUD/BossLife").Value = Life;
     }

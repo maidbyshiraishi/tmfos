@@ -333,5 +333,3 @@ SeName = "menu_select"
 [node name="SetGameOptionsCommand" parent="Close" instance=ExtResource("17_54top")]
 
 [node name="CloseDialogCommand" parent="Close" instance=ExtResource("19_ntrhu")]
-
-[connection signal="value_changed" from="Control/BgmSlider" to="." method="BgmVolumeChanged"]

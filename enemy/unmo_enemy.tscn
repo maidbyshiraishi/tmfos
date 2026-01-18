@@ -76,7 +76,3 @@ script = ExtResource("8_x8f6o")
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 0.001
 one_shot = true
-
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
-[connection signal="body_entered" from="BurialArea" to="." method="Burialed"]

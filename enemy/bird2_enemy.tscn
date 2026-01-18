@@ -173,7 +173,3 @@ offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(17, 15)
-
-[connection signal="body_entered" from="." to="." method="HitNode2D"]
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]

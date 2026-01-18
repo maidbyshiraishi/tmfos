@@ -73,7 +73,7 @@ TouchdownSe = "player_touchdown"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = ExtResource("2_hei51")
-animation = &"swim_left"
+animation = &"walk_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rivfx")
@@ -215,7 +215,3 @@ script = ExtResource("11_o6f57")
 position = Vector2(0, 30)
 target_position = Vector2(0, 48)
 collision_mask = 3
-
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
-[connection signal="body_entered" from="BurialArea" to="." method="Burialed"]

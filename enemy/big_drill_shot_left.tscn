@@ -23,7 +23,3 @@ polygon = PackedVector2Array(208, 72, 208, -72, 128, -72, 128, -128, -208, -24, 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(32, 20.5714)
 rect = Rect2(-7, -7, 14, 14)
-
-[connection signal="area_entered" from="." to="." method="HitArea2D"]
-[connection signal="body_entered" from="." to="." method="HitNode2D"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]

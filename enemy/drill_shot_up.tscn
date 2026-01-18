@@ -25,7 +25,3 @@ shape = SubResource("RectangleShape2D_eeib8")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(2.28571, 3.42857)
 rect = Rect2(-7, -7, 14, 14)
-
-[connection signal="area_entered" from="." to="." method="HitArea2D"]
-[connection signal="body_entered" from="." to="." method="HitNode2D"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]

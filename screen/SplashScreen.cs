@@ -8,6 +8,14 @@ namespace tmfos.screen;
 /// </summary>
 public partial class SplashScreen : DialogRoot
 {
+    public override void _Ready()
+    {
+        base._Ready();
+        _ = GetNodeOrNull<AudioStreamPlayer>("Audio_1")?.Connect(AudioStreamPlayer.SignalName.Finished, new(this, MethodName.PlayAudio2));
+        _ = GetNodeOrNull<AudioStreamPlayer>("Audio_2")?.Connect(AudioStreamPlayer.SignalName.Finished, new(this, MethodName.GoNextScreen));
+        _ = GetNodeOrNull<VisibleOnScreenNotifier2D>("PlayStart")?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.PlayStart));
+    }
+
     /// <summary>
     /// ロゴアニメーションと効果音の再生を開始する
     /// </summary>

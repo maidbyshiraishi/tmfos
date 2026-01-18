@@ -343,8 +343,3 @@ SeName = "menu_select"
 [node name="SaveGameOptionsCommand" parent="Close" instance=ExtResource("4_i66bl")]
 
 [node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_fbf6f")]
-
-[connection signal="value_changed" from="Control/BgmSlider" to="." method="BgmVolumeChanged"]
-[connection signal="value_changed" from="Control/SeSlider" to="." method="SeVolumeChanged"]
-[connection signal="toggled" from="Control/FullscreenCheck" to="." method="FullscreenChanged"]
-[connection signal="pressed" from="Control/ResetScreen" to="." method="ResetDefaultScreenOptions"]

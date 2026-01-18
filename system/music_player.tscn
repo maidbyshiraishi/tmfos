@@ -17,5 +17,3 @@ bus = &"BGM"
 libraries = {
 &"fader": ExtResource("2_ee2uv")
 }
-
-[connection signal="animation_finished" from="Fader" to="." method="Finished"]

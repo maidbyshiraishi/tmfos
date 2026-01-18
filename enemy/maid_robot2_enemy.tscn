@@ -107,10 +107,3 @@ autostart = true
 
 [node name="JumpTimer" type="Timer" parent="."]
 autostart = true
-
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="show"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="Respawn"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="AnimatedSprite2D" method="hide"]
-[connection signal="body_entered" from="BurialArea" to="." method="Burialed"]
-[connection signal="timeout" from="DrillTimer" to="." method="ShotDrill"]
-[connection signal="timeout" from="JumpTimer" to="." method="Jump"]

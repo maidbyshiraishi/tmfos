@@ -10,6 +10,12 @@ public partial class SaveConfirmDialog : DialogRoot
 {
     private int _slotNo;
 
+    public override void _Ready()
+    {
+        base._Ready();
+        _ = GetNode<Button>("Control/Yes").Connect(BaseButton.SignalName.Pressed, new(this, MethodName.Yes));
+    }
+
     public override void GetArgument()
     {
         GetGameArgument("SaveConfirmDialog");

@@ -7,5 +7,3 @@ script = ExtResource("1_g0dlk")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
-
-[connection signal="timeout" from="Timer" to="." method="CorrectOnScreen"]

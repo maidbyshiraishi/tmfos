@@ -31,6 +31,7 @@ public partial class TentacleHead : Area2D, IGameNode
     {
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
+        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.Area2DEntered));
         _timer = GetNodeOrNull<Timer>("Timer");
 
         if (_timer is not null && 0.05f <= Mathf.Abs(WaitTime))

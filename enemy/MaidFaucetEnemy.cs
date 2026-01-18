@@ -22,6 +22,7 @@ public partial class MaidFaucetEnemy : PathFollowEnemy
     {
         base._Ready();
         GetNode<Timer>("Timer").WaitTime = WaitTime;
+        _ = GetNode<Timer>("Timer").Connect(Timer.SignalName.Timeout, new(this, MethodName.SpawnEnemy));
         _spawnerLeft = GetNode<EnemySpawner>("EnemySpawner/EnemySpawnerLeft");
         _spawnerRight = GetNode<EnemySpawner>("EnemySpawner/EnemySpawnerRight");
         GetNode<TextureProgressBar>("%HUD/BossLife").MaxValue = Life;

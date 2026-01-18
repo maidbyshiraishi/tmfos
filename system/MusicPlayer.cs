@@ -62,6 +62,7 @@ public partial class MusicPlayer : Node
         _deck1.VolumeDb = 0;
         _deck2.VolumeDb = 0;
         _fader = GetNode<AnimationPlayer>("Fader");
+        _ = _fader.Connect(AnimationMixer.SignalName.AnimationFinished, new(this, MethodName.Finished));
     }
 
     /// <summary>

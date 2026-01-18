@@ -56,7 +56,3 @@ offset_top = 396.0
 offset_right = 605.0
 offset_bottom = 421.0
 text = "VOICEVOX:四国めたん"
-
-[connection signal="finished" from="Audio1" to="." method="PlayAudio2"]
-[connection signal="finished" from="Audio2" to="." method="GoNextScreen"]
-[connection signal="screen_entered" from="PlayStart" to="." method="PlayStart"]

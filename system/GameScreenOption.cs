@@ -22,6 +22,7 @@ public partial class GameScreenOption : Node
 
     public override void _Ready()
     {
+        _ = GetNode<Timer>("Timer").Connect(Timer.SignalName.Timeout, new(this, MethodName.CorrectOnScreen));
         GetNode<Timer>("Timer").Start();
     }
 

@@ -84,6 +84,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
     {
         AddToGroup(StageRoot.GameNodeGroup);
         _marker = GetNode<Marker2D>("Marker2D");
+        _ = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.SpawnEnemy));
 
         if (ManualMode)
         {

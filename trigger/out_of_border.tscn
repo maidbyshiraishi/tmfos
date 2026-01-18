@@ -16,6 +16,3 @@ shape = SubResource("RectangleShape2D_etdmo")
 
 [node name="RemoveIGameNodeCommand" parent="." instance=ExtResource("4_kqf3a")]
 ExecFlag = false
-
-[connection signal="area_exited" from="." to="." method="ExecExitArea2D"]
-[connection signal="body_exited" from="." to="." method="ExecExit"]

@@ -56,11 +56,14 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
 
     public override void _Ready()
     {
+        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.HitArea2D));
+        _ = Connect(Area2D.SignalName.BodyEntered, new(this, MethodName.HitNode2D));
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
         m_animatedSprite = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
         m_visibleOnScreenNotifier2D = GetNodeOrNull<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-        _ = m_visibleOnScreenNotifier2D.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.PlaySpawnedSe));
+        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.PlaySpawnedSe));
+        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, MethodName.RemoveNode));
         CalcDirection();
     }
 

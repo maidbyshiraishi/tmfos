@@ -9,6 +9,12 @@ namespace tmfos.trigger;
 /// </summary>
 public partial class SearchPointTrigger : TriggerArea2D
 {
+    public override void _Ready()
+    {
+        base._Ready();
+        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.ItemSearched));
+    }
+
     public override void SetOpened(bool opened)
     {
         base.SetOpened(opened);

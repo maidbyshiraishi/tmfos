@@ -26,5 +26,3 @@ one_way_collision = true
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
-
-[connection signal="area_entered" from="." to="." method="Area2DEntered"]

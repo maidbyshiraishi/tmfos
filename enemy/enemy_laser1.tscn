@@ -43,7 +43,3 @@ rect = Rect2(-7, -7, 14, 14)
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 0.001
 one_shot = true
-
-[connection signal="area_entered" from="." to="." method="HitArea2D"]
-[connection signal="body_entered" from="." to="." method="HitNode2D"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]

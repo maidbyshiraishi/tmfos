@@ -26,6 +26,15 @@ public partial class OptionDialog : DialogRoot
     [Export]
     public bool Fullscreen { get; set; } = false;
 
+    public override void _Ready()
+    {
+        base._Ready();
+        _ = GetNode<HSlider>("Control/BgmSlider").Connect(Range.SignalName.ValueChanged, new(this, MethodName.BgmVolumeChanged));
+        _ = GetNode<HSlider>("Control/SeSlider").Connect(Range.SignalName.ValueChanged, new(this, MethodName.SeVolumeChanged));
+        _ = GetNode<CheckButton>("Control/FullscreenCheck").Connect(BaseButton.SignalName.Toggled, new(this, MethodName.FullscreenChanged));
+        _ = GetNode<Button>("Control/ResetScreen").Connect(BaseButton.SignalName.Pressed, new(this, MethodName.ResetDefaultScreenOptions));
+    }
+
     public override void Active()
     {
         UpdateDialogScreen();

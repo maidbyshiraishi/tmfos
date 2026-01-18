@@ -54,7 +54,3 @@ rect = Rect2(-12, -20, 24, 32)
 position = Vector2(0, 32)
 target_position = Vector2(0, 150)
 collision_mask = 8
-
-[connection signal="area_entered" from="." to="." method="HitArea2D"]
-[connection signal="body_entered" from="." to="." method="HitNode2D"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="RemoveNode"]
