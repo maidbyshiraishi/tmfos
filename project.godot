@@ -12,7 +12,7 @@ config_version=5
 
 config/name="tmfos"
 config/description="宇宙の果て、メイド座の彼方から一人のメイドが飛来した。地球は宇宙から来たメイドに支配された。15年の月日が流れ、地球の未来は密かに育てられた地球最後のメイドに託された・・・。『宇宙から来たメイド』は全31ステージを探索する2Dアクションゲームです。"
-config/version="1.2.18"
+config/version="1.2.19"
 run/main_scene="res://screen/splash_screen.tscn"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
