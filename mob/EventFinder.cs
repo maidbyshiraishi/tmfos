@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using tmfos.door;
 using tmfos.stage;
 using tmfos.trigger;
 
@@ -50,9 +51,35 @@ public partial class EventFinder : Area2D
                 continue;
             }
 
-            if (gobj is TriggerArea2D node && OverlapsArea(node) && (!node.Search || (node.Search && EventNode2D is ActionMob amob && amob.Search)))
+            if (gobj is TriggerArea2D node && OverlapsArea(node))
             {
-                node.Exec(EventNode2D);
+                // 対象ノードが調査で反応する場合
+                if (node.Search)
+                {
+                    // EventNode2Dが調査を行っている場合のみ
+                    if (EventNode2D is ActionMob amob && amob.Search)
+                    {
+                        // EventNode2Dが死亡している場合
+                        if (EventNode2D is DurableMob dmob && dmob.MobState == MobStateType.Dead)
+                        {
+                            // Warpはイベントが発生しないが、Gatewayなら発生する
+                            if (node is not Warp and Gateway)
+                            {
+                                node.Exec(EventNode2D);
+                            }
+                        }
+                        // EventNode2Dが死亡していない場合、イベントが発生する
+                        else
+                        {
+                            node.Exec(EventNode2D);
+                        }
+                    }
+                }
+                // 対象ノードが調査しなくても反応する場合、イベントが発生
+                else
+                {
+                    node.Exec(EventNode2D);
+                }
             }
         }
 
