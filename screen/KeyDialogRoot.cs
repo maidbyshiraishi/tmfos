@@ -18,6 +18,31 @@ public partial class KeyDialogRoot : DialogRoot
     private string _localActionName;
     private string _lastLabel;
 
+    public override void _Ready()
+    {
+        base._Ready();
+        _ = GetNode<Button>("Control/Up").Connect(Control.SignalName.FocusEntered, new(this, MethodName.UpInfo));
+        _ = GetNode<Button>("Control/Up").Connect(Control.SignalName.MouseEntered, new(this, MethodName.UpInfo));
+        _ = GetNode<Button>("Control/Down").Connect(Control.SignalName.FocusEntered, new(this, MethodName.DownInfo));
+        _ = GetNode<Button>("Control/Down").Connect(Control.SignalName.MouseEntered, new(this, MethodName.DownInfo));
+        _ = GetNode<Button>("Control/Left").Connect(Control.SignalName.FocusEntered, new(this, MethodName.LeftInfo));
+        _ = GetNode<Button>("Control/Left").Connect(Control.SignalName.MouseEntered, new(this, MethodName.LeftInfo));
+        _ = GetNode<Button>("Control/Right").Connect(Control.SignalName.FocusEntered, new(this, MethodName.RightInfo));
+        _ = GetNode<Button>("Control/Right").Connect(Control.SignalName.MouseEntered, new(this, MethodName.RightInfo));
+        _ = GetNode<Button>("Control/A").Connect(Control.SignalName.FocusEntered, new(this, MethodName.AInfo));
+        _ = GetNode<Button>("Control/A").Connect(Control.SignalName.MouseEntered, new(this, MethodName.AInfo));
+        _ = GetNode<Button>("Control/B").Connect(Control.SignalName.FocusEntered, new(this, MethodName.BInfo));
+        _ = GetNode<Button>("Control/B").Connect(Control.SignalName.MouseEntered, new(this, MethodName.BInfo));
+        _ = GetNode<Button>("Control/Pause").Connect(Control.SignalName.FocusEntered, new(this, MethodName.PauseInfo));
+        _ = GetNode<Button>("Control/Pause").Connect(Control.SignalName.MouseEntered, new(this, MethodName.PauseInfo));
+        _ = GetNode<Button>("Control/Option").Connect(Control.SignalName.FocusEntered, new(this, MethodName.OptionInfo));
+        _ = GetNode<Button>("Control/Option").Connect(Control.SignalName.MouseEntered, new(this, MethodName.OptionInfo));
+        _ = GetNode<Button>("Control/Screenshot").Connect(Control.SignalName.FocusEntered, new(this, MethodName.ScreenshotInfo));
+        _ = GetNode<Button>("Control/Screenshot").Connect(Control.SignalName.MouseEntered, new(this, MethodName.ScreenshotInfo));
+        _ = GetNode<Button>("Control/Help").Connect(Control.SignalName.FocusEntered, new(this, MethodName.HelpInfo));
+        _ = GetNode<Button>("Control/Help").Connect(Control.SignalName.MouseEntered, new(this, MethodName.HelpInfo));
+    }
+
     protected override void InitializeNode()
     {
         _info = GetNode<Label>("Info");

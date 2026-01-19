@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://3r16tce2nd2t"]
+[gd_scene load_steps=16 format=3 uid="uid://3r16tce2nd2t"]
 
 [ext_resource type="PackedScene" uid="uid://lidl4lyg228v" path="res://screen/key_dialog_root.tscn" id="1_51pht"]
 [ext_resource type="Texture2D" uid="uid://si3xgb2yh3n2" path="res://contents/screen/key_option_dialog/swap.png" id="2_1qi7l"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="2_3h2oq"]
 [ext_resource type="PackedScene" uid="uid://b0u0fyqn1oqdg" path="res://command/load_key_options_command.tscn" id="2_b7ksl"]
+[ext_resource type="Script" uid="uid://04o7wx12l1xe" path="res://screen/KeyOptionDialog.cs" id="2_g1bn6"]
 [ext_resource type="PackedScene" uid="uid://cu6skmjvn6qt1" path="res://command/save_key_options_command.tscn" id="2_o5guw"]
 [ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/update_dialog_screen_command.tscn" id="2_q4wlk"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_h8vmb"]
@@ -16,6 +17,7 @@
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="12_61sft"]
 
 [node name="KeyOptionDialog" instance=ExtResource("1_51pht")]
+script = ExtResource("2_g1bn6")
 
 [node name="Border" parent="." index="1"]
 offset_left = 16.0
@@ -186,17 +188,3 @@ SeName = "menu_select"
 [node name="SaveKeyOptionsCommand" parent="Close" index="1" instance=ExtResource("2_o5guw")]
 
 [node name="CloseDialogCommand" parent="Close" index="2" instance=ExtResource("5_wq4oo")]
-
-[connection signal="pressed" from="Control/Up" to="." method="UpSet"]
-[connection signal="pressed" from="Control/Down" to="." method="DownSet"]
-[connection signal="pressed" from="Control/Left" to="." method="LeftSet"]
-[connection signal="pressed" from="Control/Right" to="." method="RightSet"]
-[connection signal="pressed" from="Control/A" to="." method="ASet"]
-[connection signal="pressed" from="Control/B" to="." method="BSet"]
-[connection signal="pressed" from="Control/Pause" to="." method="PauseSet"]
-[connection signal="pressed" from="Control/Option" to="." method="OptionSet"]
-[connection signal="pressed" from="Control/Screenshot" to="." method="ScreenshotSet"]
-[connection signal="pressed" from="Control/Help" to="." method="HelpSet"]
-[connection signal="focus_entered" from="Control/Swap" to="." method="SwapInfo"]
-[connection signal="mouse_entered" from="Control/Swap" to="." method="SwapInfo"]
-[connection signal="pressed" from="Control/Swap" to="." method="SwapAB"]
