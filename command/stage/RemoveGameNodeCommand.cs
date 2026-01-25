@@ -6,7 +6,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// 接触したIGameNodeを除去するコマンド
 /// </summary>
-public partial class RemoveIGameNodeCommand : CommandNode
+public partial class RemoveGameNodeCommand : CommandNode
 {
     public override void DoCommand(Node node, bool flag)
     {

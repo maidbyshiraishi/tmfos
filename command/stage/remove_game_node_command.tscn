@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://6wed4oxwfoko"]
 
-[ext_resource type="Script" uid="uid://bp4iialtujabn" path="res://command/stage/RemoveIGameNodeCommand.cs" id="1_m0m3r"]
+[ext_resource type="Script" uid="uid://bp4iialtujabn" path="res://command/stage/RemoveGameNodeCommand.cs" id="1_m0m3r"]
 
 [node name="RemoveIGameNodeCommand" type="Node"]
 script = ExtResource("1_m0m3r")

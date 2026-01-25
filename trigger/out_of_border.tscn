@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdkba5kbxtem5"]
 
 [ext_resource type="Script" uid="uid://tviqhd82ni7e" path="res://trigger/CollisionTrigger.cs" id="1_pwe44"]
-[ext_resource type="PackedScene" uid="uid://6wed4oxwfoko" path="res://command/stage/remove_i_game_node_command.tscn" id="4_kqf3a"]
+[ext_resource type="PackedScene" uid="uid://6wed4oxwfoko" path="res://command/stage/remove_game_node_command.tscn" id="4_kqf3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etdmo"]
 size = Vector2(32, 32)
