@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvfryyxcw20bs"]
 
-[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="1_wceco"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="1_wceco"]
 [ext_resource type="SpriteFrames" uid="uid://c2wtd3ggo53g2" path="res://contents/animation/decoration/exit.tres" id="2_6nifu"]
 
 [node name="Exit" type="Node2D"]

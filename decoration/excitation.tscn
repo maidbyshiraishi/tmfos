@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p7acrf4hg7rc" path="res://decoration/Decoration.cs" id="1_hiqpa"]
 [ext_resource type="SpriteFrames" uid="uid://c16ugm37o7apr" path="res://contents/animation/decoration/excitation.tres" id="2_towrs"]
-[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="3_b27se"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="3_b27se"]
 
 [node name="Excitation" type="Node2D"]
 script = ExtResource("1_hiqpa")

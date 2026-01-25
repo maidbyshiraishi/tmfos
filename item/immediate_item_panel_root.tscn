@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="5_m28hp"]
 [ext_resource type="PackedScene" uid="uid://cp3ibei2jj3um" path="res://command/state/state_backup_command.tscn" id="5_uhx74"]
 [ext_resource type="PackedScene" uid="uid://dj0umxahix241" path="res://command/stage/switch_open_or_close_animation_command.tscn" id="6_5svtm"]
-[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="7_5odch"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/decoration/show_floating_message_command.tscn" id="7_5odch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
 size = Vector2(32, 32)

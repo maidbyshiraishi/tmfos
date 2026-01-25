@@ -1,5 +1,5 @@
 using Godot;
-using tmfos.command;
+using tmfos.command.stage;
 using tmfos.data;
 using tmfos.item;
 using tmfos.mob;

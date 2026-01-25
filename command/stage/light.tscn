@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuoskst448e28"]
 
-[ext_resource type="Script" uid="uid://c5n54y3nte4hq" path="res://command/Light.cs" id="1_6dydd"]
+[ext_resource type="Script" uid="uid://c5n54y3nte4hq" path="res://command/stage/Light.cs" id="1_6dydd"]
 [ext_resource type="Texture2D" uid="uid://dlo2wegv2i24e" path="res://contents/image/decoration/light.png" id="2_1vioq"]
 [ext_resource type="Animation" uid="uid://nng53c367du7" path="res://contents/animation/decoration/light.tres" id="3_w32dp"]
 

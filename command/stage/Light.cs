@@ -1,7 +1,7 @@
 using Godot;
 using tmfos.stage;
 
-namespace tmfos.command;
+namespace tmfos.command.stage;
 
 /// <summary>
 /// 光源として機能する

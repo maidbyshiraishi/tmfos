@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yyq021ra4g7a"]
 
-[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="1_tj1y7"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="1_tj1y7"]
 [ext_resource type="SpriteFrames" uid="uid://nng8hgmdiujw" path="res://contents/animation/decoration/torch.tres" id="2_ue0c3"]
 
 [node name="Torch" type="Node2D"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drm6s3qj4id31" path="res://item/item_panel_root.tscn" id="1_r2upk"]
 [ext_resource type="SpriteFrames" uid="uid://bkf16286rfo6f" path="res://contents/animation/item/item_lamp.tres" id="2_xe4j0"]
-[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="3_5tyoj"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="3_5tyoj"]
 
 [node name="ItemPanelLamp" instance=ExtResource("1_r2upk")]
 Item = 5

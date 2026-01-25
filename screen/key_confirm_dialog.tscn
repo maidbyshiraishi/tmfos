@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="4_ssfbl"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="5_xjasl"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_4cohy"]
-[ext_resource type="PackedScene" uid="uid://bo3ormts8hwjb" path="res://command/open_file_manager_command.tscn" id="7_ssfbl"]
+[ext_resource type="PackedScene" uid="uid://bo3ormts8hwjb" path="res://command/dialog/open_file_manager_command.tscn" id="7_ssfbl"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="8_mby00"]
 
 [node name="KeyConfirmDialog" instance=ExtResource("1_51pht")]

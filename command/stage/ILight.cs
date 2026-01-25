@@ -1,4 +1,4 @@
-namespace tmfos.command;
+namespace tmfos.command.stage;
 
 /// <summary>
 /// 光源のインタフェース

@@ -1,7 +1,7 @@
 using Godot;
 using tmfos.system;
 
-namespace tmfos.command;
+namespace tmfos.command.decoration;
 
 /// <summary>
 /// フローティングメッセージを表示するコマンド

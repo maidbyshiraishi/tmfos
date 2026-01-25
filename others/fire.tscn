@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpnf82ngscqro" path="res://trigger/manage_durability_zone.tscn" id="1_p5xko"]
 [ext_resource type="SpriteFrames" uid="uid://cwed04ka2vl2b" path="res://contents/animation/fire.tres" id="2_igr3h"]
-[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="3_y4siv"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="3_y4siv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkuvg"]
 size = Vector2(32, 17)

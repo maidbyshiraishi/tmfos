@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="5_j6mxv"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_kjl5n"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="5_wq4oo"]
-[ext_resource type="PackedScene" uid="uid://bo3ormts8hwjb" path="res://command/open_file_manager_command.tscn" id="11_g1bn6"]
+[ext_resource type="PackedScene" uid="uid://bo3ormts8hwjb" path="res://command/dialog/open_file_manager_command.tscn" id="11_g1bn6"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="12_1avvt"]
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="12_61sft"]
 

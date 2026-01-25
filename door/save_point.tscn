@@ -9,7 +9,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c8u4kthw1kiu5" path="res://contents/animation/save.tres" id="4_hldde"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="6_cc5kf"]
 [ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/stage/set_player_initial_durability_command.tscn" id="6_mur3q"]
-[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/light.tscn" id="6_ntwn3"]
+[ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="6_ntwn3"]
 [ext_resource type="PackedScene" uid="uid://eywnthgffkk6" path="res://command/stage/reset_player_life_time_command.tscn" id="7_6s2y6"]
 [ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state/state_save_command.tscn" id="8_0kbx6"]
 [ext_resource type="PackedScene" uid="uid://yg1jndcg1o16" path="res://command/stage/update_save_point_door_no_command.tscn" id="8_b2nrd"]

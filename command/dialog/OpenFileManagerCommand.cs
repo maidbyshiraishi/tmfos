@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.command;
+namespace tmfos.command.dialog;
 
 /// <summary>
 /// システムのファイルマネージャで指定フォルダを開くコマンド
