@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4nssb2x5202j"]
+
+[ext_resource type="Script" uid="uid://ccbq2s2l1ovgq" path="res://command/stage/SearchContainer.cs" id="1_fs153"]
+
+[node name="SearchContainer" type="Node2D"]
+script = ExtResource("1_fs153")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_oea57"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_cvu3c"]
-[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="3_d1l78"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/audio/change_bgm_command.tscn" id="3_d1l78"]
 [ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="4_ss83w"]
 [ext_resource type="PackedScene" uid="uid://bxxxgp6ky5syd" path="res://trigger/invisible_trigger.tscn" id="5_yivp3"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="5_yk18a"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dgm70g5qndbge" path="res://contents/image/theater/ending_photo.png" id="8_5kpdt"]
 [ext_resource type="AudioStream" uid="uid://b80xdq1t3o76e" path="res://contents/bgm/bgm9.ogg" id="8_ghp75"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="9_1ty71"]
-[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="10_0nalh"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/go_screen_command.tscn" id="10_0nalh"]
 
 [node name="ScrollTheater" instance=ExtResource("1_oea57")]
 ScrollTime = 50.0

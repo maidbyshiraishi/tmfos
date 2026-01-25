@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpnf82ngscqro"]
 
 [ext_resource type="Script" uid="uid://dkven1yqg1k2o" path="res://trigger/ManageDurabilityZone.cs" id="1_vhgu6"]
-[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/add_durability_command.tscn" id="5_bj607"]
+[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/stage/add_durability_command.tscn" id="5_bj607"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vacp2"]
 

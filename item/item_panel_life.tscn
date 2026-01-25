@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvyr6cwo7qbyg" path="res://item/immediate_item_panel_root.tscn" id="1_6i0vj"]
 [ext_resource type="SpriteFrames" uid="uid://chqgwyu7tws1m" path="res://contents/animation/item/item_life.tres" id="2_upol7"]
-[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/add_durability_command.tscn" id="3_sj287"]
+[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/stage/add_durability_command.tscn" id="3_sj287"]
 
 [node name="ItemPanelLife" instance=ExtResource("1_6i0vj")]
 

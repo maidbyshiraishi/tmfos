@@ -6,17 +6,17 @@
 [ext_resource type="AudioStream" uid="uid://bs70k8qsse4p5" path="res://contents/bgm/bgm2.ogg" id="3_xoh7v"]
 [ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="4_dhnnd"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="6_xtjut"]
-[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="7_0002q"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="7_0002q"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="8_l4ku3"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="9_bvcnx"]
-[ext_resource type="PackedScene" uid="uid://dfi1gl664gbvs" path="res://command/reset_timer_trigger_command.tscn" id="10_wn5nd"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="9_bvcnx"]
+[ext_resource type="PackedScene" uid="uid://dfi1gl664gbvs" path="res://command/timer/reset_timer_trigger_command.tscn" id="10_wn5nd"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="13_6nn80"]
-[ext_resource type="PackedScene" uid="uid://8jidpood58yw" path="res://command/start_timer_trigger_command.tscn" id="14_bx83m"]
-[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="15_7piwm"]
-[ext_resource type="Script" uid="uid://dfext5h4kynvd" path="res://command/VersionLabelCommand.cs" id="16_45g42"]
-[ext_resource type="PackedScene" uid="uid://c1wi0ukoa0dym" path="res://command/pause_timer_trigger_command.tscn" id="16_uikkl"]
+[ext_resource type="PackedScene" uid="uid://8jidpood58yw" path="res://command/timer/start_timer_trigger_command.tscn" id="14_bx83m"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/audio/change_bgm_command.tscn" id="15_7piwm"]
+[ext_resource type="PackedScene" uid="uid://ctnrrxrxe4c7f" path="res://command/version_label_command.tscn" id="15_sx63f"]
+[ext_resource type="PackedScene" uid="uid://c1wi0ukoa0dym" path="res://command/timer/pause_timer_trigger_command.tscn" id="16_uikkl"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="17_uhsa7"]
-[ext_resource type="PackedScene" uid="uid://ye80q7cyvfw8" path="res://command/quit_game_command.tscn" id="18_85irx"]
+[ext_resource type="PackedScene" uid="uid://ye80q7cyvfw8" path="res://command/dialog/quit_game_command.tscn" id="18_85irx"]
 
 [node name="TitleScreen" type="Control"]
 light_mask = 2
@@ -201,9 +201,7 @@ Stream = ExtResource("3_xoh7v")
 ExecFlag = false
 Target = NodePath("../../Timer/TimerTrigger")
 
-[node name="VersionLabelCommand" type="Node" parent="Focus" node_paths=PackedStringArray("VersionLabel")]
-script = ExtResource("16_45g42")
-VersionLabel = NodePath("../../LabelVersionNo")
+[node name="VersionLabelCommand" parent="Focus" instance=ExtResource("15_sx63f")]
 
 [node name="EscapeKey" parent="." instance=ExtResource("17_uhsa7")]
 ActionName = "escape"

@@ -1,6 +1,4 @@
 using Godot;
-using Godot.Collections;
-using tmfos.system;
 
 namespace tmfos.screen;
 

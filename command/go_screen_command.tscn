@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvbavm6ut2uel"]
-
-[ext_resource type="Script" uid="uid://dbsfqido7cny6" path="res://command/GoScreenCommand.cs" id="1_g8x0u"]
-
-[node name="GoScreenCommand" type="Node"]
-script = ExtResource("1_g8x0u")

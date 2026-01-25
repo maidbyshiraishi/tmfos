@@ -1,5 +1,5 @@
 using Godot;
-using tmfos.command;
+using tmfos.command.dialog;
 using tmfos.system;
 
 namespace tmfos.screen;

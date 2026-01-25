@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs0mq2ewy3jol"]
-
-[ext_resource type="Script" uid="uid://xotysbs4egq1" path="res://command/RemoveFlagDataCommand.cs" id="1_ro3wv"]
-
-[node name="RemoveFlagDataCommand" type="Node"]
-script = ExtResource("1_ro3wv")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://g1lqac5js7pi"]
+
+[ext_resource type="Script" uid="uid://dbxetb3vrrlqt" path="res://command/theater/GoPageCommand.cs" id="1_ft2mr"]
+
+[node name="GoPageCommand" type="Node"]
+script = ExtResource("1_ft2mr")

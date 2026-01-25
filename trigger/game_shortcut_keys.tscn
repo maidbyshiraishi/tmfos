@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://t3a2cd5gj8rn"]
 
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="1_0p2nk"]
-[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="2_p8wi1"]
-[ext_resource type="PackedScene" uid="uid://c51q2ghy4gmm2" path="res://command/unset_search_command.tscn" id="3_x0rtt"]
-[ext_resource type="PackedScene" uid="uid://c7a0l1457fyug" path="res://command/open_status_dialog_command.tscn" id="4_schj0"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="2_p8wi1"]
+[ext_resource type="PackedScene" uid="uid://c51q2ghy4gmm2" path="res://command/stage/unset_search_command.tscn" id="3_x0rtt"]
+[ext_resource type="PackedScene" uid="uid://c7a0l1457fyug" path="res://command/dialog/open_status_dialog_command.tscn" id="4_schj0"]
 
 [node name="GameShortcutKeys" type="Node"]
 

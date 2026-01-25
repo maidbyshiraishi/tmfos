@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctnrrxrxe4c7f"]
+
+[ext_resource type="Script" uid="uid://dfext5h4kynvd" path="res://command/VersionLabelCommand.cs" id="1_4gym8"]
+
+[node name="VersionLabelCommand" type="Node" node_paths=PackedStringArray("VersionLabel")]
+script = ExtResource("1_4gym8")
+VersionLabel = NodePath("")

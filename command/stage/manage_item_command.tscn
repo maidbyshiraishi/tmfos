@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djhc7dqnrqetm"]
+
+[ext_resource type="Script" uid="uid://fhgpduce0onp" path="res://command/stage/ManageItemCommand.cs" id="1_d81hk"]
+
+[node name="ManageItemCommand" type="Node"]
+script = ExtResource("1_d81hk")

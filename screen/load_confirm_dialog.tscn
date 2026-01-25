@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://bfmrm7eam6k0y" path="res://screen/LoadConfirmDialog.cs" id="2_vuwxi"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_cwijq"]
 [ext_resource type="Texture2D" uid="uid://bhriv1fhw8rgk" path="res://contents/image/null.png" id="3_vrhlx"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_jlgsu"]
-[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_u4xrp"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="4_jlgsu"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="4_u4xrp"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_u5n53"]
-[ext_resource type="PackedScene" uid="uid://closkw7p3bd1g" path="res://command/open_game_command.tscn" id="6_ts8r3"]
+[ext_resource type="PackedScene" uid="uid://closkw7p3bd1g" path="res://command/dialog/open_game_command.tscn" id="6_ts8r3"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="7_6u611"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="8_j6b1a"]
 

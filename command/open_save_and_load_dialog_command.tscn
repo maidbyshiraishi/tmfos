@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdrvd77nuu0w"]
-
-[ext_resource type="Script" uid="uid://d02j07g8t56bt" path="res://command/OpenSaveAndLoadDialogCommand.cs" id="1_jdeer"]
-
-[node name="OpenSaveAndLoadDialogCommand" type="Node"]
-script = ExtResource("1_jdeer")
-DialogPath = "res://screen/save_and_load_dialog.tscn"

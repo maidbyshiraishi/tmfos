@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://eywnthgffkk6"]
-
-[ext_resource type="Script" uid="uid://g54hkd4v14jn" path="res://command/ResetPlayerLifeTimeCommand.cs" id="1_nslv0"]
-
-[node name="ResetPlayerLifeTimeCommand" type="Node"]
-script = ExtResource("1_nslv0")

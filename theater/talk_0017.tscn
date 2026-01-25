@@ -4,8 +4,8 @@
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_l6inm"]
 [ext_resource type="Texture2D" uid="uid://dvukdxt2pi3t7" path="res://contents/image/theater/talk_nekomimi_maid_gold.png" id="3_qpr51"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="4_mkkl6"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_wv8id"]
-[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="7_8egqi"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="5_wv8id"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="7_8egqi"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="8_j8wss"]
 
 [node name="StoryTheater" instance=ExtResource("1_q61he")]

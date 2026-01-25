@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://yg1jndcg1o16"]
+
+[ext_resource type="Script" uid="uid://b47utiljol5go" path="res://command/stage/UpdateSavePointDoorNoCommand.cs" id="1_jjd48"]
+
+[node name="UpdateSavePointDoorNoCommand" type="Node"]
+script = ExtResource("1_jjd48")

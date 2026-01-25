@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b17554w0hqp2u"]
+
+[ext_resource type="Script" uid="uid://d1pgie772qaw8" path="res://command/dialog/OpenSaveConfirmDialogCommand.cs" id="1_oxr3g"]
+
+[node name="OpenSaveConfirmDialogCommand" type="Node"]
+script = ExtResource("1_oxr3g")
+SlotNo = 1

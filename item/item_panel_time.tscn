@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvyr6cwo7qbyg" path="res://item/immediate_item_panel_root.tscn" id="1_sto4b"]
 [ext_resource type="SpriteFrames" uid="uid://g2hgs6epsra3" path="res://contents/animation/item/item_time.tres" id="2_p761n"]
-[ext_resource type="PackedScene" uid="uid://eywnthgffkk6" path="res://command/reset_player_life_time_command.tscn" id="3_vknxa"]
+[ext_resource type="PackedScene" uid="uid://eywnthgffkk6" path="res://command/stage/reset_player_life_time_command.tscn" id="3_vknxa"]
 
 [node name="ItemPanelTime" instance=ExtResource("1_sto4b")]
 

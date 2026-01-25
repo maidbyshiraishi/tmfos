@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3nhpeeabskkp"]
-
-[ext_resource type="Script" uid="uid://evipwpg77bcg" path="res://command/AddFlagDataCommand.cs" id="1_fchr6"]
-
-[node name="AddFlagDataCommand" type="Node"]
-script = ExtResource("1_fchr6")

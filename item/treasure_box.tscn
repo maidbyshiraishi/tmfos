@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bvyr6cwo7qbyg" path="res://item/immediate_item_panel_root.tscn" id="1_3q3rh"]
 [ext_resource type="Script" uid="uid://bae8vugtphfb8" path="res://item/TreasureBox.cs" id="2_b6lv8"]
 [ext_resource type="SpriteFrames" uid="uid://b3320best2cvx" path="res://contents/animation/treasure_box.tres" id="2_i1di1"]
-[ext_resource type="PackedScene" uid="uid://d1m64yhaigvik" path="res://command/add_score_command.tscn" id="3_c6o37"]
+[ext_resource type="PackedScene" uid="uid://d1m64yhaigvik" path="res://command/stage/add_score_command.tscn" id="3_c6o37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8usy"]
 size = Vector2(32, 24)

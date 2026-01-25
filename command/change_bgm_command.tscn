@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwnbq0d05nrbf"]
-
-[ext_resource type="Script" uid="uid://cmc7lb4w2k00e" path="res://command/ChangeBgmCommand.cs" id="1_n8i87"]
-
-[node name="ChangeBgmCommand" type="Node"]
-script = ExtResource("1_n8i87")

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwp4y1nte25hm"]
-
-[ext_resource type="Script" uid="uid://dqso6jtjku5ct" path="res://command/AddRemainCommand.cs" id="1_xwiq6"]
-
-[node name="AddRemainCommand" type="Node"]
-script = ExtResource("1_xwiq6")

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bwdcyrlhfp7k5" path="res://others/barrier.tscn" id="3_3lnbd"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="4_bcg8s"]
 [ext_resource type="PackedScene" uid="uid://du3iipceh2xvo" path="res://command/conditional_command.tscn" id="5_nyife"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="6_jvoge"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="6_jvoge"]
 [ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://command/free_command.tscn" id="7_j4wo5"]
 [ext_resource type="PackedScene" uid="uid://byeqvar802p5v" path="res://door/boss_door.tscn" id="8_n1tft"]
 [ext_resource type="PackedScene" uid="uid://6fi87qq65ewm" path="res://trigger/talk_nekomimi_maid.tscn" id="9_ovfqy"]

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="7_mqyhy"]
 [ext_resource type="PackedScene" uid="uid://cp0tb8otk67q3" path="res://trigger/search_trigger.tscn" id="8_m3kq4"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="8_t0twg"]
-[ext_resource type="PackedScene" uid="uid://4nssb2x5202j" path="res://command/search_container.tscn" id="9_idsxm"]
+[ext_resource type="PackedScene" uid="uid://4nssb2x5202j" path="res://command/stage/search_container.tscn" id="9_idsxm"]
 [ext_resource type="PackedScene" uid="uid://8636t7qupfox" path="res://trigger/search_point_trigger.tscn" id="11_8kxpr"]
 [ext_resource type="PackedScene" uid="uid://bduv525n6j7aa" path="res://door/warp.tscn" id="12_p3een"]
 [ext_resource type="PackedScene" uid="uid://c48l268v1hmlo" path="res://item/treasure_box.tscn" id="12_pqejh"]

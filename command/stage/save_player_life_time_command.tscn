@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctmg15jks4p00"]
+
+[ext_resource type="Script" uid="uid://bfsb8mm4cdahw" path="res://command/stage/SavePlayerLifeTimeCommand.cs" id="1_ixj6j"]
+
+[node name="SavePlayerLifeTimeCommand" type="Node"]
+script = ExtResource("1_ixj6j")

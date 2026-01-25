@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp3ibei2jj3um"]
+
+[ext_resource type="Script" uid="uid://d23o53s8j4fgy" path="res://command/state/StateBackupCommand.cs" id="1_mqvln"]
+
+[node name="StateBackupCommand" type="Node"]
+script = ExtResource("1_mqvln")

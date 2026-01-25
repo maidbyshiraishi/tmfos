@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_w8hyl"]
 [ext_resource type="Script" uid="uid://dx6ivbf123nq1" path="res://screen/KeyDialogRoot.cs" id="2_em2c1"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_hsus7"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_mrjcw"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="4_mrjcw"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_3ci4d"]
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="6_ncksm"]
 

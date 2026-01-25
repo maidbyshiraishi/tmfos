@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy1dvjhw72vd8"]
-
-[ext_resource type="Script" uid="uid://drj5biu5sbq2a" path="res://command/ResetDefaultKeyOptionsCommand.cs" id="1_lh16w"]
-
-[node name="ResetDefaultKeyOptionsCommand" type="Node"]
-script = ExtResource("1_lh16w")

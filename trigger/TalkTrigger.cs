@@ -1,6 +1,6 @@
 using Godot;
 using Godot.Collections;
-using tmfos.command;
+using tmfos.command.dialog;
 
 namespace tmfos.trigger;
 

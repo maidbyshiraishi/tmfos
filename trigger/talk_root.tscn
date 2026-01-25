@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c1gge3p0ykhy" path="res://trigger/TalkTrigger.cs" id="1_od0iu"]
 [ext_resource type="SpriteFrames" uid="uid://cjfnovaq4k8mu" path="res://contents/animation/decoration/bubble.tres" id="2_22sft"]
-[ext_resource type="PackedScene" uid="uid://c51q2ghy4gmm2" path="res://command/unset_search_command.tscn" id="4_d2v77"]
-[ext_resource type="PackedScene" uid="uid://2tm1u7k815es" path="res://command/stop_player_move_command.tscn" id="5_i4ykg"]
-[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="6_b4is8"]
+[ext_resource type="PackedScene" uid="uid://c51q2ghy4gmm2" path="res://command/stage/unset_search_command.tscn" id="4_d2v77"]
+[ext_resource type="PackedScene" uid="uid://2tm1u7k815es" path="res://command/stage/stop_player_move_command.tscn" id="5_i4ykg"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="6_b4is8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_taod5"]
 size = Vector2(20, 64)

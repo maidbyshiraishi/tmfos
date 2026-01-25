@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cexw0onoh1fm1" path="res://contents/image/barrier.png" id="1_1hjrb"]
 [ext_resource type="Script" uid="uid://b8pxskd78s3kv" path="res://trigger/TriggerArea2D.cs" id="1_7fh5b"]
-[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/add_durability_command.tscn" id="3_p4orh"]
+[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/stage/add_durability_command.tscn" id="3_p4orh"]
 [ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="4_4gnrv"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_66uct"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="5_66uct"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tifsx"]
 atlas = ExtResource("1_1hjrb")

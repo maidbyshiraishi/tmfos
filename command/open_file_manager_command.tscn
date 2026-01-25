@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo3ormts8hwjb"]
+
+[ext_resource type="Script" uid="uid://cfo0do8tadpiv" path="res://command/OpenFileManagerCommand.cs" id="1_dbgx0"]
+
+[node name="OpenFileManagerCommand" type="Node"]
+script = ExtResource("1_dbgx0")

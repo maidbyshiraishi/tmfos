@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu6skmjvn6qt1"]
+
+[ext_resource type="Script" uid="uid://5d1enkc8e842" path="res://command/option/SaveKeyOptionsCommand.cs" id="1_3hjdn"]
+
+[node name="SaveKeyOptionsCommand" type="Node"]
+script = ExtResource("1_3hjdn")

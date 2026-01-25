@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://c2ou3vlk72cmw" path="res://screen/MessageDialog.cs" id="2_2kunl"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_27h6v"]
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="3_r7xw0"]
-[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_be5gd"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="4_be5gd"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="5_d1gj3"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_ny3dk"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="5_ny3dk"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_8kyvh"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="7_nxi2a"]
 

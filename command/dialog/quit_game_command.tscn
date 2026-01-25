@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ye80q7cyvfw8"]
+
+[ext_resource type="Script" uid="uid://qta4fba4deyo" path="res://command/dialog/QuitGameCommand.cs" id="1_mjg6y"]
+
+[node name="QuitGameCommand" type="Node"]
+script = ExtResource("1_mjg6y")

@@ -1,5 +1,6 @@
 using Godot;
-using tmfos.command;
+using tmfos.command.dialog;
+using tmfos.command.stage;
 using tmfos.mob;
 using tmfos.trigger;
 

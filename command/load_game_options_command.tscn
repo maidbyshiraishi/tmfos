@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxuhm7osw7v00"]
-
-[ext_resource type="Script" uid="uid://bpopks4ihewmv" path="res://command/LoadGameOptionsCommand.cs" id="1_sdbwt"]
-
-[node name="LoadGameOptionsCommand" type="Node"]
-script = ExtResource("1_sdbwt")

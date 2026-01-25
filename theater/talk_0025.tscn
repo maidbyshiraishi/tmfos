@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_xgt58"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_edor5"]
 [ext_resource type="Texture2D" uid="uid://wuqe5q1lnttq" path="res://contents/image/theater/talk_nekomimi_maid_pink_m.png" id="3_o5m44"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_sq2l4"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="4_sq2l4"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="5_jo4vb"]
-[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="6_pxull"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="6_pxull"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="7_l87x2"]
 
 [node name="StoryTheater" instance=ExtResource("1_xgt58")]

@@ -1,4 +1,4 @@
-using tmfos.command;
+using tmfos.command.stage;
 using tmfos.trigger;
 
 namespace tmfos.item;

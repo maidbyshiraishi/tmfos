@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c21hot266v86s"]
+
+[ext_resource type="Script" uid="uid://bjj4gry20kndp" path="res://command/theater/GoNextPageCommand.cs" id="1_nfmq4"]
+
+[node name="GoNextPageCommand" type="Node"]
+script = ExtResource("1_nfmq4")

@@ -1,6 +1,6 @@
 using Godot;
 using Godot.Collections;
-using tmfos.command;
+using tmfos.command.stage;
 using tmfos.data;
 using tmfos.enemy;
 using tmfos.hud;

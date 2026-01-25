@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1wi0ukoa0dym"]
+
+[ext_resource type="Script" uid="uid://cld1es4mv8ts8" path="res://command/timer/PauseTimerTriggerCommand.cs" id="1_27afj"]
+
+[node name="PauseTimerTriggerCommand" type="Node"]
+script = ExtResource("1_27afj")

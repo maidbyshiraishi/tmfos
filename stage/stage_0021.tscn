@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dx6rootboa8f4" path="res://player/player.tscn" id="14_1cdpq"]
 [ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="15_p1e7y"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="16_606o8"]
-[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="17_w04v3"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/audio/change_bgm_command.tscn" id="17_w04v3"]
 [ext_resource type="AudioStream" uid="uid://dbcsppfshlabl" path="res://contents/bgm/bgm8.ogg" id="18_mqwns"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="19_cekdx"]
 

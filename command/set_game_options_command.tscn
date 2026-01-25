@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://brisrw4lbj3fy"]
-
-[ext_resource type="Script" uid="uid://cgbl2gs7xx76i" path="res://command/SetGameOptionsCommand.cs" id="1_nvlxd"]
-
-[node name="SetGameOptionsCommand" type="Node"]
-script = ExtResource("1_nvlxd")

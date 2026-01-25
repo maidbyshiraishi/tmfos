@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_hkun2"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_enhlb"]
-[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="4_qo557"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/audio/change_bgm_command.tscn" id="4_qo557"]
 [ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="5_7ds7q"]
 [ext_resource type="PackedScene" uid="uid://bxxxgp6ky5syd" path="res://trigger/invisible_trigger.tscn" id="5_im1r4"]
 [ext_resource type="Texture2D" uid="uid://cv81a3o8fnnqx" path="res://contents/image/theater/talk_player.png" id="5_qlvsl"]
-[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/go_screen_command.tscn" id="7_pualw"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/go_screen_command.tscn" id="7_pualw"]
 
 [node name="ScrollTheater" instance=ExtResource("1_hkun2")]
 metadata/_edit_vertical_guides_ = [320.0]

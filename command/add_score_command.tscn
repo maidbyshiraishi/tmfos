@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1m64yhaigvik"]
-
-[ext_resource type="Script" uid="uid://ua7vpk6o2wv1" path="res://command/AddScoreCommand.cs" id="1_hgx0w"]
-
-[node name="AddScoreCommand" type="Node"]
-script = ExtResource("1_hgx0w")

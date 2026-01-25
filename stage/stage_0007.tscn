@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cdka7121qpbnn" path="res://contents/image/background/pink_gradation.png" id="5_xqilb"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="6_2qh0d"]
 [ext_resource type="PackedScene" uid="uid://d3x0uq0uifrnp" path="res://door/save_point.tscn" id="7_14p3a"]
-[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage_entry_point.tscn" id="8_odj2h"]
+[ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage/stage_entry_point.tscn" id="8_odj2h"]
 [ext_resource type="PackedScene" uid="uid://0k7eapnlceja" path="res://door/transparency_warp.tscn" id="9_agjov"]
 [ext_resource type="PackedScene" uid="uid://8636t7qupfox" path="res://trigger/search_point_trigger.tscn" id="10_w63k4"]
 [ext_resource type="PackedScene" uid="uid://c48l268v1hmlo" path="res://item/treasure_box.tscn" id="11_xb4jx"]

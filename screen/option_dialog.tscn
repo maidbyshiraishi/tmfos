@@ -4,18 +4,18 @@
 [ext_resource type="Script" uid="uid://dbgqehgiq62lx" path="res://screen/OptionDialog.cs" id="2_6qroc"]
 [ext_resource type="Script" uid="uid://q4ticmy1aui1" path="res://gui/CommandButton.cs" id="3_ll8rd"]
 [ext_resource type="Script" uid="uid://b06hw6ekb5ra3" path="res://gui/CommandHSlider.cs" id="3_qt1xi"]
-[ext_resource type="PackedScene" uid="uid://bvxgt01dp4as0" path="res://command/save_game_options_command.tscn" id="4_i66bl"]
-[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="5_fbf6f"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="6_1beei"]
+[ext_resource type="PackedScene" uid="uid://bvxgt01dp4as0" path="res://command/option/save_game_options_command.tscn" id="4_i66bl"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="5_fbf6f"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="6_1beei"]
 [ext_resource type="Script" uid="uid://bx6js6k5haswe" path="res://gui/CommandCheckButton.cs" id="6_523ew"]
-[ext_resource type="PackedScene" uid="uid://cxuhm7osw7v00" path="res://command/load_game_options_command.tscn" id="6_ox5kl"]
-[ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://command/set_game_options_command.tscn" id="7_54itn"]
+[ext_resource type="PackedScene" uid="uid://cxuhm7osw7v00" path="res://command/option/load_game_options_command.tscn" id="6_ox5kl"]
+[ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://command/option/set_game_options_command.tscn" id="7_54itn"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="7_m7caj"]
-[ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/update_dialog_screen_command.tscn" id="8_foflq"]
-[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="10_2vtvi"]
-[ext_resource type="PackedScene" uid="uid://db5heldrmq227" path="res://command/reset_default_game_options_command.tscn" id="13_gepbg"]
+[ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/dialog/update_dialog_screen_command.tscn" id="8_foflq"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="10_2vtvi"]
+[ext_resource type="PackedScene" uid="uid://db5heldrmq227" path="res://command/option/reset_default_game_options_command.tscn" id="13_gepbg"]
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="14_2iwl1"]
-[ext_resource type="Script" uid="uid://cfo0do8tadpiv" path="res://command/OpenFileManagerCommand.cs" id="14_j4mxk"]
+[ext_resource type="PackedScene" uid="uid://bo3ormts8hwjb" path="res://command/open_file_manager_command.tscn" id="14_edkss"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="16_0176u"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="17_04yvk"]
 
@@ -292,8 +292,7 @@ script = ExtResource("3_ll8rd")
 [node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="OpenFileManagerCommand" type="Node" parent="Control/OpenFileManager/Exec"]
-script = ExtResource("14_j4mxk")
+[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("14_edkss")]
 
 [node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("7_m7caj")]
 

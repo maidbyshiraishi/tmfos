@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://451w28ffcqj0"]
-
-[ext_resource type="Script" uid="uid://bjmdgv4sq7ifo" path="res://command/SetPlayerInitialDurabilityCommand.cs" id="1_1q1d1"]
-
-[node name="SetPlayerInitialDurabilityCommand" type="Node"]
-script = ExtResource("1_1q1d1")
