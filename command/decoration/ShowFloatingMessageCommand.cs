@@ -6,8 +6,14 @@ namespace tmfos.command.decoration;
 /// <summary>
 /// フローティングメッセージを表示するコマンド
 /// </summary>
-public partial class ShowFloatingMessageCommand : CommandNode2D
+public partial class ShowFloatingMessageCommand : Node2D, ICommand
 {
+    /// <summary>
+    /// 実行フラグ
+    /// </summary>
+    [Export]
+    public bool ExecFlag { get; set; } = true;
+
     /// <summary>
     /// 表示するメッセージ
     /// </summary>
@@ -20,8 +26,11 @@ public partial class ShowFloatingMessageCommand : CommandNode2D
     [Export]
     public Color Color { get; set; } = Colors.White;
 
-    public override void DoCommand(Node node, bool flag)
+    public virtual void ExecCommand(Node node, bool flag)
     {
-        Lib.ShowFloatingMessage(this, Message, Color);
+        if (ExecFlag == flag)
+        {
+            Lib.ShowFloatingMessage(this, Message, Color);
+        }
     }
 }
