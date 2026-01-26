@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://csn8ujalamqe0"]
-
-[ext_resource type="Script" uid="uid://civ0yutaefwvd" path="res://command/DelayContainer2D.cs" id="1_vdrkl"]
-
-[node name="DelayContainer2D" type="Node2D"]
-script = ExtResource("1_vdrkl")

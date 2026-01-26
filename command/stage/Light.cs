@@ -7,7 +7,7 @@ namespace tmfos.command.stage;
 /// 光源として機能する
 /// コマンドとしては何もしない
 /// </summary>
-public partial class Light : CommandNode2D, ILight
+public partial class Light : Node2D, ILight
 {
     /// <summary>
     /// 照明範囲の倍率
