@@ -247,7 +247,7 @@ curve = SubResource("Curve2D_l3oxt")
 script = ExtResource("17_nq07h")
 
 [node name="PathFollower" parent="Enemy/Path2D1" index="0" instance=ExtResource("18_e2wsf")]
-position = Vector2(1059.25, -350.09)
+position = Vector2(1059.2461, -350.09)
 progress = 960.662
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower" index="0" instance=ExtResource("19_wnb1i")]
@@ -264,7 +264,7 @@ curve = SubResource("Curve2D_s35dt")
 script = ExtResource("17_nq07h")
 
 [node name="PathFollower" parent="Enemy/Path2D2" index="0" instance=ExtResource("18_e2wsf")]
-position = Vector2(3819.58, -2486.62)
+position = Vector2(3819.5835, -2486.6204)
 progress = 960.662
 
 [node name="BirdEnemy1" parent="Enemy/Path2D2/PathFollower" index="0" instance=ExtResource("19_wnb1i")]
@@ -281,7 +281,7 @@ curve = SubResource("Curve2D_r6ul2")
 script = ExtResource("17_nq07h")
 
 [node name="PathFollower" parent="Enemy/Path2D3" index="0" instance=ExtResource("18_e2wsf")]
-position = Vector2(3366.45, -2056.6)
+position = Vector2(3366.45, -2056.6006)
 progress = 960.662
 
 [node name="BirdEnemy1" parent="Enemy/Path2D3/PathFollower" index="0" instance=ExtResource("19_wnb1i")]
@@ -360,17 +360,17 @@ curve = SubResource("Curve2D_8ju7e")
 script = ExtResource("17_nq07h")
 
 [node name="MovingPlatform1" parent="Others/Path2D" index="0" instance=ExtResource("21_smgow")]
-position = Vector2(932.077, -384)
+position = Vector2(932.0769, -384)
 scale = Vector2(3, 1)
 progress = 831.454
 
 [node name="MovingPlatform2" parent="Others/Path2D" index="1" instance=ExtResource("21_smgow")]
-position = Vector2(1533.49, -650.694)
+position = Vector2(1533.4933, -650.6941)
 scale = Vector2(3, 1)
 progress = 92.3838
 
 [node name="MovingPlatform3" parent="Others/Path2D" index="2" instance=ExtResource("21_smgow")]
-position = Vector2(1301.63, -384)
+position = Vector2(1301.6342, -384)
 scale = Vector2(3, 1)
 progress = 461.919
 

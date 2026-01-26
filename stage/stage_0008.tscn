@@ -289,7 +289,7 @@ curve = SubResource("Curve2D_6ks7o")
 script = ExtResource("18_faqgh")
 
 [node name="PathFollower" parent="Enemy/Path2D" index="0" instance=ExtResource("19_tsxkn")]
-position = Vector2(2703.69, 1368.92)
+position = Vector2(2703.6943, 1368.9237)
 progress = 177.608
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D/PathFollower" index="0" instance=ExtResource("20_a0bw0")]
@@ -301,7 +301,7 @@ position = Vector2(0, 56)
 position = Vector2(0, -56)
 
 [node name="PathFollower2" parent="Enemy/Path2D" index="1" instance=ExtResource("19_tsxkn")]
-position = Vector2(2477.57, 772)
+position = Vector2(2477.5732, 772)
 progress = 1598.47
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D/PathFollower2" index="0" instance=ExtResource("20_a0bw0")]

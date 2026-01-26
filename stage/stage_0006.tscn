@@ -389,7 +389,7 @@ curve = SubResource("Curve2D_e2kag")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D1" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2567.31, -1011.81)
+position = Vector2(2567.3127, -1011.8123)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D1/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -399,7 +399,7 @@ curve = SubResource("Curve2D_somxc")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D10" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(4445.79, -930.209)
+position = Vector2(4445.7915, -930.20874)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D10/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -409,7 +409,7 @@ curve = SubResource("Curve2D_10mxs")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D11" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(4781.83, -1130.29)
+position = Vector2(4781.834, -1130.2942)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D11/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -419,7 +419,7 @@ curve = SubResource("Curve2D_koeah")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D2" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2762.05, -436.686)
+position = Vector2(2762.0474, -436.6865)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D2/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -429,7 +429,7 @@ curve = SubResource("Curve2D_7vr61")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D3" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2440.79, 196.22)
+position = Vector2(2440.791, 196.21994)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D3/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -439,7 +439,7 @@ curve = SubResource("Curve2D_22hjt")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D4" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2647.68, 316.485)
+position = Vector2(2647.6765, 316.4852)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D4/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -451,7 +451,7 @@ curve = SubResource("Curve2D_wkk1h")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D5" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2419.62, -514.121)
+position = Vector2(2419.624, -514.1206)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D5/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -463,7 +463,7 @@ curve = SubResource("Curve2D_75xm8")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D6" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(626.779, -744.734)
+position = Vector2(626.7785, -744.7344)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D6/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -475,7 +475,7 @@ curve = SubResource("Curve2D_bfmxa")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D7" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(270.707, -780.158)
+position = Vector2(270.70673, -780.1578)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D7/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -487,7 +487,7 @@ curve = SubResource("Curve2D_a1t2k")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D8" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(498.778, -608.475)
+position = Vector2(498.7782, -608.4746)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D8/PathFollower" index="0" instance=ExtResource("22_4a61b")]
@@ -499,7 +499,7 @@ curve = SubResource("Curve2D_131m4")
 script = ExtResource("20_sh15y")
 
 [node name="PathFollower" parent="Enemy/Path2D9" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(512, -220.29)
+position = Vector2(512, -220.28998)
 progress = 358.916
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D9/PathFollower" index="0" instance=ExtResource("22_4a61b")]

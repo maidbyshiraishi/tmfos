@@ -385,7 +385,7 @@ curve = SubResource("Curve2D_i7eat")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(2166.96, -1889.47)
+position = Vector2(2166.9595, -1889.4702)
 progress = 177.608
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D/PathFollower" index="0" instance=ExtResource("20_05hhj")]
@@ -401,7 +401,7 @@ curve = SubResource("Curve2D_bqp8f")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D2" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(3009.31, -1758.93)
+position = Vector2(3009.31, -1758.9331)
 progress = 177.608
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D2/PathFollower" index="0" instance=ExtResource("20_05hhj")]
@@ -417,7 +417,7 @@ curve = SubResource("Curve2D_ahj2p")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D3" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(1941.3, -958.963)
+position = Vector2(1941.2969, -958.9625)
 progress = 177.608
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D3/PathFollower" index="0" instance=ExtResource("20_05hhj")]
@@ -434,7 +434,7 @@ curve = SubResource("Curve2D_wuqkh")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D1" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(1770.79, -2629)
+position = Vector2(1770.7943, -2628.997)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D1/PathFollower" index="0" instance=ExtResource("21_ijfox")]
@@ -450,7 +450,7 @@ curve = SubResource("Curve2D_smlf6")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D4" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(4389.95, -1814.92)
+position = Vector2(4389.95, -1814.9156)
 progress = 177.608
 
 [node name="RocketMaid2Enemy" parent="Enemy/Path2D4/PathFollower" index="0" instance=ExtResource("20_05hhj")]
@@ -466,7 +466,7 @@ curve = SubResource("Curve2D_ysaaa")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D5" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(3648, -169.048)
+position = Vector2(3648, -169.04813)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D5/PathFollower" index="0" instance=ExtResource("21_ijfox")]
@@ -482,7 +482,7 @@ curve = SubResource("Curve2D_t14ca")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D6" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(2630.2, -667.647)
+position = Vector2(2630.2048, -667.64655)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D6/PathFollower" index="0" instance=ExtResource("21_ijfox")]
@@ -498,7 +498,7 @@ curve = SubResource("Curve2D_74ra8")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D7" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(1386.3, -580.813)
+position = Vector2(1386.3008, -580.8132)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D7/PathFollower" index="0" instance=ExtResource("21_ijfox")]
@@ -514,7 +514,7 @@ curve = SubResource("Curve2D_7xdem")
 script = ExtResource("18_uqicp")
 
 [node name="PathFollower" parent="Enemy/Path2D8" index="0" instance=ExtResource("19_4w8a8")]
-position = Vector2(1042.29, -658.273)
+position = Vector2(1042.2866, -658.2725)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D8/PathFollower" index="0" instance=ExtResource("21_ijfox")]

@@ -152,7 +152,6 @@ autowrap_mode = 3
 
 [node name="Control" type="Control" parent="."]
 light_mask = 2
-layout_mode = 3
 anchors_preset = 0
 
 [node name="Data1" type="Button" parent="Control"]

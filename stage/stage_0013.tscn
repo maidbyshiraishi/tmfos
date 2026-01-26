@@ -346,7 +346,7 @@ curve = SubResource("Curve2D_o86lr")
 script = ExtResource("22_8yhdp")
 
 [node name="PathFollower" parent="Enemy/Path2D1" index="0" instance=ExtResource("23_0ob2h")]
-position = Vector2(483.132, -2997.56)
+position = Vector2(483.1318, -2997.5623)
 progress = 534.929
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower" index="0" instance=ExtResource("24_gyasw")]
@@ -359,7 +359,7 @@ position = Vector2(97.9717, 0.544098)
 position = Vector2(-102.028, 0.544102)
 
 [node name="PathFollower2" parent="Enemy/Path2D1" index="1" instance=ExtResource("23_0ob2h")]
-position = Vector2(612.749, -2079.4)
+position = Vector2(612.7492, -2079.4006)
 progress = 1604.79
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower2" index="0" instance=ExtResource("24_gyasw")]

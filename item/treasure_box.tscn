@@ -9,8 +9,6 @@
 size = Vector2(32, 24)
 
 [node name="TreasureBox" instance=ExtResource("1_3q3rh")]
-collision_layer = 65536
-collision_mask = 0
 script = ExtResource("2_b6lv8")
 Score = 10000
 

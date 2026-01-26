@@ -98,9 +98,9 @@ Speed = 500.0
 [node name="MaidFaucetEnemy" parent="Enemy/Path2D/PathFollower" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("11_jpid3")]
 
 [node name="HUD" parent="." index="13"]
+Text3 = "撃破せよ！！"
 Text1 = "メイドの出る蛇口"
 Text2 = "を"
-Text3 = "撃破せよ！！"
 BossMode = true
 
 [node name="BossLife" parent="HUD" index="6" instance=ExtResource("12_v1083")]

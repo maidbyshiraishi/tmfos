@@ -332,7 +332,7 @@ curve = SubResource("Curve2D_xunk3")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D1" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(245.469, -7370.53)
+position = Vector2(245.46938, -7370.53)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D1/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -348,7 +348,7 @@ curve = SubResource("Curve2D_g2n1v")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D2" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(586.452, -7398.1)
+position = Vector2(586.45245, -7398.097)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D2/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -364,7 +364,7 @@ curve = SubResource("Curve2D_oogdi")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D3" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(272.045, -7123.21)
+position = Vector2(272.04514, -7123.2095)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D3/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -389,7 +389,7 @@ curve = SubResource("Curve2D_msheu")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D4" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(282.916, -6448.62)
+position = Vector2(282.91574, -6448.6196)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D4/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -414,7 +414,7 @@ curve = SubResource("Curve2D_28nlr")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D5" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(280.339, -6022.92)
+position = Vector2(280.339, -6022.915)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D5/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -439,7 +439,7 @@ curve = SubResource("Curve2D_fp8r8")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D6" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(160.505, -5377.43)
+position = Vector2(160.50511, -5377.4263)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D6/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -464,7 +464,7 @@ curve = SubResource("Curve2D_njyvp")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D7" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(275.292, -4996.57)
+position = Vector2(275.2917, -4996.5654)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D7/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -489,7 +489,7 @@ curve = SubResource("Curve2D_kqwwu")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D8" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(407.939, -4296.47)
+position = Vector2(407.93942, -4296.4683)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D8/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -514,7 +514,7 @@ curve = SubResource("Curve2D_1qmsn")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D9" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(320.08, -3926.43)
+position = Vector2(320.07996, -3926.4263)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D9/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -540,7 +540,7 @@ curve = SubResource("Curve2D_5iucx")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D10" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(681.837, -3147.26)
+position = Vector2(681.8368, -3147.2576)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D10/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -565,7 +565,7 @@ curve = SubResource("Curve2D_r1s00")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D11" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(728.811, -2359.21)
+position = Vector2(728.81055, -2359.2097)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D11/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -590,7 +590,7 @@ curve = SubResource("Curve2D_x6gj0")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D12" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(720.752, -1471.56)
+position = Vector2(720.75165, -1471.5603)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D12/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
@@ -615,7 +615,7 @@ curve = SubResource("Curve2D_81vvv")
 script = ExtResource("20_ckcw5")
 
 [node name="PathFollower" parent="Enemy/Path2D13" index="0" instance=ExtResource("21_s1wqv")]
-position = Vector2(208.521, -818.864)
+position = Vector2(208.52101, -818.8638)
 progress = 534.929
 
 [node name="FishEnemy" parent="Enemy/Path2D13/PathFollower" index="0" instance=ExtResource("22_vm6jg")]

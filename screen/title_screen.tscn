@@ -54,7 +54,7 @@ anchors_preset = 0
 
 [node name="Start" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 245.0
 offset_top = 268.0
 offset_right = 395.0
@@ -81,7 +81,7 @@ Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="Continue" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 245.0
 offset_top = 303.0
 offset_right = 395.0
@@ -135,7 +135,7 @@ Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="Quit" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 245.0
 offset_top = 408.0
 offset_right = 395.0
@@ -162,7 +162,7 @@ Target = NodePath("../../../../Timer/TimerTrigger")
 
 [node name="BGM" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 245.0
 offset_top = 373.0
 offset_right = 395.0
@@ -198,10 +198,11 @@ Command = 1
 Stream = ExtResource("3_xoh7v")
 
 [node name="PauseUtilTimerCommand" parent="Focus" node_paths=PackedStringArray("Target") instance=ExtResource("16_uikkl")]
-ExecFlag = false
 Target = NodePath("../../Timer/TimerTrigger")
+ExecFlag = false
 
-[node name="VersionLabelCommand" parent="Focus" instance=ExtResource("15_sx63f")]
+[node name="VersionLabelCommand" parent="Focus" node_paths=PackedStringArray("VersionLabel") instance=ExtResource("15_sx63f")]
+VersionLabel = NodePath("../../LabelVersionNo")
 
 [node name="EscapeKey" parent="." instance=ExtResource("17_uhsa7")]
 ActionName = "escape"

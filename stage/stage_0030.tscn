@@ -87,9 +87,9 @@ script = ExtResource("8_te3aq")
 position = Vector2(320, -352)
 
 [node name="HUD" parent="." index="13"]
+Text3 = "撃破せよ！！"
 Text1 = "エロメイド"
 Text2 = "を"
-Text3 = "撃破せよ！！"
 BossMode = true
 
 [node name="BossLife" parent="HUD" index="6" instance=ExtResource("10_csehc")]

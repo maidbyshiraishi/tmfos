@@ -289,55 +289,55 @@ curve = SubResource("Curve2D_umkx8")
 script = ExtResource("21_5besg")
 
 [node name="PathFollower1" parent="Enemy/Path2D1" index="0" instance=ExtResource("22_t8ybl")]
-position = Vector2(1180.47, -2514.41)
+position = Vector2(1180.4683, -2514.4077)
 progress = 1297.69
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower1" index="0" instance=ExtResource("23_jmqnq")]
 
 [node name="PathFollower2" parent="Enemy/Path2D1" index="1" instance=ExtResource("22_t8ybl")]
-position = Vector2(2163.48, -2644.5)
+position = Vector2(2163.4768, -2644.5002)
 progress = 2595.37
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower2" index="0" instance=ExtResource("24_e3ol7")]
 
 [node name="PathFollower3" parent="Enemy/Path2D1" index="2" instance=ExtResource("22_t8ybl")]
-position = Vector2(2478, -1536.46)
+position = Vector2(2478.0024, -1536.4626)
 progress = 3893.06
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower3" index="0" instance=ExtResource("24_e3ol7")]
 
 [node name="PathFollower4" parent="Enemy/Path2D1" index="3" instance=ExtResource("22_t8ybl")]
-position = Vector2(2889.92, -1345.82)
+position = Vector2(2889.922, -1345.8191)
 progress = 5190.75
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower4" index="0" instance=ExtResource("23_jmqnq")]
 
 [node name="PathFollower5" parent="Enemy/Path2D1" index="4" instance=ExtResource("22_t8ybl")]
-position = Vector2(2637.59, -405.635)
+position = Vector2(2637.594, -405.63483)
 progress = 6488.44
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower5" index="0" instance=ExtResource("23_jmqnq")]
 
 [node name="PathFollower6" parent="Enemy/Path2D1" index="5" instance=ExtResource("22_t8ybl")]
-position = Vector2(1881.53, -200.389)
+position = Vector2(1881.5343, -200.38902)
 progress = 7786.12
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower6" index="0" instance=ExtResource("23_jmqnq")]
 
 [node name="PathFollower7" parent="Enemy/Path2D1" index="6" instance=ExtResource("22_t8ybl")]
-position = Vector2(1024.72, -491.622)
+position = Vector2(1024.7162, -491.62158)
 progress = 9083.81
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower7" index="0" instance=ExtResource("23_jmqnq")]
 
 [node name="PathFollower8" parent="Enemy/Path2D1" index="7" instance=ExtResource("22_t8ybl")]
-position = Vector2(395.132, -673.397)
+position = Vector2(395.1323, -673.3968)
 progress = 10381.5
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower8" index="0" instance=ExtResource("23_jmqnq")]
 
 [node name="PathFollower9" parent="Enemy/Path2D1" index="8" instance=ExtResource("22_t8ybl")]
-position = Vector2(630.488, -1494.81)
+position = Vector2(630.4882, -1494.811)
 progress = 11679.2
 
 [node name="RocketMaid2Enemy1" parent="Enemy/Path2D1/PathFollower9" index="0" instance=ExtResource("23_jmqnq")]
@@ -448,47 +448,47 @@ position = Vector2(1370.47, 788)
 scale = Vector2(2, 1)
 
 [node name="MovingPlatform2" parent="Others/Path2D1" index="1" instance=ExtResource("26_vfi0p")]
-position = Vector2(1018.16, 1402.64)
+position = Vector2(1018.16077, 1402.6449)
 scale = Vector2(2, 1)
 progress = 708.456
 
 [node name="MovingPlatform3" parent="Others/Path2D1" index="2" instance=ExtResource("26_vfi0p")]
-position = Vector2(472.732, 1684)
+position = Vector2(472.73224, 1684)
 scale = Vector2(2, 1)
 progress = 1416.91
 
 [node name="MovingPlatform4" parent="Others/Path2D1" index="3" instance=ExtResource("26_vfi0p")]
-position = Vector2(-58.5232, 1328.57)
+position = Vector2(-58.52321, 1328.5657)
 scale = Vector2(2, 1)
 progress = 2125.37
 
 [node name="MovingPlatform5" parent="Others/Path2D1" index="4" instance=ExtResource("26_vfi0p")]
-position = Vector2(-392.672, 732.23)
+position = Vector2(-392.6725, 732.2302)
 scale = Vector2(2, 1)
 progress = 2833.82
 
 [node name="MovingPlatform6" parent="Others/Path2D1" index="5" instance=ExtResource("26_vfi0p")]
-position = Vector2(-388.553, 23.7724)
+position = Vector2(-388.55316, 23.772423)
 scale = Vector2(2, 1)
 progress = 3542.28
 
 [node name="MovingPlatform7" parent="Others/Path2D1" index="6" instance=ExtResource("26_vfi0p")]
-position = Vector2(-41.9198, -576.74)
+position = Vector2(-41.91985, -576.7404)
 scale = Vector2(2, 1)
 progress = 4250.74
 
 [node name="MovingPlatform8" parent="Others/Path2D1" index="7" instance=ExtResource("26_vfi0p")]
-position = Vector2(492.79, -908)
+position = Vector2(492.79025, -908)
 scale = Vector2(2, 1)
 progress = 4959.19
 
 [node name="MovingPlatform9" parent="Others/Path2D1" index="8" instance=ExtResource("26_vfi0p")]
-position = Vector2(1017.94, -577.823)
+position = Vector2(1017.9425, -577.8234)
 scale = Vector2(2, 1)
 progress = 5667.65
 
 [node name="MovingPlatform10" parent="Others/Path2D1" index="9" instance=ExtResource("26_vfi0p")]
-position = Vector2(1370.47, 29.7726)
+position = Vector2(1370.4701, 29.772568)
 scale = Vector2(2, 1)
 progress = 6376.1
 
@@ -503,22 +503,22 @@ position = Vector2(1013.2, 372)
 scale = Vector2(2, 1)
 
 [node name="MovingPlatform2" parent="Others/Path2D2" index="1" instance=ExtResource("26_vfi0p")]
-position = Vector2(936.828, 1410.94)
+position = Vector2(936.8285, 1410.9434)
 scale = Vector2(2, 1)
 progress = 1775.24
 
 [node name="MovingPlatform3" parent="Others/Path2D2" index="2" instance=ExtResource("26_vfi0p")]
-position = Vector2(-284.49, 1389.94)
+position = Vector2(-284.49036, 1389.936)
 scale = Vector2(2, 1)
 progress = 3550.48
 
 [node name="MovingPlatform4" parent="Others/Path2D2" index="3" instance=ExtResource("26_vfi0p")]
-position = Vector2(-218.233, -332.401)
+position = Vector2(-218.23329, -332.4015)
 scale = Vector2(2, 1)
 progress = 5325.73
 
 [node name="MovingPlatform5" parent="Others/Path2D2" index="4" instance=ExtResource("26_vfi0p")]
-position = Vector2(754.029, -530.323)
+position = Vector2(754.02936, -530.3227)
 scale = Vector2(2, 1)
 progress = 7100.97
 

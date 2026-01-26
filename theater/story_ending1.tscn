@@ -120,6 +120,9 @@ metadata/_edit_vertical_guides_ = [166.0, 479.0]
 [node name="Background" parent="." index="0"]
 color = Color(0, 0, 0, 1)
 
+[node name="Socket" parent="." index="1"]
+layout_mode = 0
+
 [node name="Contents" type="Control" parent="Socket" index="0"]
 layout_mode = 1
 anchors_preset = 8
@@ -174,7 +177,6 @@ Stream = ExtResource("6_kbmb8")
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page1" index="3"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -237,7 +239,6 @@ one_shot = true
 SeName = "gun_shot"
 
 [node name="Control" type="Control" parent="Socket/Contents/Page2" index="5"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -278,7 +279,6 @@ Stream = ExtResource("14_nwdag")
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page3" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -311,7 +311,6 @@ position = Vector2(16, 17)
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page4" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -342,7 +341,6 @@ position = Vector2(16, 17)
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page5" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -373,7 +371,6 @@ position = Vector2(16, 17)
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page6" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -421,7 +418,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page7/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page7" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -465,7 +461,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page8/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page8" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -509,7 +504,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page9/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page9" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -553,7 +547,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page10/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page10" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -597,7 +590,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page11/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page11" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -641,7 +633,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page12/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page12" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -685,7 +676,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page13/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page13" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -729,7 +719,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page14/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page14" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -773,7 +762,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page15/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page15" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -817,7 +805,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page16/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page16" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -861,7 +848,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page17/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page17" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -905,7 +891,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page18/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page18" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -959,7 +944,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page19/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page19" index="6"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -1003,7 +987,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page20/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page20" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -1047,7 +1030,6 @@ one_shot = true
 [node name="GoNextPageCommand" parent="Socket/Contents/Page21/Timer/TimerTrigger" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page21" index="4"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -1104,7 +1086,6 @@ one_shot = true
 DialogPath = "res://theater/story_ending2.tscn"
 
 [node name="Control" type="Control" parent="Socket/Contents/Page22" index="6"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0

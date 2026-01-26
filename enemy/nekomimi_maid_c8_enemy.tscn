@@ -4,9 +4,9 @@
 [ext_resource type="SpriteFrames" uid="uid://6ylvs1tx4o1v" path="res://contents/animation/enemy/nekomimi_maid_c8.tres" id="2_4bhme"]
 
 [node name="NekomimiMaidEnemy" instance=ExtResource("1_iiw7e")]
+Attack = 25
 Life = 30
 MaxLife = 30
-Attack = 25
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_4bhme")

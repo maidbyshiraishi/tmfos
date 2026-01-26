@@ -55,7 +55,6 @@ scale = Vector2(0.72, 0.72)
 texture = ExtResource("3_2m7ea")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -104,7 +103,6 @@ scale = Vector2(0.72, 0.72)
 texture = ExtResource("3_2m7ea")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page2" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0

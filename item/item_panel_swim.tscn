@@ -6,6 +6,6 @@
 [node name="ItemPanelSwim" instance=ExtResource("1_5jprw")]
 Item = 2
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_1r3ij")
 animation = &"closed"

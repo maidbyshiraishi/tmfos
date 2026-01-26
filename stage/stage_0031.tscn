@@ -360,9 +360,9 @@ position = Vector2(576, -104)
 texture = ExtResource("15_smsxn")
 
 [node name="HUD" parent="." index="13"]
+Text3 = "取り戻せ！！"
 Text1 = "地球"
 Text2 = "を"
-Text3 = "取り戻せ！！"
 BossMode = true
 
 [node name="BossLife" parent="HUD" index="6" instance=ExtResource("16_vv7ib")]

@@ -49,11 +49,10 @@ autowrap_mode = 3
 
 [node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page1" index="1"]
 position = Vector2(80, 81)
-scale = Vector2(0.80, 0.80)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_qpr51")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0

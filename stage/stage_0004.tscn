@@ -235,7 +235,7 @@ curve = SubResource("Curve2D_0cf8h")
 script = ExtResource("18_t02am")
 
 [node name="PathFollower1" parent="Enemy/Path2D1" index="0" instance=ExtResource("19_tjj54")]
-position = Vector2(2509.76, -3659.4)
+position = Vector2(2509.7625, -3659.3972)
 progress = 1910.41
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower1" index="0" instance=ExtResource("20_v88s3")]
@@ -254,7 +254,7 @@ position = Vector2(93.9419, 0.238037)
 position = Vector2(-98.0581, 0.238037)
 
 [node name="PathFollower2" parent="Enemy/Path2D1" index="1" instance=ExtResource("19_tjj54")]
-position = Vector2(1450.29, -3674.29)
+position = Vector2(1450.2877, -3674.2856)
 progress = 3820.82
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower2" index="0" instance=ExtResource("20_v88s3")]
@@ -273,7 +273,7 @@ position = Vector2(93.9419, 0.238037)
 position = Vector2(-98.0581, 0.238037)
 
 [node name="PathFollower3" parent="Enemy/Path2D1" index="2" instance=ExtResource("19_tjj54")]
-position = Vector2(687.904, -3720.72)
+position = Vector2(687.9043, -3720.718)
 progress = 5731.23
 
 [node name="BirdEnemy1" parent="Enemy/Path2D1/PathFollower3" index="0" instance=ExtResource("20_v88s3")]
@@ -348,17 +348,17 @@ curve = SubResource("Curve2D_l6xi1")
 script = ExtResource("18_t02am")
 
 [node name="MovingPlatform1" parent="Others/Path2D1" index="0" instance=ExtResource("23_hpq16")]
-position = Vector2(1561.82, -3672.44)
+position = Vector2(1561.8153, -3672.4429)
 scale = Vector2(2, 1)
 progress = 170.494
 
 [node name="MovingPlatform2" parent="Others/Path2D1" index="1" instance=ExtResource("23_hpq16")]
-position = Vector2(1015.92, -3568.83)
+position = Vector2(1015.9213, -3568.8306)
 scale = Vector2(2, 1)
 progress = 852.469
 
 [node name="MovingPlatform3" parent="Others/Path2D1" index="2" instance=ExtResource("23_hpq16")]
-position = Vector2(640, -3139.04)
+position = Vector2(640, -3139.0413)
 scale = Vector2(2, 1)
 progress = 1534.44
 
@@ -367,7 +367,7 @@ curve = SubResource("Curve2D_m60sp")
 script = ExtResource("18_t02am")
 
 [node name="MovingPlatform1" parent="Others/Path2D2" index="0" instance=ExtResource("23_hpq16")]
-position = Vector2(1319.85, -3349.62)
+position = Vector2(1319.8485, -3349.624)
 progress = 170.494
 
 [node name="Path2D3" type="Path2D" parent="Others" index="2"]
