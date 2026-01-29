@@ -172,7 +172,7 @@ public partial class GameData : Node
 
         _packData.RemoveIllegalKey(_file);
         string file = string.Format(DataFilePath, slotNo);
-        e = UseEncriptData ? _file.LoadEncryptedPass(file, Pass) : _file.Save(file);
+        e = UseEncriptData ? _file.SaveEncryptedPass(file, Pass) : _file.Save(file);
 
         if (e is not Error.Ok)
         {
