@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// コマンドノード
 /// </summary>
-public partial class CommandNode : Node, ICommand
+public partial class CommandRoot : Node, ICommand
 {
     /// <summary>
     /// 実行フラグ

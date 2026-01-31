@@ -6,7 +6,7 @@ namespace tmfos.command.option;
 /// <summary>
 /// 操作設定を保存するコマンド
 /// </summary>
-public partial class SaveKeyOptionsCommand : CommandNode
+public partial class SaveKeyOptionsCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

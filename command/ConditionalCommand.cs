@@ -7,7 +7,7 @@ namespace tmfos.command;
 /// <summary>
 /// 条件式コマンド
 /// </summary>
-public partial class ConditionalCommand : CommandNode
+public partial class ConditionalCommand : CommandRoot
 {
     /// <summary>
     /// 条件式

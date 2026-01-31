@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// CanvasItemを表示するコマンド
 /// </summary>
-public partial class ShowCanvasItemCommand : CommandNode
+public partial class ShowCanvasItemCommand : CommandRoot
 {
     /// <summary>
     /// 対表示するCanvasItem

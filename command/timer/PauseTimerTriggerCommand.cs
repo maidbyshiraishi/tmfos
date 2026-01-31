@@ -6,7 +6,7 @@ namespace tmfos.command.timer;
 /// <summary>
 /// タイマートリガーを一時停止するコマンド
 /// </summary>
-public partial class PauseTimerTriggerCommand : CommandNode
+public partial class PauseTimerTriggerCommand : CommandRoot
 {
     /// <summary>
     /// 一時停止するタイマートリガー

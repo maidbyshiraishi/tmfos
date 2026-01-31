@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// ラベルの文字にバージョンを表示するコマンド
 /// </summary>
-public partial class VersionLabelCommand : CommandNode
+public partial class VersionLabelCommand : CommandRoot
 {
     /// <summary>
     /// バージョンを表示するラベル

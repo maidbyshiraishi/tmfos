@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// ボタンを押下するコマンド
 /// </summary>
-public partial class ButtonPressedCommand : CommandNode
+public partial class ButtonPressedCommand : CommandRoot
 {
     /// <summary>
     /// 押下するボタン

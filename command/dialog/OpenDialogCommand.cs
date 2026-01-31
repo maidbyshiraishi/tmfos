@@ -6,7 +6,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// ダイアログを開くコマンド
 /// </summary>
-public partial class OpenDialogCommand : CommandNode
+public partial class OpenDialogCommand : CommandRoot
 {
     /// <summary>
     /// 開くダイアログ

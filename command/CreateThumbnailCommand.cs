@@ -6,7 +6,7 @@ namespace tmfos.command;
 /// <summary>
 /// 画面サムネイル生成コマンド
 /// </summary>
-public partial class CreateThumbnailCommand : CommandNode
+public partial class CreateThumbnailCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

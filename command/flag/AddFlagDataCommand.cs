@@ -6,7 +6,7 @@ namespace tmfos.command.flag;
 /// <summary>
 /// フラグを操作するコマンド
 /// </summary>
-public partial class AddFlagDataCommand : CommandNode
+public partial class AddFlagDataCommand : CommandRoot
 {
     /// <summary>
     /// フラグ名

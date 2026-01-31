@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// デバッグログ
 /// </summary>
-public partial class PrintCommand : CommandNode
+public partial class PrintCommand : CommandRoot
 {
     /// <summary>
     /// ログ

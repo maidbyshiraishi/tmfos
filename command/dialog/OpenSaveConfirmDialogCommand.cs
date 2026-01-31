@@ -6,7 +6,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// セーブ確認ダイアログを開くコマンド
 /// </summary>
-public partial class OpenSaveConfirmDialogCommand : CommandNode
+public partial class OpenSaveConfirmDialogCommand : CommandRoot
 {
     /// <summary>
     /// セーブデータ番号

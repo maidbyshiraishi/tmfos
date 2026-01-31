@@ -6,7 +6,7 @@ namespace tmfos.command;
 /// <summary>
 /// コマンド延滞実行コンテナ
 /// </summary>
-public partial class DelayContainer : CommandNode
+public partial class DelayContainer : CommandRoot
 {
     /// <summary>
     /// 延滞時間

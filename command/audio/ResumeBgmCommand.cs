@@ -6,7 +6,7 @@ namespace tmfos.command.audio;
 /// <summary>
 /// BGMの一時停止を解除するコマンド
 /// </summary>
-public partial class ResumeBgmCommand : CommandNode
+public partial class ResumeBgmCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

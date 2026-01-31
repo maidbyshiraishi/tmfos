@@ -6,7 +6,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// ダイアログをすべて閉じるコマンド
 /// </summary>
-public partial class CloseAllDialog : CommandNode
+public partial class CloseAllDialog : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

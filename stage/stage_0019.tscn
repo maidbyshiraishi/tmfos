@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="11_sodjg"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="12_xrc0r"]
 [ext_resource type="PackedScene" uid="uid://du3iipceh2xvo" path="res://command/conditional_command.tscn" id="13_p5b1b"]
-[ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://command/free_command.tscn" id="14_f8k8i"]
+[ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://command/queue_free_command.tscn" id="14_f8k8i"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="15_aeshf"]
 
 [node name="Stage" instance=ExtResource("1_fh2vt")]

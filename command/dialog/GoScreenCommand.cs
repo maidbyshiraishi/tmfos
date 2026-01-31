@@ -6,7 +6,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// 指定スクリーンへ移動するコマンド
 /// </summary>
-public partial class GoScreenCommand : CommandNode
+public partial class GoScreenCommand : CommandRoot
 {
     /// <summary>
     /// 次スクリーンのリソースパス

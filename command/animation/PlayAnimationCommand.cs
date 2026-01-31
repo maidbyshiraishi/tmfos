@@ -5,7 +5,7 @@ namespace tmfos.command.animation;
 /// <summary>
 /// AnimatedSprite2Dのアニメーションを開始するコマンド
 /// </summary>
-public partial class PlayAnimationCommand : CommandNode
+public partial class PlayAnimationCommand : CommandRoot
 {
     /// <summary>
     /// 開始するAnimatedSprite2D

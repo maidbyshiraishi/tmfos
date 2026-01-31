@@ -6,7 +6,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// 耐久力を操作するコマンド
 /// </summary>
-public partial class AddDurabilityCommand : CommandNode
+public partial class AddDurabilityCommand : CommandRoot
 {
     /// <summary>
     /// 耐久力の増減

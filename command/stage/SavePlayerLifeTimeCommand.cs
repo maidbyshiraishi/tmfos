@@ -8,7 +8,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// プレーヤーの残り時間を保存するコマンド
 /// </summary>
-public partial class SavePlayerLifeTimeCommand : CommandNode
+public partial class SavePlayerLifeTimeCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// ゲームを一時停止するコマンド
 /// </summary>
-public partial class PauseSceneTreeCommand : CommandNode
+public partial class PauseSceneTreeCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

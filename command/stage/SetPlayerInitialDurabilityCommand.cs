@@ -9,7 +9,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// プレイヤーの耐久力がデフォルト値未満の場合にデフォルト値まで回復するコマンド
 /// </summary>
-public partial class SetPlayerInitialDurabilityCommand : CommandNode
+public partial class SetPlayerInitialDurabilityCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

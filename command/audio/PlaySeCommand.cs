@@ -6,7 +6,7 @@ namespace tmfos.command.audio;
 /// <summary>
 /// 効果音を再生するコマンド
 /// </summary>
-public partial class PlaySeCommand : CommandNode
+public partial class PlaySeCommand : CommandRoot
 {
     /// <summary>
     /// 効果音名

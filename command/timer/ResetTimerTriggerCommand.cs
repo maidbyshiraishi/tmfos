@@ -6,7 +6,7 @@ namespace tmfos.command.timer;
 /// <summary>
 /// タイマートリガーをリセットして再開するコマンド
 /// </summary>
-public partial class ResetTimerTriggerCommand : CommandNode
+public partial class ResetTimerTriggerCommand : CommandRoot
 {
     /// <summary>
     /// リセットするタイマートリガー

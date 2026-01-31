@@ -6,7 +6,7 @@ namespace tmfos.command.flag;
 /// <summary>
 /// ゲームフラグを削除するコマンド
 /// </summary>
-public partial class RemoveFlagDataCommand : CommandNode
+public partial class RemoveFlagDataCommand : CommandRoot
 {
     /// <summary>
     /// フラグ名

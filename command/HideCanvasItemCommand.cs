@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// CanvasItemを隠すコマンド
 /// </summary>
-public partial class HideCanvasItemCommand : CommandNode
+public partial class HideCanvasItemCommand : CommandRoot
 {
     /// <summary>
     /// 隠すCanvasItem

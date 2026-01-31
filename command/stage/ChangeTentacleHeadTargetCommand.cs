@@ -6,7 +6,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// TentacleHeadのターゲットを変更するコマンド
 /// </summary>
-public partial class ChangeTentacleHeadTargetCommand : CommandNode
+public partial class ChangeTentacleHeadTargetCommand : CommandRoot
 {
     [Export]
     public TentacleHead Head { get; set; }

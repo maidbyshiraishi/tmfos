@@ -7,7 +7,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// 残機を増やすコマンド
 /// </summary>
-public partial class AddRemainCommand : CommandNode
+public partial class AddRemainCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

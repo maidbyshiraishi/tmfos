@@ -6,7 +6,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// プレーヤーの速度をゼロにするコマンド
 /// </summary>
-public partial class StopPlayerMoveCommand : CommandNode
+public partial class StopPlayerMoveCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

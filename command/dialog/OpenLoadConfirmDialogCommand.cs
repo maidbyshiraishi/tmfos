@@ -6,7 +6,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// ロード確認ダイアログを開くコマンド
 /// </summary>
-public partial class OpenLoadConfirmDialogCommand : CommandNode
+public partial class OpenLoadConfirmDialogCommand : CommandRoot
 {
     /// <summary>
     /// ゲームデータ番号

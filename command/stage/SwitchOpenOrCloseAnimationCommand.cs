@@ -5,7 +5,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// 開閉アニメーションを切り替える
 /// </summary>
-public partial class SwitchOpenOrCloseAnimationCommand : CommandNode
+public partial class SwitchOpenOrCloseAnimationCommand : CommandRoot
 {
     private bool _opened;
 

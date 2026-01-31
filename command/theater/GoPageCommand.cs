@@ -6,7 +6,7 @@ namespace tmfos.command.theater;
 /// <summary>
 /// ストーリーシアターの指定ページへ移動するコマンド
 /// </summary>
-public partial class GoPageCommand : CommandNode, IStoryTheaterContent
+public partial class GoPageCommand : CommandRoot, IStoryTheaterContent
 {
     /// <summary>
     /// 移動先のページ

@@ -7,7 +7,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// ゲームを開始するコマンド
 /// </summary>
-public partial class OpenGameCommand : CommandNode
+public partial class OpenGameCommand : CommandRoot
 {
     /// <summary>
     /// フェードアウトエフェクト

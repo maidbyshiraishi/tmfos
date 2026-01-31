@@ -8,7 +8,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// セーブポイントにおけるゲーム再開時のドア番号を更新するコマンド
 /// </summary>
-public partial class UpdateSavePointDoorNoCommand : CommandNode
+public partial class UpdateSavePointDoorNoCommand : CommandRoot
 {
     /// <summary>
     /// 移動先ドア番号

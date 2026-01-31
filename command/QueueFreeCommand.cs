@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// Nodeを開放するコマンド
 /// </summary>
-public partial class FreeCommand : CommandNode
+public partial class QueueFreeCommand : CommandRoot
 {
     /// <summary>
     /// 開放するノード

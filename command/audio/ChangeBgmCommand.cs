@@ -6,7 +6,7 @@ namespace tmfos.command.audio;
 /// <summary>
 /// BGMを変更するコマンド
 /// </summary>
-public partial class ChangeBgmCommand : CommandNode
+public partial class ChangeBgmCommand : CommandRoot
 {
     /// <summary>
     /// MusicPlayerコマンド
