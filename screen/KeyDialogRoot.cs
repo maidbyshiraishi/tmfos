@@ -99,6 +99,21 @@ public partial class KeyDialogRoot : DialogRoot
 
     private string ReplaceButtonName(string text)
     {
+        // 方向パッドの置き換え
+        text = text.Replace("Joypad Button 11 (D-pad Up)", "ゲームパッド 方向パッド 上");
+        text = text.Replace("Joypad Button 12 (D-pad Down)", "ゲームパッド 方向パッド 下");
+        text = text.Replace("Joypad Button 13 (D-pad Left)", "ゲームパッド 方向パッド 左");
+        text = text.Replace("Joypad Button 14 (D-pad Right)", "ゲームパッド 方向パッド 右");
+        // スティックの置き換え
+        text = text.Replace("Joypad Motion on Axis 1 (Left Stick Y-Axis, Joystick 0 Y-Axis) with Value -1.00", "ゲームパッド 左スティック 上");
+        text = text.Replace("Joypad Motion on Axis 3 (Right Stick Y-Axis, Joystick 1 Y-Axis) with Value -1.00", "ゲームパッド 右スティック 上");
+        text = text.Replace("Joypad Motion on Axis 1 (Left Stick Y-Axis, Joystick 0 Y-Axis) with Value 1.00", "ゲームパッド 左スティック 下");
+        text = text.Replace("Joypad Motion on Axis 3 (Right Stick Y-Axis, Joystick 1 Y-Axis) with Value 1.00", "ゲームパッド 右スティック 下");
+        text = text.Replace("Joypad Motion on Axis 0 (Left Stick X-Axis, Joystick 0 X-Axis) with Value -1.00", "ゲームパッド 左スティック 左");
+        text = text.Replace("Joypad Motion on Axis 2 (Right Stick X-Axis, Joystick 1 X-Axis) with Value -1.00", "ゲームパッド 右スティック 左");
+        text = text.Replace("Joypad Motion on Axis 0 (Left Stick X-Axis, Joystick 0 X-Axis) with Value 1.00", "ゲームパッド 左スティック 右");
+        text = text.Replace("Joypad Motion on Axis 2 (Right Stick X-Axis, Joystick 1 X-Axis) with Value 1.00", "ゲームパッド 右スティック 右");
+        // その他の置き換え
         text = text.Replace("Kp ", "テンキー");
         text = text.Replace(" (Physical)", "");
         text = text.Replace("Up", "上");
@@ -413,24 +428,31 @@ public partial class KeyDialogRoot : DialogRoot
 
             case InputEventJoypadButton button when button.IsPressed():
                 {
-                    Error result = SetInputEventJoypadButton(_setActionName, button);
-
-                    switch (result)
+                    if (GameKeyOption.CanChangeInputEvent(button))
                     {
-                        case Error.Ok:
+                        Error result = SetInputEventJoypadButton(_setActionName, button);
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に設定しました。", false]);
-                            break;
+                        switch (result)
+                        {
+                            case Error.Ok:
 
-                        case Error.AlreadyInUse:
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に設定しました。", false]);
+                                break;
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}は既に使用されています。", false]);
-                            break;
+                            case Error.AlreadyInUse:
 
-                        default:
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}は既に使用されています。", false]);
+                                break;
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に変更できませんでした。", false]);
-                            break;
+                            default:
+
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に変更できませんでした。", false]);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [ReplaceButtonName($"{button.AsText()}は設定できません。"), false]);
                     }
 
                     ChangeFocusMode(true);
@@ -440,26 +462,9 @@ public partial class KeyDialogRoot : DialogRoot
 
             case InputEventJoypadMotion motion when motion.IsPressed() && motion.AxisValue != 0:
                 {
-                    Error result = SetInputEventJoypadMotion(_setActionName, motion);
-
-                    switch (result)
-                    {
-                        case Error.Ok:
-
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}に設定しました。", false]);
-                            break;
-
-                        case Error.AlreadyInUse:
-
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}は既に使用されています。", false]);
-                            break;
-
-                        default:
-
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}に変更できませんでした。", false]);
-                            break;
-                    }
-
+                    // JoypadMotionは変更できない
+                    // Error result = SetInputEventJoypadMotion(_setActionName, motion);
+                    GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["左右スティックとトリガーは変更できません。", false]);
                     ChangeFocusMode(true);
                     _setMode = false;
                     break;
