@@ -8,8 +8,5 @@ namespace tmfos.command.dialog;
 /// </summary>
 public partial class QuitGameCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").QuitGame();
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").QuitGame();
 }

@@ -164,10 +164,7 @@ public partial class PathFollowEnemy : DurableShot
         _collision.SetDeferred("disabled", false);
     }
 
-    protected override void PlaySpawnedSe()
-    {
-        GetNode<SePlayer>("/root/SePlayer").Play(FlyingSe);
-    }
+    protected override void PlaySpawnedSe() => GetNode<SePlayer>("/root/SePlayer").Play(FlyingSe);
 
     public override void CalcDirection()
     {

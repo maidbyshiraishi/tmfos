@@ -8,8 +8,5 @@ namespace tmfos.command.option;
 /// </summary>
 public partial class SaveKeyOptionsCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<GameKeyOption>("/root/GameKeyOption").SaveKeyOptions();
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<GameKeyOption>("/root/GameKeyOption").SaveKeyOptions();
 }

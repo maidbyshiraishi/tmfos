@@ -58,10 +58,7 @@ public partial class DurableShot : Shot, IDurable
         ResetLifeTime();
     }
 
-    public double GetLifeTimeLeft()
-    {
-        return _lifeTimer.TimeLeft;
-    }
+    public double GetLifeTimeLeft() => _lifeTimer.TimeLeft;
 
     public virtual void Timeup()
     {
@@ -75,15 +72,9 @@ public partial class DurableShot : Shot, IDurable
         PlaySe(TimeupSe);
     }
 
-    public override void SetLifeTime(double lifeTime)
-    {
-        LifeTime = lifeTime;
-    }
+    public override void SetLifeTime(double lifeTime) => LifeTime = lifeTime;
 
-    public virtual void ResetLifeTime()
-    {
-        Lib.ResetTimer(_lifeTimer);
-    }
+    public virtual void ResetLifeTime() => Lib.ResetTimer(_lifeTimer);
 
     public virtual void AddDurability(int value)
     {
@@ -165,10 +156,7 @@ public partial class DurableShot : Shot, IDurable
     {
     }
 
-    public virtual void Resurrected()
-    {
-        MobState = MobStateType.Normal;
-    }
+    public virtual void Resurrected() => MobState = MobStateType.Normal;
 
     public virtual void SetDurability(int value)
     {
@@ -226,8 +214,5 @@ public partial class DurableShot : Shot, IDurable
         SkipDamage = false;
     }
 
-    public virtual void DieExternalCauses()
-    {
-        Dead();
-    }
+    public virtual void DieExternalCauses() => Dead();
 }

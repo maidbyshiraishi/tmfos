@@ -22,26 +22,17 @@ public partial class FloatingMessage : Marker2D, ISpawnedNode
         GetNode<Label>("Label").SelfModulate = Color;
     }
 
-    public void Finished(StringName animName)
-    {
-        QueueFree();
-    }
+    public void Finished(StringName animName) => QueueFree();
 
     public void SetNodeInfo(Vector2 position, Vector2 direction, double lifeTime)
     {
     }
 
-    public void SetNodeInfo(Vector2 position, Vector2 direction)
-    {
-        Position = position;
-    }
+    public void SetNodeInfo(Vector2 position, Vector2 direction) => Position = position;
 
     public void SetLifeTime(double lifeTime)
     {
     }
 
-    public void SetSpawner(ISpawner spawner)
-    {
-        _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
-    }
+    public void SetSpawner(ISpawner spawner) => _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
 }

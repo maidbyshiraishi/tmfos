@@ -120,10 +120,7 @@ public partial class StoryTheater : DialogRoot
         OpenPage(_index);
     }
 
-    public override void GetArgument()
-    {
-        GetGameArgument("StoryTheater");
-    }
+    public override void GetArgument() => GetGameArgument("StoryTheater");
 
     private void CloseStory()
     {

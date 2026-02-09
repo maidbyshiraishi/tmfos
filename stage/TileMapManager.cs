@@ -151,10 +151,8 @@ public partial class TileMapManager : Node2D
         return tileData is null ? new() : tileData.GetCustomData(name);
     }
 
-    internal void OpenObservationHole(bool flag, Vector2 position)
-    {
+    internal void OpenObservationHole(bool flag, Vector2 position) =>
         // todo: 切り抜かないとき、はるか彼方の画面外を切り抜いているが、一時的に無効にできないのか？
         // teosにて対応済みだが逆輸入は行わない。
         _observationHole.Offset = flag ? position : new(-2000, -2000);
-    }
 }

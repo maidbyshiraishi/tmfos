@@ -68,10 +68,7 @@ public partial class Mob : CharacterBody2D, IGameNode
         }
     }
 
-    protected void PauseSprite()
-    {
-        m_animatedSprite.Pause();
-    }
+    protected void PauseSprite() => m_animatedSprite.Pause();
 
     protected virtual void PlaySe(string name)
     {

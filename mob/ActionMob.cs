@@ -139,10 +139,7 @@ public partial class ActionMob : Mob
         m_shortJumpVelocity = -Mathf.Sqrt(2f * m_gravity * ShortJumpHeight);
     }
 
-    public override void _PhysicsProcess(double delta)
-    {
-        GravityOnly(delta);
-    }
+    public override void _PhysicsProcess(double delta) => GravityOnly(delta);
 
     public virtual void Burialed(Node2D body)
     {

@@ -67,10 +67,7 @@ public partial class StageRoot : DialogRoot, IStateful
         camera.Enabled = true;
     }
 
-    public override void _ExitTree()
-    {
-        GetTree().CallGroup(GameNodeGroup, "FinalizeNode");
-    }
+    public override void _ExitTree() => GetTree().CallGroup(GameNodeGroup, "FinalizeNode");
 
     protected override void InitializeNode()
     {
@@ -86,10 +83,7 @@ public partial class StageRoot : DialogRoot, IStateful
         UpdateHud();
     }
 
-    protected override void FinalizeNode()
-    {
-        GetTree().CallGroup(GameNodeGroup, "FinalizeNode");
-    }
+    protected override void FinalizeNode() => GetTree().CallGroup(GameNodeGroup, "FinalizeNode");
 
     private void SetPlayerLifeTime(GameData gdata)
     {
@@ -137,15 +131,9 @@ public partial class StageRoot : DialogRoot, IStateful
     /// ステージ状態の保存を行う。
     /// 画面切り替え前、セーブ前に行われる
     /// </summary>
-    public void StateSave()
-    {
-        GetTree().CallGroup(StatefulGroup, "StateSave");
-    }
+    public void StateSave() => GetTree().CallGroup(StatefulGroup, "StateSave");
 
-    public void StateLoad()
-    {
-        GetTree().CallGroup(StatefulGroup, "StateLoad");
-    }
+    public void StateLoad() => GetTree().CallGroup(StatefulGroup, "StateLoad");
 
     private StageEntryPoint FindStageEntryPoint(int doorNo)
     {
@@ -204,10 +192,7 @@ public partial class StageRoot : DialogRoot, IStateful
         }
     }
 
-    public static string GetResourcePath(StageData stageData)
-    {
-        return string.Format(stageData.ScenarioNo == TutorialScenarioNo ? TutorialPath : StagePath, stageData.StageNo);
-    }
+    public static string GetResourcePath(StageData stageData) => string.Format(stageData.ScenarioNo == TutorialScenarioNo ? TutorialPath : StagePath, stageData.StageNo);
 
     public void AddScore(int score)
     {

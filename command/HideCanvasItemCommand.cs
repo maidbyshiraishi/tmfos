@@ -13,8 +13,5 @@ public partial class HideCanvasItemCommand : CommandRoot
     [Export]
     public CanvasItem Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.Hide();
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.Hide();
 }

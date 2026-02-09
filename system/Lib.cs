@@ -13,10 +13,7 @@ namespace tmfos.system;
 /// </summary>
 public static partial class Lib
 {
-    public static string GenerateName(Node node)
-    {
-        return MyRegex().Replace(node.GetPath().ToString(), "");
-    }
+    public static string GenerateName(Node node) => MyRegex().Replace(node.GetPath().ToString(), "");
 
     public static string JoinString(Array array)
     {
@@ -141,10 +138,7 @@ public static partial class Lib
         target?.ExecCommand(node, flag);
     }
 
-    public static void SetPhysics(Node root, bool enabled)
-    {
-        root.GetTree().CallGroup(StageRoot.PhysicsProcessGroup, Node.MethodName.SetPhysicsProcess, enabled);
-    }
+    public static void SetPhysics(Node root, bool enabled) => root.GetTree().CallGroup(StageRoot.PhysicsProcessGroup, Node.MethodName.SetPhysicsProcess, enabled);
 
     public static void GrabFocus(Control control)
     {

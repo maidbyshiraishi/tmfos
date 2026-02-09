@@ -8,8 +8,5 @@ namespace tmfos.command.dialog;
 /// </summary>
 public partial class CloseAllDialog : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").CloseAllDialog();
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").CloseAllDialog();
 }

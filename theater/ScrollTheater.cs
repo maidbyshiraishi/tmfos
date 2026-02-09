@@ -49,8 +49,5 @@ public partial class ScrollTheater : DialogRoot
         _socket.ProgressRatio = Mathf.Clamp(_socket.ProgressRatio + speed, 0, 1.0f);
     }
 
-    public override void GetArgument()
-    {
-        GetGameArgument("ScrollTheater");
-    }
+    public override void GetArgument() => GetGameArgument("ScrollTheater");
 }

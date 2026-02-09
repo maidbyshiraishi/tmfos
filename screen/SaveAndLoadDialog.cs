@@ -36,8 +36,5 @@ public partial class SaveAndLoadDialog : DialogRoot
         }
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "Back";
-    }
+    protected override string GetDefaultFocusNodeName() => "Back";
 }

@@ -8,8 +8,5 @@ namespace tmfos.command.option;
 /// </summary>
 public partial class ResetDefaultKeyOptionsCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag)
-    {
-        GameKeyOption.ResetDefaultKeyOptions();
-    }
+    public override void DoCommand(Node node, bool flag) => GameKeyOption.ResetDefaultKeyOptions();
 }

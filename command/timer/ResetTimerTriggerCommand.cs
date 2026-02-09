@@ -14,8 +14,5 @@ public partial class ResetTimerTriggerCommand : CommandRoot
     [Export]
     public TimerTrigger Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.ResetTimer();
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.ResetTimer();
 }

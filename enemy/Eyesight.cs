@@ -58,58 +58,40 @@ public partial class Eyesight : Node2D
     /// </summary>
     /// <param name="direction">方向</param>
     /// <returns>true or false</returns>
-    public bool IsAvoidPlayerShot(DirectionType direction)
-    {
-        return (direction is DirectionType.Left && _shortLeft.IsColliding() && _shortLeft.GetCollider() is not null and PlayerShot1) || (direction is DirectionType.Right && _shortRight.IsColliding() && _shortRight.GetCollider() is not null and PlayerShot1);
-    }
+    public bool IsAvoidPlayerShot(DirectionType direction) => (direction is DirectionType.Left && _shortLeft.IsColliding() && _shortLeft.GetCollider() is not null and PlayerShot1) || (direction is DirectionType.Right && _shortRight.IsColliding() && _shortRight.GetCollider() is not null and PlayerShot1);
 
     /// <summary>
     /// プレーヤーが攻撃範囲にいる
     /// </summary>
     /// <returns>true or false</returns>
-    public bool InSightOfPlayer()
-    {
-        return (_longLeft.IsColliding() && _longLeft.GetCollider() is not null and Player) || (_longRight.IsColliding() && _longRight.GetCollider() is not null and Player);
-    }
+    public bool InSightOfPlayer() => (_longLeft.IsColliding() && _longLeft.GetCollider() is not null and Player) || (_longRight.IsColliding() && _longRight.GetCollider() is not null and Player);
 
     /// <summary>
     /// 両方壁に囲まれているか
     /// </summary>
     /// <returns>true or false</returns>
-    public bool IsEncloseWall()
-    {
-        return _shortLeft.IsColliding() && _shortLeft.GetCollider() is not null and TileMapLayer && _shortRight.IsColliding() && _shortRight.GetCollider() is not null and TileMapLayer;
-    }
+    public bool IsEncloseWall() => _shortLeft.IsColliding() && _shortLeft.GetCollider() is not null and TileMapLayer && _shortRight.IsColliding() && _shortRight.GetCollider() is not null and TileMapLayer;
 
     /// <summary>
     /// 壁が迫っているか
     /// </summary>
     /// <param name="direction">方向</param>
     /// <returns>true or false</returns>
-    public bool IsFaceToWall(DirectionType direction)
-    {
-        return (direction is DirectionType.Left && _shortLeft.IsColliding() && _shortLeft.GetCollider() is not null and TileMapLayer) || (direction == DirectionType.Right && _shortRight.IsColliding() && _shortRight.GetCollider() is not null and TileMapLayer);
-    }
+    public bool IsFaceToWall(DirectionType direction) => (direction is DirectionType.Left && _shortLeft.IsColliding() && _shortLeft.GetCollider() is not null and TileMapLayer) || (direction == DirectionType.Right && _shortRight.IsColliding() && _shortRight.GetCollider() is not null and TileMapLayer);
 
     /// <summary>
     /// 頭上が開いているか
     /// </summary>
     /// <param name="direction">方向</param>
     /// <returns>true or false</returns>
-    public bool IsJumpWall(DirectionType direction)
-    {
-        return (!_canJumpLeft1.IsColliding() && !_canJumpLeft2.IsColliding() && direction is DirectionType.Left) || (!_canJumpRight1.IsColliding() && !_canJumpRight2.IsColliding() && direction is DirectionType.Right);
-    }
+    public bool IsJumpWall(DirectionType direction) => (!_canJumpLeft1.IsColliding() && !_canJumpLeft2.IsColliding() && direction is DirectionType.Left) || (!_canJumpRight1.IsColliding() && !_canJumpRight2.IsColliding() && direction is DirectionType.Right);
 
     /// <summary>
     /// 崖があるか
     /// </summary>
     /// <param name="direction">方向</param>
     /// <returns>true or false</returns>
-    public bool IsBrow(DirectionType direction)
-    {
-        return (!_leftDown1.IsColliding() && direction is DirectionType.Left) || (!_rightDown1.IsColliding() && direction is DirectionType.Right);
-    }
+    public bool IsBrow(DirectionType direction) => (!_leftDown1.IsColliding() && direction is DirectionType.Left) || (!_rightDown1.IsColliding() && direction is DirectionType.Right);
 
     /// <summary>
     /// ジャンプ距離を決める

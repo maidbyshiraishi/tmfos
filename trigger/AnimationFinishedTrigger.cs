@@ -16,8 +16,5 @@ public partial class AnimationFinishedTrigger : Node
         }
     }
 
-    public virtual void Exec()
-    {
-        Lib.ExecCommands(this, null, true);
-    }
+    public virtual void Exec() => Lib.ExecCommands(this, null, true);
 }

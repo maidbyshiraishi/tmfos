@@ -16,18 +16,9 @@ public partial class GoPageCommand : CommandRoot, IStoryTheaterContent
 
     private StoryTheater _storyTheater = null;
 
-    public override void _Ready()
-    {
-        AddToGroup(StoryTheater.StoryTheaterContentGroup);
-    }
+    public override void _Ready() => AddToGroup(StoryTheater.StoryTheaterContentGroup);
 
-    public void InitializeStoryTheaterContent(StoryTheater storyTheater)
-    {
-        _storyTheater = storyTheater;
-    }
+    public void InitializeStoryTheaterContent(StoryTheater storyTheater) => _storyTheater = storyTheater;
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        _storyTheater?.GoPage(Page);
-    }
+    public override void DoCommand(Node node, bool flag) => _storyTheater?.GoPage(Page);
 }

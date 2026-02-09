@@ -8,15 +8,9 @@ namespace tmfos.gui;
 /// </summary>
 public partial class CommandTextEdit : TextEdit
 {
-    public override void _Ready()
-    {
-        Lib.ConnectFocusSignal(this, new(this, MethodName.ExecFocusEntered), new(this, MethodName.ExecFocusExited), new(this, MethodName.ExecMouseEntered));
-    }
+    public override void _Ready() => Lib.ConnectFocusSignal(this, new(this, MethodName.ExecFocusEntered), new(this, MethodName.ExecFocusExited), new(this, MethodName.ExecMouseEntered));
 
-    public virtual void ExecFocusEntered()
-    {
-        Lib.Focus(this, null, true);
-    }
+    public virtual void ExecFocusEntered() => Lib.Focus(this, null, true);
 
     public virtual void ExecMouseEntered()
     {
@@ -26,8 +20,5 @@ public partial class CommandTextEdit : TextEdit
         }
     }
 
-    public virtual void ExecFocusExited()
-    {
-        Lib.Focus(this, null, false);
-    }
+    public virtual void ExecFocusExited() => Lib.Focus(this, null, false);
 }

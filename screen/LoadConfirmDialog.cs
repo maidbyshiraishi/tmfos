@@ -46,8 +46,5 @@ public partial class LoadConfirmDialog : DialogRoot
         }
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "No";
-    }
+    protected override string GetDefaultFocusNodeName() => "No";
 }

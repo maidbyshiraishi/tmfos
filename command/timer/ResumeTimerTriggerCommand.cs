@@ -14,8 +14,5 @@ public partial class ResumeTimerTriggerCommand : CommandRoot
     [Export]
     public TimerTrigger Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.PauseTimer(false);
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.PauseTimer(false);
 }

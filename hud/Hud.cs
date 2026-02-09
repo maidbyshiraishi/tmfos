@@ -71,10 +71,7 @@ public partial class Hud : CanvasLayer, IGameNode
         _life.Value = life;
     }
 
-    public void UpdateHudRemain(int remain)
-    {
-        Lib.UpdateLabel(_remain, string.Format("{0:D2}", remain));
-    }
+    public void UpdateHudRemain(int remain) => Lib.UpdateLabel(_remain, string.Format("{0:D2}", remain));
 
     public void UpdateHudScore(int score)
     {
@@ -86,8 +83,5 @@ public partial class Hud : CanvasLayer, IGameNode
         Lib.UpdateLabel(_score, string.Format("{0:D10}", score));
     }
 
-    public void UpdateHudTime(double time)
-    {
-        Lib.UpdateLabel(_time, string.Format("{0:#}", time));
-    }
+    public void UpdateHudTime(double time) => Lib.UpdateLabel(_time, string.Format("{0:#}", time));
 }

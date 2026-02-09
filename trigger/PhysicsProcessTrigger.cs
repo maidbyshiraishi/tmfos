@@ -9,18 +9,9 @@ namespace tmfos.trigger;
 /// </summary>
 public partial class PhysicsProcessTrigger : Node
 {
-    public override void _Ready()
-    {
-        AddToGroup(StageRoot.PhysicsProcessGroup);
-    }
+    public override void _Ready() => AddToGroup(StageRoot.PhysicsProcessGroup);
 
-    public override void _PhysicsProcess(double delta)
-    {
-        Exec();
-    }
+    public override void _PhysicsProcess(double delta) => Exec();
 
-    public void Exec()
-    {
-        Lib.ExecCommands(this, null, true);
-    }
+    public void Exec() => Lib.ExecCommands(this, null, true);
 }

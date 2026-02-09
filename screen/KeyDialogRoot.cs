@@ -159,10 +159,7 @@ public partial class KeyDialogRoot : DialogRoot
         _info.Text = text;
     }
 
-    public void UpSet()
-    {
-        EnterSetMode("上キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。上カーソルキーとテンキーの8キーは割り当て固定で変更できません。", "ui_up");
-    }
+    public void UpSet() => EnterSetMode("上キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。上カーソルキーとテンキーの8キーは割り当て固定で変更できません。", "ui_up");
 
     public void UpInfo()
     {
@@ -170,10 +167,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_up");
     }
 
-    public void DownSet()
-    {
-        EnterSetMode("下キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。下カーソルキーとテンキーの2キーは割り当て固定で変更できません。", "ui_down");
-    }
+    public void DownSet() => EnterSetMode("下キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。下カーソルキーとテンキーの2キーは割り当て固定で変更できません。", "ui_down");
 
     public void DownInfo()
     {
@@ -181,10 +175,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_down");
     }
 
-    public void LeftSet()
-    {
-        EnterSetMode("左キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。左カーソルキーとテンキーの4キーは割り当て固定で変更できません。", "ui_left");
-    }
+    public void LeftSet() => EnterSetMode("左キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。左カーソルキーとテンキーの4キーは割り当て固定で変更できません。", "ui_left");
 
     public void LeftInfo()
     {
@@ -192,10 +183,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_left");
     }
 
-    public void RightSet()
-    {
-        EnterSetMode("右キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。右カーソルキーとテンキーの6キーは割り当て固定で変更できません。", "ui_right");
-    }
+    public void RightSet() => EnterSetMode("右キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。右カーソルキーとテンキーの6キーは割り当て固定で変更できません。", "ui_right");
 
     public void RightInfo()
     {
@@ -203,10 +191,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_right");
     }
 
-    public void ASet()
-    {
-        EnterSetMode("Aキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。エンターキーとテンキーのエンターキーは割り当て固定で変更できません。", "ui_accept");
-    }
+    public void ASet() => EnterSetMode("Aキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。エンターキーとテンキーのエンターキーは割り当て固定で変更できません。", "ui_accept");
 
     public void AInfo()
     {
@@ -214,10 +199,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_accept");
     }
 
-    public void BSet()
-    {
-        EnterSetMode("Bキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "b");
-    }
+    public void BSet() => EnterSetMode("Bキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "b");
 
     public void BInfo()
     {
@@ -225,10 +207,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("b");
     }
 
-    public void PauseSet()
-    {
-        EnterSetMode("Pauseキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "pause");
-    }
+    public void PauseSet() => EnterSetMode("Pauseキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "pause");
 
     public void PauseInfo()
     {
@@ -236,10 +215,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("pause");
     }
 
-    public void OptionSet()
-    {
-        EnterSetMode("Optionキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "option");
-    }
+    public void OptionSet() => EnterSetMode("Optionキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "option");
 
     public void OptionInfo()
     {
@@ -247,10 +223,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("option");
     }
 
-    public void ScreenshotSet()
-    {
-        EnterSetMode("スクリーンショットキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "screenshot");
-    }
+    public void ScreenshotSet() => EnterSetMode("スクリーンショットキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "screenshot");
 
     public void ScreenshotInfo()
     {
@@ -264,10 +237,7 @@ public partial class KeyDialogRoot : DialogRoot
         _keyInfo.Text = "";
     }
 
-    public void HelpSet()
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["ヘルプキーは変更できません。", false]);
-    }
+    public void HelpSet() => GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["ヘルプキーは変更できません。", false]);
 
     public void HelpInfo()
     {
@@ -477,13 +447,7 @@ public partial class KeyDialogRoot : DialogRoot
         }
     }
 
-    public override void UpdateDialogScreen()
-    {
-        UpdateLabel(_lastLabel);
-    }
+    public override void UpdateDialogScreen() => UpdateLabel(_lastLabel);
 
-    public void SwapAB()
-    {
-        GetNode<GameKeyOption>("/root/GameKeyOption").SwapAB();
-    }
+    public void SwapAB() => GetNode<GameKeyOption>("/root/GameKeyOption").SwapAB();
 }

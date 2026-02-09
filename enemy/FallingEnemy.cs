@@ -21,10 +21,7 @@ public partial class FallingEnemy : Shot
         _longDown = GetNode<RayCast2D>("LongDown");
     }
 
-    public override void InitializeNode()
-    {
-        PlaySprite();
-    }
+    public override void InitializeNode() => PlaySprite();
 
     public override void _PhysicsProcess(double delta)
     {

@@ -19,10 +19,7 @@ public partial class SplashScreen : DialogRoot
     /// <summary>
     /// ロゴアニメーションと効果音の再生を開始する
     /// </summary>
-    public void PlayStart()
-    {
-        GetNode<AudioStreamPlayer>("Audio_1").Play();
-    }
+    public void PlayStart() => GetNode<AudioStreamPlayer>("Audio_1").Play();
 
     public void PlayAudio2()
     {
@@ -33,8 +30,5 @@ public partial class SplashScreen : DialogRoot
     /// <summary>
     /// 次画面に遷移する
     /// </summary>
-    public void GoNextScreen()
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenScreen("res://screen/title_screen.tscn", "fadeout_1", "fadein_1");
-    }
+    public void GoNextScreen() => GetNode<DialogLayer>("/root/DialogLayer").OpenScreen("res://screen/title_screen.tscn", "fadeout_1", "fadein_1");
 }

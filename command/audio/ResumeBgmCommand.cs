@@ -8,8 +8,5 @@ namespace tmfos.command.audio;
 /// </summary>
 public partial class ResumeBgmCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<MusicPlayer>("/root/MusicPlayer").Pause(false);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<MusicPlayer>("/root/MusicPlayer").Pause(false);
 }

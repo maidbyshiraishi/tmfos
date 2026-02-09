@@ -13,8 +13,5 @@ public partial class ShowCanvasItemCommand : CommandRoot
     [Export]
     public CanvasItem Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.Show();
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.Show();
 }

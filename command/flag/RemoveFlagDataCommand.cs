@@ -14,8 +14,5 @@ public partial class RemoveFlagDataCommand : CommandRoot
     [Export]
     public string Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<GameData>("/root/GameData").RemoveFlagData(Target);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<GameData>("/root/GameData").RemoveFlagData(Target);
 }

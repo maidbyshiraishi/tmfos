@@ -68,14 +68,8 @@ public partial class TentacleHead : Area2D, IGameNode
         Lib.ResetTimer(_timer);
     }
 
-    public void SetTargetPlayer()
-    {
-        Target = _player;
-    }
+    public void SetTargetPlayer() => Target = _player;
 
-    private void SetTargetRoot()
-    {
-        Target = Root;
-    }
+    private void SetTargetRoot() => Target = Root;
 }
 

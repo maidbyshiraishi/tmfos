@@ -7,8 +7,5 @@ namespace tmfos.command;
 /// </summary>
 public partial class PauseSceneTreeCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetTree().Paused = true;
-    }
+    public override void DoCommand(Node node, bool flag) => GetTree().Paused = true;
 }

@@ -48,10 +48,7 @@ public partial class SaveConfirmDialog : DialogRoot
         }
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "No";
-    }
+    protected override string GetDefaultFocusNodeName() => "No";
 
     /// <summary>
     /// はい

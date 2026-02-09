@@ -98,8 +98,5 @@ public partial class TriggerArea2D : Area2D, IStateful
         gdata.SetStageData(stageNo, $"{name}_Opened", m_opened ? 1 : 0);
     }
 
-    public virtual void SetOpened(bool opened)
-    {
-        m_opened = opened;
-    }
+    public virtual void SetOpened(bool opened) => m_opened = opened;
 }

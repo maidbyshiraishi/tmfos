@@ -20,8 +20,5 @@ public partial class ChangeBgmCommand : CommandRoot
     [Export]
     public AudioStream Stream { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<MusicPlayer>("/root/MusicPlayer").Play(Command, Stream);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<MusicPlayer>("/root/MusicPlayer").Play(Command, Stream);
 }

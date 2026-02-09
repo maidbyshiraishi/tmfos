@@ -8,8 +8,5 @@ namespace tmfos.command.state;
 /// </summary>
 public partial class StateBackupCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<GameData>("/root/GameData").Backup();
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<GameData>("/root/GameData").Backup();
 }

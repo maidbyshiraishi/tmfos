@@ -13,8 +13,5 @@ public partial class PlayAnimationCommand : CommandRoot
     [Export]
     public AnimatedSprite2D AnimatedSprite { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        AnimatedSprite?.Play();
-    }
+    public override void DoCommand(Node node, bool flag) => AnimatedSprite?.Play();
 }

@@ -41,20 +41,17 @@ public class ItemData : GameDataRoot
         Weapon = 0;
     }
 
-    public ItemData Copy()
+    public ItemData Copy() => new()
     {
-        return new()
-        {
-            Shoes = Shoes,
-            Swim = Swim,
-            WallJump = WallJump,
-            Penetration = Penetration,
-            Lamp = Lamp,
-            Search = Search,
-            Armor = Armor,
-            Weapon = Weapon
-        };
-    }
+        Shoes = Shoes,
+        Swim = Swim,
+        WallJump = WallJump,
+        Penetration = Penetration,
+        Lamp = Lamp,
+        Search = Search,
+        Armor = Armor,
+        Weapon = Weapon
+    };
 
     public override Error SetConfigFile(ConfigFile file)
     {
@@ -110,13 +107,7 @@ public class ItemData : GameDataRoot
         }
     }
 
-    public override string[] GetSectionKeys(ConfigFile file)
-    {
-        return [.. AllKey];
-    }
+    public override string[] GetSectionKeys(ConfigFile file) => [.. AllKey];
 
-    public override Array GetSectionValues(ConfigFile file)
-    {
-        return [Shoes ? 1 : 0, Swim ? 1 : 0, WallJump ? 1 : 0, Penetration ? 1 : 0, Lamp ? 1 : 0, Search ? 1 : 0, Armor, Weapon];
-    }
+    public override Array GetSectionValues(ConfigFile file) => [Shoes ? 1 : 0, Swim ? 1 : 0, WallJump ? 1 : 0, Penetration ? 1 : 0, Lamp ? 1 : 0, Search ? 1 : 0, Armor, Weapon];
 }

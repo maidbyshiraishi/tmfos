@@ -125,10 +125,7 @@ public partial class MaidRobot2Enemy : Enemy
         GetNode<TextureProgressBar>("%HUD/BossLife").Value = Life;
     }
 
-    public void Jump()
-    {
-        _jump = true;
-    }
+    public void Jump() => _jump = true;
 
     public void Respawn()
     {

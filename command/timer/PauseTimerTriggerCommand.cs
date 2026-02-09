@@ -14,8 +14,5 @@ public partial class PauseTimerTriggerCommand : CommandRoot
     [Export]
     public TimerTrigger Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.PauseTimer(true);
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.PauseTimer(true);
 }

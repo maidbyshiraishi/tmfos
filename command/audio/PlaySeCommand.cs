@@ -14,8 +14,5 @@ public partial class PlaySeCommand : CommandRoot
     [Export]
     public string SeName { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<SePlayer>("/root/SePlayer").Play(SeName);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<SePlayer>("/root/SePlayer").Play(SeName);
 }

@@ -13,8 +13,5 @@ public partial class ReferenceContainer : CommandRoot
     [Export]
     public CommandRoot Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.ExecCommand(node, flag);
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.ExecCommand(node, flag);
 }

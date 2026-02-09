@@ -174,10 +174,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
         }
     }
 
-    protected void PauseSprite()
-    {
-        m_animatedSprite.Pause();
-    }
+    protected void PauseSprite() => m_animatedSprite.Pause();
 
     public virtual void CalcDirection()
     {
@@ -199,10 +196,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
         m_animatedSprite.Rotation = rotation;
     }
 
-    public void SetSpawner(ISpawner spawner)
-    {
-        _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
-    }
+    public void SetSpawner(ISpawner spawner) => _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
 
     public virtual void SetNodeInfo(Vector2 position, Vector2 direction)
     {

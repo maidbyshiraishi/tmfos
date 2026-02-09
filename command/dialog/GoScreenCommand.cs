@@ -26,8 +26,5 @@ public partial class GoScreenCommand : CommandRoot
     [Export]
     public string Fadein { get; set; } = "fadein_1";
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenScreen(Screen, Fadeout, Fadein);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").OpenScreen(Screen, Fadeout, Fadein);
 }

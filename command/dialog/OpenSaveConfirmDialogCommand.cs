@@ -14,8 +14,5 @@ public partial class OpenSaveConfirmDialogCommand : CommandRoot
     [Export]
     public int SlotNo { get; set; } = 0;
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/save_confirm_dialog.tscn", "SaveConfirmDialog", [SlotNo]);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/save_confirm_dialog.tscn", "SaveConfirmDialog", [SlotNo]);
 }

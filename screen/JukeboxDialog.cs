@@ -26,10 +26,7 @@ public partial class JukeboxDialog : DialogRoot
         base.Active();
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "Back";
-    }
+    protected override string GetDefaultFocusNodeName() => "Back";
 
     /// <summary>
     /// GUI設定値を更新する

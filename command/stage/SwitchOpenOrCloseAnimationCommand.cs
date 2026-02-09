@@ -30,8 +30,5 @@ public partial class SwitchOpenOrCloseAnimationCommand : CommandRoot
         }
     }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Opened = !_opened;
-    }
+    public override void DoCommand(Node node, bool flag) => Opened = !_opened;
 }

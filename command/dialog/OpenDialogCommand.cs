@@ -14,8 +14,5 @@ public partial class OpenDialogCommand : CommandRoot
     [Export]
     public string DialogPath { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog(DialogPath);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").OpenDialog(DialogPath);
 }

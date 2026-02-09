@@ -15,15 +15,9 @@ public partial class GameKeyOption : Node
     private static readonly Array<Key> UnchangeableKeys = [Key.Enter, Key.KpEnter, Key.Kp8, Key.Kp2, Key.Kp4, Key.Kp6, Key.Up, Key.Down, Key.Left, Key.Right, Key.Escape, Key.F1];
     private static readonly Array<JoyButton> UnchangeableJoyButton = [JoyButton.DpadUp, JoyButton.DpadDown, JoyButton.DpadLeft, JoyButton.DpadRight];
 
-    public override void _Ready()
-    {
-        LoadKeyOptions();
-    }
+    public override void _Ready() => LoadKeyOptions();
 
-    public static void ResetDefaultKeyOptions()
-    {
-        InputMap.LoadFromProjectSettings();
-    }
+    public static void ResetDefaultKeyOptions() => InputMap.LoadFromProjectSettings();
 
     public void LoadKeyOptions()
     {

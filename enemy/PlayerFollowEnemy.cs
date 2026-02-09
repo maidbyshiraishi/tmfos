@@ -146,20 +146,11 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
     {
     }
 
-    public void SetNodeInfo(Vector2 position, Vector2 direction)
-    {
-        Position = position;
-    }
+    public void SetNodeInfo(Vector2 position, Vector2 direction) => Position = position;
 
-    public void SetSpawner(ISpawner spawner)
-    {
-        _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
-    }
+    public void SetSpawner(ISpawner spawner) => _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
 
-    public void FindPlayer(Node2D node)
-    {
-        _playerInSight = true;
-    }
+    public void FindPlayer(Node2D node) => _playerInSight = true;
 
     public void LostPlayer(Node2D node)
     {

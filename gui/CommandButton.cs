@@ -17,15 +17,9 @@ public partial class CommandButton : Button
         Lib.ConnectFocusSignal(this, new(this, MethodName.ExecFocusEntered), new(this, MethodName.ExecFocusExited), new(this, MethodName.ExecMouseEntered));
     }
 
-    public virtual void Exec()
-    {
-        Lib.Exec(this, null, true);
-    }
+    public virtual void Exec() => Lib.Exec(this, null, true);
 
-    public virtual void ExecFocusEntered()
-    {
-        Lib.Focus(this, null, true);
-    }
+    public virtual void ExecFocusEntered() => Lib.Focus(this, null, true);
 
     public virtual void ExecMouseEntered()
     {
@@ -35,8 +29,5 @@ public partial class CommandButton : Button
         }
     }
 
-    public virtual void ExecFocusExited()
-    {
-        Lib.Focus(this, null, false);
-    }
+    public virtual void ExecFocusExited() => Lib.Focus(this, null, false);
 }

@@ -128,18 +128,9 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
         }
     }
 
-    public void SetSpawned()
-    {
-        _spawned = true;
-    }
+    public void SetSpawned() => _spawned = true;
 
-    public void ResetSpawned()
-    {
-        _spawned = false;
-    }
+    public void ResetSpawned() => _spawned = false;
 
-    public Callable GetSignalMethod()
-    {
-        return new(this, MethodName.ResetSpawned);
-    }
+    public Callable GetSignalMethod() => new(this, MethodName.ResetSpawned);
 }

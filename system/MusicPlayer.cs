@@ -196,10 +196,7 @@ public partial class MusicPlayer : Node
     /// マスター音量をミュートする
     /// </summary>
     /// <param name="mute">ミュートするか</param>
-    public static void SetMasterBusMute(bool mute)
-    {
-        AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), mute);
-    }
+    public static void SetMasterBusMute(bool mute) => AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), mute);
 
     /// <summary>
     /// 再生を一時停止する

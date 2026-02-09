@@ -20,18 +20,12 @@ public partial class TimerTrigger : Node
         }
     }
 
-    public virtual void Exec()
-    {
-        Lib.ExecCommands(this, null, true);
-    }
+    public virtual void Exec() => Lib.ExecCommands(this, null, true);
 
     /// <summary>
     /// タイマーを再スタートする
     /// </summary>
-    public void ResetTimer()
-    {
-        Lib.ResetTimer(_timer);
-    }
+    public void ResetTimer() => Lib.ResetTimer(_timer);
 
     /// <summary>
     /// タイマーを一時停止する
@@ -45,8 +39,5 @@ public partial class TimerTrigger : Node
         }
     }
 
-    public void StopTimer()
-    {
-        PauseTimer(true);
-    }
+    public void StopTimer() => PauseTimer(true);
 }

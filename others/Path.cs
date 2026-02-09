@@ -8,10 +8,7 @@ namespace tmfos.others;
 /// </summary>
 public partial class Path : Path2D
 {
-    public override void _Ready()
-    {
-        SetChildrenPathLooped();
-    }
+    public override void _Ready() => SetChildrenPathLooped();
 
     protected void SetChildrenPathLooped()
     {

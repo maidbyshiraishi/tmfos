@@ -19,28 +19,19 @@ public partial class DialogLayer : CanvasLayer
     /// 現在の画面を返す
     /// </summary>
     /// <returns>ScreenRoot</returns>
-    public DialogRoot GetCurrentScreen()
-    {
-        return GetTree().CurrentScene as DialogRoot;
-    }
+    public DialogRoot GetCurrentScreen() => GetTree().CurrentScene as DialogRoot;
 
     /// <summary>
     /// 現在のゲーム画面を返す
     /// </summary>
     /// <returns>ScreenRoot</returns>
-    public StageRoot GetCurrentStageRoot()
-    {
-        return GetTree().CurrentScene as StageRoot;
-    }
+    public StageRoot GetCurrentStageRoot() => GetTree().CurrentScene as StageRoot;
 
     /// <summary>
     /// 現在のダイアログを返す
     /// </summary>
     /// <returns>DialogRoot</returns>
-    public DialogRoot GetCurrentDialog()
-    {
-        return Pop(false);
-    }
+    public DialogRoot GetCurrentDialog() => Pop(false);
 
     /// <summary>
     /// ダイアログを開く
@@ -160,10 +151,7 @@ public partial class DialogLayer : CanvasLayer
         }
     }
 
-    public void UpdateDialogScreen()
-    {
-        GetCurrentDialog()?.UpdateDialogScreen();
-    }
+    public void UpdateDialogScreen() => GetCurrentDialog()?.UpdateDialogScreen();
 
     /// <summary>
     /// 画面を開く
@@ -273,15 +261,9 @@ public partial class DialogLayer : CanvasLayer
         DeferredOpenScreen(path, fadeout, fadein);
     }
 
-    private bool IsEmpty()
-    {
-        return _history.Count == 0;
-    }
+    private bool IsEmpty() => _history.Count == 0;
 
-    private void Push(DialogRoot droot)
-    {
-        _history.Insert(0, droot);
-    }
+    private void Push(DialogRoot droot) => _history.Insert(0, droot);
 
     private DialogRoot Pop(bool delete)
     {
@@ -300,8 +282,5 @@ public partial class DialogLayer : CanvasLayer
         return droot;
     }
 
-    public void QuitGame()
-    {
-        GetTree().Quit();
-    }
+    public void QuitGame() => GetTree().Quit();
 }

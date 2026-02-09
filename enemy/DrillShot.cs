@@ -15,17 +15,11 @@ public partial class DrillShot : Shot
         PlaySprite();
     }
 
-    protected override void PlaySpawnedSe()
-    {
-        GetNode<SePlayer>("/root/SePlayer").Play("drill_shot");
-    }
+    protected override void PlaySpawnedSe() => GetNode<SePlayer>("/root/SePlayer").Play("drill_shot");
 
     public override void CalcDirection()
     {
     }
 
-    public override void SetNodeInfo(Vector2 position, Vector2 direction)
-    {
-        Position = position;
-    }
+    public override void SetNodeInfo(Vector2 position, Vector2 direction) => Position = position;
 }

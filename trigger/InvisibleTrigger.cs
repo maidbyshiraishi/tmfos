@@ -14,13 +14,7 @@ public partial class InvisibleTrigger : VisibleOnScreenNotifier2D
         _ = Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, MethodName.Entered));
     }
 
-    public void Entered()
-    {
-        Lib.ExecCommands(this, null, true);
-    }
+    public void Entered() => Lib.ExecCommands(this, null, true);
 
-    public void Exited()
-    {
-        Lib.ExecCommands(this, null, false);
-    }
+    public void Exited() => Lib.ExecCommands(this, null, false);
 }

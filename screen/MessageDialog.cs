@@ -34,8 +34,5 @@ public partial class MessageDialog : DialogRoot
         textEdit.Text = message;
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "Back";
-    }
+    protected override string GetDefaultFocusNodeName() => "Back";
 }
