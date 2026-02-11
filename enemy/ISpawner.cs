@@ -1,4 +1,4 @@
-using Godot;
+using System;
 
 namespace tmfos.enemy;
 
@@ -11,5 +11,5 @@ public interface ISpawner
 
     void ResetSpawned();
 
-    Callable GetSignalMethod();
+    Action GetSignalMethod();
 }

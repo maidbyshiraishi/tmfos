@@ -17,7 +17,7 @@ public partial class JukeboxDialog : DialogRoot
     public override void _Ready()
     {
         base._Ready();
-        _ = GetNode<HSlider>("Control/BgmSlider").Connect(Range.SignalName.ValueChanged, new(this, MethodName.BgmVolumeChanged));
+        GetNode<HSlider>("Control/BgmSlider").ValueChanged += BgmVolumeChanged;
     }
 
     public override void Active()
@@ -43,9 +43,9 @@ public partial class JukeboxDialog : DialogRoot
     /// BGM音量が変更された
     /// </summary>
     /// <param name="value">音量</param>
-    public void BgmVolumeChanged(float value)
+    public void BgmVolumeChanged(double value)
     {
-        BgmVolume = value;
+        BgmVolume = (float)value;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.BgmVolume = BgmVolume;

@@ -8,7 +8,7 @@ namespace tmfos.gui;
 /// </summary>
 public partial class CommandItemList : ItemList
 {
-    public override void _Ready() => Lib.ConnectFocusSignal(this, new(this, MethodName.ExecFocusEntered), new(this, MethodName.ExecFocusExited), new(this, MethodName.ExecMouseEntered));
+    public override void _Ready() => Lib.ConnectFocusSignal(this, ExecFocusEntered, ExecFocusExited, ExecMouseEntered);
 
     public virtual void ExecFocusEntered() => Lib.Focus(this, null, true);
 

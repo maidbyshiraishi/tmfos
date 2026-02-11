@@ -10,8 +10,8 @@ public partial class VisibleTrigger : VisibleOnScreenNotifier2D
 {
     public override void _Ready()
     {
-        _ = Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.Entered));
-        _ = Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, MethodName.Exited));
+        ScreenEntered += Entered;
+        ScreenExited += Exited;
     }
 
     public void Entered() => Lib.ExecCommands(this, null, true);

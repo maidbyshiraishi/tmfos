@@ -82,5 +82,5 @@ public partial class Enemy : DurableMob, ISpawnedNode
 
     public void SetLifeTime(double lifeTime) => LifeTime = lifeTime;
 
-    public void SetSpawner(ISpawner spawner) => _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
+    public void SetSpawner(ISpawner spawner) => TreeExited += spawner.GetSignalMethod();
 }

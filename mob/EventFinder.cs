@@ -16,8 +16,8 @@ public partial class EventFinder : Area2D
 
     public override void _Ready()
     {
-        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.Area2DEntered));
-        _ = Connect(Area2D.SignalName.AreaExited, new(this, MethodName.Area2DExited));
+        AreaEntered += Area2DEntered;
+        AreaExited += Area2DExited;
         AddToGroup(StageRoot.PhysicsProcessGroup);
 
         if (GetParent() is ActionMob amob)
@@ -89,9 +89,9 @@ public partial class EventFinder : Area2D
         }
     }
 
-    public void Area2DEntered(Area2D area) => _ = CallDeferred(MethodName.DeferredNodeEntered, area);
+    public void Area2DEntered(Area2D area) => CallDeferred(MethodName.DeferredNodeEntered, area);
 
-    public void Area2DExited(Area2D area) => _ = CallDeferred(MethodName.DeferredNodeExited, area);
+    public void Area2DExited(Area2D area) => CallDeferred(MethodName.DeferredNodeExited, area);
 
     public void DeferredNodeEntered(Area2D node)
     {

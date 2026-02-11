@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using System;
 using tmfos.mob;
 using tmfos.player;
 using tmfos.stage;
@@ -84,7 +85,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
     {
         AddToGroup(StageRoot.GameNodeGroup);
         _marker = GetNode<Marker2D>("Marker2D");
-        _ = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.SpawnEnemy));
+        GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").ScreenEntered += SpawnEnemy;
 
         if (ManualMode)
         {
@@ -95,7 +96,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
     public void InitializeNode()
     {
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
-        _ = Connect(SignalName.NodeSpawned, new(stageRoot, StageRoot.MethodName.SpawnNode));
+        NodeSpawned += stageRoot.SpawnNode;
         _player = stageRoot.GetNode<Player>("%Player");
     }
 
@@ -132,5 +133,5 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
 
     public void ResetSpawned() => _spawned = false;
 
-    public Callable GetSignalMethod() => new(this, MethodName.ResetSpawned);
+    public Action GetSignalMethod() => ResetSpawned;
 }

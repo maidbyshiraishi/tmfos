@@ -12,7 +12,7 @@ public partial class SearchPointTrigger : TriggerArea2D
     public override void _Ready()
     {
         base._Ready();
-        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.ItemSearched));
+        AreaEntered += ItemSearched;
     }
 
     public override void SetOpened(bool opened)

@@ -56,14 +56,19 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
 
     public override void _Ready()
     {
-        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.HitArea2D));
-        _ = Connect(Area2D.SignalName.BodyEntered, new(this, MethodName.HitNode2D));
+        AreaEntered += HitArea2D;
+        BodyEntered += HitNode2D;
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
         m_animatedSprite = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
-        m_visibleOnScreenNotifier2D = GetNodeOrNull<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.PlaySpawnedSe));
-        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, MethodName.RemoveNode));
+
+        if (GetNodeOrNull("VisibleOnScreenNotifier2D") is VisibleOnScreenNotifier2D visibleOnScreenNotifier2D)
+        {
+            m_visibleOnScreenNotifier2D = visibleOnScreenNotifier2D;
+            m_visibleOnScreenNotifier2D.ScreenEntered += PlaySpawnedSe;
+            m_visibleOnScreenNotifier2D.ScreenExited += RemoveNode;
+        }
+
         CalcDirection();
     }
 
@@ -196,7 +201,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
         m_animatedSprite.Rotation = rotation;
     }
 
-    public void SetSpawner(ISpawner spawner) => _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
+    public void SetSpawner(ISpawner spawner) => TreeExited += spawner.GetSignalMethod();
 
     public virtual void SetNodeInfo(Vector2 position, Vector2 direction)
     {

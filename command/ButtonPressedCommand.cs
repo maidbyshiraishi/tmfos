@@ -15,9 +15,6 @@ public partial class ButtonPressedCommand : CommandRoot
 
     public override void DoCommand(Node node, bool flag)
     {
-        if (Target is not null)
-        {
-            _ = Target.EmitSignal(BaseButton.SignalName.Pressed);
-        }
+        _ = Target?.EmitSignal(BaseButton.SignalName.Pressed);
     }
 }

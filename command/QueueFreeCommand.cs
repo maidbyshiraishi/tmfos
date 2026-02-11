@@ -15,9 +15,11 @@ public partial class QueueFreeCommand : CommandRoot
 
     public override void DoCommand(Node node, bool flag)
     {
-        if (Target is not null)
+        if (ExecFlag != flag || Target is null)
         {
-            _ = Target.CallDeferred(Node.MethodName.QueueFree);
+            return;
         }
+
+        Target.QueueFree();
     }
 }

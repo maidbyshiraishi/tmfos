@@ -48,7 +48,7 @@ public partial class DurableMob : ActionMob, IDurable
         if (_lifeTimer is not null && 0.05f <= Mathf.Abs(LifeTime))
         {
             _lifeTimer.WaitTime = LifeTime;
-            _ = _lifeTimer.Connect(Timer.SignalName.Timeout, new(this, MethodName.Timeup));
+            _lifeTimer.Timeout += Timeup;
         }
     }
 

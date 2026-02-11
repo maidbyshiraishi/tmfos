@@ -59,10 +59,10 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
         _enemy = GetNode<Node2D>("Enemy");
         _exploreTimer = GetNode<Timer>("ExploreTimer");
         _exploreTimer.WaitTime = ExploreTime;
-        _ = _exploreTimer.Connect(Timer.SignalName.Timeout, new(this, MethodName.ChangeExploreDirection));
-        _ = GetNode<Area2D>("Enemy").Connect(Node.SignalName.TreeExiting, new(this, MethodName.RemoveNode));
-        _ = Connect(Area2D.SignalName.BodyEntered, new(this, MethodName.FindPlayer));
-        _ = Connect(Area2D.SignalName.BodyExited, new(this, MethodName.LostPlayer));
+        _exploreTimer.Timeout += ChangeExploreDirection;
+        GetNode<Area2D>("Enemy").TreeExiting += RemoveNode;
+        BodyEntered += FindPlayer;
+        BodyExited += LostPlayer;
 
         if (_enemy is ISpawnedNode ispawn)
         {
@@ -148,7 +148,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
 
     public void SetNodeInfo(Vector2 position, Vector2 direction) => Position = position;
 
-    public void SetSpawner(ISpawner spawner) => _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
+    public void SetSpawner(ISpawner spawner) => TreeExited += spawner.GetSignalMethod();
 
     public void FindPlayer(Node2D node) => _playerInSight = true;
 

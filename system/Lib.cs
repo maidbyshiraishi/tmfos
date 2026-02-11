@@ -147,12 +147,12 @@ public static partial class Lib
         control.SetBlockSignals(false);
     }
 
-    public static void ConnectFocusSignal(Control control, Callable entered, Callable exited, Callable moudeEntered)
+    public static void ConnectFocusSignal(Control control, System.Action entered, System.Action exited, System.Action moudeEntered)
     {
-        _ = control.Connect(Control.SignalName.FocusEntered, entered);
-        _ = control.Connect(Control.SignalName.MouseEntered, moudeEntered);
-        _ = control.Connect(Control.SignalName.FocusExited, exited);
-        _ = control.Connect(Control.SignalName.MouseExited, exited);
+        control.FocusEntered += entered;
+        control.MouseEntered += moudeEntered;
+        control.FocusExited += exited;
+        control.MouseExited += exited;
     }
 
     public static void ResetTimer(Timer timer)

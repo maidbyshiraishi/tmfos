@@ -15,8 +15,8 @@ public partial class TimerTrigger : Node
         if (GetParent() is Timer timer)
         {
             _timer = timer;
-            _ = _timer.Connect(Timer.SignalName.Timeout, new(this, MethodName.Exec));
-            _ = Connect(Node.SignalName.TreeExiting, new(this, MethodName.StopTimer));
+            _timer.Timeout += Exec;
+            TreeExiting += StopTimer;
         }
     }
 

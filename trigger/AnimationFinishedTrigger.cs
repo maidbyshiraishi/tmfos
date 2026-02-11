@@ -12,7 +12,7 @@ public partial class AnimationFinishedTrigger : Node
     {
         if (GetParent() is AnimatedSprite2D animatedSprite)
         {
-            _ = animatedSprite.Connect(AnimatedSprite2D.SignalName.AnimationFinished, new(this, MethodName.Exec));
+            animatedSprite.AnimationFinished += Exec;
         }
     }
 
