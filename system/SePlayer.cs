@@ -13,10 +13,7 @@ public partial class SePlayer : Node
 
     public override void _Ready()
     {
-        if (GetNodeOrNull("Timer") is Timer timer)
-        {
-            timer.Timeout += ClearAllAudioStreamPlayer;
-        }
+        GetNode<Timer>("Timer").Timeout += ClearAllAudioStreamPlayer;
     }
 
     public void Play(string name)

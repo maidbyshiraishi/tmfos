@@ -12,10 +12,7 @@ public partial class ScreenFader : CanvasLayer
 
     public override void _Ready()
     {
-        if (GetNodeOrNull("AnimatedSprite2D") is AnimatedSprite2D animatedSprite2D)
-        {
-            animatedSprite2D.AnimationFinished += AnimationFinished;
-        }
+        GetNode<AnimatedSprite2D>("AnimatedSprite2D").AnimationFinished += AnimationFinished;
     }
 
     public void ScreenFade(string effectName)
