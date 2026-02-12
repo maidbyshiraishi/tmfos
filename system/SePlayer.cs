@@ -11,10 +11,7 @@ public partial class SePlayer : Node
     [Export]
     public Dictionary<string, int> MaxPolyphony { get; set; } = [];
 
-    public override void _Ready()
-    {
-        GetNode<Timer>("Timer").Timeout += ClearAllAudioStreamPlayer;
-    }
+    public override void _Ready() => GetNode<Timer>("Timer").Timeout += ClearAllAudioStreamPlayer;
 
     public void Play(string name)
     {
