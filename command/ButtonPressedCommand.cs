@@ -13,8 +13,5 @@ public partial class ButtonPressedCommand : CommandRoot
     [Export]
     public BaseButton Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        _ = Target?.EmitSignal(BaseButton.SignalName.Pressed);
-    }
+    public override void DoCommand(Node node, bool flag) => _ = Target?.EmitSignal(BaseButton.SignalName.Pressed);
 }
