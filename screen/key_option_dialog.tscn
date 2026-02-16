@@ -33,12 +33,6 @@ focus_neighbor_right = NodePath("../A")
 focus_neighbor_left = NodePath("../Right")
 focus_neighbor_top = NodePath("../Swap")
 
-[node name="Option" parent="Control" index="7"]
-offset_left = 160.0
-
-[node name="Screenshot" parent="Control" index="8"]
-offset_left = 160.0
-
 [node name="Help" parent="Control" index="9"]
 focus_neighbor_bottom = NodePath("../Back")
 

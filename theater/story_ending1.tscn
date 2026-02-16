@@ -120,9 +120,6 @@ metadata/_edit_vertical_guides_ = [166.0, 479.0]
 [node name="Background" parent="." index="0"]
 color = Color(0, 0, 0, 1)
 
-[node name="Socket" parent="." index="1"]
-layout_mode = 0
-
 [node name="Contents" type="Control" parent="Socket" index="0"]
 layout_mode = 1
 anchors_preset = 8
