@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bq4q6ye36ijld"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bq4q6ye36ijld"]
 
 [ext_resource type="Texture2D" uid="uid://bi48pmdnfxjg6" path="res://contents/image/item/search_point.png" id="1_ube2c"]
 

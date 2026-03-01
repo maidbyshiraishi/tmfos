@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpnpsk7t6uv77"]
+[gd_scene format=3 uid="uid://bpnpsk7t6uv77"]
 
 [ext_resource type="Script" uid="uid://cktj4m4nxwavo" path="res://enemy/EnemySpawner.cs" id="1_sthf0"]
 
-[node name="EnemySpawner" type="Node2D"]
+[node name="EnemySpawner" type="Node2D" unique_id=1519054586]
 script = ExtResource("1_sthf0")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=19519629]
 position = Vector2(8, 8)
 rect = Rect2(-16, -16, 16, 16)
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="." unique_id=813278561]

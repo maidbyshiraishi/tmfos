@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cjfnovaq4k8mu"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cjfnovaq4k8mu"]
 
 [ext_resource type="Texture2D" uid="uid://dj6d7p5581xcp" path="res://contents/image/decoration/bubble.png" id="1_lywa5"]
 

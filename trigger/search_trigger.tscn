@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp0tb8otk67q3"]
+[gd_scene format=3 uid="uid://cp0tb8otk67q3"]
 
 [ext_resource type="Script" uid="uid://ctxdbfbp2ny1e" path="res://trigger/SearchTrigger.cs" id="2_7unlq"]
 [ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/decoration/show_floating_message_command.tscn" id="2_q2dtd"]
@@ -8,24 +8,24 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jumfg"]
 size = Vector2(32, 32)
 
-[node name="SearchTrigger" type="Area2D"]
+[node name="SearchTrigger" type="Area2D" unique_id=1769863902]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("2_7unlq")
 Search = true
 OneTime = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1089333456]
 shape = SubResource("RectangleShape2D_jumfg")
 
-[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("2_q2dtd")]
+[node name="ShowFloatingMessageCommand" parent="." unique_id=608974736 instance=ExtResource("2_q2dtd")]
 Message = "発見!!"
 
-[node name="UnsetSearchCommand" parent="." instance=ExtResource("4_8vnms")]
+[node name="UnsetSearchCommand" parent="." unique_id=166363038 instance=ExtResource("4_8vnms")]
 
-[node name="PlaySeCommandFind" parent="." instance=ExtResource("3_tgr2u")]
+[node name="PlaySeCommandFind" parent="." unique_id=317625625 instance=ExtResource("3_tgr2u")]
 SeName = "player_search_find"
 
-[node name="PlaySeCommandLost" parent="." instance=ExtResource("3_tgr2u")]
+[node name="PlaySeCommandLost" parent="." unique_id=1798292180 instance=ExtResource("3_tgr2u")]
 SeName = "player_search_lost"
 ExecFlag = false

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7uf428mr1fso"]
+[gd_scene format=3 uid="uid://c7uf428mr1fso"]
 
 [ext_resource type="Script" uid="uid://cefin33xr0w1j" path="res://trigger/SweepObserver.cs" id="1_fhn0e"]
 
-[node name="SweepObserver" type="Node"]
+[node name="SweepObserver" type="Node" unique_id=430555780]
 script = ExtResource("1_fhn0e")

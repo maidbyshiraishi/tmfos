@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4kkkr734ep2c"]
+[gd_scene format=3 uid="uid://d4kkkr734ep2c"]
 
 [ext_resource type="PackedScene" uid="uid://bvyr6cwo7qbyg" path="res://item/immediate_item_panel_root.tscn" id="1_6i0vj"]
 [ext_resource type="SpriteFrames" uid="uid://chqgwyu7tws1m" path="res://contents/animation/item/item_life.tres" id="2_upol7"]
 [ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/stage/add_durability_command.tscn" id="3_sj287"]
 
-[node name="ItemPanelLife" instance=ExtResource("1_6i0vj")]
+[node name="ItemPanelLife" unique_id=316976887 instance=ExtResource("1_6i0vj")]
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=75952202]
 sprite_frames = ExtResource("2_upol7")
 animation = &"closed"
 
-[node name="AddDurabilityCommand" parent="." index="2" instance=ExtResource("3_sj287")]
+[node name="AddDurabilityCommand" parent="." index="2" unique_id=357805470 instance=ExtResource("3_sj287")]
 
-[node name="ShowFloatingMessageCommand" parent="." index="7"]
+[node name="ShowFloatingMessageCommand" parent="." index="7" unique_id=1298389197]
 Message = "回復"

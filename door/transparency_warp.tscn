@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://0k7eapnlceja"]
+[gd_scene format=3 uid="uid://0k7eapnlceja"]
 
 [ext_resource type="Script" uid="uid://b771jxy3lpdgy" path="res://door/Warp.cs" id="1_kr7d6"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage/stage_entry_point.tscn" id="2_i7qoi"]
@@ -7,18 +7,18 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhsey"]
 
-[node name="TransparencyWarp" type="Area2D"]
+[node name="TransparencyWarp" type="Area2D" unique_id=305049725]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("1_kr7d6")
 Stateful = false
 OneTime = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617474741]
 shape = SubResource("CircleShape2D_lhsey")
 
-[node name="StageEntryPoint" parent="." instance=ExtResource("2_i7qoi")]
+[node name="StageEntryPoint" parent="." unique_id=1691656868 instance=ExtResource("2_i7qoi")]
 
-[node name="SavePlayerLifeTimeCommand" parent="." instance=ExtResource("7_sdqdb")]
+[node name="SavePlayerLifeTimeCommand" parent="." unique_id=850073288 instance=ExtResource("7_sdqdb")]
 
-[node name="ChangeStageCommand" parent="." instance=ExtResource("9_s0c5a")]
+[node name="ChangeStageCommand" parent="." unique_id=404568443 instance=ExtResource("9_s0c5a")]

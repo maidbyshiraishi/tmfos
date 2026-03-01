@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cn3j6o2wkhaqj"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cn3j6o2wkhaqj"]
 
 [ext_resource type="Texture2D" uid="uid://brl1tyf50gick" path="res://contents/image/enemy/three_meter.png" id="1_ec5uw"]
 

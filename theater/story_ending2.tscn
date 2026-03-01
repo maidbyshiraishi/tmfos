@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://r5mbwmmdg3hw"]
+[gd_scene format=3 uid="uid://r5mbwmmdg3hw"]
 
 [ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_oea57"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_cvu3c"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="9_1ty71"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/go_screen_command.tscn" id="10_0nalh"]
 
-[node name="ScrollTheater" instance=ExtResource("1_oea57")]
+[node name="ScrollTheater" unique_id=65693768 instance=ExtResource("1_oea57")]
 ScrollTime = 50.0
 metadata/_edit_horizontal_guides_ = [2176.0]
 metadata/_edit_vertical_guides_ = [640.0]
@@ -20,7 +20,7 @@ metadata/_edit_vertical_guides_ = [640.0]
 [node name="Background" parent="." index="0"]
 color = Color(0, 0, 0, 1)
 
-[node name="Contents" type="Control" parent="Path2D/Socket" index="0"]
+[node name="Contents" type="Control" parent="Path2D/Socket" parent_id_path=PackedInt32Array(905326003) index="0" unique_id=1969517142]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -32,7 +32,7 @@ grow_horizontal = 2
 pivot_offset = Vector2(320, 0)
 theme = ExtResource("2_cvu3c")
 
-[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
+[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0" unique_id=1448841520]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 72.0
@@ -44,10 +44,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" instance=ExtResource("3_d1l78")]
+[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" unique_id=972291295 instance=ExtResource("3_d1l78")]
 Stream = ExtResource("4_ss83w")
 
-[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2"]
+[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2" unique_id=467089570]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 201.0
@@ -60,7 +60,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label3" type="Label" parent="Path2D/Socket/Contents" index="3"]
+[node name="Label3" type="Label" parent="Path2D/Socket/Contents" index="3" unique_id=1037137688]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 377.0
@@ -72,7 +72,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="4"]
+[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="4" unique_id=508200613]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 248.0
@@ -84,7 +84,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="5"]
+[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="5" unique_id=2049765695]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 360.0
@@ -95,7 +95,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label4" type="Label" parent="Path2D/Socket/Contents" index="6"]
+[node name="Label4" type="Label" parent="Path2D/Socket/Contents" index="6" unique_id=1510189461]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 456.0
@@ -140,20 +140,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="7" instance=ExtResource("5_yivp3")]
+[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="7" unique_id=129286075 instance=ExtResource("5_yivp3")]
 position = Vector2(39, 2000)
 
-[node name="ReferenceContainer" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("6_6yteb")]
+[node name="ReferenceContainer" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" unique_id=1012378255 node_paths=PackedStringArray("Target") instance=ExtResource("6_6yteb")]
 Target = NodePath("../../../../../CloseCommand")
 
-[node name="Focus" parent="Path2D/Socket/Contents" index="8" instance=ExtResource("5_yk18a")]
+[node name="Focus" parent="Path2D/Socket/Contents" index="8" unique_id=976034773 instance=ExtResource("5_yk18a")]
 position = Vector2(43, 91)
 
-[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus" index="0" instance=ExtResource("3_d1l78")]
+[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus" index="0" unique_id=839611060 instance=ExtResource("3_d1l78")]
 Command = 3
 Stream = ExtResource("8_ghp75")
 
-[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="9"]
+[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="9" unique_id=1644289906]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 1704.0
@@ -166,11 +166,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="EndingPhoto" type="Sprite2D" parent="Path2D/Socket/Contents" index="10"]
+[node name="EndingPhoto" type="Sprite2D" parent="Path2D/Socket/Contents" index="10" unique_id=905952921]
 position = Vector2(319, 1568)
 texture = ExtResource("8_5kpdt")
 
-[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="11"]
+[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="11" unique_id=241992039]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 1928.0
@@ -182,7 +182,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="CloseCommand" parent="." index="4" instance=ExtResource("9_1ty71")]
+[node name="CloseCommand" parent="." index="4" unique_id=2016236633 instance=ExtResource("9_1ty71")]
 
-[node name="GoScreenCommand" parent="CloseCommand" index="0" instance=ExtResource("10_0nalh")]
+[node name="GoScreenCommand" parent="CloseCommand" index="0" unique_id=314644421 instance=ExtResource("10_0nalh")]
 Screen = "res://screen/title_screen.tscn"

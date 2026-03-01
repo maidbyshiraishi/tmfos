@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3x0uq0uifrnp"]
+[gd_scene format=3 uid="uid://d3x0uq0uifrnp"]
 
 [ext_resource type="Script" uid="uid://6uvlhbseo1dp" path="res://door/SavePoint.cs" id="1_gpnbb"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage/stage_entry_point.tscn" id="2_htpx1"]
@@ -19,7 +19,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bi4qp"]
 radius = 18.0
 
-[node name="SavePoint" type="Area2D"]
+[node name="SavePoint" type="Area2D" unique_id=689587743]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("1_gpnbb")
@@ -28,42 +28,42 @@ Search = true
 Stateful = false
 OneTime = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1017228745]
 shape = SubResource("CircleShape2D_bi4qp")
 
-[node name="TelBox" type="AnimatedSprite2D" parent="."]
+[node name="TelBox" type="AnimatedSprite2D" parent="." unique_id=527942690]
 position = Vector2(0, -10)
 sprite_frames = ExtResource("3_25df5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=958996360]
 sprite_frames = ExtResource("4_hldde")
 autoplay = "default"
 frame_progress = 0.0160338
 
-[node name="StageEntryPoint" parent="." instance=ExtResource("2_htpx1")]
+[node name="StageEntryPoint" parent="." unique_id=1220250203 instance=ExtResource("2_htpx1")]
 position = Vector2(0, 10)
 
-[node name="Light" parent="." instance=ExtResource("6_ntwn3")]
+[node name="Light" parent="." unique_id=1353842763 instance=ExtResource("6_ntwn3")]
 RangeRatio = 2.0
 
-[node name="CreateThumbnailCommand" parent="." instance=ExtResource("3_ipyls")]
+[node name="CreateThumbnailCommand" parent="." unique_id=2120815166 instance=ExtResource("3_ipyls")]
 
-[node name="UnsetPlayerSearchCommand" parent="." instance=ExtResource("2_tk0ma")]
+[node name="UnsetPlayerSearchCommand" parent="." unique_id=1019669398 instance=ExtResource("2_tk0ma")]
 
-[node name="StopPlayerMoveCommand" parent="." instance=ExtResource("4_3nmgq")]
+[node name="StopPlayerMoveCommand" parent="." unique_id=529307590 instance=ExtResource("4_3nmgq")]
 
-[node name="PlaySeCommand" parent="." instance=ExtResource("6_cc5kf")]
+[node name="PlaySeCommand" parent="." unique_id=509086710 instance=ExtResource("6_cc5kf")]
 SeName = "save_point"
 
-[node name="SetPlayerInitialDurabilityCommand" parent="." instance=ExtResource("6_mur3q")]
+[node name="SetPlayerInitialDurabilityCommand" parent="." unique_id=609631458 instance=ExtResource("6_mur3q")]
 
-[node name="ResetPlayerLifeTimeCommand" parent="." instance=ExtResource("7_6s2y6")]
+[node name="ResetPlayerLifeTimeCommand" parent="." unique_id=427885655 instance=ExtResource("7_6s2y6")]
 
-[node name="UpdateSavePointDoorNoCommand" parent="." instance=ExtResource("8_b2nrd")]
+[node name="UpdateSavePointDoorNoCommand" parent="." unique_id=1856995540 instance=ExtResource("8_b2nrd")]
 
-[node name="StateSaveCommand" parent="." instance=ExtResource("8_0kbx6")]
+[node name="StateSaveCommand" parent="." unique_id=1223746038 instance=ExtResource("8_0kbx6")]
 
-[node name="StateBackupCommand" parent="." instance=ExtResource("9_5xqv6")]
+[node name="StateBackupCommand" parent="." unique_id=1630854136 instance=ExtResource("9_5xqv6")]
 
-[node name="OpenSaveAndLoadDialogCommand" parent="." instance=ExtResource("9_pcgmf")]
+[node name="OpenSaveAndLoadDialogCommand" parent="." unique_id=31368604 instance=ExtResource("9_pcgmf")]
 DoorNo = 0

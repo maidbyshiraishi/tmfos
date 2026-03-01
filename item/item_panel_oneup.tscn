@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxh4bg4eirq7n"]
+[gd_scene format=3 uid="uid://bxh4bg4eirq7n"]
 
 [ext_resource type="PackedScene" uid="uid://bvyr6cwo7qbyg" path="res://item/immediate_item_panel_root.tscn" id="1_wx6kj"]
 [ext_resource type="SpriteFrames" uid="uid://o4xjdiea2ok5" path="res://contents/animation/item/item_one_up.tres" id="2_qdiqi"]
 [ext_resource type="PackedScene" uid="uid://bwp4y1nte25hm" path="res://command/stage/add_remain_command.tscn" id="3_8pjax"]
 
-[node name="ItemPanelOneup" instance=ExtResource("1_wx6kj")]
+[node name="ItemPanelOneup" unique_id=1763557125 instance=ExtResource("1_wx6kj")]
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=75952202]
 sprite_frames = ExtResource("2_qdiqi")
 animation = &"closed"
 
-[node name="AddRemainCommand" parent="." index="2" instance=ExtResource("3_8pjax")]
+[node name="AddRemainCommand" parent="." index="2" unique_id=1970299782 instance=ExtResource("3_8pjax")]
 
-[node name="ShowFloatingMessageCommand" parent="." index="7"]
+[node name="ShowFloatingMessageCommand" parent="." index="7" unique_id=1298389197]
 Message = "1up"

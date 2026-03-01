@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh28ruu3kfg5n"]
+[gd_scene format=3 uid="uid://dh28ruu3kfg5n"]
 
 [ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_gfcxe"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_kj13k"]
@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_3p5ga"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="7_1s3eh"]
 
-[node name="StoryTheater" instance=ExtResource("1_gfcxe")]
+[node name="StoryTheater" unique_id=1098278850 instance=ExtResource("1_gfcxe")]
 metadata/_edit_horizontal_guides_ = [118.0, 359.0]
 metadata/_edit_vertical_guides_ = [166.0, 479.0]
 
 [node name="Background" parent="." index="0"]
 color = Color(0.313726, 0.313726, 0.313726, 0.784314)
 
-[node name="Contents" type="Control" parent="Socket" index="0"]
+[node name="Contents" type="Control" parent="Socket" parent_id_path=PackedInt32Array(183355316) index="0" unique_id=689251939]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,14 +32,14 @@ grow_vertical = 2
 pivot_offset = Vector2(160, 120)
 theme = ExtResource("2_kj13k")
 
-[node name="Page1" type="Control" parent="Socket/Contents" index="0"]
+[node name="Page1" type="Control" parent="Socket/Contents" index="0" unique_id=411029048]
 anchors_preset = 0
 offset_left = 168.0
 offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="Label" type="Label" parent="Socket/Contents/Page1" index="0"]
+[node name="Label" type="Label" parent="Socket/Contents/Page1" index="0" unique_id=1569156482]
 layout_mode = 0
 offset_left = 152.0
 offset_top = 9.0
@@ -48,19 +48,19 @@ offset_bottom = 193.0
 text = "talk_0002_1"
 autowrap_mode = 3
 
-[node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page1" index="1"]
+[node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page1" index="1" unique_id=2138757939]
 position = Vector2(80, 81)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_rbeu7")
 
-[node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
+[node name="Control" type="Control" parent="Socket/Contents/Page1" index="2" unique_id=1975836954]
 anchors_preset = 0
 offset_left = 195.0
 offset_top = 192.0
 offset_right = 235.0
 offset_bottom = 232.0
 
-[node name="NextButton" type="Button" parent="Socket/Contents/Page1/Control" index="0"]
+[node name="NextButton" type="Button" parent="Socket/Contents/Page1/Control" index="0" unique_id=1248239964]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -73,14 +73,14 @@ offset_bottom = 32.0
 text = "次へ"
 script = ExtResource("4_xog7a")
 
-[node name="Exec" parent="Socket/Contents/Page1/Control/NextButton" index="0" instance=ExtResource("6_3p5ga")]
+[node name="Exec" parent="Socket/Contents/Page1/Control/NextButton" index="0" unique_id=1875345464 instance=ExtResource("6_3p5ga")]
 
-[node name="PlaySeCommand" parent="Socket/Contents/Page1/Control/NextButton/Exec" index="0" instance=ExtResource("5_rucj0")]
+[node name="PlaySeCommand" parent="Socket/Contents/Page1/Control/NextButton/Exec" index="0" unique_id=1371041394 instance=ExtResource("5_rucj0")]
 SeName = "menu_select"
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page1/Control/NextButton/Exec" index="1" instance=ExtResource("5_i61tr")]
+[node name="GoNextPageCommand" parent="Socket/Contents/Page1/Control/NextButton/Exec" index="1" unique_id=2059834762 instance=ExtResource("5_i61tr")]
 
-[node name="Page2" type="Control" parent="Socket/Contents" index="1"]
+[node name="Page2" type="Control" parent="Socket/Contents" index="1" unique_id=2131632476]
 visible = false
 anchors_preset = 0
 offset_left = 168.0
@@ -88,7 +88,7 @@ offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="Label" type="Label" parent="Socket/Contents/Page2" index="0"]
+[node name="Label" type="Label" parent="Socket/Contents/Page2" index="0" unique_id=1561920613]
 layout_mode = 0
 offset_left = 152.0
 offset_top = 9.0
@@ -97,19 +97,19 @@ offset_bottom = 193.0
 text = "talk_0002_2"
 autowrap_mode = 3
 
-[node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page2" index="1"]
+[node name="Talk001" type="Sprite2D" parent="Socket/Contents/Page2" index="1" unique_id=1812109837]
 position = Vector2(80, 81)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_rbeu7")
 
-[node name="Control" type="Control" parent="Socket/Contents/Page2" index="2"]
+[node name="Control" type="Control" parent="Socket/Contents/Page2" index="2" unique_id=105069050]
 anchors_preset = 0
 offset_left = 194.0
 offset_top = 191.0
 offset_right = 234.0
 offset_bottom = 231.0
 
-[node name="CloseButton" type="Button" parent="Socket/Contents/Page2/Control" index="0"]
+[node name="CloseButton" type="Button" parent="Socket/Contents/Page2/Control" index="0" unique_id=1922769707]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -122,13 +122,13 @@ offset_bottom = 32.0
 text = "会話終了"
 script = ExtResource("4_xog7a")
 
-[node name="Exec" parent="Socket/Contents/Page2/Control/CloseButton" index="0" instance=ExtResource("6_3p5ga")]
+[node name="Exec" parent="Socket/Contents/Page2/Control/CloseButton" index="0" unique_id=1002521172 instance=ExtResource("6_3p5ga")]
 
-[node name="PlaySeCommand" parent="Socket/Contents/Page2/Control/CloseButton/Exec" index="0" instance=ExtResource("5_rucj0")]
+[node name="PlaySeCommand" parent="Socket/Contents/Page2/Control/CloseButton/Exec" index="0" unique_id=704453915 instance=ExtResource("5_rucj0")]
 SeName = "menu_select"
 
-[node name="CloseDialogCommand" parent="Socket/Contents/Page2/Control/CloseButton/Exec" index="1" instance=ExtResource("7_1s3eh")]
+[node name="CloseDialogCommand" parent="Socket/Contents/Page2/Control/CloseButton/Exec" index="1" unique_id=1336181891 instance=ExtResource("7_1s3eh")]
 
-[node name="CloseCommand" parent="." index="4" instance=ExtResource("6_3p5ga")]
+[node name="CloseCommand" parent="." index="4" unique_id=291755480 instance=ExtResource("6_3p5ga")]
 
-[node name="CloseDialogCommand" parent="CloseCommand" index="0" instance=ExtResource("7_1s3eh")]
+[node name="CloseDialogCommand" parent="CloseCommand" index="0" unique_id=688270037 instance=ExtResource("7_1s3eh")]

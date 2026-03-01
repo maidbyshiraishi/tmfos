@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c8u4kthw1kiu5"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://c8u4kthw1kiu5"]
 
 [ext_resource type="Texture2D" uid="uid://skykmkemdyv4" path="res://contents/image/door/tel.png" id="1_dcmlx"]
 

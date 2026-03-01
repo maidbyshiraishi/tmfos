@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://biqdbvb6a12i0"]
+[gd_scene format=3 uid="uid://biqdbvb6a12i0"]
 
 [ext_resource type="PackedScene" uid="uid://vp0fhk4g3cgi" path="res://enemy/nekomimi_maid_root_enemy.tscn" id="1_dawi3"]
 [ext_resource type="SpriteFrames" uid="uid://xktsbgc8v46l" path="res://contents/animation/enemy/nekomimi_maid_c3.tres" id="6_sy0si"]
 
-[node name="NekomimiMaidEnemy" instance=ExtResource("1_dawi3")]
+[node name="NekomimiMaidEnemy" unique_id=601569260 instance=ExtResource("1_dawi3")]
 Life = 25
 MaxLife = 25
 

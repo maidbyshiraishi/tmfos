@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ds52eyqi0sj7w"]
+[gd_scene format=4 uid="uid://ds52eyqi0sj7w"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
 [ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="2_3jltj"]
@@ -18,76 +18,76 @@ _data = {
 }
 point_count = 6
 
-[node name="Stage" instance=ExtResource("1_axhrv")]
+[node name="Stage" unique_id=1792795745 instance=ExtResource("1_axhrv")]
 BgmStream = ExtResource("2_3jltj")
 
-[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D2" parent_id_path=PackedInt32Array(783352162) index="0" unique_id=1264730317]
 texture = ExtResource("2_vm6xn")
 
-[node name="Parallax2D1" parent="Background" index="2"]
+[node name="Parallax2D1" parent="Background" parent_id_path=PackedInt32Array(1424633333) index="2" unique_id=1111247074]
 visible = true
 
-[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0" unique_id=2146813747]
 texture = ExtResource("2_np4y0")
 
-[node name="Background" parent="TileMap" index="0"]
+[node name="Background" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="0" unique_id=1341315673]
 tile_map_data = PackedByteArray("AAAIAO7/AAAAAAAAAAALAO//AAAAAAAAAAAVAO7/AAAAAAAAAAAcAO7/AAAAAAAAAAAJAPX/AAAEAAAAAAAJAPb/AAAEAAAAAAAJAPf/AAAEAAAAAAAJAPj/AAAEAAAAAAAJAPn/AAAEAAAAAAAJAPr/AAAEAAAAAAAJAPv/AAAEAAAAAAAJAPz/AAAEAAAAAAAJAP3/AAAEAAAAAAA=")
 
-[node name="Ground" parent="TileMap" index="1"]
+[node name="Ground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="1" unique_id=2022029018]
 tile_map_data = PackedByteArray("AAAYAP7/AAAAAAUAAAAYAP//AAAAAAUAAAAZAP7/AAAAAAUAAAAZAP//AAAAAAUAAAAAAOz/AAAAAAUAAAAAAO3/AAAAAAUAAAAAAO7/AAAAAAUAAAAAAO//AAAAAAUAAAAAAPD/AAAAAAUAAAAAAPH/AAAAAAUAAAAAAPL/AAAAAAUAAAAAAPP/AAAAAAUAAAAAAPT/AAAAAAUAAAAAAPX/AAAAAAUAAAAAAPb/AAAAAAUAAAAAAPf/AAAAAAUAAAAAAPj/AAAAAAUAAAAAAPn/AAAAAAUAAAAAAPr/AAAAAAUAAAAAAPv/AAAAAAUAAAAAAPz/AAAAAAUAAAAAAP3/AAAAAAUAAAAAAP7/AAAAAAUAAAAAAP//AAAAAAUAAAABAOz/AAAAAAUAAAABAO3/AAAAAAUAAAABAO7/AAAAAAUAAAABAO//AAAAAAUAAAABAPD/AAAAAAUAAAABAPH/AAAAAAUAAAABAPL/AAAAAAUAAAABAPP/AAAAAAUAAAABAPT/AAAAAAUAAAABAPX/AAAAAAUAAAABAPb/AAAAAAUAAAABAPf/AAAAAAUAAAABAPj/AAAAAAUAAAABAPn/AAAAAAUAAAABAPr/AAAAAAUAAAABAPv/AAAAAAUAAAABAPz/AAAAAAUAAAABAP3/AAAAAAUAAAABAP7/AAAAAAUAAAABAP//AAAAAAUAAAACAPb/AAAAAAMAAAACAP3/AAACAAAAAAACAP7/AAAAAAQAAAACAP//AAAAAAUAAAADAPb/AAAAAAMAAAADAP3/AAACAAEAAAADAP7/AAAAAAQAAAADAP//AAAAAAUAAAAEAPb/AAAAAAMAAAAEAP3/AAACAAAAAAAEAP7/AAAAAAQAAAAEAP//AAAAAAUAAAAFAP3/AAACAAEAAAAFAP7/AAAAAAQAAAAFAP//AAAAAAUAAAAGAP3/AAACAAAAAAAGAP7/AAAAAAQAAAAGAP//AAAAAAUAAAAHAPb/AAAAAAMAAAAHAP3/AAACAAAAAAAHAP7/AAAAAAQAAAAHAP//AAAAAAUAAAAIAPb/AAAAAAMAAAAIAP7/AAAAAAUAAAAIAP//AAAAAAUAAAAJAP7/AAAAAAUAAAAJAP//AAAAAAUAAAAKAP7/AAAAAAUAAAAKAP//AAAAAAUAAAALAP7/AAAAAAUAAAALAP//AAAAAAUAAAAMAP7/AAAAAAUAAAAMAP//AAAAAAUAAAANAP7/AAAAAAUAAAANAP//AAAAAAUAAAAOAP7/AAAAAAUAAAAOAP//AAAAAAUAAAAPAPL/AAAAAAMAAAAPAP7/AAAAAAUAAAAPAP//AAAAAAUAAAAQAPL/AAAAAAMAAAAQAP7/AAAAAAUAAAAQAP//AAAAAAUAAAARAP7/AAAAAAUAAAARAP//AAAAAAUAAAASAP7/AAAAAAUAAAASAP//AAAAAAUAAAATAP7/AAAAAAUAAAATAP//AAAAAAUAAAAUAP7/AAAAAAUAAAAUAP//AAAAAAUAAAAVAP7/AAAAAAUAAAAVAP//AAAAAAUAAAAWAP7/AAAAAAUAAAAWAP//AAAAAAUAAAAXAP7/AAAAAAUAAAAXAP//AAAAAAUAAAAaAP7/AAAAAAUAAAAaAP//AAAAAAUAAAAbAP7/AAAAAAUAAAAbAP//AAAAAAUAAAAcAP7/AAAAAAUAAAAcAP//AAAAAAUAAAAdAP7/AAAAAAUAAAAdAP//AAAAAAUAAAAeAP7/AAAAAAUAAAAeAP//AAAAAAUAAAAfAP7/AAAAAAUAAAAfAP//AAAAAAUAAAAgAP7/AAAAAAUAAAAgAP//AAAAAAUAAAAhAP7/AAAAAAUAAAAhAP//AAAAAAUAAAAiAP7/AAAAAAUAAAAiAP//AAAAAAUAAAAjAOz/AAAAAAUAAAAjAO3/AAAAAAUAAAAjAO7/AAAAAAUAAAAjAO//AAAAAAUAAAAjAPD/AAAAAAUAAAAjAPH/AAAAAAUAAAAjAPL/AAAAAAUAAAAjAPP/AAAAAAUAAAAjAPT/AAAAAAUAAAAjAPX/AAAAAAUAAAAjAPb/AAAAAAUAAAAjAPf/AAAAAAUAAAAjAPj/AAAAAAUAAAAjAPn/AAAAAAUAAAAjAPr/AAAAAAUAAAAjAPv/AAAAAAUAAAAjAPz/AAAAAAUAAAAjAP3/AAAAAAUAAAAjAP7/AAAAAAUAAAAjAP//AAAAAAUAAAAkAOz/AAAAAAUAAAAkAO3/AAAAAAUAAAAkAO7/AAAAAAUAAAAkAO//AAAAAAUAAAAkAPD/AAAAAAUAAAAkAPH/AAAAAAUAAAAkAPL/AAAAAAUAAAAkAPP/AAAAAAUAAAAkAPT/AAAAAAUAAAAkAPX/AAAAAAUAAAAkAPb/AAAAAAUAAAAkAPf/AAAAAAUAAAAkAPj/AAAAAAUAAAAkAPn/AAAAAAUAAAAkAPr/AAAAAAUAAAAkAPv/AAAAAAUAAAAkAPz/AAAAAAUAAAAkAP3/AAAAAAUAAAAkAP7/AAAAAAUAAAAkAP//AAAAAAUAAAA=")
 
-[node name="Foreground" parent="TileMap" index="2"]
+[node name="Foreground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="2" unique_id=1114116396]
 tile_map_data = PackedByteArray("AAACAP7/AAAGAAUAAAADAP7/AAAGAAUAAAAEAP7/AAAGAAUAAAAFAP7/AAAGAAUAAAAGAP7/AAAGAAUAAAAHAP7/AAAGAAUAAAAIAP7/AAAGAAUAAAAJAP7/AAAGAAUAAAAWAP7/AAAGAAUAAAAUAP7/AAAGAAUAAAAXAP7/AAAGAAUAAAAYAP7/AAAGAAUAAAAZAP7/AAAGAAUAAAAIAPb/AAAGAAYAAAAHAPb/AAAGAAUAAAABAP3/AAADAAYAAAAjAPn/AAAEAAYAAAAjAPv/AAAEAAYAAAAjAPz/AAAEAAYAAAA=")
 
-[node name="Veil" parent="TileMap/ObservationHole" index="0"]
+[node name="Veil" parent="TileMap/ObservationHole" parent_id_path=PackedInt32Array(574971545) index="0" unique_id=1226535785]
 tile_map_data = PackedByteArray("AAAFAPb/AAAHAAMAAAAGAPb/AAAHAAMAAAA=")
 
-[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("6_v166r")]
+[node name="WoodDoor1" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="0" unique_id=1728006557 instance=ExtResource("6_v166r")]
 position = Vector2(992, -96)
 DestStageNo = 1
 DestDoorNo = 2
 DoorNo = 1
 
-[node name="WoodDoor2" parent="Door" index="1" instance=ExtResource("6_v166r")]
+[node name="WoodDoor2" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="1" unique_id=415365450 instance=ExtResource("6_v166r")]
 position = Vector2(112, -352)
 DestStageNo = 3
 DestDoorNo = 1
 DoorNo = 2
 Direction = 1
 
-[node name="TreasureBox" parent="Item" index="0" instance=ExtResource("7_lup55")]
+[node name="TreasureBox" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="0" unique_id=1634974864 instance=ExtResource("7_lup55")]
 position = Vector2(512, -456)
 Score = 30000
 
-[node name="Player" parent="." index="8" instance=ExtResource("6_1t5vm")]
+[node name="Player" parent="." index="8" unique_id=1825581480 instance=ExtResource("6_1t5vm")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="13"]
+[node name="Camera" type="Camera2D" parent="Player" index="13" unique_id=2112361936]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("7_i6ik5")
 
-[node name="Path2D" type="Path2D" parent="Others" index="0"]
+[node name="Path2D" type="Path2D" parent="Others" parent_id_path=PackedInt32Array(559713572) index="0" unique_id=1477192982]
 position = Vector2(570.764, -95.4087)
 curve = SubResource("Curve2D_dxmp7")
 script = ExtResource("11_qpwfv")
 
-[node name="MovingPlatform" parent="Others/Path2D" index="0" instance=ExtResource("10_8m4xj")]
+[node name="MovingPlatform" parent="Others/Path2D" index="0" unique_id=961989628 instance=ExtResource("10_8m4xj")]
 position = Vector2(39.236, -324.688)
 scale = Vector2(2, 1)
 
-[node name="HUD" parent="." index="13"]
+[node name="HUD" parent="." index="13" unique_id=1358724654]
 Text1 = "チュートリアル"
 Text2 = "2"
 
-[node name="Message" type="Control" parent="." index="16"]
+[node name="Message" type="Control" parent="." index="16" unique_id=1873057236]
 light_mask = 2
 anchors_preset = 0
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0" unique_id=697517191]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -102,7 +102,7 @@ bbcode_enabled = true
 text = "[center][outline_size=10][outline_color=black][font_size=20]ハシゴに触れて[color=#ff6666]上下キー[/color]で昇り降り、[color=#ff6666]Aキー[/color]を押せば飛び降ります。[/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1" unique_id=1749793795]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -116,7 +116,7 @@ bbcode_enabled = true
 text = "[center][outline_size=10][outline_color=black][font_size=20]扉は[color=#ff6666]上キー[/color][/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="Message" index="2"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="Message" index="2" unique_id=918745197]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -132,7 +132,7 @@ text = "[center][outline_size=10][outline_color=black][font_size=20]再び[color
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="Message" index="3"]
+[node name="RichTextLabel4" type="RichTextLabel" parent="Message" index="3" unique_id=1673045979]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -148,7 +148,7 @@ text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff66
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="Message" index="4"]
+[node name="RichTextLabel5" type="RichTextLabel" parent="Message" index="4" unique_id=1710549281]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -163,7 +163,7 @@ text = "[center][outline_size=10][outline_color=black][font_size=20]タイミン
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="Message" index="5"]
+[node name="RichTextLabel6" type="RichTextLabel" parent="Message" index="5" unique_id=536917782]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -179,6 +179,6 @@ text = "[center][outline_size=10][outline_color=black][font_size=20]宝箱で得
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("4_pbbwe")]
+[node name="OutOfBorder1" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="0" unique_id=1353937696 instance=ExtResource("4_pbbwe")]
 position = Vector2(592, 16)
 scale = Vector2(100, 1)

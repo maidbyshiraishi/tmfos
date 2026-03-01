@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkpmusncycni5"]
+[gd_scene format=3 uid="uid://bkpmusncycni5"]
 
 [ext_resource type="Texture2D" uid="uid://bbjoowx0ctxu7" path="res://contents/image/hud/life_boss.png" id="1_klrme"]
 
-[node name="BossLife" type="TextureProgressBar"]
+[node name="BossLife" type="TextureProgressBar" unique_id=1314221811]
 light_mask = 2
 anchors_preset = -1
 anchor_top = -0.0708334

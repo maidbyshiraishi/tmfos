@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mqkdiygn6qtn"]
+[gd_scene format=3 uid="uid://mqkdiygn6qtn"]
 
 [ext_resource type="Script" uid="uid://c6ej656fanvdq" path="res://enemy/MaidRobot2Enemy.cs" id="1_34v8d"]
 [ext_resource type="SpriteFrames" uid="uid://dyu1txjt6bgx1" path="res://contents/animation/enemy/maid_robot2.tres" id="6_gv2gr"]
@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05stx"]
 size = Vector2(15.5, 56)
 
-[node name="MaidRobot2Enemy" type="CharacterBody2D"]
+[node name="MaidRobot2Enemy" type="CharacterBody2D" unique_id=998608945]
 collision_layer = 32
 collision_mask = 1543
 script = ExtResource("1_34v8d")
@@ -24,33 +24,33 @@ JumpHeight = 700.0
 JumpSe = "enemy_jump"
 TouchdownSe = "enemy_touchdown"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2025083175]
 position = Vector2(0, -1)
 sprite_frames = ExtResource("6_gv2gr")
 animation = &"dead"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2013458514]
 polygon = PackedVector2Array(-64, 240, -512, 240, -512, 104, -312, -104, -312, -240, 312, -240, 312, -104, 512, 104, 512, 240, 64, 240, 64, -216, -64, -216)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1852774931]
 position = Vector2(-4.00002, 7.99998)
 scale = Vector2(32.75, 8.25)
 rect = Rect2(-16, -32, 32, 64)
 
-[node name="ActionChange" type="Node2D" parent="."]
+[node name="ActionChange" type="Node2D" parent="." unique_id=949506251]
 script = ExtResource("7_uh5tg")
 
-[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+[node name="Marker2D" type="Marker2D" parent="ActionChange" unique_id=1677661550]
 
-[node name="BurialArea" parent="." instance=ExtResource("8_p5x17")]
+[node name="BurialArea" parent="." unique_id=1220120072 instance=ExtResource("8_p5x17")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" unique_id=2051953080]
 position = Vector2(0, -208)
 shape = SubResource("RectangleShape2D_05stx")
 
-[node name="DamageZone" type="Node2D" parent="."]
+[node name="DamageZone" type="Node2D" parent="." unique_id=441638153]
 
-[node name="DamageZone1" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+[node name="DamageZone1" parent="DamageZone" unique_id=952940578 instance=ExtResource("10_aw1a1")]
 position = Vector2(284, 159)
 scale = Vector2(22, 8)
 Value = -30
@@ -58,7 +58,7 @@ Continuous = true
 Stateful = false
 OneTime = false
 
-[node name="DamageZone2" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+[node name="DamageZone2" parent="DamageZone" unique_id=1958327062 instance=ExtResource("10_aw1a1")]
 position = Vector2(264, 48)
 scale = Vector2(20, 3)
 Value = -30
@@ -66,7 +66,7 @@ Continuous = true
 Stateful = false
 OneTime = false
 
-[node name="DamageZone3" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+[node name="DamageZone3" parent="DamageZone" unique_id=1736277897 instance=ExtResource("10_aw1a1")]
 position = Vector2(224, -24)
 scale = Vector2(16, 4)
 Value = -50
@@ -74,7 +74,7 @@ Continuous = true
 Stateful = false
 OneTime = false
 
-[node name="DamageZone4" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+[node name="DamageZone4" parent="DamageZone" unique_id=1498214110 instance=ExtResource("10_aw1a1")]
 position = Vector2(-284, 159)
 scale = Vector2(22, 8)
 Value = -50
@@ -82,7 +82,7 @@ Continuous = true
 Stateful = false
 OneTime = false
 
-[node name="DamageZone5" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+[node name="DamageZone5" parent="DamageZone" unique_id=1205975720 instance=ExtResource("10_aw1a1")]
 position = Vector2(-264, 48)
 scale = Vector2(20, 3)
 Value = -50
@@ -90,7 +90,7 @@ Continuous = true
 Stateful = false
 OneTime = false
 
-[node name="DamageZone6" parent="DamageZone" instance=ExtResource("10_aw1a1")]
+[node name="DamageZone6" parent="DamageZone" unique_id=1545944731 instance=ExtResource("10_aw1a1")]
 position = Vector2(-224, -24)
 scale = Vector2(16, 4)
 Value = -50
@@ -98,12 +98,12 @@ Continuous = true
 Stateful = false
 OneTime = false
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=1812986104]
 wait_time = 0.001
 one_shot = true
 
-[node name="DrillTimer" type="Timer" parent="."]
+[node name="DrillTimer" type="Timer" parent="." unique_id=1646060247]
 autostart = true
 
-[node name="JumpTimer" type="Timer" parent="."]
+[node name="JumpTimer" type="Timer" parent="." unique_id=1949525849]
 autostart = true

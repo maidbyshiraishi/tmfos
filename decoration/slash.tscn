@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://coqvn03ns8s22"]
+[gd_scene format=3 uid="uid://coqvn03ns8s22"]
 
 [ext_resource type="Script" uid="uid://p7acrf4hg7rc" path="res://decoration/Decoration.cs" id="1_afjk4"]
 [ext_resource type="SpriteFrames" uid="uid://dn6mo1r2rhkaw" path="res://contents/animation/decoration/slash.tres" id="2_w5y7t"]
 
-[node name="Slash" type="Node2D"]
+[node name="Slash" type="Node2D" unique_id=1733356516]
 script = ExtResource("1_afjk4")
 SeName = "slash"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1830222630]
 sprite_frames = ExtResource("2_w5y7t")
 autoplay = "default"

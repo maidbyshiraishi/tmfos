@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cgo5nw4mlh7pe"]
+[gd_scene format=3 uid="uid://cgo5nw4mlh7pe"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_d5hvi"]
 [ext_resource type="Script" uid="uid://cgtirgj6hx117" path="res://screen/JukeboxDialog.cs" id="2_lfgcj"]
@@ -22,14 +22,14 @@
 [ext_resource type="Script" uid="uid://b06hw6ekb5ra3" path="res://gui/CommandHSlider.cs" id="20_7u47n"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="21_e5wmd"]
 
-[node name="JukeboxDialog" type="Control"]
+[node name="JukeboxDialog" type="Control" unique_id=142506366]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_d5hvi")
 script = ExtResource("2_lfgcj")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=407674178]
 light_mask = 2
 layout_mode = 0
 offset_left = 64.0
@@ -38,7 +38,7 @@ offset_right = 576.0
 offset_bottom = 456.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Border" type="ReferenceRect" parent="."]
+[node name="Border" type="ReferenceRect" parent="." unique_id=484646401]
 light_mask = 2
 layout_mode = 0
 offset_left = 64.0
@@ -49,7 +49,7 @@ border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1771786566]
 light_mask = 2
 layout_mode = 0
 offset_left = 96.0
@@ -59,7 +59,7 @@ offset_bottom = 65.0
 text = "ジュークボックス"
 horizontal_alignment = 1
 
-[node name="Bgm" type="Label" parent="."]
+[node name="Bgm" type="Label" parent="." unique_id=571033379]
 light_mask = 2
 layout_mode = 0
 offset_left = 88.0
@@ -70,7 +70,7 @@ text = "BGM 音量"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="BgmValue" type="Label" parent="."]
+[node name="BgmValue" type="Label" parent="." unique_id=2123723838]
 light_mask = 2
 layout_mode = 0
 offset_left = 480.0
@@ -82,11 +82,11 @@ text = "0%
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=453897865]
 light_mask = 2
 anchors_preset = 0
 
-[node name="Data1" type="Button" parent="Control"]
+[node name="Data1" type="Button" parent="Control" unique_id=1084721725]
 light_mask = 2
 layout_mode = 0
 offset_left = 88.0
@@ -96,18 +96,18 @@ offset_bottom = 112.0
 text = "宇宙から来たメイドのテーマ"
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data1" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data1" unique_id=2072036175 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data1/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data1/Focus" unique_id=1197289196 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data1" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data1" unique_id=1238181245 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data1/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data1/Exec" unique_id=1167032174 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("5_aw767")
 
-[node name="Data2" type="Button" parent="Control"]
+[node name="Data2" type="Button" parent="Control" unique_id=757715978]
 light_mask = 2
 layout_mode = 0
 offset_left = 88.0
@@ -117,18 +117,18 @@ offset_bottom = 152.0
 text = "地球のメイドの旅 昼の部"
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data2" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data2" unique_id=719773302 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data2/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data2/Focus" unique_id=1523861461 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data2" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data2" unique_id=81634160 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data2/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data2/Exec" unique_id=508071188 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("8_v6pem")
 
-[node name="Data3" type="Button" parent="Control"]
+[node name="Data3" type="Button" parent="Control" unique_id=1376057262]
 light_mask = 2
 layout_mode = 0
 offset_left = 88.0
@@ -139,18 +139,18 @@ text = "地球のメイドの旅 大団円
 "
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data3" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data3" unique_id=745091672 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data3/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data3/Focus" unique_id=92177812 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data3" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data3" unique_id=2029630744 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data3/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data3/Exec" unique_id=1009066387 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("9_enea4")
 
-[node name="Data4" type="Button" parent="Control"]
+[node name="Data4" type="Button" parent="Control" unique_id=282614142]
 light_mask = 2
 layout_mode = 0
 offset_left = 88.0
@@ -161,18 +161,18 @@ text = "地球のメイドの旅 夜の部
 "
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data4" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data4" unique_id=221278143 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data4/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data4/Focus" unique_id=265015576 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data4" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data4" unique_id=1472474757 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data4/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data4/Exec" unique_id=2007703595 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("10_ahwfl")
 
-[node name="Data5" type="Button" parent="Control"]
+[node name="Data5" type="Button" parent="Control" unique_id=895784456]
 light_mask = 2
 layout_mode = 0
 offset_left = 88.0
@@ -183,18 +183,18 @@ focus_neighbor_bottom = NodePath("../Data9")
 text = "決闘!! 地球のメイド 対 宇宙のメイド"
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data5" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data5" unique_id=2068456396 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data5/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data5/Focus" unique_id=1508057408 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data5" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data5" unique_id=882396980 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data5/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data5/Exec" unique_id=221149624 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("11_6g68o")
 
-[node name="Data6" type="Button" parent="Control"]
+[node name="Data6" type="Button" parent="Control" unique_id=1672603084]
 light_mask = 2
 layout_mode = 0
 offset_left = 88.0
@@ -205,18 +205,18 @@ focus_neighbor_right = NodePath("../Data8")
 text = "メイドを超えろ"
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data6" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data6" unique_id=535912723 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data6/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data6/Focus" unique_id=709307401 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data6" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data6" unique_id=993187359 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data6/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data6/Exec" unique_id=1094495789 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("12_60qon")
 
-[node name="Data7" type="Button" parent="Control"]
+[node name="Data7" type="Button" parent="Control" unique_id=934569458]
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0
@@ -227,18 +227,18 @@ focus_neighbor_left = NodePath("../Data9")
 text = "地球のメイドが急ぐ!!"
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data7" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data7" unique_id=127984123 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data7/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data7/Focus" unique_id=717697263 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data7" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data7" unique_id=357273531 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data7/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data7/Exec" unique_id=1240826058 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("13_b635v")
 
-[node name="Data8" type="Button" parent="Control"]
+[node name="Data8" type="Button" parent="Control" unique_id=1323841759]
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0
@@ -249,18 +249,18 @@ focus_neighbor_left = NodePath("../Data6")
 text = "お宝と秘密の歌"
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data8" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data8" unique_id=323792252 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data8/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data8/Focus" unique_id=776939394 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data8" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data8" unique_id=685649518 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data8/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data8/Exec" unique_id=693659825 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("14_esh35")
 
-[node name="Data9" type="Button" parent="Control"]
+[node name="Data9" type="Button" parent="Control" unique_id=946879674]
 light_mask = 2
 layout_mode = 0
 offset_left = 88.0
@@ -271,18 +271,18 @@ focus_neighbor_right = NodePath("../Data7")
 text = "地球のメイドの一休み"
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Data9" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Data9" unique_id=88199318 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Data9/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Data9/Focus" unique_id=930218903 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Data9" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Data9" unique_id=358416934 instance=ExtResource("6_3u2lt")]
 
-[node name="ChangeBgmCommand" parent="Control/Data9/Exec" instance=ExtResource("4_vx7g3")]
+[node name="ChangeBgmCommand" parent="Control/Data9/Exec" unique_id=917780262 instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("15_rvqik")
 
-[node name="Back" type="Button" parent="Control"]
+[node name="Back" type="Button" parent="Control" unique_id=237268724]
 light_mask = 2
 layout_mode = 0
 offset_left = 272.0
@@ -292,17 +292,17 @@ offset_bottom = 440.0
 text = "戻る"
 script = ExtResource("3_jq3u4")
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/Back" unique_id=2013785916 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/Back/Focus" unique_id=1261798589 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="Exec" parent="Control/Back" instance=ExtResource("6_3u2lt")]
+[node name="Exec" parent="Control/Back" unique_id=709225677 instance=ExtResource("6_3u2lt")]
 
-[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("16_mlxpv")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" unique_id=317236851 node_paths=PackedStringArray("Target") instance=ExtResource("16_mlxpv")]
 Target = NodePath("../../../../Close")
 
-[node name="BgmSlider" type="HSlider" parent="Control"]
+[node name="BgmSlider" type="HSlider" parent="Control" unique_id=405327940]
 light_mask = 2
 layout_mode = 0
 offset_left = 208.0
@@ -312,24 +312,24 @@ offset_bottom = 398.0
 step = 5.0
 script = ExtResource("20_7u47n")
 
-[node name="Focus" parent="Control/BgmSlider" instance=ExtResource("6_3u2lt")]
+[node name="Focus" parent="Control/BgmSlider" unique_id=663163791 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Control/BgmSlider/Focus" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Control/BgmSlider/Focus" unique_id=1668384632 instance=ExtResource("7_dkqhw")]
 SeName = "menu_move"
 
-[node name="EscapeKey" parent="." instance=ExtResource("21_e5wmd")]
+[node name="EscapeKey" parent="." unique_id=1742546128 instance=ExtResource("21_e5wmd")]
 ActionName = "escape"
 
-[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("16_mlxpv")]
+[node name="ReferenceContainer" parent="EscapeKey" unique_id=569231148 node_paths=PackedStringArray("Target") instance=ExtResource("16_mlxpv")]
 Target = NodePath("../../Close")
 
-[node name="Close" parent="." instance=ExtResource("6_3u2lt")]
+[node name="Close" parent="." unique_id=1144040848 instance=ExtResource("6_3u2lt")]
 
-[node name="PlaySeCommand" parent="Close" instance=ExtResource("7_dkqhw")]
+[node name="PlaySeCommand" parent="Close" unique_id=1939253225 instance=ExtResource("7_dkqhw")]
 SeName = "menu_select"
 
-[node name="LoadGameOptionsCommand" parent="Close" instance=ExtResource("16_rncda")]
+[node name="LoadGameOptionsCommand" parent="Close" unique_id=176690321 instance=ExtResource("16_rncda")]
 
-[node name="SetGameOptionsCommand" parent="Close" instance=ExtResource("17_54top")]
+[node name="SetGameOptionsCommand" parent="Close" unique_id=783877317 instance=ExtResource("17_54top")]
 
-[node name="CloseDialogCommand" parent="Close" instance=ExtResource("19_ntrhu")]
+[node name="CloseDialogCommand" parent="Close" unique_id=2017510062 instance=ExtResource("19_ntrhu")]

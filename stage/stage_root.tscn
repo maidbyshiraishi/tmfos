@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddw2g00yqtlmx"]
+[gd_scene format=3 uid="uid://ddw2g00yqtlmx"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_6lvyk"]
 [ext_resource type="Script" uid="uid://c2bmiqjw4pbih" path="res://stage/StageRoot.cs" id="2_xo2a5"]
@@ -7,94 +7,94 @@
 [ext_resource type="PackedScene" uid="uid://cr2lwjlb07c3g" path="res://hud/hud.tscn" id="15_lldo5"]
 [ext_resource type="PackedScene" uid="uid://t3a2cd5gj8rn" path="res://trigger/game_shortcut_keys.tscn" id="16_6btra"]
 
-[node name="Stage" type="Control"]
+[node name="Stage" type="Control" unique_id=1317308682]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_6lvyk")
 script = ExtResource("2_xo2a5")
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="." unique_id=1424633333]
 
-[node name="Parallax2D3" type="Parallax2D" parent="Background"]
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=316905264]
 z_index = -1000
 repeat_size = Vector2(1, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Background/Parallax2D3"]
+[node name="ColorRect" type="ColorRect" parent="Background/Parallax2D3" unique_id=1444016902]
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0.447059, 0.678431, 0.933333, 1)
 
-[node name="Parallax2D2" type="Parallax2D" parent="Background"]
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=783352162]
 z_index = -990
 scroll_scale = Vector2(0.5, 1)
 repeat_size = Vector2(640, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=1264730317]
 modulate = Color(1, 1, 1, 0.196078)
 centered = false
 
-[node name="Parallax2D1" type="Parallax2D" parent="Background"]
+[node name="Parallax2D1" type="Parallax2D" parent="Background" unique_id=1111247074]
 visible = false
 z_index = -980
 repeat_size = Vector2(1, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D1"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D1" unique_id=2146813747]
 scale = Vector2(2, 2)
 centered = false
 
-[node name="DarkZone" type="CanvasModulate" parent="."]
+[node name="DarkZone" type="CanvasModulate" parent="." unique_id=1495759472]
 visible = false
 color = Color(0, 0, 0, 1)
 
-[node name="TileMap" type="Node2D" parent="."]
+[node name="TileMap" type="Node2D" parent="." unique_id=80707190]
 script = ExtResource("3_7d20q")
 
-[node name="Background" type="TileMapLayer" parent="TileMap"]
+[node name="Background" type="TileMapLayer" parent="TileMap" unique_id=1341315673]
 z_index = -1
 tile_set = ExtResource("4_wd8vw")
 
-[node name="Ground" type="TileMapLayer" parent="TileMap"]
+[node name="Ground" type="TileMapLayer" parent="TileMap" unique_id=2022029018]
 tile_set = ExtResource("4_wd8vw")
 
-[node name="Foreground" type="TileMapLayer" parent="TileMap"]
+[node name="Foreground" type="TileMapLayer" parent="TileMap" unique_id=1114116396]
 z_index = 1
 tile_set = ExtResource("4_wd8vw")
 
-[node name="ObservationHole" type="Polygon2D" parent="TileMap"]
+[node name="ObservationHole" type="Polygon2D" parent="TileMap" unique_id=574971545]
 clip_children = 1
 z_index = 2
 invert_enabled = true
 invert_border = 16384.0
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-[node name="Veil" type="TileMapLayer" parent="TileMap/ObservationHole"]
+[node name="Veil" type="TileMapLayer" parent="TileMap/ObservationHole" unique_id=1226535785]
 tile_set = ExtResource("4_wd8vw")
 
-[node name="Decoration1" type="Node2D" parent="."]
+[node name="Decoration1" type="Node2D" parent="." unique_id=1446657132]
 
-[node name="Door" type="Node2D" parent="."]
+[node name="Door" type="Node2D" parent="." unique_id=1433845594]
 
-[node name="Talk" type="Node2D" parent="."]
+[node name="Talk" type="Node2D" parent="." unique_id=1187157199]
 
-[node name="Search" type="Node2D" parent="."]
+[node name="Search" type="Node2D" parent="." unique_id=733812831]
 
-[node name="SearchList" type="CanvasLayer" parent="Search"]
+[node name="SearchList" type="CanvasLayer" parent="Search" unique_id=983874479]
 
-[node name="Item" type="Node2D" parent="."]
+[node name="Item" type="Node2D" parent="." unique_id=1896534186]
 
-[node name="Enemy" type="Node2D" parent="."]
+[node name="Enemy" type="Node2D" parent="." unique_id=533185829]
 
-[node name="Decoration2" type="Node2D" parent="."]
+[node name="Decoration2" type="Node2D" parent="." unique_id=995302676]
 
-[node name="Spawned" type="Node2D" parent="."]
+[node name="Spawned" type="Node2D" parent="." unique_id=1264885259]
 
-[node name="Others" type="Node2D" parent="."]
+[node name="Others" type="Node2D" parent="." unique_id=559713572]
 
-[node name="HUD" parent="." instance=ExtResource("15_lldo5")]
+[node name="HUD" parent="." unique_id=1358724654 instance=ExtResource("15_lldo5")]
 unique_name_in_owner = true
 
-[node name="GameShortcutKeys" parent="." instance=ExtResource("16_6btra")]
+[node name="GameShortcutKeys" parent="." unique_id=661194627 instance=ExtResource("16_6btra")]
 
-[node name="Blind" type="Node2D" parent="."]
+[node name="Blind" type="Node2D" parent="." unique_id=957882059]
 
-[node name="OutOfBorder" type="Node2D" parent="."]
+[node name="OutOfBorder" type="Node2D" parent="." unique_id=1293615964]

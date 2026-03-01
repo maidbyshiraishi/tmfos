@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://icua64bw8un"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://icua64bw8un"]
 
 [ext_resource type="Texture2D" uid="uid://q1wcjt2et5b1" path="res://contents/image/enemy/unmo.png" id="1_t3ohe"]
 

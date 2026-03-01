@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://closkw7p3bd1g"]
+[gd_scene format=3 uid="uid://closkw7p3bd1g"]
 
 [ext_resource type="Script" uid="uid://bcgequ2xnpur8" path="res://command/dialog/OpenGameCommand.cs" id="1_sd6ma"]
 
-[node name="OpenGameCommand" type="Node"]
+[node name="OpenGameCommand" type="Node" unique_id=1906515610]
 script = ExtResource("1_sd6ma")

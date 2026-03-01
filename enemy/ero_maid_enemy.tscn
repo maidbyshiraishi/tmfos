@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3q04xrtn7kjp"]
+[gd_scene format=3 uid="uid://c3q04xrtn7kjp"]
 
 [ext_resource type="Script" uid="uid://dtbob4nhqvx57" path="res://enemy/EroMaidEnemy.cs" id="1_bm4am"]
 [ext_resource type="SpriteFrames" uid="uid://b72wxiomk7n7m" path="res://contents/animation/enemy/ero_maid.tres" id="6_uib5v"]
@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjcr7"]
 size = Vector2(16, 64)
 
-[node name="EroMaidEnemy" type="CharacterBody2D"]
+[node name="EroMaidEnemy" type="CharacterBody2D" unique_id=177168375]
 collision_layer = 32
 collision_mask = 1551
 script = ExtResource("1_bm4am")
@@ -21,38 +21,38 @@ Attack = 10
 JumpSe = "enemy_jump"
 TouchdownSe = "enemy_touchdown"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=904478582]
 position = Vector2(0, -1)
 sprite_frames = ExtResource("6_uib5v")
 animation = &"laser"
 frame_progress = 0.349191
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1058966499]
 shape = SubResource("RectangleShape2D_kjcr7")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=408640458]
 scale = Vector2(1.5, 1.25)
 rect = Rect2(-16, -32, 32, 64)
 
-[node name="ActionChange" type="Node2D" parent="."]
+[node name="ActionChange" type="Node2D" parent="." unique_id=224119855]
 script = ExtResource("7_ca0nf")
 
-[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+[node name="Marker2D" type="Marker2D" parent="ActionChange" unique_id=1297685336]
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=1811341942]
 wait_time = 0.001
 one_shot = true
 
-[node name="BlockBreakerHead" type="Marker2D" parent="."]
+[node name="BlockBreakerHead" type="Marker2D" parent="." unique_id=554202270]
 position = Vector2(0, -32)
 script = ExtResource("9_mj3je")
 
-[node name="Step" type="Marker2D" parent="."]
+[node name="Step" type="Marker2D" parent="." unique_id=1804741608]
 position = Vector2(0, 32)
 script = ExtResource("9_mj3je")
 
-[node name="WarpTimer" type="Timer" parent="."]
+[node name="WarpTimer" type="Timer" parent="." unique_id=148742976]
 autostart = true
 
-[node name="ExcitationtMarker2D" type="Marker2D" parent="."]
+[node name="ExcitationtMarker2D" type="Marker2D" parent="." unique_id=1416938908]
 position = Vector2(0, 8)

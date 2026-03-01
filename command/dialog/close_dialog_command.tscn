@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6qlmwp7c1hu5"]
+[gd_scene format=3 uid="uid://c6qlmwp7c1hu5"]
 
 [ext_resource type="Script" uid="uid://b2h41jd3gyxxp" path="res://command/dialog/CloseDialogCommand.cs" id="1_pr0eg"]
 
-[node name="CloseDialogCommand" type="Node"]
+[node name="CloseDialogCommand" type="Node" unique_id=338527206]
 script = ExtResource("1_pr0eg")

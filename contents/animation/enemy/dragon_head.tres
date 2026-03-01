@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://x4yxfnrq827f"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://x4yxfnrq827f"]
 
 [ext_resource type="Texture2D" uid="uid://beoxnnini6dwh" path="res://contents/image/enemy/dragon_head.png" id="1_tqrob"]
 

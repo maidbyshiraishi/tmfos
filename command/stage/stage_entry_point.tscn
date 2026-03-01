@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvyr6w1fjtr25"]
+[gd_scene format=3 uid="uid://dvyr6w1fjtr25"]
 
 [ext_resource type="Script" uid="uid://drl40n8rwl04l" path="res://command/stage/StageEntryPoint.cs" id="1_drbmq"]
 
-[node name="StageEntryPoint" type="Node2D"]
+[node name="StageEntryPoint" type="Node2D" unique_id=1320034443]
 script = ExtResource("1_drbmq")

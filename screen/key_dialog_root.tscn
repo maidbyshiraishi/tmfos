@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://lidl4lyg228v"]
+[gd_scene format=3 uid="uid://lidl4lyg228v"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_w8hyl"]
 [ext_resource type="Script" uid="uid://dx6ivbf123nq1" path="res://screen/KeyDialogRoot.cs" id="2_em2c1"]
@@ -7,14 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_3ci4d"]
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="6_ncksm"]
 
-[node name="KeyOptionDialog" type="Control"]
+[node name="KeyOptionDialog" type="Control" unique_id=1491062425]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_w8hyl")
 script = ExtResource("2_em2c1")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1655867186]
 light_mask = 2
 layout_mode = 0
 offset_left = 16.0
@@ -23,7 +23,7 @@ offset_right = 624.0
 offset_bottom = 464.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Border" type="ReferenceRect" parent="."]
+[node name="Border" type="ReferenceRect" parent="." unique_id=162055370]
 light_mask = 2
 layout_mode = 0
 offset_left = 16.0
@@ -34,7 +34,7 @@ border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=933584512]
 light_mask = 2
 layout_mode = 0
 offset_left = 220.0
@@ -44,7 +44,7 @@ offset_bottom = 55.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="KeyLabel" type="Label" parent="."]
+[node name="KeyLabel" type="Label" parent="." unique_id=772422466]
 light_mask = 2
 layout_mode = 0
 offset_left = 320.0
@@ -54,7 +54,7 @@ offset_bottom = 89.0
 text = "設定済みキー"
 horizontal_alignment = 1
 
-[node name="KeyInfo" type="Label" parent="."]
+[node name="KeyInfo" type="Label" parent="." unique_id=2070129692]
 light_mask = 2
 layout_mode = 0
 offset_left = 320.0
@@ -63,7 +63,7 @@ offset_right = 600.0
 offset_bottom = 248.0
 autowrap_mode = 3
 
-[node name="Info" type="Label" parent="."]
+[node name="Info" type="Label" parent="." unique_id=1227984901]
 light_mask = 2
 layout_mode = 0
 offset_left = 40.0
@@ -72,13 +72,13 @@ offset_right = 600.0
 offset_bottom = 368.0
 autowrap_mode = 3
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1273183244]
 light_mask = 2
 anchors_preset = 0
 offset_top = -37.0
 offset_bottom = -37.0
 
-[node name="Up" type="Button" parent="Control"]
+[node name="Up" type="Button" parent="Control" unique_id=813515044]
 light_mask = 2
 layout_mode = 0
 offset_left = 104.0
@@ -89,17 +89,17 @@ focus_neighbor_bottom = NodePath("../Down")
 text = "上"
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/Up" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/Up" unique_id=1125496970 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Up/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Up/Exec" unique_id=1564944869 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/Up" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/Up" unique_id=699698619 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Up/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Up/Focus" unique_id=556081526 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="Down" type="Button" parent="Control"]
+[node name="Down" type="Button" parent="Control" unique_id=1823004728]
 light_mask = 2
 layout_mode = 0
 offset_left = 104.0
@@ -110,17 +110,17 @@ focus_neighbor_top = NodePath("../Up")
 text = "下"
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/Down" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/Down" unique_id=1606579627 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Down/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Down/Exec" unique_id=1052259913 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/Down" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/Down" unique_id=1825821452 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Down/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Down/Focus" unique_id=482935129 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="Left" type="Button" parent="Control"]
+[node name="Left" type="Button" parent="Control" unique_id=1031653724]
 light_mask = 2
 layout_mode = 0
 offset_left = 72.0
@@ -131,17 +131,17 @@ focus_neighbor_right = NodePath("../Right")
 text = "左"
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/Left" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/Left" unique_id=631939160 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Left/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Left/Exec" unique_id=128380144 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/Left" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/Left" unique_id=1263544710 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Left/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Left/Focus" unique_id=475808529 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="Right" type="Button" parent="Control"]
+[node name="Right" type="Button" parent="Control" unique_id=1916971694]
 light_mask = 2
 layout_mode = 0
 offset_left = 136.0
@@ -152,17 +152,17 @@ focus_neighbor_left = NodePath("../Left")
 text = "右"
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/Right" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/Right" unique_id=1819241999 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Right/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Right/Exec" unique_id=2085533618 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/Right" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/Right" unique_id=735438317 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Right/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Right/Focus" unique_id=546204562 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="A" type="Button" parent="Control"]
+[node name="A" type="Button" parent="Control" unique_id=734613542]
 light_mask = 2
 layout_mode = 0
 offset_left = 192.0
@@ -172,17 +172,17 @@ offset_bottom = 181.0
 text = "A"
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/A" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/A" unique_id=2099359855 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/A/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/A/Exec" unique_id=259056611 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/A" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/A" unique_id=494446597 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/A/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/A/Focus" unique_id=1448529536 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="B" type="Button" parent="Control"]
+[node name="B" type="Button" parent="Control" unique_id=1614581141]
 light_mask = 2
 layout_mode = 0
 offset_left = 240.0
@@ -193,17 +193,17 @@ focus_neighbor_right = NodePath(".")
 text = "B"
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/B" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/B" unique_id=702605106 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/B/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/B/Exec" unique_id=1751762979 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/B" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/B" unique_id=803834475 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/B/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/B/Focus" unique_id=107637245 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="Pause" type="Button" parent="Control"]
+[node name="Pause" type="Button" parent="Control" unique_id=1186294198]
 light_mask = 2
 layout_mode = 0
 offset_left = 64.0
@@ -216,17 +216,17 @@ text = "ポーズ
 "
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/Pause" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/Pause" unique_id=1985438113 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Pause/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Pause/Exec" unique_id=853345272 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/Pause" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/Pause" unique_id=1723639030 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Pause/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Pause/Focus" unique_id=339793254 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="Option" type="Button" parent="Control"]
+[node name="Option" type="Button" parent="Control" unique_id=1470954182]
 light_mask = 2
 layout_mode = 0
 offset_left = 160.0
@@ -239,17 +239,17 @@ text = "オプション
 "
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/Option" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/Option" unique_id=919090415 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Option/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Option/Exec" unique_id=1937543543 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/Option" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/Option" unique_id=705868244 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Option/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Option/Focus" unique_id=858658017 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="Screenshot" type="Button" parent="Control"]
+[node name="Screenshot" type="Button" parent="Control" unique_id=1913719699]
 light_mask = 2
 layout_mode = 0
 offset_left = 160.0
@@ -263,17 +263,17 @@ text = "スクリーンショット
 "
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/Screenshot" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/Screenshot" unique_id=42074295 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Screenshot/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Screenshot/Exec" unique_id=125506156 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/Screenshot" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/Screenshot" unique_id=1866572160 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Screenshot/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Screenshot/Focus" unique_id=2058822382 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"
 
-[node name="Help" type="Button" parent="Control"]
+[node name="Help" type="Button" parent="Control" unique_id=270463957]
 light_mask = 2
 layout_mode = 0
 offset_left = 64.0
@@ -286,12 +286,12 @@ text = "ヘルプ
 "
 script = ExtResource("3_hsus7")
 
-[node name="Exec" parent="Control/Help" instance=ExtResource("5_3ci4d")]
+[node name="Exec" parent="Control/Help" unique_id=1975823408 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Help/Exec" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Help/Exec" unique_id=778577211 instance=ExtResource("4_mrjcw")]
 SeName = "menu_select"
 
-[node name="Focus" parent="Control/Help" instance=ExtResource("5_3ci4d")]
+[node name="Focus" parent="Control/Help" unique_id=1890731296 instance=ExtResource("5_3ci4d")]
 
-[node name="PlaySeCommand" parent="Control/Help/Focus" instance=ExtResource("4_mrjcw")]
+[node name="PlaySeCommand" parent="Control/Help/Focus" unique_id=1798631833 instance=ExtResource("4_mrjcw")]
 SeName = "menu_move"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://h5eaoy1mj31x"]
+[gd_scene format=3 uid="uid://h5eaoy1mj31x"]
 
 [ext_resource type="Script" uid="uid://b1w06lklx8u4u" path="res://enemy/BigDrillShot.cs" id="1_cvnqy"]
 [ext_resource type="SpriteFrames" uid="uid://b4ny7svw8xuhg" path="res://contents/animation/enemy/drill_shot_ud.tres" id="2_3lk0l"]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eeib8"]
 size = Vector2(16, 32)
 
-[node name="DrillShotUp" type="Area2D"]
+[node name="DrillShotUp" type="Area2D" unique_id=1425717421]
 collision_layer = 64
 collision_mask = 8
 script = ExtResource("1_cvnqy")
@@ -14,14 +14,14 @@ Speed = 400.0
 Attack = 5
 Direction = Vector2(0, -1)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=582475869]
 sprite_frames = ExtResource("2_3lk0l")
 animation = &"up"
 autoplay = "up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=261144613]
 shape = SubResource("RectangleShape2D_eeib8")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1131218555]
 scale = Vector2(2.28571, 3.42857)
 rect = Rect2(-7, -7, 14, 14)

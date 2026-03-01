@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8636t7qupfox"]
+[gd_scene format=3 uid="uid://8636t7qupfox"]
 
 [ext_resource type="Script" uid="uid://b1ccl54jl78c8" path="res://trigger/SearchPointTrigger.cs" id="1_knl6g"]
 [ext_resource type="Texture2D" uid="uid://bfsrq4c06pp15" path="res://contents/image/blank.png" id="2_j16us"]
@@ -60,29 +60,29 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SearchPointTrigger" type="Area2D"]
+[node name="SearchPointTrigger" type="Area2D" unique_id=1831740738]
 collision_layer = 0
 collision_mask = 4096
 script = ExtResource("1_knl6g")
 PlayerOnly = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=906565026]
 shape = SubResource("RectangleShape2D_orwde")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=851299384]
 z_index = 10
 sprite_frames = SubResource("SpriteFrames_etwst")
 animation = &"closed"
 
-[node name="StateSaveCommand" parent="." instance=ExtResource("5_gob13")]
+[node name="StateSaveCommand" parent="." unique_id=851467459 instance=ExtResource("5_gob13")]
 
-[node name="StateBackupCommand" parent="." instance=ExtResource("6_mhng8")]
+[node name="StateBackupCommand" parent="." unique_id=1865302876 instance=ExtResource("6_mhng8")]
 
-[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("6_nxjj3")]
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." unique_id=578690427 node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("6_nxjj3")]
 AnimatedSprite2D = NodePath("../AnimatedSprite2D")
 
-[node name="PlaySeCommand" parent="." instance=ExtResource("7_hrsy2")]
+[node name="PlaySeCommand" parent="." unique_id=1031682231 instance=ExtResource("7_hrsy2")]
 SeName = "search_point"
 
-[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("8_nlddd")]
+[node name="ShowFloatingMessageCommand" parent="." unique_id=866706070 instance=ExtResource("8_nlddd")]
 Message = "？？？"

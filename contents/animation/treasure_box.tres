@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b3320best2cvx"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://b3320best2cvx"]
 
 [ext_resource type="Texture2D" uid="uid://d3jko3it4x43s" path="res://contents/image/item/treasure_box.png" id="1_unq1s"]
 

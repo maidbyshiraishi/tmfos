@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://vrob0ghygk7g"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://vrob0ghygk7g"]
 
 [ext_resource type="Texture2D" uid="uid://d1dblfbuwnlkm" path="res://contents/image/enemy/cat.png" id="1_612gv"]
 

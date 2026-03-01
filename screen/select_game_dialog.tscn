@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3j6ii4ofco4h"]
+[gd_scene format=3 uid="uid://d3j6ii4ofco4h"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_xu4kg"]
 [ext_resource type="Script" uid="uid://bbykkikdla4im" path="res://screen/DialogRoot.cs" id="2_et8xc"]
@@ -10,14 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="7_dafq7"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="9_sr0rb"]
 
-[node name="SelectGame" type="Control"]
+[node name="SelectGame" type="Control" unique_id=1577717746]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_xu4kg")
 script = ExtResource("2_et8xc")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=108540467]
 light_mask = 2
 layout_mode = 0
 offset_left = 210.0
@@ -26,7 +26,7 @@ offset_right = 427.0
 offset_bottom = 349.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Border" type="ReferenceRect" parent="."]
+[node name="Border" type="ReferenceRect" parent="." unique_id=738496749]
 light_mask = 2
 layout_mode = 0
 offset_left = 210.0
@@ -37,7 +37,7 @@ border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Message" type="Label" parent="."]
+[node name="Message" type="Label" parent="." unique_id=824453009]
 light_mask = 2
 layout_mode = 0
 offset_left = 230.0
@@ -48,13 +48,13 @@ text = "選択"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=761541304]
 light_mask = 2
 anchors_preset = 0
 offset_top = 14.0
 offset_bottom = 14.0
 
-[node name="Start" type="Button" parent="Control"]
+[node name="Start" type="Button" parent="Control" unique_id=1018804639]
 light_mask = 2
 layout_mode = 0
 offset_left = 246.0
@@ -64,19 +64,19 @@ offset_bottom = 225.0
 text = "本編"
 script = ExtResource("4_7ld51")
 
-[node name="Exec" parent="Control/Start" instance=ExtResource("6_wq8wx")]
+[node name="Exec" parent="Control/Start" unique_id=1580552158 instance=ExtResource("6_wq8wx")]
 
-[node name="PlaySeCommand" parent="Control/Start/Exec" instance=ExtResource("5_ya3lr")]
+[node name="PlaySeCommand" parent="Control/Start/Exec" unique_id=641446504 instance=ExtResource("5_ya3lr")]
 SeName = "menu_select"
 
-[node name="OpenGameCommand" parent="Control/Start/Exec" instance=ExtResource("5_47qdj")]
+[node name="OpenGameCommand" parent="Control/Start/Exec" unique_id=1597117445 instance=ExtResource("5_47qdj")]
 
-[node name="Focus" parent="Control/Start" instance=ExtResource("6_wq8wx")]
+[node name="Focus" parent="Control/Start" unique_id=1185145450 instance=ExtResource("6_wq8wx")]
 
-[node name="PlaySeCommand" parent="Control/Start/Focus" instance=ExtResource("5_ya3lr")]
+[node name="PlaySeCommand" parent="Control/Start/Focus" unique_id=1893649094 instance=ExtResource("5_ya3lr")]
 SeName = "menu_move"
 
-[node name="Tutorial" type="Button" parent="Control"]
+[node name="Tutorial" type="Button" parent="Control" unique_id=956440269]
 light_mask = 2
 layout_mode = 0
 offset_left = 246.0
@@ -86,20 +86,20 @@ offset_bottom = 265.0
 text = "チュートリアル"
 script = ExtResource("4_7ld51")
 
-[node name="Exec" parent="Control/Tutorial" instance=ExtResource("6_wq8wx")]
+[node name="Exec" parent="Control/Tutorial" unique_id=230096319 instance=ExtResource("6_wq8wx")]
 
-[node name="PlaySeCommand" parent="Control/Tutorial/Exec" instance=ExtResource("5_ya3lr")]
+[node name="PlaySeCommand" parent="Control/Tutorial/Exec" unique_id=1714511727 instance=ExtResource("5_ya3lr")]
 SeName = "menu_select"
 
-[node name="OpenGameCommand" parent="Control/Tutorial/Exec" instance=ExtResource("5_47qdj")]
+[node name="OpenGameCommand" parent="Control/Tutorial/Exec" unique_id=1867197030 instance=ExtResource("5_47qdj")]
 StartGame = 1
 
-[node name="Focus" parent="Control/Tutorial" instance=ExtResource("6_wq8wx")]
+[node name="Focus" parent="Control/Tutorial" unique_id=434179877 instance=ExtResource("6_wq8wx")]
 
-[node name="PlaySeCommand" parent="Control/Tutorial/Focus" instance=ExtResource("5_ya3lr")]
+[node name="PlaySeCommand" parent="Control/Tutorial/Focus" unique_id=1734972728 instance=ExtResource("5_ya3lr")]
 SeName = "menu_move"
 
-[node name="Back" type="Button" parent="Control"]
+[node name="Back" type="Button" parent="Control" unique_id=1303291466]
 light_mask = 2
 layout_mode = 0
 offset_left = 246.0
@@ -109,25 +109,25 @@ offset_bottom = 314.0
 text = "タイトルに戻る"
 script = ExtResource("4_7ld51")
 
-[node name="Exec" parent="Control/Back" instance=ExtResource("6_wq8wx")]
+[node name="Exec" parent="Control/Back" unique_id=1111369985 instance=ExtResource("6_wq8wx")]
 
-[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("7_dafq7")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" unique_id=1029151985 node_paths=PackedStringArray("Target") instance=ExtResource("7_dafq7")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("6_wq8wx")]
+[node name="Focus" parent="Control/Back" unique_id=687147201 instance=ExtResource("6_wq8wx")]
 
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_ya3lr")]
+[node name="PlaySeCommand" parent="Control/Back/Focus" unique_id=957246464 instance=ExtResource("5_ya3lr")]
 SeName = "menu_move"
 
-[node name="EscapeKey" parent="." instance=ExtResource("9_sr0rb")]
+[node name="EscapeKey" parent="." unique_id=1712698613 instance=ExtResource("9_sr0rb")]
 ActionName = "escape"
 
-[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("7_dafq7")]
+[node name="ReferenceContainer" parent="EscapeKey" unique_id=1922484537 node_paths=PackedStringArray("Target") instance=ExtResource("7_dafq7")]
 Target = NodePath("../../Close")
 
-[node name="Close" parent="." instance=ExtResource("6_wq8wx")]
+[node name="Close" parent="." unique_id=1754248489 instance=ExtResource("6_wq8wx")]
 
-[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_ya3lr")]
+[node name="PlaySeCommand" parent="Close" unique_id=2075923603 instance=ExtResource("5_ya3lr")]
 SeName = "menu_select"
 
-[node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_6ftgk")]
+[node name="CloseDialogCommand" parent="Close" unique_id=1986599363 instance=ExtResource("5_6ftgk")]

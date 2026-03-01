@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c58ee8w4bwbad"]
+[gd_scene format=4 uid="uid://c58ee8w4bwbad"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_j764q"]
 [ext_resource type="AudioStream" uid="uid://bpebfe8y5slk2" path="res://contents/bgm/bgm7.ogg" id="2_melkq"]
@@ -102,7 +102,7 @@ _data = {
 }
 point_count = 9
 
-[node name="Stage" instance=ExtResource("1_j764q")]
+[node name="Stage" unique_id=1758395956 instance=ExtResource("1_j764q")]
 BgmStream = ExtResource("2_melkq")
 IsDarkZone = true
 EnemyAttackCorrection = 20
@@ -130,506 +130,506 @@ tile_map_data = PackedByteArray("AAADABH/AAAAAAIAAAADABL/AAAAAAIAAAADABP/AAAAAAI
 [node name="Veil" parent="TileMap/ObservationHole" index="0"]
 tile_map_data = PackedByteArray("AAABAN7/AAAHAAUAAAABAN//AAAHAAUAAAABAOD/AAAHAAUAAAABAOH/AAAHAAUAAAABAOL/AAAHAAUAAAABAOP/AAAHAAUAAAABAOT/AAAHAAUAAAABAOX/AAAHAAUAAAABAOb/AAAHAAUAAAABAOf/AAAHAAUAAAABAOj/AAAHAAUAAAABAOn/AAAHAAUAAAABAOr/AAAHAAUAAAABAOv/AAAHAAUAAAABAOz/AAAHAAUAAAABAO3/AAAHAAUAAAABAO7/AAAHAAUAAAABAO//AAAHAAUAAAABAPD/AAAHAAUAAAABAL3/AAAHAAUAAAABAL7/AAAHAAUAAAABAL//AAAHAAUAAAABAMD/AAAHAAUAAAABAMH/AAAHAAUAAAABAML/AAAHAAUAAAABAMP/AAAHAAUAAAABAMT/AAAHAAUAAAABAMX/AAAHAAUAAAABAMb/AAAHAAUAAAABAMf/AAAHAAUAAAABAMj/AAAHAAUAAAABAMn/AAAHAAUAAAABAMr/AAAHAAUAAAABAMv/AAAHAAUAAAABAMz/AAAHAAUAAAABAM3/AAAHAAUAAAABAM7/AAAHAAUAAAABAM//AAAHAAUAAAABAND/AAAHAAUAAAABANH/AAAHAAUAAAABANL/AAAHAAUAAAABANP/AAAHAAUAAAABANT/AAAHAAUAAAABANX/AAAHAAUAAAABANb/AAAHAAUAAAABANf/AAAHAAUAAAABANj/AAAHAAUAAAABANn/AAAHAAUAAAABANr/AAAHAAUAAAABANv/AAAHAAUAAAABANz/AAAHAAUAAAABAN3/AAAHAAUAAAABALz/AAAHAAUAAAABALv/AAAHAAUAAAABALr/AAAHAAUAAAABALn/AAAHAAUAAAABALj/AAAHAAUAAAABALf/AAAHAAUAAAABALb/AAAHAAUAAAABALX/AAAHAAUAAAABALT/AAAHAAUAAAABALP/AAAHAAUAAAABALL/AAAHAAUAAAABALH/AAAHAAUAAAABALD/AAAHAAUAAAABAK//AAAHAAUAAAABAK7/AAAHAAUAAAABAK3/AAAHAAUAAAABAKz/AAAHAAUAAAABAKv/AAAHAAUAAAABAKr/AAAHAAUAAAABAKn/AAAHAAUAAAABAKj/AAAHAAUAAAABAKf/AAAHAAUAAAABAKb/AAAHAAUAAAABAKX/AAAHAAUAAAABAKT/AAAHAAUAAAABAKP/AAAHAAUAAAABAKL/AAAHAAUAAAABAKH/AAAHAAUAAAABAKD/AAAHAAUAAAABAJ//AAAHAAUAAAABAJ7/AAAHAAUAAAABAJ3/AAAHAAUAAAABAJz/AAAHAAUAAAABAJv/AAAHAAUAAAABAJr/AAAHAAUAAAABAJn/AAAHAAUAAAABAJj/AAAHAAUAAAABAJf/AAAHAAUAAAABAJb/AAAHAAUAAAABAJX/AAAHAAUAAAABAJT/AAAHAAUAAAABAJP/AAAHAAUAAAABAJL/AAAHAAUAAAABAJH/AAAHAAUAAAABAJD/AAAHAAUAAAABAI//AAAHAAUAAAABAI7/AAAHAAUAAAABAI3/AAAHAAUAAAABAIz/AAAHAAUAAAABAIv/AAAHAAUAAAABAIr/AAAHAAUAAAABAIn/AAAHAAUAAAABAIj/AAAHAAUAAAABAIf/AAAHAAUAAAABAIb/AAAHAAUAAAABAIX/AAAHAAUAAAABAIT/AAAHAAUAAAABAIP/AAAHAAUAAAABAIL/AAAHAAUAAAABAIH/AAAHAAUAAAABAID/AAAHAAUAAAABAH//AAAHAAUAAAABAH7/AAAHAAUAAAABAH3/AAAHAAUAAAABAHz/AAAHAAUAAAABAHv/AAAHAAUAAAABAHr/AAAHAAUAAAABAHn/AAAHAAUAAAABAHj/AAAHAAUAAAABAHf/AAAHAAUAAAABAHb/AAAHAAUAAAABAHX/AAAHAAUAAAABAHT/AAAHAAUAAAABAHP/AAAHAAUAAAABAHL/AAAHAAUAAAABAHH/AAAHAAUAAAABAHD/AAAHAAUAAAABAG//AAAHAAUAAAABAG7/AAAHAAUAAAABAG3/AAAHAAUAAAABAGz/AAAHAAUAAAABAGv/AAAHAAUAAAABAGr/AAAHAAUAAAABAGn/AAAHAAUAAAABAGj/AAAHAAUAAAABAGf/AAAHAAUAAAABAGb/AAAHAAUAAAABAGX/AAAHAAUAAAABAGT/AAAHAAUAAAABAGP/AAAHAAUAAAABAGL/AAAHAAUAAAABAGH/AAAHAAUAAAABAGD/AAAHAAUAAAABAF//AAAHAAUAAAABAF7/AAAHAAUAAAABAF3/AAAHAAUAAAABAFz/AAAHAAUAAAABAFv/AAAHAAUAAAABAFr/AAAHAAUAAAABAFn/AAAHAAUAAAABAFj/AAAHAAUAAAABAFf/AAAHAAUAAAABAFb/AAAHAAUAAAABAFX/AAAHAAUAAAABAFT/AAAHAAUAAAABAFP/AAAHAAUAAAABAFL/AAAHAAUAAAABAFH/AAAHAAUAAAABAFD/AAAHAAUAAAABAE//AAAHAAUAAAABAE7/AAAHAAUAAAABAE3/AAAHAAUAAAABAEz/AAAHAAUAAAABAEv/AAAHAAUAAAABAEr/AAAHAAUAAAABAEn/AAAHAAUAAAABAEj/AAAHAAUAAAABAEf/AAAHAAUAAAABAEb/AAAHAAUAAAABAEX/AAAHAAUAAAABAET/AAAHAAUAAAABAEP/AAAHAAUAAAABAEL/AAAHAAUAAAABAEH/AAAHAAUAAAABAED/AAAHAAUAAAABAD//AAAHAAUAAAABAD7/AAAHAAUAAAABAD3/AAAHAAUAAAABADz/AAAHAAUAAAABADv/AAAHAAUAAAABADr/AAAHAAUAAAABADn/AAAHAAUAAAABADj/AAAHAAUAAAABADf/AAAHAAUAAAABADb/AAAHAAUAAAABADX/AAAHAAUAAAABADT/AAAHAAUAAAABADP/AAAHAAUAAAABADL/AAAHAAUAAAABADH/AAAHAAUAAAABADD/AAAHAAUAAAABAC//AAAHAAUAAAABAC7/AAAHAAUAAAABAC3/AAAHAAUAAAABACz/AAAHAAUAAAABACv/AAAHAAUAAAABACr/AAAHAAUAAAABACn/AAAHAAUAAAABACj/AAAHAAUAAAABACf/AAAHAAUAAAABACb/AAAHAAUAAAABACX/AAAHAAUAAAABACT/AAAHAAUAAAABACP/AAAHAAUAAAABACL/AAAHAAUAAAABACH/AAAHAAUAAAABACD/AAAHAAUAAAABAB//AAAHAAUAAAABAB7/AAAHAAUAAAABAB3/AAAHAAUAAAABABz/AAAHAAUAAAABABv/AAAHAAUAAAABABr/AAAHAAUAAAABABn/AAAHAAUAAAABABj/AAAHAAUAAAABABf/AAAHAAUAAAABABb/AAAHAAUAAAABABX/AAAHAAUAAAABABT/AAAHAAUAAAABABP/AAAHAAUAAAABABL/AAAHAAUAAAABABH/AAAHAAUAAAABABD/AAAHAAUAAAABAPH/AAAHAAUAAAACAPH/AAAHAAUAAAACAPL/AAAHAAUAAAABAPL/AAAHAAUAAAACAAv/AAAHAAUAAAACAAz/AAAHAAUAAAACAA3/AAAHAAUAAAACAA7/AAAHAAUAAAACAA//AAAHAAUAAAABAA7/AAAHAAUAAAABAA//AAAHAAUAAAA=")
 
-[node name="Torch" parent="Decoration1" index="0" instance=ExtResource("4_putcl")]
+[node name="Torch" parent="Decoration1" index="0" unique_id=204632852 instance=ExtResource("4_putcl")]
 position = Vector2(944, -496)
 
-[node name="Torch2" parent="Decoration1" index="1" instance=ExtResource("4_putcl")]
+[node name="Torch2" parent="Decoration1" index="1" unique_id=324211784 instance=ExtResource("4_putcl")]
 position = Vector2(448, -7968)
 
-[node name="Torch3" parent="Decoration1" index="2" instance=ExtResource("4_putcl")]
+[node name="Torch3" parent="Decoration1" index="2" unique_id=1953963922 instance=ExtResource("4_putcl")]
 position = Vector2(880, -6696)
 
-[node name="Torch4" parent="Decoration1" index="3" instance=ExtResource("4_putcl")]
+[node name="Torch4" parent="Decoration1" index="3" unique_id=230711288 instance=ExtResource("4_putcl")]
 position = Vector2(696, -6720)
 
-[node name="Torch5" parent="Decoration1" index="4" instance=ExtResource("4_putcl")]
+[node name="Torch5" parent="Decoration1" index="4" unique_id=921002390 instance=ExtResource("4_putcl")]
 position = Vector2(576, -6624)
 
-[node name="Torch6" parent="Decoration1" index="5" instance=ExtResource("4_putcl")]
+[node name="Torch6" parent="Decoration1" index="5" unique_id=698049972 instance=ExtResource("4_putcl")]
 position = Vector2(672, -6432)
 
-[node name="Torch7" parent="Decoration1" index="6" instance=ExtResource("4_putcl")]
+[node name="Torch7" parent="Decoration1" index="6" unique_id=547398590 instance=ExtResource("4_putcl")]
 position = Vector2(568, -6312)
 
-[node name="Torch8" parent="Decoration1" index="7" instance=ExtResource("4_putcl")]
+[node name="Torch8" parent="Decoration1" index="7" unique_id=1613113130 instance=ExtResource("4_putcl")]
 position = Vector2(712, -6256)
 
-[node name="Torch9" parent="Decoration1" index="8" instance=ExtResource("4_putcl")]
+[node name="Torch9" parent="Decoration1" index="8" unique_id=664853568 instance=ExtResource("4_putcl")]
 position = Vector2(792, -6096)
 
-[node name="Torch10" parent="Decoration1" index="9" instance=ExtResource("4_putcl")]
+[node name="Torch10" parent="Decoration1" index="9" unique_id=1149659645 instance=ExtResource("4_putcl")]
 position = Vector2(904, -6056)
 
-[node name="Torch11" parent="Decoration1" index="10" instance=ExtResource("4_putcl")]
+[node name="Torch11" parent="Decoration1" index="10" unique_id=205802182 instance=ExtResource("4_putcl")]
 position = Vector2(720, -5872)
 
-[node name="Torch12" parent="Decoration1" index="11" instance=ExtResource("4_putcl")]
+[node name="Torch12" parent="Decoration1" index="11" unique_id=668373479 instance=ExtResource("4_putcl")]
 position = Vector2(664, -5720)
 
-[node name="Torch13" parent="Decoration1" index="12" instance=ExtResource("4_putcl")]
+[node name="Torch13" parent="Decoration1" index="12" unique_id=1743982490 instance=ExtResource("4_putcl")]
 position = Vector2(632, -5600)
 
-[node name="Torch14" parent="Decoration1" index="13" instance=ExtResource("4_putcl")]
+[node name="Torch14" parent="Decoration1" index="13" unique_id=1685299437 instance=ExtResource("4_putcl")]
 position = Vector2(752, -5496)
 
-[node name="Torch15" parent="Decoration1" index="14" instance=ExtResource("4_putcl")]
+[node name="Torch15" parent="Decoration1" index="14" unique_id=1973616851 instance=ExtResource("4_putcl")]
 position = Vector2(640, -5376)
 
-[node name="Torch16" parent="Decoration1" index="15" instance=ExtResource("4_putcl")]
+[node name="Torch16" parent="Decoration1" index="15" unique_id=366509163 instance=ExtResource("4_putcl")]
 position = Vector2(584, -5232)
 
-[node name="Torch17" parent="Decoration1" index="16" instance=ExtResource("4_putcl")]
+[node name="Torch17" parent="Decoration1" index="16" unique_id=1480736040 instance=ExtResource("4_putcl")]
 position = Vector2(440, -5232)
 
-[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("5_u5tsa")]
+[node name="WoodDoor1" parent="Door" index="0" unique_id=503198021 instance=ExtResource("5_u5tsa")]
 position = Vector2(416, -7904)
 DestStageNo = 9
 DestDoorNo = 4
 DoorNo = 1
 
-[node name="WoodDoor2" parent="Door" index="1" instance=ExtResource("5_u5tsa")]
+[node name="WoodDoor2" parent="Door" index="1" unique_id=1422550474 instance=ExtResource("5_u5tsa")]
 position = Vector2(912, -6624)
 DestStageNo = 3
 DestDoorNo = 2
 DoorNo = 2
 
-[node name="WoodDoor3" parent="Door" index="2" instance=ExtResource("5_u5tsa")]
+[node name="WoodDoor3" parent="Door" index="2" unique_id=1530067261 instance=ExtResource("5_u5tsa")]
 position = Vector2(400, -5184)
 DestStageNo = 4
 DestDoorNo = 2
 DoorNo = 3
 Direction = 1
 
-[node name="SavePoint5" parent="Door" index="3" instance=ExtResource("6_h6vx0")]
+[node name="SavePoint5" parent="Door" index="3" unique_id=344874246 instance=ExtResource("6_h6vx0")]
 position = Vector2(352, -7880)
 DoorNo = 5
 Direction = 1
 
-[node name="SavePoint6" parent="Door" index="4" instance=ExtResource("6_h6vx0")]
+[node name="SavePoint6" parent="Door" index="4" unique_id=2105070544 instance=ExtResource("6_h6vx0")]
 position = Vector2(864, -5992)
 DoorNo = 6
 
-[node name="StageEntryPoint255" parent="Door" index="5" instance=ExtResource("7_8rs51")]
+[node name="StageEntryPoint255" parent="Door" index="5" unique_id=65139921 instance=ExtResource("7_8rs51")]
 position = Vector2(496, -6624)
 DoorNo = 255
 Direction = 1
 
-[node name="TransparencyWarp100" parent="Door" index="6" instance=ExtResource("8_qgl5w")]
+[node name="TransparencyWarp100" parent="Door" index="6" unique_id=1482877009 instance=ExtResource("8_qgl5w")]
 position = Vector2(976, -2368)
 DestStageNo = 2
 DestDoorNo = 255
 DoorNo = 100
 
-[node name="SearchPointTrigger" parent="Door/TransparencyWarp100" index="4" instance=ExtResource("9_74w2y")]
+[node name="SearchPointTrigger" parent="Door/TransparencyWarp100" index="4" unique_id=1318395135 instance=ExtResource("9_74w2y")]
 
-[node name="ItemPanelLife" parent="Door" index="7" instance=ExtResource("10_fs2hm")]
+[node name="ItemPanelLife" parent="Door" index="7" unique_id=1262648538 instance=ExtResource("10_fs2hm")]
 position = Vector2(384, -7984)
 
-[node name="SearchTrigger" parent="Search" index="1" instance=ExtResource("11_0mbha")]
+[node name="SearchTrigger" parent="Search" index="1" unique_id=596503365 instance=ExtResource("11_0mbha")]
 position = Vector2(944, -432)
 
-[node name="SearchContainer" parent="Search/SearchTrigger" index="5" instance=ExtResource("12_widf2")]
+[node name="SearchContainer" parent="Search/SearchTrigger" index="5" unique_id=1789142570 instance=ExtResource("12_widf2")]
 
-[node name="BossDoor4" parent="Search/SearchTrigger/SearchContainer" index="0" instance=ExtResource("13_burgp")]
+[node name="BossDoor4" parent="Search/SearchTrigger/SearchContainer" index="0" unique_id=1883400432 instance=ExtResource("13_burgp")]
 position = Vector2(32, -16)
 DestStageNo = 19
 DestDoorNo = 1
 DoorNo = 4
 
-[node name="SearchPointTrigger" parent="Search/SearchTrigger" index="6" instance=ExtResource("9_74w2y")]
+[node name="SearchPointTrigger" parent="Search/SearchTrigger" index="6" unique_id=1575455399 instance=ExtResource("9_74w2y")]
 
-[node name="TreasureBox1" parent="Item" index="0" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox1" parent="Item" index="0" unique_id=218501103 instance=ExtResource("14_o50ys")]
 position = Vector2(816, -5288)
 Score = 1000
 
-[node name="TreasureBox2" parent="Item" index="1" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox2" parent="Item" index="1" unique_id=1012436462 instance=ExtResource("14_o50ys")]
 position = Vector2(480, -6216)
 Score = 1000
 
-[node name="TreasureBox3" parent="Item" index="2" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox3" parent="Item" index="2" unique_id=1803216545 instance=ExtResource("14_o50ys")]
 position = Vector2(48, -7552)
 
-[node name="TreasureBox4" parent="Item" index="3" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox4" parent="Item" index="3" unique_id=1662413075 instance=ExtResource("14_o50ys")]
 position = Vector2(48, -7112)
 
-[node name="TreasureBox5" parent="Item" index="4" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox5" parent="Item" index="4" unique_id=1917825215 instance=ExtResource("14_o50ys")]
 position = Vector2(48, -6152)
 
-[node name="TreasureBox6" parent="Item" index="5" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox6" parent="Item" index="5" unique_id=1230323729 instance=ExtResource("14_o50ys")]
 position = Vector2(48, -5304)
 
-[node name="TreasureBox7" parent="Item" index="6" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox7" parent="Item" index="6" unique_id=1762982084 instance=ExtResource("14_o50ys")]
 position = Vector2(48, -4240)
 
-[node name="TreasureBox8" parent="Item" index="7" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox8" parent="Item" index="7" unique_id=76999280 instance=ExtResource("14_o50ys")]
 position = Vector2(48, -3280)
 
-[node name="TreasureBox9" parent="Item" index="8" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox9" parent="Item" index="8" unique_id=884996823 instance=ExtResource("14_o50ys")]
 position = Vector2(48, -2352)
 
-[node name="TreasureBox10" parent="Item" index="9" instance=ExtResource("14_o50ys")]
+[node name="TreasureBox10" parent="Item" index="9" unique_id=1154908801 instance=ExtResource("14_o50ys")]
 position = Vector2(48, -1032)
 
-[node name="ItemPanelLife" parent="Item" index="10" instance=ExtResource("10_fs2hm")]
+[node name="ItemPanelLife" parent="Item" index="10" unique_id=1595019160 instance=ExtResource("10_fs2hm")]
 position = Vector2(976, -6768)
 
-[node name="ItemPanelLife2" parent="Item" index="11" instance=ExtResource("10_fs2hm")]
+[node name="ItemPanelLife2" parent="Item" index="11" unique_id=758518076 instance=ExtResource("10_fs2hm")]
 position = Vector2(704, -6080)
 
-[node name="ItemPanelLife3" parent="Item" index="12" instance=ExtResource("10_fs2hm")]
+[node name="ItemPanelLife3" parent="Item" index="12" unique_id=1239702140 instance=ExtResource("10_fs2hm")]
 position = Vector2(512, -5248)
 
-[node name="ItemPanelArmor" parent="Item" index="13" instance=ExtResource("15_s4egl")]
+[node name="ItemPanelArmor" parent="Item" index="13" unique_id=1186203941 instance=ExtResource("15_s4egl")]
 position = Vector2(400, -5616)
 
-[node name="ItemPanelArmor2" parent="Item" index="14" instance=ExtResource("15_s4egl")]
+[node name="ItemPanelArmor2" parent="Item" index="14" unique_id=712759380 instance=ExtResource("15_s4egl")]
 position = Vector2(192, -5504)
 
-[node name="ItemPanelArmor3" parent="Item" index="15" instance=ExtResource("15_s4egl")]
+[node name="ItemPanelArmor3" parent="Item" index="15" unique_id=275272133 instance=ExtResource("15_s4egl")]
 position = Vector2(448, -2944)
 
-[node name="ItemPanelWeapon" parent="Item" index="16" instance=ExtResource("16_1w5fu")]
+[node name="ItemPanelWeapon" parent="Item" index="16" unique_id=641078316 instance=ExtResource("16_1w5fu")]
 position = Vector2(768, -2752)
 
-[node name="ItemPanelWeapon2" parent="Item" index="17" instance=ExtResource("16_1w5fu")]
+[node name="ItemPanelWeapon2" parent="Item" index="17" unique_id=1692050571 instance=ExtResource("16_1w5fu")]
 position = Vector2(384, -384)
 
-[node name="ItemPanelWeapon4" parent="Item" index="18" instance=ExtResource("16_1w5fu")]
+[node name="ItemPanelWeapon4" parent="Item" index="18" unique_id=562242113 instance=ExtResource("16_1w5fu")]
 position = Vector2(416, -384)
 
-[node name="ItemPanelWeapon5" parent="Item" index="19" instance=ExtResource("16_1w5fu")]
+[node name="ItemPanelWeapon5" parent="Item" index="19" unique_id=403800928 instance=ExtResource("16_1w5fu")]
 position = Vector2(400, -416)
 
-[node name="ItemPanelLife4" parent="Item" index="20" instance=ExtResource("10_fs2hm")]
+[node name="ItemPanelLife4" parent="Item" index="20" unique_id=1243639349 instance=ExtResource("10_fs2hm")]
 position = Vector2(944, -528)
 
-[node name="ItemPanelWeapon3" parent="Item" index="21" instance=ExtResource("16_1w5fu")]
+[node name="ItemPanelWeapon3" parent="Item" index="21" unique_id=560776065 instance=ExtResource("16_1w5fu")]
 position = Vector2(912, -5648)
 
-[node name="Player" parent="." index="8" instance=ExtResource("17_n5de5")]
+[node name="Player" parent="." index="8" unique_id=992467957 instance=ExtResource("17_n5de5")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="13"]
+[node name="Camera" type="Camera2D" parent="Player" index="13" unique_id=462846619]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("18_iw710")
 
-[node name="EnemySpawner3" parent="Enemy" index="0" instance=ExtResource("19_lte6h")]
+[node name="EnemySpawner3" parent="Enemy" index="0" unique_id=342580404 instance=ExtResource("19_lte6h")]
 position = Vector2(544, -6272)
 
-[node name="EnemySpawner4" parent="Enemy" index="1" instance=ExtResource("19_lte6h")]
+[node name="EnemySpawner4" parent="Enemy" index="1" unique_id=860711645 instance=ExtResource("19_lte6h")]
 position = Vector2(496, -5760)
 
-[node name="EnemySpawner5" parent="Enemy" index="2" instance=ExtResource("19_lte6h")]
+[node name="EnemySpawner5" parent="Enemy" index="2" unique_id=1071929655 instance=ExtResource("19_lte6h")]
 position = Vector2(608, -5568)
 
-[node name="EnemySpawner7" parent="Enemy" index="3" instance=ExtResource("19_lte6h")]
+[node name="EnemySpawner7" parent="Enemy" index="3" unique_id=916818779 instance=ExtResource("19_lte6h")]
 position = Vector2(848, -5344)
 
-[node name="Path2D1" type="Path2D" parent="Enemy" index="4"]
+[node name="Path2D1" type="Path2D" parent="Enemy" index="4" unique_id=1385932388]
 curve = SubResource("Curve2D_xunk3")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D1" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D1" index="0" unique_id=912939365 instance=ExtResource("21_s1wqv")]
 position = Vector2(245.46938, -7370.53)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D1/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D1/PathFollower" index="0" unique_id=22258545 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D1/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D1/PathFollower" index="1" unique_id=445640291 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D1/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D1/PathFollower" index="2" unique_id=2037813217 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="Path2D2" type="Path2D" parent="Enemy" index="5"]
+[node name="Path2D2" type="Path2D" parent="Enemy" index="5" unique_id=1836957383]
 curve = SubResource("Curve2D_g2n1v")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D2" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D2" index="0" unique_id=1653296323 instance=ExtResource("21_s1wqv")]
 position = Vector2(586.45245, -7398.097)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D2/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D2/PathFollower" index="0" unique_id=893228404 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D2/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D2/PathFollower" index="1" unique_id=1731811827 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D2/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D2/PathFollower" index="2" unique_id=18705219 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="Path2D3" type="Path2D" parent="Enemy" index="6"]
+[node name="Path2D3" type="Path2D" parent="Enemy" index="6" unique_id=1176104830]
 curve = SubResource("Curve2D_oogdi")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D3" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D3" index="0" unique_id=2048117344 instance=ExtResource("21_s1wqv")]
 position = Vector2(272.04514, -7123.2095)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D3/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D3/PathFollower" index="0" unique_id=43660710 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D3/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D3/PathFollower" index="1" unique_id=1299179450 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D3/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D3/PathFollower" index="2" unique_id=11923670 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D3/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D3/PathFollower" index="3" unique_id=1011446278 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D3/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D3/PathFollower" index="4" unique_id=351817204 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D3/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D3/PathFollower" index="5" unique_id=576076233 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D4" type="Path2D" parent="Enemy" index="7"]
+[node name="Path2D4" type="Path2D" parent="Enemy" index="7" unique_id=126454158]
 curve = SubResource("Curve2D_msheu")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D4" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D4" index="0" unique_id=404988636 instance=ExtResource("21_s1wqv")]
 position = Vector2(282.91574, -6448.6196)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D4/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D4/PathFollower" index="0" unique_id=1443177849 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D4/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D4/PathFollower" index="1" unique_id=1609881385 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D4/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D4/PathFollower" index="2" unique_id=1154677990 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D4/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D4/PathFollower" index="3" unique_id=108029930 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D4/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D4/PathFollower" index="4" unique_id=1405875758 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D4/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D4/PathFollower" index="5" unique_id=1830269054 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D5" type="Path2D" parent="Enemy" index="8"]
+[node name="Path2D5" type="Path2D" parent="Enemy" index="8" unique_id=818870768]
 curve = SubResource("Curve2D_28nlr")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D5" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D5" index="0" unique_id=1012866424 instance=ExtResource("21_s1wqv")]
 position = Vector2(280.339, -6022.915)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D5/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D5/PathFollower" index="0" unique_id=1477196897 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D5/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D5/PathFollower" index="1" unique_id=859811435 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D5/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D5/PathFollower" index="2" unique_id=1919961679 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D5/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D5/PathFollower" index="3" unique_id=1925746224 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D5/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D5/PathFollower" index="4" unique_id=401302139 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D5/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D5/PathFollower" index="5" unique_id=1099568575 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D6" type="Path2D" parent="Enemy" index="9"]
+[node name="Path2D6" type="Path2D" parent="Enemy" index="9" unique_id=1898772170]
 curve = SubResource("Curve2D_fp8r8")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D6" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D6" index="0" unique_id=1581713941 instance=ExtResource("21_s1wqv")]
 position = Vector2(160.50511, -5377.4263)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D6/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D6/PathFollower" index="0" unique_id=504984050 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D6/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D6/PathFollower" index="1" unique_id=67820350 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D6/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D6/PathFollower" index="2" unique_id=2029065527 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D6/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D6/PathFollower" index="3" unique_id=787444012 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D6/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D6/PathFollower" index="4" unique_id=1797198404 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D6/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D6/PathFollower" index="5" unique_id=1135994873 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D7" type="Path2D" parent="Enemy" index="10"]
+[node name="Path2D7" type="Path2D" parent="Enemy" index="10" unique_id=723955738]
 curve = SubResource("Curve2D_njyvp")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D7" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D7" index="0" unique_id=173828124 instance=ExtResource("21_s1wqv")]
 position = Vector2(275.2917, -4996.5654)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D7/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D7/PathFollower" index="0" unique_id=2090874614 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D7/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D7/PathFollower" index="1" unique_id=1422792108 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D7/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D7/PathFollower" index="2" unique_id=1374559476 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D7/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D7/PathFollower" index="3" unique_id=2063063337 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D7/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D7/PathFollower" index="4" unique_id=2064686740 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D7/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D7/PathFollower" index="5" unique_id=1060218596 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D8" type="Path2D" parent="Enemy" index="11"]
+[node name="Path2D8" type="Path2D" parent="Enemy" index="11" unique_id=693289779]
 curve = SubResource("Curve2D_kqwwu")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D8" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D8" index="0" unique_id=1818679050 instance=ExtResource("21_s1wqv")]
 position = Vector2(407.93942, -4296.4683)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D8/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D8/PathFollower" index="0" unique_id=419789879 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D8/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D8/PathFollower" index="1" unique_id=1129815759 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D8/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D8/PathFollower" index="2" unique_id=1163977570 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D8/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D8/PathFollower" index="3" unique_id=476248317 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D8/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D8/PathFollower" index="4" unique_id=1784534471 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D8/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D8/PathFollower" index="5" unique_id=1122255487 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D9" type="Path2D" parent="Enemy" index="12"]
+[node name="Path2D9" type="Path2D" parent="Enemy" index="12" unique_id=61474764]
 curve = SubResource("Curve2D_1qmsn")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D9" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D9" index="0" unique_id=495958066 instance=ExtResource("21_s1wqv")]
 position = Vector2(320.07996, -3926.4263)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D9/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D9/PathFollower" index="0" unique_id=1704237762 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D9/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D9/PathFollower" index="1" unique_id=1830461669 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D9/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D9/PathFollower" index="2" unique_id=1650674789 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D9/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D9/PathFollower" index="3" unique_id=434715367 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D9/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D9/PathFollower" index="4" unique_id=1601808454 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D9/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D9/PathFollower" index="5" unique_id=1304280883 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D10" type="Path2D" parent="Enemy" index="13"]
+[node name="Path2D10" type="Path2D" parent="Enemy" index="13" unique_id=171498917]
 position = Vector2(-88, -80)
 curve = SubResource("Curve2D_5iucx")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D10" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D10" index="0" unique_id=1908920871 instance=ExtResource("21_s1wqv")]
 position = Vector2(681.8368, -3147.2576)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D10/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D10/PathFollower" index="0" unique_id=1317844444 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D10/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D10/PathFollower" index="1" unique_id=330631141 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D10/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D10/PathFollower" index="2" unique_id=1201570693 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D10/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D10/PathFollower" index="3" unique_id=529967096 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D10/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D10/PathFollower" index="4" unique_id=2030303033 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D10/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D10/PathFollower" index="5" unique_id=841601347 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D11" type="Path2D" parent="Enemy" index="14"]
+[node name="Path2D11" type="Path2D" parent="Enemy" index="14" unique_id=1120321546]
 curve = SubResource("Curve2D_r1s00")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D11" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D11" index="0" unique_id=49711649 instance=ExtResource("21_s1wqv")]
 position = Vector2(728.81055, -2359.2097)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D11/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D11/PathFollower" index="0" unique_id=51471154 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D11/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D11/PathFollower" index="1" unique_id=962131971 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D11/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D11/PathFollower" index="2" unique_id=1374635822 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D11/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D11/PathFollower" index="3" unique_id=1459088569 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D11/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D11/PathFollower" index="4" unique_id=2031216781 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D11/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D11/PathFollower" index="5" unique_id=609716904 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D12" type="Path2D" parent="Enemy" index="15"]
+[node name="Path2D12" type="Path2D" parent="Enemy" index="15" unique_id=980523170]
 curve = SubResource("Curve2D_x6gj0")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D12" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D12" index="0" unique_id=1462477899 instance=ExtResource("21_s1wqv")]
 position = Vector2(720.75165, -1471.5603)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D12/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D12/PathFollower" index="0" unique_id=19820190 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D12/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D12/PathFollower" index="1" unique_id=2056761218 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D12/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D12/PathFollower" index="2" unique_id=1016671024 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
-[node name="FishEnemy4" parent="Enemy/Path2D12/PathFollower" index="3" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy4" parent="Enemy/Path2D12/PathFollower" index="3" unique_id=837028549 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, -40)
 
-[node name="FishEnemy5" parent="Enemy/Path2D12/PathFollower" index="4" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy5" parent="Enemy/Path2D12/PathFollower" index="4" unique_id=1172718550 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 0)
 
-[node name="FishEnemy6" parent="Enemy/Path2D12/PathFollower" index="5" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy6" parent="Enemy/Path2D12/PathFollower" index="5" unique_id=1127949650 instance=ExtResource("22_vm6jg")]
 position = Vector2(80, 40)
 
-[node name="Path2D13" type="Path2D" parent="Enemy" index="16"]
+[node name="Path2D13" type="Path2D" parent="Enemy" index="16" unique_id=1653426709]
 curve = SubResource("Curve2D_81vvv")
 script = ExtResource("20_ckcw5")
 
-[node name="PathFollower" parent="Enemy/Path2D13" index="0" instance=ExtResource("21_s1wqv")]
+[node name="PathFollower" parent="Enemy/Path2D13" index="0" unique_id=409160516 instance=ExtResource("21_s1wqv")]
 position = Vector2(208.52101, -818.8638)
 progress = 534.929
 
-[node name="FishEnemy" parent="Enemy/Path2D13/PathFollower" index="0" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy" parent="Enemy/Path2D13/PathFollower" index="0" unique_id=1620649890 instance=ExtResource("22_vm6jg")]
 
-[node name="FishEnemy2" parent="Enemy/Path2D13/PathFollower" index="1" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy2" parent="Enemy/Path2D13/PathFollower" index="1" unique_id=1645383053 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, -24)
 
-[node name="FishEnemy3" parent="Enemy/Path2D13/PathFollower" index="2" instance=ExtResource("22_vm6jg")]
+[node name="FishEnemy3" parent="Enemy/Path2D13/PathFollower" index="2" unique_id=709713390 instance=ExtResource("22_vm6jg")]
 position = Vector2(40, 24)
 
 [node name="HUD" parent="." index="13"]
 Text1 = "ステージ"
 Text2 = "14"
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("23_i0phs")]
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" unique_id=505479417 instance=ExtResource("23_i0phs")]
 position = Vector2(408, 16)
 scale = Vector2(60, 1)

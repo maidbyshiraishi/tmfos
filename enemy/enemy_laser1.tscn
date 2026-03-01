@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvv58jomlnq7t"]
+[gd_scene format=3 uid="uid://bvv58jomlnq7t"]
 
 [ext_resource type="Script" uid="uid://bixtpgy0fqt6f" path="res://enemy/EnemyShot1.cs" id="1_0sgwu"]
 [ext_resource type="Texture2D" uid="uid://bken6xnjd0tw5" path="res://contents/image/enemy/laser_shot.png" id="2_sllw7"]
@@ -21,25 +21,25 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8w6d"]
 size = Vector2(80, 4)
 
-[node name="EnemyLaser1" type="Area2D"]
+[node name="EnemyLaser1" type="Area2D" unique_id=656291997]
 collision_layer = 64
 collision_mask = 8
 script = ExtResource("1_0sgwu")
 Speed = 700.0
 Attack = 10
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1591986694]
 sprite_frames = SubResource("SpriteFrames_3u488")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354124779]
 position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_t8w6d")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=991041177]
 scale = Vector2(6.85714, 1.14286)
 rect = Rect2(-7, -7, 14, 14)
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=812306437]
 wait_time = 0.001
 one_shot = true

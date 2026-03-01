@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c48l268v1hmlo"]
+[gd_scene format=3 uid="uid://c48l268v1hmlo"]
 
 [ext_resource type="PackedScene" uid="uid://bvyr6cwo7qbyg" path="res://item/immediate_item_panel_root.tscn" id="1_3q3rh"]
 [ext_resource type="Script" uid="uid://bae8vugtphfb8" path="res://item/TreasureBox.cs" id="2_b6lv8"]
@@ -8,20 +8,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8usy"]
 size = Vector2(32, 24)
 
-[node name="TreasureBox" instance=ExtResource("1_3q3rh")]
+[node name="TreasureBox" unique_id=1069933172 instance=ExtResource("1_3q3rh")]
 script = ExtResource("2_b6lv8")
 Score = 10000
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=1872060220]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_f8usy")
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=75952202]
 position = Vector2(4, -13)
 sprite_frames = ExtResource("2_i1di1")
 animation = &"closed"
 
-[node name="AddScoreCommand" parent="." index="4" instance=ExtResource("3_c6o37")]
+[node name="AddScoreCommand" parent="." index="4" unique_id=1362895391 instance=ExtResource("3_c6o37")]
 
-[node name="PlaySeCommand" parent="." index="6"]
+[node name="PlaySeCommand" parent="." index="6" unique_id=26974455]
 SeName = "player_get_treasure_box"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cik3d77vxoy8w"]
+[gd_scene format=3 uid="uid://cik3d77vxoy8w"]
 
 [ext_resource type="Script" uid="uid://bo200a5k8okj5" path="res://enemy/UnmoEnemy.cs" id="2_s6pr3"]
 [ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://mob/event_finder.tscn" id="6_dgoom"]
@@ -16,7 +16,7 @@ size = Vector2(22, 45)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dm7x"]
 size = Vector2(32, 64)
 
-[node name="UnmoEnemy" type="CharacterBody2D"]
+[node name="UnmoEnemy" type="CharacterBody2D" unique_id=526435864]
 collision_layer = 32
 collision_mask = 1551
 script = ExtResource("2_s6pr3")
@@ -39,40 +39,40 @@ SkipAttackTime = 1.0
 JumpSe = "enemy_jump"
 TouchdownSe = "enemy_touchdown"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1371124736]
 position = Vector2(0, -1)
 sprite_frames = ExtResource("7_m4x2x")
 animation = &"walk_right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=611093965]
 shape = SubResource("RectangleShape2D_wyq3q")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=807289775]
 scale = Vector2(1.2, 1.25)
 rect = Rect2(-20, -32, 40, 64)
 
-[node name="EyeSight" parent="." instance=ExtResource("8_7pjb8")]
+[node name="EyeSight" parent="." unique_id=2118770602 instance=ExtResource("8_7pjb8")]
 
-[node name="BurialArea" parent="." instance=ExtResource("8_bocfx")]
+[node name="BurialArea" parent="." unique_id=1254298746 instance=ExtResource("8_bocfx")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" unique_id=1447727044]
 shape = SubResource("RectangleShape2D_0h4ql")
 
-[node name="EventFinder" parent="." instance=ExtResource("6_dgoom")]
+[node name="EventFinder" parent="." unique_id=1747762134 instance=ExtResource("6_dgoom")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" unique_id=614656526]
 shape = SubResource("RectangleShape2D_4dm7x")
 
-[node name="BlockBreaker" type="Node2D" parent="."]
+[node name="BlockBreaker" type="Node2D" parent="." unique_id=1412098572]
 
-[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker"]
+[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" unique_id=1592537473]
 position = Vector2(0, -34)
 script = ExtResource("8_x8f6o")
 
-[node name="Step" type="Marker2D" parent="BlockBreaker"]
+[node name="Step" type="Marker2D" parent="BlockBreaker" unique_id=391648138]
 position = Vector2(0, 34)
 script = ExtResource("8_x8f6o")
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=1127750473]
 wait_time = 0.001
 one_shot = true

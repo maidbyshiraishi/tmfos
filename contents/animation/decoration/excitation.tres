@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://c16ugm37o7apr"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://c16ugm37o7apr"]
 
 [ext_resource type="Texture2D" uid="uid://b8k6rtvfexuqk" path="res://contents/image/decoration/excitation.png" id="1_2xbrw"]
 

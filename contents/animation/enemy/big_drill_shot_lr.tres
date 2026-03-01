@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://p1chjaecrkr8"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://p1chjaecrkr8"]
 
 [ext_resource type="Texture2D" uid="uid://yj5erpo2ao46" path="res://contents/image/enemy/big_drill_shot_lr.png" id="1_sfa6m"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://5qnhbt0sjh0o"]
+[gd_scene format=4 uid="uid://5qnhbt0sjh0o"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
 [ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="2_ns1s3"]
@@ -11,67 +11,67 @@
 [ext_resource type="PackedScene" uid="uid://c0jsvrme3e6hk" path="res://item/item_panel_wall_jump.tscn" id="8_5dyah"]
 [ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="8_661k2"]
 
-[node name="Stage" instance=ExtResource("1_axhrv")]
+[node name="Stage" unique_id=629156433 instance=ExtResource("1_axhrv")]
 BgmStream = ExtResource("2_ns1s3")
 
-[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+[node name="ColorRect" parent="Background/Parallax2D3" parent_id_path=PackedInt32Array(316905264) index="0" unique_id=1444016902]
 color = Color(0.368627, 0.415686, 0.509804, 1)
 
-[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D2" parent_id_path=PackedInt32Array(783352162) index="0" unique_id=1264730317]
 texture = ExtResource("2_xbh3p")
 
-[node name="Parallax2D1" parent="Background" index="2"]
+[node name="Parallax2D1" parent="Background" parent_id_path=PackedInt32Array(1424633333) index="2" unique_id=1111247074]
 visible = true
 
-[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0" unique_id=2146813747]
 texture = ExtResource("3_gijo4")
 
-[node name="Background" parent="TileMap" index="0"]
+[node name="Background" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="0" unique_id=1341315673]
 tile_map_data = PackedByteArray("AAATAPL/AAAEAAAAAAATAPP/AAAEAAAAAAATAPT/AAAEAAAAAAATAPX/AAAEAAAAAAATAPb/AAAEAAAAAAATAPf/AAAEAAAAAAATAPj/AAAEAAAAAAATAPn/AAAEAAAAAAATAPr/AAAEAAAAAAATAPv/AAAEAAAAAAATAPz/AAAEAAAAAAATAP3/AAAEAAAAAAA=")
 
-[node name="Ground" parent="TileMap" index="1"]
+[node name="Ground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="1" unique_id=2022029018]
 tile_map_data = PackedByteArray("AAAJAP7/AAAAAAMAAAAJAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP7/AAAAAAMAAAAQAP//AAAAAAMAAAARAP7/AAAAAAMAAAARAP//AAAAAAMAAAASAP7/AAAAAAMAAAASAP//AAAAAAMAAAATAP7/AAAAAAMAAAATAP//AAAAAAMAAAAUAPn/AAADAAIAAAAUAPr/AAADAAIAAAAUAPv/AAADAAIAAAAUAPz/AAADAAIAAAAUAP3/AAAEAAIAAAAUAP7/AAAAAAMAAAAUAP//AAAAAAMAAAAVAP7/AAAAAAMAAAAVAP//AAAAAAMAAAAWAP7/AAAAAAMAAAAWAP//AAAAAAMAAAAXAPn/AAADAAIAAAAXAPr/AAAEAAIAAAAXAP7/AAAAAAMAAAAXAP//AAAAAAMAAAAYAP7/AAAAAAMAAAAYAP//AAAAAAMAAAAZAPz/AAAAAAMAAAAZAP3/AAAAAAMAAAAZAP7/AAAAAAMAAAAZAP//AAAAAAMAAAAAAOv/AAAAAAMAAAAAAOz/AAAAAAMAAAAAAO3/AAAAAAMAAAAAAO7/AAAAAAMAAAAAAO//AAAAAAMAAAAAAPD/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP//AAAAAAMAAAABAOv/AAAAAAMAAAABAOz/AAAAAAMAAAABAO3/AAAAAAMAAAABAO7/AAAAAAMAAAABAO//AAAAAAMAAAABAPD/AAAAAAMAAAABAPH/AAAAAAMAAAABAPL/AAAAAAMAAAABAPP/AAAAAAMAAAABAPT/AAAAAAMAAAABAPX/AAAAAAMAAAABAPb/AAAAAAMAAAABAPf/AAAAAAMAAAABAPj/AAAAAAMAAAABAPn/AAAAAAMAAAABAPr/AAAAAAMAAAABAPv/AAAAAAMAAAABAPz/AAAAAAMAAAABAP3/AAAAAAMAAAABAP7/AAAAAAMAAAABAP//AAAAAAMAAAACAP7/AAAAAAMAAAACAP//AAAAAAMAAAADAP7/AAAAAAMAAAADAP//AAAAAAMAAAAEAP7/AAAAAAMAAAAEAP//AAAAAAMAAAAFAP7/AAAAAAMAAAAFAP//AAAAAAMAAAAGAP7/AAAAAAMAAAAGAP//AAAAAAMAAAAHAP7/AAAAAAMAAAAHAP//AAAAAAMAAAAIAP7/AAAAAAMAAAAIAP//AAAAAAMAAAAKAP7/AAAAAAMAAAAKAP//AAAAAAMAAAALAP7/AAAAAAMAAAALAP//AAAAAAMAAAAMAP7/AAAAAAMAAAAMAP//AAAAAAMAAAANAP7/AAAAAAMAAAANAP//AAAAAAMAAAAOAP7/AAAAAAMAAAAPAP7/AAAAAAMAAAAUAPP/AAAEAAEAAAAUAPT/AAADAAIAAAAUAPX/AAADAAIAAAAUAPb/AAADAAIAAAAUAPf/AAADAAIAAAAUAPj/AAADAAIAAAAXAOv/AAAEAAEAAAAXAOz/AAADAAIAAAAXAO3/AAADAAIAAAAXAO7/AAADAAIAAAAXAO//AAADAAIAAAAXAPD/AAADAAIAAAAXAPH/AAADAAIAAAAXAPL/AAADAAIAAAAXAPP/AAADAAIAAAAXAPT/AAADAAIAAAAXAPX/AAADAAIAAAAXAPb/AAADAAIAAAAXAPf/AAADAAIAAAAXAPj/AAADAAIAAAAaAPz/AAAAAAMAAAAaAP3/AAAAAAMAAAAaAP7/AAAAAAMAAAAaAP//AAAAAAMAAAAbAPr/AAAAAAMAAAAbAPv/AAAAAAMAAAAbAPz/AAAAAAMAAAAbAP3/AAAAAAMAAAAbAP7/AAAAAAMAAAAbAP//AAAAAAMAAAAcAPr/AAAAAAMAAAAcAPv/AAAAAAMAAAAcAPz/AAAAAAMAAAAcAP3/AAAAAAMAAAAcAP7/AAAAAAMAAAAcAP//AAAAAAMAAAAdAPj/AAAAAAMAAAAdAPn/AAAAAAMAAAAdAPr/AAAAAAMAAAAdAPv/AAAAAAMAAAAdAPz/AAAAAAMAAAAdAP3/AAAAAAMAAAAdAP7/AAAAAAMAAAAdAP//AAAAAAMAAAAeAPj/AAAAAAMAAAAeAPn/AAAAAAMAAAAeAPr/AAAAAAMAAAAeAPv/AAAAAAMAAAAeAPz/AAAAAAMAAAAeAP3/AAAAAAMAAAAeAP7/AAAAAAMAAAAeAP//AAAAAAMAAAAfAPb/AAAAAAMAAAAfAPf/AAAAAAMAAAAfAPj/AAAAAAMAAAAfAPn/AAAAAAMAAAAfAPr/AAAAAAMAAAAfAPv/AAAAAAMAAAAfAPz/AAAAAAMAAAAfAP3/AAAAAAMAAAAfAP7/AAAAAAMAAAAfAP//AAAAAAMAAAAgAPb/AAAAAAMAAAAgAPf/AAAAAAMAAAAgAPj/AAAAAAMAAAAgAPn/AAAAAAMAAAAgAPr/AAAAAAMAAAAgAPv/AAAAAAMAAAAgAPz/AAAAAAMAAAAgAP3/AAAAAAMAAAAgAP7/AAAAAAMAAAAgAP//AAAAAAMAAAAhAPb/AAAAAAMAAAAhAPf/AAAAAAMAAAAhAPj/AAAAAAMAAAAhAPn/AAAAAAMAAAAhAPr/AAAAAAMAAAAhAPv/AAAAAAMAAAAhAPz/AAAAAAMAAAAhAP3/AAAAAAMAAAAhAP7/AAAAAAMAAAAhAP//AAAAAAMAAAAiAPb/AAAAAAMAAAAiAPf/AAAAAAMAAAAiAPj/AAAAAAMAAAAiAPn/AAAAAAMAAAAiAPr/AAAAAAMAAAAiAPv/AAAAAAMAAAAiAPz/AAAAAAMAAAAiAP3/AAAAAAMAAAAiAP7/AAAAAAMAAAAiAP//AAAAAAMAAAAjAOv/AAAAAAMAAAAjAOz/AAAAAAMAAAAjAO3/AAAAAAMAAAAjAO7/AAAAAAMAAAAjAO//AAAAAAMAAAAjAPD/AAAAAAMAAAAjAPH/AAAAAAMAAAAjAPL/AAAAAAMAAAAjAPP/AAAAAAMAAAAjAPT/AAAAAAMAAAAjAPX/AAAAAAMAAAAjAPb/AAAAAAMAAAAjAPf/AAAAAAMAAAAjAPj/AAAAAAMAAAAjAPn/AAAAAAMAAAAjAPr/AAAAAAMAAAAjAPv/AAAAAAMAAAAjAPz/AAAAAAMAAAAjAP3/AAAAAAMAAAAjAP7/AAAAAAMAAAAjAP//AAAAAAMAAAAkAOv/AAAAAAMAAAAkAOz/AAAAAAMAAAAkAO3/AAAAAAMAAAAkAO7/AAAAAAMAAAAkAO//AAAAAAMAAAAkAPD/AAAAAAMAAAAkAPH/AAAAAAMAAAAkAPL/AAAAAAMAAAAkAPP/AAAAAAMAAAAkAPT/AAAAAAMAAAAkAPX/AAAAAAMAAAAkAPb/AAAAAAMAAAAkAPf/AAAAAAMAAAAkAPj/AAAAAAMAAAAkAPn/AAAAAAMAAAAkAPr/AAAAAAMAAAAkAPv/AAAAAAMAAAAkAPz/AAAAAAMAAAAkAP3/AAAAAAMAAAAkAP7/AAAAAAMAAAAkAP//AAAAAAMAAAA=")
 
-[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("7_mpdn1")]
+[node name="WoodDoor1" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="0" unique_id=2743362 instance=ExtResource("7_mpdn1")]
 position = Vector2(1088, -352)
 DestStageNo = 3
 DestDoorNo = 2
 DoorNo = 1
 
-[node name="WoodDoor2" parent="Door" index="1" instance=ExtResource("7_mpdn1")]
+[node name="WoodDoor2" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="1" unique_id=1827773572 instance=ExtResource("7_mpdn1")]
 position = Vector2(128, -96)
 DestStageNo = 5
 DestDoorNo = 1
 DoorNo = 2
 Direction = 1
 
-[node name="SavePoint3" parent="Door" index="2" instance=ExtResource("8_0ovpt")]
+[node name="SavePoint3" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="2" unique_id=909760901 instance=ExtResource("8_0ovpt")]
 position = Vector2(424, -104)
 DoorNo = 3
 
-[node name="ItemPanelWallJump" parent="Item" index="0" instance=ExtResource("8_5dyah")]
+[node name="ItemPanelWallJump" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="0" unique_id=1327358267 instance=ExtResource("8_5dyah")]
 position = Vector2(944, -400)
 
-[node name="Player" parent="." index="8" instance=ExtResource("6_8mhtp")]
+[node name="Player" parent="." index="8" unique_id=743098527 instance=ExtResource("6_8mhtp")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="13"]
+[node name="Camera" type="Camera2D" parent="Player" index="13" unique_id=1787590046]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("8_661k2")
 
-[node name="HUD" parent="." index="13"]
+[node name="HUD" parent="." index="13" unique_id=1358724654]
 Text1 = "チュートリアル"
 Text2 = "4"
 
-[node name="Message" type="Control" parent="." index="16"]
+[node name="Message" type="Control" parent="." index="16" unique_id=593993264]
 light_mask = 2
 anchors_preset = 0
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0" unique_id=1553532693]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -85,7 +85,7 @@ bbcode_enabled = true
 text = "[center][outline_size=10][outline_color=black][font_size=20]そろそろ一度セーブしてみましょう。[color=#ff6666]メイド電話[/color]で[color=#ff6666]上キー[/color]を押せばセーブとロードができます。[/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Message" index="1" unique_id=28649553]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -100,6 +100,6 @@ bbcode_enabled = true
 text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]壁ジャンプアイテム[/color]があると壁でジャンプできます。左右の壁をジャンプで交互に登ってみましょう。[/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("4_cixlx")]
+[node name="OutOfBorder1" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="0" unique_id=1263629596 instance=ExtResource("4_cixlx")]
 position = Vector2(592, 16)
 scale = Vector2(100, 1)

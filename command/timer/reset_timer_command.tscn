@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnubvgc50546i"]
+[gd_scene format=3 uid="uid://dnubvgc50546i"]
 
 [ext_resource type="Script" uid="uid://c3n3lg1iumd58" path="res://command/timer/ResetTimerTriggerCommand.cs" id="1_mjqmf"]
 
-[node name="ResetTimerCommand" type="Node"]
+[node name="ResetTimerCommand" type="Node" unique_id=575174667]
 script = ExtResource("1_mjqmf")

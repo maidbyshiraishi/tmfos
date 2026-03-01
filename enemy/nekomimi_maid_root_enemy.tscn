@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://vp0fhk4g3cgi"]
+[gd_scene format=3 uid="uid://vp0fhk4g3cgi"]
 
 [ext_resource type="Script" uid="uid://cb5wtx2qbytoj" path="res://enemy/NekomimiMaidEnemy.cs" id="1_lek7d"]
 [ext_resource type="PackedScene" uid="uid://d3dxe0jrgncd4" path="res://enemy/eyesight64.tscn" id="3_367j2"]
@@ -16,7 +16,7 @@ size = Vector2(14, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7qrv"]
 size = Vector2(20, 60)
 
-[node name="NekomimiMaidEnemy" type="CharacterBody2D"]
+[node name="NekomimiMaidEnemy" type="CharacterBody2D" unique_id=1889431306]
 collision_layer = 32
 collision_mask = 1551
 script = ExtResource("1_lek7d")
@@ -33,43 +33,43 @@ Attack = 15
 JumpSe = "enemy_jump"
 TouchdownSe = "enemy_touchdown"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1266957152]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=675811504]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_1wi5u")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1804316767]
 scale = Vector2(1, 1.25)
 rect = Rect2(-16, -32, 32, 64)
 
-[node name="EyeSight" parent="." instance=ExtResource("3_367j2")]
+[node name="EyeSight" parent="." unique_id=731897178 instance=ExtResource("3_367j2")]
 
-[node name="ActionChange" type="Node2D" parent="."]
+[node name="ActionChange" type="Node2D" parent="." unique_id=1819503579]
 script = ExtResource("4_bqmvo")
 
-[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+[node name="Marker2D" type="Marker2D" parent="ActionChange" unique_id=576506793]
 
-[node name="BurialArea" parent="." instance=ExtResource("5_i422s")]
+[node name="BurialArea" parent="." unique_id=1431657705 instance=ExtResource("5_i422s")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" unique_id=2037883095]
 shape = SubResource("RectangleShape2D_uye8j")
 
-[node name="EventFinder" parent="." instance=ExtResource("5_wbksb")]
+[node name="EventFinder" parent="." unique_id=2079603056 instance=ExtResource("5_wbksb")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" unique_id=1945463445]
 shape = SubResource("RectangleShape2D_t7qrv")
 
-[node name="BlockBreaker" type="Node2D" parent="."]
+[node name="BlockBreaker" type="Node2D" parent="." unique_id=881760023]
 
-[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker"]
+[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" unique_id=2007621491]
 position = Vector2(0, -34)
 script = ExtResource("6_f8k0o")
 
-[node name="Step" type="Marker2D" parent="BlockBreaker"]
+[node name="Step" type="Marker2D" parent="BlockBreaker" unique_id=132985384]
 position = Vector2(0, 34)
 script = ExtResource("6_f8k0o")
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=1275528094]
 wait_time = 0.001
 one_shot = true

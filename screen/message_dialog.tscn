@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://didcowdro63l3"]
+[gd_scene format=3 uid="uid://didcowdro63l3"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_joip0"]
 [ext_resource type="Script" uid="uid://c2ou3vlk72cmw" path="res://screen/MessageDialog.cs" id="2_2kunl"]
@@ -10,14 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_8kyvh"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="7_nxi2a"]
 
-[node name="MessageDialog" type="Control"]
+[node name="MessageDialog" type="Control" unique_id=846927192]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_joip0")
 script = ExtResource("2_2kunl")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=210923470]
 light_mask = 2
 layout_mode = 0
 offset_left = 64.0
@@ -26,7 +26,7 @@ offset_right = 576.0
 offset_bottom = 320.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Border" type="ReferenceRect" parent="."]
+[node name="Border" type="ReferenceRect" parent="." unique_id=1163244870]
 light_mask = 2
 layout_mode = 0
 offset_left = 64.0
@@ -37,7 +37,7 @@ border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Message" type="Label" parent="."]
+[node name="Message" type="Label" parent="." unique_id=223610064]
 light_mask = 2
 layout_mode = 0
 offset_left = 80.0
@@ -50,11 +50,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=681718780]
 light_mask = 2
 anchors_preset = 0
 
-[node name="Back" type="Button" parent="Control"]
+[node name="Back" type="Button" parent="Control" unique_id=1794434830]
 light_mask = 2
 layout_mode = 0
 offset_left = 280.0
@@ -71,25 +71,25 @@ text = "戻る
 "
 script = ExtResource("3_27h6v")
 
-[node name="Exec" parent="Control/Back" instance=ExtResource("6_8kyvh")]
+[node name="Exec" parent="Control/Back" unique_id=1008422378 instance=ExtResource("6_8kyvh")]
 
-[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("5_d1gj3")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" unique_id=276673570 node_paths=PackedStringArray("Target") instance=ExtResource("5_d1gj3")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("6_8kyvh")]
+[node name="Focus" parent="Control/Back" unique_id=1008113358 instance=ExtResource("6_8kyvh")]
 
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_ny3dk")]
+[node name="PlaySeCommand" parent="Control/Back/Focus" unique_id=2070098344 instance=ExtResource("5_ny3dk")]
 SeName = "menu_move"
 
-[node name="EscapeKey" parent="." instance=ExtResource("7_nxi2a")]
+[node name="EscapeKey" parent="." unique_id=1987472750 instance=ExtResource("7_nxi2a")]
 ActionName = "escape"
 
-[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("5_d1gj3")]
+[node name="ReferenceContainer" parent="EscapeKey" unique_id=772021952 node_paths=PackedStringArray("Target") instance=ExtResource("5_d1gj3")]
 Target = NodePath("../../Close")
 
-[node name="Close" parent="." instance=ExtResource("6_8kyvh")]
+[node name="Close" parent="." unique_id=408303393 instance=ExtResource("6_8kyvh")]
 
-[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_ny3dk")]
+[node name="PlaySeCommand" parent="Close" unique_id=1469751449 instance=ExtResource("5_ny3dk")]
 SeName = "menu_select"
 
-[node name="CloseDialogCommand" parent="Close" instance=ExtResource("4_be5gd")]
+[node name="CloseDialogCommand" parent="Close" unique_id=1662729114 instance=ExtResource("4_be5gd")]

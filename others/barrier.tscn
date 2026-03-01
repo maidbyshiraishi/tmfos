@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwdcyrlhfp7k5"]
+[gd_scene format=3 uid="uid://bwdcyrlhfp7k5"]
 
 [ext_resource type="Texture2D" uid="uid://cexw0onoh1fm1" path="res://contents/image/barrier.png" id="1_1hjrb"]
 [ext_resource type="Script" uid="uid://b8pxskd78s3kv" path="res://trigger/TriggerArea2D.cs" id="1_7fh5b"]
@@ -31,7 +31,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2anv"]
 size = Vector2(32, 256)
 
-[node name="Barrier" type="Area2D"]
+[node name="Barrier" type="Area2D" unique_id=921147204]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("1_7fh5b")
@@ -40,21 +40,21 @@ Stateful = false
 OneTime = false
 PlayerOnly = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1224691461]
 sprite_frames = SubResource("SpriteFrames_21c8a")
 autoplay = "default"
 frame_progress = 0.965927
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1532108611]
 shape = SubResource("RectangleShape2D_o2anv")
 
-[node name="AddDurabilityCommand" parent="." instance=ExtResource("3_p4orh")]
+[node name="AddDurabilityCommand" parent="." unique_id=2024639384 instance=ExtResource("3_p4orh")]
 Value = -9999
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1167398884]
 autostart = true
 
-[node name="TimerTrigger" parent="Timer" instance=ExtResource("4_4gnrv")]
+[node name="TimerTrigger" parent="Timer" unique_id=1567406082 instance=ExtResource("4_4gnrv")]
 
-[node name="PlaySeCommand" parent="Timer/TimerTrigger" instance=ExtResource("5_66uct")]
+[node name="PlaySeCommand" parent="Timer/TimerTrigger" unique_id=848020222 instance=ExtResource("5_66uct")]
 SeName = "barrier"
