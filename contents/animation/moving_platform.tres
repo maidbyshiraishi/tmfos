@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://wgxxdbkf56jh"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://wgxxdbkf56jh"]
 
 [ext_resource type="Texture2D" uid="uid://cp7myj56oy06f" path="res://contents/image/moving_platform.png" id="1_nfi2p"]
 

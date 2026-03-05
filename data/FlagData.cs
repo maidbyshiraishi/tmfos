@@ -25,25 +25,13 @@ public class FlagData : GameDataRoot
         }
     }
 
-    public FlagData Copy()
-    {
-        return new(_flag);
-    }
+    public FlagData Copy() => new(_flag);
 
-    public void SetFlag(string key, int value)
-    {
-        _flag[key] = value;
-    }
+    public void SetFlag(string key, int value) => _flag[key] = value;
 
-    public void AddFlag(string key, int value)
-    {
-        SetFlag(key, GetFlag(key) + value);
-    }
+    public void AddFlag(string key, int value) => SetFlag(key, GetFlag(key) + value);
 
-    public int GetFlag(string key)
-    {
-        return _flag.TryGetValue(key, out int value) ? value : 0;
-    }
+    public int GetFlag(string key) => _flag.TryGetValue(key, out int value) ? value : 0;
 
     public void RemoveFlag(string key)
     {
@@ -87,13 +75,7 @@ public class FlagData : GameDataRoot
         return Error.Ok;
     }
 
-    public override string[] GetSectionKeys(ConfigFile file)
-    {
-        return [.. _flag.Keys];
-    }
+    public override string[] GetSectionKeys(ConfigFile file) => [.. _flag.Keys];
 
-    public override Array GetSectionValues(ConfigFile file)
-    {
-        return [.. _flag.Values];
-    }
+    public override Array GetSectionValues(ConfigFile file) => [.. _flag.Values];
 }

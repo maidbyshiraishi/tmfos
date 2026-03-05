@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvfryyxcw20bs"]
+[gd_scene format=3 uid="uid://bvfryyxcw20bs"]
 
 [ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="1_wceco"]
 [ext_resource type="SpriteFrames" uid="uid://c2wtd3ggo53g2" path="res://contents/animation/decoration/exit.tres" id="2_6nifu"]
 
-[node name="Exit" type="Node2D"]
+[node name="Exit" type="Node2D" unique_id=75017441]
 
-[node name="Light" parent="." instance=ExtResource("1_wceco")]
+[node name="Light" parent="." unique_id=106629269 instance=ExtResource("1_wceco")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=410811310]
 sprite_frames = ExtResource("2_6nifu")

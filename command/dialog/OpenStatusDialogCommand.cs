@@ -7,7 +7,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// ステータスダイアログを開くコマンド
 /// </summary>
-public partial class OpenStatusDialogCommand : CommandNode
+public partial class OpenStatusDialogCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

@@ -13,10 +13,7 @@ namespace tmfos.system;
 /// </summary>
 public static partial class Lib
 {
-    public static string GenerateName(Node node)
-    {
-        return MyRegex().Replace(node.GetPath().ToString(), "");
-    }
+    public static string GenerateName(Node node) => MyRegex().Replace(node.GetPath().ToString(), "");
 
     public static string JoinString(Array array)
     {
@@ -141,10 +138,7 @@ public static partial class Lib
         target?.ExecCommand(node, flag);
     }
 
-    public static void SetPhysics(Node root, bool enabled)
-    {
-        root.GetTree().CallGroup(StageRoot.PhysicsProcessGroup, Node.MethodName.SetPhysicsProcess, enabled);
-    }
+    public static void SetPhysics(Node root, bool enabled) => root.GetTree().CallGroup(StageRoot.PhysicsProcessGroup, Node.MethodName.SetPhysicsProcess, enabled);
 
     public static void GrabFocus(Control control)
     {
@@ -153,12 +147,12 @@ public static partial class Lib
         control.SetBlockSignals(false);
     }
 
-    public static void ConnectFocusSignal(Control control, Callable entered, Callable exited, Callable moudeEntered)
+    public static void ConnectFocusSignal(Control control, System.Action entered, System.Action exited, System.Action moudeEntered)
     {
-        _ = control.Connect(Control.SignalName.FocusEntered, entered);
-        _ = control.Connect(Control.SignalName.MouseEntered, moudeEntered);
-        _ = control.Connect(Control.SignalName.FocusExited, exited);
-        _ = control.Connect(Control.SignalName.MouseExited, exited);
+        control.FocusEntered += entered;
+        control.MouseEntered += moudeEntered;
+        control.FocusExited += exited;
+        control.MouseExited += exited;
     }
 
     public static void ResetTimer(Timer timer)

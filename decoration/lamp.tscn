@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://gbo2sbr8uow2"]
+[gd_scene format=3 uid="uid://gbo2sbr8uow2"]
 
 [ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="1_y65he"]
 [ext_resource type="SpriteFrames" uid="uid://b3xve88b1cck0" path="res://contents/animation/decoration/lamp.tres" id="2_m4jx2"]
 
-[node name="Lamp" type="Node2D"]
+[node name="Lamp" type="Node2D" unique_id=1151273139]
 
-[node name="Light" parent="." instance=ExtResource("1_y65he")]
+[node name="Light" parent="." unique_id=856605360 instance=ExtResource("1_y65he")]
 RangeRatio = 3.5
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=673459352]
 sprite_frames = ExtResource("2_m4jx2")

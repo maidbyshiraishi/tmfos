@@ -13,16 +13,11 @@ public partial class GameKeyOption : Node
     // データ保存先
     private static readonly string KeyOptionFilePath = "user://key_options.dat";
     private static readonly Array<Key> UnchangeableKeys = [Key.Enter, Key.KpEnter, Key.Kp8, Key.Kp2, Key.Kp4, Key.Kp6, Key.Up, Key.Down, Key.Left, Key.Right, Key.Escape, Key.F1];
+    private static readonly Array<JoyButton> UnchangeableJoyButton = [JoyButton.DpadUp, JoyButton.DpadDown, JoyButton.DpadLeft, JoyButton.DpadRight];
 
-    public override void _Ready()
-    {
-        LoadKeyOptions();
-    }
+    public override void _Ready() => LoadKeyOptions();
 
-    public static void ResetDefaultKeyOptions()
-    {
-        InputMap.LoadFromProjectSettings();
-    }
+    public static void ResetDefaultKeyOptions() => InputMap.LoadFromProjectSettings();
 
     public void LoadKeyOptions()
     {
@@ -130,7 +125,16 @@ public partial class GameKeyOption : Node
 
     public static bool CanChangeInputEvent(InputEvent key)
     {
-        return key is not InputEventKey ikey || !UnchangeableKeys.Contains(ikey.Keycode);
+        if (key is InputEventKey ikey)
+        {
+            return !UnchangeableKeys.Contains(ikey.Keycode);
+        }
+        else if (key is InputEventJoypadButton ibutton)
+        {
+            return !UnchangeableJoyButton.Contains(ibutton.ButtonIndex);
+        }
+
+        return true;
     }
 
     private InputEventKey GetInputEventKey(Key key, bool physical = false)

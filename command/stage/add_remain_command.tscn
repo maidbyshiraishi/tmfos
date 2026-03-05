@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwp4y1nte25hm"]
+[gd_scene format=3 uid="uid://bwp4y1nte25hm"]
 
 [ext_resource type="Script" uid="uid://dqso6jtjku5ct" path="res://command/stage/AddRemainCommand.cs" id="1_xwiq6"]
 
-[node name="AddRemainCommand" type="Node"]
+[node name="AddRemainCommand" type="Node" unique_id=2096823267]
 script = ExtResource("1_xwiq6")

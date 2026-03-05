@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://uv5cr60f44ds"]
+[gd_scene format=3 uid="uid://uv5cr60f44ds"]
 
 [ext_resource type="Script" uid="uid://cw8th3dq0imjs" path="res://door/Gateway.cs" id="1_6wmck"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage/stage_entry_point.tscn" id="2_sio7u"]
@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xpbj"]
 size = Vector2(32, 64)
 
-[node name="DoorRoot" type="Area2D"]
+[node name="DoorRoot" type="Area2D" unique_id=1654078558]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("1_6wmck")
@@ -18,19 +18,19 @@ Continuous = true
 Search = true
 Stateful = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=132764941]
 shape = SubResource("RectangleShape2D_5xpbj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=452515983]
 autoplay = "default"
 
-[node name="StageEntryPoint" parent="." instance=ExtResource("2_sio7u")]
+[node name="StageEntryPoint" parent="." unique_id=1470185084 instance=ExtResource("2_sio7u")]
 position = Vector2(0, 2)
 
-[node name="UnsetPlayerSearchCommand" parent="." instance=ExtResource("5_hdmrd")]
+[node name="UnsetPlayerSearchCommand" parent="." unique_id=110353817 instance=ExtResource("5_hdmrd")]
 
-[node name="SavePlayerLifeTimeCommand" parent="." instance=ExtResource("6_6n2tj")]
+[node name="SavePlayerLifeTimeCommand" parent="." unique_id=762513852 instance=ExtResource("6_6n2tj")]
 
-[node name="SetPlayerInitialDurabilityCommand" parent="." instance=ExtResource("7_gg3of")]
+[node name="SetPlayerInitialDurabilityCommand" parent="." unique_id=260440423 instance=ExtResource("7_gg3of")]
 
-[node name="ChangeStageCommand" parent="." instance=ExtResource("8_qq8ky")]
+[node name="ChangeStageCommand" parent="." unique_id=1092278101 instance=ExtResource("8_qq8ky")]

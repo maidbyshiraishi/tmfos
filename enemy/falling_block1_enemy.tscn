@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d177oqoko4s5v"]
+[gd_scene format=3 uid="uid://d177oqoko4s5v"]
 
 [ext_resource type="Script" uid="uid://cf46wm87flp23" path="res://enemy/FallingEnemy.cs" id="1_gcaro"]
 [ext_resource type="Texture2D" uid="uid://cmijx68tax8yc" path="res://contents/tilemap/tilemaps.png" id="2_ejgw3"]
@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r55jc"]
 size = Vector2(32, 32)
 
-[node name="FallingBlock1Enemy" type="Area2D"]
+[node name="FallingBlock1Enemy" type="Area2D" unique_id=1593947549]
 collision_layer = 32
 collision_mask = 8
 script = ExtResource("1_gcaro")
@@ -29,22 +29,22 @@ Speed = 180.0
 Attack = 10
 Direction = Vector2(0, 1)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=278503140]
 position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_naua8")
 animation = &"down"
 autoplay = "down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183079795]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_r55jc")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1701927055]
 position = Vector2(-1.19209e-06, 22)
 scale = Vector2(1.5, 1.5)
 rect = Rect2(-16, -20, 32, 32)
 
-[node name="LongDown" type="RayCast2D" parent="."]
+[node name="LongDown" type="RayCast2D" parent="." unique_id=411982971]
 position = Vector2(0, 32)
 target_position = Vector2(0, 150)
 collision_mask = 8

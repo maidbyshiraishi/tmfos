@@ -15,7 +15,10 @@ public partial class Decoration : Node2D, ISpawnedNode
 
     public override void _Ready()
     {
-        _ = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D")?.Connect(AnimatedSprite2D.SignalName.AnimationFinished, new(this, MethodName.Finished));
+        if (GetNodeOrNull("AnimatedSprite2D") is AnimatedSprite2D animatedSprite2D)
+        {
+            animatedSprite2D.AnimationFinished += Finished;
+        }
 
         if (SeName is not null)
         {
@@ -23,22 +26,13 @@ public partial class Decoration : Node2D, ISpawnedNode
         }
     }
 
-    public void Finished()
-    {
-        QueueFree();
-    }
+    public void Finished() => QueueFree();
 
-    public void SetNodeInfo(Vector2 position, Vector2 direction)
-    {
-        Position = position;
-    }
+    public void SetNodeInfo(Vector2 position, Vector2 direction) => Position = position;
 
     public void SetLifeTime(double lifeTime)
     {
     }
 
-    public void SetSpawner(ISpawner spawner)
-    {
-        _ = Connect(Node.SignalName.TreeExited, spawner.GetSignalMethod());
-    }
+    public void SetSpawner(ISpawner spawner) => TreeExited += spawner.GetSignalMethod();
 }

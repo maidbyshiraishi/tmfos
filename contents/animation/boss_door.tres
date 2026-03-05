@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://d04dm8poe3guy"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://d04dm8poe3guy"]
 
 [ext_resource type="Texture2D" uid="uid://crgv7jmmskd65" path="res://contents/image/door/boss_door.png" id="1_p4bqi"]
 

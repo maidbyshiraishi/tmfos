@@ -13,7 +13,7 @@ public partial class SaveConfirmDialog : DialogRoot
     public override void _Ready()
     {
         base._Ready();
-        _ = GetNode<Button>("Control/Yes").Connect(BaseButton.SignalName.Pressed, new(this, MethodName.Yes));
+        GetNode<Button>("Control/Yes").Pressed += Yes;
     }
 
     public override void GetArgument()
@@ -48,10 +48,7 @@ public partial class SaveConfirmDialog : DialogRoot
         }
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "No";
-    }
+    protected override string GetDefaultFocusNodeName() => "No";
 
     /// <summary>
     /// はい

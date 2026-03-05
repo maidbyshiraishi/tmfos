@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://db5heldrmq227"]
+[gd_scene format=3 uid="uid://db5heldrmq227"]
 
 [ext_resource type="Script" uid="uid://cgh2qa0fg0mhi" path="res://command/option/ResetDefaultGameOptionsCommand.cs" id="1_hxv65"]
 
-[node name="ResetDefaultGameOptionsCommand" type="Node"]
+[node name="ResetDefaultGameOptionsCommand" type="Node" unique_id=1734015087]
 script = ExtResource("1_hxv65")

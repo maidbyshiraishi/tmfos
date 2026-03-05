@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmwmiioyegn2h"]
+[gd_scene format=3 uid="uid://cmwmiioyegn2h"]
 
 [ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_hkun2"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_enhlb"]
@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cv81a3o8fnnqx" path="res://contents/image/theater/talk_player.png" id="5_qlvsl"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/go_screen_command.tscn" id="7_pualw"]
 
-[node name="ScrollTheater" instance=ExtResource("1_hkun2")]
+[node name="ScrollTheater" unique_id=787412431 instance=ExtResource("1_hkun2")]
 metadata/_edit_vertical_guides_ = [320.0]
 
-[node name="Contents" type="Control" parent="Path2D/Socket" index="0"]
+[node name="Contents" type="Control" parent="Path2D/Socket" parent_id_path=PackedInt32Array(905326003) index="0" unique_id=2078148083]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -23,7 +23,7 @@ grow_horizontal = 2
 pivot_offset = Vector2(270, 0)
 theme = ExtResource("2_enhlb")
 
-[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
+[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0" unique_id=1944675011]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 84.0
@@ -34,10 +34,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" instance=ExtResource("4_qo557")]
+[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" unique_id=1222563965 instance=ExtResource("4_qo557")]
 Stream = ExtResource("5_7ds7q")
 
-[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2"]
+[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2" unique_id=1502050091]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 460.0
@@ -49,7 +49,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="3"]
+[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="3" unique_id=521972272]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 620.0
@@ -60,12 +60,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="TalkPlayer" type="Sprite2D" parent="Path2D/Socket/Contents" index="4"]
+[node name="TalkPlayer" type="Sprite2D" parent="Path2D/Socket/Contents" index="4" unique_id=551593940]
 position = Vector2(269, 340)
 texture = ExtResource("5_qlvsl")
 
-[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="5" instance=ExtResource("5_im1r4")]
+[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="5" unique_id=220551715 instance=ExtResource("5_im1r4")]
 position = Vector2(269, 720)
 
-[node name="GoScreenCommand" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" instance=ExtResource("7_pualw")]
+[node name="GoScreenCommand" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" unique_id=1062319626 instance=ExtResource("7_pualw")]
 Screen = "res://screen/title_screen.tscn"

@@ -6,7 +6,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// 指定スクリーンへ移動するコマンド
 /// </summary>
-public partial class GoScreenCommand : CommandNode
+public partial class GoScreenCommand : CommandRoot
 {
     /// <summary>
     /// 次スクリーンのリソースパス
@@ -26,8 +26,5 @@ public partial class GoScreenCommand : CommandNode
     [Export]
     public string Fadein { get; set; } = "fadein_1";
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenScreen(Screen, Fadeout, Fadein);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").OpenScreen(Screen, Fadeout, Fadein);
 }

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://2tm1u7k815es"]
+[gd_scene format=3 uid="uid://2tm1u7k815es"]
 
 [ext_resource type="Script" uid="uid://cq0m58g7v1fq3" path="res://command/stage/StopPlayerMoveCommand.cs" id="1_nldds"]
 
-[node name="StopPlayerMoveCommand" type="Node"]
+[node name="StopPlayerMoveCommand" type="Node" unique_id=930269553]
 script = ExtResource("1_nldds")

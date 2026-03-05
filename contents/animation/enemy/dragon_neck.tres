@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://du2surv2spbsb"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://du2surv2spbsb"]
 
 [ext_resource type="Texture2D" uid="uid://duieciof1kdc" path="res://contents/image/enemy/dragon_neck.png" id="1_0howw"]
 

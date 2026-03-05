@@ -19,15 +19,19 @@ public partial class Mob : CharacterBody2D, IGameNode
     {
         AddToGroup(StageRoot.GameNodeGroup);
         m_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        m_visibleOnScreenNotifier2D = GetNodeOrNull<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(m_animatedSprite, CanvasItem.MethodName.Show));
-        _ = m_visibleOnScreenNotifier2D?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(m_animatedSprite, CanvasItem.MethodName.Hide));
+
+        if (GetNodeOrNull("VisibleOnScreenNotifier2D") is VisibleOnScreenNotifier2D visibleOnScreenNotifier2D)
+        {
+            m_visibleOnScreenNotifier2D = visibleOnScreenNotifier2D;
+            m_visibleOnScreenNotifier2D.ScreenEntered += m_animatedSprite.Show;
+            m_visibleOnScreenNotifier2D.ScreenExited += m_animatedSprite.Hide;
+        }
     }
 
     public virtual void InitializeNode()
     {
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
-        _ = Connect(SignalName.NodeSpawned, new(stageRoot, StageRoot.MethodName.SpawnNode));
+        NodeSpawned += stageRoot.SpawnNode;
     }
 
     public virtual void FinalizeNode()
@@ -68,10 +72,7 @@ public partial class Mob : CharacterBody2D, IGameNode
         }
     }
 
-    protected void PauseSprite()
-    {
-        m_animatedSprite.Pause();
-    }
+    protected void PauseSprite() => m_animatedSprite.Pause();
 
     protected virtual void PlaySe(string name)
     {

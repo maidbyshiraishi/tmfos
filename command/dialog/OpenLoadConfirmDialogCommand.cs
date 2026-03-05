@@ -6,7 +6,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// ロード確認ダイアログを開くコマンド
 /// </summary>
-public partial class OpenLoadConfirmDialogCommand : CommandNode
+public partial class OpenLoadConfirmDialogCommand : CommandRoot
 {
     /// <summary>
     /// ゲームデータ番号
@@ -14,8 +14,5 @@ public partial class OpenLoadConfirmDialogCommand : CommandNode
     [Export]
     public int SlotNo { get; set; } = 0;
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/load_confirm_dialog.tscn", "LoadConfirmDialog", [SlotNo]);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/load_confirm_dialog.tscn", "LoadConfirmDialog", [SlotNo]);
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cjguhepqccoc5"]
+[gd_scene format=4 uid="uid://cjguhepqccoc5"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_vaxy4"]
 [ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="2_14tth"]
@@ -20,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://dbcsppfshlabl" path="res://contents/bgm/bgm8.ogg" id="18_mqwns"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="19_cekdx"]
 
-[node name="Stage" instance=ExtResource("1_vaxy4")]
+[node name="Stage" unique_id=356663719 instance=ExtResource("1_vaxy4")]
 NoBgm = true
 
 [node name="ColorRect" parent="Background/Parallax2D3" index="0"]
@@ -38,265 +38,265 @@ tile_map_data = PackedByteArray("AAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPP/AAAAAAM
 [node name="Foreground" parent="TileMap" index="2"]
 tile_map_data = PackedByteArray("AAAgAP3/AAABAAMAAAAdAPv/AAABAAMAAAAcAPv/AAABAAMAAAAhAP3/AAABAAMAAAAiAP7/AAABAAMAAAAjAP7/AAABAAMAAAA5AP7/AAABAAMAAAA7AP7/AAABAAMAAAA9AP7/AAABAAMAAAA+AP7/AAABAAMAAAA/AP7/AAABAAMAAABBAP7/AAABAAMAAABCAP7/AAABAAMAAABDAP7/AAABAAMAAABFAP7/AAABAAMAAABGAP7/AAABAAMAAABHAP7/AAABAAMAAABJAP7/AAABAAMAAABKAP7/AAABAAMAAABLAP7/AAABAAMAAABNAP7/AAABAAMAAABPAP7/AAABAAMAAABRAP7/AAABAAMAAABSAP7/AAABAAMAAABTAP7/AAABAAMAAABVAP7/AAABAAMAAABWAP7/AAABAAMAAABXAP7/AAABAAMAAAApAP7/AAABAAMAAAAqAP7/AAABAAMAAAArAP7/AAABAAMAAAAtAP7/AAABAAMAAAAvAP7/AAABAAMAAAAxAP7/AAABAAMAAAAyAP7/AAABAAMAAAAzAP7/AAABAAMAAAA1AP7/AAABAAMAAAA2AP7/AAABAAMAAAA3AP7/AAABAAMAAAAlAP7/AAABAAMAAAAmAP7/AAABAAMAAAAnAP7/AAABAAMAAAAoAP7/AAABAAMAAAAkAP7/AAABAAMAAAA6AP7/AAABAAMAAABZAP7/AAABAAMAAABaAP7/AAABAAMAAABbAP7/AAABAAMAAABdAP7/AAABAAMAAABeAP7/AAABAAMAAABfAP7/AAABAAMAAABhAP7/AAABAAMAAABiAP7/AAABAAMAAABjAP7/AAABAAMAAABlAP7/AAABAAMAAABmAP7/AAABAAMAAABnAP7/AAABAAMAAABpAP7/AAABAAMAAABqAP7/AAABAAMAAABrAP7/AAABAAMAAABtAP7/AAABAAMAAABuAP7/AAABAAMAAABvAP7/AAABAAMAAAB1AP7/AAABAAMAAAB2AP7/AAABAAMAAAB3AP7/AAABAAMAAABxAP7/AAABAAMAAAByAP7/AAABAAMAAABzAP7/AAABAAMAAAB5AP7/AAABAAMAAAB6AP7/AAABAAMAAAB7AP7/AAABAAMAAAB9AP7/AAABAAMAAAB+AP7/AAABAAMAAAB/AP7/AAABAAMAAACXAP7/AAABAAMAAACWAP7/AAABAAMAAACVAP7/AAABAAMAAACTAP7/AAABAAMAAACSAP7/AAABAAMAAACRAP7/AAABAAMAAACOAP7/AAABAAMAAACPAP7/AAABAAMAAACNAP7/AAABAAMAAACLAP7/AAABAAMAAACKAP7/AAABAAMAAACJAP7/AAABAAMAAACHAP7/AAABAAMAAACGAP7/AAABAAMAAACFAP7/AAABAAMAAACDAP7/AAABAAMAAACCAP7/AAABAAMAAACBAP7/AAABAAMAAACZAP7/AAABAAMAAACaAP7/AAABAAMAAACbAP7/AAABAAMAAACdAP7/AAABAAMAAACeAP7/AAABAAMAAACfAP7/AAABAAMAAAChAP7/AAABAAMAAACiAP7/AAABAAMAAACjAP7/AAABAAMAAAClAP7/AAABAAMAAACmAP7/AAABAAMAAACnAP7/AAABAAMAAACpAP7/AAABAAMAAACqAP7/AAABAAMAAACrAP7/AAABAAMAAACtAP7/AAABAAMAAACuAP7/AAABAAMAAACvAP7/AAABAAMAAACxAP7/AAABAAMAAACyAP7/AAABAAMAAACzAP7/AAABAAMAAAAuAP7/AAABAAMAAAA=")
 
-[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("3_flai7")]
+[node name="WoodDoor1" parent="Door" index="0" unique_id=253980734 instance=ExtResource("3_flai7")]
 position = Vector2(64, -64)
 DestStageNo = 4
 DestDoorNo = 1
 DoorNo = 1
 
-[node name="BossDoor2" parent="Door" index="1" instance=ExtResource("4_8ia0q")]
+[node name="BossDoor2" parent="Door" index="1" unique_id=379629424 instance=ExtResource("4_8ia0q")]
 position = Vector2(7456, -64)
 DestStageNo = 25
 DestDoorNo = 2
 DoorNo = 2
 
-[node name="SavePoint3" parent="Door" index="2" instance=ExtResource("5_m0sqf")]
+[node name="SavePoint3" parent="Door" index="2" unique_id=35057276 instance=ExtResource("5_m0sqf")]
 position = Vector2(992, -136)
 DoorNo = 3
 
-[node name="SavePoint4" parent="Door" index="3" instance=ExtResource("5_m0sqf")]
+[node name="SavePoint4" parent="Door" index="3" unique_id=1214408443 instance=ExtResource("5_m0sqf")]
 position = Vector2(480, -72)
 DoorNo = 4
 
-[node name="TalkTrigger1" parent="Talk" index="0" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger1" parent="Talk" index="0" unique_id=1976610896 instance=ExtResource("6_854ch")]
 position = Vector2(192, -64)
 Color = 2
 DialogPath = "res://theater/talk_0017.tscn"
 
-[node name="TalkTrigger2" parent="Talk" index="1" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger2" parent="Talk" index="1" unique_id=1149901287 instance=ExtResource("6_854ch")]
 position = Vector2(400, -320)
 Color = 1
 DialogPath = "res://theater/talk_0018.tscn"
 
-[node name="TalkTrigger3" parent="Talk" index="2" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger3" parent="Talk" index="2" unique_id=1072378767 instance=ExtResource("6_854ch")]
 position = Vector2(440, -320)
 Color = 3
 DialogPath = "res://theater/talk_0019.tscn"
 
-[node name="TalkTrigger4" parent="Talk" index="3" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger4" parent="Talk" index="3" unique_id=1040900697 instance=ExtResource("6_854ch")]
 position = Vector2(480, -320)
 Color = 1
 DialogPath = "res://theater/talk_0020.tscn"
 
-[node name="TalkTrigger5" parent="Talk" index="4" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger5" parent="Talk" index="4" unique_id=106935416 instance=ExtResource("6_854ch")]
 position = Vector2(480, -192)
 Color = 2
 DialogPath = "res://theater/talk_0021.tscn"
 
-[node name="TalkTrigger6" parent="Talk" index="5" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger6" parent="Talk" index="5" unique_id=634265427 instance=ExtResource("6_854ch")]
 position = Vector2(88, -320)
 Color = 3
 DialogPath = "res://theater/talk_0022.tscn"
 
-[node name="TalkTrigger7" parent="Talk" index="6" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger7" parent="Talk" index="6" unique_id=765493901 instance=ExtResource("6_854ch")]
 position = Vector2(232, -320)
 Color = 1
 DialogPath = "res://theater/talk_0023.tscn"
 
-[node name="TalkTrigger8" parent="Talk" index="7" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger8" parent="Talk" index="7" unique_id=39840171 instance=ExtResource("6_854ch")]
 position = Vector2(448, -448)
 Color = 2
 DialogPath = "res://theater/talk_0024.tscn"
 
-[node name="TalkTrigger9" parent="Talk" index="8" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger9" parent="Talk" index="8" unique_id=1271280143 instance=ExtResource("6_854ch")]
 position = Vector2(136, -448)
 Color = 3
 DialogPath = "res://theater/talk_0025.tscn"
 
-[node name="TalkTrigger10" parent="Talk" index="9" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger10" parent="Talk" index="9" unique_id=568745839 instance=ExtResource("6_854ch")]
 position = Vector2(176, -448)
 Color = 1
 DialogPath = "res://theater/talk_0026.tscn"
 
-[node name="TalkTrigger11" parent="Talk" index="10" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger11" parent="Talk" index="10" unique_id=411804760 instance=ExtResource("6_854ch")]
 position = Vector2(216, -448)
 Color = 2
 DialogPath = "res://theater/talk_0027.tscn"
 
-[node name="TalkTrigger12" parent="Talk" index="11" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger12" parent="Talk" index="11" unique_id=1438209320 instance=ExtResource("6_854ch")]
 position = Vector2(528, -576)
 Color = 3
 DialogPath = "res://theater/talk_0028.tscn"
 
-[node name="TalkTrigger13" parent="Talk" index="12" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger13" parent="Talk" index="12" unique_id=795065574 instance=ExtResource("6_854ch")]
 position = Vector2(488, -576)
 Color = 1
 DialogPath = "res://theater/talk_0029.tscn"
 
-[node name="TalkTrigger14" parent="Talk" index="13" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger14" parent="Talk" index="13" unique_id=1766806088 instance=ExtResource("6_854ch")]
 position = Vector2(272, -576)
 Color = 2
 DialogPath = "res://theater/talk_0030.tscn"
 
-[node name="TalkTrigger15" parent="Talk" index="14" instance=ExtResource("6_854ch")]
+[node name="TalkTrigger15" parent="Talk" index="14" unique_id=1686104448 instance=ExtResource("6_854ch")]
 position = Vector2(232, -576)
 Color = 3
 DialogPath = "res://theater/talk_0031.tscn"
 
-[node name="TalkTrigger16" parent="Talk" index="15" instance=ExtResource("7_gv55a")]
+[node name="TalkTrigger16" parent="Talk" index="15" unique_id=1347703708 instance=ExtResource("7_gv55a")]
 position = Vector2(4816, -96)
 DialogPath = "res://theater/talk_0032.tscn"
 
-[node name="TalkTrigger17" parent="Talk" index="16" instance=ExtResource("8_iyv7j")]
+[node name="TalkTrigger17" parent="Talk" index="16" unique_id=2111523527 instance=ExtResource("8_iyv7j")]
 position = Vector2(3664, -94)
 DialogPath = "res://theater/talk_0033.tscn"
 
-[node name="TalkTrigger18" parent="Talk" index="17" instance=ExtResource("9_eid7c")]
+[node name="TalkTrigger18" parent="Talk" index="17" unique_id=1191091178 instance=ExtResource("9_eid7c")]
 position = Vector2(2512, -64)
 DialogPath = "res://theater/talk_0034.tscn"
 
-[node name="TalkTrigger19" parent="Talk" index="18" instance=ExtResource("10_rbftk")]
+[node name="TalkTrigger19" parent="Talk" index="18" unique_id=331580076 instance=ExtResource("10_rbftk")]
 position = Vector2(816, -232)
 DialogPath = "res://theater/talk_0035.tscn"
 
-[node name="ItemPanelArmor" parent="Item" index="0" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor" parent="Item" index="0" unique_id=734670393 instance=ExtResource("11_yvce8")]
 position = Vector2(592, -176)
 
-[node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor2" parent="Item" index="1" unique_id=1070485457 instance=ExtResource("11_yvce8")]
 position = Vector2(592, -208)
 
-[node name="ItemPanelArmor3" parent="Item" index="2" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor3" parent="Item" index="2" unique_id=1154634079 instance=ExtResource("11_yvce8")]
 position = Vector2(560, -176)
 
-[node name="ItemPanelArmor4" parent="Item" index="3" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor4" parent="Item" index="3" unique_id=2047120346 instance=ExtResource("11_yvce8")]
 position = Vector2(560, -208)
 
-[node name="ItemPanelArmor6" parent="Item" index="4" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor6" parent="Item" index="4" unique_id=2068963171 instance=ExtResource("11_yvce8")]
 position = Vector2(528, -208)
 
-[node name="ItemPanelArmor5" parent="Item" index="5" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor5" parent="Item" index="5" unique_id=699017143 instance=ExtResource("11_yvce8")]
 position = Vector2(528, -176)
 
-[node name="ItemPanelWeapon" parent="Item" index="6" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon" parent="Item" index="6" unique_id=2116616571 instance=ExtResource("12_k4naw")]
 position = Vector2(592, -304)
 
-[node name="ItemPanelWeapon2" parent="Item" index="7" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon2" parent="Item" index="7" unique_id=541297832 instance=ExtResource("12_k4naw")]
 position = Vector2(560, -304)
 
-[node name="ItemPanelWeapon3" parent="Item" index="8" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon3" parent="Item" index="8" unique_id=251445611 instance=ExtResource("12_k4naw")]
 position = Vector2(592, -336)
 
-[node name="ItemPanelWeapon4" parent="Item" index="9" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon4" parent="Item" index="9" unique_id=126101320 instance=ExtResource("12_k4naw")]
 position = Vector2(528, -304)
 
-[node name="ItemPanelWeapon5" parent="Item" index="10" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon5" parent="Item" index="10" unique_id=1395505358 instance=ExtResource("12_k4naw")]
 position = Vector2(560, -336)
 
-[node name="ItemPanelWeapon6" parent="Item" index="11" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon6" parent="Item" index="11" unique_id=1800690055 instance=ExtResource("12_k4naw")]
 position = Vector2(528, -336)
 
-[node name="ItemPanelLife" parent="Item" index="12" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife" parent="Item" index="12" unique_id=2000829358 instance=ExtResource("13_0tuba")]
 position = Vector2(592, -432)
 
-[node name="ItemPanelLife2" parent="Item" index="13" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife2" parent="Item" index="13" unique_id=455501836 instance=ExtResource("13_0tuba")]
 position = Vector2(560, -432)
 
-[node name="ItemPanelLife3" parent="Item" index="14" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife3" parent="Item" index="14" unique_id=1657982921 instance=ExtResource("13_0tuba")]
 position = Vector2(528, -432)
 
-[node name="ItemPanelLife4" parent="Item" index="15" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife4" parent="Item" index="15" unique_id=121697579 instance=ExtResource("13_0tuba")]
 position = Vector2(592, -464)
 
-[node name="ItemPanelLife5" parent="Item" index="16" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife5" parent="Item" index="16" unique_id=232763900 instance=ExtResource("13_0tuba")]
 position = Vector2(560, -464)
 
-[node name="ItemPanelLife6" parent="Item" index="17" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife6" parent="Item" index="17" unique_id=1750165317 instance=ExtResource("13_0tuba")]
 position = Vector2(528, -464)
 
-[node name="ItemPanelLife7" parent="Item" index="18" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife7" parent="Item" index="18" unique_id=978865655 instance=ExtResource("13_0tuba")]
 position = Vector2(4720, -144)
 
-[node name="ItemPanelLife8" parent="Item" index="19" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife8" parent="Item" index="19" unique_id=130954050 instance=ExtResource("13_0tuba")]
 position = Vector2(4720, -176)
 
-[node name="ItemPanelLife9" parent="Item" index="20" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife9" parent="Item" index="20" unique_id=1415338889 instance=ExtResource("13_0tuba")]
 position = Vector2(4720, -208)
 
-[node name="ItemPanelLife10" parent="Item" index="21" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife10" parent="Item" index="21" unique_id=783714732 instance=ExtResource("13_0tuba")]
 position = Vector2(4656, -144)
 
-[node name="ItemPanelLife11" parent="Item" index="22" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife11" parent="Item" index="22" unique_id=176175481 instance=ExtResource("13_0tuba")]
 position = Vector2(4656, -176)
 
-[node name="ItemPanelLife12" parent="Item" index="23" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife12" parent="Item" index="23" unique_id=1489341103 instance=ExtResource("13_0tuba")]
 position = Vector2(4656, -208)
 
-[node name="ItemPanelLife13" parent="Item" index="24" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife13" parent="Item" index="24" unique_id=1611624338 instance=ExtResource("13_0tuba")]
 position = Vector2(4688, -144)
 
-[node name="ItemPanelLife14" parent="Item" index="25" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife14" parent="Item" index="25" unique_id=1435494401 instance=ExtResource("13_0tuba")]
 position = Vector2(4688, -176)
 
-[node name="ItemPanelLife15" parent="Item" index="26" instance=ExtResource("13_0tuba")]
+[node name="ItemPanelLife15" parent="Item" index="26" unique_id=981153115 instance=ExtResource("13_0tuba")]
 position = Vector2(4688, -208)
 
-[node name="ItemPanelWeapon7" parent="Item" index="27" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon7" parent="Item" index="27" unique_id=1284054283 instance=ExtResource("12_k4naw")]
 position = Vector2(2416, -144)
 
-[node name="ItemPanelWeapon8" parent="Item" index="28" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon8" parent="Item" index="28" unique_id=314409749 instance=ExtResource("12_k4naw")]
 position = Vector2(2384, -144)
 
-[node name="ItemPanelWeapon9" parent="Item" index="29" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon9" parent="Item" index="29" unique_id=1980157258 instance=ExtResource("12_k4naw")]
 position = Vector2(2352, -144)
 
-[node name="ItemPanelWeapon10" parent="Item" index="30" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon10" parent="Item" index="30" unique_id=1395747254 instance=ExtResource("12_k4naw")]
 position = Vector2(2416, -176)
 
-[node name="ItemPanelWeapon11" parent="Item" index="31" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon11" parent="Item" index="31" unique_id=869453007 instance=ExtResource("12_k4naw")]
 position = Vector2(2384, -176)
 
-[node name="ItemPanelWeapon12" parent="Item" index="32" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon12" parent="Item" index="32" unique_id=1521180861 instance=ExtResource("12_k4naw")]
 position = Vector2(2352, -176)
 
-[node name="ItemPanelArmor7" parent="Item" index="33" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor7" parent="Item" index="33" unique_id=10884539 instance=ExtResource("11_yvce8")]
 position = Vector2(3504, -144)
 
-[node name="ItemPanelArmor8" parent="Item" index="34" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor8" parent="Item" index="34" unique_id=1836321537 instance=ExtResource("11_yvce8")]
 position = Vector2(3504, -176)
 
-[node name="ItemPanelArmor9" parent="Item" index="35" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor9" parent="Item" index="35" unique_id=226002883 instance=ExtResource("11_yvce8")]
 position = Vector2(3536, -144)
 
-[node name="ItemPanelArmor10" parent="Item" index="36" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor10" parent="Item" index="36" unique_id=886015612 instance=ExtResource("11_yvce8")]
 position = Vector2(3568, -144)
 
-[node name="ItemPanelArmor11" parent="Item" index="37" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor11" parent="Item" index="37" unique_id=85799346 instance=ExtResource("11_yvce8")]
 position = Vector2(3536, -176)
 
-[node name="ItemPanelArmor12" parent="Item" index="38" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor12" parent="Item" index="38" unique_id=1249296881 instance=ExtResource("11_yvce8")]
 position = Vector2(3504, -208)
 
-[node name="ItemPanelArmor13" parent="Item" index="39" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor13" parent="Item" index="39" unique_id=1906319412 instance=ExtResource("11_yvce8")]
 position = Vector2(3568, -176)
 
-[node name="ItemPanelArmor14" parent="Item" index="40" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor14" parent="Item" index="40" unique_id=1828456115 instance=ExtResource("11_yvce8")]
 position = Vector2(3536, -208)
 
-[node name="ItemPanelArmor15" parent="Item" index="41" instance=ExtResource("11_yvce8")]
+[node name="ItemPanelArmor15" parent="Item" index="41" unique_id=1612560714 instance=ExtResource("11_yvce8")]
 position = Vector2(3568, -208)
 
-[node name="ItemPanelWeapon13" parent="Item" index="42" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon13" parent="Item" index="42" unique_id=969524404 instance=ExtResource("12_k4naw")]
 position = Vector2(2352, -208)
 
-[node name="ItemPanelWeapon14" parent="Item" index="43" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon14" parent="Item" index="43" unique_id=1103752264 instance=ExtResource("12_k4naw")]
 position = Vector2(2384, -208)
 
-[node name="ItemPanelWeapon15" parent="Item" index="44" instance=ExtResource("12_k4naw")]
+[node name="ItemPanelWeapon15" parent="Item" index="44" unique_id=1580620975 instance=ExtResource("12_k4naw")]
 position = Vector2(2416, -208)
 
-[node name="Player" parent="." index="8" instance=ExtResource("14_1cdpq")]
+[node name="Player" parent="." index="8" unique_id=1426285573 instance=ExtResource("14_1cdpq")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="13"]
+[node name="Camera" type="Camera2D" parent="Player" index="13" unique_id=351755978]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("15_p1e7y")
 
-[node name="VisibleTrigger" parent="Others" index="0" instance=ExtResource("16_606o8")]
+[node name="VisibleTrigger" parent="Others" index="0" unique_id=1532626458 instance=ExtResource("16_606o8")]
 position = Vector2(64, -104)
 
-[node name="ChangeBgmCommand" parent="Others/VisibleTrigger" index="0" instance=ExtResource("17_w04v3")]
+[node name="ChangeBgmCommand" parent="Others/VisibleTrigger" index="0" unique_id=1276491192 instance=ExtResource("17_w04v3")]
 Command = 1
 Stream = ExtResource("18_mqwns")
 
@@ -304,6 +304,6 @@ Stream = ExtResource("18_mqwns")
 Text1 = "ステージ"
 Text2 = "21"
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("19_cekdx")]
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" unique_id=902823557 instance=ExtResource("19_cekdx")]
 position = Vector2(3520, 16)
 scale = Vector2(300, 1)

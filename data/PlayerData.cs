@@ -32,16 +32,13 @@ public class PlayerData : GameDataRoot
         ExtendScore = 0;
     }
 
-    public PlayerData Copy()
+    public PlayerData Copy() => new()
     {
-        return new()
-        {
-            Remain = Remain,
-            Life = Life,
-            Score = Score,
-            ExtendScore = ExtendScore,
-        };
-    }
+        Remain = Remain,
+        Life = Life,
+        Score = Score,
+        ExtendScore = ExtendScore,
+    };
 
     public override Error SetConfigFile(ConfigFile file)
     {
@@ -89,13 +86,7 @@ public class PlayerData : GameDataRoot
         }
     }
 
-    public override string[] GetSectionKeys(ConfigFile file)
-    {
-        return [.. AllKey];
-    }
+    public override string[] GetSectionKeys(ConfigFile file) => [.. AllKey];
 
-    public override Array GetSectionValues(ConfigFile file)
-    {
-        return [Remain, Life, Score, ExtendScore];
-    }
+    public override Array GetSectionValues(ConfigFile file) => [Remain, Life, Score, ExtendScore];
 }

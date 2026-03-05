@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2bxm73k1fev2"]
+[gd_scene format=3 uid="uid://d2bxm73k1fev2"]
 
 [ext_resource type="Script" uid="uid://xir0uk253aqm" path="res://enemy/PlayerFollowEnemy.cs" id="1_7gfc8"]
 [ext_resource type="PackedScene" uid="uid://c43x5oelr5tdh" path="res://enemy/rocket_maid2_enemy.tscn" id="2_l6md4"]
@@ -6,15 +6,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_oqb7l"]
 radius = 200.0
 
-[node name="RocketMaidEnemy" type="Area2D"]
+[node name="RocketMaidEnemy" type="Area2D" unique_id=1880172582]
 collision_layer = 2048
 collision_mask = 8
 script = ExtResource("1_7gfc8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1521116225]
 shape = SubResource("CircleShape2D_oqb7l")
 
-[node name="Enemy" parent="." instance=ExtResource("2_l6md4")]
+[node name="Enemy" parent="." unique_id=503676780 instance=ExtResource("2_l6md4")]
 
-[node name="ExploreTimer" type="Timer" parent="."]
+[node name="ExploreTimer" type="Timer" parent="." unique_id=1980636641]
 autostart = true

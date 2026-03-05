@@ -31,13 +31,13 @@ public partial class TentacleHead : Area2D, IGameNode
     {
         AddToGroup(StageRoot.GameNodeGroup);
         AddToGroup(StageRoot.PhysicsProcessGroup);
-        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.Area2DEntered));
-        _timer = GetNodeOrNull<Timer>("Timer");
+        AreaEntered += Area2DEntered;
 
-        if (_timer is not null && 0.05f <= Mathf.Abs(WaitTime))
+        if (GetNodeOrNull("Timer") is Timer timer && 0.05f <= Mathf.Abs(WaitTime))
         {
+            _timer = timer;
             _timer.WaitTime = WaitTime;
-            _ = _timer.Connect(Timer.SignalName.Timeout, new(this, MethodName.SetTargetPlayer));
+            _timer.Timeout += SetTargetPlayer;
         }
     }
 
@@ -68,14 +68,8 @@ public partial class TentacleHead : Area2D, IGameNode
         Lib.ResetTimer(_timer);
     }
 
-    public void SetTargetPlayer()
-    {
-        Target = _player;
-    }
+    public void SetTargetPlayer() => Target = _player;
 
-    private void SetTargetRoot()
-    {
-        Target = Root;
-    }
+    private void SetTargetRoot() => Target = Root;
 }
 

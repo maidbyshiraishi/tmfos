@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvyr6cwo7qbyg"]
+[gd_scene format=3 uid="uid://bvyr6cwo7qbyg"]
 
 [ext_resource type="Script" uid="uid://ckuwfraq2fo6f" path="res://item/ImmediateItemPanel.cs" id="1_12ivl"]
 [ext_resource type="PackedScene" uid="uid://cuskrdbpbllm2" path="res://command/state/state_save_command.tscn" id="4_gb44b"]
@@ -10,23 +10,23 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orwde"]
 size = Vector2(32, 32)
 
-[node name="ImmediateItemPanel" type="Area2D"]
+[node name="ImmediateItemPanel" type="Area2D" unique_id=771480678]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("1_12ivl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1872060220]
 shape = SubResource("RectangleShape2D_orwde")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75952202]
 
-[node name="StateSaveCommand" parent="." instance=ExtResource("4_gb44b")]
+[node name="StateSaveCommand" parent="." unique_id=1390319658 instance=ExtResource("4_gb44b")]
 
-[node name="StateBackupCommand" parent="." instance=ExtResource("5_uhx74")]
+[node name="StateBackupCommand" parent="." unique_id=2096118279 instance=ExtResource("5_uhx74")]
 
-[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("6_5svtm")]
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." unique_id=1462165993 node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("6_5svtm")]
 AnimatedSprite2D = NodePath("../AnimatedSprite2D")
 
-[node name="PlaySeCommand" parent="." instance=ExtResource("5_m28hp")]
+[node name="PlaySeCommand" parent="." unique_id=26974455 instance=ExtResource("5_m28hp")]
 
-[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("7_5odch")]
+[node name="ShowFloatingMessageCommand" parent="." unique_id=1298389197 instance=ExtResource("7_5odch")]

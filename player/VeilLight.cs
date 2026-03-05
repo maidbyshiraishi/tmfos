@@ -32,8 +32,5 @@ public partial class VeilLight : Node2D, IGameNode
     {
     }
 
-    public override void _PhysicsProcess(double delta)
-    {
-        _tileMapManager.OpenObservationHole(_tileMapManager.GetTileData(TileMapManager.VeilLayerPath, (Vector2I)GlobalPosition) is not null, GlobalPosition);
-    }
+    public override void _PhysicsProcess(double delta) => _tileMapManager.OpenObservationHole(_tileMapManager.GetTileData(TileMapManager.VeilLayerPath, (Vector2I)GlobalPosition) is not null, GlobalPosition);
 }

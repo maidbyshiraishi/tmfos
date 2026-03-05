@@ -6,7 +6,7 @@ namespace tmfos.command.timer;
 /// <summary>
 /// タイマートリガーの一時停止を解除するコマンド
 /// </summary>
-public partial class ResumeTimerTriggerCommand : CommandNode
+public partial class ResumeTimerTriggerCommand : CommandRoot
 {
     /// <summary>
     /// 一時停止を解除するタイマートリガー
@@ -14,8 +14,5 @@ public partial class ResumeTimerTriggerCommand : CommandNode
     [Export]
     public TimerTrigger Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.PauseTimer(false);
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.PauseTimer(false);
 }

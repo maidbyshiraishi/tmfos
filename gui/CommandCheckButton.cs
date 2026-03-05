@@ -10,19 +10,13 @@ public partial class CommandCheckButton : CheckButton
 {
     public override void _Ready()
     {
-        _ = Connect(BaseButton.SignalName.Toggled, new(this, MethodName.ExecToggled));
-        Lib.ConnectFocusSignal(this, new(this, MethodName.ExecFocusEntered), new(this, MethodName.ExecFocusExited), new(this, MethodName.ExecMouseEntered));
+        Toggled += ExecToggled;
+        Lib.ConnectFocusSignal(this, ExecFocusEntered, ExecFocusExited, ExecMouseEntered);
     }
 
-    public virtual void ExecToggled(bool toggledOn)
-    {
-        Lib.Toggled(this, null, toggledOn);
-    }
+    public virtual void ExecToggled(bool toggledOn) => Lib.Toggled(this, null, toggledOn);
 
-    public virtual void ExecFocusEntered()
-    {
-        Lib.Focus(this, null, true);
-    }
+    public virtual void ExecFocusEntered() => Lib.Focus(this, null, true);
 
     public virtual void ExecMouseEntered()
     {
@@ -32,8 +26,5 @@ public partial class CommandCheckButton : CheckButton
         }
     }
 
-    public virtual void ExecFocusExited()
-    {
-        Lib.Focus(this, null, false);
-    }
+    public virtual void ExecFocusExited() => Lib.Focus(this, null, false);
 }

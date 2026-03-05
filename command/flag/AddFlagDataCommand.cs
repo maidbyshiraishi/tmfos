@@ -6,7 +6,7 @@ namespace tmfos.command.flag;
 /// <summary>
 /// フラグを操作するコマンド
 /// </summary>
-public partial class AddFlagDataCommand : CommandNode
+public partial class AddFlagDataCommand : CommandRoot
 {
     /// <summary>
     /// フラグ名
@@ -20,8 +20,5 @@ public partial class AddFlagDataCommand : CommandNode
     [Export]
     public int Value { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<GameData>("/root/GameData").AddFlagData(Key, Value);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<GameData>("/root/GameData").AddFlagData(Key, Value);
 }

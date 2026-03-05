@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c43x5oelr5tdh"]
+[gd_scene format=3 uid="uid://c43x5oelr5tdh"]
 
 [ext_resource type="Script" uid="uid://bfjyfcwp3oqr3" path="res://enemy/PathFollowEnemy.cs" id="1_gtsem"]
 [ext_resource type="SpriteFrames" uid="uid://b1dpxlhcsnnk6" path="res://contents/animation/enemy/rocket_maid.tres" id="4_eyhpk"]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifn7i"]
 size = Vector2(70, 30)
 
-[node name="RocketMaid2Enemy" type="Area2D"]
+[node name="RocketMaid2Enemy" type="Area2D" unique_id=758757773]
 collision_layer = 32
 collision_mask = 24
 script = ExtResource("1_gtsem")
@@ -20,21 +20,21 @@ Speed = 250.0
 Attack = 50
 SkipAttackTime = 1.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=192746949]
 sprite_frames = ExtResource("4_eyhpk")
 animation = &"left"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=449680809]
 shape = SubResource("RectangleShape2D_ifn7i")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2017003709]
 scale = Vector2(1, 0.8)
 rect = Rect2(-40, -40, 80, 80)
 
-[node name="ReferenceRect" type="Node2D" parent="."]
+[node name="ReferenceRect" type="Node2D" parent="." unique_id=692782982]
 visible = false
 
-[node name="ReferenceLeftRight" type="ReferenceRect" parent="ReferenceRect"]
+[node name="ReferenceLeftRight" type="ReferenceRect" parent="ReferenceRect" unique_id=2039013849]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -48,7 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(35, 15)
 
-[node name="ReferenceUpDown" type="ReferenceRect" parent="ReferenceRect"]
+[node name="ReferenceUpDown" type="ReferenceRect" parent="ReferenceRect" unique_id=1345805715]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -62,6 +62,6 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(15, 35)
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=2053816439]
 wait_time = 0.001
 one_shot = true

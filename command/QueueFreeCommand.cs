@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// Nodeを開放するコマンド
 /// </summary>
-public partial class FreeCommand : CommandNode
+public partial class QueueFreeCommand : CommandRoot
 {
     /// <summary>
     /// 開放するノード
@@ -15,9 +15,11 @@ public partial class FreeCommand : CommandNode
 
     public override void DoCommand(Node node, bool flag)
     {
-        if (Target is not null)
+        if (ExecFlag != flag || Target is null)
         {
-            _ = Target.CallDeferred(Node.MethodName.QueueFree);
+            return;
         }
+
+        Target.QueueFree();
     }
 }

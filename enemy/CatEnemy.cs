@@ -57,10 +57,7 @@ public partial class CatEnemy : EyesightEnemy, ISwimAction
         }
     }
 
-    public void SetSwim()
-    {
-        Dead();
-    }
+    public void SetSwim() => Dead();
 
     public void UnsetSwim()
     {

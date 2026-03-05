@@ -8,39 +8,21 @@ namespace tmfos.data;
 /// </summary>
 public class GameDataRoot
 {
-    public virtual Error SetConfigFile(ConfigFile file)
-    {
-        return Error.Ok;
-    }
+    public virtual Error SetConfigFile(ConfigFile file) => Error.Ok;
 
-    public virtual Error GetConfigFile(ConfigFile file)
-    {
-        return Error.Ok;
-    }
+    public virtual Error GetConfigFile(ConfigFile file) => Error.Ok;
 
-    public virtual Error CheckNecessaryKey(ConfigFile file)
-    {
-        return Error.Ok;
-    }
+    public virtual Error CheckNecessaryKey(ConfigFile file) => Error.Ok;
 
     public virtual void RemoveIllegalKey(ConfigFile file)
     {
     }
 
-    public virtual string[] GetSectionKeys(ConfigFile file)
-    {
-        return [];
-    }
+    public virtual string[] GetSectionKeys(ConfigFile file) => [];
 
-    public virtual Array GetSectionValues(ConfigFile file)
-    {
-        return [];
-    }
+    public virtual Array GetSectionValues(ConfigFile file) => [];
 
-    public void SetData(ConfigFile file, string sectionName, string key, int value)
-    {
-        file.SetValue(sectionName, key, value);
-    }
+    public void SetData(ConfigFile file, string sectionName, string key, int value) => file.SetValue(sectionName, key, value);
 
     public int GetData(ConfigFile file, string sectionName, string key)
     {
@@ -53,10 +35,7 @@ public class GameDataRoot
         return 0;
     }
 
-    public bool HasData(ConfigFile file, string sectionName, string key)
-    {
-        return file.HasSection(sectionName) && file.HasSectionKey(sectionName, key);
-    }
+    public bool HasData(ConfigFile file, string sectionName, string key) => file.HasSection(sectionName) && file.HasSectionKey(sectionName, key);
 
     public void RemoveData(ConfigFile file, string sectionName, string key)
     {

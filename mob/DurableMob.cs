@@ -48,7 +48,7 @@ public partial class DurableMob : ActionMob, IDurable
         if (_lifeTimer is not null && 0.05f <= Mathf.Abs(LifeTime))
         {
             _lifeTimer.WaitTime = LifeTime;
-            _ = _lifeTimer.Connect(Timer.SignalName.Timeout, new(this, MethodName.Timeup));
+            _lifeTimer.Timeout += Timeup;
         }
     }
 
@@ -59,10 +59,7 @@ public partial class DurableMob : ActionMob, IDurable
         ResetLifeTime();
     }
 
-    public override void Burialed(Node2D body)
-    {
-        Dead();
-    }
+    public override void Burialed(Node2D body) => Dead();
 
     public virtual void ChangeSprite(string name, DirectionType direction)
     {
@@ -90,10 +87,7 @@ public partial class DurableMob : ActionMob, IDurable
         }
     }
 
-    public double GetLifeTimeLeft()
-    {
-        return _lifeTimer.TimeLeft;
-    }
+    public double GetLifeTimeLeft() => _lifeTimer.TimeLeft;
 
     public virtual void Timeup()
     {
@@ -110,10 +104,7 @@ public partial class DurableMob : ActionMob, IDurable
         PlaySe(TimeupSe);
     }
 
-    public virtual void ResetLifeTime()
-    {
-        Lib.ResetTimer(_lifeTimer);
-    }
+    public virtual void ResetLifeTime() => Lib.ResetTimer(_lifeTimer);
 
     public virtual void AddDurability(int value)
     {
@@ -260,8 +251,5 @@ public partial class DurableMob : ActionMob, IDurable
         SkipDamage = false;
     }
 
-    public virtual void DieExternalCauses()
-    {
-        Dead();
-    }
+    public virtual void DieExternalCauses() => Dead();
 }

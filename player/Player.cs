@@ -66,8 +66,8 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     {
         base.InitializeNode();
         StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
-        _ = Connect(SignalName.Missed, new(stageRoot, StageRoot.MethodName.Miss));
-        _ = Connect(SignalName.HudUpdated, new(stageRoot, StageRoot.MethodName.UpdateHud));
+        Missed += stageRoot.Miss;
+        HudUpdated += stageRoot.UpdateHud;
         _tileMapManager = stageRoot.GetNode<TileMapManager>("TileMap");
         GameData gdata = GetNode<GameData>("/root/GameData");
         _itemData = gdata.GetItemData();
@@ -168,7 +168,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         // 上下左右に移動可能
         // ジャンプキーを押しっぱなしにすると加速
         Vector2 velocity = Velocity;
-        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        Vector2 direction = GetInput();
         int signX = Mathf.Sign(direction.X);
         int signY = Mathf.Sign(direction.Y);
         _standByClimb = signY != 0;
@@ -204,7 +204,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     private void ClimbAction(double delta)
     {
         Vector2 velocity = Velocity;
-        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        Vector2 direction = GetInput();
         int signX = Mathf.Sign(direction.X);
         int signY = Mathf.Sign(direction.Y);
 
@@ -254,7 +254,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     private void CrouchAction(double delta)
     {
         Vector2 velocity = Velocity;
-        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        Vector2 direction = GetInput();
         int signX = Mathf.Sign(direction.X);
         int signY = Mathf.Sign(direction.Y);
 
@@ -301,6 +301,35 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         CollisionOnewayBlock(true, _itemData.Shoes);
     }
 
+    private Vector2 GetInput()
+    {
+        Vector2 input = Vector2.Zero;
+        bool up = Input.IsActionPressed("ui_up");
+        bool down = Input.IsActionPressed("ui_down");
+        bool left = Input.IsActionPressed("ui_left");
+        bool right = Input.IsActionPressed("ui_right");
+
+        if (left && !right)
+        {
+            input += Vector2.Left;
+        }
+        else if (!left && right)
+        {
+            input += Vector2.Right;
+        }
+
+        if (up && !down)
+        {
+            input += Vector2.Up;
+        }
+        else if (!up && down)
+        {
+            input += Vector2.Down;
+        }
+
+        return input;
+    }
+
     public void SetCrouch()
     {
         Action = MobActionType.Crouch;
@@ -316,7 +345,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     private void NormalAction(double delta, bool iceMode)
     {
         Vector2 velocity = Velocity;
-        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        Vector2 direction = GetInput();
         int signX = Mathf.Sign(direction.X);
         int signY = Mathf.Sign(direction.Y);
         _standByClimb = signY != 0;
@@ -406,7 +435,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     private void AerialAction(double delta)
     {
         Vector2 velocity = Velocity;
-        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        Vector2 direction = GetInput();
         int signX = Mathf.Sign(direction.X);
         int signY = Mathf.Sign(direction.Y);
         _standByClimb = signY != 0;
@@ -581,15 +610,9 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         }
     }
 
-    public override void FullRecovered()
-    {
-        PlaySe("player_full_recovered");
-    }
+    public override void FullRecovered() => PlaySe("player_full_recovered");
 
-    public override void Recovered()
-    {
-        PlaySe("player_recovered");
-    }
+    public override void Recovered() => PlaySe("player_recovered");
 
     public override void Resurrected()
     {

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b3xve88b1cck0"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://b3xve88b1cck0"]
 
 [ext_resource type="Texture2D" uid="uid://b2gs4u2an6xvc" path="res://contents/image/decoration/lamp.png" id="1_c44sm"]
 

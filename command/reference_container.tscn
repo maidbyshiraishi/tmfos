@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bre2fb1drg3wq"]
+[gd_scene format=3 uid="uid://bre2fb1drg3wq"]
 
 [ext_resource type="Script" uid="uid://c3ibjyib6pudh" path="res://command/ReferenceContainer.cs" id="1_0j70s"]
 
-[node name="ReferenceContainer" type="Node"]
+[node name="ReferenceContainer" type="Node" unique_id=495887717]
 script = ExtResource("1_0j70s")

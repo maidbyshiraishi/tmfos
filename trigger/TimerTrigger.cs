@@ -15,23 +15,17 @@ public partial class TimerTrigger : Node
         if (GetParent() is Timer timer)
         {
             _timer = timer;
-            _ = _timer.Connect(Timer.SignalName.Timeout, new(this, MethodName.Exec));
-            _ = Connect(Node.SignalName.TreeExiting, new(this, MethodName.StopTimer));
+            _timer.Timeout += Exec;
+            TreeExiting += StopTimer;
         }
     }
 
-    public virtual void Exec()
-    {
-        Lib.ExecCommands(this, null, true);
-    }
+    public virtual void Exec() => Lib.ExecCommands(this, null, true);
 
     /// <summary>
     /// タイマーを再スタートする
     /// </summary>
-    public void ResetTimer()
-    {
-        Lib.ResetTimer(_timer);
-    }
+    public void ResetTimer() => Lib.ResetTimer(_timer);
 
     /// <summary>
     /// タイマーを一時停止する
@@ -45,8 +39,5 @@ public partial class TimerTrigger : Node
         }
     }
 
-    public void StopTimer()
-    {
-        PauseTimer(true);
-    }
+    public void StopTimer() => PauseTimer(true);
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dlogfuoolbbgt"]
+[gd_scene format=3 uid="uid://dlogfuoolbbgt"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_v5t5f"]
 [ext_resource type="Script" uid="uid://dbgqehgiq62lx" path="res://screen/OptionDialog.cs" id="2_6qroc"]
@@ -19,14 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="16_0176u"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_container.tscn" id="17_04yvk"]
 
-[node name="OptionDialog" type="Control"]
+[node name="OptionDialog" type="Control" unique_id=1867698554]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_v5t5f")
 script = ExtResource("2_6qroc")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=990533207]
 light_mask = 2
 layout_mode = 0
 offset_left = 50.0
@@ -35,7 +35,7 @@ offset_right = 590.0
 offset_bottom = 431.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Border" type="ReferenceRect" parent="."]
+[node name="Border" type="ReferenceRect" parent="." unique_id=1247286521]
 light_mask = 2
 layout_mode = 0
 offset_left = 48.0
@@ -46,7 +46,7 @@ border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=563315834]
 light_mask = 2
 layout_mode = 0
 offset_left = 290.0
@@ -57,7 +57,7 @@ text = "設定"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bgm" type="Label" parent="."]
+[node name="Bgm" type="Label" parent="." unique_id=184765871]
 light_mask = 2
 layout_mode = 0
 offset_left = 100.0
@@ -67,7 +67,7 @@ offset_bottom = 150.0
 text = "BGM 音量"
 vertical_alignment = 1
 
-[node name="BgmValue" type="Label" parent="."]
+[node name="BgmValue" type="Label" parent="." unique_id=591731990]
 light_mask = 2
 layout_mode = 0
 offset_left = 470.0
@@ -79,7 +79,7 @@ text = "0%
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Se" type="Label" parent="."]
+[node name="Se" type="Label" parent="." unique_id=1065522810]
 light_mask = 2
 layout_mode = 0
 offset_left = 100.0
@@ -89,7 +89,7 @@ offset_bottom = 190.0
 text = "効果音 音量"
 vertical_alignment = 1
 
-[node name="SeValue" type="Label" parent="."]
+[node name="SeValue" type="Label" parent="." unique_id=1905076658]
 light_mask = 2
 layout_mode = 0
 offset_left = 470.0
@@ -100,7 +100,7 @@ text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fullscreen" type="Label" parent="."]
+[node name="Fullscreen" type="Label" parent="." unique_id=1176532528]
 light_mask = 2
 layout_mode = 0
 offset_left = 100.0
@@ -110,7 +110,7 @@ offset_bottom = 230.0
 text = "フルスクリーン"
 vertical_alignment = 1
 
-[node name="FullscreenCheckValue" type="Label" parent="."]
+[node name="FullscreenCheckValue" type="Label" parent="." unique_id=414145874]
 light_mask = 2
 layout_mode = 0
 offset_left = 310.0
@@ -121,11 +121,11 @@ text = "OFF"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=420041228]
 light_mask = 2
 anchors_preset = 0
 
-[node name="BgmSlider" type="HSlider" parent="Control"]
+[node name="BgmSlider" type="HSlider" parent="Control" unique_id=1458003656]
 light_mask = 2
 layout_mode = 0
 offset_left = 260.0
@@ -135,12 +135,12 @@ offset_bottom = 150.0
 step = 5.0
 script = ExtResource("3_qt1xi")
 
-[node name="Focus" parent="Control/BgmSlider" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/BgmSlider" unique_id=219573682 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/BgmSlider/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/BgmSlider/Focus" unique_id=1051697271 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="SeSlider" type="HSlider" parent="Control"]
+[node name="SeSlider" type="HSlider" parent="Control" unique_id=1696240433]
 light_mask = 2
 layout_mode = 0
 offset_left = 260.0
@@ -150,12 +150,12 @@ offset_bottom = 190.0
 step = 5.0
 script = ExtResource("3_qt1xi")
 
-[node name="Focus" parent="Control/SeSlider" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/SeSlider" unique_id=874387290 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/SeSlider/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/SeSlider/Focus" unique_id=229153028 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="FullscreenCheck" type="CheckButton" parent="Control"]
+[node name="FullscreenCheck" type="CheckButton" parent="Control" unique_id=310049571]
 light_mask = 2
 layout_mode = 0
 offset_left = 256.0
@@ -165,21 +165,21 @@ offset_bottom = 231.0
 alignment = 1
 script = ExtResource("6_523ew")
 
-[node name="Focus" parent="Control/FullscreenCheck" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/FullscreenCheck" unique_id=578839906 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/FullscreenCheck/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/FullscreenCheck/Focus" unique_id=1335191089 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="Toggled" parent="Control/FullscreenCheck" instance=ExtResource("7_m7caj")]
+[node name="Toggled" parent="Control/FullscreenCheck" unique_id=96107083 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/FullscreenCheck/Toggled" unique_id=506044646 instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="PlaySeCommand2" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand2" parent="Control/FullscreenCheck/Toggled" unique_id=1202355926 instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 ExecFlag = false
 
-[node name="Back" type="Button" parent="Control"]
+[node name="Back" type="Button" parent="Control" unique_id=1191956417]
 light_mask = 2
 layout_mode = 0
 offset_left = 160.0
@@ -189,17 +189,17 @@ offset_bottom = 280.0
 text = "保存して戻る"
 script = ExtResource("3_ll8rd")
 
-[node name="Exec" parent="Control/Back" instance=ExtResource("7_m7caj")]
+[node name="Exec" parent="Control/Back" unique_id=1877780996 instance=ExtResource("7_m7caj")]
 
-[node name="ReferenceContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
+[node name="ReferenceContainer" parent="Control/Back/Exec" unique_id=423291552 node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/Back" unique_id=1690770363 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/Back/Focus" unique_id=1430622084 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="Undo" type="Button" parent="Control"]
+[node name="Undo" type="Button" parent="Control" unique_id=1633622932]
 light_mask = 2
 layout_mode = 0
 offset_left = 104.0
@@ -210,23 +210,23 @@ text = "前回保存した音量に
 リセット"
 script = ExtResource("3_ll8rd")
 
-[node name="Exec" parent="Control/Undo" instance=ExtResource("7_m7caj")]
+[node name="Exec" parent="Control/Undo" unique_id=1533694943 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/Undo/Exec" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/Undo/Exec" unique_id=1726776959 instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="LoadGameOptionsCommand" parent="Control/Undo/Exec" instance=ExtResource("6_ox5kl")]
+[node name="LoadGameOptionsCommand" parent="Control/Undo/Exec" unique_id=560918106 instance=ExtResource("6_ox5kl")]
 
-[node name="SetGameOptionsCommand" parent="Control/Undo/Exec" instance=ExtResource("7_54itn")]
+[node name="SetGameOptionsCommand" parent="Control/Undo/Exec" unique_id=1106805309 instance=ExtResource("7_54itn")]
 
-[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" instance=ExtResource("8_foflq")]
+[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" unique_id=1889644827 instance=ExtResource("8_foflq")]
 
-[node name="Focus" parent="Control/Undo" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/Undo" unique_id=1092985056 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/Undo/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/Undo/Focus" unique_id=1843053983 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="Reset" type="Button" parent="Control"]
+[node name="Reset" type="Button" parent="Control" unique_id=848241737]
 light_mask = 2
 layout_mode = 0
 offset_left = 328.0
@@ -237,23 +237,23 @@ text = "ゲームの初期音量に
 リセット"
 script = ExtResource("3_ll8rd")
 
-[node name="Exec" parent="Control/Reset" instance=ExtResource("7_m7caj")]
+[node name="Exec" parent="Control/Reset" unique_id=897688233 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/Reset/Exec" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/Reset/Exec" unique_id=971626660 instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="ResetDefaultGameOptionsCommand" parent="Control/Reset/Exec" instance=ExtResource("13_gepbg")]
+[node name="ResetDefaultGameOptionsCommand" parent="Control/Reset/Exec" unique_id=2080235184 instance=ExtResource("13_gepbg")]
 
-[node name="SetGameOptionsCommand" parent="Control/Reset/Exec" instance=ExtResource("7_54itn")]
+[node name="SetGameOptionsCommand" parent="Control/Reset/Exec" unique_id=398796011 instance=ExtResource("7_54itn")]
 
-[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" instance=ExtResource("8_foflq")]
+[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" unique_id=1287918307 instance=ExtResource("8_foflq")]
 
-[node name="Focus" parent="Control/Reset" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/Reset" unique_id=420228759 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/Reset/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/Reset/Focus" unique_id=499424990 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="ResetScreen" type="Button" parent="Control"]
+[node name="ResetScreen" type="Button" parent="Control" unique_id=1733357608]
 light_mask = 2
 layout_mode = 0
 offset_left = 104.0
@@ -265,19 +265,19 @@ text = "ゲームの初期画面設定に
 リセット"
 script = ExtResource("3_ll8rd")
 
-[node name="Exec" parent="Control/ResetScreen" instance=ExtResource("7_m7caj")]
+[node name="Exec" parent="Control/ResetScreen" unique_id=1429865378 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/ResetScreen/Exec" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/ResetScreen/Exec" unique_id=944580495 instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="UpdateDialogScreenCommand" parent="Control/ResetScreen/Exec" instance=ExtResource("8_foflq")]
+[node name="UpdateDialogScreenCommand" parent="Control/ResetScreen/Exec" unique_id=307166231 instance=ExtResource("8_foflq")]
 
-[node name="Focus" parent="Control/ResetScreen" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/ResetScreen" unique_id=845675370 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/ResetScreen/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/ResetScreen/Focus" unique_id=1573027388 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="OpenFileManager" type="Button" parent="Control"]
+[node name="OpenFileManager" type="Button" parent="Control" unique_id=663997159]
 light_mask = 2
 layout_mode = 0
 offset_left = 328.0
@@ -287,19 +287,19 @@ offset_bottom = 400.0
 text = "データフォルダを開く"
 script = ExtResource("3_ll8rd")
 
-[node name="Exec" parent="Control/OpenFileManager" instance=ExtResource("7_m7caj")]
+[node name="Exec" parent="Control/OpenFileManager" unique_id=601814608 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" unique_id=577976451 instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("14_edkss")]
+[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" unique_id=1366511366 instance=ExtResource("14_edkss")]
 
-[node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/OpenFileManager" unique_id=1791732034 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" unique_id=637202851 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="KeyConfig" type="Button" parent="Control"]
+[node name="KeyConfig" type="Button" parent="Control" unique_id=989087549]
 light_mask = 2
 layout_mode = 0
 offset_left = 328.0
@@ -309,36 +309,36 @@ offset_bottom = 280.0
 text = "操作設定"
 script = ExtResource("3_ll8rd")
 
-[node name="Exec" parent="Control/KeyConfig" instance=ExtResource("7_m7caj")]
+[node name="Exec" parent="Control/KeyConfig" unique_id=527659721 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/KeyConfig/Exec" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/KeyConfig/Exec" unique_id=1558629388 instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="OpenDialogCommand" parent="Control/KeyConfig/Exec" instance=ExtResource("10_2vtvi")]
+[node name="OpenDialogCommand" parent="Control/KeyConfig/Exec" unique_id=1566306100 instance=ExtResource("10_2vtvi")]
 DialogPath = "res://screen/key_option_dialog.tscn"
 
-[node name="Focus" parent="Control/KeyConfig" instance=ExtResource("7_m7caj")]
+[node name="Focus" parent="Control/KeyConfig" unique_id=1778612159 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Control/KeyConfig/Focus" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Control/KeyConfig/Focus" unique_id=222250738 instance=ExtResource("6_1beei")]
 SeName = "menu_move"
 
-[node name="EscapeKey" parent="." instance=ExtResource("16_0176u")]
+[node name="EscapeKey" parent="." unique_id=532707997 instance=ExtResource("16_0176u")]
 ActionName = "escape"
 
-[node name="ReferenceContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
+[node name="ReferenceContainer" parent="EscapeKey" unique_id=536043248 node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
 Target = NodePath("../../Close")
 
-[node name="OptionKey" parent="." instance=ExtResource("16_0176u")]
+[node name="OptionKey" parent="." unique_id=1330725643 instance=ExtResource("16_0176u")]
 ActionName = "option"
 
-[node name="ReferenceContainer" parent="OptionKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
+[node name="ReferenceContainer" parent="OptionKey" unique_id=488192587 node_paths=PackedStringArray("Target") instance=ExtResource("17_04yvk")]
 Target = NodePath("../../Close")
 
-[node name="Close" parent="." instance=ExtResource("7_m7caj")]
+[node name="Close" parent="." unique_id=1763763492 instance=ExtResource("7_m7caj")]
 
-[node name="PlaySeCommand" parent="Close" instance=ExtResource("6_1beei")]
+[node name="PlaySeCommand" parent="Close" unique_id=815985046 instance=ExtResource("6_1beei")]
 SeName = "menu_select"
 
-[node name="SaveGameOptionsCommand" parent="Close" instance=ExtResource("4_i66bl")]
+[node name="SaveGameOptionsCommand" parent="Close" unique_id=3035866 instance=ExtResource("4_i66bl")]
 
-[node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_fbf6f")]
+[node name="CloseDialogCommand" parent="Close" unique_id=364642749 instance=ExtResource("5_fbf6f")]

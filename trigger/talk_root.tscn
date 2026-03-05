@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3pkhij41efph"]
+[gd_scene format=3 uid="uid://b3pkhij41efph"]
 
 [ext_resource type="Script" uid="uid://c1gge3p0ykhy" path="res://trigger/TalkTrigger.cs" id="1_od0iu"]
 [ext_resource type="SpriteFrames" uid="uid://cjfnovaq4k8mu" path="res://contents/animation/decoration/bubble.tres" id="2_22sft"]
@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_taod5"]
 size = Vector2(20, 64)
 
-[node name="TalkTrigger" type="Area2D"]
+[node name="TalkTrigger" type="Area2D" unique_id=1764705787]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("1_od0iu")
@@ -18,19 +18,19 @@ Search = true
 Stateful = false
 OneTime = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552790459]
 shape = SubResource("RectangleShape2D_taod5")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1270679460]
 position = Vector2(0, -56)
 sprite_frames = ExtResource("2_22sft")
 autoplay = "default"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=659258899]
 autoplay = "default"
 
-[node name="UnsetSearchCommand" parent="." instance=ExtResource("4_d2v77")]
+[node name="UnsetSearchCommand" parent="." unique_id=1269297330 instance=ExtResource("4_d2v77")]
 
-[node name="StopPlayerMoveCommand" parent="." instance=ExtResource("5_i4ykg")]
+[node name="StopPlayerMoveCommand" parent="." unique_id=411189248 instance=ExtResource("5_i4ykg")]
 
-[node name="OpenDialogCommand" parent="." instance=ExtResource("6_b4is8")]
+[node name="OpenDialogCommand" parent="." unique_id=2032285525 instance=ExtResource("6_b4is8")]

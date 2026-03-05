@@ -31,15 +31,9 @@ public partial class DialogRoot : Control
     {
     }
 
-    public void GetGameArgument(string key)
-    {
-        m_argument = GetNode<GameArgument>("/root/GameArgument").GetArgument(key);
-    }
+    public void GetGameArgument(string key) => m_argument = GetNode<GameArgument>("/root/GameArgument").GetArgument(key);
 
-    public virtual void Close()
-    {
-        QueueFree();
-    }
+    public virtual void Close() => QueueFree();
 
     public virtual void Active()
     {
@@ -58,10 +52,7 @@ public partial class DialogRoot : Control
     /// <summary>
     /// フォーカスのあるControlを保存する
     /// </summary>
-    public virtual void SaveFocus()
-    {
-        _lastFocus = GetFocus();
-    }
+    public virtual void SaveFocus() => _lastFocus = GetFocus();
 
     public virtual Control GetFocus(Control root = null)
     {
@@ -151,15 +142,9 @@ public partial class DialogRoot : Control
         SetFocusFirst(root);
     }
 
-    public virtual void ClearLastFocus()
-    {
-        _lastFocus = null;
-    }
+    public virtual void ClearLastFocus() => _lastFocus = null;
 
-    protected virtual string GetDefaultFocusNodeName()
-    {
-        return null;
-    }
+    protected virtual string GetDefaultFocusNodeName() => null;
 
     protected void ChangeFocusMode(bool enabled, Control root = null)
     {

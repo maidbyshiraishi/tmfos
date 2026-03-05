@@ -62,7 +62,7 @@ public partial class MusicPlayer : Node
         _deck1.VolumeDb = 0;
         _deck2.VolumeDb = 0;
         _fader = GetNode<AnimationPlayer>("Fader");
-        _ = _fader.Connect(AnimationMixer.SignalName.AnimationFinished, new(this, MethodName.Finished));
+        _fader.AnimationFinished += Finished;
     }
 
     /// <summary>
@@ -196,10 +196,7 @@ public partial class MusicPlayer : Node
     /// マスター音量をミュートする
     /// </summary>
     /// <param name="mute">ミュートするか</param>
-    public static void SetMasterBusMute(bool mute)
-    {
-        AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), mute);
-    }
+    public static void SetMasterBusMute(bool mute) => AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), mute);
 
     /// <summary>
     /// 再生を一時停止する

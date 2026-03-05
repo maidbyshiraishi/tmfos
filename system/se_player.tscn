@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh0d1pl6uidn6"]
+[gd_scene format=3 uid="uid://bh0d1pl6uidn6"]
 
 [ext_resource type="Script" uid="uid://bfr3ff7q4b743" path="res://system/SePlayer.cs" id="1_vw2l8"]
 
-[node name="SePlayer" type="Node"]
+[node name="SePlayer" type="Node" unique_id=1334847899]
 process_mode = 3
 script = ExtResource("1_vw2l8")
 MaxPolyphony = {
@@ -25,6 +25,6 @@ MaxPolyphony = {
 "unmo_teleport": 3
 }
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=437196314]
 wait_time = 60.0
 autostart = true

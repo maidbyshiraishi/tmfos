@@ -14,8 +14,5 @@ public partial class EnemyShot1 : Shot
         PlaySprite("default");
     }
 
-    protected override void PlaySpawnedSe()
-    {
-        GetNode<SePlayer>("/root/SePlayer").Play("enemy_shot1");
-    }
+    protected override void PlaySpawnedSe() => GetNode<SePlayer>("/root/SePlayer").Play("enemy_shot1");
 }

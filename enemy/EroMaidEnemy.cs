@@ -26,8 +26,8 @@ public partial class EroMaidEnemy : Enemy
         GetNode<TextureProgressBar>("%HUD/BossLife").Value = Life;
         _marker = GetNode<Marker2D>("ExcitationtMarker2D");
         _entryCount = _entryPoint is null ? 0 : _entryPoint.GetChildCount();
-        _ = GetNode<AnimatedSprite2D>("AnimatedSprite2D").Connect(AnimatedSprite2D.SignalName.AnimationLooped, new(this, MethodName.Shot));
-        _ = GetNode<Timer>("WarpTimer").Connect(Timer.SignalName.Timeout, new(this, MethodName.Warp));
+        GetNode<AnimatedSprite2D>("AnimatedSprite2D").AnimationLooped += Shot;
+        GetNode<Timer>("WarpTimer").Timeout += Warp;
     }
 
     public override void InitializeNode()
@@ -155,7 +155,7 @@ public partial class EroMaidEnemy : Enemy
             if (Lib.GetPackedScene<PackedScene>("res://decoration/excitation.tscn") is PackedScene pack && pack.Instantiate() is Node decoration)
             {
                 _ = EmitSignal(Mob.SignalName.NodeSpawned, decoration, this, _marker.GlobalPosition, Vector2.Zero, 0f);
-                _ = decoration.Connect(Node.SignalName.TreeExited, new(this, MethodName.Laser));
+                decoration.TreeExited += Laser;
             }
         }
         else

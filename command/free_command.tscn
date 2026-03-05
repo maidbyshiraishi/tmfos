@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj7uh2jaobi4v"]
-
-[ext_resource type="Script" uid="uid://deetgkln4c10x" path="res://command/FreeCommand.cs" id="1_6c3tl"]
-
-[node name="FreeCommand" type="Node"]
-script = ExtResource("1_6c3tl")

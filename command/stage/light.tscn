@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuoskst448e28"]
+[gd_scene format=3 uid="uid://cuoskst448e28"]
 
 [ext_resource type="Script" uid="uid://c5n54y3nte4hq" path="res://command/stage/Light.cs" id="1_6dydd"]
 [ext_resource type="Texture2D" uid="uid://dlo2wegv2i24e" path="res://contents/image/decoration/light.png" id="2_1vioq"]
@@ -9,16 +9,14 @@ _data = {
 &"light": ExtResource("3_w32dp")
 }
 
-[node name="Light" type="Node2D"]
+[node name="Light" type="Node2D" unique_id=866978097]
 script = ExtResource("1_6dydd")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1076102625]
 visible = false
 blend_mode = 2
 texture = ExtResource("2_1vioq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_vorup")
-}
-autoplay = "light"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1424001277]
+libraries/ = SubResource("AnimationLibrary_vorup")
+autoplay = &"light"

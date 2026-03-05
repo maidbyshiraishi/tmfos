@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dn6mo1r2rhkaw"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dn6mo1r2rhkaw"]
 
 [ext_resource type="Texture2D" uid="uid://dd2v4gk0q06k5" path="res://contents/image/decoration/slash.png" id="1_vl4vi"]
 

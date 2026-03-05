@@ -7,7 +7,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// アイテムを取得・削除するコマンド
 /// </summary>
-public partial class ManageItemCommand : CommandNode
+public partial class ManageItemCommand : CommandRoot
 {
     /// <summary>
     /// 取得するアイテム

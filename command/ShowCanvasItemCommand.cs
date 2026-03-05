@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// CanvasItemを表示するコマンド
 /// </summary>
-public partial class ShowCanvasItemCommand : CommandNode
+public partial class ShowCanvasItemCommand : CommandRoot
 {
     /// <summary>
     /// 対表示するCanvasItem
@@ -13,8 +13,5 @@ public partial class ShowCanvasItemCommand : CommandNode
     [Export]
     public CanvasItem Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.Show();
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.Show();
 }

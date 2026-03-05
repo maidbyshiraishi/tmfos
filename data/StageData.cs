@@ -22,17 +22,14 @@ public class StageData : GameDataRoot
     public int TakeOverStageNo { get; set; } = 0;
     public double TakeOverPlayerLifeTime { get; set; } = 0;
 
-    public StageData Copy()
+    public StageData Copy() => new()
     {
-        return new()
-        {
-            StageNo = StageNo,
-            DoorNo = DoorNo,
-            ScenarioNo = ScenarioNo,
-            TakeOverStageNo = TakeOverStageNo,
-            TakeOverPlayerLifeTime = TakeOverPlayerLifeTime
-        };
-    }
+        StageNo = StageNo,
+        DoorNo = DoorNo,
+        ScenarioNo = ScenarioNo,
+        TakeOverStageNo = TakeOverStageNo,
+        TakeOverPlayerLifeTime = TakeOverPlayerLifeTime
+    };
 
     public override Error GetConfigFile(ConfigFile file)
     {
@@ -80,13 +77,7 @@ public class StageData : GameDataRoot
         }
     }
 
-    public override string[] GetSectionKeys(ConfigFile file)
-    {
-        return [.. NecessaryKey];
-    }
+    public override string[] GetSectionKeys(ConfigFile file) => [.. NecessaryKey];
 
-    public override Array GetSectionValues(ConfigFile file)
-    {
-        return [StageNo, DoorNo, ScenarioNo];
-    }
+    public override Array GetSectionValues(ConfigFile file) => [StageNo, DoorNo, ScenarioNo];
 }

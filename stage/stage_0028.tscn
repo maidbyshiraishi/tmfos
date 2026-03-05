@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dbp1j2mulrcta"]
+[gd_scene format=4 uid="uid://dbp1j2mulrcta"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_wujt5"]
 [ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_fmbk3"]
@@ -23,7 +23,7 @@ _data = {
 }
 point_count = 53
 
-[node name="Stage" instance=ExtResource("1_wujt5")]
+[node name="Stage" unique_id=1956689008 instance=ExtResource("1_wujt5")]
 BgmStream = ExtResource("2_fmbk3")
 PlayerArmorRatio = 0.0
 
@@ -36,85 +36,85 @@ texture = ExtResource("3_yixhr")
 [node name="Ground" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAIAP//AAAAAAMAAAAJAP//AAAAAAMAAAAKAP//AAAAAAMAAAALAP//AAAAAAMAAAAMAP//AAAAAAMAAAANAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP//AAAAAAMAAAARAP//AAAAAAMAAAASAP//AAAAAAMAAAATAP//AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAATAPb/AAAAAAMAAAABAPv/AAAHAAIAAAACAPv/AAAHAAIAAAADAPv/AAAHAAIAAAAEAPv/AAAHAAIAAAAFAPv/AAAHAAIAAAAHAPv/AAAHAAIAAAAIAPv/AAAHAAIAAAAJAPv/AAAHAAIAAAAKAPv/AAAHAAIAAAALAPv/AAAHAAIAAAAMAPv/AAAHAAIAAAAOAPv/AAAHAAIAAAAPAPv/AAAHAAIAAAAQAPv/AAAHAAIAAAARAPv/AAAHAAIAAAATAPv/AAAAAAMAAAALAPj/AAAHAAIAAAAKAPj/AAAHAAIAAAATAPH/AAAAAAMAAAATAPL/AAAAAAMAAAATAPP/AAAAAAMAAAATAPT/AAAAAAMAAAATAPX/AAAAAAMAAAATAPf/AAAAAAMAAAATAPj/AAAAAAMAAAATAPn/AAAAAAMAAAATAPz/AAAAAAMAAAATAP3/AAAAAAMAAAATAP7/AAAAAAMAAAATAPr/AAAAAAMAAAASAPv/AAAHAAIAAAAJAPj/AAAHAAIAAAAIAPj/AAAHAAIAAAASAPX/AAAHAAIAAAARAPX/AAAHAAIAAAAQAPX/AAAHAAIAAAAPAPX/AAAHAAIAAAAOAPX/AAAHAAIAAAANAPX/AAAHAAIAAAAMAPX/AAAHAAIAAAALAPX/AAAHAAIAAAAKAPX/AAAHAAIAAAAJAPX/AAAHAAIAAAAIAPX/AAAHAAIAAAAHAPX/AAAHAAIAAAAGAPX/AAAHAAIAAAAFAPX/AAAHAAIAAAAEAPX/AAAHAAIAAAADAPX/AAAHAAIAAAACAPX/AAAHAAIAAAABAPX/AAAHAAIAAAABAPH/AAAAAAMAAAACAPH/AAAAAAMAAAADAPH/AAAAAAMAAAAEAPH/AAAAAAMAAAAFAPH/AAAAAAMAAAAGAPH/AAAAAAMAAAAHAPH/AAAAAAMAAAAIAPH/AAAAAAMAAAAJAPH/AAAAAAMAAAAKAPH/AAAAAAMAAAALAPH/AAAAAAMAAAAMAPH/AAAAAAMAAAANAPH/AAAAAAMAAAAOAPH/AAAAAAMAAAAPAPH/AAAAAAMAAAAQAPH/AAAAAAMAAAARAPH/AAAAAAMAAAASAPH/AAAAAAMAAAAGAPr/AAAAAAMAAAANAPr/AAAAAAMAAAAEAP7/AAAEAAIAAAAPAP7/AAAEAAIAAAA=")
 
-[node name="StageEntryPoint1" parent="Door" index="0" instance=ExtResource("4_6l67q")]
+[node name="StageEntryPoint1" parent="Door" index="0" unique_id=106128024 instance=ExtResource("4_6l67q")]
 position = Vector2(320, -64)
 DoorNo = 1
 Direction = 1
 
-[node name="ItemPanelArmor" parent="Item" index="0" instance=ExtResource("5_tv2t6")]
+[node name="ItemPanelArmor" parent="Item" index="0" unique_id=2063005796 instance=ExtResource("5_tv2t6")]
 position = Vector2(160, -256)
 
-[node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("5_tv2t6")]
+[node name="ItemPanelArmor2" parent="Item" index="1" unique_id=1173215864 instance=ExtResource("5_tv2t6")]
 position = Vector2(480, -256)
 
-[node name="ItemPanelArmor3" parent="Item" index="2" instance=ExtResource("5_tv2t6")]
+[node name="ItemPanelArmor3" parent="Item" index="2" unique_id=756790906 instance=ExtResource("5_tv2t6")]
 position = Vector2(160, -400)
 
-[node name="ItemPanelArmor4" parent="Item" index="3" instance=ExtResource("5_tv2t6")]
+[node name="ItemPanelArmor4" parent="Item" index="3" unique_id=1690332436 instance=ExtResource("5_tv2t6")]
 position = Vector2(480, -400)
 
-[node name="ItemPanelLife" parent="Item" index="4" instance=ExtResource("6_r051c")]
+[node name="ItemPanelLife" parent="Item" index="4" unique_id=878675621 instance=ExtResource("6_r051c")]
 position = Vector2(48, -48)
 Stateful = false
 
-[node name="ItemPanelLife2" parent="Item" index="5" instance=ExtResource("6_r051c")]
+[node name="ItemPanelLife2" parent="Item" index="5" unique_id=421880699 instance=ExtResource("6_r051c")]
 position = Vector2(48, -80)
 Stateful = false
 
-[node name="ItemPanelLife5" parent="Item" index="6" instance=ExtResource("6_r051c")]
+[node name="ItemPanelLife5" parent="Item" index="6" unique_id=444946664 instance=ExtResource("6_r051c")]
 position = Vector2(320, -48)
 Stateful = false
 
-[node name="ItemPanelLife6" parent="Item" index="7" instance=ExtResource("6_r051c")]
+[node name="ItemPanelLife6" parent="Item" index="7" unique_id=586389744 instance=ExtResource("6_r051c")]
 position = Vector2(320, -80)
 Stateful = false
 
-[node name="ItemPanelLife3" parent="Item" index="8" instance=ExtResource("6_r051c")]
+[node name="ItemPanelLife3" parent="Item" index="8" unique_id=596196344 instance=ExtResource("6_r051c")]
 position = Vector2(592, -432)
 Stateful = false
 
-[node name="ItemPanelLife4" parent="Item" index="9" instance=ExtResource("6_r051c")]
+[node name="ItemPanelLife4" parent="Item" index="9" unique_id=1870651245 instance=ExtResource("6_r051c")]
 position = Vector2(592, -400)
 Stateful = false
 
-[node name="Player" parent="." index="8" instance=ExtResource("7_4ww3d")]
+[node name="Player" parent="." index="8" unique_id=758011300 instance=ExtResource("7_4ww3d")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="13"]
+[node name="Camera" type="Camera2D" parent="Player" index="13" unique_id=24029248]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("8_g12ww")
 
-[node name="Path2D" type="Path2D" parent="Enemy" index="0"]
+[node name="Path2D" type="Path2D" parent="Enemy" index="0" unique_id=1565256340]
 position = Vector2(-8, -8)
 curve = SubResource("Curve2D_kjocw")
 script = ExtResource("9_ajbrg")
 
-[node name="PathFollower" parent="Enemy/Path2D" index="0" instance=ExtResource("10_omfnd")]
+[node name="PathFollower" parent="Enemy/Path2D" index="0" unique_id=1337528916 instance=ExtResource("10_omfnd")]
 position = Vector2(344, -120)
 Speed = 500.0
 
-[node name="MaidFaucetEnemy" parent="Enemy/Path2D/PathFollower" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("11_jpid3")]
+[node name="MaidFaucetEnemy" parent="Enemy/Path2D/PathFollower" index="0" unique_id=1929828518 groups=["SweepEnemyObserver"] instance=ExtResource("11_jpid3")]
 
 [node name="HUD" parent="." index="13"]
+Text3 = "撃破せよ！！"
 Text1 = "メイドの出る蛇口"
 Text2 = "を"
-Text3 = "撃破せよ！！"
 BossMode = true
 
-[node name="BossLife" parent="HUD" index="6" instance=ExtResource("12_v1083")]
+[node name="BossLife" parent="HUD" index="6" unique_id=2034629925 instance=ExtResource("12_v1083")]
 offset_top = 98.0
 offset_bottom = 130.0
 
-[node name="SweepObserver" parent="." index="14" instance=ExtResource("13_xkro4")]
+[node name="SweepObserver" parent="." index="14" unique_id=2104681953 instance=ExtResource("13_xkro4")]
 GroupName = "SweepEnemyObserver"
 
-[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("14_q5772")]
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" unique_id=113231633 instance=ExtResource("14_q5772")]
 
-[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("15_tlff7")]
+[node name="OpenDialogCommand" parent="SweepObserver" index="1" unique_id=2085688959 instance=ExtResource("15_tlff7")]
 DialogPath = "res://theater/talk_0012.tscn"
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("16_mli6q")]
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" unique_id=1548998772 instance=ExtResource("16_mli6q")]
 position = Vector2(480, 16)
 scale = Vector2(60, 1)

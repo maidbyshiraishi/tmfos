@@ -29,10 +29,10 @@ public partial class OptionDialog : DialogRoot
     public override void _Ready()
     {
         base._Ready();
-        _ = GetNode<HSlider>("Control/BgmSlider").Connect(Range.SignalName.ValueChanged, new(this, MethodName.BgmVolumeChanged));
-        _ = GetNode<HSlider>("Control/SeSlider").Connect(Range.SignalName.ValueChanged, new(this, MethodName.SeVolumeChanged));
-        _ = GetNode<CheckButton>("Control/FullscreenCheck").Connect(BaseButton.SignalName.Toggled, new(this, MethodName.FullscreenChanged));
-        _ = GetNode<Button>("Control/ResetScreen").Connect(BaseButton.SignalName.Pressed, new(this, MethodName.ResetDefaultScreenOptions));
+        GetNode<HSlider>("Control/BgmSlider").ValueChanged += BgmVolumeChanged;
+        GetNode<HSlider>("Control/SeSlider").ValueChanged += SeVolumeChanged;
+        GetNode<CheckButton>("Control/FullscreenCheck").Toggled += FullscreenChanged;
+        GetNode<Button>("Control/ResetScreen").Pressed += ResetDefaultScreenOptions;
     }
 
     public override void Active()
@@ -41,10 +41,7 @@ public partial class OptionDialog : DialogRoot
         base.Active();
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "BgmSlider";
-    }
+    protected override string GetDefaultFocusNodeName() => "BgmSlider";
 
     /// <summary>
     /// GUI設定値を更新する
@@ -67,9 +64,9 @@ public partial class OptionDialog : DialogRoot
     /// BGM音量が変更された
     /// </summary>
     /// <param name="value">音量</param>
-    public void BgmVolumeChanged(float value)
+    public void BgmVolumeChanged(double value)
     {
-        BgmVolume = value;
+        BgmVolume = (float)value;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.BgmVolume = BgmVolume;
@@ -80,9 +77,9 @@ public partial class OptionDialog : DialogRoot
     /// 効果音音量が変更された
     /// </summary>
     /// <param name="value">音量</param>
-    public void SeVolumeChanged(float value)
+    public void SeVolumeChanged(double value)
     {
-        SeVolume = value;
+        SeVolume = (float)value;
         GetNode<Label>("SeValue").Text = $"{SeVolume}%";
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.SeVolume = SeVolume;

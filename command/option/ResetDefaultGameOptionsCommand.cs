@@ -6,7 +6,7 @@ namespace tmfos.command.option;
 /// <summary>
 /// ゲーム設定をデフォルト値にリセットするコマンド
 /// </summary>
-public partial class ResetDefaultGameOptionsCommand : CommandNode
+public partial class ResetDefaultGameOptionsCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

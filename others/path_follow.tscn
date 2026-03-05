@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctiruf54e1osm"]
+[gd_scene format=3 uid="uid://ctiruf54e1osm"]
 
 [ext_resource type="Script" uid="uid://bnsftr1mg10nu" path="res://others/PathFollow.cs" id="1_dmsey"]
 
-[node name="PathFollower" type="PathFollow2D"]
+[node name="PathFollower" type="PathFollow2D" unique_id=1918916570]
 rotates = false
 loop = false
 script = ExtResource("1_dmsey")

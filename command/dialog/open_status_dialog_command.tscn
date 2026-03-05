@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7a0l1457fyug"]
+[gd_scene format=3 uid="uid://c7a0l1457fyug"]
 
 [ext_resource type="Script" uid="uid://bjole7itby3uq" path="res://command/dialog/OpenStatusDialogCommand.cs" id="1_pelnv"]
 
-[node name="OpenStatusDialogCommand" type="Node"]
+[node name="OpenStatusDialogCommand" type="Node" unique_id=2055642571]
 script = ExtResource("1_pelnv")

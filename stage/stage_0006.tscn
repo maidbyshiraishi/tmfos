@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://b1mvncxivsdav"]
+[gd_scene format=4 uid="uid://b1mvncxivsdav"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_7kni4"]
 [ext_resource type="AudioStream" uid="uid://cxifjqga3hnbc" path="res://contents/bgm/bgm1.ogg" id="2_l41is"]
@@ -91,7 +91,7 @@ _data = {
 }
 point_count = 3
 
-[node name="Stage" instance=ExtResource("1_7kni4")]
+[node name="Stage" unique_id=68071259 instance=ExtResource("1_7kni4")]
 BgmStream = ExtResource("2_l41is")
 
 [node name="ColorRect" parent="Background/Parallax2D3" index="0"]
@@ -116,591 +116,591 @@ tile_map_data = PackedByteArray("AAAAAOD/AAAFAAAAAAAAAOH/AAAFAAAAAAAAAOL/AAAFAAA
 [node name="Foreground" parent="TileMap" index="2"]
 tile_map_data = PackedByteArray("AAAMAP3/AAABAAMAAABKAOX/AAABAAMAAAA=")
 
-[node name="WoodDoor2" parent="Door" index="0" instance=ExtResource("6_0dhoc")]
+[node name="WoodDoor2" parent="Door" index="0" unique_id=1308874640 instance=ExtResource("6_0dhoc")]
 position = Vector2(1584, -1536)
 DestStageNo = 10
 DestDoorNo = 4
 DoorNo = 2
 Direction = 1
 
-[node name="WoodDoor3" parent="Door" index="1" instance=ExtResource("6_0dhoc")]
+[node name="WoodDoor3" parent="Door" index="1" unique_id=733460419 instance=ExtResource("6_0dhoc")]
 position = Vector2(4272, -1568)
 DestStageNo = 1
 DestDoorNo = 6
 DoorNo = 3
 
-[node name="WoodDoor4" parent="Door" index="2" instance=ExtResource("6_0dhoc")]
+[node name="WoodDoor4" parent="Door" index="2" unique_id=381466904 instance=ExtResource("6_0dhoc")]
 position = Vector2(2800, 832)
 DestStageNo = 15
 DestDoorNo = 2
 DoorNo = 4
 
-[node name="WoodDoor5" parent="Door" index="3" instance=ExtResource("6_0dhoc")]
+[node name="WoodDoor5" parent="Door" index="3" unique_id=1717727531 instance=ExtResource("6_0dhoc")]
 position = Vector2(5872, -192)
 DestStageNo = 16
 DestDoorNo = 1
 DoorNo = 5
 
-[node name="SavePoint6" parent="Door" index="4" instance=ExtResource("7_hkq5k")]
+[node name="SavePoint6" parent="Door" index="4" unique_id=1322625741 instance=ExtResource("7_hkq5k")]
 position = Vector2(3568, -1669)
 DoorNo = 6
 
-[node name="StageEntryPoint255" parent="Door" index="5" instance=ExtResource("8_wcetw")]
+[node name="StageEntryPoint255" parent="Door" index="5" unique_id=1615617068 instance=ExtResource("8_wcetw")]
 position = Vector2(2688, -1664)
 DoorNo = 255
 Direction = 1
 
-[node name="TransparencyWarp100" parent="Door" index="6" instance=ExtResource("9_ftf5x")]
+[node name="TransparencyWarp100" parent="Door" index="6" unique_id=527611750 instance=ExtResource("9_ftf5x")]
 position = Vector2(2448, -944)
 DestStageNo = 9
 DestDoorNo = 255
 DoorNo = 100
 
-[node name="SearchPointTrigger" parent="Door/TransparencyWarp100" index="4" instance=ExtResource("10_eax6f")]
+[node name="SearchPointTrigger" parent="Door/TransparencyWarp100" index="4" unique_id=1032968869 instance=ExtResource("10_eax6f")]
 
-[node name="SearchTrigger" parent="Search" index="1" instance=ExtResource("11_huogi")]
+[node name="SearchTrigger" parent="Search" index="1" unique_id=1315263706 instance=ExtResource("11_huogi")]
 position = Vector2(400, -80)
 
-[node name="SearchContainer" parent="Search/SearchTrigger" index="5" instance=ExtResource("12_mm7y0")]
+[node name="SearchContainer" parent="Search/SearchTrigger" index="5" unique_id=61339734 instance=ExtResource("12_mm7y0")]
 
-[node name="WoodDoor1" parent="Search/SearchTrigger/SearchContainer" index="0" instance=ExtResource("6_0dhoc")]
+[node name="WoodDoor1" parent="Search/SearchTrigger/SearchContainer" index="0" unique_id=2137368951 instance=ExtResource("6_0dhoc")]
 position = Vector2(-32, -16)
 DestStageNo = 27
 DestDoorNo = 1
 DoorNo = 1
 Direction = 1
 
-[node name="SearchPointTrigger" parent="Search/SearchTrigger" index="6" instance=ExtResource("10_eax6f")]
+[node name="SearchPointTrigger" parent="Search/SearchTrigger" index="6" unique_id=2143908774 instance=ExtResource("10_eax6f")]
 
-[node name="TreasureBox1" parent="Item" index="0" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox1" parent="Item" index="0" unique_id=698666844 instance=ExtResource("13_y12tr")]
 position = Vector2(2336, -72)
 
-[node name="TreasureBox2" parent="Item" index="1" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox2" parent="Item" index="1" unique_id=1759124796 instance=ExtResource("13_y12tr")]
 position = Vector2(2384, -1296)
 Score = 400000
 
-[node name="TreasureBox3" parent="Item" index="2" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox3" parent="Item" index="2" unique_id=1246703518 instance=ExtResource("13_y12tr")]
 position = Vector2(624, -40)
 Score = 1000
 
-[node name="TreasureBox4" parent="Item" index="3" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox4" parent="Item" index="3" unique_id=1706051196 instance=ExtResource("13_y12tr")]
 position = Vector2(2384, -840)
 Score = 3000
 
-[node name="TreasureBox5" parent="Item" index="4" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox5" parent="Item" index="4" unique_id=190517423 instance=ExtResource("13_y12tr")]
 position = Vector2(1392, -1192)
 Score = 1000
 
-[node name="TreasureBox6" parent="Item" index="5" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox6" parent="Item" index="5" unique_id=1532021580 instance=ExtResource("13_y12tr")]
 position = Vector2(5344, -264)
 Score = 1000
 
-[node name="TreasureBox7" parent="Item" index="6" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox7" parent="Item" index="6" unique_id=1053699462 instance=ExtResource("13_y12tr")]
 position = Vector2(4656, -968)
 Score = 1000
 
-[node name="TreasureBox8" parent="Item" index="7" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox8" parent="Item" index="7" unique_id=67303276 instance=ExtResource("13_y12tr")]
 position = Vector2(3656, -1352)
 Score = 100
 
-[node name="TreasureBox9" parent="Item" index="8" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox9" parent="Item" index="8" unique_id=1933531913 instance=ExtResource("13_y12tr")]
 position = Vector2(3624, -1352)
 Score = 200
 
-[node name="TreasureBox10" parent="Item" index="9" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox10" parent="Item" index="9" unique_id=711081908 instance=ExtResource("13_y12tr")]
 position = Vector2(3592, -1352)
 Score = 400
 
-[node name="TreasureBox11" parent="Item" index="10" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox11" parent="Item" index="10" unique_id=620096160 instance=ExtResource("13_y12tr")]
 position = Vector2(3560, -1352)
 Score = 800
 
-[node name="TreasureBox12" parent="Item" index="11" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox12" parent="Item" index="11" unique_id=1456076522 instance=ExtResource("13_y12tr")]
 position = Vector2(3528, -1352)
 Score = 1600
 
-[node name="TreasureBox13" parent="Item" index="12" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox13" parent="Item" index="12" unique_id=1521875578 instance=ExtResource("13_y12tr")]
 position = Vector2(3496, -1352)
 Score = 3200
 
-[node name="TreasureBox14" parent="Item" index="13" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox14" parent="Item" index="13" unique_id=1323809570 instance=ExtResource("13_y12tr")]
 position = Vector2(3464, -1352)
 Score = 6400
 
-[node name="TreasureBox15" parent="Item" index="14" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox15" parent="Item" index="14" unique_id=1424375507 instance=ExtResource("13_y12tr")]
 position = Vector2(3432, -1352)
 Score = 12800
 
-[node name="TreasureBox16" parent="Item" index="15" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox16" parent="Item" index="15" unique_id=1286159572 instance=ExtResource("13_y12tr")]
 position = Vector2(3400, -1352)
 Score = 25600
 
-[node name="TreasureBox17" parent="Item" index="16" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox17" parent="Item" index="16" unique_id=698456539 instance=ExtResource("13_y12tr")]
 position = Vector2(3368, -1352)
 Score = 51200
 
-[node name="TreasureBox18" parent="Item" index="17" instance=ExtResource("13_y12tr")]
+[node name="TreasureBox18" parent="Item" index="17" unique_id=666636168 instance=ExtResource("13_y12tr")]
 position = Vector2(3336, -1352)
 Score = 102400
 
-[node name="ItemPanelLife" parent="Item" index="18" instance=ExtResource("14_nh317")]
+[node name="ItemPanelLife" parent="Item" index="18" unique_id=528804957 instance=ExtResource("14_nh317")]
 position = Vector2(752, -688)
 
-[node name="ItemPanelLife2" parent="Item" index="19" instance=ExtResource("14_nh317")]
+[node name="ItemPanelLife2" parent="Item" index="19" unique_id=922486895 instance=ExtResource("14_nh317")]
 position = Vector2(1680, -1264)
 
-[node name="ItemPanelLife3" parent="Item" index="20" instance=ExtResource("14_nh317")]
+[node name="ItemPanelLife3" parent="Item" index="20" unique_id=752999451 instance=ExtResource("14_nh317")]
 position = Vector2(2800, 336)
 
-[node name="ItemPanelLife4" parent="Item" index="21" instance=ExtResource("14_nh317")]
+[node name="ItemPanelLife4" parent="Item" index="21" unique_id=464949299 instance=ExtResource("14_nh317")]
 position = Vector2(4112, -1648)
 
-[node name="ItemPanelLife5" parent="Item" index="22" instance=ExtResource("14_nh317")]
+[node name="ItemPanelLife5" parent="Item" index="22" unique_id=965478168 instance=ExtResource("14_nh317")]
 position = Vector2(5072, -688)
 
-[node name="ItemPanelArmor" parent="Item" index="23" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor" parent="Item" index="23" unique_id=359005606 instance=ExtResource("15_xaste")]
 position = Vector2(4464, -688)
 
-[node name="ItemPanelArmor4" parent="Item" index="24" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor4" parent="Item" index="24" unique_id=3323850 instance=ExtResource("15_xaste")]
 position = Vector2(4432, -656)
 
-[node name="ItemPanelArmor5" parent="Item" index="25" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor5" parent="Item" index="25" unique_id=874974120 instance=ExtResource("15_xaste")]
 position = Vector2(4400, -624)
 
-[node name="ItemPanelArmor2" parent="Item" index="26" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor2" parent="Item" index="26" unique_id=924318595 instance=ExtResource("15_xaste")]
 position = Vector2(2336, -144)
 
-[node name="ItemPanelArmor6" parent="Item" index="27" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor6" parent="Item" index="27" unique_id=42975640 instance=ExtResource("15_xaste")]
 position = Vector2(2352, -176)
 
-[node name="ItemPanelArmor7" parent="Item" index="28" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor7" parent="Item" index="28" unique_id=578744707 instance=ExtResource("15_xaste")]
 position = Vector2(2320, -176)
 
-[node name="ItemPanelArmor3" parent="Item" index="29" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor3" parent="Item" index="29" unique_id=677492543 instance=ExtResource("15_xaste")]
 position = Vector2(2416, 464)
 
-[node name="ItemPanelArmor8" parent="Item" index="30" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor8" parent="Item" index="30" unique_id=1842015261 instance=ExtResource("15_xaste")]
 position = Vector2(2384, 464)
 
-[node name="ItemPanelArmor9" parent="Item" index="31" instance=ExtResource("15_xaste")]
+[node name="ItemPanelArmor9" parent="Item" index="31" unique_id=1949002285 instance=ExtResource("15_xaste")]
 position = Vector2(2400, 432)
 
-[node name="ItemPanelWeapon" parent="Item" index="32" instance=ExtResource("16_j6snh")]
+[node name="ItemPanelWeapon" parent="Item" index="32" unique_id=1208721433 instance=ExtResource("16_j6snh")]
 position = Vector2(2800, -1712)
 
-[node name="ItemPanelWeapon4" parent="Item" index="33" instance=ExtResource("16_j6snh")]
+[node name="ItemPanelWeapon4" parent="Item" index="33" unique_id=1252220847 instance=ExtResource("16_j6snh")]
 position = Vector2(2768, -1712)
 
-[node name="ItemPanelWeapon5" parent="Item" index="34" instance=ExtResource("16_j6snh")]
+[node name="ItemPanelWeapon5" parent="Item" index="34" unique_id=283823487 instance=ExtResource("16_j6snh")]
 position = Vector2(2784, -1680)
 
-[node name="ItemPanelWeapon2" parent="Item" index="35" instance=ExtResource("16_j6snh")]
+[node name="ItemPanelWeapon2" parent="Item" index="35" unique_id=403066021 instance=ExtResource("16_j6snh")]
 position = Vector2(2224, -432)
 
-[node name="ItemPanelWeapon6" parent="Item" index="36" instance=ExtResource("16_j6snh")]
+[node name="ItemPanelWeapon6" parent="Item" index="36" unique_id=2080595252 instance=ExtResource("16_j6snh")]
 position = Vector2(2224, -464)
 
-[node name="ItemPanelWeapon3" parent="Item" index="37" instance=ExtResource("16_j6snh")]
+[node name="ItemPanelWeapon3" parent="Item" index="37" unique_id=109565347 instance=ExtResource("16_j6snh")]
 position = Vector2(3920, -1392)
 
-[node name="ItemPanelWeapon7" parent="Item" index="38" instance=ExtResource("16_j6snh")]
+[node name="ItemPanelWeapon7" parent="Item" index="38" unique_id=1133208923 instance=ExtResource("16_j6snh")]
 position = Vector2(3952, -1392)
 
-[node name="ItemPanelWeapon8" parent="Item" index="39" instance=ExtResource("16_j6snh")]
+[node name="ItemPanelWeapon8" parent="Item" index="39" unique_id=1848985904 instance=ExtResource("16_j6snh")]
 position = Vector2(3936, -1360)
 
-[node name="Player" parent="." index="8" instance=ExtResource("17_0d1x7")]
+[node name="Player" parent="." index="8" unique_id=1141998214 instance=ExtResource("17_0d1x7")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="13"]
+[node name="Camera" type="Camera2D" parent="Player" index="13" unique_id=1417314873]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("18_wy357")
 
-[node name="EnemySpawner1" parent="Enemy" index="0" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner1" parent="Enemy" index="0" unique_id=190019979 instance=ExtResource("19_65g8x")]
 position = Vector2(1024, -1536)
 
-[node name="EnemySpawner21" parent="Enemy" index="1" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner21" parent="Enemy" index="1" unique_id=1864567777 instance=ExtResource("19_65g8x")]
 position = Vector2(592, -1440)
 
-[node name="EnemySpawner22" parent="Enemy" index="2" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner22" parent="Enemy" index="2" unique_id=926113106 instance=ExtResource("19_65g8x")]
 position = Vector2(288, -1376)
 
-[node name="EnemySpawner16" parent="Enemy" index="3" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner16" parent="Enemy" index="3" unique_id=1139858395 instance=ExtResource("19_65g8x")]
 position = Vector2(1920, -1216)
 
-[node name="EnemySpawner17" parent="Enemy" index="4" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner17" parent="Enemy" index="4" unique_id=1545394360 instance=ExtResource("19_65g8x")]
 position = Vector2(1664, -1216)
 
-[node name="EnemySpawner18" parent="Enemy" index="5" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner18" parent="Enemy" index="5" unique_id=1095946461 instance=ExtResource("19_65g8x")]
 position = Vector2(1472, -1216)
 
-[node name="EnemySpawner19" parent="Enemy" index="6" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner19" parent="Enemy" index="6" unique_id=1952234047 instance=ExtResource("19_65g8x")]
 position = Vector2(640, -1024)
 
-[node name="EnemySpawner20" parent="Enemy" index="7" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner20" parent="Enemy" index="7" unique_id=886470677 instance=ExtResource("19_65g8x")]
 position = Vector2(832, -1120)
 
-[node name="EnemySpawner2" parent="Enemy" index="8" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner2" parent="Enemy" index="8" unique_id=1259166108 instance=ExtResource("19_65g8x")]
 position = Vector2(2240, -1568)
 
-[node name="EnemySpawner3" parent="Enemy" index="9" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner3" parent="Enemy" index="9" unique_id=910575806 instance=ExtResource("19_65g8x")]
 position = Vector2(3712, -1536)
 
-[node name="EnemySpawner4" parent="Enemy" index="10" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner4" parent="Enemy" index="10" unique_id=2094702509 instance=ExtResource("19_65g8x")]
 position = Vector2(5200, -512)
 
-[node name="EnemySpawner5" parent="Enemy" index="11" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner5" parent="Enemy" index="11" unique_id=38572208 instance=ExtResource("19_65g8x")]
 position = Vector2(5056, -288)
 
-[node name="EnemySpawner6" parent="Enemy" index="12" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner6" parent="Enemy" index="12" unique_id=1322661364 instance=ExtResource("19_65g8x")]
 position = Vector2(4832, -288)
 
-[node name="EnemySpawner7" parent="Enemy" index="13" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner7" parent="Enemy" index="13" unique_id=2108484668 instance=ExtResource("19_65g8x")]
 position = Vector2(4608, -352)
 
-[node name="EnemySpawner8" parent="Enemy" index="14" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner8" parent="Enemy" index="14" unique_id=1835316045 instance=ExtResource("19_65g8x")]
 position = Vector2(4096, -1312)
 
-[node name="EnemySpawner9" parent="Enemy" index="15" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner9" parent="Enemy" index="15" unique_id=1920875239 instance=ExtResource("19_65g8x")]
 position = Vector2(4304, -1216)
 
-[node name="EnemySpawner10" parent="Enemy" index="16" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner10" parent="Enemy" index="16" unique_id=1071770276 instance=ExtResource("19_65g8x")]
 position = Vector2(3712, -1376)
 
-[node name="EnemySpawner11" parent="Enemy" index="17" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner11" parent="Enemy" index="17" unique_id=1134249837 instance=ExtResource("19_65g8x")]
 position = Vector2(3584, -1376)
 
-[node name="EnemySpawner12" parent="Enemy" index="18" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner12" parent="Enemy" index="18" unique_id=198267992 instance=ExtResource("19_65g8x")]
 position = Vector2(3456, -1376)
 
-[node name="EnemySpawner13" parent="Enemy" index="19" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner13" parent="Enemy" index="19" unique_id=231218973 instance=ExtResource("19_65g8x")]
 position = Vector2(3328, -1376)
 
-[node name="EnemySpawner14" parent="Enemy" index="20" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner14" parent="Enemy" index="20" unique_id=91517915 instance=ExtResource("19_65g8x")]
 position = Vector2(2864, -1344)
 
-[node name="EnemySpawner15" parent="Enemy" index="21" instance=ExtResource("19_65g8x")]
+[node name="EnemySpawner15" parent="Enemy" index="21" unique_id=834235433 instance=ExtResource("19_65g8x")]
 position = Vector2(2752, -1280)
 
-[node name="Path2D1" type="Path2D" parent="Enemy" index="22"]
+[node name="Path2D1" type="Path2D" parent="Enemy" index="22" unique_id=238231862]
 curve = SubResource("Curve2D_e2kag")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D1" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2567.31, -1011.81)
+[node name="PathFollower" parent="Enemy/Path2D1" index="0" unique_id=1062302858 instance=ExtResource("21_ulxqq")]
+position = Vector2(2567.3127, -1011.8123)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D1/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D1/PathFollower" index="0" unique_id=1275956429 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D10" type="Path2D" parent="Enemy" index="23"]
+[node name="Path2D10" type="Path2D" parent="Enemy" index="23" unique_id=1451482261]
 curve = SubResource("Curve2D_somxc")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D10" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(4445.79, -930.209)
+[node name="PathFollower" parent="Enemy/Path2D10" index="0" unique_id=1640139092 instance=ExtResource("21_ulxqq")]
+position = Vector2(4445.7915, -930.20874)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D10/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D10/PathFollower" index="0" unique_id=1716773622 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D11" type="Path2D" parent="Enemy" index="24"]
+[node name="Path2D11" type="Path2D" parent="Enemy" index="24" unique_id=886301183]
 curve = SubResource("Curve2D_10mxs")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D11" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(4781.83, -1130.29)
+[node name="PathFollower" parent="Enemy/Path2D11" index="0" unique_id=2097192475 instance=ExtResource("21_ulxqq")]
+position = Vector2(4781.834, -1130.2942)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D11/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D11/PathFollower" index="0" unique_id=768715417 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D2" type="Path2D" parent="Enemy" index="25"]
+[node name="Path2D2" type="Path2D" parent="Enemy" index="25" unique_id=1061747295]
 curve = SubResource("Curve2D_koeah")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D2" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2762.05, -436.686)
+[node name="PathFollower" parent="Enemy/Path2D2" index="0" unique_id=1133786474 instance=ExtResource("21_ulxqq")]
+position = Vector2(2762.0474, -436.6865)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D2/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D2/PathFollower" index="0" unique_id=423337216 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D3" type="Path2D" parent="Enemy" index="26"]
+[node name="Path2D3" type="Path2D" parent="Enemy" index="26" unique_id=1301862213]
 curve = SubResource("Curve2D_7vr61")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D3" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2440.79, 196.22)
+[node name="PathFollower" parent="Enemy/Path2D3" index="0" unique_id=1127772583 instance=ExtResource("21_ulxqq")]
+position = Vector2(2440.791, 196.21994)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D3/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D3/PathFollower" index="0" unique_id=2065019670 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D4" type="Path2D" parent="Enemy" index="27"]
+[node name="Path2D4" type="Path2D" parent="Enemy" index="27" unique_id=1401296429]
 curve = SubResource("Curve2D_22hjt")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D4" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2647.68, 316.485)
+[node name="PathFollower" parent="Enemy/Path2D4" index="0" unique_id=2122553747 instance=ExtResource("21_ulxqq")]
+position = Vector2(2647.6765, 316.4852)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D4/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D4/PathFollower" index="0" unique_id=18688945 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D5" type="Path2D" parent="Enemy" index="28"]
+[node name="Path2D5" type="Path2D" parent="Enemy" index="28" unique_id=1940178628]
 position = Vector2(0, -15.5151)
 scale = Vector2(1, 0.939394)
 curve = SubResource("Curve2D_wkk1h")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D5" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(2419.62, -514.121)
+[node name="PathFollower" parent="Enemy/Path2D5" index="0" unique_id=1499395996 instance=ExtResource("21_ulxqq")]
+position = Vector2(2419.624, -514.1206)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D5/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D5/PathFollower" index="0" unique_id=815166184 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D6" type="Path2D" parent="Enemy" index="29"]
+[node name="Path2D6" type="Path2D" parent="Enemy" index="29" unique_id=1504355690]
 position = Vector2(0, -15.5151)
 scale = Vector2(1, 0.939394)
 curve = SubResource("Curve2D_75xm8")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D6" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(626.779, -744.734)
+[node name="PathFollower" parent="Enemy/Path2D6" index="0" unique_id=471143955 instance=ExtResource("21_ulxqq")]
+position = Vector2(626.7785, -744.7344)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D6/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D6/PathFollower" index="0" unique_id=1469199217 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D7" type="Path2D" parent="Enemy" index="30"]
+[node name="Path2D7" type="Path2D" parent="Enemy" index="30" unique_id=745087458]
 position = Vector2(0, -15.5151)
 scale = Vector2(1, 0.939394)
 curve = SubResource("Curve2D_bfmxa")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D7" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(270.707, -780.158)
+[node name="PathFollower" parent="Enemy/Path2D7" index="0" unique_id=911281251 instance=ExtResource("21_ulxqq")]
+position = Vector2(270.70673, -780.1578)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D7/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D7/PathFollower" index="0" unique_id=239188663 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D8" type="Path2D" parent="Enemy" index="31"]
+[node name="Path2D8" type="Path2D" parent="Enemy" index="31" unique_id=1730352255]
 position = Vector2(0, -15.5151)
 scale = Vector2(1, 0.939394)
 curve = SubResource("Curve2D_a1t2k")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D8" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(498.778, -608.475)
+[node name="PathFollower" parent="Enemy/Path2D8" index="0" unique_id=663815690 instance=ExtResource("21_ulxqq")]
+position = Vector2(498.7782, -608.4746)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D8/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D8/PathFollower" index="0" unique_id=1521106499 instance=ExtResource("22_4a61b")]
 
-[node name="Path2D9" type="Path2D" parent="Enemy" index="32"]
+[node name="Path2D9" type="Path2D" parent="Enemy" index="32" unique_id=128684438]
 position = Vector2(0, -15.5151)
 scale = Vector2(1, 0.939394)
 curve = SubResource("Curve2D_131m4")
 script = ExtResource("20_sh15y")
 
-[node name="PathFollower" parent="Enemy/Path2D9" index="0" instance=ExtResource("21_ulxqq")]
-position = Vector2(512, -220.29)
+[node name="PathFollower" parent="Enemy/Path2D9" index="0" unique_id=562720423 instance=ExtResource("21_ulxqq")]
+position = Vector2(512, -220.28998)
 progress = 358.916
 
-[node name="RocketMaid2Enemy" parent="Enemy/Path2D9/PathFollower" index="0" instance=ExtResource("22_4a61b")]
+[node name="RocketMaid2Enemy" parent="Enemy/Path2D9/PathFollower" index="0" unique_id=780632822 instance=ExtResource("22_4a61b")]
 
-[node name="FallingIcicleEnemy" parent="Enemy" index="33" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy" parent="Enemy" index="33" unique_id=1865693986 instance=ExtResource("23_bblq6")]
 position = Vector2(336, -960)
 
-[node name="FallingIcicleEnemy2" parent="Enemy" index="34" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy2" parent="Enemy" index="34" unique_id=900708791 instance=ExtResource("23_bblq6")]
 position = Vector2(624, -960)
 
-[node name="FallingIcicleEnemy3" parent="Enemy" index="35" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy3" parent="Enemy" index="35" unique_id=923178935 instance=ExtResource("23_bblq6")]
 position = Vector2(656, -1216)
 
-[node name="FallingIcicleEnemy4" parent="Enemy" index="36" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy4" parent="Enemy" index="36" unique_id=639250791 instance=ExtResource("23_bblq6")]
 position = Vector2(840, -1280)
 
-[node name="FallingIcicleEnemy5" parent="Enemy" index="37" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy5" parent="Enemy" index="37" unique_id=1022871388 instance=ExtResource("23_bblq6")]
 position = Vector2(1240, -1664)
 
-[node name="FallingIcicleEnemy6" parent="Enemy" index="38" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy6" parent="Enemy" index="38" unique_id=730313461 instance=ExtResource("23_bblq6")]
 position = Vector2(1136, -1664)
 
-[node name="FallingIcicleEnemy7" parent="Enemy" index="39" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy7" parent="Enemy" index="39" unique_id=240647283 instance=ExtResource("23_bblq6")]
 position = Vector2(1016, -1728)
 
-[node name="FallingIcicleEnemy8" parent="Enemy" index="40" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy8" parent="Enemy" index="40" unique_id=1435459607 instance=ExtResource("23_bblq6")]
 position = Vector2(592, -1632)
 
-[node name="FallingIcicleEnemy9" parent="Enemy" index="41" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy9" parent="Enemy" index="41" unique_id=90316230 instance=ExtResource("23_bblq6")]
 position = Vector2(2136, -1760)
 
-[node name="FallingIcicleEnemy10" parent="Enemy" index="42" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy10" parent="Enemy" index="42" unique_id=316006746 instance=ExtResource("23_bblq6")]
 position = Vector2(2576, -1760)
 
-[node name="FallingIcicleEnemy11" parent="Enemy" index="43" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy11" parent="Enemy" index="43" unique_id=2069774166 instance=ExtResource("23_bblq6")]
 position = Vector2(3088, -1760)
 
-[node name="FallingIcicleEnemy12" parent="Enemy" index="44" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy12" parent="Enemy" index="44" unique_id=975419519 instance=ExtResource("23_bblq6")]
 position = Vector2(3384, -1760)
 
-[node name="FallingIcicleEnemy13" parent="Enemy" index="45" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy13" parent="Enemy" index="45" unique_id=1887845907 instance=ExtResource("23_bblq6")]
 position = Vector2(3760, -1696)
 
-[node name="FallingIcicleEnemy14" parent="Enemy" index="46" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy14" parent="Enemy" index="46" unique_id=2051397811 instance=ExtResource("23_bblq6")]
 position = Vector2(4144, -1728)
 
-[node name="FallingIcicleEnemy15" parent="Enemy" index="47" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy15" parent="Enemy" index="47" unique_id=288972046 instance=ExtResource("23_bblq6")]
 position = Vector2(4648, -1600)
 
-[node name="FallingIcicleEnemy16" parent="Enemy" index="48" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy16" parent="Enemy" index="48" unique_id=69631733 instance=ExtResource("23_bblq6")]
 position = Vector2(4720, -696)
 
-[node name="FallingIcicleEnemy17" parent="Enemy" index="49" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy17" parent="Enemy" index="49" unique_id=2068664580 instance=ExtResource("23_bblq6")]
 position = Vector2(4816, -544)
 
-[node name="FallingIcicleEnemy18" parent="Enemy" index="50" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy18" parent="Enemy" index="50" unique_id=518633394 instance=ExtResource("23_bblq6")]
 position = Vector2(5328, -512)
 
-[node name="FallingIcicleEnemy19" parent="Enemy" index="51" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy19" parent="Enemy" index="51" unique_id=566547666 instance=ExtResource("23_bblq6")]
 position = Vector2(5904, -416)
 
-[node name="FallingBlock5Enemy" parent="Enemy" index="52" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy" parent="Enemy" index="52" unique_id=1871316606 instance=ExtResource("24_fgaeh")]
 position = Vector2(3216, -1728)
 
-[node name="FallingBlock5Enemy2" parent="Enemy" index="53" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy2" parent="Enemy" index="53" unique_id=777205912 instance=ExtResource("24_fgaeh")]
 position = Vector2(3152, -1696)
 
-[node name="FallingBlock5Enemy3" parent="Enemy" index="54" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy3" parent="Enemy" index="54" unique_id=199244446 instance=ExtResource("24_fgaeh")]
 position = Vector2(3728, -1728)
 
-[node name="FallingBlock5Enemy4" parent="Enemy" index="55" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy4" parent="Enemy" index="55" unique_id=1934861928 instance=ExtResource("24_fgaeh")]
 position = Vector2(4208, -1696)
 
-[node name="FallingBlock5Enemy5" parent="Enemy" index="56" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy5" parent="Enemy" index="56" unique_id=534539512 instance=ExtResource("24_fgaeh")]
 position = Vector2(4624, -1120)
 
-[node name="FallingBlock5Enemy6" parent="Enemy" index="57" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy6" parent="Enemy" index="57" unique_id=1511144597 instance=ExtResource("24_fgaeh")]
 position = Vector2(5008, -896)
 
-[node name="FallingBlock5Enemy7" parent="Enemy" index="58" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy7" parent="Enemy" index="58" unique_id=735128032 instance=ExtResource("24_fgaeh")]
 position = Vector2(5040, -864)
 
-[node name="FallingBlock5Enemy8" parent="Enemy" index="59" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy8" parent="Enemy" index="59" unique_id=2095486026 instance=ExtResource("24_fgaeh")]
 position = Vector2(5392, -512)
 
-[node name="FallingBlock5Enemy9" parent="Enemy" index="60" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy9" parent="Enemy" index="60" unique_id=1459309213 instance=ExtResource("24_fgaeh")]
 position = Vector2(5072, -448)
 
-[node name="FallingBlock5Enemy10" parent="Enemy" index="61" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy10" parent="Enemy" index="61" unique_id=1753889381 instance=ExtResource("24_fgaeh")]
 position = Vector2(4912, -576)
 
-[node name="FallingBlock5Enemy11" parent="Enemy" index="62" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy11" parent="Enemy" index="62" unique_id=602551044 instance=ExtResource("24_fgaeh")]
 position = Vector2(4528, -608)
 
-[node name="FallingBlock5Enemy12" parent="Enemy" index="63" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy12" parent="Enemy" index="63" unique_id=2146363953 instance=ExtResource("24_fgaeh")]
 position = Vector2(4112, -1472)
 
-[node name="FallingBlock5Enemy13" parent="Enemy" index="64" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy13" parent="Enemy" index="64" unique_id=1742136479 instance=ExtResource("24_fgaeh")]
 position = Vector2(4144, -1472)
 
-[node name="FallingBlock5Enemy14" parent="Enemy" index="65" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy14" parent="Enemy" index="65" unique_id=800704070 instance=ExtResource("24_fgaeh")]
 position = Vector2(4176, -1472)
 
-[node name="FallingBlock5Enemy15" parent="Enemy" index="66" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy15" parent="Enemy" index="66" unique_id=331675283 instance=ExtResource("24_fgaeh")]
 position = Vector2(2864, -1472)
 
-[node name="FallingBlock5Enemy16" parent="Enemy" index="67" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy16" parent="Enemy" index="67" unique_id=1775625099 instance=ExtResource("24_fgaeh")]
 position = Vector2(2896, -1472)
 
-[node name="FallingBlock5Enemy17" parent="Enemy" index="68" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy17" parent="Enemy" index="68" unique_id=1079249182 instance=ExtResource("24_fgaeh")]
 position = Vector2(2704, -1472)
 
-[node name="FallingIcicleEnemy20" parent="Enemy" index="69" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy20" parent="Enemy" index="69" unique_id=1467461417 instance=ExtResource("23_bblq6")]
 position = Vector2(2760, -1440)
 
-[node name="FallingBlock5Enemy18" parent="Enemy" index="70" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy18" parent="Enemy" index="70" unique_id=953990171 instance=ExtResource("24_fgaeh")]
 position = Vector2(2480, 32)
 
-[node name="FallingBlock5Enemy19" parent="Enemy" index="71" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy19" parent="Enemy" index="71" unique_id=1051486264 instance=ExtResource("24_fgaeh")]
 position = Vector2(2512, 0)
 
-[node name="FallingBlock5Enemy20" parent="Enemy" index="72" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy20" parent="Enemy" index="72" unique_id=480986653 instance=ExtResource("24_fgaeh")]
 position = Vector2(2768, -192)
 
-[node name="FallingBlock5Enemy21" parent="Enemy" index="73" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy21" parent="Enemy" index="73" unique_id=1756468126 instance=ExtResource("24_fgaeh")]
 position = Vector2(2288, -448)
 
-[node name="FallingBlock5Enemy22" parent="Enemy" index="74" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy22" parent="Enemy" index="74" unique_id=411251459 instance=ExtResource("24_fgaeh")]
 position = Vector2(2352, -768)
 
-[node name="FallingIcicleEnemy21" parent="Enemy" index="75" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy21" parent="Enemy" index="75" unique_id=1502813399 instance=ExtResource("23_bblq6")]
 position = Vector2(2736, -896)
 
-[node name="FallingIcicleEnemy22" parent="Enemy" index="76" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy22" parent="Enemy" index="76" unique_id=515065306 instance=ExtResource("23_bblq6")]
 position = Vector2(1872, -1344)
 
-[node name="FallingIcicleEnemy23" parent="Enemy" index="77" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy23" parent="Enemy" index="77" unique_id=696758932 instance=ExtResource("23_bblq6")]
 position = Vector2(1552, -1344)
 
-[node name="FallingIcicleEnemy24" parent="Enemy" index="78" instance=ExtResource("23_bblq6")]
+[node name="FallingIcicleEnemy24" parent="Enemy" index="78" unique_id=1153049320 instance=ExtResource("23_bblq6")]
 position = Vector2(1280, -1344)
 
-[node name="FallingBlock5Enemy23" parent="Enemy" index="79" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy23" parent="Enemy" index="79" unique_id=401788033 instance=ExtResource("24_fgaeh")]
 position = Vector2(1296, -1728)
 
-[node name="FallingBlock5Enemy24" parent="Enemy" index="80" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy24" parent="Enemy" index="80" unique_id=1578580437 instance=ExtResource("24_fgaeh")]
 position = Vector2(1072, -1696)
 
-[node name="FallingBlock5Enemy25" parent="Enemy" index="81" instance=ExtResource("24_fgaeh")]
+[node name="FallingBlock5Enemy25" parent="Enemy" index="81" unique_id=1578301080 instance=ExtResource("24_fgaeh")]
 position = Vector2(2768, 32)
 
 [node name="HUD" parent="." index="13"]
 Text1 = "ステージ"
 Text2 = "6"
 
-[node name="ColorRect1" type="ColorRect" parent="Blind" index="0"]
+[node name="ColorRect1" type="ColorRect" parent="Blind" index="0" unique_id=615517424]
 offset_left = 1024.0
 offset_top = -1024.0
 offset_right = 2048.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="Blind" index="1"]
+[node name="ColorRect3" type="ColorRect" parent="Blind" index="1" unique_id=259993368]
 offset_right = 2048.0
 offset_bottom = 1024.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="Blind" index="2"]
+[node name="ColorRect4" type="ColorRect" parent="Blind" index="2" unique_id=104454519]
 offset_left = 3072.0
 offset_top = -1024.0
 offset_right = 4096.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect5" type="ColorRect" parent="Blind" index="3"]
+[node name="ColorRect5" type="ColorRect" parent="Blind" index="3" unique_id=123378406]
 offset_left = 3072.0
 offset_right = 6144.0
 offset_bottom = 1024.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect8" type="ColorRect" parent="Blind" index="4"]
+[node name="ColorRect8" type="ColorRect" parent="Blind" index="4" unique_id=106748268]
 offset_left = 5120.0
 offset_top = -2048.0
 offset_right = 6144.0
 offset_bottom = -1024.0
 color = Color(0, 0, 0, 1)
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("25_dqyf1")]
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" unique_id=1345657557 instance=ExtResource("25_dqyf1")]
 position = Vector2(536, 16)
 scale = Vector2(50, 1)
 
-[node name="OutOfBorder2" parent="OutOfBorder" index="1" instance=ExtResource("25_dqyf1")]
+[node name="OutOfBorder2" parent="OutOfBorder" index="1" unique_id=1589813303 instance=ExtResource("25_dqyf1")]
 position = Vector2(1536, -1008)
 scale = Vector2(33, 1)
 
-[node name="OutOfBorder3" parent="OutOfBorder" index="2" instance=ExtResource("25_dqyf1")]
+[node name="OutOfBorder3" parent="OutOfBorder" index="2" unique_id=1182860991 instance=ExtResource("25_dqyf1")]
 position = Vector2(2552, 1040)
 scale = Vector2(50, 1)
 
-[node name="OutOfBorder4" parent="OutOfBorder" index="3" instance=ExtResource("25_dqyf1")]
+[node name="OutOfBorder4" parent="OutOfBorder" index="3" unique_id=256240691 instance=ExtResource("25_dqyf1")]
 position = Vector2(3584, -1008)
 scale = Vector2(33, 1)
 
-[node name="OutOfBorder5" parent="OutOfBorder" index="4" instance=ExtResource("25_dqyf1")]
+[node name="OutOfBorder5" parent="OutOfBorder" index="4" unique_id=1889494815 instance=ExtResource("25_dqyf1")]
 position = Vector2(5088, 16)
 scale = Vector2(70, 1)

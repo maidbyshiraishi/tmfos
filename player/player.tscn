@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dx6rootboa8f4"]
+[gd_scene format=3 uid="uid://dx6rootboa8f4"]
 
 [ext_resource type="Script" uid="uid://i2x7pu54mpg5" path="res://player/Player.cs" id="1_mswun"]
 [ext_resource type="SpriteFrames" uid="uid://hrh82mdg1jsf" path="res://contents/animation/player/player.tres" id="2_hei51"]
@@ -55,7 +55,7 @@ size = Vector2(14, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dja7"]
 size = Vector2(20, 60)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1661412927]
 collision_layer = 8
 collision_mask = 7
 floor_max_angle = 0.872665
@@ -70,80 +70,78 @@ SkipAttackTime = 0.2
 JumpSe = "player_jump"
 TouchdownSe = "player_touchdown"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2049476244]
 position = Vector2(0, -2)
 sprite_frames = ExtResource("2_hei51")
 animation = &"walk_left"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1636645271]
 shape = SubResource("RectangleShape2D_rivfx")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1358735210]
 rect = Rect2(-16, -32, 32, 64)
 
-[node name="Light" type="Node2D" parent="."]
+[node name="Light" type="Node2D" parent="." unique_id=22508920]
 
-[node name="PointLight2D" type="PointLight2D" parent="Light"]
+[node name="PointLight2D" type="PointLight2D" parent="Light" unique_id=878094756]
 visible = false
 energy = 0.9
 blend_mode = 2
 texture = ExtResource("3_xhs2b")
 
-[node name="PointLight2DLampItem" type="PointLight2D" parent="Light"]
+[node name="PointLight2DLampItem" type="PointLight2D" parent="Light" unique_id=1326922640]
 visible = false
 energy = 0.8
 blend_mode = 2
 texture = ExtResource("3_xhs2b")
 texture_scale = 5.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Light"]
-libraries = {
-&"": SubResource("AnimationLibrary_rgyib")
-}
-autoplay = "light"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Light" unique_id=1690293142]
+libraries/ = SubResource("AnimationLibrary_rgyib")
+autoplay = &"light"
 
-[node name="VeilLight" parent="." instance=ExtResource("10_udeha")]
+[node name="VeilLight" parent="." unique_id=1844037488 instance=ExtResource("10_udeha")]
 
-[node name="ActionChange" type="Node2D" parent="."]
+[node name="ActionChange" type="Node2D" parent="." unique_id=1132614048]
 script = ExtResource("14_5r2in")
 
-[node name="Head" type="Marker2D" parent="ActionChange"]
+[node name="Head" type="Marker2D" parent="ActionChange" unique_id=741559304]
 position = Vector2(0, -14)
 
-[node name="Marker2D" type="Marker2D" parent="ActionChange"]
+[node name="Marker2D" type="Marker2D" parent="ActionChange" unique_id=422677416]
 position = Vector2(0, 8)
 
-[node name="SearchNode" type="Node2D" parent="."]
+[node name="SearchNode" type="Node2D" parent="." unique_id=1191722833]
 visible = false
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="SearchNode"]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="SearchNode" unique_id=1736695730]
 enable_node_path = NodePath("../ItemSearch")
 
-[node name="ItemSearch" type="Area2D" parent="SearchNode"]
+[node name="ItemSearch" type="Area2D" parent="SearchNode" unique_id=984300571]
 collision_layer = 4096
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchNode/ItemSearch"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchNode/ItemSearch" unique_id=1725118350]
 shape = SubResource("CircleShape2D_db8m6")
 
-[node name="BurialArea" parent="." instance=ExtResource("12_xkgep")]
+[node name="BurialArea" parent="." unique_id=1068012772 instance=ExtResource("12_xkgep")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" unique_id=1132741779]
 shape = SubResource("RectangleShape2D_iv8hm")
 
-[node name="EventFinder" parent="." instance=ExtResource("8_fc10d")]
+[node name="EventFinder" parent="." unique_id=516420357 instance=ExtResource("8_fc10d")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" unique_id=1685502041]
 shape = SubResource("RectangleShape2D_2dja7")
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=1562815481]
 wait_time = 0.001
 one_shot = true
 
-[node name="ReferenceRect" type="Node2D" parent="."]
+[node name="ReferenceRect" type="Node2D" parent="." unique_id=516500354]
 visible = false
 
-[node name="ReferenceNormal" type="ReferenceRect" parent="ReferenceRect"]
+[node name="ReferenceNormal" type="ReferenceRect" parent="ReferenceRect" unique_id=1373932275]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -157,7 +155,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(10, 30)
 
-[node name="ReferenceSwim" type="ReferenceRect" parent="ReferenceRect"]
+[node name="ReferenceSwim" type="ReferenceRect" parent="ReferenceRect" unique_id=1982654681]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -171,7 +169,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(32, 17)
 
-[node name="ReferenceCrouch" type="ReferenceRect" parent="ReferenceRect"]
+[node name="ReferenceCrouch" type="ReferenceRect" parent="ReferenceRect" unique_id=1411369482]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -184,34 +182,34 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(10, 15)
 
-[node name="ShotMarker" type="Node2D" parent="."]
+[node name="ShotMarker" type="Node2D" parent="." unique_id=1047257632]
 visible = false
 
-[node name="ShotLeft" type="Marker2D" parent="ShotMarker"]
+[node name="ShotLeft" type="Marker2D" parent="ShotMarker" unique_id=1403007343]
 position = Vector2(-10, -5)
 
-[node name="ShotRight" type="Marker2D" parent="ShotMarker"]
+[node name="ShotRight" type="Marker2D" parent="ShotMarker" unique_id=840748571]
 position = Vector2(10, -5)
 
-[node name="CrouchShotLeft" type="Marker2D" parent="ShotMarker"]
+[node name="CrouchShotLeft" type="Marker2D" parent="ShotMarker" unique_id=1082034559]
 position = Vector2(-10, 20)
 
-[node name="CrouchShotRight" type="Marker2D" parent="ShotMarker"]
+[node name="CrouchShotRight" type="Marker2D" parent="ShotMarker" unique_id=1633058899]
 position = Vector2(10, 20)
 
-[node name="BlockBreaker" type="Node2D" parent="."]
+[node name="BlockBreaker" type="Node2D" parent="." unique_id=1089332460]
 visible = false
 
-[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker"]
+[node name="BlockBreakerHead" type="Marker2D" parent="BlockBreaker" unique_id=1908045675]
 position = Vector2(0, -33)
 script = ExtResource("11_o6f57")
 WaitTime = 0.05
 
-[node name="Step" type="Marker2D" parent="BlockBreaker"]
+[node name="Step" type="Marker2D" parent="BlockBreaker" unique_id=1923020663]
 position = Vector2(0, 34)
 script = ExtResource("11_o6f57")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2017030011]
 position = Vector2(0, 30)
 target_position = Vector2(0, 48)
 collision_mask = 3

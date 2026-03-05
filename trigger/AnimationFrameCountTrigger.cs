@@ -20,7 +20,7 @@ public partial class AnimationFrameCountTrigger : Node
     {
         if (GetParent() is AnimatedSprite2D animatedSprite)
         {
-            _ = animatedSprite.Connect(AnimatedSprite2D.SignalName.FrameChanged, new(this, MethodName.CountUp));
+            animatedSprite.FrameChanged += CountUp;
         }
     }
 

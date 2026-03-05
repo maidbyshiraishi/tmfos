@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cxhc6n1p2rml5"]
+[gd_scene format=4 uid="uid://cxhc6n1p2rml5"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_2g7jt"]
 [ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_qnppb"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="13_j22ka"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="14_33bib"]
 
-[node name="Stage" instance=ExtResource("1_2g7jt")]
+[node name="Stage" unique_id=131288366 instance=ExtResource("1_2g7jt")]
 BgmStream = ExtResource("2_qnppb")
 PlayerArmorRatio = 0.0
 
@@ -31,109 +31,109 @@ tile_map_data = PackedByteArray("AAAKAPv/AAAEAAAAAAA=")
 [node name="Ground" parent="TileMap" index="1"]
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAIAP//AAAAAAMAAAAJAP//AAAAAAMAAAAKAP//AAAAAAMAAAALAP//AAAAAAMAAAAMAP//AAAAAAMAAAANAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP//AAAAAAMAAAARAP//AAAAAAMAAAASAP//AAAAAAMAAAATAP//AAAAAAMAAAAAAPH/AAAAAAMAAAATAPH/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPL/AAAAAAMAAAABAPH/AAAAAAMAAAACAPH/AAAAAAMAAAADAPH/AAAAAAMAAAAEAPH/AAAAAAMAAAAFAPH/AAAAAAMAAAAGAPH/AAAAAAMAAAAHAPH/AAAAAAMAAAAIAPH/AAAAAAMAAAAJAPH/AAAAAAMAAAAKAPH/AAAAAAMAAAALAPH/AAAAAAMAAAAMAPH/AAAAAAMAAAANAPH/AAAAAAMAAAAOAPH/AAAAAAMAAAAPAPH/AAAAAAMAAAAQAPH/AAAAAAMAAAARAPH/AAAAAAMAAAASAPH/AAAAAAMAAAATAP7/AAAAAAMAAAATAP3/AAAAAAMAAAATAPz/AAAAAAMAAAATAPv/AAAAAAMAAAATAPr/AAAAAAMAAAATAPn/AAAAAAMAAAATAPj/AAAAAAMAAAATAPf/AAAAAAMAAAATAPb/AAAAAAMAAAATAPX/AAAAAAMAAAATAPT/AAAAAAMAAAATAPP/AAAAAAMAAAATAPL/AAAAAAMAAAACAPr/AAAAAAMAAAADAPr/AAAAAAMAAAADAPX/AAAAAAMAAAAQAPr/AAAAAAMAAAAQAPX/AAAAAAMAAAARAPX/AAAAAAMAAAAFAPX/AAAAAAMAAAAOAPr/AAAAAAMAAAAJAPb/AAAAAAMAAAAKAPb/AAAAAAMAAAAJAPv/AAAAAAMAAAAKAPv/AAAAAAMAAAAEAPr/AAAAAAMAAAAEAPX/AAAAAAMAAAAPAPX/AAAAAAMAAAAPAPr/AAAAAAMAAAAIAPv/AAAAAAMAAAALAPb/AAAAAAMAAAA=")
 
-[node name="StageEntryPoint1" parent="Door" index="0" instance=ExtResource("4_k01ac")]
+[node name="StageEntryPoint1" parent="Door" index="0" unique_id=382848643 instance=ExtResource("4_k01ac")]
 position = Vector2(320, -64)
 DoorNo = 1
 Direction = 1
 
-[node name="ItemPanelArmor" parent="Item" index="0" instance=ExtResource("5_inmqm")]
+[node name="ItemPanelArmor" parent="Item" index="0" unique_id=683518011 instance=ExtResource("5_inmqm")]
 position = Vector2(160, -416)
 
-[node name="ItemPanelArmor2" parent="Item" index="1" instance=ExtResource("5_inmqm")]
+[node name="ItemPanelArmor2" parent="Item" index="1" unique_id=281248788 instance=ExtResource("5_inmqm")]
 position = Vector2(512, -416)
 
-[node name="ItemPanelLife" parent="Item" index="2" instance=ExtResource("6_1g54a")]
+[node name="ItemPanelLife" parent="Item" index="2" unique_id=451716897 instance=ExtResource("6_1g54a")]
 position = Vector2(48, -48)
 Stateful = false
 
-[node name="ItemPanelLife7" parent="Item" index="3" instance=ExtResource("6_1g54a")]
+[node name="ItemPanelLife7" parent="Item" index="3" unique_id=73580992 instance=ExtResource("6_1g54a")]
 position = Vector2(320, -48)
 Stateful = false
 
-[node name="ItemPanelLife8" parent="Item" index="4" instance=ExtResource("6_1g54a")]
+[node name="ItemPanelLife8" parent="Item" index="4" unique_id=1230359391 instance=ExtResource("6_1g54a")]
 position = Vector2(320, -80)
 Stateful = false
 
-[node name="ItemPanelLife2" parent="Item" index="5" instance=ExtResource("6_1g54a")]
+[node name="ItemPanelLife2" parent="Item" index="5" unique_id=1430287392 instance=ExtResource("6_1g54a")]
 position = Vector2(80, -208)
 Stateful = false
 
-[node name="ItemPanelLife3" parent="Item" index="6" instance=ExtResource("6_1g54a")]
+[node name="ItemPanelLife3" parent="Item" index="6" unique_id=1241967542 instance=ExtResource("6_1g54a")]
 position = Vector2(112, -368)
 Stateful = false
 
-[node name="ItemPanelLife4" parent="Item" index="7" instance=ExtResource("6_1g54a")]
+[node name="ItemPanelLife4" parent="Item" index="7" unique_id=644616319 instance=ExtResource("6_1g54a")]
 position = Vector2(592, -48)
 Stateful = false
 
-[node name="ItemPanelLife5" parent="Item" index="8" instance=ExtResource("6_1g54a")]
+[node name="ItemPanelLife5" parent="Item" index="8" unique_id=2021442397 instance=ExtResource("6_1g54a")]
 position = Vector2(528, -208)
 Stateful = false
 
-[node name="ItemPanelLife6" parent="Item" index="9" instance=ExtResource("6_1g54a")]
+[node name="ItemPanelLife6" parent="Item" index="9" unique_id=26892920 instance=ExtResource("6_1g54a")]
 position = Vector2(560, -368)
 Stateful = false
 
-[node name="Player" parent="." index="8" instance=ExtResource("7_qjsbp")]
+[node name="Player" parent="." index="8" unique_id=807839252 instance=ExtResource("7_qjsbp")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="13"]
+[node name="Camera" type="Camera2D" parent="Player" index="13" unique_id=1430909556]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("8_te3aq")
 
-[node name="EroMaidEnemy" parent="Enemy" index="0" groups=["SweepEnemyObserver"] instance=ExtResource("9_66w7o")]
+[node name="EroMaidEnemy" parent="Enemy" index="0" unique_id=660930201 groups=["SweepEnemyObserver"] instance=ExtResource("9_66w7o")]
 position = Vector2(320, -352)
 
 [node name="HUD" parent="." index="13"]
+Text3 = "撃破せよ！！"
 Text1 = "エロメイド"
 Text2 = "を"
-Text3 = "撃破せよ！！"
 BossMode = true
 
-[node name="BossLife" parent="HUD" index="6" instance=ExtResource("10_csehc")]
+[node name="BossLife" parent="HUD" index="6" unique_id=1151978388 instance=ExtResource("10_csehc")]
 offset_top = 98.0
 offset_bottom = 130.0
 
-[node name="SweepObserver" parent="." index="14" instance=ExtResource("11_eibqb")]
+[node name="SweepObserver" parent="." index="14" unique_id=476953834 instance=ExtResource("11_eibqb")]
 GroupName = "SweepEnemyObserver"
 
-[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" instance=ExtResource("12_5ur4u")]
+[node name="SetPlayerInitialDurabilityCommand" parent="SweepObserver" index="0" unique_id=1657989911 instance=ExtResource("12_5ur4u")]
 
-[node name="OpenDialogCommand" parent="SweepObserver" index="1" instance=ExtResource("13_j22ka")]
+[node name="OpenDialogCommand" parent="SweepObserver" index="1" unique_id=1546256407 instance=ExtResource("13_j22ka")]
 DialogPath = "res://theater/talk_0014.tscn"
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("14_33bib")]
+[node name="OutOfBorder1" parent="OutOfBorder" index="0" unique_id=1940810226 instance=ExtResource("14_33bib")]
 position = Vector2(480, 16)
 scale = Vector2(60, 1)
 
-[node name="EntryPoint" type="Node2D" parent="." index="18"]
+[node name="EntryPoint" type="Node2D" parent="." index="18" unique_id=1770425979]
 unique_name_in_owner = true
 
-[node name="Marker2D1" type="Marker2D" parent="EntryPoint" index="0"]
+[node name="Marker2D1" type="Marker2D" parent="EntryPoint" index="0" unique_id=1941694305]
 position = Vector2(128, -64)
 
-[node name="Marker2D2" type="Marker2D" parent="EntryPoint" index="1"]
+[node name="Marker2D2" type="Marker2D" parent="EntryPoint" index="1" unique_id=979122786]
 position = Vector2(512, -64)
 
-[node name="Marker2D3" type="Marker2D" parent="EntryPoint" index="2"]
+[node name="Marker2D3" type="Marker2D" parent="EntryPoint" index="2" unique_id=1705692194]
 position = Vector2(128, -224)
 
-[node name="Marker2D4" type="Marker2D" parent="EntryPoint" index="3"]
+[node name="Marker2D4" type="Marker2D" parent="EntryPoint" index="3" unique_id=708668980]
 position = Vector2(512, -224)
 
-[node name="Marker2D5" type="Marker2D" parent="EntryPoint" index="4"]
+[node name="Marker2D5" type="Marker2D" parent="EntryPoint" index="4" unique_id=684878769]
 position = Vector2(128, -384)
 
-[node name="Marker2D6" type="Marker2D" parent="EntryPoint" index="5"]
+[node name="Marker2D6" type="Marker2D" parent="EntryPoint" index="5" unique_id=1325859352]
 position = Vector2(512, -384)
 
-[node name="Marker2D7" type="Marker2D" parent="EntryPoint" index="6"]
+[node name="Marker2D7" type="Marker2D" parent="EntryPoint" index="6" unique_id=1097086656]
 position = Vector2(320, -64)
 
-[node name="Marker2D8" type="Marker2D" parent="EntryPoint" index="7"]
+[node name="Marker2D8" type="Marker2D" parent="EntryPoint" index="7" unique_id=696915290]
 position = Vector2(320, -192)
 
-[node name="Marker2D9" type="Marker2D" parent="EntryPoint" index="8"]
+[node name="Marker2D9" type="Marker2D" parent="EntryPoint" index="8" unique_id=500488693]
 position = Vector2(320, -352)

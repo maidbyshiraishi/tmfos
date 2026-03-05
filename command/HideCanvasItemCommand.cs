@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// CanvasItemを隠すコマンド
 /// </summary>
-public partial class HideCanvasItemCommand : CommandNode
+public partial class HideCanvasItemCommand : CommandRoot
 {
     /// <summary>
     /// 隠すCanvasItem
@@ -13,8 +13,5 @@ public partial class HideCanvasItemCommand : CommandNode
     [Export]
     public CanvasItem Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.Hide();
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.Hide();
 }

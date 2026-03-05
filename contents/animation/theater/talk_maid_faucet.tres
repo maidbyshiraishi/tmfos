@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dqtd2xv61rhcw"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dqtd2xv61rhcw"]
 
 [ext_resource type="Texture2D" uid="uid://6hhahjvx7j" path="res://contents/image/enemy/maid_faucet.png" id="1_j0cnx"]
 

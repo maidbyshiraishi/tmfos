@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://b1dpxlhcsnnk6"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://b1dpxlhcsnnk6"]
 
 [ext_resource type="Texture2D" uid="uid://c1qir7lclnlmm" path="res://contents/image/enemy/rocket_maid.png" id="1_you4n"]
 [ext_resource type="Texture2D" uid="uid://dmyyjtlsdguxe" path="res://contents/image/enemy/rocket_maid_vertical.png" id="2_kh47o"]

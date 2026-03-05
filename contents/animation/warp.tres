@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cntxt2wqbmrox"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cntxt2wqbmrox"]
 
 [ext_resource type="Texture2D" uid="uid://dakons0oftkwp" path="res://contents/image/door/warp.png" id="1_pcyhj"]
 

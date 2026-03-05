@@ -21,26 +21,26 @@ public partial class KeyDialogRoot : DialogRoot
     public override void _Ready()
     {
         base._Ready();
-        _ = GetNode<Button>("Control/Up").Connect(Control.SignalName.FocusEntered, new(this, MethodName.UpInfo));
-        _ = GetNode<Button>("Control/Up").Connect(Control.SignalName.MouseEntered, new(this, MethodName.UpInfo));
-        _ = GetNode<Button>("Control/Down").Connect(Control.SignalName.FocusEntered, new(this, MethodName.DownInfo));
-        _ = GetNode<Button>("Control/Down").Connect(Control.SignalName.MouseEntered, new(this, MethodName.DownInfo));
-        _ = GetNode<Button>("Control/Left").Connect(Control.SignalName.FocusEntered, new(this, MethodName.LeftInfo));
-        _ = GetNode<Button>("Control/Left").Connect(Control.SignalName.MouseEntered, new(this, MethodName.LeftInfo));
-        _ = GetNode<Button>("Control/Right").Connect(Control.SignalName.FocusEntered, new(this, MethodName.RightInfo));
-        _ = GetNode<Button>("Control/Right").Connect(Control.SignalName.MouseEntered, new(this, MethodName.RightInfo));
-        _ = GetNode<Button>("Control/A").Connect(Control.SignalName.FocusEntered, new(this, MethodName.AInfo));
-        _ = GetNode<Button>("Control/A").Connect(Control.SignalName.MouseEntered, new(this, MethodName.AInfo));
-        _ = GetNode<Button>("Control/B").Connect(Control.SignalName.FocusEntered, new(this, MethodName.BInfo));
-        _ = GetNode<Button>("Control/B").Connect(Control.SignalName.MouseEntered, new(this, MethodName.BInfo));
-        _ = GetNode<Button>("Control/Pause").Connect(Control.SignalName.FocusEntered, new(this, MethodName.PauseInfo));
-        _ = GetNode<Button>("Control/Pause").Connect(Control.SignalName.MouseEntered, new(this, MethodName.PauseInfo));
-        _ = GetNode<Button>("Control/Option").Connect(Control.SignalName.FocusEntered, new(this, MethodName.OptionInfo));
-        _ = GetNode<Button>("Control/Option").Connect(Control.SignalName.MouseEntered, new(this, MethodName.OptionInfo));
-        _ = GetNode<Button>("Control/Screenshot").Connect(Control.SignalName.FocusEntered, new(this, MethodName.ScreenshotInfo));
-        _ = GetNode<Button>("Control/Screenshot").Connect(Control.SignalName.MouseEntered, new(this, MethodName.ScreenshotInfo));
-        _ = GetNode<Button>("Control/Help").Connect(Control.SignalName.FocusEntered, new(this, MethodName.HelpInfo));
-        _ = GetNode<Button>("Control/Help").Connect(Control.SignalName.MouseEntered, new(this, MethodName.HelpInfo));
+        GetNode<Button>("Control/Up").FocusEntered += UpInfo;
+        GetNode<Button>("Control/Up").MouseEntered += UpInfo;
+        GetNode<Button>("Control/Down").FocusEntered += DownInfo;
+        GetNode<Button>("Control/Down").MouseEntered += DownInfo;
+        GetNode<Button>("Control/Left").FocusEntered += LeftInfo;
+        GetNode<Button>("Control/Left").MouseEntered += LeftInfo;
+        GetNode<Button>("Control/Right").FocusEntered += RightInfo;
+        GetNode<Button>("Control/Right").MouseEntered += RightInfo;
+        GetNode<Button>("Control/A").FocusEntered += AInfo;
+        GetNode<Button>("Control/A").MouseEntered += AInfo;
+        GetNode<Button>("Control/B").FocusEntered += BInfo;
+        GetNode<Button>("Control/B").MouseEntered += BInfo;
+        GetNode<Button>("Control/Pause").FocusEntered += PauseInfo;
+        GetNode<Button>("Control/Pause").MouseEntered += PauseInfo;
+        GetNode<Button>("Control/Option").FocusEntered += OptionInfo;
+        GetNode<Button>("Control/Option").MouseEntered += OptionInfo;
+        GetNode<Button>("Control/Screenshot").FocusEntered += ScreenshotInfo;
+        GetNode<Button>("Control/Screenshot").MouseEntered += ScreenshotInfo;
+        GetNode<Button>("Control/Help").FocusEntered += HelpInfo;
+        GetNode<Button>("Control/Help").MouseEntered += HelpInfo;
     }
 
     protected override void InitializeNode()
@@ -99,6 +99,21 @@ public partial class KeyDialogRoot : DialogRoot
 
     private string ReplaceButtonName(string text)
     {
+        // 方向パッドの置き換え
+        text = text.Replace("Joypad Button 11 (D-pad Up)", "ゲームパッド 方向パッド 上");
+        text = text.Replace("Joypad Button 12 (D-pad Down)", "ゲームパッド 方向パッド 下");
+        text = text.Replace("Joypad Button 13 (D-pad Left)", "ゲームパッド 方向パッド 左");
+        text = text.Replace("Joypad Button 14 (D-pad Right)", "ゲームパッド 方向パッド 右");
+        // スティックの置き換え
+        text = text.Replace("Joypad Motion on Axis 1 (Left Stick Y-Axis, Joystick 0 Y-Axis) with Value -1.00", "ゲームパッド 左スティック 上");
+        text = text.Replace("Joypad Motion on Axis 3 (Right Stick Y-Axis, Joystick 1 Y-Axis) with Value -1.00", "ゲームパッド 右スティック 上");
+        text = text.Replace("Joypad Motion on Axis 1 (Left Stick Y-Axis, Joystick 0 Y-Axis) with Value 1.00", "ゲームパッド 左スティック 下");
+        text = text.Replace("Joypad Motion on Axis 3 (Right Stick Y-Axis, Joystick 1 Y-Axis) with Value 1.00", "ゲームパッド 右スティック 下");
+        text = text.Replace("Joypad Motion on Axis 0 (Left Stick X-Axis, Joystick 0 X-Axis) with Value -1.00", "ゲームパッド 左スティック 左");
+        text = text.Replace("Joypad Motion on Axis 2 (Right Stick X-Axis, Joystick 1 X-Axis) with Value -1.00", "ゲームパッド 右スティック 左");
+        text = text.Replace("Joypad Motion on Axis 0 (Left Stick X-Axis, Joystick 0 X-Axis) with Value 1.00", "ゲームパッド 左スティック 右");
+        text = text.Replace("Joypad Motion on Axis 2 (Right Stick X-Axis, Joystick 1 X-Axis) with Value 1.00", "ゲームパッド 右スティック 右");
+        // その他の置き換え
         text = text.Replace("Kp ", "テンキー");
         text = text.Replace(" (Physical)", "");
         text = text.Replace("Up", "上");
@@ -144,10 +159,7 @@ public partial class KeyDialogRoot : DialogRoot
         _info.Text = text;
     }
 
-    public void UpSet()
-    {
-        EnterSetMode("上キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。上カーソルキーとテンキーの8キーは割り当て固定で変更できません。", "ui_up");
-    }
+    public void UpSet() => EnterSetMode("上キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。上カーソルキーとテンキーの8キーは割り当て固定で変更できません。", "ui_up");
 
     public void UpInfo()
     {
@@ -155,10 +167,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_up");
     }
 
-    public void DownSet()
-    {
-        EnterSetMode("下キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。下カーソルキーとテンキーの2キーは割り当て固定で変更できません。", "ui_down");
-    }
+    public void DownSet() => EnterSetMode("下キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。下カーソルキーとテンキーの2キーは割り当て固定で変更できません。", "ui_down");
 
     public void DownInfo()
     {
@@ -166,10 +175,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_down");
     }
 
-    public void LeftSet()
-    {
-        EnterSetMode("左キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。左カーソルキーとテンキーの4キーは割り当て固定で変更できません。", "ui_left");
-    }
+    public void LeftSet() => EnterSetMode("左キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。左カーソルキーとテンキーの4キーは割り当て固定で変更できません。", "ui_left");
 
     public void LeftInfo()
     {
@@ -177,10 +183,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_left");
     }
 
-    public void RightSet()
-    {
-        EnterSetMode("右キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。右カーソルキーとテンキーの6キーは割り当て固定で変更できません。", "ui_right");
-    }
+    public void RightSet() => EnterSetMode("右キーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。右カーソルキーとテンキーの6キーは割り当て固定で変更できません。", "ui_right");
 
     public void RightInfo()
     {
@@ -188,10 +191,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_right");
     }
 
-    public void ASet()
-    {
-        EnterSetMode("Aキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。エンターキーとテンキーのエンターキーは割り当て固定で変更できません。", "ui_accept");
-    }
+    public void ASet() => EnterSetMode("Aキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。エンターキーとテンキーのエンターキーは割り当て固定で変更できません。", "ui_accept");
 
     public void AInfo()
     {
@@ -199,10 +199,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("ui_accept");
     }
 
-    public void BSet()
-    {
-        EnterSetMode("Bキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "b");
-    }
+    public void BSet() => EnterSetMode("Bキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "b");
 
     public void BInfo()
     {
@@ -210,10 +207,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("b");
     }
 
-    public void PauseSet()
-    {
-        EnterSetMode("Pauseキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "pause");
-    }
+    public void PauseSet() => EnterSetMode("Pauseキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "pause");
 
     public void PauseInfo()
     {
@@ -221,10 +215,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("pause");
     }
 
-    public void OptionSet()
-    {
-        EnterSetMode("Optionキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "option");
-    }
+    public void OptionSet() => EnterSetMode("Optionキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "option");
 
     public void OptionInfo()
     {
@@ -232,10 +223,7 @@ public partial class KeyDialogRoot : DialogRoot
         UpdateLabel("option");
     }
 
-    public void ScreenshotSet()
-    {
-        EnterSetMode("スクリーンショットキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "screenshot");
-    }
+    public void ScreenshotSet() => EnterSetMode("スクリーンショットキーの割り当てを行います。割り当てたいキーやボタンを押してください。キーボードとゲームパッドは個別に設定できます。", "screenshot");
 
     public void ScreenshotInfo()
     {
@@ -249,10 +237,7 @@ public partial class KeyDialogRoot : DialogRoot
         _keyInfo.Text = "";
     }
 
-    public void HelpSet()
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["ヘルプキーは変更できません。", false]);
-    }
+    public void HelpSet() => GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["ヘルプキーは変更できません。", false]);
 
     public void HelpInfo()
     {
@@ -413,24 +398,31 @@ public partial class KeyDialogRoot : DialogRoot
 
             case InputEventJoypadButton button when button.IsPressed():
                 {
-                    Error result = SetInputEventJoypadButton(_setActionName, button);
-
-                    switch (result)
+                    if (GameKeyOption.CanChangeInputEvent(button))
                     {
-                        case Error.Ok:
+                        Error result = SetInputEventJoypadButton(_setActionName, button);
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に設定しました。", false]);
-                            break;
+                        switch (result)
+                        {
+                            case Error.Ok:
 
-                        case Error.AlreadyInUse:
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に設定しました。", false]);
+                                break;
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}は既に使用されています。", false]);
-                            break;
+                            case Error.AlreadyInUse:
 
-                        default:
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}は既に使用されています。", false]);
+                                break;
 
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に変更できませんでした。", false]);
-                            break;
+                            default:
+
+                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に変更できませんでした。", false]);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [ReplaceButtonName($"{button.AsText()}は設定できません。"), false]);
                     }
 
                     ChangeFocusMode(true);
@@ -440,26 +432,9 @@ public partial class KeyDialogRoot : DialogRoot
 
             case InputEventJoypadMotion motion when motion.IsPressed() && motion.AxisValue != 0:
                 {
-                    Error result = SetInputEventJoypadMotion(_setActionName, motion);
-
-                    switch (result)
-                    {
-                        case Error.Ok:
-
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}に設定しました。", false]);
-                            break;
-
-                        case Error.AlreadyInUse:
-
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}は既に使用されています。", false]);
-                            break;
-
-                        default:
-
-                            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{motion.AsText()}に変更できませんでした。", false]);
-                            break;
-                    }
-
+                    // JoypadMotionは変更できない
+                    // Error result = SetInputEventJoypadMotion(_setActionName, motion);
+                    GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["左右スティックとトリガーは変更できません。", false]);
                     ChangeFocusMode(true);
                     _setMode = false;
                     break;
@@ -472,13 +447,7 @@ public partial class KeyDialogRoot : DialogRoot
         }
     }
 
-    public override void UpdateDialogScreen()
-    {
-        UpdateLabel(_lastLabel);
-    }
+    public override void UpdateDialogScreen() => UpdateLabel(_lastLabel);
 
-    public void SwapAB()
-    {
-        GetNode<GameKeyOption>("/root/GameKeyOption").SwapAB();
-    }
+    public void SwapAB() => GetNode<GameKeyOption>("/root/GameKeyOption").SwapAB();
 }

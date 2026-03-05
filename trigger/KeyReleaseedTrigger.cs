@@ -43,8 +43,5 @@ public partial class KeyReleaseedTrigger : Node
         _enabled = true;
     }
 
-    public void Exec(Node node)
-    {
-        Lib.ExecCommands(this, node, true);
-    }
+    public void Exec(Node node) => Lib.ExecCommands(this, node, true);
 }

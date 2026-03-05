@@ -5,7 +5,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// システムのファイルマネージャで指定フォルダを開くコマンド
 /// </summary>
-public partial class OpenFileManagerCommand : CommandNode
+public partial class OpenFileManagerCommand : CommandRoot
 {
     /// <summary>
     /// 開くフォルダ

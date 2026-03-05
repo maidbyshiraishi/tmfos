@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://clybmlb5rps41"]
+[gd_scene format=3 uid="uid://clybmlb5rps41"]
 
 [ext_resource type="PackedScene" uid="uid://bpnf82ngscqro" path="res://trigger/manage_durability_zone.tscn" id="1_p5xko"]
 [ext_resource type="SpriteFrames" uid="uid://cwed04ka2vl2b" path="res://contents/animation/fire.tres" id="2_igr3h"]
@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkuvg"]
 size = Vector2(32, 17)
 
-[node name="Fire" instance=ExtResource("1_p5xko")]
+[node name="Fire" unique_id=1270254136 instance=ExtResource("1_p5xko")]
 Continuous = true
 Stateful = false
 OneTime = false
@@ -17,9 +17,9 @@ PlayerOnly = false
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_kkuvg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1724859724]
 sprite_frames = ExtResource("2_igr3h")
 autoplay = "default"
 
-[node name="Light" parent="." index="2" instance=ExtResource("3_y4siv")]
+[node name="Light" parent="." index="2" unique_id=265327680 instance=ExtResource("3_y4siv")]
 RangeRatio = 2.5

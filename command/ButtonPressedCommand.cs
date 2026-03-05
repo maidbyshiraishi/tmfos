@@ -5,7 +5,7 @@ namespace tmfos.command;
 /// <summary>
 /// ボタンを押下するコマンド
 /// </summary>
-public partial class ButtonPressedCommand : CommandNode
+public partial class ButtonPressedCommand : CommandRoot
 {
     /// <summary>
     /// 押下するボタン
@@ -13,11 +13,5 @@ public partial class ButtonPressedCommand : CommandNode
     [Export]
     public BaseButton Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        if (Target is not null)
-        {
-            _ = Target.EmitSignal(BaseButton.SignalName.Pressed);
-        }
-    }
+    public override void DoCommand(Node node, bool flag) => _ = Target?.EmitSignal(BaseButton.SignalName.Pressed);
 }

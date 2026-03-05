@@ -24,10 +24,7 @@ public partial class StageEntryPoint : Node2D
     [Export]
     public DirectionType Direction { get; set; } = DirectionType.Left;
 
-    public override void _Ready()
-    {
-        AddToGroup(StageRoot.StageEntryPointGroup);
-    }
+    public override void _Ready() => AddToGroup(StageRoot.StageEntryPointGroup);
 
     /// <summary>
     /// プレーヤーの出現位置として設定する

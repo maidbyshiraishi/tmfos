@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dkdich8y3mtxu"]
+[gd_scene format=3 uid="uid://dkdich8y3mtxu"]
 
 [ext_resource type="Script" uid="uid://bfjyfcwp3oqr3" path="res://enemy/PathFollowEnemy.cs" id="1_sg71d"]
 [ext_resource type="Texture2D" uid="uid://beliclx6ilmbh" path="res://contents/image/enemy/bird.png" id="4_easj7"]
@@ -119,7 +119,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1ch7"]
 size = Vector2(64, 30)
 
-[node name="BirdEnemy" type="Area2D"]
+[node name="BirdEnemy" type="Area2D" unique_id=552339243]
 collision_layer = 32
 collision_mask = 24
 script = ExtResource("1_sg71d")
@@ -129,24 +129,24 @@ TimeupSe = "enemy_dead"
 Attack = 30
 SkipAttackTime = 1.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1035498799]
 sprite_frames = SubResource("SpriteFrames_t8uyw")
 animation = &"left"
 frame = 1
 frame_progress = 0.514903
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572808101]
 shape = SubResource("RectangleShape2D_l1ch7")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=611734682]
 scale = Vector2(1, 0.96)
 rect = Rect2(-40, -25, 80, 50)
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=1341167613]
 wait_time = 0.001
 one_shot = true
 
-[node name="ReferenceLeftRight" type="ReferenceRect" parent="."]
+[node name="ReferenceLeftRight" type="ReferenceRect" parent="." unique_id=1034791413]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -160,7 +160,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(32, 15)
 
-[node name="ReferenceUpDown" type="ReferenceRect" parent="."]
+[node name="ReferenceUpDown" type="ReferenceRect" parent="." unique_id=1642914144]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

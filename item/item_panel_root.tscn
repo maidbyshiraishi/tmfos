@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drm6s3qj4id31"]
+[gd_scene format=3 uid="uid://drm6s3qj4id31"]
 
 [ext_resource type="Script" uid="uid://ddtd58a00dc3n" path="res://item/ItemPanel.cs" id="1_x822f"]
 [ext_resource type="PackedScene" uid="uid://djhc7dqnrqetm" path="res://command/stage/manage_item_command.tscn" id="3_hsc8j"]
@@ -11,26 +11,26 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k05ie"]
 size = Vector2(32, 32)
 
-[node name="ItemPanel" type="Area2D"]
+[node name="ItemPanel" type="Area2D" unique_id=954773984]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("1_x822f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2100959338]
 shape = SubResource("RectangleShape2D_k05ie")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1054633995]
 
-[node name="ManageItemCommand" parent="." instance=ExtResource("3_hsc8j")]
+[node name="ManageItemCommand" parent="." unique_id=230554609 instance=ExtResource("3_hsc8j")]
 
-[node name="StateSaveCommand" parent="." instance=ExtResource("4_f8mi3")]
+[node name="StateSaveCommand" parent="." unique_id=953896733 instance=ExtResource("4_f8mi3")]
 
-[node name="StateBackupCommand" parent="." instance=ExtResource("5_q84il")]
+[node name="StateBackupCommand" parent="." unique_id=573114659 instance=ExtResource("5_q84il")]
 
-[node name="SwitchOpenOrCloseAnimationCommand" parent="." node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("4_rtm01")]
+[node name="SwitchOpenOrCloseAnimationCommand" parent="." unique_id=1039058888 node_paths=PackedStringArray("AnimatedSprite2D") instance=ExtResource("4_rtm01")]
 AnimatedSprite2D = NodePath("../AnimatedSprite2D")
 
-[node name="PlaySeCommand" parent="." instance=ExtResource("7_os105")]
+[node name="PlaySeCommand" parent="." unique_id=47374706 instance=ExtResource("7_os105")]
 SeName = "player_get_item"
 
-[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("8_p6trf")]
+[node name="ShowFloatingMessageCommand" parent="." unique_id=1972184467 instance=ExtResource("8_p6trf")]

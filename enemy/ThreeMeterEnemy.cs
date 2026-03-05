@@ -45,10 +45,7 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
         _ = MoveAndSlide();
     }
 
-    public void SetSwim()
-    {
-        Dead();
-    }
+    public void SetSwim() => Dead();
 
     public void UnsetSwim()
     {

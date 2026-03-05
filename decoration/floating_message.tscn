@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbgpbiprludnm"]
+[gd_scene format=3 uid="uid://bbgpbiprludnm"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_twul8"]
 [ext_resource type="Script" uid="uid://vaivyvkpwthx" path="res://decoration/FloatingMessage.cs" id="2_ldr4u"]
@@ -9,10 +9,10 @@ _data = {
 &"floating_message": ExtResource("3_abe3q")
 }
 
-[node name="FloatingMessage" type="Marker2D"]
+[node name="FloatingMessage" type="Marker2D" unique_id=1458374699]
 script = ExtResource("2_ldr4u")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=68426026]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,8 +30,6 @@ text = "Text"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ipbui")
-}
-autoplay = "floating_message"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1270030908]
+libraries/ = SubResource("AnimationLibrary_ipbui")
+autoplay = &"floating_message"

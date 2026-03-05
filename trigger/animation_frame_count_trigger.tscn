@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://hi53euar7cy6"]
+[gd_scene format=3 uid="uid://hi53euar7cy6"]
 
 [ext_resource type="Script" uid="uid://2pc3l17ferjl" path="res://trigger/AnimationFrameCountTrigger.cs" id="1_7q2pg"]
 
-[node name="AnimationFrameCountTrigger" type="Node"]
+[node name="AnimationFrameCountTrigger" type="Node" unique_id=1157408353]
 script = ExtResource("1_7q2pg")
 FrameCount = 11

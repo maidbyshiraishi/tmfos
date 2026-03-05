@@ -6,7 +6,7 @@ namespace tmfos.command.dialog;
 /// <summary>
 /// ダイアログを開くコマンド
 /// </summary>
-public partial class OpenDialogCommand : CommandNode
+public partial class OpenDialogCommand : CommandRoot
 {
     /// <summary>
     /// 開くダイアログ
@@ -14,8 +14,5 @@ public partial class OpenDialogCommand : CommandNode
     [Export]
     public string DialogPath { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog(DialogPath);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").OpenDialog(DialogPath);
 }

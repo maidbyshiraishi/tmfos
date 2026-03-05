@@ -7,7 +7,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// 得点を操作するコマンド
 /// </summary>
-public partial class AddScoreCommand : CommandNode
+public partial class AddScoreCommand : CommandRoot
 {
     /// <summary>
     /// 得点

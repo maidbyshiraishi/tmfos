@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bxjyjxeb8flkm"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bxjyjxeb8flkm"]
 
 [ext_resource type="Texture2D" uid="uid://ct116wwxn4bvo" path="res://contents/image/theater/talk_tmfos_area.png" id="1_2s68t"]
 

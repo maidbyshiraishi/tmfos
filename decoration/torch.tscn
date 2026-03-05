@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://yyq021ra4g7a"]
+[gd_scene format=3 uid="uid://yyq021ra4g7a"]
 
 [ext_resource type="PackedScene" uid="uid://cuoskst448e28" path="res://command/stage/light.tscn" id="1_tj1y7"]
 [ext_resource type="SpriteFrames" uid="uid://nng8hgmdiujw" path="res://contents/animation/decoration/torch.tres" id="2_ue0c3"]
 
-[node name="Torch" type="Node2D"]
+[node name="Torch" type="Node2D" unique_id=1383726418]
 
-[node name="Light" parent="." instance=ExtResource("1_tj1y7")]
+[node name="Light" parent="." unique_id=887788884 instance=ExtResource("1_tj1y7")]
 RangeRatio = 1.5
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=324191405]
 sprite_frames = ExtResource("2_ue0c3")

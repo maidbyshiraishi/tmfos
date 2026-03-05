@@ -13,11 +13,11 @@ public partial class BurialArea : Area2D
     public override void _Ready()
     {
         _collisionShape = GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
-        _ = GetNode<Timer>("Timer").Connect(Timer.SignalName.Timeout, new(this, MethodName.Switch));
+        GetNode<Timer>("Timer").Timeout += Switch;
 
         if (GetParent() is ActionMob amob)
         {
-            _ = Connect(Area2D.SignalName.BodyEntered, new(amob, ActionMob.MethodName.Burialed));
+            BodyEntered += amob.Burialed;
         }
     }
 

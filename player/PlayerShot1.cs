@@ -15,13 +15,8 @@ public partial class PlayerShot1 : Shot
     }
 
 
-    public override void InitializeNode()
-    {
+    public override void InitializeNode() =>
         // 攻撃力強化の対象外
         m_attackCorrection = 0;
-    }
-    protected override void PlaySpawnedSe()
-    {
-        GetNode<SePlayer>("/root/SePlayer").Play("player_shot1");
-    }
+    protected override void PlaySpawnedSe() => GetNode<SePlayer>("/root/SePlayer").Play("player_shot1");
 }

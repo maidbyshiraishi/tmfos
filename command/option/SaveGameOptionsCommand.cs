@@ -6,10 +6,7 @@ namespace tmfos.command.option;
 /// <summary>
 /// ゲームオプションを保存するコマンド
 /// </summary>
-public partial class SaveGameOptionsCommand : CommandNode
+public partial class SaveGameOptionsCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<GameOption>("/root/GameOption").SaveOptions();
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<GameOption>("/root/GameOption").SaveOptions();
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfymfls3a7ari"]
+[gd_scene format=3 uid="uid://cfymfls3a7ari"]
 
 [ext_resource type="Script" uid="uid://cntskyhk2f5np" path="res://enemy/DragonHeadEnemy.cs" id="1_1y1fp"]
 [ext_resource type="Texture2D" uid="uid://beoxnnini6dwh" path="res://contents/image/enemy/dragon_head.png" id="2_5s8fp"]
@@ -62,7 +62,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="DragonHeadEnemy" type="Area2D"]
+[node name="DragonHeadEnemy" type="Area2D" unique_id=904451950]
 collision_layer = 32
 collision_mask = 24
 script = ExtResource("1_1y1fp")
@@ -74,18 +74,18 @@ DamageSe = "enemy_damage"
 TimeupSe = "enemy_dead"
 Attack = 15
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=959216029]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ifn7i")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1244898639]
 sprite_frames = SubResource("SpriteFrames_ad5fx")
 animation = &"left"
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1296566095]
 scale = Vector2(0.6, 0.6)
 rect = Rect2(-40, -40, 80, 80)
 
-[node name="LifeTimer" type="Timer" parent="."]
+[node name="LifeTimer" type="Timer" parent="." unique_id=1615251119]
 wait_time = 0.001
 one_shot = true

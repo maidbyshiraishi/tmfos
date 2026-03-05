@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://by5gjpfk1w86a"]
+[gd_scene format=4 uid="uid://by5gjpfk1w86a"]
 
 [ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_axhrv"]
 [ext_resource type="AudioStream" uid="uid://btfio64bsyb2g" path="res://contents/bgm/bgm4.ogg" id="2_juu76"]
@@ -16,89 +16,89 @@
 [ext_resource type="Script" uid="uid://du7msr6jc8sou" path="res://player/Camera.cs" id="13_d7thu"]
 [ext_resource type="PackedScene" uid="uid://6fi87qq65ewm" path="res://trigger/talk_nekomimi_maid.tscn" id="15_sn7y8"]
 
-[node name="Stage" instance=ExtResource("1_axhrv")]
+[node name="Stage" unique_id=567044583 instance=ExtResource("1_axhrv")]
 BgmStream = ExtResource("2_juu76")
 
-[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+[node name="ColorRect" parent="Background/Parallax2D3" parent_id_path=PackedInt32Array(316905264) index="0" unique_id=1444016902]
 color = Color(0.905882, 0.517647, 0.658824, 1)
 
-[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D2" parent_id_path=PackedInt32Array(783352162) index="0" unique_id=1264730317]
 texture = ExtResource("2_t02sk")
 
-[node name="Parallax2D1" parent="Background" index="2"]
+[node name="Parallax2D1" parent="Background" parent_id_path=PackedInt32Array(1424633333) index="2" unique_id=1111247074]
 visible = true
 
-[node name="Sprite2D" parent="Background/Parallax2D1" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D1" index="0" unique_id=2146813747]
 texture = ExtResource("3_eh4e0")
 
-[node name="Background" parent="TileMap" index="0"]
+[node name="Background" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="0" unique_id=1341315673]
 tile_map_data = PackedByteArray("AAAfAPn/AAAAAAAAAAAiAPj/AAAAAAAAAAAlAPj/AAAAAAAAAAAgAPn/AAAAAAAAAAAoAPn/AAAAAAAAAAA=")
 
-[node name="Ground" parent="TileMap" index="1"]
+[node name="Ground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="1" unique_id=2022029018]
 tile_map_data = PackedByteArray("AAAAAO7/AAAAAAQAAAAAAPb/AAAAAAQAAAAEAP3/AAACAAEAAAAGAP3/AAACAAEAAAAGAP7/AAAAAAQAAAAGAP//AAAAAAQAAAALAP7/AAAAAAQAAAAMAP7/AAAAAAQAAAANAP7/AAAAAAQAAAAOAPP/AAAFAAAAAAAOAP7/AAAAAAQAAAAPAPL/AAAFAAAAAAAPAPP/AAAFAAAAAAAPAP7/AAAAAAQAAAAQAPL/AAAFAAAAAAAQAPP/AAAFAAAAAAAQAP7/AAAAAAQAAAARAPH/AAAFAAAAAAARAPL/AAAFAAAAAAARAPP/AAAFAAAAAAARAP7/AAAAAAQAAAAAAOv/AAAAAAQAAAAAAOz/AAAAAAQAAAAAAO3/AAAAAAQAAAAAAO//AAAAAAQAAAAAAPD/AAAAAAQAAAAAAPH/AAAFAAAAAAAAAPL/AAAFAAAAAAAAAPP/AAAFAAAAAAAAAPT/AAAAAAQAAAAAAPX/AAAAAAQAAAAAAPf/AAAAAAQAAAAAAPj/AAAAAAQAAAAAAPn/AAAAAAQAAAAAAPr/AAAAAAQAAAAAAPv/AAAAAAQAAAAAAPz/AAAAAAQAAAAAAP3/AAAAAAQAAAAAAP7/AAAAAAQAAAAAAP//AAAAAAQAAAABAOv/AAAAAAQAAAABAPH/AAAFAAAAAAABAPL/AAAFAAAAAAABAPP/AAAFAAAAAAABAP7/AAAAAAQAAAABAP//AAAAAAQAAAACAOv/AAAAAAQAAAACAPH/AAAFAAAAAAACAPL/AAAFAAAAAAACAPP/AAAFAAAAAAACAP7/AAAAAAQAAAACAP//AAAAAAQAAAADAOv/AAAAAAQAAAADAPL/AAAFAAAAAAADAPP/AAAFAAAAAAADAP7/AAAAAAQAAAADAP//AAAAAAQAAAAEAOv/AAAAAAQAAAAEAPf/AAAFAAAAAAAEAP7/AAAAAAQAAAAEAP//AAAAAAQAAAAFAOv/AAAAAAQAAAAFAPf/AAAFAAAAAAAFAP3/AAACAAAAAAAFAP7/AAAAAAQAAAAFAP//AAAAAAQAAAAGAOv/AAAAAAQAAAAGAPP/AAAFAAAAAAAHAOv/AAAAAAQAAAAHAPP/AAAFAAAAAAAHAP3/AAACAAEAAAAHAP7/AAAAAAQAAAAHAP//AAAAAAQAAAAIAOv/AAAAAAQAAAAIAPf/AAAFAAAAAAAIAP3/AAACAAEAAAAIAP7/AAAAAAQAAAAIAP//AAAAAAQAAAAJAOv/AAAAAAQAAAAJAPf/AAAFAAAAAAAJAP3/AAACAAEAAAAJAP7/AAAAAAQAAAAJAP//AAAAAAQAAAAKAOv/AAAAAAQAAAAKAPP/AAAFAAAAAAAKAP7/AAAAAAQAAAAKAP//AAAAAAQAAAALAOv/AAAAAAQAAAALAPP/AAAFAAAAAAALAP//AAAAAAQAAAAMAOv/AAAAAAQAAAAMAPf/AAAFAAAAAAAMAP3/AAACAAEAAAAMAP//AAAAAAQAAAANAOv/AAAAAAQAAAANAPf/AAAFAAAAAAANAP3/AAACAAAAAAANAP//AAAAAAQAAAAOAOv/AAAAAAQAAAAOAPL/AAAFAAAAAAAOAPr/AAAFAAAAAAAOAP3/AAACAAEAAAAOAP//AAAAAAQAAAAPAOv/AAAAAAQAAAAPAPH/AAAFAAAAAAAPAPr/AAAFAAAAAAAPAP3/AAACAAEAAAAPAP//AAAAAAQAAAAQAOv/AAAAAAQAAAAQAPH/AAAFAAAAAAAQAP//AAAAAAQAAAARAOv/AAAAAAQAAAARAPT/AAAAAAQAAAARAPX/AAAAAAQAAAARAPb/AAAAAAQAAAARAPf/AAAAAAQAAAARAPj/AAAAAAQAAAARAPn/AAAAAAQAAAARAPr/AAAAAAQAAAARAPv/AAAAAAQAAAARAPz/AAAAAAQAAAARAP3/AAAAAAQAAAARAP//AAAAAAQAAAASAOv/AAAAAAQAAAASAPH/AAAFAAAAAAATAOv/AAAAAAQAAAATAPH/AAAFAAAAAAAUAOv/AAAAAAQAAAAUAPH/AAAFAAAAAAAVAOv/AAAAAAQAAAAVAPb/AAABAAQAAAAWAOv/AAAAAAQAAAAWAPb/AAABAAQAAAAWAPv/AAAFAAAAAAAXAOv/AAAAAAQAAAAXAPD/AAACAAAAAAAXAPH/AAAAAAQAAAAXAPb/AAABAAQAAAAXAPv/AAAFAAAAAAAYAOv/AAAAAAQAAAAYAPD/AAACAAEAAAAYAPH/AAAAAAQAAAAYAPb/AAABAAQAAAAYAPv/AAAFAAAAAAAZAOv/AAAAAAQAAAAZAPD/AAACAAEAAAAZAPH/AAAAAAQAAAAZAPX/AAACAAEAAAAZAPb/AAAAAAQAAAAZAPv/AAAFAAAAAAAaAOv/AAAAAAQAAAAaAOz/AAAAAAQAAAAaAPD/AAAAAAQAAAAaAPH/AAAAAAQAAAAaAPb/AAAAAAQAAAAaAPv/AAAFAAAAAAAbAOz/AAAAAAQAAAAbAO//AAACAAEAAAAbAPD/AAAAAAQAAAAbAPv/AAAFAAAAAAAcAOz/AAAAAAQAAAAcAO3/AAAAAAQAAAAcAO7/AAAAAAQAAAAcAO//AAAAAAQAAAAcAPD/AAAAAAQAAAAcAPv/AAAFAAAAAAAdAPv/AAAFAAAAAAAqAPb/AAAAAAMAAAArAPb/AAAAAAMAAAAsAPb/AAAAAAMAAAAUAPb/AAAAAAQAAAA=")
 
-[node name="Foreground" parent="TileMap" index="2"]
+[node name="Foreground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="2" unique_id=1114116396]
 tile_map_data = PackedByteArray("AAAEAPP/AAAHAAIAAAAFAPP/AAAHAAIAAAAIAPP/AAAHAAIAAAAJAPP/AAAHAAIAAAAMAPP/AAAHAAIAAAANAPP/AAAHAAIAAAAVAPH/AAAHAAIAAAAWAPH/AAAHAAIAAAABAP7/AAAGAAUAAAACAP7/AAAGAAUAAAADAP7/AAAGAAUAAAAEAP7/AAAGAAUAAAAFAP7/AAAGAAUAAAAGAP7/AAAGAAUAAAAHAP7/AAAGAAUAAAAIAP7/AAAGAAUAAAAJAP7/AAAGAAUAAAAKAP7/AAAGAAUAAAALAP7/AAAGAAUAAAAMAP7/AAAGAAUAAAANAP7/AAAGAAUAAAAOAP7/AAAGAAUAAAAPAP7/AAAGAAUAAAAQAP7/AAAGAAUAAAAXAPH/AAAFAAYAAAAYAPH/AAAGAAUAAAAZAPH/AAAGAAUAAAAaAPD/AAAFAAYAAAAbAPD/AAAGAAUAAAAZAPb/AAAFAAYAAAAaAPb/AAAGAAYAAAARAP3/AAAEAAYAAAAAAP3/AAADAAYAAAAAAPf/AAADAAYAAAAAAPj/AAADAAYAAAAAAPn/AAADAAYAAAAAAPr/AAADAAYAAAAAAPv/AAADAAYAAAAAAPz/AAADAAYAAAARAPv/AAAEAAYAAAARAPz/AAAEAAYAAAARAPn/AAAEAAYAAAAcAO//AAAEAAYAAAAaAO//AAABAAMAAAA=")
 
-[node name="Veil" parent="TileMap/ObservationHole" index="0"]
+[node name="Veil" parent="TileMap/ObservationHole" parent_id_path=PackedInt32Array(574971545) index="0" unique_id=1226535785]
 tile_map_data = PackedByteArray("AAAaAO3/AAAHAAQAAAAbAO3/AAAHAAQAAAAbAO7/AAAHAAQAAAAbAO//AAAHAAQAAAAaAO//AAAHAAQAAAAaAO7/AAAHAAQAAAA=")
 
-[node name="WoodDoor1" parent="Door" index="0" instance=ExtResource("6_o03aw")]
+[node name="WoodDoor1" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="0" unique_id=1406939250 instance=ExtResource("6_o03aw")]
 position = Vector2(112, -96)
 DestStageNo = 5
 DestDoorNo = 14
 DoorNo = 1
 Direction = 1
 
-[node name="WoodDoor2" parent="Door" index="1" instance=ExtResource("6_o03aw")]
+[node name="WoodDoor2" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="1" unique_id=1632087649 instance=ExtResource("6_o03aw")]
 position = Vector2(1392, -352)
 DestStageNo = 7
 DestDoorNo = 1
 DoorNo = 2
 
-[node name="SavePoint3" parent="Door" index="2" instance=ExtResource("6_owmcv")]
+[node name="SavePoint3" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="2" unique_id=498924567 instance=ExtResource("6_owmcv")]
 position = Vector2(1040, -264)
 DoorNo = 3
 Direction = 1
 
-[node name="TalkTrigger" parent="Talk" index="0" instance=ExtResource("15_sn7y8")]
+[node name="TalkTrigger" parent="Talk" parent_id_path=PackedInt32Array(1187157199) index="0" unique_id=1917361747 instance=ExtResource("15_sn7y8")]
 position = Vector2(288, -96)
 Color = 3
 DialogPath = "res://theater/talk_0001.tscn"
 
-[node name="Search" parent="Search" index="1" instance=ExtResource("8_6a0pu")]
+[node name="Search" parent="Search" parent_id_path=PackedInt32Array(733812831) index="1" unique_id=1067165824 instance=ExtResource("8_6a0pu")]
 position = Vector2(848, -528)
 
-[node name="SearchContainer" parent="Search/Search" index="5" instance=ExtResource("9_0ps7k")]
+[node name="SearchContainer" parent="Search/Search" index="5" unique_id=1440276076 instance=ExtResource("9_0ps7k")]
 
-[node name="ItemPanelOneup" parent="Search/Search/SearchContainer" index="0" instance=ExtResource("10_g3su4")]
+[node name="ItemPanelOneup" parent="Search/Search/SearchContainer" index="0" unique_id=1334417453 instance=ExtResource("10_g3su4")]
 position = Vector2(32, -64)
 
-[node name="SearchPoint" parent="Search/Search" index="6" instance=ExtResource("10_6jhpr")]
+[node name="SearchPoint" parent="Search/Search" index="6" unique_id=969758688 instance=ExtResource("10_6jhpr")]
 
-[node name="ItemPanelShoes" parent="Item" index="0" instance=ExtResource("12_as1ti")]
+[node name="ItemPanelShoes" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="0" unique_id=360081243 instance=ExtResource("12_as1ti")]
 position = Vector2(912, -272)
 
-[node name="Player" parent="." index="8" instance=ExtResource("6_nl3e2")]
+[node name="Player" parent="." index="8" unique_id=995676694 instance=ExtResource("6_nl3e2")]
 unique_name_in_owner = true
 position = Vector2(-3000, 0)
 
-[node name="Camera" type="Camera2D" parent="Player" index="13"]
+[node name="Camera" type="Camera2D" parent="Player" index="13" unique_id=963427571]
 unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("13_d7thu")
 
-[node name="HUD" parent="." index="13"]
+[node name="HUD" parent="." index="13" unique_id=1358724654]
 Text1 = "チュートリアル"
 Text2 = "6"
 
-[node name="Message" type="Control" parent="." index="16"]
+[node name="Message" type="Control" parent="." index="16" unique_id=1600501449]
 light_mask = 2
 anchors_preset = 0
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0"]
+[node name="RichTextLabel1" type="RichTextLabel" parent="Message" index="0" unique_id=1873792898]
 visible = false
 light_mask = 2
 layout_mode = 1
@@ -114,7 +114,7 @@ text = "[center][outline_size=10][outline_color=black][font_size=20]画面下部
 ↓↓↓[/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="Message" index="1"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="Message" index="1" unique_id=1387382814]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -129,7 +129,7 @@ bbcode_enabled = true
 text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]通過ブロック[/color]は下からジャンプで飛び乗れます。[/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="Message" index="2"]
+[node name="RichTextLabel4" type="RichTextLabel" parent="Message" index="2" unique_id=174285331]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -143,7 +143,7 @@ bbcode_enabled = true
 text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]通過ブロック[/color]は下キーとジャンプで飛び降りることができます。[/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="Message" index="3"]
+[node name="RichTextLabel5" type="RichTextLabel" parent="Message" index="3" unique_id=298419419]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -159,7 +159,7 @@ bbcode_enabled = true
 text = "[center][outline_size=10][outline_color=black][font_size=20][color=#ff6666]靴アイテム[/color]があれば雲に乗れます。氷でも安心！しっかりグリップ！[/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="Message" index="4"]
+[node name="RichTextLabel6" type="RichTextLabel" parent="Message" index="4" unique_id=1611788447]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -174,6 +174,6 @@ bbcode_enabled = true
 text = "[center][outline_size=10][outline_color=black][font_size=20]フキダシのあるキャラクターとは[color=#ff6666]上キー[/color]で[color=#ff6666]会話[/color]できます。[/font_size][/outline_color][/outline_size][/center]"
 metadata/_edit_use_anchors_ = true
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" instance=ExtResource("4_nl1hu")]
+[node name="OutOfBorder1" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="0" unique_id=194315557 instance=ExtResource("4_nl1hu")]
 position = Vector2(592, 16)
 scale = Vector2(100, 1)

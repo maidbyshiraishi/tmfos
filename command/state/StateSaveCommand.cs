@@ -7,7 +7,7 @@ namespace tmfos.command.state;
 /// <summary>
 /// ステージ情報を保存するコマンド
 /// </summary>
-public partial class StateSaveCommand : CommandNode
+public partial class StateSaveCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {

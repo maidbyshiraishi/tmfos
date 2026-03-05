@@ -17,10 +17,7 @@ public partial class TentacleRoot : Node2D, IGameNode
 
     private Player _player;
 
-    public override void _Ready()
-    {
-        AddToGroup(StageRoot.GameNodeGroup);
-    }
+    public override void _Ready() => AddToGroup(StageRoot.GameNodeGroup);
 
     private void ConnectTentacles()
     {

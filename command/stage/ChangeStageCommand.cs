@@ -7,7 +7,7 @@ namespace tmfos.command.stage;
 /// <summary>
 /// ステージを変更するコマンド
 /// </summary>
-public partial class ChangeStageCommand : CommandNode
+public partial class ChangeStageCommand : CommandRoot
 {
     /// <summary>
     /// 移動先ステージ番号

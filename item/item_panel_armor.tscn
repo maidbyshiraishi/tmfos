@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d37sgf7lmbve0"]
+[gd_scene format=3 uid="uid://d37sgf7lmbve0"]
 
 [ext_resource type="PackedScene" uid="uid://drm6s3qj4id31" path="res://item/item_panel_root.tscn" id="1_8iky0"]
 [ext_resource type="SpriteFrames" uid="uid://384kdk0v261q" path="res://contents/animation/item/item_armor.tres" id="2_a7dfw"]
 
-[node name="ItemPanelArmor" instance=ExtResource("1_8iky0")]
+[node name="ItemPanelArmor" unique_id=1916750288 instance=ExtResource("1_8iky0")]
 Item = 7
 
 [node name="AnimatedSprite2D" parent="." index="1"]

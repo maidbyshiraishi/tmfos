@@ -6,7 +6,7 @@ namespace tmfos.command.timer;
 /// <summary>
 /// タイマートリガーをリセットして再開するコマンド
 /// </summary>
-public partial class ResetTimerTriggerCommand : CommandNode
+public partial class ResetTimerTriggerCommand : CommandRoot
 {
     /// <summary>
     /// リセットするタイマートリガー
@@ -14,8 +14,5 @@ public partial class ResetTimerTriggerCommand : CommandNode
     [Export]
     public TimerTrigger Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        Target?.ResetTimer();
-    }
+    public override void DoCommand(Node node, bool flag) => Target?.ResetTimer();
 }

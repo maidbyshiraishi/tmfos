@@ -6,7 +6,7 @@ namespace tmfos.command;
 /// <summary>
 /// スクリーンショット保存コマンド
 /// </summary>
-public partial class SaveScreenshotCommand : CommandNode
+public partial class SaveScreenshotCommand : CommandRoot
 {
     private static readonly string ScreenshotPath = "user://tmfos_{0}.png";
 

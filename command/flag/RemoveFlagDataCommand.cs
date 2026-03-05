@@ -6,7 +6,7 @@ namespace tmfos.command.flag;
 /// <summary>
 /// ゲームフラグを削除するコマンド
 /// </summary>
-public partial class RemoveFlagDataCommand : CommandNode
+public partial class RemoveFlagDataCommand : CommandRoot
 {
     /// <summary>
     /// フラグ名
@@ -14,8 +14,5 @@ public partial class RemoveFlagDataCommand : CommandNode
     [Export]
     public string Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        GetNode<GameData>("/root/GameData").RemoveFlagData(Target);
-    }
+    public override void DoCommand(Node node, bool flag) => GetNode<GameData>("/root/GameData").RemoveFlagData(Target);
 }
