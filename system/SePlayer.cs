@@ -36,11 +36,11 @@ public partial class SePlayer : Node
             Name = name,
             Bus = "SE",
             MaxPolyphony = MaxPolyphony.TryGetValue(name, out int value) ? value : 1,
-            Stream = audio
+            Stream = audio,
+            Autoplay = true
         };
 
         AddChild(audioStreamPlayer);
-        audioStreamPlayer.Play();
     }
 
     public void ClearAllAudioStreamPlayer()
