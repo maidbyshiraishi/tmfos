@@ -15,53 +15,55 @@
 [ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/stage/set_player_initial_durability_command.tscn" id="13_lf1a1"]
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="14_xeyag"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="15_5kyph"]
+[ext_resource type="PackedScene" uid="uid://cn7no3720iabm" path="res://command/delay_container.tscn" id="16_15tr6"]
 [ext_resource type="PackedScene" uid="uid://bpnpsk7t6uv77" path="res://enemy/enemy_spawner.tscn" id="16_w350y"]
+[ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://command/queue_free_command.tscn" id="17_udehi"]
 
 [node name="Stage" unique_id=1647237805 instance=ExtResource("1_wfbol")]
 BgmStream = ExtResource("2_p4m1k")
 PlayerArmorRatio = 0.0
 
-[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D2" parent_id_path=PackedInt32Array(783352162) index="0" unique_id=1264730317]
 texture = ExtResource("3_px2hc")
 
-[node name="Background" parent="TileMap" index="0"]
+[node name="Background" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="0" unique_id=1341315673]
 tile_map_data = PackedByteArray("AAAEAPr/AAAEAAAAAAAEAPn/AAAEAAAAAAAEAPj/AAAEAAAAAAAEAPf/AAAEAAAAAAAEAPb/AAAEAAAAAAAPAPr/AAAEAAAAAAAPAPn/AAAEAAAAAAAPAPj/AAAEAAAAAAAPAPf/AAAEAAAAAAAPAPb/AAAEAAAAAAA=")
 
-[node name="Ground" parent="TileMap" index="1"]
+[node name="Ground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="1" unique_id=2022029018]
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAMAAAABAP//AAAAAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAAEAP//AAAAAAMAAAAFAP//AAAAAAMAAAAGAP//AAAAAAMAAAAHAP//AAAAAAMAAAAIAP//AAAAAAMAAAAJAP//AAAAAAMAAAAKAP//AAAAAAMAAAALAP//AAAAAAMAAAAMAP//AAAAAAMAAAANAP//AAAAAAMAAAAOAP//AAAAAAMAAAAPAP//AAAAAAMAAAAQAP//AAAAAAMAAAARAP//AAAAAAMAAAASAP//AAAAAAMAAAATAP//AAAAAAMAAAA=")
 
-[node name="StageEntryPoint1" parent="Door" index="0" unique_id=1079165137 instance=ExtResource("4_ttquu")]
+[node name="StageEntryPoint1" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="0" unique_id=1079165137 instance=ExtResource("4_ttquu")]
 position = Vector2(320, -64)
 DoorNo = 1
 Direction = 1
 
-[node name="ItemPanelArmor" parent="Item" index="0" unique_id=1333680978 instance=ExtResource("5_wxq0n")]
+[node name="ItemPanelArmor" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="0" unique_id=1333680978 instance=ExtResource("5_wxq0n")]
 position = Vector2(144, -336)
 
-[node name="ItemPanelArmor2" parent="Item" index="1" unique_id=1757903446 instance=ExtResource("5_wxq0n")]
+[node name="ItemPanelArmor2" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="1" unique_id=1757903446 instance=ExtResource("5_wxq0n")]
 position = Vector2(496, -336)
 
-[node name="ItemPanelLife" parent="Item" index="2" unique_id=732023824 instance=ExtResource("6_p6o3w")]
+[node name="ItemPanelLife" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="2" unique_id=732023824 instance=ExtResource("6_p6o3w")]
 position = Vector2(16, -48)
 Stateful = false
 
-[node name="ItemPanelLife2" parent="Item" index="3" unique_id=1231758424 instance=ExtResource("6_p6o3w")]
+[node name="ItemPanelLife2" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="3" unique_id=1231758424 instance=ExtResource("6_p6o3w")]
 position = Vector2(48, -48)
 Stateful = false
 
-[node name="ItemPanelLife5" parent="Item" index="4" unique_id=77708097 instance=ExtResource("6_p6o3w")]
+[node name="ItemPanelLife5" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="4" unique_id=77708097 instance=ExtResource("6_p6o3w")]
 position = Vector2(320, -80)
 Stateful = false
 
-[node name="ItemPanelLife6" parent="Item" index="5" unique_id=1651299702 instance=ExtResource("6_p6o3w")]
+[node name="ItemPanelLife6" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="5" unique_id=1651299702 instance=ExtResource("6_p6o3w")]
 position = Vector2(320, -48)
 Stateful = false
 
-[node name="ItemPanelLife3" parent="Item" index="6" unique_id=1470000529 instance=ExtResource("6_p6o3w")]
+[node name="ItemPanelLife3" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="6" unique_id=1470000529 instance=ExtResource("6_p6o3w")]
 position = Vector2(584, -48)
 Stateful = false
 
-[node name="ItemPanelLife4" parent="Item" index="7" unique_id=2113391933 instance=ExtResource("6_p6o3w")]
+[node name="ItemPanelLife4" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="7" unique_id=2113391933 instance=ExtResource("6_p6o3w")]
 position = Vector2(624, -48)
 Stateful = false
 
@@ -74,16 +76,16 @@ unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("8_mc0cu")
 
-[node name="MaidRobot1Enemy" parent="Enemy" index="0" unique_id=415351692 groups=["SweepEnemyObserver"] instance=ExtResource("9_pwq5d")]
+[node name="MaidRobot1Enemy" parent="Enemy" parent_id_path=PackedInt32Array(533185829) index="0" unique_id=415351692 groups=["SweepEnemyObserver"] instance=ExtResource("9_pwq5d")]
 position = Vector2(592, -96)
 
-[node name="MaidRobot2Enemy" parent="Enemy" index="1" unique_id=639722496 groups=["SweepEnemyObserver"] instance=ExtResource("10_kp4ph")]
+[node name="MaidRobot2Enemy" parent="Enemy" parent_id_path=PackedInt32Array(533185829) index="1" unique_id=639722496 groups=["SweepEnemyObserver"] instance=ExtResource("10_kp4ph")]
 position = Vector2(312, -752)
 
-[node name="HUD" parent="." index="13"]
-Text3 = "撃破せよ！！"
+[node name="HUD" parent="." index="13" unique_id=1358724654]
 Text1 = "メイドロボ"
 Text2 = "を"
+Text3 = "撃破せよ！！"
 BossMode = true
 
 [node name="BossLife" parent="HUD" index="6" unique_id=531181166 instance=ExtResource("11_71xba")]
@@ -98,8 +100,20 @@ GroupName = "SweepEnemyObserver"
 [node name="OpenDialogCommand" parent="SweepObserver" index="1" unique_id=985382408 instance=ExtResource("14_xeyag")]
 DialogPath = "res://theater/talk_0013.tscn"
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" unique_id=2083979387 instance=ExtResource("15_5kyph")]
-position = Vector2(480, 16)
+[node name="OutOfBorder1" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="0" unique_id=2083979387 instance=ExtResource("15_5kyph")]
+position = Vector2(320, 16)
+scale = Vector2(60, 1)
+
+[node name="DelayContainer" parent="OutOfBorder/OutOfBorder1" index="2" unique_id=411151072 instance=ExtResource("16_15tr6")]
+WaitTime = 0.5
+ExecFlag = false
+
+[node name="QueueFreeCommand" parent="OutOfBorder/OutOfBorder1/DelayContainer" index="0" unique_id=999936803 node_paths=PackedStringArray("Target") instance=ExtResource("17_udehi")]
+Target = NodePath("../..")
+ExecFlag = false
+
+[node name="OutOfBorder2" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="1" unique_id=378784297 instance=ExtResource("15_5kyph")]
+position = Vector2(320, 2000)
 scale = Vector2(60, 1)
 
 [node name="EntryPoint" type="Node2D" parent="." index="18" unique_id=1306248352]

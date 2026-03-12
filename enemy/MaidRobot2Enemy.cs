@@ -88,7 +88,7 @@ public partial class MaidRobot2Enemy : Enemy
 
     public void ShotDrill()
     {
-        if (!_active)
+        if (!_active || MobState is MobStateType.Dead)
         {
             return;
         }

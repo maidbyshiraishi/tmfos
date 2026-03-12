@@ -108,6 +108,11 @@ public partial class MaidRobot1Enemy : Enemy
 
     public void ShotDrill()
     {
+        if (MobState is MobStateType.Dead)
+        {
+            return;
+        }
+
         RandomNumberGenerator random = new();
 
         for (int i = 0; i < 3; i++)

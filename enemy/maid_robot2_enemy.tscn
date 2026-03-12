@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mqkdiygn6qtn"]
 
 [ext_resource type="Script" uid="uid://c6ej656fanvdq" path="res://enemy/MaidRobot2Enemy.cs" id="1_34v8d"]
+[ext_resource type="Texture2D" uid="uid://k6o8c8inrmxv" path="res://contents/image/enemy/maid_robot2_broken.png" id="6_ci7kf"]
 [ext_resource type="SpriteFrames" uid="uid://dyu1txjt6bgx1" path="res://contents/animation/enemy/maid_robot2.tres" id="6_gv2gr"]
 [ext_resource type="Script" uid="uid://okf5krjrr1vn" path="res://mob/ActionChange.cs" id="7_uh5tg"]
 [ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://mob/burial_area.tscn" id="8_p5x17"]
@@ -107,3 +108,8 @@ autostart = true
 
 [node name="JumpTimer" type="Timer" parent="." unique_id=1949525849]
 autostart = true
+
+[node name="MaidRobot2Broken" type="Sprite2D" parent="." unique_id=2055104556]
+position = Vector2(0, -1336)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ci7kf")
