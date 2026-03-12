@@ -15,9 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/stage/set_player_initial_durability_command.tscn" id="13_lf1a1"]
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="14_xeyag"]
 [ext_resource type="PackedScene" uid="uid://bdkba5kbxtem5" path="res://trigger/out_of_border.tscn" id="15_5kyph"]
-[ext_resource type="PackedScene" uid="uid://cn7no3720iabm" path="res://command/delay_container.tscn" id="16_15tr6"]
 [ext_resource type="PackedScene" uid="uid://bpnpsk7t6uv77" path="res://enemy/enemy_spawner.tscn" id="16_w350y"]
-[ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://command/queue_free_command.tscn" id="17_udehi"]
 
 [node name="Stage" unique_id=1647237805 instance=ExtResource("1_wfbol")]
 BgmStream = ExtResource("2_p4m1k")
@@ -103,18 +101,26 @@ DialogPath = "res://theater/talk_0013.tscn"
 [node name="OutOfBorder1" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="0" unique_id=2083979387 instance=ExtResource("15_5kyph")]
 position = Vector2(320, 16)
 scale = Vector2(60, 1)
+collision_mask = 32
 
-[node name="DelayContainer" parent="OutOfBorder/OutOfBorder1" index="2" unique_id=411151072 instance=ExtResource("16_15tr6")]
-WaitTime = 0.5
-ExecFlag = false
-
-[node name="QueueFreeCommand" parent="OutOfBorder/OutOfBorder1/DelayContainer" index="0" unique_id=999936803 node_paths=PackedStringArray("Target") instance=ExtResource("17_udehi")]
-Target = NodePath("../..")
-ExecFlag = false
-
-[node name="OutOfBorder2" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="1" unique_id=378784297 instance=ExtResource("15_5kyph")]
+[node name="OutOfBorder2" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="1" unique_id=886015756 instance=ExtResource("15_5kyph")]
 position = Vector2(320, 2000)
 scale = Vector2(60, 1)
+
+[node name="OutOfBorder3" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="2" unique_id=697797090 instance=ExtResource("15_5kyph")]
+position = Vector2(-560, 0)
+rotation = 1.5707964
+scale = Vector2(1000, 1)
+
+[node name="OutOfBorder4" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="3" unique_id=808897686 instance=ExtResource("15_5kyph")]
+position = Vector2(1200, 0)
+rotation = 1.5707964
+scale = Vector2(1000, 1)
+
+[node name="OutOfBorder5" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="4" unique_id=378784297 instance=ExtResource("15_5kyph")]
+position = Vector2(320, 16)
+scale = Vector2(60, 1)
+collision_mask = 8
 
 [node name="EntryPoint" type="Node2D" parent="." index="18" unique_id=1306248352]
 unique_name_in_owner = true

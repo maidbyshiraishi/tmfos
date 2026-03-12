@@ -93,6 +93,7 @@ public partial class MaidRobot1Enemy : Enemy
         // 死亡時は除去される
         if (MobState is MobStateType.Dead || _entryPoint is null)
         {
+            GetNode<Area2D>("../../OutOfBorder/OutOfBorder1").QueueFree();
             GetNode<MaidRobot2Enemy>("../MaidRobot2Enemy").Start();
             base.RemoveNode();
             return;
