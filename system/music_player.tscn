@@ -8,9 +8,11 @@ process_mode = 3
 script = ExtResource("1_3lnsu")
 
 [node name="Deck1" type="AudioStreamPlayer" parent="." unique_id=1762618607]
+pitch_scale = 0.5
 bus = &"BGM"
 
 [node name="Deck2" type="AudioStreamPlayer" parent="." unique_id=1081712511]
+pitch_scale = 0.5
 bus = &"BGM"
 
 [node name="Fader" type="AnimationPlayer" parent="." unique_id=1225664035]
