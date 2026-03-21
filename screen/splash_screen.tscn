@@ -22,10 +22,12 @@ color = Color(0, 0, 0, 1)
 
 [node name="Audio_1" type="AudioStreamPlayer" parent="." unique_id=1526904277]
 stream = ExtResource("2_j741j")
+pitch_scale = 0.5
 bus = &"SE"
 
 [node name="Audio_2" type="AudioStreamPlayer" parent="." unique_id=859825361]
 stream = ExtResource("3_jjt3q")
+pitch_scale = 0.5
 bus = &"SE"
 
 [node name="PlayStart" type="VisibleOnScreenNotifier2D" parent="." unique_id=1117402150]
