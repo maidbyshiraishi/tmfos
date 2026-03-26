@@ -12,14 +12,14 @@ public partial class Camera : Camera2D, IGameNode
 {
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
         Enabled = false;
     }
 
     public void InitializeNode()
     {
         // カメラの移動範囲を制限する
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         TileMapLayer map = stageRoot.GetNode<TileMapLayer>("TileMap/Ground");
         Rect2I limits = map.GetUsedRect();
         Vector2I tileSetSize = map.TileSet.TileSize;

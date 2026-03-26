@@ -20,7 +20,7 @@ public partial class LoadConfirmDialog : DialogRoot
 
         int slotNo = (int)m_argument[0];
         GetNode<Label>("Data").Text = $"データ{slotNo}";
-        string date = GetNode<GameData>("/root/GameData").GetFileDate(slotNo);
+        string date = GetNode<GameDataManager>("/root/GameDataManager").GetFileDate(slotNo);
         Button yesButton = GetNode<Button>("Control/Yes");
 
         if (date is null)
@@ -34,7 +34,7 @@ public partial class LoadConfirmDialog : DialogRoot
             GetNode<Label>("Date").Text = date;
             OpenGameCommand command = GetNode<OpenGameCommand>("Control/Yes/Exec/OpenGameCommand");
             command.SlotNo = slotNo;
-            string fileThumbnail = string.Format(GameData.DataThumbnailPath, slotNo);
+            string fileThumbnail = string.Format(GameDataManager.DataThumbnailPath, slotNo);
 
             if (FileAccess.FileExists(fileThumbnail))
             {

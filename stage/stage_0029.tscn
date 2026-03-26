@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dukcq3h6kl87u"]
 
-[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_wfbol"]
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/game_stage_root.tscn" id="1_wfbol"]
 [ext_resource type="AudioStream" uid="uid://bktamkfxhknh7" path="res://contents/bgm/bgm5.ogg" id="2_p4m1k"]
 [ext_resource type="Texture2D" uid="uid://ctw5x33l0rti4" path="res://contents/image/background/maid_robot.png" id="3_px2hc"]
 [ext_resource type="PackedScene" uid="uid://dvyr6w1fjtr25" path="res://command/stage/stage_entry_point.tscn" id="4_ttquu"]

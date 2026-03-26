@@ -7,12 +7,18 @@ namespace tmfos.system;
 
 /// <summary>
 /// 画面遷移・ダイアログ制御
+/// ゲーム全体に影響する最も重要な処理の一つ
+/// 
+/// スクリーンを開く場合、スタック上のダイアログをすべて閉じ、指定されたスクリーンをメインシーンとして読み込む。
+/// ダイアログを開く場合、スタックに新たにダイアログを積む。
+/// 
+/// 新たにダイアログやスクリーンを開くと、一番前面のダイアログやスクリーンのControlノード内のボタンなどのGUIが無効になり、プロセスが休止される。
+/// ダイアログを閉じると、閉じたダイアログのスタックに積まれた次のダイアログのControlノード内あるいはダイアログが開いていない場合はスクリーンのControlノード内のボタンなどのGUIが有効になり、プロセスが再開される。
+///
+/// ゲームの終了処理も含む。
 /// </summary>
 public partial class DialogLayer : CanvasLayer
 {
-    [Export]
-    public bool MultipleOpen { get; set; } = false;
-
     private readonly Array<DialogRoot> _history = [];
 
     /// <summary>
@@ -20,12 +26,6 @@ public partial class DialogLayer : CanvasLayer
     /// </summary>
     /// <returns>ScreenRoot</returns>
     public DialogRoot GetCurrentScreen() => GetTree().CurrentScene as DialogRoot;
-
-    /// <summary>
-    /// 現在のゲーム画面を返す
-    /// </summary>
-    /// <returns>ScreenRoot</returns>
-    public StageRoot GetCurrentStageRoot() => GetTree().CurrentScene as StageRoot;
 
     /// <summary>
     /// 現在のダイアログを返す
@@ -42,59 +42,54 @@ public partial class DialogLayer : CanvasLayer
     public void OpenDialog(string path, string key = null, Variant[] argument = null)
     {
         GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
-        GetTree().Paused = true;
 
         if (string.IsNullOrWhiteSpace(path))
         {
-            GD.PrintErr("pathがNullOrWhiteSpaceです。OpenDialog()を実行できません。");
+            GD.PrintErr("ダイアログのパスがnullまたはホワイトスペースです。");
             return;
         }
 
         if (!string.IsNullOrWhiteSpace(key))
         {
-            GetNode<GameArgument>("/root/GameArgument").SetArgument(key, argument);
+            GetNode<DialogArgument>("/root/DialogArgument").SetArgument(key, argument);
         }
 
-        _ = CallDeferred(MethodName.DeferredOpenDialog, path);
+        GetTree().Paused = true;
+        _ = CallDeferred(MethodName.DeferredOpenDialog, [path]);
     }
 
     private void DeferredOpenDialog(string path)
     {
-        if (Lib.GetPackedScene<PackedScene>(path) is not PackedScene pack || pack.Instantiate() is not Node node)
+        if (Lib.GetPackedScene(path) is not PackedScene pack || pack.Instantiate() is not DialogRoot dnode)
         {
-            return;
-        }
-
-        DialogRoot screen = GetCurrentScreen();
-
-        if (screen is null)
-        {
-            GD.PrintErr($"スクリーンが開いていない状態でOpenDialog()を実行できません。");
-            return;
-        }
-
-        if (node is not DialogRoot dnode)
-        {
-            GD.PrintErr($"{path}はダイアログではありません。OpenDialog()を実行できません。");
+            GD.PrintErr($"{path}はダイアログではありません。");
             return;
         }
 
         // ダイアログが開いていないなら画面を停止させる
         if (IsEmpty())
         {
-            screen.Inactive();
-            GetTree().Paused = true;
+            if (GetCurrentScreen() is DialogRoot screen)
+            {
+                screen.Inactive();
+            }
+            else
+            {
+                GD.PrintErr($"スクリーンが開いていない状態でダイアログを開けません。");
+                return;
+            }
         }
         // ダイアログが開いているなら停止させる
         else
         {
-            GetCurrentDialog().Inactive();
-            GetCurrentDialog().ProcessMode = ProcessModeEnum.Pausable;
+            DialogRoot dialog = GetCurrentDialog();
+            dialog.Inactive();
+            dialog.ProcessMode = ProcessModeEnum.Pausable;
         }
 
         Push(dnode);
         AddChild(dnode);
-        GetCurrentDialog().Active();
+        dnode.Active();
     }
 
     /// <summary>
@@ -116,9 +111,7 @@ public partial class DialogLayer : CanvasLayer
     /// <param name="skipActive">Controlをアクティブに戻さない</param>
     public void CloseDialog(bool undo = false, bool skipActive = false)
     {
-        DialogRoot dnode = Pop(true);
-
-        if (dnode is null)
+        if (Pop(true) is not DialogRoot dnode)
         {
             return;
         }
@@ -128,26 +121,22 @@ public partial class DialogLayer : CanvasLayer
             dnode.Undo();
         }
 
+        dnode.Inactive();
         dnode.Close();
 
         if (IsEmpty())
         {
-            if (!skipActive)
+            if (!skipActive && GetCurrentScreen() is DialogRoot current)
             {
-                GetCurrentScreen()?.Active();
+                current.Active();
             }
 
-            GetTree().SetDeferred(SceneTree.PropertyName.Paused, false);
+            GetTree().Paused = false;
         }
-        else if (!skipActive)
+        else if (!skipActive && GetCurrentDialog() is DialogRoot dialogRoot)
         {
-            DialogRoot dialogRoot = GetCurrentDialog();
-
-            if (dialogRoot is not null)
-            {
-                dialogRoot.Active();
-                dialogRoot.ProcessMode = ProcessModeEnum.Inherit;
-            }
+            dialogRoot.Active();
+            dialogRoot.ProcessMode = ProcessModeEnum.Inherit;
         }
     }
 
@@ -157,108 +146,45 @@ public partial class DialogLayer : CanvasLayer
     /// 画面を開く
     /// </summary>
     /// <param name="path">パス</param>
-    public void OpenScreen(string path, string fadeout, string fadein)
+    /// <param name="fadein">画面のフェードインエフェクト名</param>
+    /// <param name="fadeout">画面のフェードアウトエフェクト名</param>
+    public void OpenScreen(string path, string fadeout, string fadein, string key = null, Variant[] argument = null)
     {
         GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
 
         if (string.IsNullOrWhiteSpace(path))
         {
-            GD.PrintErr("pathがNullOrWhiteSpaceです。ChangeSceneToFile()できません。");
+            GD.PrintErr("スクリーンのパスがnullまたはホワイトスペースです。");
             return;
         }
 
+        if (!string.IsNullOrWhiteSpace(key))
+        {
+            GetNode<DialogArgument>("/root/DialogArgument").SetArgument(key, argument);
+        }
+
         GetTree().Paused = true;
-        DialogRoot dialog = GetCurrentDialog();
-
-        if (dialog is null)
-        {
-            DialogRoot screen = GetCurrentScreen();
-            screen?.Inactive();
-        }
-        else
-        {
-            dialog.Inactive();
-        }
-
-        _ = CallDeferred(MethodName.DeferredOpenScreen, path, fadeout, fadein);
+        _ = CallDeferred(MethodName.DeferredOpenScreen, [path, fadeout, fadein]);
     }
 
-    private async void DeferredOpenScreen(string path, string fadeout, string fadein)
+    protected async void DeferredOpenScreen(string path, string fadeout, string fadein)
     {
         ScreenFader fader = GetNode<ScreenFader>("/root/ScreenFader");
         fader.ScreenFade(fadeout);
         _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
         CloseAllDialog();
+        GetCurrentScreen()?.Inactive();
 
-        if (Lib.GetPackedScene<PackedScene>(path) is PackedScene pack)
+        if (Lib.GetPackedScene(path) is PackedScene pack)
         {
             _ = GetTree().ChangeSceneToPacked(pack);
         }
 
         fader.ScreenFade(fadein);
         _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
-        GetCurrentScreen().Active();
+        DialogRoot current = GetCurrentScreen();
+        current.Active();
         GetTree().Paused = false;
-    }
-
-    /// <summary>
-    /// ゲーム画面を開く
-    /// </summary>
-    /// <param name="startStageType">ゲーム開始種別</param>
-    /// <param name="slotNo">データ番号</param>
-    public void OpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
-    {
-        GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
-        GetTree().Paused = true;
-        _ = CallDeferred(MethodName.DeferredOpenGame, (int)startStageType, slotNo, fadeout, fadein);
-    }
-
-    private void DeferredOpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
-    {
-        GameData gdata = GetNode<GameData>("/root/GameData");
-        Error e = Error.Ok;
-
-        // TakeOverStageとRestartは何もしない。
-        switch (startStageType)
-        {
-            case StartGameType.NewStage:
-
-                e = gdata.LoadInitialStartData(StageRoot.StageScenarioNo);
-                break;
-
-            case StartGameType.NewTutorial:
-
-                e = gdata.LoadInitialStartData(StageRoot.TutorialScenarioNo);
-                break;
-
-            case StartGameType.Load:
-
-                e = gdata.Load(slotNo);
-                break;
-
-            case StartGameType.LoadLastSLot:
-
-                e = gdata.Load();
-                break;
-        }
-
-        if (e is not Error.Ok)
-        {
-            string msg = $"ゲームを開始できません。エラーの値は{e}です。";
-            GD.PrintErr(msg);
-            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
-            return;
-        }
-
-        string path = StageRoot.GetResourcePath(gdata.GetStageData());
-
-        if (string.IsNullOrWhiteSpace(path))
-        {
-            GD.PrintErr("pathがNullOrWhiteSpaceです。ChangeSceneToFile()できません。");
-            return;
-        }
-
-        DeferredOpenScreen(path, fadeout, fadein);
     }
 
     private bool IsEmpty() => _history.Count == 0;
@@ -282,5 +208,71 @@ public partial class DialogLayer : CanvasLayer
         return droot;
     }
 
+    /// <summary>
+    /// ゲーム画面を開く
+    /// </summary>
+    /// <param name="startStageType">ゲーム開始種別</param>
+    /// <param name="slotNo">データ番号</param>
+    public void OpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
+    {
+        GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
+        GetTree().Paused = true;
+        _ = CallDeferred(MethodName.DeferredOpenGame, (int)startStageType, slotNo, fadeout, fadein);
+    }
+
+    private void DeferredOpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
+    {
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        Error e = Error.Ok;
+
+        // TakeOverStageとRestartは何もしない。
+        switch (startStageType)
+        {
+            case StartGameType.NewStage:
+
+                e = gdata.LoadInitialStartData(GameStageRoot.StageScenarioNo);
+                break;
+
+            case StartGameType.NewTutorial:
+
+                e = gdata.LoadInitialStartData(GameStageRoot.TutorialScenarioNo);
+                break;
+
+            case StartGameType.Load:
+
+                e = gdata.Load(slotNo);
+                break;
+
+            case StartGameType.LoadLastSLot:
+
+                e = gdata.Load();
+                break;
+        }
+
+        if (e is not Error.Ok)
+        {
+            string msg = $"ゲームを開始できません。エラーの値は{e}です。";
+            GD.PrintErr(msg);
+            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
+            return;
+        }
+
+        string path = GameStageRoot.GetResourcePath(gdata.GetStageData());
+
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            GD.PrintErr("pathがNullOrWhiteSpaceです。ChangeSceneToFile()できません。");
+            return;
+        }
+
+        DeferredOpenScreen(path, fadeout, fadein);
+    }
+
     public void QuitGame() => GetTree().Quit();
+
+    /// <summary>
+    /// 現在のゲーム画面を返す
+    /// </summary>
+    /// <returns>ScreenRoot</returns>
+    public GameStageRoot GetCurrentGameStageRoot() => GetTree().CurrentScene as GameStageRoot;
 }

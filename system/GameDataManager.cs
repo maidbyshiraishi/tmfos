@@ -7,7 +7,7 @@ namespace tmfos.system;
 /// <summary>
 /// ゲームデータ管理
 /// </summary>
-public partial class GameData : Node
+public partial class GameDataManager : Node
 {
     public const int DefaultSlotNo = 0;
 

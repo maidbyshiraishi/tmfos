@@ -21,7 +21,7 @@ public partial class PathFollow : PathFollow2D
     [Export]
     public bool ParentPathLooped { get; set; }
 
-    public override void _Ready() => AddToGroup(StageRoot.PhysicsProcessGroup);
+    public override void _Ready() => AddToGroup(GameStageRoot.PhysicsProcessGroup);
 
     public override void _PhysicsProcess(double delta)
     {

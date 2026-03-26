@@ -40,7 +40,7 @@ public partial class TmfosEnemy : PathFollowEnemy
         // 攻撃力強化の対象外
         m_attackCorrection = 0;
         _teleportPosition = GetTree().GetNodesInGroup(TeleportPositionGroupName);
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         NodeSpawned += stageRoot.SpawnNode;
     }
 
@@ -64,7 +64,7 @@ public partial class TmfosEnemy : PathFollowEnemy
     {
         PlaySprite("laser");
 
-        if (Lib.GetPackedScene<PackedScene>("res://decoration/excitation.tscn") is PackedScene pack && pack.Instantiate() is Node decoration)
+        if (Lib.GetPackedScene("res://decoration/excitation.tscn") is PackedScene pack && pack.Instantiate() is Node decoration)
         {
             _ = EmitSignal(Mob.SignalName.NodeSpawned, decoration, this, GlobalPosition, Vector2.Zero, 0f);
             decoration.TreeExited += Laser;
@@ -112,7 +112,7 @@ public partial class TmfosEnemy : PathFollowEnemy
     {
         Vector2 shotDirection = m_player.GlobalPosition - GlobalPosition;
 
-        if (Lib.GetPackedScene<PackedScene>("res://enemy/enemy_laser2.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
+        if (Lib.GetPackedScene("res://enemy/enemy_laser2.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
         {
             shot.Penetration = true;
             _ = EmitSignal(Mob.SignalName.NodeSpawned, shot, this, GlobalPosition, shotDirection, 0f);

@@ -54,8 +54,8 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
         _enemy = GetNode<Node2D>("Enemy");
         _exploreTimer = GetNode<Timer>("ExploreTimer");
         _exploreTimer.WaitTime = ExploreTime;
@@ -81,7 +81,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
         _startPosition = Position;
         _maxRadAngle = Mathf.DegToRad(MaxDegAngle);
         _ignoreRadAngle = Mathf.DegToRad(IgnoreDegAngle);
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         m_player = stageRoot.GetNode<Player>("%Player");
         inode.InitializeNode();
         LostPlayer(null);

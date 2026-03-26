@@ -59,7 +59,7 @@ public partial class TriggerArea2D : Area2D, IStateful
     {
         if (Stateful)
         {
-            AddToGroup(StageRoot.StatefulGroup);
+            AddToGroup(GameStageRoot.StatefulGroup);
         }
     }
 
@@ -80,7 +80,7 @@ public partial class TriggerArea2D : Area2D, IStateful
 
     public virtual void StateLoad()
     {
-        GameData gdata = GetNode<GameData>("/root/GameData");
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
         string name = Lib.GenerateName(this);
         int stageNo = gdata.GetStageData().StageNo;
 
@@ -92,7 +92,7 @@ public partial class TriggerArea2D : Area2D, IStateful
 
     public virtual void StateSave()
     {
-        GameData gdata = GetNode<GameData>("/root/GameData");
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
         string name = Lib.GenerateName(this);
         int stageNo = gdata.GetStageData().StageNo;
         gdata.SetStageData(stageNo, $"{name}_Opened", m_opened ? 1 : 0);

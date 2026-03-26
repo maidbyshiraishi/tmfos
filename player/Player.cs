@@ -45,9 +45,9 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     public override void _Ready()
     {
         base._Ready();
-        AddToGroup(StageRoot.LightSourceGroup);
-        AddToGroup(StageRoot.StatefulGroup);
-        AddToGroup(StageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.LightSourceGroup);
+        AddToGroup(GameStageRoot.StatefulGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
         _collision = GetNode<CollisionShape2D>("CollisionShape2D");
         _burialCollision = GetNode<CollisionShape2D>("BurialArea/CollisionShape2D");
         _eventFinderCollision = GetNode<CollisionShape2D>("EventFinder/CollisionShape2D");
@@ -65,11 +65,11 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     public override void InitializeNode()
     {
         base.InitializeNode();
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         Missed += stageRoot.Miss;
         HudUpdated += stageRoot.UpdateHud;
         _tileMapManager = stageRoot.GetNode<TileMapManager>("TileMap");
-        GameData gdata = GetNode<GameData>("/root/GameData");
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
         _itemData = gdata.GetItemData();
         Life = gdata.GetPlayerData().Life;
         PlayerArmorRatio = stageRoot.PlayerArmorRatio;
@@ -507,7 +507,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         SetSkipAttack();
         Vector2 shotDirection = Direction is DirectionType.Left ? Vector2.Left : Vector2.Right;
 
-        if (Lib.GetPackedScene<PackedScene>("res://player/player_shot1.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
+        if (Lib.GetPackedScene("res://player/player_shot1.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
         {
             shot.Penetration = _itemData.Penetration;
             shot.Weapon = _itemData.Weapon;
@@ -737,7 +737,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
 
     public void EnableLight()
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
 
         if (!stageRoot.IsDarkZone)
         {
@@ -764,14 +764,14 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         }
 
         base.AddDurability(value);
-        GetNode<GameData>("/root/GameData").GetPlayerData().Life = Life;
+        GetNode<GameDataManager>("/root/GameDataManager").GetPlayerData().Life = Life;
         _ = EmitSignal(SignalName.HudUpdated);
     }
 
     public override void SetDurability(int value)
     {
         base.SetDurability(value);
-        GetNode<GameData>("/root/GameData").GetPlayerData().Life = Life;
+        GetNode<GameDataManager>("/root/GameDataManager").GetPlayerData().Life = Life;
         _ = EmitSignal(SignalName.HudUpdated);
     }
 }

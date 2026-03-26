@@ -17,7 +17,7 @@ public partial class Mob : CharacterBody2D, IGameNode
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
         m_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (GetNodeOrNull("VisibleOnScreenNotifier2D") is VisibleOnScreenNotifier2D visibleOnScreenNotifier2D)
@@ -30,7 +30,7 @@ public partial class Mob : CharacterBody2D, IGameNode
 
     public virtual void InitializeNode()
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         NodeSpawned += stageRoot.SpawnNode;
     }
 

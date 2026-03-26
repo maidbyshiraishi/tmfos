@@ -20,5 +20,5 @@ public partial class AddFlagDataCommand : CommandRoot
     [Export]
     public int Value { get; set; }
 
-    public override void DoCommand(Node node, bool flag) => GetNode<GameData>("/root/GameData").AddFlagData(Key, Value);
+    public override void DoCommand(Node node, bool flag) => GetNode<GameDataManager>("/root/GameDataManager").AddFlagData(Key, Value);
 }

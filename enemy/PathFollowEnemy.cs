@@ -38,7 +38,7 @@ public partial class PathFollowEnemy : DurableShot
     {
         base.InitializeNode();
         _lastPosition = GlobalPosition;
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         m_player = stageRoot.GetNode<Player>("%Player");
         ResetLifeTime();
     }

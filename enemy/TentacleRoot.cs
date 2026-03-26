@@ -17,7 +17,7 @@ public partial class TentacleRoot : Node2D, IGameNode
 
     private Player _player;
 
-    public override void _Ready() => AddToGroup(StageRoot.GameNodeGroup);
+    public override void _Ready() => AddToGroup(GameStageRoot.GameNodeGroup);
 
     private void ConnectTentacles()
     {
@@ -54,7 +54,7 @@ public partial class TentacleRoot : Node2D, IGameNode
 
     public virtual void InitializeNode()
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         _player = stageRoot.GetNode<Player>("%Player");
 
         if (AutoConnectTentacle)

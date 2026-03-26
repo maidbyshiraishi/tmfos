@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://s7k5h417qpmc"]
 
-[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_wg7mc"]
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/game_stage_root.tscn" id="1_wg7mc"]
 [ext_resource type="AudioStream" uid="uid://bcuqvaiel3rk4" path="res://contents/bgm/bgm3.ogg" id="2_axsfl"]
 [ext_resource type="Texture2D" uid="uid://c20sg2513jne5" path="res://contents/image/background/ice_mountain.png" id="3_8yruw"]
 [ext_resource type="Texture2D" uid="uid://cuyf2x2dxvmci" path="res://contents/image/background/gray_gradation.png" id="5_gduaq"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nux2i30010u"]
 
-[ext_resource type="Script" uid="uid://dawhenu115pcw" path="res://system/GameData.cs" id="1_tpgm8"]
+[ext_resource type="Script" uid="uid://dawhenu115pcw" path="res://system/GameDataManager.cs" id="1_tpgm8"]
 
 [node name="GameData" type="Node" unique_id=1553033288]
 process_mode = 3

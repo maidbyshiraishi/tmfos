@@ -13,7 +13,7 @@ public partial class SetPlayerInitialDurabilityCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         Node node2 = stageRoot.GetNode("%Player");
 
         if (node2 is Player player && player.Life < PlayerData.InitialLife)

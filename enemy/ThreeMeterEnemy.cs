@@ -174,7 +174,7 @@ public partial class ThreeMeterEnemy : EyesightEnemy, ISwimAction
 
         SetSkipAttack();
 
-        if (Lib.GetPackedScene<PackedScene>("res://enemy/enemy_shot1.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
+        if (Lib.GetPackedScene("res://enemy/enemy_shot1.tscn") is PackedScene pack && pack.Instantiate() is Shot shot)
         {
             for (float i = 0f; i < 360f; i += 60f)
             {

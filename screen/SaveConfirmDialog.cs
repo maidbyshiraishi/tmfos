@@ -27,7 +27,7 @@ public partial class SaveConfirmDialog : DialogRoot
 
         _slotNo = (int)m_argument[0];
         GetNode<Label>("Data").Text = $"データ{_slotNo}";
-        string date = GetNode<GameData>("/root/GameData").GetFileDate(_slotNo);
+        string date = GetNode<GameDataManager>("/root/GameDataManager").GetFileDate(_slotNo);
 
         if (date is null)
         {
@@ -36,7 +36,7 @@ public partial class SaveConfirmDialog : DialogRoot
         else
         {
             GetNode<Label>("Date").Text = date;
-            string fileThumbnail = string.Format(GameData.DataThumbnailPath, _slotNo);
+            string fileThumbnail = string.Format(GameDataManager.DataThumbnailPath, _slotNo);
 
             if (FileAccess.FileExists(fileThumbnail))
             {
@@ -55,7 +55,7 @@ public partial class SaveConfirmDialog : DialogRoot
     /// </summary>
     public void Yes()
     {
-        if (_slotNo < 0 || GameData.NumOfSaveFiles < _slotNo)
+        if (_slotNo < 0 || GameDataManager.NumOfSaveFiles < _slotNo)
         {
             string msg = $"ゲームデータのセーブ中にエラーが発生しました。エラーの発生したデータはゲームデータ{_slotNo}です。";
             GD.PrintErr(msg);
@@ -63,7 +63,7 @@ public partial class SaveConfirmDialog : DialogRoot
             return;
         }
 
-        Error e = GetNode<GameData>("/root/GameData").Save(_slotNo);
+        Error e = GetNode<GameDataManager>("/root/GameDataManager").Save(_slotNo);
 
         if (e is not Error.Ok)
         {
