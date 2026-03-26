@@ -24,7 +24,7 @@ buses/default_bus_layout="uid://c0p5qk4ruxyol"
 
 [autoload]
 
-GameScreenOption="*res://system/game_screen_option.tscn"
+ScreenOption="*res://system/screen_option.tscn"
 DialogLayer="*res://system/dialog_layer.tscn"
 DialogArgument="*res://system/dialog_argument.tscn"
 ScreenFader="*res://system/screen_fader.tscn"
@@ -34,6 +34,7 @@ GameDataManager="*res://system/game_data_manager.tscn"
 MusicPlayer="*res://system/music_player.tscn"
 SePlayer="*res://system/se_player.tscn"
 Screenshot="*res://system/screenshot.tscn"
+GameScreenOption="*res://system/screen_option.tscn"
 
 [display]
 

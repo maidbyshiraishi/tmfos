@@ -6,7 +6,7 @@ namespace tmfos.system;
 /// <summary>
 /// ゲーム画面設定
 /// </summary>
-public partial class GameScreenOption : Node
+public partial class ScreenOption : Node
 {
     private static readonly string ScreenOptionsFilePath = "user://screen_options.dat";
     private static readonly int DefaultSizeX = 640;
