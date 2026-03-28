@@ -83,7 +83,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
         _marker = GetNode<Marker2D>("Marker2D");
         GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").ScreenEntered += SpawnEnemy;
 
@@ -95,7 +95,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
 
     public void InitializeNode()
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         NodeSpawned += stageRoot.SpawnNode;
         _player = stageRoot.GetNode<Player>("%Player");
     }
@@ -123,7 +123,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
         RandomNumberGenerator random = new();
         string resource = string.Format(EnemyResourceList[EnemyName.ToString()], random.RandiRange(1, 8));
 
-        if (Lib.GetPackedScene<PackedScene>(resource) is PackedScene pack && pack.Instantiate() is Node enemy)
+        if (Lib.GetPackedScene(resource) is PackedScene pack && pack.Instantiate() is Node enemy)
         {
             _ = EmitSignal(SignalName.NodeSpawned, enemy, this, GlobalPosition + _marker.Position, Vector2.Zero, EnemyLifeTime);
         }

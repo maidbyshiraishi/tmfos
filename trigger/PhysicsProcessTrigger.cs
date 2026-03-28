@@ -9,7 +9,7 @@ namespace tmfos.trigger;
 /// </summary>
 public partial class PhysicsProcessTrigger : Node
 {
-    public override void _Ready() => AddToGroup(StageRoot.PhysicsProcessGroup);
+    public override void _Ready() => AddToGroup(GameStageRoot.PhysicsProcessGroup);
 
     public override void _PhysicsProcess(double delta) => Exec();
 

@@ -6,7 +6,7 @@ namespace tmfos.system;
 /// <summary>
 /// 引数制御
 /// </summary>
-public partial class GameArgument : Node
+public partial class DialogArgument : Node
 {
     private readonly Dictionary<string, Variant[]> dictinary = [];
 

@@ -13,7 +13,7 @@ public partial class StatusDialog : DialogRoot
 
     protected override void InitializeNode()
     {
-        GameData gdata = GetNode<GameData>("/root/GameData");
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
         GetNode<AnimatedSprite2D>("ItemShoes").Play(_itemData.Shoes ? "closed" : "opened");
         GetNode<AnimatedSprite2D>("ItemSwim").Play(_itemData.Swim ? "closed" : "opened");
         GetNode<AnimatedSprite2D>("ItemWallJump").Play(_itemData.WallJump ? "closed" : "opened");

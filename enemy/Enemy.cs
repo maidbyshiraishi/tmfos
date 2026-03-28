@@ -18,7 +18,7 @@ public partial class Enemy : DurableMob, ISpawnedNode
     public override void InitializeNode()
     {
         base.InitializeNode();
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         m_player = stageRoot.GetNode<Player>("%Player");
         m_attackCorrection = stageRoot.EnemyAttackCorrection;
     }
@@ -70,7 +70,7 @@ public partial class Enemy : DurableMob, ISpawnedNode
         SetSkipAttack();
         player.AddDurability(-Attack - m_attackCorrection);
 
-        if (Lib.GetPackedScene<PackedScene>(effect) is PackedScene pack && pack.Instantiate() is Decoration decoration)
+        if (Lib.GetPackedScene(effect) is PackedScene pack && pack.Instantiate() is Decoration decoration)
         {
             _ = EmitSignal(Mob.SignalName.NodeSpawned, decoration, this, Position, Vector2.Zero, 0f);
         }

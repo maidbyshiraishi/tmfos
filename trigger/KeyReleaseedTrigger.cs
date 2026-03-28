@@ -21,7 +21,7 @@ public partial class KeyReleaseedTrigger : Node
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
         AddToGroup(KeyTriggerGroup);
     }
 

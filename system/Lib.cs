@@ -30,19 +30,24 @@ public static partial class Lib
         return text.TrimEnd('\n');
     }
 
-    public static T GetPackedScene<T>(string path) where T : class
+    /// <summary>
+    /// PackedSceneを読み込む
+    /// 取得できない場合はnullを返す。
+    /// </summary>
+    /// <param name="path">パス</param>
+    /// <returns>Resource</returns>
+    public static Resource GetPackedScene(string path)
     {
-        // todo: 利用箇所がクドいのでスッキリ書きたい
-        // teosにて対応済みだが逆輸入は行わない。
         if (string.IsNullOrWhiteSpace(path))
         {
             GD.PrintErr("pathがnullまたはホワイトスペースです。リソースファイルを読み込めません。");
             return null;
         }
 
-        if (ResourceLoader.Load(path) is T pack)
+        // 存在はするがアクセス不能の場合、どうなるか確認していない。
+        if (ResourceLoader.Exists(path))
         {
-            return pack;
+            return GD.Load(path);
         }
 
         GD.PrintErr($"リソースファイル{path}が存在しません。");
@@ -51,7 +56,7 @@ public static partial class Lib
 
     public static void ShowFloatingMessage(Node node, string text, Color color)
     {
-        if (GetPackedScene<PackedScene>("res://decoration/floating_message.tscn") is PackedScene pack && pack.Instantiate() is FloatingMessage fmsg)
+        if (GetPackedScene("res://decoration/floating_message.tscn") is PackedScene pack && pack.Instantiate() is FloatingMessage fmsg)
         {
             fmsg.Text = text;
             fmsg.Color = color;
@@ -138,7 +143,7 @@ public static partial class Lib
         target?.ExecCommand(node, flag);
     }
 
-    public static void SetPhysics(Node root, bool enabled) => root.GetTree().CallGroup(StageRoot.PhysicsProcessGroup, Node.MethodName.SetPhysicsProcess, enabled);
+    public static void SetPhysics(Node root, bool enabled) => root.GetTree().CallGroup(GameStageRoot.PhysicsProcessGroup, Node.MethodName.SetPhysicsProcess, enabled);
 
     public static void GrabFocus(Control control)
     {

@@ -29,8 +29,8 @@ public partial class TentacleHead : Area2D, IGameNode
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
         AreaEntered += Area2DEntered;
 
         if (GetNodeOrNull("Timer") is Timer timer && 0.05f <= Mathf.Abs(WaitTime))
@@ -43,7 +43,7 @@ public partial class TentacleHead : Area2D, IGameNode
 
     public void InitializeNode()
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         _player = stageRoot.GetNode<Player>("%Player");
         SetTargetPlayer();
     }

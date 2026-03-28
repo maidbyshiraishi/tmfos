@@ -58,8 +58,8 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
     {
         AreaEntered += HitArea2D;
         BodyEntered += HitNode2D;
-        AddToGroup(StageRoot.GameNodeGroup);
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
         m_animatedSprite = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (GetNodeOrNull("VisibleOnScreenNotifier2D") is VisibleOnScreenNotifier2D visibleOnScreenNotifier2D)

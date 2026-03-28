@@ -18,14 +18,14 @@ public partial class BlockBreaker : Marker2D, IGameNode
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
         _visibleOnScreenNotifier = GetOwner<Node>().GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
     }
 
     public void InitializeNode()
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         _tileMapManager = stageRoot.GetNode<TileMapManager>("TileMap");
     }
 

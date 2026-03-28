@@ -18,7 +18,7 @@ public partial class EventFinder : Area2D
     {
         AreaEntered += Area2DEntered;
         AreaExited += Area2DExited;
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
 
         if (GetParent() is ActionMob amob)
         {

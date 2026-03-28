@@ -99,7 +99,7 @@ public partial class ActionMob : Mob
     public override void _Ready()
     {
         base._Ready();
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
 
         // 基本公式
         // v = v0 + a * t

@@ -16,9 +16,9 @@ public partial class LoadDialog : DialogRoot
 
     private void UpdateTimeStamp()
     {
-        string[] date = GetNode<GameData>("/root/GameData").GetFileDates();
+        string[] date = GetNode<GameDataManager>("/root/GameDataManager").GetFileDates();
 
-        for (int i = 1; i <= GameData.NumOfSaveFiles; i++)
+        for (int i = 1; i <= GameDataManager.NumOfSaveFiles; i++)
         {
             Button b = GetNode<Button>($"Control/Data{i}");
             Label l = GetNode<Label>($"Date{i}");
@@ -33,7 +33,7 @@ public partial class LoadDialog : DialogRoot
             b.Disabled = false;
             l.Text = date[i - 1];
 
-            string fileThumbnail = string.Format(GameData.DataThumbnailPath, i);
+            string fileThumbnail = string.Format(GameDataManager.DataThumbnailPath, i);
 
             if (!FileAccess.FileExists(fileThumbnail))
             {

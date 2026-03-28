@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c257i3iupq67l"]
 
-[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_ds43u"]
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/game_stage_root.tscn" id="1_ds43u"]
 [ext_resource type="AudioStream" uid="uid://dbcsppfshlabl" path="res://contents/bgm/bgm8.ogg" id="2_nuww1"]
 [ext_resource type="PackedScene" uid="uid://bvfryyxcw20bs" path="res://decoration/exit.tscn" id="3_2l7d5"]
 [ext_resource type="PackedScene" uid="uid://pip2h1s8itsx" path="res://door/wood_door.tscn" id="4_7v0u3"]

@@ -14,13 +14,13 @@ public partial class VeilLight : Node2D, IGameNode
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
     }
 
     public void InitializeNode()
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         _tileMapManager = stageRoot.GetNode<TileMapManager>("TileMap");
     }
 

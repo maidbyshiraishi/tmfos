@@ -14,7 +14,7 @@ namespace tmfos.stage;
 /// <summary>
 /// ゲームステージの親
 /// </summary>
-public partial class StageRoot : DialogRoot, IStateful
+public partial class GameStageRoot : DialogRoot, IStateful
 {
     public static readonly string StagePath = "res://stage/stage_{0:D4}.tscn";
     public static readonly string TutorialPath = "res://stage/tutorial_{0:D4}.tscn";
@@ -71,7 +71,7 @@ public partial class StageRoot : DialogRoot, IStateful
 
     protected override void InitializeNode()
     {
-        GameData gdata = GetNode<GameData>("/root/GameData");
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
         gdata.Restore();
         SetPlayerLifeTime(gdata);
         _playerData = gdata.GetPlayerData();
@@ -85,7 +85,7 @@ public partial class StageRoot : DialogRoot, IStateful
 
     protected override void FinalizeNode() => GetTree().CallGroup(GameNodeGroup, "FinalizeNode");
 
-    private void SetPlayerLifeTime(GameData gdata)
+    private void SetPlayerLifeTime(GameDataManager gdata)
     {
         // デフォルト値を設定する
         _player.LifeTime = PlayerLifeTime;
@@ -152,7 +152,7 @@ public partial class StageRoot : DialogRoot, IStateful
 
     protected void SetStartGateway()
     {
-        StageData stageData = GetNode<GameData>("/root/GameData").GetStageData();
+        StageData stageData = GetNode<GameDataManager>("/root/GameDataManager").GetStageData();
         int doorNo = stageData.DoorNo;
         StageEntryPoint stateEntryPoint = FindStageEntryPoint(doorNo);
 
@@ -169,11 +169,11 @@ public partial class StageRoot : DialogRoot, IStateful
     public void EnterGateway(int destStageNo, int destDoorNo, string fadeout, string fadein)
     {
         GetTree().CallGroup(StatefulGroup, "StateSave");
-        StageData stageData = GetNode<GameData>("/root/GameData").GetStageData();
+        StageData stageData = GetNode<GameDataManager>("/root/GameDataManager").GetStageData();
         stageData.StageNo = destStageNo;
         stageData.DoorNo = destDoorNo;
-        GetNode<GameData>("/root/GameData").Backup();
-        GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.TakeoverStage, GameData.DefaultSlotNo, fadeout, fadein);
+        GetNode<GameDataManager>("/root/GameDataManager").Backup();
+        GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.TakeoverStage, GameDataManager.DefaultSlotNo, fadeout, fadein);
     }
 
     public void Miss()
@@ -184,7 +184,7 @@ public partial class StageRoot : DialogRoot, IStateful
         if (0 < _playerData.Remain)
         {
             _playerData.Life = PlayerData.InitialLife;
-            GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.Restart, GameData.DefaultSlotNo, "fadeout_1", "fadein_1");
+            GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.Restart, GameDataManager.DefaultSlotNo, "fadeout_1", "fadein_1");
         }
         else
         {

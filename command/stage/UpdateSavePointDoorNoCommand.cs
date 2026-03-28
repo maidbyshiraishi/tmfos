@@ -20,7 +20,7 @@ public partial class UpdateSavePointDoorNoCommand : CommandRoot
     {
         if (GetParent() is SavePoint savePoint)
         {
-            StageData stageData = GetNode<GameData>("/root/GameData").GetStageData();
+            StageData stageData = GetNode<GameDataManager>("/root/GameDataManager").GetStageData();
             stageData.DoorNo = savePoint.DoorNo;
         }
     }

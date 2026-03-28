@@ -31,13 +31,13 @@ public partial class OpenGameCommand : CommandRoot
     /// ゲームデータ番号
     /// </summary>
     [Export]
-    public int SlotNo { get; set; } = GameData.DefaultSlotNo;
+    public int SlotNo { get; set; } = GameDataManager.DefaultSlotNo;
 
     public override void DoCommand(Node node, bool flag)
     {
         if (StartGame is StartGameType.Load)
         {
-            if (SlotNo < 0 || GameData.NumOfSaveFiles < SlotNo)
+            if (SlotNo < 0 || GameDataManager.NumOfSaveFiles < SlotNo)
             {
                 string msg = $"ゲームデータのロード中にエラーが発生しました。エラーの発生したデータはゲームデータ{SlotNo}です。";
                 GD.PrintErr(msg);
@@ -47,7 +47,7 @@ public partial class OpenGameCommand : CommandRoot
         }
         else if (StartGame is StartGameType.NewStage or StartGameType.NewTutorial or StartGameType.TakeoverStage or StartGameType.Restart or StartGameType.LoadLastSLot)
         {
-            SlotNo = GameData.DefaultSlotNo;
+            SlotNo = GameDataManager.DefaultSlotNo;
         }
 
         GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGame, SlotNo, Fadeout, Fadein);

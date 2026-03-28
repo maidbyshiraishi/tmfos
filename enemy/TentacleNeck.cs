@@ -14,7 +14,7 @@ public partial class TentacleNeck : CharacterBody2D
 
     private AnimatedSprite2D _sprite;
 
-    public override void _Ready() => AddToGroup(StageRoot.PhysicsProcessGroup);
+    public override void _Ready() => AddToGroup(GameStageRoot.PhysicsProcessGroup);
 
     public override void _PhysicsProcess(double delta)
     {

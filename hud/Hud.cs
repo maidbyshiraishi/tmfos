@@ -29,7 +29,7 @@ public partial class Hud : CanvasLayer, IGameNode
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
         _time = GetNodeOrNull<Label>("Time");
         _time.Hide();
         _score = GetNodeOrNull<Label>("Score");

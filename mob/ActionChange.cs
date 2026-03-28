@@ -18,8 +18,8 @@ public partial class ActionChange : Node2D, IGameNode
 
     public override void _Ready()
     {
-        AddToGroup(StageRoot.GameNodeGroup);
-        AddToGroup(StageRoot.PhysicsProcessGroup);
+        AddToGroup(GameStageRoot.GameNodeGroup);
+        AddToGroup(GameStageRoot.PhysicsProcessGroup);
         _markerHead = GetNodeOrNull<Marker2D>("Head");
         _marker = GetNode<Marker2D>("Marker2D");
 
@@ -31,7 +31,7 @@ public partial class ActionChange : Node2D, IGameNode
 
     public void InitializeNode()
     {
-        StageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot();
+        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         _tileMapManager = stageRoot.GetNode<TileMapManager>("TileMap");
     }
 

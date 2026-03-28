@@ -26,7 +26,7 @@ public partial class SePlayer : Node
             return;
         }
 
-        if (Lib.GetPackedScene<AudioStream>($"res://contents/se/{name}.ogg") is not AudioStream audio)
+        if (Lib.GetPackedScene($"res://contents/se/{name}.ogg") is not AudioStream audio)
         {
             return;
         }

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bhmbi7hs16eq6"]
 
-[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/stage_root.tscn" id="1_c0i7l"]
+[ext_resource type="PackedScene" uid="uid://ddw2g00yqtlmx" path="res://stage/game_stage_root.tscn" id="1_c0i7l"]
 [ext_resource type="Texture2D" uid="uid://qcwao8n546d5" path="res://contents/image/background/pattern3.png" id="2_5g4xr"]
 [ext_resource type="PackedScene" uid="uid://bvfryyxcw20bs" path="res://decoration/exit.tscn" id="3_mmxo5"]
 [ext_resource type="PackedScene" uid="uid://byeqvar802p5v" path="res://door/boss_door.tscn" id="4_33fuo"]

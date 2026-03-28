@@ -100,7 +100,7 @@ public partial class SearchTrigger : TriggerArea2D, IStateful
             return;
         }
 
-        GameData gdata = GetNode<GameData>("/root/GameData");
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
         string name = Lib.GenerateName(this);
         int stageNo = gdata.GetStageData().StageNo;
         gdata.SetStageData(stageNo, $"{name}_Switch", Switch ? 1 : 0);
@@ -113,7 +113,7 @@ public partial class SearchTrigger : TriggerArea2D, IStateful
             return;
         }
 
-        GameData gdata = GetNode<GameData>("/root/GameData");
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
         string name = Lib.GenerateName(this);
         int stageNo = gdata.GetStageData().StageNo;
 

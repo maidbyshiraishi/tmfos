@@ -11,10 +11,10 @@ public partial class GameOverDialog : DialogRoot
 {
     protected override void InitializeNode()
     {
-        GameData gdata = GetNode<GameData>("/root/GameData");
+        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
         string[] date = gdata.GetFileDates();
 
-        for (int i = 1; i <= GameData.NumOfSaveFiles; i++)
+        for (int i = 1; i <= GameDataManager.NumOfSaveFiles; i++)
         {
             if (date[i - 1] is not null)
             {

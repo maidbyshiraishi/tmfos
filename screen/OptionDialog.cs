@@ -55,7 +55,7 @@ public partial class OptionDialog : DialogRoot
         SeVolume = option.SeVolume;
         GetNode<Label>("SeValue").Text = $"{SeVolume}%";
         GetNode<HSlider>("Control/SeSlider").SetValueNoSignal(SeVolume);
-        GameScreenOption screenOption = GetNode<GameScreenOption>("/root/GameScreenOption");
+        ScreenOption screenOption = GetNode<ScreenOption>("/root/ScreenOption");
         Fullscreen = screenOption.Fullscreen;
         SetFullscreenCheck(Fullscreen);
     }
@@ -97,7 +97,7 @@ public partial class OptionDialog : DialogRoot
         GetNode<Label>("FullscreenCheckValue").Text = Fullscreen ? "ON" : "OFF";
 
         // ウィンドウ状態に関しては即座にシステムに反映する
-        GameScreenOption option = GetNode<GameScreenOption>("/root/GameScreenOption");
+        ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
         option.Fullscreen = Fullscreen;
         option.ChangeWindowMode();
     }
@@ -110,7 +110,7 @@ public partial class OptionDialog : DialogRoot
 
     public void ResetDefaultScreenOptions()
     {
-        GameScreenOption option = GetNode<GameScreenOption>("/root/GameScreenOption");
+        ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
         option.CalcScreenOptions();
         option.ApplyScreenOptions();
     }
