@@ -117,10 +117,10 @@ animations = [{
 metadata/_edit_horizontal_guides_ = [118.0, 359.0]
 metadata/_edit_vertical_guides_ = [166.0, 479.0]
 
-[node name="Background" parent="." index="0"]
+[node name="Background" parent="." index="0" unique_id=1963324877]
 color = Color(0, 0, 0, 1)
 
-[node name="Contents" type="Control" parent="Socket" index="0" unique_id=479257201]
+[node name="Contents" type="Control" parent="Socket" parent_id_path=PackedInt32Array(183355316) index="0" unique_id=479257201]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

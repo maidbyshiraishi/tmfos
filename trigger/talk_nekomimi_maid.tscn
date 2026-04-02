@@ -5,5 +5,5 @@
 
 [node name="TalkTrigger" unique_id=675105036 instance=ExtResource("1_yefdj")]
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=659258899]
 sprite_frames = ExtResource("2_mo6tm")

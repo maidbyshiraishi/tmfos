@@ -5,5 +5,5 @@
 
 [node name="BossDoor" unique_id=388763144 instance=ExtResource("1_okgbd")]
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=452515983]
 sprite_frames = ExtResource("2_43nrb")

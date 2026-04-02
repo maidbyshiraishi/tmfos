@@ -14,7 +14,7 @@
 metadata/_edit_horizontal_guides_ = [118.0, 359.0]
 metadata/_edit_vertical_guides_ = [166.0, 479.0]
 
-[node name="Background" parent="." index="0"]
+[node name="Background" parent="." index="0" unique_id=1963324877]
 color = Color(0.313726, 0.313726, 0.313726, 0.784314)
 
 [node name="Contents" type="Control" parent="Socket" parent_id_path=PackedInt32Array(183355316) index="0" unique_id=592269155]

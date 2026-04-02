@@ -17,112 +17,112 @@
 [node name="Stage" unique_id=940195239 instance=ExtResource("1_c0i7l")]
 NoBgm = true
 
-[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+[node name="ColorRect" parent="Background/Parallax2D3" parent_id_path=PackedInt32Array(316905264) index="0" unique_id=1444016902]
 color = Color(0.301961, 0, 0.0941176, 1)
 
-[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D2" parent_id_path=PackedInt32Array(783352162) index="0" unique_id=1264730317]
 texture = ExtResource("2_5g4xr")
 
-[node name="Background" parent="TileMap" index="0"]
+[node name="Background" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="0" unique_id=1341315673]
 tile_map_data = PackedByteArray("AAAMAP7/AAAJAAEAAAAaAP7/AAAJAAEAAAAOAP3/AAAJAAEAAAAQAPz/AAAJAAEAAAAWAPz/AAAJAAEAAAAYAP3/AAAJAAEAAAAMAP3/AAAIAAMAAAAMAPz/AAAIAAMAAAAMAPv/AAAIAAMAAAAMAPr/AAAIAAMAAAAOAPz/AAAIAAMAAAAOAPv/AAAIAAMAAAAOAPr/AAAIAAMAAAAOAPn/AAAIAAMAAAAQAPv/AAAIAAMAAAAQAPr/AAAIAAMAAAAQAPn/AAAIAAMAAAAQAPj/AAAIAAMAAAAWAPv/AAAIAAMAAAAWAPr/AAAIAAMAAAAWAPn/AAAIAAMAAAAWAPj/AAAIAAMAAAAYAPz/AAAIAAMAAAAYAPv/AAAIAAMAAAAYAPr/AAAIAAMAAAAYAPn/AAAIAAMAAAAaAP3/AAAIAAMAAAAaAPz/AAAIAAMAAAAaAPv/AAAIAAMAAAAaAPr/AAAIAAMAAAAaAPn/AAAJAAAAAAAYAPj/AAAJAAAAAAAWAPf/AAAJAAAAAAAQAPf/AAAJAAAAAAAOAPj/AAAJAAAAAAAMAPn/AAAJAAAAAAA=")
 
-[node name="Ground" parent="TileMap" index="1"]
+[node name="Ground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="1" unique_id=2022029018]
 tile_map_data = PackedByteArray("AAAAAOD/AAAAAAMAAAAAAOH/AAAAAAMAAAAAAOL/AAAAAAMAAAAAAOP/AAAAAAMAAAAAAOT/AAAAAAMAAAAAAOX/AAAAAAMAAAAAAOb/AAAAAAMAAAAAAOf/AAAAAAMAAAAAAOj/AAAAAAMAAAAAAOn/AAAAAAMAAAAAAOr/AAAAAAMAAAAAAOv/AAAAAAMAAAAAAOz/AAAAAAMAAAAAAO3/AAAAAAMAAAAAAO7/AAAAAAMAAAAAAO//AAAAAAMAAAAAAPD/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP//AAAAAAMAAAABAOD/AAAAAAMAAAABAP//AAAAAAMAAAACAOD/AAAAAAMAAAACAP//AAAAAAMAAAADAOD/AAAAAAMAAAADAP//AAAAAAMAAAAEAOD/AAAAAAMAAAAEAP//AAAAAAMAAAAFAOD/AAAAAAMAAAAFAP//AAAAAAMAAAAGAOD/AAAAAAMAAAAGAP//AAAAAAMAAAAHAOD/AAAAAAMAAAAHAP//AAAAAAMAAAAIAOD/AAAAAAMAAAAIAP//AAAAAAMAAAAJAOD/AAAAAAMAAAAJAP//AAAAAAMAAAAKAOD/AAAAAAMAAAAKAP//AAAAAAMAAAALAOD/AAAAAAMAAAALAP//AAAAAAMAAAAMAOD/AAAAAAMAAAAMAP//AAAAAAMAAAANAOD/AAAAAAMAAAANAP//AAAAAAMAAAAOAOD/AAAAAAMAAAAOAP//AAAAAAMAAAAPAOD/AAAAAAMAAAAPAP//AAAAAAMAAAAQAOD/AAAAAAMAAAAQAP//AAAAAAMAAAARAOD/AAAAAAMAAAARAP//AAAAAAMAAAASAOD/AAAAAAMAAAASAP//AAAAAAMAAAATAOD/AAAAAAMAAAATAP//AAAAAAMAAAAUAOD/AAAAAAMAAAAUAP//AAAAAAMAAAAVAOD/AAAAAAMAAAAVAP//AAAAAAMAAAAWAOD/AAAAAAMAAAAWAP//AAAAAAMAAAAXAOD/AAAAAAMAAAAXAP//AAAAAAMAAAAYAOD/AAAAAAMAAAAYAP//AAAAAAMAAAAZAOD/AAAAAAMAAAAZAP//AAAAAAMAAAAaAOD/AAAAAAMAAAAaAP//AAAAAAMAAAAbAOD/AAAAAAMAAAAbAP//AAAAAAMAAAAcAOD/AAAAAAMAAAAcAP//AAAAAAMAAAAdAOD/AAAAAAMAAAAdAP//AAAAAAMAAAAeAOD/AAAAAAMAAAAeAP//AAAAAAMAAAAfAOD/AAAAAAMAAAAfAOH/AAAAAAMAAAAfAOL/AAAAAAMAAAAfAOP/AAAAAAMAAAAfAOT/AAAAAAMAAAAfAOX/AAAAAAMAAAAfAOb/AAAAAAMAAAAfAOf/AAAAAAMAAAAfAOj/AAAAAAMAAAAfAOn/AAAAAAMAAAAfAOr/AAAAAAMAAAAfAOv/AAAAAAMAAAAfAOz/AAAAAAMAAAAfAO3/AAAAAAMAAAAfAO7/AAAAAAMAAAAfAO//AAAAAAMAAAAfAPD/AAAAAAMAAAAfAPH/AAAAAAMAAAAfAPL/AAAAAAMAAAAfAPP/AAAAAAMAAAAfAPT/AAAAAAMAAAAfAPX/AAAAAAMAAAAfAPb/AAAAAAMAAAAfAPf/AAAAAAMAAAAfAPj/AAAAAAMAAAAfAPn/AAAAAAMAAAAfAPr/AAAAAAMAAAAfAPv/AAAAAAMAAAAfAPz/AAAAAAMAAAAfAP3/AAAAAAMAAAAfAP7/AAAAAAMAAAAfAP//AAAAAAMAAAAOAP7/AAAAAAMAAAAPAP7/AAAAAAMAAAAQAP7/AAAAAAMAAAARAP7/AAAAAAMAAAASAP7/AAAAAAMAAAATAP7/AAAAAAMAAAAUAP7/AAAAAAMAAAAVAP7/AAAAAAMAAAAWAP7/AAAAAAMAAAAXAP7/AAAAAAMAAAAQAP3/AAAAAAMAAAARAP3/AAAAAAMAAAASAP3/AAAAAAMAAAATAP3/AAAAAAMAAAAUAP3/AAAAAAMAAAAVAP3/AAAAAAMAAAASAPz/AAAAAAMAAAATAPz/AAAAAAMAAAASAPX/AAAAAAMAAAATAPX/AAAAAAMAAAARAPb/AAAAAAMAAAAQAPb/AAAAAAMAAAAPAPf/AAAAAAMAAAAOAPf/AAAAAAMAAAANAPj/AAAAAAMAAAAMAPj/AAAAAAMAAAAUAPz/AAAAAAMAAAAWAP3/AAAAAAMAAAAYAP7/AAAAAAMAAAAUAPX/AAAAAAMAAAAVAPb/AAAAAAMAAAAWAPb/AAAAAAMAAAAXAPf/AAAAAAMAAAAYAPf/AAAAAAMAAAAZAPj/AAAAAAMAAAAaAPj/AAAAAAMAAAAbAPj/AAAAAAMAAAALAPj/AAAAAAMAAAA=")
 
-[node name="Foreground" parent="TileMap" index="2"]
+[node name="Foreground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="2" unique_id=1114116396]
 tile_map_data = PackedByteArray("AAAYAP3/AAAHAAEAAAAYAPz/AAAHAAEAAAAYAPv/AAAHAAEAAAAQAPf/AAAHAAEAAAAQAPj/AAAHAAEAAAAOAP3/AAAHAAEAAAAOAPz/AAAHAAEAAAAMAP3/AAAHAAEAAAAMAPz/AAAHAAEAAAAMAPv/AAAHAAEAAAAWAPf/AAAHAAEAAAAWAPj/AAAHAAEAAAAaAPn/AAAHAAEAAAAaAPr/AAAHAAEAAAAWAPz/AAAHAAEAAAAWAPv/AAAHAAEAAAAMAP7/AAAHAAEAAAAaAP7/AAAHAAEAAAAQAPz/AAAHAAEAAAA=")
 
-[node name="Exit" parent="Decoration1" index="0" unique_id=1228927781 instance=ExtResource("3_mmxo5")]
+[node name="Exit" parent="Decoration1" parent_id_path=PackedInt32Array(1446657132) index="0" unique_id=1228927781 instance=ExtResource("3_mmxo5")]
 position = Vector2(96, -176)
 
-[node name="BossDoor1" parent="Door" index="0" unique_id=1462397344 instance=ExtResource("4_33fuo")]
+[node name="BossDoor1" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="0" unique_id=1462397344 instance=ExtResource("4_33fuo")]
 position = Vector2(208, -63)
 DestStageNo = 15
 DestDoorNo = 3
 DoorNo = 1
 Direction = 1
 
-[node name="Warp2" parent="Door" index="1" unique_id=1156884470 instance=ExtResource("5_a6epe")]
+[node name="Warp2" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="1" unique_id=1156884470 instance=ExtResource("5_a6epe")]
 position = Vector2(96, -128)
 DestStageNo = 1
 DestDoorNo = 1
 DoorNo = 2
 
-[node name="SavePoint3" parent="Door" index="2" unique_id=1354617316 instance=ExtResource("6_gse6f")]
+[node name="SavePoint3" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="2" unique_id=1354617316 instance=ExtResource("6_gse6f")]
 position = Vector2(303, -72)
 DoorNo = 3
 Direction = 1
 
-[node name="TalkTrigger" parent="Talk" index="0" unique_id=531382971 instance=ExtResource("7_p0pty")]
+[node name="TalkTrigger" parent="Talk" parent_id_path=PackedInt32Array(1187157199) index="0" unique_id=531382971 instance=ExtResource("7_p0pty")]
 position = Vector2(624, -160)
 DialogPath = "res://theater/talk_0009.tscn"
 
-[node name="ItemPanelLife" parent="Item" index="0" unique_id=199052583 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="0" unique_id=199052583 instance=ExtResource("8_a8dyu")]
 position = Vector2(848, -272)
 Stateful = false
 
-[node name="ItemPanelLife2" parent="Item" index="1" unique_id=1753471295 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife2" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="1" unique_id=1753471295 instance=ExtResource("8_a8dyu")]
 position = Vector2(784, -304)
 Stateful = false
 
-[node name="ItemPanelLife3" parent="Item" index="2" unique_id=135283985 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife3" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="2" unique_id=135283985 instance=ExtResource("8_a8dyu")]
 position = Vector2(720, -336)
 Stateful = false
 
-[node name="ItemPanelLife4" parent="Item" index="3" unique_id=1777797294 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife4" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="3" unique_id=1777797294 instance=ExtResource("8_a8dyu")]
 position = Vector2(528, -336)
 Stateful = false
 
-[node name="ItemPanelLife5" parent="Item" index="4" unique_id=1811846681 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife5" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="4" unique_id=1811846681 instance=ExtResource("8_a8dyu")]
 position = Vector2(464, -304)
 Stateful = false
 
-[node name="ItemPanelLife6" parent="Item" index="5" unique_id=2077991786 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife6" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="5" unique_id=2077991786 instance=ExtResource("8_a8dyu")]
 position = Vector2(400, -272)
 Stateful = false
 
-[node name="ItemPanelWeapon" parent="Item" index="6" unique_id=1158958711 instance=ExtResource("9_ybii5")]
+[node name="ItemPanelWeapon" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="6" unique_id=1158958711 instance=ExtResource("9_ybii5")]
 position = Vector2(688, -336)
 
-[node name="ItemPanelWeapon2" parent="Item" index="7" unique_id=1323190817 instance=ExtResource("9_ybii5")]
+[node name="ItemPanelWeapon2" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="7" unique_id=1323190817 instance=ExtResource("9_ybii5")]
 position = Vector2(752, -304)
 
-[node name="ItemPanelWeapon3" parent="Item" index="8" unique_id=506998369 instance=ExtResource("9_ybii5")]
+[node name="ItemPanelWeapon3" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="8" unique_id=506998369 instance=ExtResource("9_ybii5")]
 position = Vector2(880, -272)
 
-[node name="ItemPanelWeapon4" parent="Item" index="9" unique_id=330124953 instance=ExtResource("9_ybii5")]
+[node name="ItemPanelWeapon4" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="9" unique_id=330124953 instance=ExtResource("9_ybii5")]
 position = Vector2(816, -272)
 
-[node name="ItemPanelWeapon5" parent="Item" index="10" unique_id=1173012049 instance=ExtResource("9_ybii5")]
+[node name="ItemPanelWeapon5" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="10" unique_id=1173012049 instance=ExtResource("9_ybii5")]
 position = Vector2(656, -368)
 
-[node name="ItemPanelArmor" parent="Item" index="11" unique_id=1357533487 instance=ExtResource("10_736ys")]
+[node name="ItemPanelArmor" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="11" unique_id=1357533487 instance=ExtResource("10_736ys")]
 position = Vector2(592, -368)
 
-[node name="ItemPanelArmor2" parent="Item" index="12" unique_id=2116330400 instance=ExtResource("10_736ys")]
+[node name="ItemPanelArmor2" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="12" unique_id=2116330400 instance=ExtResource("10_736ys")]
 position = Vector2(368, -272)
 
-[node name="ItemPanelArmor3" parent="Item" index="13" unique_id=1208636956 instance=ExtResource("10_736ys")]
+[node name="ItemPanelArmor3" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="13" unique_id=1208636956 instance=ExtResource("10_736ys")]
 position = Vector2(496, -304)
 
-[node name="ItemPanelArmor4" parent="Item" index="14" unique_id=1332177861 instance=ExtResource("10_736ys")]
+[node name="ItemPanelArmor4" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="14" unique_id=1332177861 instance=ExtResource("10_736ys")]
 position = Vector2(560, -336)
 
-[node name="ItemPanelArmor5" parent="Item" index="15" unique_id=2096270256 instance=ExtResource("10_736ys")]
+[node name="ItemPanelArmor5" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="15" unique_id=2096270256 instance=ExtResource("10_736ys")]
 position = Vector2(432, -272)
 
-[node name="ItemPanelArmor6" parent="Item" index="16" unique_id=1178660963 instance=ExtResource("10_736ys")]
+[node name="ItemPanelArmor6" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="16" unique_id=1178660963 instance=ExtResource("10_736ys")]
 position = Vector2(624, -368)
 
-[node name="ItemPanelLife7" parent="Item" index="17" unique_id=1279570090 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife7" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="17" unique_id=1279570090 instance=ExtResource("8_a8dyu")]
 position = Vector2(624, -400)
 Stateful = false
 
-[node name="ItemPanelLife8" parent="Item" index="18" unique_id=545922510 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife8" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="18" unique_id=545922510 instance=ExtResource("8_a8dyu")]
 position = Vector2(640, -432)
 Stateful = false
 
-[node name="ItemPanelLife9" parent="Item" index="19" unique_id=55203915 instance=ExtResource("8_a8dyu")]
+[node name="ItemPanelLife9" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="19" unique_id=55203915 instance=ExtResource("8_a8dyu")]
 position = Vector2(608, -432)
 Stateful = false
 
@@ -135,10 +135,10 @@ unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("12_4tip8")
 
-[node name="HUD" parent="." index="13"]
+[node name="HUD" parent="." index="13" unique_id=1358724654]
 Text1 = "ステージ"
 Text2 = "20"
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" unique_id=1417225883 instance=ExtResource("13_nuvrl")]
+[node name="OutOfBorder1" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="0" unique_id=1417225883 instance=ExtResource("13_nuvrl")]
 position = Vector2(480, 16)
 scale = Vector2(60, 1)

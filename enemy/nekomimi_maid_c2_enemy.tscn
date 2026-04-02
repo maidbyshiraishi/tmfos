@@ -5,6 +5,6 @@
 
 [node name="NekomimiMaidEnemy" unique_id=795864336 instance=ExtResource("1_bh8lp")]
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1266957152]
 sprite_frames = ExtResource("6_h3n86")
 animation = &"walk_left"

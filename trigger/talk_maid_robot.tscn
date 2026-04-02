@@ -8,11 +8,11 @@ size = Vector2(32, 128)
 
 [node name="TalkTrigger" unique_id=1055144873 instance=ExtResource("1_ilbvu")]
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=552790459]
 shape = SubResource("RectangleShape2D_aj8ar")
 
-[node name="AnimatedSprite2D2" parent="." index="1"]
+[node name="AnimatedSprite2D2" parent="." index="1" unique_id=1270679460]
 position = Vector2(-8, -90)
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=659258899]
 sprite_frames = ExtResource("2_7ded8")

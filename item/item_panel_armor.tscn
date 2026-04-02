@@ -6,6 +6,6 @@
 [node name="ItemPanelArmor" unique_id=1916750288 instance=ExtResource("1_8iky0")]
 Item = 7
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1054633995]
 sprite_frames = ExtResource("2_a7dfw")
 animation = &"closed"

@@ -19,72 +19,72 @@
 [node name="Stage" unique_id=476267811 instance=ExtResource("1_fh2vt")]
 NoBgm = true
 
-[node name="ColorRect" parent="Background/Parallax2D3" index="0"]
+[node name="ColorRect" parent="Background/Parallax2D3" parent_id_path=PackedInt32Array(316905264) index="0" unique_id=1444016902]
 color = Color(0.0784314, 0.313726, 1, 1)
 
-[node name="Sprite2D" parent="Background/Parallax2D2" index="0"]
+[node name="Sprite2D" parent="Background/Parallax2D2" parent_id_path=PackedInt32Array(783352162) index="0" unique_id=1264730317]
 texture = ExtResource("2_x4ttm")
 
-[node name="Ground" parent="TileMap" index="1"]
+[node name="Ground" parent="TileMap" parent_id_path=PackedInt32Array(80707190) index="1" unique_id=2022029018]
 tile_map_data = PackedByteArray("AAAAAOD/AAAAAAMAAAAAAOH/AAAAAAMAAAAAAOL/AAAAAAMAAAAAAOP/AAAAAAMAAAAAAOT/AAAAAAMAAAAAAOX/AAAAAAMAAAAAAOb/AAAAAAMAAAAAAOf/AAAAAAMAAAAAAOj/AAAAAAMAAAAAAOn/AAAAAAMAAAAAAOr/AAAAAAMAAAAAAOv/AAAAAAMAAAAAAOz/AAAAAAMAAAAAAO3/AAAAAAMAAAAAAO7/AAAAAAMAAAAAAO//AAAAAAMAAAAAAPD/AAAAAAMAAAAAAPH/AAAAAAMAAAAAAPL/AAAAAAMAAAAAAPP/AAAAAAMAAAAAAPT/AAAAAAMAAAAAAPX/AAAAAAMAAAAAAPb/AAAAAAMAAAAAAPf/AAAAAAMAAAAAAPj/AAAAAAMAAAAAAPn/AAAAAAMAAAAAAPr/AAAAAAMAAAAAAPv/AAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AAAAAAMAAAAAAP7/AAAAAAMAAAAAAP//AAAAAAMAAAABAOD/AAAAAAMAAAABAP//AAAAAAMAAAACAOD/AAAAAAMAAAACAP//AAAAAAMAAAADAOD/AAAAAAMAAAADAP//AAAAAAMAAAAEAOD/AAAAAAMAAAAEAP//AAAAAAMAAAAFAOD/AAAAAAMAAAAFAP//AAAAAAMAAAAGAOD/AAAAAAMAAAAGAP//AAAAAAMAAAAHAOD/AAAAAAMAAAAHAP//AAAAAAMAAAAIAOD/AAAAAAMAAAAIAP//AAAAAAMAAAAJAOD/AAAAAAMAAAAJAP//AAAAAAMAAAAKAOD/AAAAAAMAAAAKAP//AAAAAAMAAAALAOD/AAAAAAMAAAALAP//AAAAAAMAAAAMAOD/AAAAAAMAAAAMAP//AAAAAAMAAAANAOD/AAAAAAMAAAANAP//AAAAAAMAAAAOAOD/AAAAAAMAAAAOAP//AAAAAAMAAAAPAOD/AAAAAAMAAAAPAP//AAAAAAMAAAAQAOD/AAAAAAMAAAAQAP//AAAAAAMAAAARAOD/AAAAAAMAAAARAP//AAAAAAMAAAASAOD/AAAAAAMAAAASAP//AAAAAAMAAAATAOD/AAAAAAMAAAATAP//AAAAAAMAAAAUAOD/AAAAAAMAAAAUAP//AAAAAAMAAAAVAOD/AAAAAAMAAAAVAP//AAAAAAMAAAAWAOD/AAAAAAMAAAAWAP//AAAAAAMAAAAXAOD/AAAAAAMAAAAXAP//AAAAAAMAAAAYAOD/AAAAAAMAAAAYAP//AAAAAAMAAAAZAOD/AAAAAAMAAAAZAP//AAAAAAMAAAAaAOD/AAAAAAMAAAAaAP//AAAAAAMAAAAbAOD/AAAAAAMAAAAbAP//AAAAAAMAAAAcAOD/AAAAAAMAAAAcAP//AAAAAAMAAAAdAOD/AAAAAAMAAAAdAP//AAAAAAMAAAAeAOD/AAAAAAMAAAAeAP//AAAAAAMAAAAfAOD/AAAAAAMAAAAfAOH/AAAAAAMAAAAfAOL/AAAAAAMAAAAfAOP/AAAAAAMAAAAfAOT/AAAAAAMAAAAfAOX/AAAAAAMAAAAfAOb/AAAAAAMAAAAfAOf/AAAAAAMAAAAfAOj/AAAAAAMAAAAfAOn/AAAAAAMAAAAfAOr/AAAAAAMAAAAfAOv/AAAAAAMAAAAfAOz/AAAAAAMAAAAfAO3/AAAAAAMAAAAfAO7/AAAAAAMAAAAfAO//AAAAAAMAAAAfAPD/AAAAAAMAAAAfAPH/AAAAAAMAAAAfAPL/AAAAAAMAAAAfAPP/AAAAAAMAAAAfAPT/AAAAAAMAAAAfAPX/AAAAAAMAAAAfAPb/AAAAAAMAAAAfAPf/AAAAAAMAAAAfAPj/AAAAAAMAAAAfAPn/AAAAAAMAAAAfAPr/AAAAAAMAAAAfAPv/AAAAAAMAAAAfAPz/AAAAAAMAAAAfAP3/AAAAAAMAAAAfAP7/AAAAAAMAAAAfAP//AAAAAAMAAAAWAP7/AAAAAAMAAAAWAP3/AAAAAAMAAAAWAPz/AAAAAAMAAAAXAP7/AAAAAAMAAAAXAP3/AAAAAAMAAAAXAPz/AAAAAAMAAAAYAPz/AAAAAAMAAAAYAP3/AAAAAAMAAAAYAP7/AAAAAAMAAAAZAPv/AAAAAAMAAAAZAPz/AAAAAAMAAAAZAP3/AAAAAAMAAAAZAP7/AAAAAAMAAAAaAPr/AAAAAAMAAAAbAPr/AAAAAAMAAAAcAPr/AAAAAAMAAAAaAPv/AAAAAAMAAAAbAPv/AAAAAAMAAAAcAPv/AAAAAAMAAAAdAPv/AAAAAAMAAAAeAPv/AAAAAAMAAAAdAPr/AAAAAAMAAAAeAPr/AAAAAAMAAAAeAPz/AAAAAAMAAAAdAPz/AAAAAAMAAAAdAP3/AAAAAAMAAAAdAP7/AAAAAAMAAAAcAP7/AAAAAAMAAAAbAP7/AAAAAAMAAAAaAP7/AAAAAAMAAAAaAP3/AAAAAAMAAAAaAPz/AAAAAAMAAAAbAPz/AAAAAAMAAAAcAPz/AAAAAAMAAAAcAP3/AAAAAAMAAAAbAP3/AAAAAAMAAAAeAP7/AAAAAAMAAAAeAP3/AAAAAAMAAAAcAPn/AAAAAAMAAAAdAPn/AAAAAAMAAAAeAPn/AAAAAAMAAAAdAPj/AAAAAAMAAAAeAPj/AAAAAAMAAAAbAPn/AAAAAAMAAAAZAPr/AAAAAAMAAAAYAPv/AAAAAAMAAAAXAPv/AAAAAAMAAAAVAPz/AAAAAAMAAAAVAP3/AAAAAAMAAAAVAP7/AAAAAAMAAAA=")
 
-[node name="Exit" parent="Decoration1" index="0" unique_id=1228371439 instance=ExtResource("3_4m88k")]
+[node name="Exit" parent="Decoration1" parent_id_path=PackedInt32Array(1446657132) index="0" unique_id=1228371439 instance=ExtResource("3_4m88k")]
 position = Vector2(128, -176)
 
-[node name="BossDoor1" parent="Door" index="0" unique_id=150170638 instance=ExtResource("4_qqaof")]
+[node name="BossDoor1" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="0" unique_id=150170638 instance=ExtResource("4_qqaof")]
 position = Vector2(256, -64)
 DestStageNo = 14
 DestDoorNo = 4
 DoorNo = 1
 
-[node name="Warp2" parent="Door" index="1" unique_id=1274510980 instance=ExtResource("5_6stqu")]
+[node name="Warp2" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="1" unique_id=1274510980 instance=ExtResource("5_6stqu")]
 position = Vector2(128, -128)
 DestStageNo = 1
 DestDoorNo = 1
 DoorNo = 2
 
-[node name="SavePoint3" parent="Door" index="2" unique_id=519943869 instance=ExtResource("6_xf6jg")]
+[node name="SavePoint3" parent="Door" parent_id_path=PackedInt32Array(1433845594) index="2" unique_id=519943869 instance=ExtResource("6_xf6jg")]
 position = Vector2(416, -72)
 DoorNo = 3
 Direction = 1
 
-[node name="TalkTrigger" parent="Talk" index="0" unique_id=659438267 instance=ExtResource("7_m656m")]
+[node name="TalkTrigger" parent="Talk" parent_id_path=PackedInt32Array(1187157199) index="0" unique_id=659438267 instance=ExtResource("7_m656m")]
 position = Vector2(968, -304)
 DialogPath = "res://theater/talk_0008.tscn"
 
-[node name="ItemPanelLife" parent="Item" index="0" unique_id=680418088 instance=ExtResource("8_2tg26")]
+[node name="ItemPanelLife" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="0" unique_id=680418088 instance=ExtResource("8_2tg26")]
 position = Vector2(384, -144)
 Stateful = false
 
-[node name="ItemPanelLife2" parent="Item" index="1" unique_id=1928310839 instance=ExtResource("8_2tg26")]
+[node name="ItemPanelLife2" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="1" unique_id=1928310839 instance=ExtResource("8_2tg26")]
 position = Vector2(416, -144)
 Stateful = false
 
-[node name="ItemPanelLife3" parent="Item" index="2" unique_id=365079071 instance=ExtResource("8_2tg26")]
+[node name="ItemPanelLife3" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="2" unique_id=365079071 instance=ExtResource("8_2tg26")]
 position = Vector2(448, -144)
 Stateful = false
 
-[node name="ItemPanelLife4" parent="Item" index="3" unique_id=2026762583 instance=ExtResource("8_2tg26")]
+[node name="ItemPanelLife4" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="3" unique_id=2026762583 instance=ExtResource("8_2tg26")]
 position = Vector2(400, -176)
 Stateful = false
 
-[node name="ItemPanelLife5" parent="Item" index="4" unique_id=2034166820 instance=ExtResource("8_2tg26")]
+[node name="ItemPanelLife5" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="4" unique_id=2034166820 instance=ExtResource("8_2tg26")]
 position = Vector2(432, -176)
 Stateful = false
 
-[node name="ItemPanelArmor" parent="Item" index="5" unique_id=922072114 instance=ExtResource("9_edqua")]
+[node name="ItemPanelArmor" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="5" unique_id=922072114 instance=ExtResource("9_edqua")]
 position = Vector2(544, -144)
 
-[node name="ItemPanelArmor2" parent="Item" index="6" unique_id=440108022 instance=ExtResource("9_edqua")]
+[node name="ItemPanelArmor2" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="6" unique_id=440108022 instance=ExtResource("9_edqua")]
 position = Vector2(512, -144)
 
-[node name="ItemPanelArmor3" parent="Item" index="7" unique_id=649348872 instance=ExtResource("9_edqua")]
+[node name="ItemPanelArmor3" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="7" unique_id=649348872 instance=ExtResource("9_edqua")]
 position = Vector2(576, -144)
 
-[node name="ItemPanelArmor4" parent="Item" index="8" unique_id=663173084 instance=ExtResource("9_edqua")]
+[node name="ItemPanelArmor4" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="8" unique_id=663173084 instance=ExtResource("9_edqua")]
 position = Vector2(528, -176)
 
-[node name="ItemPanelArmor5" parent="Item" index="9" unique_id=479106375 instance=ExtResource("9_edqua")]
+[node name="ItemPanelArmor5" parent="Item" parent_id_path=PackedInt32Array(1896534186) index="9" unique_id=479106375 instance=ExtResource("9_edqua")]
 position = Vector2(560, -176)
 
 [node name="Player" parent="." index="8" unique_id=134523741 instance=ExtResource("10_viopi")]
@@ -96,7 +96,7 @@ unique_name_in_owner = true
 position_smoothing_speed = 10.0
 script = ExtResource("11_sodjg")
 
-[node name="HUD" parent="." index="13"]
+[node name="HUD" parent="." index="13" unique_id=1358724654]
 Text1 = "ステージ"
 Text2 = "19"
 
@@ -109,6 +109,6 @@ ConditionalExpression = "boss_0001==1"
 [node name="FreeCommand" parent="VisibleTrigger/ConditionalCommand" index="0" unique_id=1751949065 node_paths=PackedStringArray("Target") instance=ExtResource("14_f8k8i")]
 Target = NodePath("../../../Talk/TalkTrigger")
 
-[node name="OutOfBorder1" parent="OutOfBorder" index="0" unique_id=863314425 instance=ExtResource("15_aeshf")]
+[node name="OutOfBorder1" parent="OutOfBorder" parent_id_path=PackedInt32Array(1293615964) index="0" unique_id=863314425 instance=ExtResource("15_aeshf")]
 position = Vector2(480, 16)
 scale = Vector2(60, 1)

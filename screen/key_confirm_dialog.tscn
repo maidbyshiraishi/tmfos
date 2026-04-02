@@ -12,10 +12,10 @@
 
 [node name="KeyConfirmDialog" unique_id=1709745016 instance=ExtResource("1_51pht")]
 
-[node name="Title" parent="." index="2"]
+[node name="Title" parent="." index="2" unique_id=933584512]
 text = "操作確認"
 
-[node name="Back" type="Button" parent="Control" index="10" unique_id=1406675619]
+[node name="Back" type="Button" parent="Control" parent_id_path=PackedInt32Array(1273183244) index="10" unique_id=1406675619]
 light_mask = 2
 layout_mode = 0
 offset_left = 56.0
@@ -35,7 +35,7 @@ Target = NodePath("../../../../Close")
 [node name="PlaySeCommand" parent="Control/Back/Focus" index="0" unique_id=1801106280 instance=ExtResource("5_xjasl")]
 SeName = "menu_move"
 
-[node name="OpenDialogButton" type="Button" parent="Control" index="11" unique_id=689305070]
+[node name="OpenDialogButton" type="Button" parent="Control" parent_id_path=PackedInt32Array(1273183244) index="11" unique_id=689305070]
 light_mask = 2
 layout_mode = 0
 offset_left = 224.0
@@ -58,7 +58,7 @@ SeName = "menu_select"
 [node name="PlaySeCommand" parent="Control/OpenDialogButton/Focus" index="0" unique_id=260335829 instance=ExtResource("5_xjasl")]
 SeName = "menu_move"
 
-[node name="OpenFileManager" type="Button" parent="Control" index="12" unique_id=1556044898]
+[node name="OpenFileManager" type="Button" parent="Control" parent_id_path=PackedInt32Array(1273183244) index="12" unique_id=1556044898]
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0

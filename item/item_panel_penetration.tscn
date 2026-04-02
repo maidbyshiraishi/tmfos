@@ -6,6 +6,6 @@
 [node name="ItemPanelPenetration" unique_id=227339169 instance=ExtResource("1_tiat7")]
 Item = 4
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1054633995]
 sprite_frames = ExtResource("2_nwftq")
 animation = &"closed"

@@ -12,7 +12,7 @@ Stateful = false
 OneTime = false
 PlayerOnly = false
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=562217839]
 shape = SubResource("RectangleShape2D_cqbnj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=297862136]
@@ -20,5 +20,5 @@ sprite_frames = ExtResource("2_eccvi")
 animation = &"left"
 autoplay = "left"
 
-[node name="AddDurabilityCommand" parent="." index="2"]
+[node name="AddDurabilityCommand" parent="." index="2" unique_id=930596485]
 Value = -20

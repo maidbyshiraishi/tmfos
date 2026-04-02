@@ -8,6 +8,6 @@ Attack = 25
 Life = 30
 MaxLife = 30
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1266957152]
 sprite_frames = ExtResource("2_4bhme")
 animation = &"walk_left"

@@ -6,6 +6,6 @@
 [node name="NekomimiMaidEnemy" unique_id=2083988156 instance=ExtResource("1_ocqco")]
 Attack = 10
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1266957152]
 sprite_frames = ExtResource("6_1g01m")
 animation = &"walk_left"

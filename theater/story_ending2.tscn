@@ -17,7 +17,7 @@ ScrollTime = 50.0
 metadata/_edit_horizontal_guides_ = [2176.0]
 metadata/_edit_vertical_guides_ = [640.0]
 
-[node name="Background" parent="." index="0"]
+[node name="Background" parent="." index="0" unique_id=1963324877]
 color = Color(0, 0, 0, 1)
 
 [node name="Contents" type="Control" parent="Path2D/Socket" parent_id_path=PackedInt32Array(905326003) index="0" unique_id=1969517142]
