@@ -1,10 +1,10 @@
 using Godot;
 using Godot.Collections;
-using tmfos.door;
-using tmfos.stage;
-using tmfos.trigger;
+using maid_by_shiraishi.door;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.trigger;
 
-namespace tmfos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// イベント処理との接触判定を行う。

@@ -1,6 +1,6 @@
-using tmfos.trigger;
+using maid_by_shiraishi.trigger;
 
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// ドラゴンの頭

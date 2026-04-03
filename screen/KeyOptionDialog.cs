@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// キー設定ダイアログ

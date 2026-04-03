@@ -1,10 +1,10 @@
 using Godot;
-using tmfos.door;
-using tmfos.mob;
-using tmfos.player;
-using tmfos.stage;
+using maid_by_shiraishi.door;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.player;
+using maid_by_shiraishi.stage;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// ゲームスタート位置

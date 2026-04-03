@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.item;
-using tmfos.player;
+using maid_by_shiraishi.item;
+using maid_by_shiraishi.player;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// アイテムを取得・削除するコマンド

@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace tmfos.others;
+namespace maid_by_shiraishi.others;
 
 /// <summary>
 /// 終端処理を行うパス

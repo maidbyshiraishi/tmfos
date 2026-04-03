@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.enemy;
+using maid_by_shiraishi.enemy;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// TentacleHeadのターゲットを変更するコマンド

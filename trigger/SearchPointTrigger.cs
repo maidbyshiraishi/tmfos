@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.command.stage;
-using tmfos.system;
+using maid_by_shiraishi.command.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// 虫眼鏡アイテムで出現する？マーク

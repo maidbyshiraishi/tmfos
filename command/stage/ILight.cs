@@ -1,4 +1,4 @@
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 光源のインタフェース

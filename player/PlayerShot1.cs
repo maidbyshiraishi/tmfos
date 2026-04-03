@@ -1,7 +1,7 @@
-using tmfos.mob;
-using tmfos.system;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.system;
 
-namespace tmfos.player;
+namespace maid_by_shiraishi.player;
 
 /// <summary>
 /// プレーヤー弾1

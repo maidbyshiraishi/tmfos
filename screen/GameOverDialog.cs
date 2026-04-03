@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.command.dialog;
-using tmfos.system;
+using maid_by_shiraishi.command.dialog;
+using maid_by_shiraishi.system;
 
-namespace tmfos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// ゲームオーバーダイアログ

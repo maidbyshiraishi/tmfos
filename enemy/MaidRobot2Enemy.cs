@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.mob;
+using maid_by_shiraishi.mob;
 
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// メイドロボボス第2段階

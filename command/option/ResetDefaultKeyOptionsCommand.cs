@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.option;
+namespace maid_by_shiraishi.command.option;
 
 /// <summary>
 /// 操作設定をデフォルト値にリセットするコマンド

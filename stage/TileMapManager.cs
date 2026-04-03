@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.stage;
+namespace maid_by_shiraishi.stage;
 
 /// <summary>
 /// タイルマップ制御

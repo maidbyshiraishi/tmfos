@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// コマンド延滞実行コンテナ

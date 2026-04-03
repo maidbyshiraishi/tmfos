@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.stage;
+using maid_by_shiraishi.stage;
 
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// 触手の首

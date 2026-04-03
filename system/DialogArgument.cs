@@ -1,7 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 
-namespace tmfos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// 引数制御

@@ -1,9 +1,9 @@
 using Godot;
-using tmfos.enemy;
-using tmfos.mob;
-using tmfos.system;
+using maid_by_shiraishi.enemy;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.system;
 
-namespace tmfos.decoration;
+namespace maid_by_shiraishi.decoration;
 
 /// <summary>
 /// 飾りエフェクト

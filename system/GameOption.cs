@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// ゲーム設定

@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// 耐久力のあるショット

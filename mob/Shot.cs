@@ -1,9 +1,9 @@
 using Godot;
-using tmfos.enemy;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.enemy;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// 弾の親

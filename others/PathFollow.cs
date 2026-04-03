@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using tmfos.stage;
+using maid_by_shiraishi.stage;
 
-namespace tmfos.others;
+namespace maid_by_shiraishi.others;
 
 /// <summary>
 /// パスに沿って動くもの

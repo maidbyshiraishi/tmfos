@@ -1,9 +1,9 @@
 using Godot;
-using tmfos.mob;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.hud;
+namespace maid_by_shiraishi.hud;
 
 /// <summary>
 /// ステータス表示

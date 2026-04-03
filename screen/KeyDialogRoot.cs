@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// キー設定ダイアログの親

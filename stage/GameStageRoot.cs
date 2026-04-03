@@ -1,15 +1,15 @@
 using Godot;
 using Godot.Collections;
-using tmfos.command.stage;
-using tmfos.data;
-using tmfos.enemy;
-using tmfos.hud;
-using tmfos.mob;
-using tmfos.player;
-using tmfos.screen;
-using tmfos.system;
+using maid_by_shiraishi.command.stage;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.enemy;
+using maid_by_shiraishi.hud;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.player;
+using maid_by_shiraishi.screen;
+using maid_by_shiraishi.system;
 
-namespace tmfos.stage;
+namespace maid_by_shiraishi.stage;
 
 /// <summary>
 /// ゲームステージの親

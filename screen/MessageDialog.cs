@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.trigger;
+using maid_by_shiraishi.trigger;
 
-namespace tmfos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// メッセージダイアログ

@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.mob;
-using static tmfos.enemy.EnemySpawner;
+using maid_by_shiraishi.mob;
+using static maid_by_shiraishi.enemy.EnemySpawner;
 
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// メイドの出る蛇口ボス

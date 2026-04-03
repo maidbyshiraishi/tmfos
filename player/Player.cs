@@ -1,12 +1,12 @@
 using Godot;
-using tmfos.command.stage;
-using tmfos.data;
-using tmfos.item;
-using tmfos.mob;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.command.stage;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.item;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.player;
+namespace maid_by_shiraishi.player;
 
 /// <summary>
 /// プレーヤー

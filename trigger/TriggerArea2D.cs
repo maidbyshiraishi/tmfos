@@ -1,9 +1,9 @@
 using Godot;
-using tmfos.player;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.player;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// トリガーArea2D版

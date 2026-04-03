@@ -1,9 +1,9 @@
 using Godot;
 using System.Collections.Generic;
-using tmfos.command.stage;
-using tmfos.system;
+using maid_by_shiraishi.command.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// 探索トリガー

@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.mob;
+using maid_by_shiraishi.mob;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 耐久力を操作するコマンド

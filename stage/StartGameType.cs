@@ -1,4 +1,4 @@
-namespace tmfos.stage;
+namespace maid_by_shiraishi.stage;
 
 /// <summary>
 /// ゲーム開始種別

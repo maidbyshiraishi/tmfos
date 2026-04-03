@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.flag;
+namespace maid_by_shiraishi.command.flag;
 
 /// <summary>
 /// フラグを操作するコマンド

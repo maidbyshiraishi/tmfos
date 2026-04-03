@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.data;
-using tmfos.system;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.dialog;
+namespace maid_by_shiraishi.command.dialog;
 
 /// <summary>
 /// ステータスダイアログを開くコマンド

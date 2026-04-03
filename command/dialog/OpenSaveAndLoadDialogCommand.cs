@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.dialog;
+namespace maid_by_shiraishi.command.dialog;
 
 /// <summary>
 /// セーブとロードダイアログを開くコマンド

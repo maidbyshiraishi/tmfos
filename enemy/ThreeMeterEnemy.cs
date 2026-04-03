@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.mob;
-using tmfos.system;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.system;
 
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// 3メートルの宇宙人敵

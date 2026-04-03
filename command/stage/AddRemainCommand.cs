@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 残機を増やすコマンド

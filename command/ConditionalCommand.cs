@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// 条件式コマンド

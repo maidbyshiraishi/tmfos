@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.command.animation;
+namespace maid_by_shiraishi.command.animation;
 
 /// <summary>
 /// AnimatedSprite2Dのアニメーションを開始するコマンド

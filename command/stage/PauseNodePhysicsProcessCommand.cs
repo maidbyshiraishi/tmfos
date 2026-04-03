@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// ノードの物理演算を一時停止するコマンド

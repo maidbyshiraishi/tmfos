@@ -1,10 +1,10 @@
 using Godot;
-using tmfos.mob;
-using tmfos.player;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.player;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// パスに沿って移動する敵

@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.gui;
+namespace maid_by_shiraishi.gui;
 
 /// <summary>
 /// 押下とフォーカスの入出時にコマンドを実行する横スライダー

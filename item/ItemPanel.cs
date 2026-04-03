@@ -1,10 +1,10 @@
 using Godot;
 using Godot.Collections;
-using tmfos.command.decoration;
-using tmfos.command.stage;
-using tmfos.trigger;
+using maid_by_shiraishi.command.decoration;
+using maid_by_shiraishi.command.stage;
+using maid_by_shiraishi.trigger;
 
-namespace tmfos.item;
+namespace maid_by_shiraishi.item;
 
 /// <summary>
 /// アイテムの親

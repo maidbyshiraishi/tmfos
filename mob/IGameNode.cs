@@ -1,4 +1,4 @@
-namespace tmfos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// ゲーム内で使用されるオブジェクトの初期化のインタフェース

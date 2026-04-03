@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.stage;
+using maid_by_shiraishi.stage;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 光源として機能する

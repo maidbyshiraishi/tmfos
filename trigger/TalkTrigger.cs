@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using tmfos.command.dialog;
+using maid_by_shiraishi.command.dialog;
 
-namespace tmfos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// 会話イベントトリガー

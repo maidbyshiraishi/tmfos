@@ -1,8 +1,8 @@
 using Godot;
 using System;
-using tmfos.data;
+using maid_by_shiraishi.data;
 
-namespace tmfos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// ゲームデータ管理

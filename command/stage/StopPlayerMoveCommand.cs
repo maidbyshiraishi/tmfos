@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.player;
+using maid_by_shiraishi.player;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// プレーヤーの速度をゼロにするコマンド

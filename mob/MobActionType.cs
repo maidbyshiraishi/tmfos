@@ -1,4 +1,4 @@
-namespace tmfos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// 行動タイプ

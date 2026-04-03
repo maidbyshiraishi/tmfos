@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.command.stage;
+using maid_by_shiraishi.command.stage;
 
-namespace tmfos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// 耐久力変更ゾーン

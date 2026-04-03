@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace tmfos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// SEの制御を行う

@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.state;
+namespace maid_by_shiraishi.command.state;
 
 /// <summary>
 /// ステージ情報を保存するコマンド

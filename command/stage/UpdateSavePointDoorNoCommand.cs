@@ -1,9 +1,9 @@
 using Godot;
-using tmfos.data;
-using tmfos.door;
-using tmfos.system;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.door;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// セーブポイントにおけるゲーム再開時のドア番号を更新するコマンド

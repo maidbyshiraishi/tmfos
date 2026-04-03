@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// ダブルカセットでBGMの制御を行う

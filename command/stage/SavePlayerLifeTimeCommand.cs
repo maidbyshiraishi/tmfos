@@ -1,9 +1,9 @@
 using Godot;
-using tmfos.data;
-using tmfos.player;
-using tmfos.system;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.player;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// プレーヤーの残り時間を保存するコマンド

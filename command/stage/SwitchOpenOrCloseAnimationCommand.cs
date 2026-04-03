@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 開閉アニメーションを切り替える

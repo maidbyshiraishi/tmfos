@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// 他コマンドコンテナを呼び出すコマンド

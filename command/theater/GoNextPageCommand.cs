@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.theater;
+using maid_by_shiraishi.theater;
 
-namespace tmfos.command.theater;
+namespace maid_by_shiraishi.command.theater;
 
 /// <summary>
 /// ストーリーシアターの次ページへ移動するコマンド

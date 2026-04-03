@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.trigger;
+using maid_by_shiraishi.trigger;
 
-namespace tmfos.command.timer;
+namespace maid_by_shiraishi.command.timer;
 
 /// <summary>
 /// タイマートリガーを一時停止するコマンド

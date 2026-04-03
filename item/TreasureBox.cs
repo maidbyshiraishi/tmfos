@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.command.decoration;
-using tmfos.command.stage;
+using maid_by_shiraishi.command.decoration;
+using maid_by_shiraishi.command.stage;
 
-namespace tmfos.item;
+namespace maid_by_shiraishi.item;
 
 /// <summary>
 /// 宝箱

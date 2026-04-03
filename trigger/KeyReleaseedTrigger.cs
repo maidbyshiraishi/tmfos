@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// キーの開放でコマンドを実行するトリガー

@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.decoration;
+namespace maid_by_shiraishi.command.decoration;
 
 /// <summary>
 /// フローティングメッセージを表示するコマンド

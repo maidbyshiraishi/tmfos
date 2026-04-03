@@ -1,6 +1,6 @@
 using System;
 
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// 敵を生成する機能のインタフェース

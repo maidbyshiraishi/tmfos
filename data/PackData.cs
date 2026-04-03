@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace tmfos.data;
+namespace maid_by_shiraishi.data;
 
 /// <summary>
 /// ゲーム関連データのセット

@@ -1,9 +1,9 @@
 using Godot;
-using tmfos.mob;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.player;
+namespace maid_by_shiraishi.player;
 
 /// <summary>
 /// 前面ブロック透過

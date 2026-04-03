@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace tmfos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// スクリーンショット保存コマンド

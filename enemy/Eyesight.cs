@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.mob;
-using tmfos.player;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.player;
 
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// 敵の視界

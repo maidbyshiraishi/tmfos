@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.enemy;
+using maid_by_shiraishi.enemy;
 
-namespace tmfos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// 動的に生成されるノードのインタフェース

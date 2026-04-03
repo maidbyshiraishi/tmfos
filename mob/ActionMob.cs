@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.stage;
+using maid_by_shiraishi.stage;
 
-namespace tmfos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// プレーヤーなどアクションを行うキャラクター

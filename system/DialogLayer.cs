@@ -1,9 +1,9 @@
 using Godot;
 using Godot.Collections;
-using tmfos.screen;
-using tmfos.stage;
+using maid_by_shiraishi.screen;
+using maid_by_shiraishi.stage;
 
-namespace tmfos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// 画面遷移・ダイアログ制御

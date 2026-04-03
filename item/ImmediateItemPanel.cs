@@ -1,7 +1,7 @@
-using tmfos.command.stage;
-using tmfos.trigger;
+using maid_by_shiraishi.command.stage;
+using maid_by_shiraishi.trigger;
 
-namespace tmfos.item;
+namespace maid_by_shiraishi.item;
 
 /// <summary>
 /// その場で直接効果を及ぼすアイテムの親

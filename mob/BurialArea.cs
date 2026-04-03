@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// ブロック埋没判定

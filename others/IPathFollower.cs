@@ -1,4 +1,4 @@
-namespace tmfos.others;
+namespace maid_by_shiraishi.others;
 
 /// <summary>
 /// パス移動時に終端処理を行うインタフェース

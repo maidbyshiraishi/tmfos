@@ -1,7 +1,7 @@
 using Godot;
 using static Godot.DisplayServer;
 
-namespace tmfos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// ゲーム画面設定

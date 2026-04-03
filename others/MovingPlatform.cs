@@ -1,6 +1,6 @@
 using Godot;
 
-namespace tmfos.others;
+namespace maid_by_shiraishi.others;
 
 /// <summary>
 /// 動く床

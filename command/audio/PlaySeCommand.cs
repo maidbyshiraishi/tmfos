@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.audio;
+namespace maid_by_shiraishi.command.audio;
 
 /// <summary>
 /// 効果音を再生するコマンド

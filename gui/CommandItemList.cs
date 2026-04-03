@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.gui;
+namespace maid_by_shiraishi.gui;
 
 /// <summary>
 /// フォーカスの入出時にコマンドを実行するアイテムリスト

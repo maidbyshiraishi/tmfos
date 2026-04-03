@@ -1,7 +1,7 @@
 using Godot;
-using tmfos.system;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.audio;
+namespace maid_by_shiraishi.command.audio;
 
 /// <summary>
 /// BGMの一時停止を解除するコマンド

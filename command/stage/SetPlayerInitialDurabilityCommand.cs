@@ -1,10 +1,10 @@
 using Godot;
-using tmfos.data;
-using tmfos.player;
-using tmfos.stage;
-using tmfos.system;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.player;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace tmfos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// プレイヤーの耐久力がデフォルト値未満の場合にデフォルト値まで回復するコマンド

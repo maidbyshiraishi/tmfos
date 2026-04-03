@@ -1,8 +1,8 @@
 using Godot;
-using tmfos.mob;
-using tmfos.player;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.player;
 
-namespace tmfos.door;
+namespace maid_by_shiraishi.door;
 
 /// <summary>
 /// ステージ間移動の出入り口

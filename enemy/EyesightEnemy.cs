@@ -1,4 +1,4 @@
-namespace tmfos.enemy;
+namespace maid_by_shiraishi.enemy;
 
 /// <summary>
 /// Eyesightによって制御された敵

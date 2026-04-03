@@ -1,9 +1,9 @@
 using Godot;
 using Godot.Collections;
-using tmfos.system;
-using tmfos.trigger;
+using maid_by_shiraishi.system;
+using maid_by_shiraishi.trigger;
 
-namespace tmfos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// 画面とダイアログの親

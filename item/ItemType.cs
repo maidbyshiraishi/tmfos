@@ -1,4 +1,4 @@
-namespace tmfos.item;
+namespace maid_by_shiraishi.item;
 
 /// <summary>
 /// アイテム種別

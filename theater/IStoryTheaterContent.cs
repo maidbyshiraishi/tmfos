@@ -1,4 +1,4 @@
-namespace tmfos.theater;
+namespace maid_by_shiraishi.theater;
 
 /// <summary>
 /// ストーリーシアターのインタフェース
