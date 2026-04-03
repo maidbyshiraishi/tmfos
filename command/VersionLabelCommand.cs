@@ -13,6 +13,17 @@ public partial class VersionLabelCommand : CommandRoot
     [Export]
     public Label VersionLabel { get; set; }
 
+    public override void _Ready()
+    {
+        base._Ready();
+
+        if (VersionLabel is null && GetParent() is Label label)
+        {
+            VersionLabel = label;
+            DoCommand(null, true);
+        }
+    }
+
     public override void DoCommand(Node node, bool flag)
     {
         if (VersionLabel is not null)

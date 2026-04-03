@@ -201,9 +201,6 @@ Stream = ExtResource("3_xoh7v")
 Target = NodePath("../../Timer/TimerTrigger")
 ExecFlag = false
 
-[node name="VersionLabelCommand" parent="Focus" unique_id=1372014474 node_paths=PackedStringArray("VersionLabel") instance=ExtResource("15_sx63f")]
-VersionLabel = NodePath("../../LabelVersionNo")
-
 [node name="EscapeKey" parent="." unique_id=1520225066 instance=ExtResource("17_uhsa7")]
 ActionName = "escape"
 
@@ -225,3 +222,5 @@ offset_top = 440.0
 offset_right = 208.0
 offset_bottom = 464.0
 vertical_alignment = 2
+
+[node name="VersionLabelCommand" parent="LabelVersionNo" unique_id=536690839 instance=ExtResource("15_sx63f")]
