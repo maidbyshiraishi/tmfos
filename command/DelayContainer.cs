@@ -14,15 +14,32 @@ public partial class DelayContainer : CommandRoot
     [Export]
     public double WaitTime { get; set; } = 0f;
 
-    public override void DoCommand(Node node, bool flag) => WaitExec(node, flag);
+    private bool _start = false;
+    private double _waitTime = 0f;
+    private double _count = 0f;
+    private Node _node;
+    private bool _flag = false;
 
-    private async void WaitExec(Node node, bool flag)
+    public override void DoCommand(Node node, bool flag)
     {
-        if (WaitTime >= 0.05f)
-        {
-            _ = await ToSignal(GetTree().CreateTimer(WaitTime), Timer.SignalName.Timeout);
-        }
+        _waitTime = WaitTime;
+        _count = 0f;
+        _node = node;
+        _flag = flag;
+        _start = true;
+    }
 
-        Lib.ExecCommands(this, node, flag);
+    public override void _Process(double delta)
+    {
+        if (_start)
+        {
+            _count += delta;
+
+            if (_waitTime <= _count)
+            {
+                _start = false;
+                Lib.ExecCommands(this, _node, _flag);
+            }
+        }
     }
 }
