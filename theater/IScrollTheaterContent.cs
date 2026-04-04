@@ -5,8 +5,10 @@ namespace maid_by_shiraishi.theater;
 /// </summary>
 public interface IScrollTheaterContent
 {
+    #region IScrollTheaterContentインタフェース
     /// <summary>
     /// 初期化
     /// </summary>
     void InitializeScrollTheaterContent(ScrollTheater scroll);
+    #endregion
 }

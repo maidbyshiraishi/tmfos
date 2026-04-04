@@ -4,7 +4,7 @@ using Godot.Collections;
 namespace maid_by_shiraishi.data;
 
 /// <summary>
-/// ゲームフラグ
+/// フラグ
 /// </summary>
 public class FlagData : GameDataRoot
 {
@@ -35,12 +35,10 @@ public class FlagData : GameDataRoot
 
     public void RemoveFlag(string key)
     {
-        if (!_flag.ContainsKey(key))
+        if (_flag.ContainsKey(key))
         {
-            return;
+            _ = _flag.Remove(key);
         }
-
-        _ = _flag.Remove(key);
     }
 
     public override Error SetConfigFile(ConfigFile file)

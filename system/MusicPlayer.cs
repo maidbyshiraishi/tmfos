@@ -4,6 +4,7 @@ namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// ダブルカセットでBGMの制御を行う
+/// プロジェクト設定＞グローバル＞自動読み込みで自動的に実行が開始される。
 /// </summary>
 public partial class MusicPlayer : Node
 {
@@ -57,12 +58,15 @@ public partial class MusicPlayer : Node
 
     public override void _Ready()
     {
-        _deck1 = GetNode<AudioStreamPlayer>("Deck1");
-        _deck2 = GetNode<AudioStreamPlayer>("Deck2");
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        GetNode<AnimationPlayer>("Fader").AnimationFinished += Finished;
+
+        _deck1 = GetNode<AudioStreamPlayer>("Deck_1");
+        _deck2 = GetNode<AudioStreamPlayer>("Deck_2");
         _deck1.VolumeDb = 0;
         _deck2.VolumeDb = 0;
         _fader = GetNode<AnimationPlayer>("Fader");
-        _fader.AnimationFinished += Finished;
     }
 
     /// <summary>
@@ -182,14 +186,12 @@ public partial class MusicPlayer : Node
     {
         _changing = false;
 
-        if (_nextCommand is Command.None)
+        if (_nextCommand is not Command.None)
         {
-            return;
-        }
-
         Command next = _nextCommand;
         _nextCommand = Command.None;
         ExecCommand(next, _nextStream);
+        }
     }
 
     /// <summary>

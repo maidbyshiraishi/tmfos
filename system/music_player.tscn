@@ -7,10 +7,10 @@
 process_mode = 3
 script = ExtResource("1_3lnsu")
 
-[node name="Deck1" type="AudioStreamPlayer" parent="." unique_id=1762618607]
+[node name="Deck_1" type="AudioStreamPlayer" parent="." unique_id=1762618607]
 bus = &"BGM"
 
-[node name="Deck2" type="AudioStreamPlayer" parent="." unique_id=1081712511]
+[node name="Deck_2" type="AudioStreamPlayer" parent="." unique_id=1081712511]
 bus = &"BGM"
 
 [node name="Fader" type="AnimationPlayer" parent="." unique_id=1225664035]

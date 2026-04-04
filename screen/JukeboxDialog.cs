@@ -17,6 +17,9 @@ public partial class JukeboxDialog : DialogRoot
     public override void _Ready()
     {
         base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
         GetNode<HSlider>("Control/BgmSlider").ValueChanged += BgmVolumeChanged;
     }
 
@@ -33,8 +36,7 @@ public partial class JukeboxDialog : DialogRoot
     /// </summary>
     public override void UpdateDialogScreen()
     {
-        GameOption option = GetNode<GameOption>("/root/GameOption");
-        BgmVolume = option.BgmVolume;
+        BgmVolume = GetNode<GameOption>("/root/GameOption").BgmVolume;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GetNode<HSlider>("Control/BgmSlider").SetValueNoSignal(BgmVolume);
     }

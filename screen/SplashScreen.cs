@@ -5,12 +5,16 @@ namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// スプラッシュ画面
+/// ゲームの本体処理はここから開始される。
 /// </summary>
 public partial class SplashScreen : DialogRoot
 {
     public override void _Ready()
     {
         base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
         GetNode<AudioStreamPlayer>("Audio_1").Finished += PlayAudio2;
         GetNode<AudioStreamPlayer>("Audio_2").Finished += GoNextScreen;
         GetNode<VisibleOnScreenNotifier2D>("PlayStart").ScreenEntered += PlayStart;

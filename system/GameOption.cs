@@ -4,6 +4,7 @@ namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// ゲーム設定
+/// プロジェクト設定＞グローバル＞自動読み込みで自動的に実行が開始される。
 /// </summary>
 public partial class GameOption : Node
 {

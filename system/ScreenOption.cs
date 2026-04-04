@@ -5,6 +5,7 @@ namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// ゲーム画面設定
+/// プロジェクト設定＞グローバル＞自動読み込みで自動的に実行が開始される。
 /// </summary>
 public partial class ScreenOption : Node
 {
@@ -22,8 +23,9 @@ public partial class ScreenOption : Node
 
     public override void _Ready()
     {
-        GetNode<Timer>("Timer").Timeout += CorrectOnScreen;
-        GetNode<Timer>("Timer").Start();
+        Timer timer = GetNode<Timer>("Timer");
+        timer.Timeout += CorrectOnScreen;
+        timer.Start();
     }
 
     public override void _Notification(int what)
