@@ -164,7 +164,7 @@ public partial class GameDataManager : Node
 
         if (_thumbnail is null)
         {
-            GD.PrintErr($"サムネイルが生成されていません。サムネイルは保存されません。ゲームは続行されます。");
+            GD.PrintErr("サムネイルが生成されていません。サムネイルは保存されません。ゲームは続行されます。");
         }
         else
         {
