@@ -198,8 +198,8 @@ Command = 1
 Stream = ExtResource("3_xoh7v")
 
 [node name="PauseUtilTimerCommand" parent="Focus" unique_id=1397520794 node_paths=PackedStringArray("Target") instance=ExtResource("16_uikkl")]
-Target = NodePath("../../Timer/TimerTrigger")
 ExecFlag = false
+Target = NodePath("../../Timer/TimerTrigger")
 
 [node name="EscapeKey" parent="." unique_id=1520225066 instance=ExtResource("17_uhsa7")]
 ActionName = "escape"
