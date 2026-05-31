@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://c0p5qk4ruxyol"
 
 [autoload]
 
+StopExecTwice="*res://system/StopExecTwice.cs"
 ScreenOption="*res://system/screen_option.tscn"
 DialogLayer="*res://system/dialog_layer.tscn"
 DialogArgument="*res://system/dialog_argument.tscn"
