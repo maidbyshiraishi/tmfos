@@ -29,7 +29,7 @@ public partial class DelayContainer : CommandRoot
         _start = true;
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (_start)
         {

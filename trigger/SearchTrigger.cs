@@ -1,7 +1,7 @@
 using Godot;
-using System.Collections.Generic;
 using maid_by_shiraishi.command.stage;
 using maid_by_shiraishi.system;
+using System.Collections.Generic;
 
 namespace maid_by_shiraishi.trigger;
 

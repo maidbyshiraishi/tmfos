@@ -188,9 +188,9 @@ public partial class MusicPlayer : Node
 
         if (_nextCommand is not Command.None)
         {
-        Command next = _nextCommand;
-        _nextCommand = Command.None;
-        ExecCommand(next, _nextStream);
+            Command next = _nextCommand;
+            _nextCommand = Command.None;
+            ExecCommand(next, _nextStream);
         }
     }
 

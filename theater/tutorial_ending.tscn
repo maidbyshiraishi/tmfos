@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/go_screen_command.tscn" id="7_pualw"]
 
 [node name="ScrollTheater" unique_id=787412431 instance=ExtResource("1_hkun2")]
+ScrollTime = 20.0
 metadata/_edit_vertical_guides_ = [320.0]
 
 [node name="Contents" type="Control" parent="Path2D/Socket" parent_id_path=PackedInt32Array(905326003) index="0" unique_id=2078148083]

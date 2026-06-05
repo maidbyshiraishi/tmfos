@@ -1,10 +1,10 @@
 using Godot;
 using Godot.Collections;
-using System;
 using maid_by_shiraishi.mob;
 using maid_by_shiraishi.player;
 using maid_by_shiraishi.stage;
 using maid_by_shiraishi.system;
+using System;
 
 namespace maid_by_shiraishi.enemy;
 

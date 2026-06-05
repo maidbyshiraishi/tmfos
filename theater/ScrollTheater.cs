@@ -38,7 +38,7 @@ public partial class ScrollTheater : DialogRoot
         _running = true;
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (!_running || _socket is null || _content is null)
         {

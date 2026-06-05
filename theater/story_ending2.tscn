@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/go_screen_command.tscn" id="10_0nalh"]
 
 [node name="ScrollTheater" unique_id=65693768 instance=ExtResource("1_oea57")]
-ScrollTime = 50.0
+ScrollTime = 60.0
 metadata/_edit_horizontal_guides_ = [2176.0]
 metadata/_edit_vertical_guides_ = [640.0]
 

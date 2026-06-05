@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="13_ehk5a"]
 
 [node name="ScrollTheater" unique_id=1001346076 instance=ExtResource("1_6emye")]
-ScrollTime = 15.0
+ScrollTime = 30.0
 metadata/_edit_vertical_guides_ = [640.0]
 
 [node name="Contents" type="Control" parent="Path2D/Socket" parent_id_path=PackedInt32Array(905326003) index="0" unique_id=2078981737]

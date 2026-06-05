@@ -1,6 +1,6 @@
 using Godot;
-using System;
 using maid_by_shiraishi.data;
+using System;
 
 namespace maid_by_shiraishi.system;
 
