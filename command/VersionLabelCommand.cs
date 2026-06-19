@@ -24,11 +24,5 @@ public partial class VersionLabelCommand : CommandRoot
         }
     }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        if (VersionLabel is not null)
-        {
-            VersionLabel.Text = ProjectSettings.GetSetting("application/config/version").AsString();
-        }
-    }
+    public override void DoCommand(Node node, bool flag) => VersionLabel?.Text = ProjectSettings.GetSetting("application/config/version").AsString();
 }

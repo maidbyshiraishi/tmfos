@@ -11,8 +11,5 @@ public static class GameMutex
     private static readonly Mutex _mutex = new(false, "maid_by_shiraishi");
 
     [STAThread]
-    public static bool IsExecuted()
-    {
-        return _mutex.WaitOne(0, false);
-    }
+    public static bool IsExecuted() => _mutex.WaitOne(0, false);
 }

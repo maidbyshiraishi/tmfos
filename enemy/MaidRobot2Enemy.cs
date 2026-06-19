@@ -34,11 +34,7 @@ public partial class MaidRobot2Enemy : Enemy
         GetNode<Timer>("DrillTimer").Timeout += ShotDrill;
         GetNode<Timer>("JumpTimer").WaitTime = JumpWait;
         GetNode<Timer>("JumpTimer").Timeout += Jump;
-
-        if (m_visibleOnScreenNotifier2D is not null)
-        {
-            m_visibleOnScreenNotifier2D.ScreenExited += Respawn;
-        }
+        m_visibleOnScreenNotifier2D?.ScreenExited += Respawn;
     }
 
     public override void InitializeNode()

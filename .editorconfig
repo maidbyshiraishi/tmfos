@@ -19,6 +19,16 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 charset = utf-8
 
+# 式のようなメンバー
+csharp_style_expression_bodied_accessors = true
+csharp_style_expression_bodied_constructors = true
+csharp_style_expression_bodied_indexers = true
+csharp_style_expression_bodied_lambdas = true
+csharp_style_expression_bodied_local_functions = true
+csharp_style_expression_bodied_methods = true
+csharp_style_expression_bodied_operators = true
+csharp_style_expression_bodied_properties = true
+
 [*.csv]
 end_of_line = crlf
 trim_trailing_whitespace = true

@@ -185,19 +185,9 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
     {
         float rotation = _direction.Angle();
         CollisionShape2D collision = GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
-
-        if (collision is not null)
-        {
-            collision.Rotation = rotation;
-        }
-
+        _ = collision?.Rotation = rotation;
         VisibleOnScreenNotifier2D notifier = GetNodeOrNull<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-
-        if (notifier is not null)
-        {
-            notifier.Rotation = rotation;
-        }
-
+        _ = notifier?.Rotation = rotation;
         m_animatedSprite.Rotation = rotation;
     }
 

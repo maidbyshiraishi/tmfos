@@ -7,8 +7,6 @@ namespace maid_by_shiraishi.command.stage;
 /// </summary>
 public partial class SwitchOpenOrCloseAnimationCommand : CommandRoot
 {
-    private bool _opened;
-
     /// <summary>
     /// 開閉アニメーションを切り替えるAnimatedSprite2D
     /// </summary>
@@ -21,14 +19,14 @@ public partial class SwitchOpenOrCloseAnimationCommand : CommandRoot
     [Export]
     public bool Opened
     {
-        get => _opened;
+        get;
 
         set
         {
-            _opened = value;
+            field = value;
             AnimatedSprite2D?.Play(Opened ? "opened" : "closed");
         }
     }
 
-    public override void DoCommand(Node node, bool flag) => Opened = !_opened;
+    public override void DoCommand(Node node, bool flag) => Opened = !Opened;
 }

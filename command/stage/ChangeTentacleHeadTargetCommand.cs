@@ -17,11 +17,5 @@ public partial class ChangeTentacleHeadTargetCommand : CommandRoot
     [Export]
     public Node2D Target { get; set; }
 
-    public override void DoCommand(Node node, bool flag)
-    {
-        if (Head is not null)
-        {
-            Head.Target = Target;
-        }
-    }
+    public override void DoCommand(Node node, bool flag) => Head?.Target = Target;
 }
