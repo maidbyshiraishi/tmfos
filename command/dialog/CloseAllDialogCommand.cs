@@ -6,7 +6,7 @@ namespace maid_by_shiraishi.command.dialog;
 /// <summary>
 /// ダイアログをすべて閉じるコマンド
 /// </summary>
-public partial class CloseAllDialog : CommandRoot
+public partial class CloseAllDialogCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").CloseAllDialog();
 }
