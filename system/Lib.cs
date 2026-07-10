@@ -117,6 +117,7 @@ public static partial class Lib
             return;
         }
 
+        control.GrabFocus();
         CommandContainer target = root.GetNodeOrNull<CommandContainer>("Exec");
         target?.ExecCommand(node, flag);
     }
