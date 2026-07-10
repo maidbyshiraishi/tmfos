@@ -85,7 +85,7 @@ public partial class ActionChange : Node2D, IGameNode
     {
         _water = true;
 
-        if (_changeTarget.MobState is MobStateType.Normal && _changeTarget.Action is not MobActionType.Climb && _changeTarget is ISwimAction swim)
+        if (_changeTarget.MobState is MobStateType.Normal && _changeTarget is ISwimAction swim)
         {
             swim.SetSwim();
         }
@@ -120,11 +120,7 @@ public partial class ActionChange : Node2D, IGameNode
             return;
         }
 
-        if (_water && _changeTarget is ISwimAction swim)
-        {
-            swim.SetSwim();
-        }
-        else if (_changeTarget is IClimbAction climb)
+        if (_changeTarget is IClimbAction climb)
         {
             climb.UnsetClimb();
         }

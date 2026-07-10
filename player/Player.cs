@@ -563,7 +563,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
             return;
         }
 
-        if (Action is MobActionType.Swim)
+        if (Action is MobActionType.Swim || Action is MobActionType.Climb)
         {
             return;
         }
