@@ -18,10 +18,6 @@ run/main_scene="res://screen/splash_screen.tscn"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[audio]
-
-buses/default_bus_layout="uid://c0p5qk4ruxyol"
-
 [autoload]
 
 StopExecTwice="*res://system/StopExecTwice.cs"
