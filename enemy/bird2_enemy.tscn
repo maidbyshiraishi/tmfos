@@ -67,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kh8ih")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -78,7 +78,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f0pep")
 }],
-"loop": true,
+"loop": 1,
 "name": &"down",
 "speed": 5.0
 }, {
@@ -89,7 +89,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cqo37")
 }],
-"loop": true,
+"loop": 1,
 "name": &"left",
 "speed": 5.0
 }, {
@@ -100,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_561fx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"right",
 "speed": 5.0
 }, {
@@ -111,7 +111,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pff1i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"up",
 "speed": 5.0
 }]
