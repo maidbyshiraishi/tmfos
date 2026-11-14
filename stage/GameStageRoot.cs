@@ -71,7 +71,7 @@ public partial class GameStageRoot : DialogRoot, IStateful
 
     protected override void InitializeNode()
     {
-        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gdata = SystemHub.GetGameDataManager();
         gdata.Restore();
         SetPlayerLifeTime(gdata);
         _playerData = gdata.GetPlayerData();
@@ -104,7 +104,7 @@ public partial class GameStageRoot : DialogRoot, IStateful
     {
         if (NoBgm)
         {
-            GetNode<MusicPlayer>("/root/MusicPlayer").Play(MusicPlayer.Command.Mute);
+            SystemHub.GetMusicPlayer().Play(MusicPlayer.Command.Mute);
             return;
         }
 
@@ -113,7 +113,7 @@ public partial class GameStageRoot : DialogRoot, IStateful
             return;
         }
 
-        GetNode<MusicPlayer>("/root/MusicPlayer").Play(MusicPlayer.Command.FastPlay, BgmStream);
+        SystemHub.GetMusicPlayer().Play(MusicPlayer.Command.FastPlay, BgmStream);
     }
 
     private void EnableLight()
@@ -152,7 +152,7 @@ public partial class GameStageRoot : DialogRoot, IStateful
 
     protected void SetStartGateway()
     {
-        StageData stageData = GetNode<GameDataManager>("/root/GameDataManager").GetStageData();
+        StageData stageData = SystemHub.GetGameDataManager().GetStageData();
         int doorNo = stageData.DoorNo;
         StageEntryPoint stateEntryPoint = FindStageEntryPoint(doorNo);
 
@@ -169,11 +169,11 @@ public partial class GameStageRoot : DialogRoot, IStateful
     public void EnterGateway(int destStageNo, int destDoorNo, string fadeout, string fadein)
     {
         GetTree().CallGroup(StatefulGroup, "StateSave");
-        StageData stageData = GetNode<GameDataManager>("/root/GameDataManager").GetStageData();
+        StageData stageData = SystemHub.GetGameDataManager().GetStageData();
         stageData.StageNo = destStageNo;
         stageData.DoorNo = destDoorNo;
-        GetNode<GameDataManager>("/root/GameDataManager").Backup();
-        GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.TakeoverStage, GameDataManager.DefaultSlotNo, fadeout, fadein);
+        SystemHub.GetGameDataManager().Backup();
+        SystemHub.GetDialogLayer().OpenGame(StartGameType.TakeoverStage, GameDataManager.DefaultSlotNo, fadeout, fadein);
     }
 
     public void Miss()
@@ -184,11 +184,11 @@ public partial class GameStageRoot : DialogRoot, IStateful
         if (0 < _playerData.Remain)
         {
             _playerData.Life = PlayerData.InitialLife;
-            GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.Restart, GameDataManager.DefaultSlotNo, "fadeout_1", "fadein_1");
+            SystemHub.GetDialogLayer().OpenGame(StartGameType.Restart, GameDataManager.DefaultSlotNo, "fadeout_1", "fadein_1");
         }
         else
         {
-            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/game_over_dialog.tscn");
+            SystemHub.GetDialogLayer().OpenDialog("res://screen/game_over_dialog.tscn");
         }
     }
 
@@ -211,7 +211,7 @@ public partial class GameStageRoot : DialogRoot, IStateful
     public void AddRemain()
     {
         _playerData.Remain++;
-        GetNode<SePlayer>("/root/SePlayer").Play("player_one_up");
+        SystemHub.GetSePlayer().Play("player_one_up");
         UpdateHud();
     }
 

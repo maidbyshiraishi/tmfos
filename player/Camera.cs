@@ -19,7 +19,7 @@ public partial class Camera : Camera2D, IGameNode
     public void InitializeNode()
     {
         // カメラの移動範囲を制限する
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         TileMapLayer map = stageRoot.GetNode<TileMapLayer>("TileMap/Ground");
         Rect2I limits = map.GetUsedRect();
         Vector2I tileSetSize = map.TileSet.TileSize;

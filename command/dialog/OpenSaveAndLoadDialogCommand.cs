@@ -16,7 +16,7 @@ public partial class OpenSaveAndLoadDialogCommand : OpenDialogCommand
 
     public override void DoCommand(Node node, bool flag)
     {
-        GetNode<GameDataManager>("/root/GameDataManager").GetStageData().DoorNo = DoorNo;
+        SystemHub.GetGameDataManager().GetStageData().DoorNo = DoorNo;
         base.DoCommand(node, true);
     }
 }

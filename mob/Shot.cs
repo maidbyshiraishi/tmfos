@@ -110,7 +110,7 @@ public partial class Shot : Area2D, IGameNode, ISpawnedNode
     {
         if (m_visibleOnScreenNotifier2D is null || m_visibleOnScreenNotifier2D.IsOnScreen())
         {
-            GetNode<SePlayer>("/root/SePlayer").Play(name);
+            SystemHub.GetSePlayer().Play(name);
         }
     }
 

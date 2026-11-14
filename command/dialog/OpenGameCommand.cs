@@ -41,7 +41,7 @@ public partial class OpenGameCommand : CommandRoot
             {
                 string msg = $"ゲームデータのロード中にエラーが発生しました。エラーの発生したデータはゲームデータ{SlotNo}です。";
                 GD.PrintErr(msg);
-                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
+                SystemHub.GetDialogLayer().OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
                 return;
             }
         }
@@ -50,6 +50,6 @@ public partial class OpenGameCommand : CommandRoot
             SlotNo = GameDataManager.DefaultSlotNo;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGame, SlotNo, Fadeout, Fadein);
+        SystemHub.GetDialogLayer().OpenGame(StartGame, SlotNo, Fadeout, Fadein);
     }
 }

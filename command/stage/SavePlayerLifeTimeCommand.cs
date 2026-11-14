@@ -17,7 +17,7 @@ public partial class SavePlayerLifeTimeCommand : CommandRoot
             return;
         }
 
-        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gdata = SystemHub.GetGameDataManager();
         StageData stageData = gdata.GetStageData();
         int stageNo = stageData.StageNo;
 

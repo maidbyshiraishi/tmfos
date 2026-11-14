@@ -48,14 +48,14 @@ public partial class OptionDialog : DialogRoot
     /// </summary>
     public override void UpdateDialogScreen()
     {
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        GameOption option = SystemHub.GetGameOption();
         BgmVolume = option.BgmVolume;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GetNode<HSlider>("Control/BgmSlider").SetValueNoSignal(BgmVolume);
         SeVolume = option.SeVolume;
         GetNode<Label>("SeValue").Text = $"{SeVolume}%";
         GetNode<HSlider>("Control/SeSlider").SetValueNoSignal(SeVolume);
-        ScreenOption screenOption = GetNode<ScreenOption>("/root/ScreenOption");
+        ScreenOption screenOption = SystemHub.GetScreenOption();
         Fullscreen = screenOption.Fullscreen;
         SetFullscreenCheck(Fullscreen);
     }
@@ -68,7 +68,7 @@ public partial class OptionDialog : DialogRoot
     {
         BgmVolume = (float)value;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        GameOption option = SystemHub.GetGameOption();
         option.BgmVolume = BgmVolume;
         option.SetOptions();
     }
@@ -81,10 +81,10 @@ public partial class OptionDialog : DialogRoot
     {
         SeVolume = (float)value;
         GetNode<Label>("SeValue").Text = $"{SeVolume}%";
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        GameOption option = SystemHub.GetGameOption();
         option.SeVolume = SeVolume;
         option.SetOptions();
-        GetNode<SePlayer>("/root/SePlayer").Play("menu_select");
+        SystemHub.GetSePlayer().Play("menu_select");
     }
 
     /// <summary>
@@ -97,7 +97,7 @@ public partial class OptionDialog : DialogRoot
         GetNode<Label>("FullscreenCheckValue").Text = Fullscreen ? "ON" : "OFF";
 
         // ウィンドウ状態に関しては即座にシステムに反映する
-        ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
+        ScreenOption option = SystemHub.GetScreenOption();
         option.Fullscreen = Fullscreen;
         option.ChangeWindowMode();
     }
@@ -110,7 +110,7 @@ public partial class OptionDialog : DialogRoot
 
     public void ResetDefaultScreenOptions()
     {
-        ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
+        ScreenOption option = SystemHub.GetScreenOption();
         option.CalcScreenOptions();
         option.ApplyScreenOptions();
     }

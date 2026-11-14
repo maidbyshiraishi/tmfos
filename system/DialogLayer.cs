@@ -20,6 +20,8 @@ namespace maid_by_shiraishi.system;
 public partial class DialogLayer : CanvasLayer
 {
     private readonly Array<DialogRoot> _history = [];
+    private string _nextScreenPath;
+    private string _nextScreenFadein;
 
     /// <summary>
     /// 現在の画面を返す
@@ -41,7 +43,7 @@ public partial class DialogLayer : CanvasLayer
     /// <param name="argument">引数配列</param>
     public void OpenDialog(string path, string key = null, Variant[] argument = null)
     {
-        GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
+        SystemHub.GetSePlayer().ClearAllAudioStreamPlayer();
 
         if (string.IsNullOrWhiteSpace(path))
         {
@@ -51,7 +53,7 @@ public partial class DialogLayer : CanvasLayer
 
         if (!string.IsNullOrWhiteSpace(key))
         {
-            GetNode<DialogArgument>("/root/DialogArgument").SetArgument(key, argument);
+            SystemHub.GetDialogArgument().SetArgument(key, argument);
         }
 
         GetTree().Paused = true;
@@ -150,7 +152,7 @@ public partial class DialogLayer : CanvasLayer
     /// <param name="fadeout">画面のフェードアウトエフェクト名</param>
     public void OpenScreen(string path, string fadeout, string fadein, string key = null, Variant[] argument = null)
     {
-        GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
+        SystemHub.GetSePlayer().ClearAllAudioStreamPlayer();
 
         if (string.IsNullOrWhiteSpace(path))
         {
@@ -160,28 +162,46 @@ public partial class DialogLayer : CanvasLayer
 
         if (!string.IsNullOrWhiteSpace(key))
         {
-            GetNode<DialogArgument>("/root/DialogArgument").SetArgument(key, argument);
+            SystemHub.GetDialogArgument().SetArgument(key, argument);
         }
 
         GetTree().Paused = true;
-        _ = CallDeferred(MethodName.DeferredOpenScreen, [path, fadeout, fadein]);
+        _ = CallDeferred(MethodName.OpenScreenStep1, [path, fadeout, fadein]);
     }
 
-    protected async void DeferredOpenScreen(string path, string fadeout, string fadein)
+    protected void OpenScreenStep1(string path, string fadeout, string fadein)
     {
-        ScreenFader fader = GetNode<ScreenFader>("/root/ScreenFader");
+        _nextScreenPath = path;
+        _nextScreenFadein = fadein;
+        ScreenFader fader = SystemHub.GetScreenFader();
+        fader.ScreenFadeFinished -= OpenScreenStep2;
+        fader.ScreenFadeFinished -= OpenScreenStep3;
+        fader.ScreenFadeFinished += OpenScreenStep2;
         fader.ScreenFade(fadeout);
-        _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
+    }
+
+    protected void OpenScreenStep2()
+    {
         CloseAllDialog();
         GetCurrentScreen()?.Inactive();
 
-        if (Lib.GetPackedScene(path) is PackedScene pack)
+        if (Lib.GetPackedScene(_nextScreenPath) is PackedScene pack)
         {
             _ = GetTree().ChangeSceneToPacked(pack);
         }
 
-        fader.ScreenFade(fadein);
-        _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
+        ScreenFader fader = SystemHub.GetScreenFader();
+        fader.ScreenFadeFinished -= OpenScreenStep2;
+        fader.ScreenFadeFinished -= OpenScreenStep3;
+        fader.ScreenFadeFinished += OpenScreenStep3;
+        fader.ScreenFade(_nextScreenFadein);
+    }
+
+    protected void OpenScreenStep3()
+    {
+        ScreenFader fader = SystemHub.GetScreenFader();
+        fader.ScreenFadeFinished -= OpenScreenStep2;
+        fader.ScreenFadeFinished -= OpenScreenStep3;
         DialogRoot current = GetCurrentScreen();
         current.Active();
         GetTree().Paused = false;
@@ -215,14 +235,14 @@ public partial class DialogLayer : CanvasLayer
     /// <param name="slotNo">データ番号</param>
     public void OpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
     {
-        GetNode<SePlayer>("/root/SePlayer").ClearAllAudioStreamPlayer();
+        SystemHub.GetSePlayer().ClearAllAudioStreamPlayer();
         GetTree().Paused = true;
         _ = CallDeferred(MethodName.DeferredOpenGame, (int)startStageType, slotNo, fadeout, fadein);
     }
 
     private void DeferredOpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
     {
-        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gdata = SystemHub.GetGameDataManager();
         Error e = Error.Ok;
 
         // TakeOverStageとRestartは何もしない。
@@ -253,7 +273,7 @@ public partial class DialogLayer : CanvasLayer
         {
             string msg = $"ゲームを開始できません。エラーの値は{e}です。";
             GD.PrintErr(msg);
-            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
+            SystemHub.GetDialogLayer().OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
             return;
         }
 
@@ -265,7 +285,7 @@ public partial class DialogLayer : CanvasLayer
             return;
         }
 
-        DeferredOpenScreen(path, fadeout, fadein);
+        OpenScreenStep1(path, fadeout, fadein);
     }
 
     public void QuitGame() => GetTree().Quit();

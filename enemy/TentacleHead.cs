@@ -43,7 +43,7 @@ public partial class TentacleHead : Area2D, IGameNode
 
     public void InitializeNode()
     {
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         _player = stageRoot.GetNode<Player>("%Player");
         SetTargetPlayer();
     }

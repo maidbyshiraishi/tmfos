@@ -34,5 +34,5 @@ public partial class SplashScreen : DialogRoot
     /// <summary>
     /// 次画面に遷移する
     /// </summary>
-    public void GoNextScreen() => GetNode<DialogLayer>("/root/DialogLayer").OpenScreen("res://screen/title_screen.tscn", "fadeout_1", "fadein_1");
+    public void GoNextScreen() => SystemHub.GetDialogLayer().OpenScreen("res://screen/title_screen.tscn", "fadeout_1", "fadein_1");
 }

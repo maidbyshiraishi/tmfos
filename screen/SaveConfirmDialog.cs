@@ -27,7 +27,7 @@ public partial class SaveConfirmDialog : DialogRoot
 
         _slotNo = (int)m_argument[0];
         GetNode<Label>("Data").Text = $"データ{_slotNo}";
-        string date = GetNode<GameDataManager>("/root/GameDataManager").GetFileDate(_slotNo);
+        string date = SystemHub.GetGameDataManager().GetFileDate(_slotNo);
 
         if (date is null)
         {
@@ -59,20 +59,20 @@ public partial class SaveConfirmDialog : DialogRoot
         {
             string msg = $"ゲームデータのセーブ中にエラーが発生しました。エラーの発生したデータはゲームデータ{_slotNo}です。";
             GD.PrintErr(msg);
-            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
+            SystemHub.GetDialogLayer().OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
             return;
         }
 
-        Error e = GetNode<GameDataManager>("/root/GameDataManager").Save(_slotNo);
+        Error e = SystemHub.GetGameDataManager().Save(_slotNo);
 
         if (e is not Error.Ok)
         {
             string msg = $"ゲームデータのセーブ中にエラーが発生しました。エラーの発生したデータはゲームデータ{_slotNo}です。エラーの値は{e}です。";
             GD.PrintErr(msg);
-            GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
+            SystemHub.GetDialogLayer().OpenDialog("res://screen/error_dialog.tscn", "ErrorDialog", [msg]);
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").CloseDialog();
+        SystemHub.GetDialogLayer().CloseDialog();
     }
 }

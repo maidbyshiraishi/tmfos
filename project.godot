@@ -18,19 +18,13 @@ run/main_scene="res://screen/splash_screen.tscn"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c0p5qk4ruxyol"
+
 [autoload]
 
-StopExecTwice="*res://system/StopExecTwice.cs"
-ScreenOption="*res://system/screen_option.tscn"
-DialogLayer="*res://system/dialog_layer.tscn"
-DialogArgument="*res://system/dialog_argument.tscn"
-ScreenFader="*res://system/screen_fader.tscn"
-GameOption="*res://system/game_option.tscn"
-GameKeyOption="*res://system/game_key_option.tscn"
-GameDataManager="*res://system/game_data_manager.tscn"
-MusicPlayer="*res://system/music_player.tscn"
-SePlayer="*res://system/se_player.tscn"
-Screenshot="*res://system/screenshot.tscn"
+SystemHub="*uid://dxpyh3u0tktuh"
 
 [display]
 

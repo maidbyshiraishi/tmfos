@@ -237,7 +237,7 @@ public partial class KeyDialogRoot : DialogRoot
         _keyInfo.Text = "";
     }
 
-    public void HelpSet() => GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["ヘルプキーは変更できません。", false]);
+    public void HelpSet() => SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["ヘルプキーは変更できません。", false]);
 
     public void HelpInfo()
     {
@@ -270,7 +270,7 @@ public partial class KeyDialogRoot : DialogRoot
             }
         }
 
-        GetNode<GameKeyOption>("/root/GameKeyOption").SetUnchangeableKey(actionName);
+        SystemHub.GetGameKeyOption().SetUnchangeableKey(actionName);
 
         foreach (InputEvent item in save)
         {
@@ -306,7 +306,7 @@ public partial class KeyDialogRoot : DialogRoot
             }
         }
 
-        GetNode<GameKeyOption>("/root/GameKeyOption").SetUnchangeableKey(actionName);
+        SystemHub.GetGameKeyOption().SetUnchangeableKey(actionName);
 
         foreach (InputEvent item in save)
         {
@@ -342,7 +342,7 @@ public partial class KeyDialogRoot : DialogRoot
             }
         }
 
-        GetNode<GameKeyOption>("/root/GameKeyOption").SetUnchangeableKey(actionName);
+        SystemHub.GetGameKeyOption().SetUnchangeableKey(actionName);
 
         foreach (InputEvent item in save)
         {
@@ -372,23 +372,23 @@ public partial class KeyDialogRoot : DialogRoot
                         {
                             case Error.Ok:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}に設定しました。", false]);
+                                SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}に設定しました。", false]);
                                 break;
 
                             case Error.AlreadyInUse:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}は既に使用されています。", false]);
+                                SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}は既に使用されています。", false]);
                                 break;
 
                             default:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}に変更できませんでした。", false]);
+                                SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{key.AsText()}に変更できませんでした。", false]);
                                 break;
                         }
                     }
                     else
                     {
-                        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [ReplaceButtonName($"{key.AsText()}は設定できません。"), false]);
+                        SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [ReplaceButtonName($"{key.AsText()}は設定できません。"), false]);
                     }
 
                     ChangeFocusMode(true);
@@ -406,23 +406,23 @@ public partial class KeyDialogRoot : DialogRoot
                         {
                             case Error.Ok:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に設定しました。", false]);
+                                SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に設定しました。", false]);
                                 break;
 
                             case Error.AlreadyInUse:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}は既に使用されています。", false]);
+                                SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}は既に使用されています。", false]);
                                 break;
 
                             default:
 
-                                GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に変更できませんでした。", false]);
+                                SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [$"{button.AsText()}に変更できませんでした。", false]);
                                 break;
                         }
                     }
                     else
                     {
-                        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [ReplaceButtonName($"{button.AsText()}は設定できません。"), false]);
+                        SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", [ReplaceButtonName($"{button.AsText()}は設定できません。"), false]);
                     }
 
                     ChangeFocusMode(true);
@@ -434,7 +434,7 @@ public partial class KeyDialogRoot : DialogRoot
                 {
                     // JoypadMotionは変更できない
                     // Error result = SetInputEventJoypadMotion(_setActionName, motion);
-                    GetNode<DialogLayer>("/root/DialogLayer").OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["左右スティックとトリガーは変更できません。", false]);
+                    SystemHub.GetDialogLayer().OpenDialog("res://screen/message_dialog.tscn", "MessageDialog", ["左右スティックとトリガーは変更できません。", false]);
                     ChangeFocusMode(true);
                     _setMode = false;
                     break;
@@ -443,11 +443,11 @@ public partial class KeyDialogRoot : DialogRoot
 
         if (_setActionName is "ui_accept")
         {
-            GetNode<GameKeyOption>("/root/GameKeyOption").CopyUISelect();
+            SystemHub.GetGameKeyOption().CopyUISelect();
         }
     }
 
     public override void UpdateDialogScreen() => UpdateLabel(_lastLabel);
 
-    public void SwapAB() => GetNode<GameKeyOption>("/root/GameKeyOption").SwapAB();
+    public void SwapAB() => SystemHub.GetGameKeyOption().SwapAB();
 }

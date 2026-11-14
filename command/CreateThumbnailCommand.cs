@@ -12,6 +12,6 @@ public partial class CreateThumbnailCommand : CommandRoot
     {
         Image image = GetViewport().GetTexture().GetImage();
         image.Resize(128, 96);
-        GetNode<GameDataManager>("/root/GameDataManager").SetThumbnail(image);
+        SystemHub.GetGameDataManager().SetThumbnail(image);
     }
 }

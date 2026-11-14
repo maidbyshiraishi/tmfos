@@ -18,7 +18,7 @@ public partial class Enemy : DurableMob, ISpawnedNode
     public override void InitializeNode()
     {
         base.InitializeNode();
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         m_player = stageRoot.GetNode<Player>("%Player");
         m_attackCorrection = stageRoot.EnemyAttackCorrection;
     }

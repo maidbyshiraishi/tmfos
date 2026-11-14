@@ -81,7 +81,7 @@ public partial class PlayerFollowEnemy : Area2D, IGameNode, ISpawnedNode
         _startPosition = Position;
         _maxRadAngle = Mathf.DegToRad(MaxDegAngle);
         _ignoreRadAngle = Mathf.DegToRad(IgnoreDegAngle);
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         m_player = stageRoot.GetNode<Player>("%Player");
         inode.InitializeNode();
         LostPlayer(null);

@@ -65,11 +65,11 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
     public override void InitializeNode()
     {
         base.InitializeNode();
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         Missed += stageRoot.Miss;
         HudUpdated += stageRoot.UpdateHud;
         _tileMapManager = stageRoot.GetNode<TileMapManager>("TileMap");
-        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gdata = SystemHub.GetGameDataManager();
         _itemData = gdata.GetItemData();
         Life = gdata.GetPlayerData().Life;
         PlayerArmorRatio = stageRoot.PlayerArmorRatio;
@@ -737,7 +737,7 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
 
     public void EnableLight()
     {
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
 
         if (!stageRoot.IsDarkZone)
         {
@@ -764,14 +764,14 @@ public partial class Player : DurableMob, IStateful, ILight, ISwimAction, IClimb
         }
 
         base.AddDurability(value);
-        GetNode<GameDataManager>("/root/GameDataManager").GetPlayerData().Life = Life;
+        SystemHub.GetGameDataManager().GetPlayerData().Life = Life;
         _ = EmitSignal(SignalName.HudUpdated);
     }
 
     public override void SetDurability(int value)
     {
         base.SetDurability(value);
-        GetNode<GameDataManager>("/root/GameDataManager").GetPlayerData().Life = Life;
+        SystemHub.GetGameDataManager().GetPlayerData().Life = Life;
         _ = EmitSignal(SignalName.HudUpdated);
     }
 }

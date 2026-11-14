@@ -15,7 +15,7 @@ public partial class DrillShot : Shot
         PlaySprite();
     }
 
-    protected override void PlaySpawnedSe() => GetNode<SePlayer>("/root/SePlayer").Play("drill_shot");
+    protected override void PlaySpawnedSe() => SystemHub.GetSePlayer().Play("drill_shot");
 
     public override void CalcDirection()
     {

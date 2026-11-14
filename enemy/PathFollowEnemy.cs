@@ -38,7 +38,7 @@ public partial class PathFollowEnemy : DurableShot
     {
         base.InitializeNode();
         _lastPosition = GlobalPosition;
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         m_player = stageRoot.GetNode<Player>("%Player");
         ResetLifeTime();
     }
@@ -164,7 +164,7 @@ public partial class PathFollowEnemy : DurableShot
         _collision.SetDeferred("disabled", false);
     }
 
-    protected override void PlaySpawnedSe() => GetNode<SePlayer>("/root/SePlayer").Play(FlyingSe);
+    protected override void PlaySpawnedSe() => SystemHub.GetSePlayer().Play(FlyingSe);
 
     public override void CalcDirection()
     {

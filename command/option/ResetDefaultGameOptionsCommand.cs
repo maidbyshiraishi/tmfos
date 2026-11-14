@@ -10,7 +10,7 @@ public partial class ResetDefaultGameOptionsCommand : CommandRoot
 {
     public override void DoCommand(Node node, bool flag)
     {
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        GameOption option = SystemHub.GetGameOption();
         option.ResetOptions();
     }
 }

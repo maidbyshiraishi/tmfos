@@ -8,5 +8,5 @@ namespace maid_by_shiraishi.command.option;
 /// </summary>
 public partial class LoadKeyOptionsCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag) => GetNode<GameKeyOption>("/root/GameKeyOption").LoadKeyOptions();
+    public override void DoCommand(Node node, bool flag) => SystemHub.GetGameKeyOption().LoadKeyOptions();
 }

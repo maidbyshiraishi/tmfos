@@ -8,5 +8,5 @@ namespace maid_by_shiraishi.command.dialog;
 /// </summary>
 public partial class CloseDialogCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag) => GetNode<DialogLayer>("/root/DialogLayer").CloseDialog();
+    public override void DoCommand(Node node, bool flag) => SystemHub.GetDialogLayer().CloseDialog();
 }

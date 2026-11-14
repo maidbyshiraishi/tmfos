@@ -54,7 +54,7 @@ public partial class TentacleRoot : Node2D, IGameNode
 
     public virtual void InitializeNode()
     {
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         _player = stageRoot.GetNode<Player>("%Player");
 
         if (AutoConnectTentacle)

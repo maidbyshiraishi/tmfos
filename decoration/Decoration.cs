@@ -22,7 +22,7 @@ public partial class Decoration : Node2D, ISpawnedNode
 
         if (SeName is not null)
         {
-            GetNode<SePlayer>("/root/SePlayer").Play(SeName);
+            SystemHub.GetSePlayer().Play(SeName);
         }
     }
 

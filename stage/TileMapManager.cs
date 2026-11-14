@@ -75,7 +75,7 @@ public partial class TileMapManager : Node2D
 
         if (playSe)
         {
-            GetNode<SePlayer>("/root/SePlayer").Play("crack");
+            SystemHub.GetSePlayer().Play("crack");
         }
 
         TileMapLayer foreground = _layers[ForegroundLayerPath];

@@ -8,5 +8,5 @@ namespace maid_by_shiraishi.command.state;
 /// </summary>
 public partial class StateBackupCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag) => GetNode<GameDataManager>("/root/GameDataManager").Backup();
+    public override void DoCommand(Node node, bool flag) => SystemHub.GetGameDataManager().Backup();
 }

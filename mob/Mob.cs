@@ -30,7 +30,7 @@ public partial class Mob : CharacterBody2D, IGameNode
 
     public virtual void InitializeNode()
     {
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         NodeSpawned += stageRoot.SpawnNode;
     }
 
@@ -78,7 +78,7 @@ public partial class Mob : CharacterBody2D, IGameNode
     {
         if (m_visibleOnScreenNotifier2D is null || m_visibleOnScreenNotifier2D.IsOnScreen())
         {
-            GetNode<SePlayer>("/root/SePlayer").Play(name);
+            SystemHub.GetSePlayer().Play(name);
         }
     }
 }

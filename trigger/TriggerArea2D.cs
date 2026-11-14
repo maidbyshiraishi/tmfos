@@ -80,7 +80,7 @@ public partial class TriggerArea2D : Area2D, IStateful
 
     public virtual void StateLoad()
     {
-        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gdata = SystemHub.GetGameDataManager();
         string name = Lib.GenerateName(this);
         int stageNo = gdata.GetStageData().StageNo;
 
@@ -92,7 +92,7 @@ public partial class TriggerArea2D : Area2D, IStateful
 
     public virtual void StateSave()
     {
-        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gdata = SystemHub.GetGameDataManager();
         string name = Lib.GenerateName(this);
         int stageNo = gdata.GetStageData().StageNo;
         gdata.SetStageData(stageNo, $"{name}_Opened", m_opened ? 1 : 0);

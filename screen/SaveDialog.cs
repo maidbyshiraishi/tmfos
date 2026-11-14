@@ -16,7 +16,7 @@ public partial class SaveDialog : DialogRoot
 
     private void UpdateTimeStamp()
     {
-        string[] date = GetNode<GameDataManager>("/root/GameDataManager").GetFileDates();
+        string[] date = SystemHub.GetGameDataManager().GetFileDates();
 
         for (int i = 1; i <= GameDataManager.NumOfSaveFiles; i++)
         {

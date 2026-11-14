@@ -31,7 +31,7 @@ public partial class ActionChange : Node2D, IGameNode
 
     public void InitializeNode()
     {
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         _tileMapManager = stageRoot.GetNode<TileMapManager>("TileMap");
     }
 

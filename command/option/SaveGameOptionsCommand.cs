@@ -8,5 +8,5 @@ namespace maid_by_shiraishi.command.option;
 /// </summary>
 public partial class SaveGameOptionsCommand : CommandRoot
 {
-    public override void DoCommand(Node node, bool flag) => GetNode<GameOption>("/root/GameOption").SaveOptions();
+    public override void DoCommand(Node node, bool flag) => SystemHub.GetGameOption().SaveOptions();
 }

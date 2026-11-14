@@ -95,7 +95,7 @@ public partial class EnemySpawner : Node2D, IGameNode, ISpawner
 
     public void InitializeNode()
     {
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         NodeSpawned += stageRoot.SpawnNode;
         _player = stageRoot.GetNode<Player>("%Player");
     }

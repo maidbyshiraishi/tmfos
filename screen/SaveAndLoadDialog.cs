@@ -17,7 +17,7 @@ public partial class SaveAndLoadDialog : DialogRoot
 
     private void UpdateTimeStamp()
     {
-        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gdata = SystemHub.GetGameDataManager();
 
         if (gdata.HasLastSlotNo())
         {

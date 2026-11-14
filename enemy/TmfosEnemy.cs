@@ -40,7 +40,7 @@ public partial class TmfosEnemy : PathFollowEnemy
         // 攻撃力強化の対象外
         m_attackCorrection = 0;
         _teleportPosition = GetTree().GetNodesInGroup(TeleportPositionGroupName);
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         NodeSpawned += stageRoot.SpawnNode;
     }
 

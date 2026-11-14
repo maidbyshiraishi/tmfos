@@ -35,7 +35,7 @@ public partial class ChangeStageCommand : CommandRoot
 
     public override void DoCommand(Node node, bool flag)
     {
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         stageRoot.EnterGateway(DestStageNo, DestDoorNo, Fadeout, Fadein);
     }
 }

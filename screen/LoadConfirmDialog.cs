@@ -20,7 +20,7 @@ public partial class LoadConfirmDialog : DialogRoot
 
         int slotNo = (int)m_argument[0];
         GetNode<Label>("Data").Text = $"データ{slotNo}";
-        string date = GetNode<GameDataManager>("/root/GameDataManager").GetFileDate(slotNo);
+        string date = SystemHub.GetGameDataManager().GetFileDate(slotNo);
         Button yesButton = GetNode<Button>("Control/Yes");
 
         if (date is null)

@@ -2,6 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dawhenu115pcw" path="res://system/GameDataManager.cs" id="1_tpgm8"]
 
-[node name="GameData" type="Node" unique_id=1553033288]
+[node name="GameDataManager" type="Node" unique_id=1553033288]
 process_mode = 3
 script = ExtResource("1_tpgm8")

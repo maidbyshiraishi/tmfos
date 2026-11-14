@@ -36,7 +36,7 @@ public partial class JukeboxDialog : DialogRoot
     /// </summary>
     public override void UpdateDialogScreen()
     {
-        BgmVolume = GetNode<GameOption>("/root/GameOption").BgmVolume;
+        BgmVolume = SystemHub.GetGameOption().BgmVolume;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GetNode<HSlider>("Control/BgmSlider").SetValueNoSignal(BgmVolume);
     }
@@ -49,7 +49,7 @@ public partial class JukeboxDialog : DialogRoot
     {
         BgmVolume = (float)value;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        GameOption option = SystemHub.GetGameOption();
         option.BgmVolume = BgmVolume;
         option.SetOptions();
     }

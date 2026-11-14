@@ -11,7 +11,7 @@ public partial class GameOverDialog : DialogRoot
 {
     protected override void InitializeNode()
     {
-        GameDataManager gdata = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gdata = SystemHub.GetGameDataManager();
         string[] date = gdata.GetFileDates();
 
         for (int i = 1; i <= GameDataManager.NumOfSaveFiles; i++)

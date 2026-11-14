@@ -17,7 +17,7 @@ public partial class AddScoreCommand : CommandRoot
 
     public override void DoCommand(Node node, bool flag)
     {
-        GameStageRoot stageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
+        GameStageRoot stageRoot = SystemHub.GetDialogLayer().GetCurrentGameStageRoot();
         stageRoot.AddScore(Score);
     }
 }

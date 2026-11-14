@@ -19,7 +19,7 @@ public partial class BigDrillShot : Shot
         // 攻撃力強化の対象外
         m_attackCorrection = 0;
 
-    protected override void PlaySpawnedSe() => GetNode<SePlayer>("/root/SePlayer").Play("big_drill_shot");
+    protected override void PlaySpawnedSe() => SystemHub.GetSePlayer().Play("big_drill_shot");
 
     public override void CalcDirection()
     {
