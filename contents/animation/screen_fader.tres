@@ -201,7 +201,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"fadein_1",
-"speed": 26.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -221,7 +221,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"fadein_2",
-"speed": 30.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -253,7 +253,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"fadein_3",
-"speed": 16.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -279,7 +279,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"fadeout_1",
-"speed": 26.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -299,7 +299,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"fadeout_2",
-"speed": 30.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -331,7 +331,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"fadeout_3",
-"speed": 16.0
+"speed": 24.0
 }, {
 "frames": [],
 "loop": 1,
